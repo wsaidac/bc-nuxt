@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "EditorConfig.editorconfig",
+    "shinnn.stylelint",
+    "abusaidm.html-snippets",
+    "Tyriar.sort-lines",
+    "formulahendry.auto-rename-tag",
+    "PeterJausovec.vscode-docker",
+    "dbaeumer.vscode-eslint",
+    "dzannotti.vscode-babel-coloring",
+    "formulahendry.auto-close-tag",
+    "octref.vetur"
+  ]
+}
