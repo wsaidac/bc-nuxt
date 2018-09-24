@@ -45,7 +45,6 @@ module.exports = {
   },
   modules: [
     ['~/modules/icons'],
-    ['~/plugins/i18n.js'],
     [
       'artemis-graphql',
       {
