@@ -1,9 +1,10 @@
 // External dependencies
-@import "~normalize.css";
+@import "~normalize-scss";
 
 // Shared variables, mixins and functions
 @import "shared";
 
 // Partials
 @import "partials/reboot";
+@import "partials/grid";
 @import "partials/type";

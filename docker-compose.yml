@@ -1,4 +1,4 @@
-version: '3.0'
+version: '3'
 services:
   web:
     build: .
@@ -9,7 +9,7 @@ services:
       PORT: 4000
       NODE_ENV: development
       API_BROWSER: http://localhost:5000
-     # API_SERVER: http://gateway:5000
+      API_SERVER: http://gateway:5000
     ports:
       - 4000:4000
     volumes:

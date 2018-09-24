@@ -1,0 +1,35 @@
+{
+  "autorun": false,
+  "terminals": [
+    {
+      "name": "ESlint",
+      "focus": true,
+      "command": "docker-compose run web yarn eslint"
+    },
+    {
+      "name": "Stylelint",
+      "focus": true,
+      "command": "docker-compose run web yarn stylelint"
+    },
+    {
+      "name": "Jest unit tests",
+      "focus": true,
+      "command": "docker-compose run web yarn test:unit"
+    },
+    {
+      "name": "Cypress dev mode",
+      "focus": true,
+      "command": "yarn cypress"
+    },
+    {
+      "name": "Yarn install local",
+      "focus": true,
+      "command": "yarn install"
+    },
+    {
+      "name": "Yarn install docker",
+      "focus": true,
+      "command": "docker-compose run web yarn install"
+    }
+  ]
+}

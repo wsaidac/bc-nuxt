@@ -1,19 +1,28 @@
+const path = require('path');
+
 module.exports = {
+  collectCoverage: false,
+  collectCoverageFrom: [
+    '**/*.{js,vue}',
+    '!**/node_modules/**',
+    '!**/cypress/**',
+  ],
+  coverageReporters: ['text-summary'],
+  rootDir: path.resolve(__dirname),
   moduleFileExtensions: [
     'js',
     'vue',
   ],
-  roots: [
-    './components',
-    './layouts',
-    './pages',
-    './plugins',
-  ],
-  transform: {
-    '^.+\\.js$': './node_modules/babel-jest',
-    '.*\\.(vue)$': './node_modules/vue-jest',
+  moduleNameMapper: {
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/test/mocks/fileMock.js',
+    '^~/(.*)$': '<rootDir>/$1',
   },
-  snapshotSerializers: [
-    './node_modules/jest-serializer-vue',
+  transform: {
+    '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
+    '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest',
+  },
+  testPathIgnorePatterns: [
+    '<rootDir>/cypress',
   ],
+  snapshotSerializers: ['<rootDir>/node_modules/jest-serializer-vue'],
 };

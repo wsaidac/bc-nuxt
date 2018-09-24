@@ -1,8 +1,5 @@
 {
   "name": "rapido_web",
-  "version": "1.0.0",
-  "description": "Nuxt.js project",
-  "author": "Bauke Palstra <bauke@10kb.nl>",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -16,9 +13,8 @@
     "cypress": "cypress open"
   },
   "dependencies": {
-    "artemis-graphql": "https://gitlab.tien.io/x/artemis-graphql.git",
-    "normalize.css": "^8.0.0",
     "element-ui": "~2.1",
+    "normalize-scss": "^7.0.1",
     "nuxt": "^1.0.0",
     "vue": "~2.5",
     "vue-i18n": "^8.1.0"

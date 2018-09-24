@@ -1,0 +1,30 @@
+cache: yarn
+
+jobs:
+  include:
+    - stage: install
+      language: node_js
+      node_js:
+        - "8"
+      script: true
+
+    - stage: test
+      language: node_js
+      node_js:
+        - "8"
+      script:
+        - yarn eslint
+
+    - stage: test
+      language: node_js
+      node_js:
+        - "8"
+      script:
+        - yarn stylelint
+
+    - stage: test
+      language: node_js
+      node_js:
+        - "8"
+      script:
+        - yarn test:unit
