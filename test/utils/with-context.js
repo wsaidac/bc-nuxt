@@ -13,6 +13,9 @@ Vue.config.silent = true;
 
 // Mock i18n helper and stub NuxtLink component
 const defaultOptions = {
+  mocks: {
+    $n: key => key,
+  },
   stubs: {
     NuxtLink: TestUtils.RouterLinkStub,
   },

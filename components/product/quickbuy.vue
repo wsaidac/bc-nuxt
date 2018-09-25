@@ -24,7 +24,7 @@
             <ui-col :span="16">
               <div class="product-quickbuy__offer">
                 <strong
-                  v-text="product.price.amount"
+                  v-text="$n(product.price.amount, product.price.currency)"
                 />
                 <p
                   v-text="product.title"
@@ -162,8 +162,8 @@ export default {
       display: flex;
       font-size: $font-size-h6;
       justify-content: space-between;
-      padding: 5px 10px;
       margin: 10px 0;
+      padding: 5px 10px;
 
       @include media-breakpoint-up('sm') {
         margin: 7px 0;
