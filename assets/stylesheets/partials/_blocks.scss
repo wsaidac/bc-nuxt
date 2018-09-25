@@ -8,4 +8,10 @@
   &--gray {
     background: $gray-100;
   }
+
+  @include media-breakpoint-up('sm') {
+    & + .block--space-between {
+      margin-top: 60px;
+    }
+  }
 }

@@ -20,7 +20,13 @@
         />
       </div>
     </div>
-    <ui-icon icon="close" />
+    <div class="block block--gray block--space-between">
+      <div class="container">
+        <product-featured
+          :categories="main.products"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -30,6 +36,8 @@ import HeaderBanner from '~/components/header/banner';
 import HeaderUsps from '~/components/header/usps';
 import ProductPopular from '~/components/product/popular';
 import ProductQuickbuy from '~/components/product/quickbuy';
+import ProductFeatured from '~/components/product/featured';
+import { mapGetters } from 'vuex';
 
 const mockData = {
   products: [
@@ -101,15 +109,18 @@ export default {
     HeaderUsps,
     ProductPopular,
     ProductQuickbuy,
+    ProductFeatured,
   },
 
   async asyncData({ app }) {
     const { post } = await app.$q('post', { slug: 'home' });
     return Object.assign({}, post, mockData);
   },
+  computed: {
+    ...mapGetters('menus', ['main']),
+  },
   async fetch({ app, store }) {
     const { menus } = await app.$q('menus', { slug: 'main' });
-    console.log(menus);
     store.commit('menus/setMain', menus.nodes[0]);
   },
 };

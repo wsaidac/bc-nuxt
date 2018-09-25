@@ -1,10 +1,11 @@
 const unwrapNode = node => ({
-  label: node.label,
-  image: node.attachedImage && node.attachedImage.sourceUrl,
-  items: node.childItems && node.childItems.nodes.map(unwrapNode),
+  title: node.label,
+  url: `/${node.label}`,
+  imageUrl: node.attachedImage && node.attachedImage.sourceUrl,
+  products: node.childItems && node.childItems.nodes.map(unwrapNode),
 });
 
-const unwrap = menu => ({ items: menu.menuItems.nodes.map(unwrapNode) });
+const unwrap = menu => ({ products: menu.menuItems.nodes.map(unwrapNode) });
 
 export default {
   state() {
