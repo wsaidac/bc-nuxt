@@ -9,6 +9,7 @@
         v-for="product in products"
         :key="product.id"
         :xs="12"
+        :sm="12"
         :md="8"
       >
         <nuxt-link
