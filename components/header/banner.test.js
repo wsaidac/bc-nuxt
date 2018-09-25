@@ -9,7 +9,6 @@ describe('HeaderBanner', () => {
 
   it('should omit payoff if not given', () => {
     const $mounted = mount(HeaderBanner, { propsData: { imageUrl: 'https://example.com/banner.jpg' } });
-    console.log($mounted.find('.header-banner__payoff'));
     expect($mounted.find('.header-banner__payoff').exists()).toBe(false);
   });
 
