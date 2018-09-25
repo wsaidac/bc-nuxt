@@ -47,12 +47,12 @@ export default {
     padding: 0;
     width: 95px;
 
-    @include media-breakpoint-up("sm") {
+    @include media-breakpoint-up('sm') {
       padding: 11px 7px;
       width: 115px;
     }
 
-    @include media-breakpoint-up("md") {
+    @include media-breakpoint-up('md') {
       width: 200px;
     }
 

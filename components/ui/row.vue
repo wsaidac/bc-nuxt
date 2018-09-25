@@ -27,5 +27,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "element-ui/packages/theme-chalk/src/row.scss";
+@import 'element-ui/packages/theme-chalk/src/row.scss';
 </style>

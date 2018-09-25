@@ -1,0 +1,11 @@
+.block {
+  padding: 10px 0;
+
+  @include media-breakpoint-up('sm') {
+    padding: 20px 0 40px;
+  }
+
+  &--gray {
+    background: $gray-100;
+  }
+}

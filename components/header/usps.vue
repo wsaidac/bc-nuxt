@@ -38,7 +38,7 @@ export default {
   padding: 10px 0;
   position: relative;
 
-  @include media-breakpoint-up("sm") {
+  @include media-breakpoint-up('sm') {
     padding: 15px 0;
   }
 
@@ -52,8 +52,8 @@ export default {
   &__item {
     align-items: center;
     display: flex;
-    justify-content: center;
     height: 40px;
+    justify-content: center;
     width: (100% / 3);
   }
 

@@ -55,7 +55,7 @@ export default {
   max-width: 830px;
   padding: 20px 0;
 
-  @include media-breakpoint-up("md") {
+  @include media-breakpoint-up('md') {
     padding: 40px 0 80px;
   }
 
