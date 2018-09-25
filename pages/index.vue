@@ -20,7 +20,13 @@
         />
       </div>
     </div>
-    <ui-icon icon="close" />
+    <div class="block block--gray block--space-between">
+      <div class="container">
+        <product-featured
+          :categories="categories"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -30,6 +36,7 @@ import HeaderBanner from '~/components/header/banner';
 import HeaderUsps from '~/components/header/usps';
 import ProductPopular from '~/components/product/popular';
 import ProductQuickbuy from '~/components/product/quickbuy';
+import ProductFeatured from '~/components/product/featured';
 
 export default {
   components: {
@@ -38,65 +45,61 @@ export default {
     HeaderUsps,
     ProductPopular,
     ProductQuickbuy,
+    ProductFeatured,
   },
 
   data() {
     return {
       banner: {
-        imageUrl:
-          'https://static.rapido.com/media/topup/rapido/default/images/headers/default-desktop.jpg',
-        payoff:
-          '<p>Get all your codes quick,<br><strong>safe and simple!</strong></p>',
+        imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/headers/default-desktop.jpg',
+        payoff: '<p>Get all your codes quick,<br><strong>safe and simple!</strong></p>',
       },
+
       usps: [
         { icon: 'clock', label: 'Order in Minutes' },
         { icon: 'lock', label: 'Pay safely & securely' },
         { icon: 'envelope', label: 'Get your code instantly' },
       ],
+
       products: [
         {
           id: 1,
           title: 'Xbox',
-          imageUrl:
-            'https://static.rapido.com/media/topup/rapido/default/images/most-popular/xbox-gift-card.png',
+          imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/xbox-gift-card.png',
           url: '/xbox',
         },
         {
           id: 2,
           title: 'Playstation',
-          imageUrl:
-            'https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png',
+          imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png',
           url: '/playstation',
         },
         {
           id: 3,
           title: 'Spotify',
-          imageUrl:
-            'https://static.rapido.com/media/topup/rapido/default/images/most-popular/spotify-gift-card.png',
+          imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/spotify-gift-card.png',
           url: '/spotify',
         },
         {
           id: 4,
           title: 'T-Mobile',
-          imageUrl:
-            'https://static.rapido.com/media/topup/rapido/default/images/most-popular/t-mobile.png',
+          imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/t-mobile.png',
           url: '/t-mobile',
         },
         {
           id: 5,
           title: 'Verizon',
-          imageUrl:
-            'https://static.rapido.com/media/topup/rapido/default/images/most-popular/verizon.png',
+          imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/verizon.png',
           url: '/verizon',
         },
         {
           id: 6,
           title: 'AT&T',
-          imageUrl:
-            'https://static.rapido.com/media/topup/rapido/default/images/most-popular/atandt.png',
+          imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/atandt.png',
           url: '/atandt',
         },
       ],
+
       quickbuyProduct: {
         id: 1,
         title: 'Verizon Prepaid Refill $5',
@@ -112,6 +115,111 @@ export default {
         { id: 2, title: 'Verizon Prepaid Refill $10', url: '/verizon/10-usd' },
         { id: 3, title: 'Verizon Prepaid Refill $15', url: '/verizon/15-usd' },
         { id: 4, title: 'Verizon Prepaid Refill $20', url: '/verizon/20-usd' },
+      ],
+
+      categories: [
+        {
+          title: 'Mobile recharge',
+          icon: 'mobile',
+          products: [
+            {
+              id: 5,
+              title: 'Verizon',
+              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/verizon.png',
+              url: '/verizon',
+            },
+            {
+              id: 4,
+              title: 'T-Mobile',
+              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/t-mobile.png',
+              url: '/t-mobile',
+            },
+            {
+              id: 6,
+              title: 'AT&T',
+              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/atandt.png',
+              url: '/atandt',
+            },
+            {
+              id: 7,
+              title: 'Verizon',
+              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/verizon.png',
+              url: '/verizon',
+            },
+            {
+              id: 8,
+              title: 'T-Mobile',
+              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/t-mobile.png',
+              url: '/t-mobile',
+            },
+            {
+              id: 9,
+              title: 'AT&T',
+              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/atandt.png',
+              url: '/atandt',
+            },
+            {
+              id: 5,
+              title: 'Verizon',
+              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/verizon.png',
+              url: '/verizon',
+            },
+            {
+              id: 10,
+              title: 'T-Mobile',
+              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/t-mobile.png',
+              url: '/t-mobile',
+            },
+            {
+              id: 11,
+              title: 'AT&T',
+              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/atandt.png',
+              url: '/atandt',
+            },
+            {
+              id: 12,
+              title: 'Verizon',
+              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/verizon.png',
+              url: '/verizon',
+            },
+            {
+              id: 13,
+              title: 'T-Mobile',
+              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/t-mobile.png',
+              url: '/t-mobile',
+            },
+            {
+              id: 14,
+              title: 'AT&T',
+              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/atandt.png',
+              url: '/atandt',
+            },
+            {
+              id: 15,
+              title: 'T-Mobile',
+              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/t-mobile.png',
+              url: '/t-mobile',
+            },
+            {
+              id: 16,
+              title: 'AT&T',
+              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/atandt.png',
+              url: '/atandt',
+            },
+          ],
+        },
+        {
+          title: 'Entertainment Gift Cards',
+          icon: 'mobile',
+          products: [
+            {
+              id: 3,
+              title: 'Spotify',
+              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/spotify-gift-card.png',
+              url: '/spotify',
+            },
+          ],
+        },
       ],
     };
   },

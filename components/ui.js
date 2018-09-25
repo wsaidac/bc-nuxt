@@ -3,3 +3,4 @@ export { default as UiCol } from './ui/col';
 export { default as UiIcon } from './ui/icon';
 export { default as UiPopover } from './ui/popover';
 export { default as UiRow } from './ui/row';
+export { default as UiTransitionExpand } from './ui/transition-expand';
