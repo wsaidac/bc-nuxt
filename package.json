@@ -13,6 +13,7 @@
     "cypress": "cypress open"
   },
   "dependencies": {
+    "artemis-graphql": "https://github.com/10KB/artemis-graphql.git",
     "element-ui": "~2.1",
     "normalize-scss": "^7.0.1",
     "nuxt": "^1.0.0",

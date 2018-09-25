@@ -10,9 +10,13 @@
           :key="index"
           class="header-usps__item"
         >
-          <span
-            class="header-usps__label"
-            v-text="usp.label" />
+          <div
+            :style="{ background: `url(${usp.image.sourceUrl}) no-repeat 0 50%/60px`, padding: '60px' }"
+          >
+            <span
+              class="header-usps__label"
+              v-text="usp.text" />
+          </div>
         </li>
       </ul>
     </div>
@@ -38,7 +42,7 @@ export default {
   padding: 10px 0;
   position: relative;
 
-  @include media-breakpoint-up('sm') {
+  @include media-breakpoint-up("sm") {
     padding: 15px 0;
   }
 

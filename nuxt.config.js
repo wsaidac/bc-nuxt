@@ -8,6 +8,7 @@ module.exports = {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   css: [{ src: '~/assets/stylesheets/application.scss', lang: 'scss' }],
+  store: true,
   loading: { color: '#3B8070' },
   build: {
     styleResources: {
@@ -32,13 +33,13 @@ module.exports = {
   },
   modules: [
     ['~/modules/icons'],
-    // [
-    //   'artemis-graphql',
-    //   {
-    //     browserUri: 'env://API_BROWSER',
-    //     serverUri: 'env://API_SERVER',
-    //   },
-    // ],
+    [
+      'artemis-graphql',
+      {
+        browserUri: 'env://API_BROWSER',
+        serverUri: 'env://API_SERVER',
+      },
+    ],
   ],
   plugins: [
     '~/assets/icons.js',

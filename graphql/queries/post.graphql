@@ -1,0 +1,7 @@
+#import "../fragments/homeFields.graphql"
+
+query($slug: String!) {
+  post: postBySlug(slug: $slug) {
+    ...homeFields
+  }
+}
