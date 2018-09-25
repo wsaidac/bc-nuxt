@@ -47,6 +47,7 @@ export default {
   position: relative;
 
   &__image {
+    display: block;
     width: 100%;
   }
 
