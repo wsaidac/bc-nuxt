@@ -1,0 +1,12 @@
+fragment homeFields on Home {
+  image {
+    sourceUrl
+  }
+  title
+  usps {
+    image {
+      sourceUrl
+    }
+    text
+  }
+}

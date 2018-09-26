@@ -629,9 +629,9 @@ arrify@^1.0.0, arrify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
 
-"artemis-graphql@https://gitlab.tien.io/x/artemis-graphql.git":
+"artemis-graphql@https://github.com/10KB/artemis-graphql.git":
   version "1.0.0"
-  resolved "https://gitlab.tien.io/x/artemis-graphql.git#2849138d0ec0334fa89ebe7918bb1c5e7659909b"
+  resolved "https://github.com/10KB/artemis-graphql.git#2849138d0ec0334fa89ebe7918bb1c5e7659909b"
   dependencies:
     apollo-cache-inmemory "^1.1.12"
     apollo-client "^2.2.8"
@@ -6019,10 +6019,6 @@ normalize-wheel@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/normalize-wheel/-/normalize-wheel-1.0.1.tgz#aec886affdb045070d856447df62ecf86146ec45"
 
-normalize.css@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-8.0.0.tgz#14ac5e461612538a4ce9be90a7da23f86e718493"
-
 npm-bundled@^1.0.1:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/npm-bundled/-/npm-bundled-1.0.5.tgz#3c1732b7ba936b3a10325aef616467c0ccbcc979"
@@ -8966,6 +8962,10 @@ type-is@~1.6.15, type-is@~1.6.16:
 typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
+
+typeface-nunito-sans@^0.0.54:
+  version "0.0.54"
+  resolved "https://registry.yarnpkg.com/typeface-nunito-sans/-/typeface-nunito-sans-0.0.54.tgz#d8960f5a9c733d8a0f7509bd9c32e69c20d4d19d"
 
 uglify-es@^3.3.4:
   version "3.3.9"

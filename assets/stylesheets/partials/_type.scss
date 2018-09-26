@@ -1,41 +1,45 @@
 h1,
 .h1 {
   font-size: $font-size-h1;
-  font-weight: $font-weight-base;
+  font-weight: $font-weight-bold;
 }
 
 h2,
 .h2 {
   font-size: $font-size-h2;
-  font-weight: $font-weight-base;
+  font-weight: $font-weight-bold;
 }
 
 h3,
 .h3 {
   font-size: $font-size-h3;
-  font-weight: $font-weight-base;
+  font-weight: $font-weight-bold;
 }
 
 h4,
 .h4 {
   font-size: $font-size-h4;
-  font-weight: $font-weight-base;
+  font-weight: $font-weight-bold;
 }
 
 h5,
 .h5 {
   font-size: $font-size-h5;
-  font-weight: $font-weight-base;
+  font-weight: $font-weight-bold;
 }
 
 h6,
 .h6 {
   font-size: $font-size-h6;
-  font-weight: $font-weight-base;
+  font-weight: $font-weight-bold;
 }
 
 small {
   color: $gray-600;
+}
+
+strong {
+  font-weight: $font-weight-bold;
 }
 
 button,
@@ -48,4 +52,16 @@ textarea {
 .list-unstyled {
   list-style: none;
   padding-left: 0;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }

@@ -10,9 +10,20 @@ const messages = {
 };
 
 const dateTimeFormats = {
-  'en-GB': {
+  'en-US': {
     simple: {
       day: '2-digit', month: '2-digit', year: 'numeric',
+    },
+  },
+};
+
+const numberFormats = {
+  'en-US': {
+    USD: {
+      style: 'currency', currency: 'USD',
+    },
+    EUR: {
+      style: 'currency', currency: 'EUR',
     },
   },
 };
@@ -23,6 +34,7 @@ export default ({ app }) => {
     fallbackLocale: 'en-US',
     messages,
     dateTimeFormats,
+    numberFormats,
     silentTranslationWarn: true,
   });
 };

@@ -1,18 +1,19 @@
 <template>
   <div>
     <header-navbar />
-    <main>
-      <nuxt />
-    </main>
+    <nuxt />
+    <rapido-footer />
   </div>
 </template>
 
 <script>
 import HeaderNavbar from '~/components/header/navbar';
+import RapidoFooter from '~/components/footer';
 
 export default {
   components: {
     HeaderNavbar,
+    RapidoFooter,
   },
 };
 </script>

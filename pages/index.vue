@@ -1,16 +1,127 @@
 <template>
-  <section class="container">
-    Home
-    <ui-icon icon="close" />
-  </section>
+  <div>
+    <header-banner
+      :image-url="image.sourceUrl"
+      :payoff="title"
+    />
+    <header-usps
+      :usps="usps"
+    />
+    <div class="container">
+      <product-popular
+        :products="products"
+      />
+    </div>
+    <div class="block block--gray">
+      <div class="container">
+        <product-quickbuy
+          :product="quickbuyProduct"
+          :related="relatedProducts"
+        />
+      </div>
+    </div>
+    <div class="block block--gray block--space-between">
+      <div class="container">
+        <product-featured
+          :categories="main.products"
+        />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 import { UiIcon } from '~/components/ui';
+import HeaderBanner from '~/components/header/banner';
+import HeaderUsps from '~/components/header/usps';
+import ProductPopular from '~/components/product/popular';
+import ProductQuickbuy from '~/components/product/quickbuy';
+import ProductFeatured from '~/components/product/featured';
+import { mapGetters } from 'vuex';
+
+const mockData = {
+  products: [
+    {
+      id: 1,
+      title: 'Xbox',
+      imageUrl:
+        'https://static.rapido.com/media/topup/rapido/default/images/most-popular/xbox-gift-card.png',
+      url: '/xbox',
+    },
+    {
+      id: 2,
+      title: 'Playstation',
+      imageUrl:
+        'https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png',
+      url: '/playstation',
+    },
+    {
+      id: 3,
+      title: 'Spotify',
+      imageUrl:
+        'https://static.rapido.com/media/topup/rapido/default/images/most-popular/spotify-gift-card.png',
+      url: '/spotify',
+    },
+    {
+      id: 4,
+      title: 'T-Mobile',
+      imageUrl:
+        'https://static.rapido.com/media/topup/rapido/default/images/most-popular/t-mobile.png',
+      url: '/t-mobile',
+    },
+    {
+      id: 5,
+      title: 'Verizon',
+      imageUrl:
+        'https://static.rapido.com/media/topup/rapido/default/images/most-popular/verizon.png',
+      url: '/verizon',
+    },
+    {
+      id: 6,
+      title: 'AT&T',
+      imageUrl:
+        'https://static.rapido.com/media/topup/rapido/default/images/most-popular/atandt.png',
+      url: '/atandt',
+    },
+  ],
+  quickbuyProduct: {
+    id: 1,
+    title: 'Verizon Prepaid Refill $5',
+    price: {
+      amount: 5.0,
+      currency: 'USD',
+    },
+    url: '/verizon',
+    imageUrl:
+      'https://static.rapido.com/categories/2023/Zeichenflche_98.png?1532587359',
+  },
+  relatedProducts: [
+    { id: 2, title: 'Verizon Prepaid Refill $10', url: '/verizon/10-usd' },
+    { id: 3, title: 'Verizon Prepaid Refill $15', url: '/verizon/15-usd' },
+    { id: 4, title: 'Verizon Prepaid Refill $20', url: '/verizon/20-usd' },
+  ],
+};
 
 export default {
   components: {
     UiIcon,
+    HeaderBanner,
+    HeaderUsps,
+    ProductPopular,
+    ProductQuickbuy,
+    ProductFeatured,
+  },
+
+  async asyncData({ app }) {
+    const { post } = await app.$q('post', { slug: 'home' });
+    return Object.assign({}, post, mockData);
+  },
+  computed: {
+    ...mapGetters('menus', ['main']),
+  },
+  async fetch({ app, store }) {
+    const { menus } = await app.$q('menus', { slug: 'main' });
+    store.commit('menus/setMain', menus.nodes[0]);
   },
 };
 </script>
