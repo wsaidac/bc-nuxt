@@ -1,5 +1,8 @@
 <template>
   <footer class="rapido-footer">
+    <div class="container">
+      <footer-help />
+    </div>
     <hr>
     <div class="container">
       <ui-row>
@@ -23,6 +26,7 @@ import { UiRow, UiCol } from '~/components/ui';
 import FooterPaymentMethods from './payment-methods';
 import FooterLinks from './links';
 import FooterCopyright from './copyright';
+import FooterHelp from './help';
 
 export default {
   name: 'RapidoFooter',
@@ -33,6 +37,7 @@ export default {
     FooterPaymentMethods,
     FooterLinks,
     FooterCopyright,
+    FooterHelp,
   },
 
   data() {

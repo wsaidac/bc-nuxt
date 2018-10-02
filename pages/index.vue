@@ -4,9 +4,8 @@
       :image-url="image.sourceUrl"
       :payoff="title"
     />
-    <header-usps
-      :usps="usps"
-    />
+    <header-usps :usps="usps" />
+    <header-mobile-usps :usps="usps" />
     <div class="container">
       <product-popular
         :products="products"
@@ -34,6 +33,7 @@
 import { UiIcon } from '~/components/ui';
 import HeaderBanner from '~/components/header/banner';
 import HeaderUsps from '~/components/header/usps';
+import HeaderMobileUsps from '~/components/header/mobile-usps';
 import ProductPopular from '~/components/product/popular';
 import ProductQuickbuy from '~/components/product/quickbuy';
 import ProductFeatured from '~/components/product/featured';
@@ -107,6 +107,7 @@ export default {
     UiIcon,
     HeaderBanner,
     HeaderUsps,
+    HeaderMobileUsps,
     ProductPopular,
     ProductQuickbuy,
     ProductFeatured,

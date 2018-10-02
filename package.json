@@ -15,6 +15,7 @@
   "dependencies": {
     "artemis-graphql": "https://github.com/10KB/artemis-graphql.git",
     "element-ui": "~2.1",
+    "flickity": "^2.1.2",
     "normalize-scss": "^7.0.1",
     "nuxt": "^1.0.0",
     "typeface-nunito-sans": "^0.0.54",

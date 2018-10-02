@@ -16,7 +16,7 @@
           class="header-navbar__main-item"
         >
           <div>
-            <span v-text="category.title" />
+            <img :src="getIcon(category.icon)" ><span v-text="category.title" />
           </div>
           <ul class="header-navbar__sub-navigation">
             <li
@@ -34,12 +34,21 @@
           </ul>
         </li>
       </ul>
+      <a
+        href="https://www.rapido.com/us/faq"
+        alt="help"
+        class="header-navbar__help">Help</a>
     </div>
   </nav>
 </template>
 
 <script>
 import { UiCol, UiRow } from '~/components/ui';
+
+const PhoneIcon = require('~/assets/images/images/menu-icon-phone.png');
+const EntertainmentIcon = require('~/assets/images/images/menu-icon-entertainment.png');
+const GiftCardIcon = require('~/assets/images/images/menu-icon-giftcard.png');
+const GamingIcon = require('~/assets/images/images/menu-icon-gaming.png');
 
 export default {
   name: 'HeaderNavbar',
@@ -53,8 +62,28 @@ export default {
     items: {
       type: Array,
       default() {
-        return [];
+        return [
+          {
+            title: 'Mobile Recharge',
+            products: [
+              { id: 0, url: '#', title: 'Verizon' },
+              { id: 1, url: '#', title: 'Verizon' },
+            ],
+          },
+        ];
       },
+    },
+  },
+
+  methods: {
+    getIcon(icon) {
+      switch (icon) {
+        case 'phone': return PhoneIcon;
+        case 'giftcard': return GiftCardIcon;
+        case 'entertainment': return EntertainmentIcon;
+        case 'gaming': return PhoneIcon;
+        default: return GamingIcon;
+      }
     },
   },
 };
@@ -74,6 +103,8 @@ export default {
     padding: 0;
     width: 95px;
 
+    @include flex(center, center);
+
     @include media-breakpoint-up('sm') {
       padding: 11px 7px;
       width: 115px;
@@ -81,6 +112,11 @@ export default {
 
     @include media-breakpoint-up('md') {
       width: 200px;
+    }
+
+    a {
+      display: block;
+      width: 100%;
     }
 
     img {
@@ -97,11 +133,22 @@ export default {
 
   &__main-item {
     align-items: center;
+    border-left: 1px solid $primary-700;
     cursor: pointer;
     display: flex;
+    font-size: 16px;
     height: 100%;
     padding: 30px 10px;
     position: relative;
+
+    & > div {
+      @include flex(center, center);
+    }
+
+    img {
+      height: 24px;
+      margin-right: 6px;
+    }
 
     @include media-breakpoint-up('md') {
       padding: 30px 15px;
@@ -125,8 +172,25 @@ export default {
       }
 
       .header-navbar__sub-navigation {
-        display: block;
+        display: grid;
       }
+    }
+
+    &:last-child {
+      border-right: 1px solid $primary-700;
+    }
+  }
+
+  &__help {
+    color: $white;
+    font-size: 15.75px;
+    padding-left: 20px;
+
+    @include flex(center, center);
+
+    &:hover {
+      color: $white;
+      text-decoration: none;
     }
   }
 
@@ -138,23 +202,42 @@ export default {
     margin: 0;
     padding: 0 25px 10px 25px;
     z-index: $z-index-navigation;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(10, auto);
+    grid-column-gap: 10px;
+    min-width: 100%;
 
     @include position(absolute, 100% null null 0);
   }
 
   &__sub-item {
-    border-bottom: 1px solid $gray-300;
+    border-top: 1px solid $gray-300;
 
     a {
       color: $body-color;
       display: block;
       padding: 10px 0;
-      width: 200px;
+      min-width: 150px;
 
       &:hover {
         color: $primary-500;
         text-decoration: none;
       }
+    }
+  }
+
+  @include media-breakpoint-down('md') {
+    &__main-item {
+      font-size: 13.5px;
+
+      img {
+        display: none;
+      }
+    }
+
+    &__sub-item {
+      font-size: 12px;
     }
   }
 }

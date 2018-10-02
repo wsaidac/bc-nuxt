@@ -64,5 +64,9 @@ export default {
   &__label {
     font-weight: $font-weight-bold;
   }
+
+  @include media-breakpoint-only('xs') {
+    display: none;
+  }
 }
 </style>
