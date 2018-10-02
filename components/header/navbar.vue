@@ -10,10 +10,28 @@
         </nuxt-link>
       </h1>
       <ul class="header-navbar__navigation">
-        <li>
-          <div class="item">
-            Mobile Recharge
+        <li
+          v-for="category in items"
+          :key="category.title"
+          class="header-navbar__main-item"
+        >
+          <div>
+            <span v-text="category.title" />
           </div>
+          <ul class="header-navbar__sub-navigation">
+            <li
+              v-for="product in category.products"
+              :key="product.id"
+              class="header-navbar__sub-item"
+            >
+              <nuxt-link
+                :to="product.url"
+                :title="product.title"
+              >
+                {{ product.title }}
+              </nuxt-link>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>
@@ -29,6 +47,15 @@ export default {
   components: {
     UiCol,
     UiRow,
+  },
+
+  props: {
+    items: {
+      type: Array,
+      default() {
+        return [];
+      },
+    },
   },
 };
 </script>
@@ -66,11 +93,68 @@ export default {
     display: flex;
     list-style: none;
     margin: 0;
+  }
 
-    .item {
-      align-items: center;
-      display: flex;
-      height: 100%;
+  &__main-item {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    padding: 30px 10px;
+    position: relative;
+
+    @include media-breakpoint-up('md') {
+      padding: 30px 15px;
+    }
+
+    @include media-breakpoint-up('lg') {
+      padding: 30px 25px;
+    }
+
+    &:hover {
+      background: $primary-600;
+
+      &::after {
+        background: $danger-500;
+        content: '';
+        display: block;
+        z-index: ($z-index-navigation + 1);
+
+        @include position(absolute, null null -3px 0);
+        @include size(100%, 3px);
+      }
+
+      .header-navbar__sub-navigation {
+        display: block;
+      }
+    }
+  }
+
+  &__sub-navigation {
+    background: $white;
+    box-shadow: 0 3px 6px -3px #aaa;
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0 25px 10px 25px;
+    z-index: $z-index-navigation;
+
+    @include position(absolute, 100% null null 0);
+  }
+
+  &__sub-item {
+    border-bottom: 1px solid $gray-300;
+
+    a {
+      color: $body-color;
+      display: block;
+      padding: 10px 0;
+      width: 200px;
+
+      &:hover {
+        color: $primary-500;
+        text-decoration: none;
+      }
     }
   }
 }
