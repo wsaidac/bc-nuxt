@@ -263,15 +263,15 @@ export default {
     background: $white;
     box-shadow: 0 3px 6px -3px #aaa;
     display: none;
-    list-style: none;
-    margin: 0;
-    padding: 0 25px 10px 25px;
-    z-index: $z-index-navigation;
     grid-auto-columns: max-content;
     grid-auto-flow: column;
-    grid-template-rows: repeat(10, auto);
     grid-column-gap: 10px;
+    grid-template-rows: repeat(10, auto);
+    list-style: none;
+    margin: 0;
     min-width: 100%;
+    padding: 0 25px 10px 25px;
+    z-index: $z-index-navigation;
 
     @include position(absolute, 100% null null 0);
   }
@@ -282,8 +282,8 @@ export default {
     a {
       color: $body-color;
       display: block;
-      padding: 10px 0;
       min-width: 150px;
+      padding: 10px 0;
 
       &:hover {
         color: $primary-500;
@@ -310,9 +310,6 @@ export default {
     }
   }
 
-  /* MOBILE MOBILE MOBILE MOBILE MOBILE MOBILE MOBILE MOBILE MOBILE */
-  /* MOBILE MOBILE MOBILE MOBILE MOBILE MOBILE MOBILE MOBILE MOBILE */
-
   @include media-breakpoint-only('xs') {
     .container {
       background: $primary-500;
@@ -329,10 +326,10 @@ export default {
       color: $black;
       flex-flow: column nowrap;
       font-weight: $font-weight-bold;
-      transition: all 0.5s;
       overflow: hidden;
       padding: 0;
       position: relative;
+      transition: all 0.5s;
       width: 0;
       z-index: 10000;
 
@@ -346,8 +343,8 @@ export default {
         li.header-navbar__main-item {
           border: 0;
           padding: 0;
-          text-decoration: none;
           position: relative;
+          text-decoration: none;
           z-index: 2000;
 
           div {
@@ -362,8 +359,8 @@ export default {
         }
 
         li.header-navbar__main-item-back {
-          display: flex;
           color: $gray-500;
+          display: flex;
           padding: 20px 0;
 
           .ui-icon {
@@ -449,8 +446,8 @@ export default {
   }
 
   .overlay {
-    width: 5px;
     transition: all 0.5s;
+    width: 5px;
     z-index: 50;
 
     @include position(fixed, 0 0 0 null);
@@ -458,8 +455,8 @@ export default {
 
     &__black {
       background: $black;
-      opacity: 0.3;
       flex: 0 0 20%;
+      opacity: 0.3;
     }
 
     &__gray {

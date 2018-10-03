@@ -3,9 +3,13 @@ import { mount } from '~/test/utils/with-context';
 
 describe('HeaderUsps', () => {
   it('should mount', () => {
-    const $mounted = mount(HeaderUsps, { propsData: { usps: [
-      { icon: 'clock', label: 'Order in Minutes', image: { sourceUrl: '#' } }
-    ] } });
+    const $mounted = mount(HeaderUsps, {
+      propsData: {
+        usps: [
+          { icon: 'clock', label: 'Order in Minutes', image: { sourceUrl: '#' } },
+        ],
+      },
+    });
     expect($mounted.find('.header-usps').exists()).toBe(true);
   });
 

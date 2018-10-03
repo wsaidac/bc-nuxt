@@ -3,9 +3,13 @@ import { mount } from '~/test/utils/with-context';
 
 describe('HeaderMobileUsps', () => {
   it('should mount', () => {
-    const $mounted = mount(HeaderMobileUsps, { propsData: { usps: [
-      { icon: 'clock', label: 'Order in Minutes', image: { sourceUrl: '#' } }
-    ] } });
+    const $mounted = mount(HeaderMobileUsps, {
+      propsData: {
+        usps: [
+          { icon: 'clock', label: 'Order in Minutes', image: { sourceUrl: '#' } },
+        ],
+      },
+    });
     expect($mounted.find('.main-carousel').exists()).toBe(true);
   });
 
