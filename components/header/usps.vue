@@ -42,7 +42,7 @@ export default {
   padding: 10px 0;
   position: relative;
 
-  @include media-breakpoint-up("sm") {
+  @include media-breakpoint-up('sm') {
     padding: 15px 0;
   }
 

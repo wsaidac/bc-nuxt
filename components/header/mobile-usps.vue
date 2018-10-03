@@ -1,5 +1,7 @@
 <template>
-  <div class="main-carousel">
+  <div
+    v-if="usps"
+    class="main-carousel">
     <div
       v-for="(usp, i) in usps"
       :key="i"

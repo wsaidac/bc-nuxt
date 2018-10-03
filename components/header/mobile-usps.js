@@ -1,21 +1,21 @@
-import HeaderUsps from './usps.vue';
+import HeaderMobileUsps from './mobile-usps.vue';
 import { mount } from '~/test/utils/with-context';
 
-describe('HeaderUsps', () => {
+describe('HeaderMobileUsps', () => {
   it('should mount', () => {
-    const $mounted = mount(HeaderUsps, { propsData: { usps: [
+    const $mounted = mount(HeaderMobileUsps, { propsData: { usps: [
       { icon: 'clock', label: 'Order in Minutes', image: { sourceUrl: '#' } }
     ] } });
-    expect($mounted.find('.header-usps').exists()).toBe(true);
+    expect($mounted.find('.main-carousel').exists()).toBe(true);
   });
 
   it('should hide if no usps given', () => {
-    const $mounted = mount(HeaderUsps);
-    expect($mounted.find('.header-usps').exists()).toBe(false);
+    const $mounted = mount(HeaderMobileUsps);
+    expect($mounted.find('.main-carousel').exists()).toBe(false);
   });
 
   it('should iterate through multiple usps', () => {
-    const $mounted = mount(HeaderUsps, {
+    const $mounted = mount(HeaderMobileUsps, {
       propsData: {
         usps: [
           { icon: 'clock', label: 'Order in Minutes', image: { sourceUrl: '#' } },
@@ -24,6 +24,6 @@ describe('HeaderUsps', () => {
         ],
       },
     });
-    expect($mounted.findAll('.header-usps__item')).toHaveLength(3);
+    expect($mounted.findAll('.cell')).toHaveLength(3);
   });
 });

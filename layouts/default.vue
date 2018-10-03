@@ -20,12 +20,12 @@ export default {
     return {
       items: [
         {
-          title: 'Mobile recharge',
+          title: 'Mobile Recharge',
           icon: 'phone',
           products: [
             {
               id: 1,
-              title: 'Spotify',
+              title: 'Dit is de eerste',
               imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/spotify-gift-card.png',
               url: '/spotify',
             },
@@ -54,70 +54,58 @@ export default {
               url: '/verizon',
             },
             {
-              id: 4,
+              id: 6,
               title: 'T-Mobile',
               imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/t-mobile.png',
               url: '/t-mobile',
-            },
-            {
-              id: 6,
-              title: 'AT&T',
-              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/atandt.png',
-              url: '/atandt',
             },
             {
               id: 7,
-              title: 'Verizon',
-              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/verizon.png',
-              url: '/verizon',
+              title: 'AT&T',
+              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/atandt.png',
+              url: '/atandt',
             },
             {
               id: 8,
-              title: 'T-Mobile',
-              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/t-mobile.png',
-              url: '/t-mobile',
+              title: 'Verizon',
+              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/verizon.png',
+              url: '/verizon',
             },
             {
               id: 9,
-              title: 'AT&T',
-              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/atandt.png',
-              url: '/atandt',
-            },
-            {
-              id: 5,
-              title: 'Verizon',
-              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/verizon.png',
-              url: '/verizon',
+              title: 'T-Mobile',
+              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/t-mobile.png',
+              url: '/t-mobile',
             },
             {
               id: 10,
-              title: 'T-Mobile',
-              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/t-mobile.png',
-              url: '/t-mobile',
-            },
-            {
-              id: 11,
               title: 'AT&T',
               imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/atandt.png',
               url: '/atandt',
             },
             {
-              id: 12,
+              id: 11,
               title: 'Verizon',
               imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/verizon.png',
               url: '/verizon',
             },
             {
-              id: 13,
+              id: 12,
               title: 'T-Mobile',
               imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/t-mobile.png',
               url: '/t-mobile',
             },
             {
-              id: 14,
+              id: 13,
               title: 'AT&T',
               imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/atandt.png',
               url: '/atandt',
+            },
+            {
+              id: 14,
+              title: 'Verizon',
+              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/verizon.png',
+              url: '/verizon',
             },
             {
               id: 15,
@@ -133,9 +121,9 @@ export default {
             },
             {
               id: 17,
-              title: 'AT&T',
-              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/atandt.png',
-              url: '/atandt',
+              title: 'T-Mobile',
+              imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/t-mobile.png',
+              url: '/t-mobile',
             },
             {
               id: 18,
@@ -163,7 +151,7 @@ export default {
             },
             {
               id: 22,
-              title: 'AT&T',
+              title: 'Dit is de laatste',
               imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/atandt.png',
               url: '/atandt',
             },
