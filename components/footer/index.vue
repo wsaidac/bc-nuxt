@@ -2,6 +2,7 @@
   <footer class="rapido-footer">
     <div class="container">
       <footer-help />
+      <slot name="seo-text" />
     </div>
     <hr>
     <div class="container">
@@ -27,6 +28,7 @@ import FooterPaymentMethods from './payment-methods';
 import FooterLinks from './links';
 import FooterCopyright from './copyright';
 import FooterHelp from './help';
+import FooterSeoText from './seo-text';
 
 export default {
   name: 'RapidoFooter',
@@ -38,6 +40,7 @@ export default {
     FooterLinks,
     FooterCopyright,
     FooterHelp,
+    FooterSeoText,
   },
 
   data() {

@@ -14,4 +14,10 @@
       margin-top: 60px;
     }
   }
+
+  @include media-breakpoint-only('xs') {
+    &--mobile-white {
+      background: $white;
+    }
+  }
 }

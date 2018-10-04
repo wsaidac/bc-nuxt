@@ -1,9 +1,11 @@
 <template>
   <div class="footer-payment-methods">
-    <ui-icon icon="protected-shield" />
-    <p>
-      <strong>Safely</strong> order with:
-    </p>
+    <div class="footer-payment-methods__quote">
+      <ui-icon icon="protected-shield" />
+      <p>
+        <strong>Safely</strong> order with:
+      </p>
+    </div>
     <ul class="footer-payment-methods__list">
       <li
         v-for="method in methods"
@@ -47,11 +49,15 @@ export default {
 
 <style lang="scss">
 .footer-payment-methods {
-  align-items: center;
   border-right: 1px solid $gray-400;
-  display: flex;
-  justify-content: flex-end;
+  flex-flow: row wrap;
   padding: 10px;
+
+  @include flex(flex-end, center);
+
+  &__quote {
+    @include flex(null, center);
+  }
 
   .ui-icon {
     font-size: 32px;
@@ -80,6 +86,12 @@ export default {
     a {
       display: block;
     }
+  }
+
+  @include media-breakpoint-only('xs') {
+    border: 0;
+
+    @include flex(center, center);
   }
 }
 </style>

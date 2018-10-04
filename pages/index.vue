@@ -19,13 +19,16 @@
         />
       </div>
     </div>
-    <div class="block block--gray block--space-between">
+    <div class="block block--gray block--space-between block--mobile-white">
       <div class="container">
         <product-featured
           :categories="main.products"
         />
       </div>
     </div>
+    <rapido-footer>
+      <footer-seo-text slot="seo-text" />
+    </rapido-footer>
   </div>
 </template>
 
@@ -37,6 +40,8 @@ import HeaderMobileUsps from '~/components/header/mobile-usps';
 import ProductPopular from '~/components/product/popular';
 import ProductQuickbuy from '~/components/product/quickbuy';
 import ProductFeatured from '~/components/product/featured';
+import RapidoFooter from '~/components/footer';
+import FooterSeoText from '~/components/footer/seo-text';
 import { mapGetters } from 'vuex';
 
 const mockData = {
@@ -104,13 +109,15 @@ const mockData = {
 
 export default {
   components: {
-    UiIcon,
+    FooterSeoText,
     HeaderBanner,
-    HeaderUsps,
     HeaderMobileUsps,
+    HeaderUsps,
+    ProductFeatured,
     ProductPopular,
     ProductQuickbuy,
-    ProductFeatured,
+    RapidoFooter,
+    UiIcon,
   },
 
   async asyncData({ app }) {

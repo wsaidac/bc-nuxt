@@ -10,15 +10,6 @@
       </span>
       <ui-icon icon="chevron-right" />
     </a>
-    <div class="footer-help__small-text">
-      <h2>Enjoy a continuous service with Rapido.com</h2>
-      <p>Looking for online gift cards, a mobile recharge or a quick and easy way to
-      enjoy your favorite entertainment? Rapido is an online store, with a broad selection
-      of e-vouchers. Use Rapido to buy gift cards online and receive your unique code within
-      30 seconds. That’s right — 30 seconds. At Rapido, we value rapid delivery but most importantly
-      the safety of your purchase. Forget crowded lines in the supermarket and unreliable websites
-      — get online and enjoy your e-voucher in 30 seconds.</p>
-    </div>
   </div>
 </template>
 
@@ -31,7 +22,6 @@ export default {
   },
 };
 </script>
-
 
 <style lang="scss">
 .footer-help {
@@ -67,31 +57,15 @@ export default {
     .ui-icon {
       font-size: 26px;
     }
-  }
 
-  &__small-text {
-    margin: 20px 0 40px;
-
-    h2 {
-      font-size: $font-size-h5;
-      font-weight: $font-weight-bold;
-      margin: 0;
-    }
-
-    p {
-      margin: 3px 0;
+    &:hover {
+      border: 1px solid $primary-500;
     }
   }
 
   @include media-breakpoint-down('md') {
     &__big-text {
       font-size: 19.2px;
-    }
-
-    &__small-text {
-      p {
-        font-size: $font-size-smaller;
-      }
     }
   }
 
@@ -113,10 +87,6 @@ export default {
       img {
         height: 80px;
       }
-    }
-
-    &__small-text {
-      display: none;
     }
   }
 }

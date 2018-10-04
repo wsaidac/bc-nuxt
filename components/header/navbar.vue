@@ -447,7 +447,7 @@ export default {
 
   .overlay {
     transition: all 0.5s;
-    width: 5px;
+    width: 0px;
     z-index: 50;
 
     @include position(fixed, 0 0 0 null);
