@@ -124,6 +124,7 @@ export default {
     .list-xs {
       display: block;
     }
+
     &.container {
       padding: 0;
     }
@@ -165,8 +166,8 @@ export default {
 
     h5 {
       background: $gray-200;
-      padding: 20px 20px 20px 10px;
       font-size: $font-size-h6;
+      padding: 20px 20px 20px 10px;
 
       @include flex(space-between);
 
