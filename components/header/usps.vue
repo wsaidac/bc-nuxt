@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="usps"
-    class="header-usps"
+    :class="classes"
   >
     <div class="container">
       <ul class="header-usps__list">
@@ -12,10 +12,15 @@
         >
           <div
             :style="{ background: `url(${usp.image.sourceUrl}) no-repeat 0 50%/60px`, padding: '60px' }"
+            class="header-usps__labels"
           >
             <span
               class="header-usps__label"
               v-text="usp.text" />
+            <span
+              v-if="true"
+              class="header-usps__label extra"
+              v-text="'Simply choose the product and amount you need'" />
           </div>
         </li>
       </ul>
@@ -31,6 +36,19 @@ export default {
     usps: {
       type: Array,
       default: null,
+    },
+    vertical: {
+      type: Boolean,
+      default: false,
+    },
+  },
+
+  computed: {
+    classes() {
+      return [
+        'header-usps',
+        { 'header-usps--vertical': this.vertical },
+      ];
     },
   },
 };
@@ -54,19 +72,51 @@ export default {
   }
 
   &__item {
-    align-items: center;
-    display: flex;
     height: 40px;
-    justify-content: center;
     width: (100% / 3);
+
+    @include flex(center, center);
   }
 
   &__label {
     font-weight: $font-weight-bold;
   }
 
+  &--vertical {
+    border-top: 1px solid $gray-400;
+
+    .header-usps {
+
+      &__list {
+        flex-flow: column nowrap;
+      }
+
+      &__item {
+        justify-content: flex-start;
+        height: 80px;
+        width: 100%;
+      }
+
+      &__labels {
+        padding: 0 0 0 60px !important;
+      }
+
+      &__label {
+        display: block;
+
+        &.extra {
+          font-weight: $font-weight-regular;
+        }
+      }
+    }
+  }
+
   @include media-breakpoint-only('xs') {
     display: none;
+
+    &--vertical {
+      display: block;
+    }
   }
 }
 </style>

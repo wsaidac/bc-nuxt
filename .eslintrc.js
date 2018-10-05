@@ -12,7 +12,7 @@ module.exports = {
   extends: ["airbnb-base", "plugin:vue/recommended"],
   plugins: ["vue", "cypress"],
   rules: {
-    "max-len": [1, 120, 2, { ignoreComments: true }],
+    "max-len": [1, 220, 2, { ignoreComments: true }],
     "quote-props": [1, "consistent-as-needed"],
     radix: 0,
     "no-param-reassign": [2, { props: false }],

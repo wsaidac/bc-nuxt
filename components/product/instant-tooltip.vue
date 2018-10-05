@@ -7,7 +7,7 @@
       trigger="hover"
     >
       <p slot="reference">
-        <span>Instant delivery</span>
+        <span v-text="message" />
         <ui-icon icon="question-circle-o" />
       </p>
     </ui-popover>
@@ -23,6 +23,13 @@ export default {
   components: {
     UiIcon,
     UiPopover,
+  },
+
+  props: {
+    message: {
+      type: String,
+      default: '',
+    },
   },
 };
 </script>
