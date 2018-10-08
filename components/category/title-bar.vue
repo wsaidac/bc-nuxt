@@ -1,13 +1,7 @@
 <template>
-  <div class="category-title-bar">
-    <div class="flex container">
-      <h1>sadfsadsadfsd</h1>
-      <div class="category-title-bar__tooltip">
-        <div class="category-title-bar__roomster">
-          <product-instant-tooltip message="Instant delivery" />
-        </div>
-      </div>
-    </div>
+  <div class="category-title-bar container">
+    <h1 v-text="'Xbox hard coded'" />
+    <product-instant-tooltip message="Instant delivery" />
   </div>
 </template>
 
@@ -25,23 +19,20 @@ export default {
 };
 </script>
 
-
 <style lang="scss">
 .category-title-bar {
-  .flex {
-    @include flex();
-  }
+  @include flex();
 
   h1 {
     margin-right: 10px;
   }
 
-  &__tooltip {
-    @include size(150px, 100px);
-  }
+  @include media-breakpoint-only('xs') {
+    background: $gray-100;
 
-  &__roomster {
-    @include size(150px, 100px);
+    h1 {
+      display: none;
+    }
   }
 }
 </style>

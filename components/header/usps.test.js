@@ -13,8 +13,10 @@ describe('HeaderUsps', () => {
     expect($mounted.find('.header-usps').exists()).toBe(true);
   });
 
-  it('should hide if no usps given', () => {
-    const $mounted = mount(HeaderUsps);
+  it('should hide if no usps given', () => {const $mounted = mount(HeaderUsps, {
+    propsData: {
+    },
+  });
     expect($mounted.find('.header-usps').exists()).toBe(false);
   });
 

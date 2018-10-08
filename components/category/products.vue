@@ -4,9 +4,9 @@
       <ui-col
         v-for="product in products"
         :key="product.id"
+        :sm="12"
         :md="8"
         :lg="6"
-        :sm="12"
       >
         <div class="category-products__product" >
           <div class="category-products__img-container">
@@ -14,19 +14,21 @@
               :src="product.imageUrl"
               :alt="product.title">
           </div>
-          <div class="category-products__price">
-            <span>{{ product.price }}</span><product-instant-tooltip />
-          </div>
-          <p v-text="product.title" />
-          <div class="category-products__buy">
-            <ui-select
-              v-model="amount"
-              :options="options"
-              small
-            />
-            <ui-button type="warning" >
-              ORDER SAFELY
-            </ui-button>
+          <div class="category-products__contents">
+            <div class="category-products__price">
+              <span>{{ $n(product.price.amount, product.price.currency) }}</span><product-instant-tooltip />
+            </div>
+            <p v-text="product.title" />
+            <div class="category-products__buy">
+              <ui-select
+                v-model="amount"
+                :options="options"
+                small
+              />
+              <ui-button type="warning" >
+                ORDER SAFELY
+              </ui-button>
+            </div>
           </div>
         </div>
       </ui-col>
@@ -88,7 +90,8 @@ export default {
 
   &__img-container {
     border-bottom: 1px solid $gray-400;
-    height: 170px;
+    height: 220px;
+    overflow: hidden;
 
     @include flex(center, center);
 
@@ -118,6 +121,33 @@ export default {
 
   .el-col {
     margin-top: 20px;
+  }
+
+  @include media-breakpoint-only('xs') {
+    .el-col {
+      margin-top: 0;
+    }
+
+    &__product {
+      border-bottom: 0;
+      padding-left: 10px;
+
+      @include flex(space-between, center);
+    }
+
+    &__img-container {
+      border: 1px solid $gray-400;
+
+      @include size(80px, 80px);
+
+      img {
+        object-fit: contain;
+      }
+    }
+
+    &__contents {
+      flex-grow: 1;
+    }
   }
 }
 </style>

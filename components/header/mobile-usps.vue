@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="usps"
+    v-if="usps.length !== 0"
     class="main-carousel">
     <div
       v-for="(usp, i) in usps"
@@ -30,6 +30,8 @@ export default {
       autoPlay: true,
       prevNextButtons: false,
       cellAlign: 'left',
+      selectedAttraction: 0.016,
+      friction: 0.28,
     });
   },
   methods: {

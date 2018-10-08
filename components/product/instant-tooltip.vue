@@ -36,6 +36,8 @@ export default {
 
 <style lang="scss">
 .product-instant-tooltip {
+  @include flex(center, center);
+
   p {
     color: $primary-500;
     font-size: $font-size-h6;

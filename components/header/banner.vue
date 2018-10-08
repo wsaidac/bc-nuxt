@@ -12,6 +12,12 @@
       >
         <div class="header-banner__payoff-ribbon">
           <div
+            v-if="(/\.(gif|jpg|jpeg|tiff|png)$/i).test(payoff)"
+          >
+            <img :src="payoff">
+          </div>
+          <div
+            v-else
             class="header-banner__payoff-content"
             v-html="payoff"
           />
@@ -76,6 +82,7 @@ export default {
   }
 
   &__payoff-content {
+    border: 1px solid blue;
     line-height: 1.2;
     padding: 10px;
     transform: skewY(10deg);

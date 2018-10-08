@@ -11,14 +11,14 @@
           class="header-usps__item"
         >
           <div
-            :style="{ background: `url(${usp.image.sourceUrl}) no-repeat 0 50%/60px`, padding: '60px' }"
+            :style="{ background: `url(${usp.image.sourceUrl}) no-repeat 0 50%/60px` }"
             class="header-usps__labels"
           >
             <span
               class="header-usps__label"
               v-text="usp.text" />
             <span
-              v-if="true"
+              v-if="vertical"
               class="header-usps__label extra"
               v-text="'Simply choose the product and amount you need'" />
           </div>
@@ -78,6 +78,10 @@ export default {
     @include flex(center, center);
   }
 
+  &__labels {
+    padding: 10px 60px;
+  }
+
   &__label {
     font-weight: $font-weight-bold;
   }
@@ -86,15 +90,14 @@ export default {
     border-top: 1px solid $gray-400;
 
     .header-usps {
-
       &__list {
         flex-flow: column nowrap;
       }
 
       &__item {
         justify-content: flex-start;
-        height: 80px;
-        width: 100%;
+
+        @include size(100%, 80px);
       }
 
       &__labels {
@@ -103,6 +106,7 @@ export default {
 
       &__label {
         display: block;
+        font-size: 0.916em;
 
         &.extra {
           font-weight: $font-weight-regular;
