@@ -1,11 +1,11 @@
 <template>
   <div>
     <header-banner
-      :image-url="image.sourceUrl"
+      :image-url="header.image.sourceUrl"
       :payoff="title"
     />
-    <header-usps :usps="usps" />
-    <header-mobile-usps :usps="usps" />
+    <header-usps :usps="header.usps" />
+    <header-mobile-usps :usps="header.usps" />
     <div class="container">
       <product-popular
         :products="products"
