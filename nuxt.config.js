@@ -1,10 +1,7 @@
 module.exports = {
   head: {
     title: 'rapido_web',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    ],
+    meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   css: [{ src: '~/assets/stylesheets/application.scss', lang: 'scss' }],
@@ -41,8 +38,5 @@ module.exports = {
       },
     ],
   ],
-  plugins: [
-    '~/assets/icons.js',
-    '~/plugins/i18n.js',
-  ],
+  plugins: ['~/assets/icons.js', '~/plugins/i18n.js', '~/plugins/init.js'],
 };
