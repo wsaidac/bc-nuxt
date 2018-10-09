@@ -2,10 +2,10 @@
   <div>
     <header-banner
       :image-url="header.image.sourceUrl"
-      :payoff="title"
+      :payoff="header.title"
     />
-    <header-usps :usps="header.usps" />
-    <header-mobile-usps :usps="header.usps" />
+    <header-usps :usps="usps.items" />
+    <header-mobile-usps :usps="usps.items" />
     <div class="container">
       <product-popular
         :products="products"
@@ -119,10 +119,6 @@ export default {
   },
   computed: {
     ...mapGetters('menus', ['main']),
-  },
-  async fetch({ app, store }) {
-    const { menus } = await app.$q('menus', { slug: 'main' });
-    store.commit('menus/setMain', menus.nodes[0]);
   },
 };
 </script>

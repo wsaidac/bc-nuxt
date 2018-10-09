@@ -1,14 +1,16 @@
 fragment homeFields on Home {
   header {
     title
-    usps {
+    image {
+      sourceUrl
+    }
+  }
+  usps {
+    items {
       text
       image {
         sourceUrl
       }
-    }
-    image {
-      sourceUrl
     }
   }
 }
