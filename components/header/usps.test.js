@@ -3,7 +3,7 @@ import { mount } from '~/test/utils/with-context';
 
 describe('HeaderUsps', () => {
   it('should mount', () => {
-    const $mounted = mount(HeaderUsps, { propsData: { usps: [{ icon: 'clock', label: 'Order in Minutes' }] } });
+    const $mounted = mount(HeaderUsps, { propsData: { usps: [{ image: { sourceUrl: '/clock.png' }, text: 'Order in Minutes' }] } });
     expect($mounted.find('.header-usps').exists()).toBe(true);
   });
 
@@ -16,9 +16,9 @@ describe('HeaderUsps', () => {
     const $mounted = mount(HeaderUsps, {
       propsData: {
         usps: [
-          { icon: 'clock', label: 'Order in Minutes' },
-          { icon: 'lock', label: 'Pay safely & securely' },
-          { icon: 'envelope', label: 'Get your code instantly' },
+          { image: { sourceUrl: '/clock.png' }, text: 'Order in Minutes' },
+          { image: { sourceUrl: '/lock.png' }, text: 'Pay safely & securely' },
+          { image: { sourceUrl: '/envelope.png' }, text: 'Get your code instantly' },
         ],
       },
     });

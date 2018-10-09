@@ -8,7 +8,7 @@
       <ui-row>
         <ui-col :sm="12">
           <footer-payment-methods
-            :methods="methods"
+            :methods="paymentMethods"
           />
         </ui-col>
       </ui-row>
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import { UiRow, UiCol } from '~/components/ui';
 import FooterPaymentMethods from './payment-methods';
 import FooterLinks from './links';
@@ -73,6 +74,10 @@ export default {
         },
       ],
     };
+  },
+
+  computed: {
+    ...mapGetters('shared', ['paymentMethods', 'customerService']),
   },
 };
 </script>
