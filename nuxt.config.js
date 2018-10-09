@@ -38,5 +38,10 @@ module.exports = {
       },
     ],
   ],
-  plugins: ['~/assets/icons.js', '~/plugins/i18n.js', '~/plugins/init.js'],
+  plugins: [
+    '~/assets/icons.js',
+    '~/plugins/env.js',
+    '~/plugins/i18n.js',
+    '~/plugins/init.js',
+  ],
 };
