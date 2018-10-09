@@ -80,12 +80,12 @@ export default {
 
     @include flex(center, center);
 
-    @include media-breakpoint-up("sm") {
+    @include media-breakpoint-up('sm') {
       padding: 11px 7px;
       width: 115px;
     }
 
-    @include media-breakpoint-up("md") {
+    @include media-breakpoint-up('md') {
       width: 200px;
     }
 
@@ -125,11 +125,11 @@ export default {
       margin-right: 6px;
     }
 
-    @include media-breakpoint-up("md") {
+    @include media-breakpoint-up('md') {
       padding: 30px 15px;
     }
 
-    @include media-breakpoint-up("lg") {
+    @include media-breakpoint-up('lg') {
       padding: 30px 25px;
     }
 
@@ -138,7 +138,7 @@ export default {
 
       &::after {
         background: $danger-500;
-        content: "";
+        content: '';
         display: block;
         z-index: ($z-index-navigation + 1);
 
@@ -173,15 +173,15 @@ export default {
     background: $white;
     box-shadow: 0 3px 6px -3px #aaa;
     display: none;
-    list-style: none;
-    margin: 0;
-    padding: 0 25px 10px 25px;
-    z-index: $z-index-navigation;
     grid-auto-columns: max-content;
     grid-auto-flow: column;
-    grid-template-rows: repeat(10, auto);
     grid-column-gap: 10px;
+    grid-template-rows: repeat(10, auto);
+    list-style: none;
+    margin: 0;
     min-width: 100%;
+    padding: 0 25px 10px 25px;
+    z-index: $z-index-navigation;
 
     @include position(absolute, 100% null null 0);
   }
@@ -192,8 +192,8 @@ export default {
     a {
       color: $body-color;
       display: block;
-      padding: 10px 0;
       min-width: 150px;
+      padding: 10px 0;
 
       &:hover {
         color: $primary-500;
@@ -202,7 +202,7 @@ export default {
     }
   }
 
-  @include media-breakpoint-down("md") {
+  @include media-breakpoint-down('md') {
     &__main-item {
       font-size: 13.5px;
 

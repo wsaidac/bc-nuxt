@@ -3,8 +3,12 @@
     <div
       v-for="(usp, i) in usps"
       :key="i"
-      :class="['cell', `cell-${i}`]">
-      <img :src="usp.image.sourceUrl" >
+      :class="['cell', `cell-${i}`]"
+    >
+      <img
+        :alt="usp.text"
+        :src="usp.image.sourceUrl"
+      >
       <div v-text="usp.text" />
     </div>
   </div>
@@ -12,6 +16,8 @@
 
 <script>
 export default {
+  name: 'HeaderMobileUsps',
+
   props: {
     usps: {
       type: Array,
@@ -20,9 +26,9 @@ export default {
       },
     },
   },
+
   mounted() {
-    /* eslint-disable */
-    const Flickity = require('flickity');
+    const Flickity = require('flickity'); // eslint-disable-line
     this.instance = new Flickity(this.$el, {
       wrapAround: true,
       autoPlay: true,
@@ -30,6 +36,7 @@ export default {
       cellAlign: 'left',
     });
   },
+
   methods: {
     hideCarousel() {
     },
@@ -39,26 +46,33 @@ export default {
 
 <style lang="scss">
 @import 'flickity/dist/flickity.css';
+
 .main-carousel {
   background: #dce6f5;
   flex-grow: 1;
   padding: 5px 20px;
+
   .cell {
     width: 100%;
+
     @include flex(null, center);
+
     div {
       font-size: $font-size-base;
       font-weight: $font-weight-bold;
     }
   }
+
   img {
     height: 40px;
   }
+
   ol {
     bottom: 17px !important;
     margin-right: 5px;
     right: 0;
     width: 50px !important;
+
     li {
       height: 7px !important;
       margin: 0 4px !important;
