@@ -6,7 +6,7 @@
     </p>
     <ul class="footer-payment-methods__list">
       <li
-        v-for="method in paymentMethods"
+        v-for="method in methods"
         :key="method.name"
         class="footer-payment-methods__item"
       >
@@ -26,7 +26,6 @@
 
 <script>
 import { UiIcon } from '~/components/ui';
-import { mapGetters } from 'vuex';
 
 export default {
   name: 'FooterPaymentMethods',
@@ -42,12 +41,6 @@ export default {
         return [];
       },
     },
-  },
-  computed: {
-    ...mapGetters('shared', ['paymentMethods']),
-  },
-  mounted() {
-    console.log(this.paymentMethods);
   },
 };
 </script>
