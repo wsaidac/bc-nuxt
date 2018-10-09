@@ -16,19 +16,19 @@
           class="header-navbar__main-item"
         >
           <div>
-            <img :src="getIcon(category.icon)" ><span v-text="category.title" />
+            <img :src="category.imageUrl" ><span v-text="category.title" />
           </div>
           <ul class="header-navbar__sub-navigation">
             <li
-              v-for="product in category.products"
-              :key="product.id"
+              v-for="subcategory in category.categories"
+              :key="subcategory.id"
               class="header-navbar__sub-item"
             >
               <nuxt-link
-                :to="product.url"
-                :title="product.title"
+                :to="subcategory.url"
+                :title="subcategory.title"
               >
-                {{ product.title }}
+                {{ subcategory.title }}
               </nuxt-link>
             </li>
           </ul>
@@ -45,11 +45,6 @@
 <script>
 import { UiCol, UiRow } from '~/components/ui';
 
-const PhoneIcon = require('~/assets/images/images/menu-icon-phone.png');
-const EntertainmentIcon = require('~/assets/images/images/menu-icon-entertainment.png');
-const GiftCardIcon = require('~/assets/images/images/menu-icon-giftcard.png');
-const GamingIcon = require('~/assets/images/images/menu-icon-gaming.png');
-
 export default {
   name: 'HeaderNavbar',
 
@@ -62,28 +57,8 @@ export default {
     items: {
       type: Array,
       default() {
-        return [
-          {
-            title: 'Mobile Recharge',
-            products: [
-              { id: 0, url: '#', title: 'Verizon' },
-              { id: 1, url: '#', title: 'Verizon' },
-            ],
-          },
-        ];
+        return [];
       },
-    },
-  },
-
-  methods: {
-    getIcon(icon) {
-      switch (icon) {
-        case 'phone': return PhoneIcon;
-        case 'giftcard': return GiftCardIcon;
-        case 'entertainment': return EntertainmentIcon;
-        case 'gaming': return PhoneIcon;
-        default: return GamingIcon;
-      }
     },
   },
 };
@@ -105,12 +80,12 @@ export default {
 
     @include flex(center, center);
 
-    @include media-breakpoint-up('sm') {
+    @include media-breakpoint-up("sm") {
       padding: 11px 7px;
       width: 115px;
     }
 
-    @include media-breakpoint-up('md') {
+    @include media-breakpoint-up("md") {
       width: 200px;
     }
 
@@ -150,11 +125,11 @@ export default {
       margin-right: 6px;
     }
 
-    @include media-breakpoint-up('md') {
+    @include media-breakpoint-up("md") {
       padding: 30px 15px;
     }
 
-    @include media-breakpoint-up('lg') {
+    @include media-breakpoint-up("lg") {
       padding: 30px 25px;
     }
 
@@ -163,7 +138,7 @@ export default {
 
       &::after {
         background: $danger-500;
-        content: '';
+        content: "";
         display: block;
         z-index: ($z-index-navigation + 1);
 
@@ -227,7 +202,7 @@ export default {
     }
   }
 
-  @include media-breakpoint-down('md') {
+  @include media-breakpoint-down("md") {
     &__main-item {
       font-size: 13.5px;
 
