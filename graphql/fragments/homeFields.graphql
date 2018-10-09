@@ -11,7 +11,7 @@ fragment homeFields on Home {
       sourceUrl
     }
   }
-  closingWords {
+  seoBlock {
     title
     text
   }
