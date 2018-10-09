@@ -31,7 +31,6 @@ export default {
 };
 </script>
 
-
 <style lang="scss">
 .footer-help {
   a {
@@ -52,8 +51,8 @@ export default {
       height: 130px;
     }
     .footer-help__big-text {
-      font-size: 22.4px;
       flex-grow: 1;
+      font-size: 22.4px;
       margin: 0 30px;
       @include flex();
       span {
@@ -70,8 +69,8 @@ export default {
   &__small-text {
     margin: 20px 0 40px;
     h2 {
-      font-weight: $font-weight-bold;
       font-size: $font-size-h5;
+      font-weight: $font-weight-bold;
       margin: 0;
     }
     p {
