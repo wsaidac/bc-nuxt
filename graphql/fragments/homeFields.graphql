@@ -1,17 +1,19 @@
 fragment homeFields on Home {
   customerService {
-    primaryBannerText
-    secondaryBannerText
-    bannerLink {
+    primaryText
+    secondaryText
+    link {
       url
       title
       target
     }
-    bannerImage {
+    image {
       sourceUrl
     }
-    closingTitle
-    closingText
+  }
+  closingWords {
+    title
+    text
   }
   footer {
     items {
