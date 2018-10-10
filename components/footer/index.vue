@@ -1,14 +1,19 @@
 <template>
   <footer class="rapido-footer">
     <div class="container">
-      <footer-help />
+      <footer-customer-service
+        :link="customerService.link"
+        :image="customerService.image"
+        :title="customerService.primaryText"
+        :description="customerService.secondaryText"
+      />
     </div>
     <hr>
     <div class="container">
       <ui-row>
         <ui-col :sm="12">
           <footer-payment-methods
-            :methods="methods"
+            :methods="paymentMethods"
           />
         </ui-col>
       </ui-row>
@@ -22,11 +27,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import { UiRow, UiCol } from '~/components/ui';
 import FooterPaymentMethods from './payment-methods';
+import FooterCustomerService from './customer-service';
+import FooterSeoBlock from './seo-block';
 import FooterLinks from './links';
 import FooterCopyright from './copyright';
-import FooterHelp from './help';
 
 export default {
   name: 'RapidoFooter',
@@ -35,21 +42,14 @@ export default {
     UiRow,
     UiCol,
     FooterPaymentMethods,
+    FooterCustomerService,
+    FooterSeoBlock,
     FooterLinks,
     FooterCopyright,
-    FooterHelp,
   },
 
   data() {
     return {
-      methods: [
-        { name: 'Visa', imageUrl: 'https://static.rapido.com/media/topup/shop/images/paymethods/visa.png' },
-        { name: 'Mastercard', imageUrl: 'https://static.rapido.com/media/topup/shop/images/paymethods/mastercard.png' },
-        { name: 'Maestro', imageUrl: 'https://static.rapido.com/media/topup/shop/images/paymethods/maestro.png' },
-        { name: 'American Express', imageUrl: 'https://static.rapido.com/media/topup/shop/images/paymethods/american-express.png' },
-        { name: 'PayPal', imageUrl: 'https://static.rapido.com/media/topup/shop/images/paymethods/pay-pal.png' },
-      ],
-
       links: [
         {
           title: 'Rapido.com',
@@ -73,6 +73,10 @@ export default {
         },
       ],
     };
+  },
+
+  computed: {
+    ...mapGetters('shared', ['paymentMethods', 'customerService']),
   },
 };
 </script>

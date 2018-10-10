@@ -16,7 +16,7 @@
         >
           <img
             :alt="method.name"
-            :src="method.imageUrl"
+            :src="method.image.sourceUrl"
           >
         </nuxt-link>
       </li>

@@ -1,4 +1,25 @@
 fragment homeFields on Home {
+  customerService {
+    primaryText
+    secondaryText
+    link {
+      url
+      title
+      target
+    }
+    image {
+      sourceUrl
+    }
+  }
+  seoBlock {
+    title
+    text
+  }
+  footer {
+    items {
+      text
+    }
+  }
   header {
     title
     image {
@@ -12,5 +33,17 @@ fragment homeFields on Home {
         sourceUrl
       }
     }
+  }
+  paymentMethods {
+    icons {
+      name
+      image {
+        sourceUrl
+      }
+    }
+  }
+  instantDelivery {
+    title
+    tooltip
   }
 }
