@@ -1,7 +1,12 @@
+require('dotenv').config();
+
 module.exports = {
   head: {
     title: 'rapido_web',
-    meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   css: [{ src: '~/assets/stylesheets/application.scss', lang: 'scss' }],
@@ -23,20 +28,12 @@ module.exports = {
       }
     },
   },
-  watchers: {
-    webpack: {
-      poll: true,
-    },
-  },
   modules: [
     ['~/modules/icons'],
-    [
-      'artemis-graphql',
-      {
-        browserUri: 'env://API_BROWSER',
-        serverUri: 'env://API_SERVER',
-      },
-    ],
+    ['artemis-graphql', {
+      browserUri: 'env://API_BROWSER',
+      serverUri: 'env://API_SERVER',
+    }],
   ],
   plugins: [
     '~/assets/icons.js',
@@ -44,4 +41,9 @@ module.exports = {
     '~/plugins/i18n.js',
     '~/plugins/init.js',
   ],
+  watchers: {
+    webpack: {
+      poll: true,
+    },
+  },
 };
