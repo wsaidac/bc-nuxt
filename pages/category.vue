@@ -1,23 +1,20 @@
 <template>
   <div class="cg-category">
     <header-banner
-      :image-url="image.sourceUrl"
+      :image-url="header.image.sourceUrl"
       payoff="https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png"
     />
-    <!-- <header-usps :usps="usps" />
-    <header-mobile-usps
-      v-if="usps"
-      :usps="usps" /> -->
+    <cg-usps :usps="usps.items" />
     <category-title-bar :title="productTitle" />
     <div class="block block--gray">
       <div class="container">
         <category-products :products="productsMock" />
       </div>
     </div>
-    <!-- <category-info
-      :usps="usps"
+    <category-info
+      :usps="usps.items"
       :info="info"
-    /> -->
+    />
     <ui-breadcrumbs
       :pages="pages"
       class="cg-category__breadcrumbs"
@@ -28,8 +25,7 @@
 <script>
 import RapidoFooter from '~/components/footer';
 import HeaderBanner from '~/components/header/banner';
-import HeaderUsps from '~/components/header/usps';
-import HeaderMobileUsps from '~/components/header/mobile-usps';
+import CgUsps from '~/components/usps';
 import CategoryTitleBar from '~/components/category/title-bar';
 import CategoryProducts from '~/components/category/products';
 import CategoryInfo from '~/components/category/info';
@@ -39,8 +35,7 @@ export default {
   components: {
     RapidoFooter,
     HeaderBanner,
-    HeaderMobileUsps,
-    HeaderUsps,
+    CgUsps,
     CategoryTitleBar,
     CategoryProducts,
     CategoryInfo,
@@ -49,6 +44,11 @@ export default {
 
   data() {
     return {
+      header: {
+        image: {
+          sourceUrl: 'http://localhost:3000/app/uploads/seeds/rapido_header.jpg',
+        },
+      },
       pages: [
         { url: '/', label: 'Home', title: 'Rapido Home is cool' },
         { url: '/category', label: 'category', title: 'cat' },
@@ -65,9 +65,6 @@ export default {
             },
           },
         ],
-      },
-      image: {
-        sourceUrl: 'https://static.rapido.com/media/topup/rapido/default/images/headers/default-desktop.jpg?v=1',
       },
       productTitle: 'Xbox Gift Card',
       productsMock: [

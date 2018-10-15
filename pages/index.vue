@@ -4,8 +4,9 @@
       :image-url="header.image.sourceUrl"
       :payoff="header.title"
     />
-    <header-usps :usps="usps.items" />
-    <header-mobile-usps :usps="usps.items" />
+    <cg-usps
+      :usps="usps.items"
+    />
     <div class="container">
       <product-popular
         :products="products"
@@ -32,8 +33,7 @@
 <script>
 import { UiIcon } from '~/components/ui';
 import HeaderBanner from '~/components/header/banner';
-import HeaderUsps from '~/components/header/usps';
-import HeaderMobileUsps from '~/components/header/mobile-usps';
+import CgUsps from '~/components/usps';
 import ProductPopular from '~/components/product/popular';
 import ProductQuickbuy from '~/components/product/quickbuy';
 import ProductFeatured from '~/components/product/featured';
@@ -108,8 +108,7 @@ export default {
   components: {
     FooterSeoText,
     HeaderBanner,
-    HeaderMobileUsps,
-    HeaderUsps,
+    CgUsps,
     ProductFeatured,
     ProductPopular,
     ProductQuickbuy,
@@ -121,6 +120,7 @@ export default {
     const { post } = await app.$q('post', { slug: 'home' });
     return Object.assign({}, post, mockData);
   },
+
   computed: {
     ...mapGetters('menus', ['main']),
   },
