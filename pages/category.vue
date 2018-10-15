@@ -47,7 +47,6 @@
 </template>
 
 <script>
-import RapidoFooter from '~/components/footer';
 import HeaderBanner from '~/components/header/banner';
 import CgUsps from '~/components/usps';
 import CategoryKind from '~/components/category/kind';
@@ -180,7 +179,6 @@ const customerService = {
 
 export default {
   components: {
-    RapidoFooter,
     HeaderBanner,
     CgUsps,
     CategoryKind,
