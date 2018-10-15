@@ -14,11 +14,13 @@
             :alt="usp.text"
             :src="usp.image.sourceUrl"
           >
-          <strong v-text="usp.text" />
-          <div
-            v-if="vertical"
-            v-text="usp.description"
-          />
+          <div>
+            <strong v-text="usp.text" />
+            <small
+              v-if="vertical"
+              v-text="usp.description"
+            />
+          </div>
         </li>
       </ul>
     </div>
@@ -117,6 +119,28 @@ export default {
 
       @include media-breakpoint-up('sm') {
         display: none;
+      }
+    }
+  }
+
+  &--mode-vertical {
+    .cg-usps__list {
+      flex-direction: column;
+    }
+
+    .cg-usps__item {
+      justify-content: flex-start;
+      padding: 15px;
+
+      @include size(auto);
+
+      strong {
+        display: block;
+      }
+
+      small {
+        color: $body-color;
+        font-size: $font-size-base;
       }
     }
   }
