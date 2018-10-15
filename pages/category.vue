@@ -2,27 +2,26 @@
   <div class="cg-category">
     <header-banner
       :image-url="image.sourceUrl"
-      :payoff="'https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png'"
+      payoff="https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png"
     />
-    <header-usps :usps="usps" />
+    <!-- <header-usps :usps="usps" />
     <header-mobile-usps
       v-if="usps"
-      :usps="usps" />
+      :usps="usps" /> -->
     <category-title-bar :title="productTitle" />
     <div class="block block--gray">
       <div class="container">
         <category-products :products="productsMock" />
       </div>
     </div>
-    <category-info
+    <!-- <category-info
       :usps="usps"
       :info="info"
-    />
+    /> -->
     <ui-breadcrumbs
       :pages="pages"
       class="cg-category__breadcrumbs"
     />
-    <rapido-footer />
   </div>
 </template>
 
@@ -57,6 +56,16 @@ export default {
         { url: '/category', label: 'category', title: 'cat' },
         { label: 'prod', title: 'prod' },
       ],
+      usps: {
+        items: [
+          {
+            text: 'Order in Minutes',
+            image: {
+              sourceUrl: '/app/uploads/seeds/usp-icon-fast.png',
+            },
+          },
+        ],
+      },
       image: {
         sourceUrl: 'https://static.rapido.com/media/topup/rapido/default/images/headers/default-desktop.jpg?v=1',
       },

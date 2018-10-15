@@ -70,19 +70,18 @@ export default {
     padding: 3vw 0;
     transform: skewY(-10deg);
 
-    @include media-breakpoint-up("sm") {
+    @include media-breakpoint-up('sm') {
       padding: 20px 0;
       padding: 1.8vw 0;
     }
 
-    @include media-breakpoint-up("lg") {
+    @include media-breakpoint-up('lg') {
       padding: 30px 0;
       padding: 1.8vw 0;
     }
   }
 
   &__payoff-content {
-    border: 1px solid blue;
     line-height: 1.2;
     padding: 10px;
     transform: skewY(10deg);
@@ -95,7 +94,7 @@ export default {
       }
     }
 
-    @include media-breakpoint-up("lg") {
+    @include media-breakpoint-up('lg') {
       font-size: 2.5em;
       font-size: 1.8vw;
       padding: 30px;

@@ -1,12 +1,49 @@
 fragment homeFields on Home {
-  image {
-    sourceUrl
-  }
-  title
-  usps {
+  customerService {
+    primaryText
+    secondaryText
+    link {
+      url
+      title
+      target
+    }
     image {
       sourceUrl
     }
+  }
+  seoBlock {
+    title
     text
+  }
+  footer {
+    items {
+      text
+    }
+  }
+  header {
+    title
+    image {
+      sourceUrl
+    }
+  }
+  usps {
+    items {
+      text
+      image {
+        sourceUrl
+      }
+    }
+  }
+  paymentMethods {
+    icons {
+      name
+      image {
+        sourceUrl
+      }
+    }
+  }
+  instantDelivery {
+    title
+    tooltip
   }
 }

@@ -1,7 +1,8 @@
 <template>
   <button
-    :class="['hamburger hamburger--3dxy-r', { 'is-active': active }]"
-    type="button">
+    :class="classes"
+    type="button"
+  >
     <span class="hamburger-box">
       <span class="hamburger-inner" />
     </span>
@@ -10,47 +11,47 @@
 
 <script>
 export default {
+  name: 'HeaderHamburger',
+
   props: {
     active: {
       type: Boolean,
       default: false,
     },
   },
+
+  computed: {
+    classes() {
+      return [
+        'hamburger',
+        'hamburger--spin',
+        { 'is-active': this.active },
+      ];
+    },
+  },
 };
 </script>
 
 <style lang="scss">
+$hamburger-padding-x: 15px;
+$hamburger-padding-y: 15px;
+$hamburger-layer-width: 16px;
+$hamburger-layer-height: 2px;
+$hamburger-layer-spacing: 3px;
+$hamburger-layer-color: $white;
+$hamburger-layer-border-radius: 2px;
+$hamburger-hover-opacity: 0.7;
+$hamburger-active-layer-color: $hamburger-layer-color;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity;
+$hamburger-hover-use-filter: false;
+$hamburger-hover-filter: opacity(50%);
+$hamburger-active-hover-filter: $hamburger-hover-filter;
+$hamburger-types: (spin);
+
+@import '~hamburgers/_sass/hamburgers/_base.scss';
+@import '~hamburgers/_sass/hamburgers/types/_spin.scss';
+
 .hamburger {
   outline: none;
-  transform: scale(0.7);
 }
-
-$hamburger-padding-x           : 15px !default;
-$hamburger-padding-y           : 15px !default;
-$hamburger-layer-width         : 40px !default;
-$hamburger-layer-height        : 4px !default;
-$hamburger-layer-spacing       : 6px !default;
-$hamburger-layer-color         : white !default;
-$hamburger-layer-border-radius : 4px !default;
-$hamburger-hover-opacity       : 0.7 !default;
-$hamburger-active-layer-color  : $hamburger-layer-color !default;
-$hamburger-active-hover-opacity: $hamburger-hover-opacity !default;
-
-// To use CSS filters as the hover effect instead of opacity,
-// set $hamburger-hover-use-filter as true and
-// change the value of $hamburger-hover-filter accordingly.
-$hamburger-hover-use-filter   : false !default;
-$hamburger-hover-filter       : opacity(50%) !default;
-$hamburger-active-hover-filter: $hamburger-hover-filter !default;
-
-/* stylelint-disable */
-$hamburger-types: (
-  3dxy-r,
-) !default;
-
-
-// @import '~hamburgers/_sass/hamburgers/hamburgers.scss'; goed
-@import '~hamburgers/_sass/hamburgers/_base.scss'; // goed
-@import '~hamburgers/_sass/hamburgers/types/_3dxy-r.scss';
-
 </style>

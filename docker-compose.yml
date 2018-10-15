@@ -8,28 +8,21 @@ services:
       HOST: 0.0.0.0
       PORT: 4000
       NODE_ENV: development
-      API_BROWSER: http://localhost:5000
-      API_SERVER: http://gateway:5000
+      API_BROWSER: https://api-hub.eu-west-1.acceptance.cgaws.cloud
+      API_SERVER: https://api-hub.eu-west-1.acceptance.cgaws.cloud
     ports:
       - 4000:4000
     volumes:
       - .:/usr/src/app
       - node_modules:/usr/src/app/node_modules
 
-  # gateway:
-  #   build: ../gateway
-  #   command: /sbin/tini -- yarn start
-  #   user: root
-  #   environment:
-  #     HOST: 0.0.0.0
-  #     PORT: 5000
-  #     NODE_ENV: development
-  #   ports:
-  #     - 5000:5000
-  #   volumes:
-  #     - ../gateway:/usr/src/app
-  #     - gateway_node_modules:/usr/src/app/node_modules
+  deploy:
+    image: ruby
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+      - bundle:/usr/local/bundle
 
 volumes:
   node_modules:
-  # gateway_node_modules:
+  bundle:

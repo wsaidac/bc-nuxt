@@ -4,14 +4,20 @@ query($slug: String) {
       menuItems {
         nodes {
           label
-          attachedImage {
-            sourceUrl
+          url
+          additionalAttributes {
+            attachedImage {
+              sourceUrl
+            }
           }
           childItems {
             nodes {
               label
-              attachedImage {
-                sourceUrl
+              url
+              additionalAttributes {
+                attachedImage {
+                  sourceUrl
+                }
               }
             }
           }

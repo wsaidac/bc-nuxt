@@ -3,20 +3,12 @@ import { mount } from '~/test/utils/with-context';
 
 describe('HeaderUsps', () => {
   it('should mount', () => {
-    const $mounted = mount(HeaderUsps, {
-      propsData: {
-        usps: [
-          { icon: 'clock', label: 'Order in Minutes', image: { sourceUrl: '#' } },
-        ],
-      },
-    });
+    const $mounted = mount(HeaderUsps, { propsData: { usps: [{ image: { sourceUrl: '/clock.png' }, text: 'Order in Minutes' }] } });
     expect($mounted.find('.header-usps').exists()).toBe(true);
   });
 
-  it('should hide if no usps given', () => {const $mounted = mount(HeaderUsps, {
-    propsData: {
-    },
-  });
+  it('should hide if no usps given', () => {
+    const $mounted = mount(HeaderUsps);
     expect($mounted.find('.header-usps').exists()).toBe(false);
   });
 
@@ -24,9 +16,9 @@ describe('HeaderUsps', () => {
     const $mounted = mount(HeaderUsps, {
       propsData: {
         usps: [
-          { icon: 'clock', label: 'Order in Minutes', image: { sourceUrl: '#' } },
-          { icon: 'lock', label: 'Pay safely & securely', image: { sourceUrl: '#' } },
-          { icon: 'envelope', label: 'Get your code instantly', image: { sourceUrl: '#' } },
+          { image: { sourceUrl: '/clock.png' }, text: 'Order in Minutes' },
+          { image: { sourceUrl: '/lock.png' }, text: 'Pay safely & securely' },
+          { image: { sourceUrl: '/envelope.png' }, text: 'Get your code instantly' },
         ],
       },
     });

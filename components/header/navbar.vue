@@ -29,25 +29,25 @@
           :key="category.title"
           class="header-navbar__main-item"
         >
-          <div>
-            <img :src="getIcon(category.icon)" >
-            <span
-              @click="setActive(category.title)"
-              v-text="category.title"
-            />
+          <div @click="setActive(category.title)">
+            <img
+              :src="category.imageUrl"
+              alt=""
+            >
+            <span v-text="category.title" />
           </div>
 
           <ul :class="['header-navbar__sub-navigation', { 'header-navbar__sub-navigation--active': active === category.title }]">
             <li
-              v-for="product in category.products"
-              :key="product.id"
+              v-for="subcategory in category.categories"
+              :key="subcategory.id"
               class="header-navbar__sub-item"
             >
               <nuxt-link
-                :to="product.url"
-                :title="product.title"
+                :to="subcategory.url"
+                :title="subcategory.title"
               >
-                {{ product.title }}
+                {{ subcategory.title }}
               </nuxt-link>
             </li>
           </ul>
@@ -55,7 +55,7 @@
         <li class="header-navbar__help">
           <a
             href="https://www.rapido.com/us/faq"
-            alt="help"
+            title="help"
           >Help</a>
         </li>
       </ul>
@@ -74,11 +74,6 @@
 import { UiCol, UiRow, UiIcon } from '~/components/ui';
 import NavbarHamburger from './hamburger';
 
-const PhoneIcon = require('~/assets/images/images/menu-icon-phone.png');
-const EntertainmentIcon = require('~/assets/images/images/menu-icon-entertainment.png');
-const GiftCardIcon = require('~/assets/images/images/menu-icon-giftcard.png');
-const GamingIcon = require('~/assets/images/images/menu-icon-gaming.png');
-
 export default {
   name: 'HeaderNavbar',
 
@@ -93,15 +88,7 @@ export default {
     items: {
       type: Array,
       default() {
-        return [
-          {
-            title: 'Mobile Recharge',
-            products: [
-              { id: 0, url: '#', title: 'Verizon' },
-              { id: 1, url: '#', title: 'Verizon' },
-            ],
-          },
-        ];
+        return [];
       },
     },
   },
@@ -129,15 +116,6 @@ export default {
     },
     toggleMenu() {
       this.menuOpen = !this.menuOpen;
-    },
-    getIcon(icon) {
-      switch (icon) {
-        case 'phone': return PhoneIcon;
-        case 'giftcard': return GiftCardIcon;
-        case 'entertainment': return EntertainmentIcon;
-        case 'gaming': return PhoneIcon;
-        default: return GamingIcon;
-      }
     },
   },
 };

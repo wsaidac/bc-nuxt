@@ -1,11 +1,11 @@
 <template>
   <div>
     <header-banner
-      :image-url="image.sourceUrl"
-      :payoff="title"
+      :image-url="header.image.sourceUrl"
+      :payoff="header.title"
     />
-    <header-usps :usps="usps" />
-    <header-mobile-usps :usps="usps" />
+    <header-usps :usps="usps.items" />
+    <header-mobile-usps :usps="usps.items" />
     <div class="container">
       <product-popular
         :products="products"
@@ -26,9 +26,6 @@
         />
       </div>
     </div>
-    <rapido-footer>
-      <footer-seo-text slot="seo-text" />
-    </rapido-footer>
   </div>
 </template>
 
@@ -126,10 +123,6 @@ export default {
   },
   computed: {
     ...mapGetters('menus', ['main']),
-  },
-  async fetch({ app, store }) {
-    const { menus } = await app.$q('menus', { slug: 'main' });
-    store.commit('menus/setMain', menus.nodes[0]);
   },
 };
 </script>
