@@ -2,7 +2,7 @@
   <a
     :href="link.url"
     :title="link.title"
-    class="footer-customer-service"
+    class="service-banner"
   >
     <img
       :src="image.sourceUrl"
@@ -20,7 +20,7 @@
 import { UiIcon } from '~/components/ui';
 
 export default {
-  name: 'FooterCustomerService',
+  name: 'ServiceBanner',
 
   components: {
     UiIcon,
@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style lang="scss">
-.footer-customer-service {
+.service-banner {
   border: 1px solid $gray-400;
   color: $black;
   margin: 20px 0;

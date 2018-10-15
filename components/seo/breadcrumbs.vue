@@ -1,7 +1,7 @@
 <template>
-  <div class="ui-breadcrumbs container">
+  <div class="seo-breadcrumbs">
     <div
-      v-for="(page, i) in pages"
+      v-for="(crumb, i) in crumbs"
       :key="i"
     >
       <ui-icon
@@ -9,16 +9,16 @@
         icon="home"
       />
       <a
-        v-if="page.url"
-        :href="pages.url"
-        :title="page.title"
+        v-if="crumb.url"
+        :href="crumb.url"
+        :title="crumb.title"
       ><ui-icon
         v-if="i !== 0"
-        icon="chevron-left-sharp" />{{ page.label }}</a>
+        icon="chevron-left-sharp" />{{ crumb.label }}</a>
       <span v-else>
         <ui-icon
           v-if="i !== 0"
-          icon="chevron-left-sharp" />{{ page.label }}</span>
+          icon="chevron-left-sharp" />{{ crumb.label }}</span>
     </div>
   </div>
 </template>
@@ -32,7 +32,7 @@ export default {
   },
 
   props: {
-    pages: {
+    crumbs: {
       type: Array,
       required: true,
     },
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style lang="scss">
-.ui-breadcrumbs {
+.seo-breadcrumbs {
   font-size: 12px;
 
   @include flex();

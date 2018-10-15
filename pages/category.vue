@@ -4,21 +4,45 @@
       :image-url="header.image.sourceUrl"
       payoff="https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png"
     />
-    <cg-usps :usps="usps.items" />
-    <category-title-bar :title="productTitle" />
-    <div class="block block--gray">
-      <div class="container">
-        <category-products :products="productsMock" />
-      </div>
-    </div>
-    <category-info
+    <cg-usps
       :usps="usps.items"
-      :info="info"
     />
-    <ui-breadcrumbs
-      :pages="pages"
-      class="cg-category__breadcrumbs"
+    <category-kind
+      v-for="kind in kinds"
+      :key="kind.id"
+      :title="kind.title"
+      :products="kind.products"
     />
+    <div class="container">
+      <ui-row>
+        <ui-col :sm="12">
+          <category-accordion
+            :usps="usps.items"
+            :slides="infoSlides"
+          />
+        </ui-col>
+        <ui-col :sm="12">
+          <category-highlights
+            :title="highlights.title"
+            :description="highlights.description"
+          />
+          <seo-block
+            :title="seoBlock.title"
+            :description="seoBlock.description"
+          />
+        </ui-col>
+      </ui-row>
+      <service-button />
+      <service-banner
+        :link="customerService.link"
+        :image="customerService.image"
+        :title="customerService.primaryText"
+        :description="customerService.secondaryText"
+      />
+      <seo-breadcrumbs
+        :crumbs="crumbs"
+      />
+    </div>
   </div>
 </template>
 
@@ -26,149 +50,167 @@
 import RapidoFooter from '~/components/footer';
 import HeaderBanner from '~/components/header/banner';
 import CgUsps from '~/components/usps';
-import CategoryTitleBar from '~/components/category/title-bar';
-import CategoryProducts from '~/components/category/products';
-import CategoryInfo from '~/components/category/info';
-import { UiBreadcrumbs } from '~/components/ui';
+import CategoryKind from '~/components/category/kind';
+import CategoryAccordion from '~/components/category/accordion';
+import CategoryHighlights from '~/components/category/highlights';
+import ServiceButton from '~/components/service/button';
+import ServiceBanner from '~/components/service/banner';
+import SeoBlock from '~/components/seo/block';
+import SeoBreadcrumbs from '~/components/seo/breadcrumbs';
+import { UiCol, UiRow } from '~/components/ui';
+
+const header = {
+  image: {
+    sourceUrl: 'http://localhost:3000/app/uploads/seeds/rapido_header.jpg',
+  },
+};
+
+const usps = {
+  items: [
+    {
+      text: 'Order in Minutes',
+      description: 'Simply choose the product and amount you need',
+      image: {
+        sourceUrl: 'http://localhost:3000/app/uploads/seeds/usp-icon-fast.png',
+      },
+    },
+    {
+      text: 'Pay safely & securely',
+      description: 'Safe payment options, like Visa and PayPal',
+      image: {
+        sourceUrl: 'http://localhost:3000/app/uploads/seeds/usp-icon-fast.png',
+      },
+    },
+    {
+      text: 'Get your code instantly',
+      description: 'Receive the email with your code instantly',
+      image: {
+        sourceUrl: 'http://localhost:3000/app/uploads/seeds/usp-icon-fast.png',
+      },
+    },
+  ],
+};
+
+const kinds = [
+  {
+    id: 1,
+    title: 'EasyGO Refill',
+    products: [
+      {
+        id: 2,
+        price: {
+          amount: 5,
+          currency: 'USD',
+        },
+        title: 'Verizon Prepaid Refill $10',
+        imageUrl: 'https://static.rapido.com/categories/2098/xbox_logo_09.png?1538569956',
+      },
+      {
+        id: 5,
+        price: {
+          amount: 6,
+          currency: 'USD',
+        },
+        title: 'Verizon Prepaid Refill $20',
+        imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png',
+      },
+      {
+        id: 6,
+        price: {
+          amount: 7,
+          currency: 'USD',
+        },
+        title: 'Verizon Prepaid Refill $20',
+        imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png',
+      },
+    ],
+  },
+];
+
+const infoSlides = [
+  {
+    title: 'What can i use my Xbox Gift card for?',
+    content: 'You can use your Gift Card to buy Xbox games and downloadable content, movies, TV shows, music, apps and bundles. Once you’ve redeemed your Xbox Gift Card using your Microsoft account, you can spend your balance on your Xbox, through Windows and at the Microsoft Store online', // eslint-disable-line
+  },
+  {
+    title: 'What kind of account do I need to redeem my Xbox Gift Card?',
+    content: 'You can use your Gift Card to buy Xbox games and downloadable content, movies, TV shows, music, apps and bundles. Once you’ve redeemed your Xbox Gift Card using your Microsoft account, you can spend your balance on your Xbox, through Windows and at the Microsoft Store online', // eslint-disable-line
+  },
+  {
+    title: 'What can i use my Xbox Gift card for?',
+    content: 'You can use your Gift Card to buy Xbox games and downloadable content, movies, TV shows, music, apps and bundles. Once you’ve redeemed your Xbox Gift Card using your Microsoft account, you can spend your balance on your Xbox, through Windows and at the Microsoft Store online', // eslint-disable-line
+  },
+  {
+    title: 'What can i use my Xbox Gift card for?',
+    content: 'You can use your Gift Card to buy Xbox games and downloadable content, movies, TV shows, music, apps and bundles. Once you’ve redeemed your Xbox Gift Card using your Microsoft account, you can spend your balance on your Xbox, through Windows and at the Microsoft Store online', // eslint-disable-line
+  },
+  {
+    title: 'What can i use my Xbox Gift card for?',
+    content: 'You can use your Gift Card to buy Xbox games and downloadable content, movies, TV shows, music, apps and bundles. Once you’ve redeemed your Xbox Gift Card using your Microsoft account, you can spend your balance on your Xbox, through Windows and at the Microsoft Store online', // eslint-disable-line
+  },
+];
+
+const highlights = {
+  title: 'EasyGO Refill',
+  description: `
+  <h3>What am i buying?</h3>
+  <p>These EasyGO Refills allow you to recharge/refill the amount of credits on your EasyGO mobile account.</p>
+  `,
+};
+
+const seoBlock = {
+  title: 'Easy Refill EasyGO',
+  description: 'On Rapido.com you can easily buy an easyGO refill voucher. Receive your EasyGO recharge code within 30 seconds! All you need to do is select one of the easyGO mobile plans, submit your email address, choose one of our secure payment options and proceed to the checkout. We’ll send you the easyGO recharge voucher by email.',
+};
+
+const crumbs = [
+  { url: '/', label: 'Home', title: 'Rapido Home is cool' },
+  { url: '/category', label: 'category', title: 'cat' },
+  { url: '/faq', label: 'FAQ', title: 'faq' },
+  { url: '/category', label: 'category', title: 'cat' },
+  { label: 'prod', title: 'prod' },
+];
+
+const customerService = {
+  primaryText: 'Need more help?',
+  secondaryText: "We're happy to help out",
+  link: { url: '/us/faq/', title: 'faq', target: '' },
+  image: { sourceUrl: 'http://localhost:3000/app/uploads/seeds/customer-care.jpg' },
+};
 
 export default {
   components: {
     RapidoFooter,
     HeaderBanner,
     CgUsps,
-    CategoryTitleBar,
-    CategoryProducts,
-    CategoryInfo,
-    UiBreadcrumbs,
+    CategoryKind,
+    CategoryAccordion,
+    CategoryHighlights,
+    ServiceButton,
+    ServiceBanner,
+    SeoBlock,
+    SeoBreadcrumbs,
+    UiCol,
+    UiRow,
   },
 
   data() {
     return {
-      header: {
-        image: {
-          sourceUrl: 'http://localhost:3000/app/uploads/seeds/rapido_header.jpg',
-        },
-      },
-      pages: [
-        { url: '/', label: 'Home', title: 'Rapido Home is cool' },
-        { url: '/category', label: 'category', title: 'cat' },
-        { url: '/faq', label: 'FAQ', title: 'faq' },
-        { url: '/category', label: 'category', title: 'cat' },
-        { label: 'prod', title: 'prod' },
-      ],
-      usps: {
-        items: [
-          {
-            text: 'Order in Minutes',
-            image: {
-              sourceUrl: '/app/uploads/seeds/usp-icon-fast.png',
-            },
-          },
-        ],
-      },
-      productTitle: 'Xbox Gift Card',
-      productsMock: [
-        {
-          id: 2,
-          price: {
-            amount: 5,
-            currency: 'USD',
-          },
-          title: 'Verizon Prepaid Refill $10',
-          imageUrl: 'https://static.rapido.com/categories/2098/xbox_logo_09.png?1538569956',
-        },
-        {
-          id: 5,
-          price: {
-            amount: 6,
-            currency: 'USD',
-          },
-          title: 'Verizon Prepaid Refill $20',
-          imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png',
-        },
-        {
-          id: 6,
-          price: {
-            amount: 7,
-            currency: 'USD',
-          },
-          title: 'Verizon Prepaid Refill $20',
-          imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png',
-        },
-      ],
-      info: {
-        productQuestions: [
-          {
-            title: 'What can i use my Xbox Gift card for?',
-            content: 'You can use your Gift Card to buy Xbox games and downloadable content, movies, TV shows, music, apps and bundles. Once you’ve redeemed your Xbox Gift Card using your Microsoft account, you can spend your balance on your Xbox, through Windows and at the Microsoft Store online', // eslint-disable-line
-          },
-          {
-            title: 'What kind of account do I need to redeem my Xbox Gift Card?',
-            content: 'You can use your Gift Card to buy Xbox games and downloadable content, movies, TV shows, music, apps and bundles. Once you’ve redeemed your Xbox Gift Card using your Microsoft account, you can spend your balance on your Xbox, through Windows and at the Microsoft Store online', // eslint-disable-line
-          },
-          {
-            title: 'What can i use my Xbox Gift card for?',
-            content: 'You can use your Gift Card to buy Xbox games and downloadable content, movies, TV shows, music, apps and bundles. Once you’ve redeemed your Xbox Gift Card using your Microsoft account, you can spend your balance on your Xbox, through Windows and at the Microsoft Store online', // eslint-disable-line
-          },
-          {
-            title: 'What can i use my Xbox Gift card for?',
-            content: 'You can use your Gift Card to buy Xbox games and downloadable content, movies, TV shows, music, apps and bundles. Once you’ve redeemed your Xbox Gift Card using your Microsoft account, you can spend your balance on your Xbox, through Windows and at the Microsoft Store online', // eslint-disable-line
-          },
-          {
-            title: 'What can i use my Xbox Gift card for?',
-            content: 'You can use your Gift Card to buy Xbox games and downloadable content, movies, TV shows, music, apps and bundles. Once you’ve redeemed your Xbox Gift Card using your Microsoft account, you can spend your balance on your Xbox, through Windows and at the Microsoft Store online', // eslint-disable-line
-          },
-          {
-            title: 'What can i use my Xbox Gift card for?',
-            content: 'You can use your Gift Card to buy Xbox games and downloadable content, movies, TV shows, music, apps and bundles. Once you’ve redeemed your Xbox Gift Card using your Microsoft account, you can spend your balance on your Xbox, through Windows and at the Microsoft Store online', // eslint-disable-line
-          },
-          {
-            title: 'What can i use my Xbox Gift card for?',
-            content: 'You can use your Gift Card to buy Xbox games and downloadable content, movies, TV shows, music, apps and bundles. Once you’ve redeemed your Xbox Gift Card using your Microsoft account, you can spend your balance on your Xbox, through Windows and at the Microsoft Store online', // eslint-disable-line
-          },
-          {
-            title: 'What can i use my Xbox Gift card for?',
-            content: 'You can use your Gift Card to buy Xbox games and downloadable content, movies, TV shows, music, apps and bundles. Once you’ve redeemed your Xbox Gift Card using your Microsoft account, you can spend your balance on your Xbox, through Windows and at the Microsoft Store online', // eslint-disable-line
-          },
-        ],
-        buyQuestions: {
-          title: 'Xbox digital gift Card',
-          questions: [
-            {
-              question: 'What am i buying?',
-              answer: 'You can use this Xbox Gift Card to pay in the online Microsoft Gaming Store. The Xbox Microsoft Store offers games, DLC, subscriptions and much more.',
-            },
-            {
-              question: 'What am i buying?',
-              answer: 'You can use this Xbox Gift Card to pay in the online Microsoft Gaming Store. The Xbox Microsoft Store offers games, DLC, subscriptions and much more.',
-            },
-            {
-              question: 'What am i buying?',
-              answer: 'You can use this Xbox Gift Card to pay in the online Microsoft Gaming Store. The Xbox Microsoft Store offers games, DLC, subscriptions and much more.',
-            },
-            {
-              question: 'What am i buying?',
-              answer: 'You can use this Xbox Gift Card to pay in the online Microsoft Gaming Store. The Xbox Microsoft Store offers games, DLC, subscriptions and much more.',
-            },
-          ],
-        },
-        redeem: {
-          title: 'Redeem an Xbox Gift Card',
-          text: 'Buy games, movies, TV, music, apps and more on Xbox and Windows.*',
-        },
-      },
+      header,
+      usps,
+      kinds,
+      infoSlides,
+      highlights,
+      customerService,
+      seoBlock,
+      crumbs,
     };
   },
 
-  async asyncData({ app }) {
-    const { post } = await app.$q('post', { slug: 'home' });
-    return Object.assign({}, post);
-  },
-
-  async fetch({ app, store }) {
-    const { menus } = await app.$q('menus', { slug: 'main' });
-    store.commit('menus/setMain', menus.nodes[0]);
-  },
+  // async asyncData({ app }) {
+  //   const { post } = await app.$q('post', { slug: 'home' });
+  //   return Object.assign({}, post);
+  // },
 };
 </script>
 

@@ -27,6 +27,18 @@
         />
       </div>
     </div>
+    <div class="container">
+      <service-banner
+        :link="customerService.link"
+        :image="customerService.image"
+        :title="customerService.primaryText"
+        :description="customerService.secondaryText"
+      />
+      <seo-block
+        :title="seoBlock.title"
+        :description="seoBlock.description"
+      />
+    </div>
   </div>
 </template>
 
@@ -37,8 +49,9 @@ import CgUsps from '~/components/usps';
 import ProductPopular from '~/components/product/popular';
 import ProductQuickbuy from '~/components/product/quickbuy';
 import ProductFeatured from '~/components/product/featured';
+import ServiceBanner from '~/components/service/banner';
+import SeoBlock from '~/components/seo/block';
 import RapidoFooter from '~/components/footer';
-import FooterSeoText from '~/components/footer/seo-text';
 import { mapGetters } from 'vuex';
 
 const mockData = {
@@ -106,12 +119,13 @@ const mockData = {
 
 export default {
   components: {
-    FooterSeoText,
     HeaderBanner,
     CgUsps,
     ProductFeatured,
     ProductPopular,
     ProductQuickbuy,
+    ServiceBanner,
+    SeoBlock,
     RapidoFooter,
     UiIcon,
   },
