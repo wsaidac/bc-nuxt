@@ -1,8 +1,9 @@
 <template>
   <div class="category-kind">
-    <div class="container">
-      <div class="category-kind__header">
+    <div class="category-kind__header container">
+      <div class="flex">
         <h1 v-text="title" />
+        <product-instant-tooltip message="Instant delivery" />
       </div>
     </div>
     <div class="block block--gray">
@@ -28,6 +29,7 @@
 <script>
 import { UiRow, UiCol } from '~/components/ui';
 import ProductCard from '~/components/product/card';
+import ProductInstantTooltip from '~/components/product/instant-tooltip';
 
 export default {
   name: 'CategoryKind',
@@ -36,6 +38,7 @@ export default {
     UiRow,
     UiCol,
     ProductCard,
+    ProductInstantTooltip,
   },
 
   props: {
@@ -54,4 +57,22 @@ export default {
 </script>
 
 <style lang="scss">
+.category-kind {
+  &__header {
+    height: 91px;
+    padding-bottom: 20px;
+
+    @include flex(null, flex-end);
+
+    .flex {
+      height: 20px;
+
+      @include flex(null, center);
+
+      .product-instant-tooltip {
+        margin-left: 20px;
+      }
+    }
+  }
+}
 </style>

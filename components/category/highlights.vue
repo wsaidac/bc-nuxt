@@ -23,4 +23,9 @@ export default {
 </script>
 
 <style lang="scss">
+.category-highlights {
+  h2 {
+    font-size: $font-size-h4;
+  }
+}
 </style>

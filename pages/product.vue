@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="cg-product">
     <header-banner
       :image-url="header.image.sourceUrl"
       payoff="https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png"
@@ -7,16 +7,19 @@
     <cg-usps
       :usps="usps.items"
     />
-    <h1>
-      <div class="container">
-        Title
+    <h1 class="cg-product__title">
+      <div class="flex container">
+        {{ highlights.title }}
+        <product-instant-tooltip message="Instant delivery" />
       </div>
     </h1>
+
     <div class="block block--gray">
       <div class="container">
         <ui-row>
           <ui-col :span="8">
             <product-card
+
             />
           </ui-col>
           <ui-col :span="16">
@@ -28,6 +31,7 @@
         </ui-row>
       </div>
     </div>
+
     <div class="container">
       <ui-row>
         <ui-col :sm="12">
@@ -37,10 +41,6 @@
           />
         </ui-col>
         <ui-col :sm="12">
-          <category-highlights
-            :title="highlights.title"
-            :description="highlights.description"
-          />
           <seo-block
             :title="seoBlock.title"
             :description="seoBlock.description"
@@ -71,6 +71,8 @@ import ServiceBanner from '~/components/service/banner';
 import SeoBlock from '~/components/seo/block';
 import SeoBreadcrumbs from '~/components/seo/breadcrumbs';
 import { UiCol, UiRow } from '~/components/ui';
+import ProductInstantTooltip from '~/components/product/instant-tooltip';
+import ProductCard from '~/components/product/card';
 
 const header = {
   image: {
@@ -130,7 +132,7 @@ const infoSlides = [
 const highlights = {
   title: 'EasyGO Refill',
   description: `
-  <h3>What am i buying?</h3>
+  <h5>What am i buying?</h5>
   <p>These EasyGO Refills allow you to recharge/refill the amount of credits on your EasyGO mobile account.</p>
   `,
 };
@@ -167,6 +169,8 @@ export default {
     SeoBreadcrumbs,
     UiCol,
     UiRow,
+    ProductInstantTooltip,
+    ProductCard,
   },
 
   data() {
@@ -182,3 +186,6 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+</style>
