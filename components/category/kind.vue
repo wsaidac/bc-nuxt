@@ -18,6 +18,7 @@
           >
             <product-card
               :product="product"
+              :has-select="true"
             />
           </ui-col>
         </ui-row>
@@ -59,6 +60,7 @@ export default {
 <style lang="scss">
 .category-kind {
   &__header {
+    font-size: 16.8px;
     height: 91px;
     padding-bottom: 20px;
 
@@ -68,6 +70,10 @@ export default {
       height: 20px;
 
       @include flex(null, center);
+
+      h1 {
+        font-size: 2em;
+      }
 
       .product-instant-tooltip {
         margin-left: 20px;

@@ -6,7 +6,8 @@
     />
     <ui-row>
       <ui-col :sm="{ span: 12, offset: 2 }">
-        <div class="product-quickbuy__highlight">
+
+        <!-- <div class="product-quickbuy__highlight">
           <ui-row :gutter="20">
             <ui-col :span="8">
               <figure class="product-quickbuy__provider">
@@ -40,7 +41,13 @@
               </div>
             </ui-col>
           </ui-row>
-        </div>
+        </div> -->
+
+        <product-card
+          :product="product"
+          mode="horizontal"
+        />
+
       </ui-col>
       <ui-col :sm="8">
         <ul class="product-quickbuy__related">
@@ -75,6 +82,7 @@
 /* eslint-disable-next-line */
 import { UiButton, UiCol, UiRow, UiIcon } from '~/components/ui';
 import ProductInstantTooltip from './instant-tooltip';
+import ProductCard from '~/components/product/card';
 
 export default {
   name: 'ProductQuickbuy',
@@ -85,6 +93,7 @@ export default {
     UiRow,
     UiIcon,
     ProductInstantTooltip,
+    ProductCard,
   },
 
   props: {
