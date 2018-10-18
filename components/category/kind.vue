@@ -56,3 +56,23 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+@include media-breakpoint-only('xs') {
+  .category-kind {
+    .flex {
+      h1 {
+        display: none;
+      }
+    }
+  }
+
+  .category-kind:nth-of-type(2) {
+    .flex {
+      h1 {
+        display: block;
+      }
+    }
+  }
+}
+</style>

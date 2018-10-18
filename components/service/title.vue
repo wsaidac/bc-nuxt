@@ -63,12 +63,6 @@ export default {
     background: $gray-100;
     height: 41px;
     padding-bottom: 0;
-
-    .flex {
-      h1 {
-        display: none;
-      }
-    }
   }
 }
 </style>

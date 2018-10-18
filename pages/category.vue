@@ -7,12 +7,14 @@
     <cg-usps
       :usps="usps.items"
     />
-    <category-kind
-      v-for="kind in kinds"
-      :key="kind.id"
-      :title="kind.title"
-      :products="kind.products"
-    />
+    <div>
+      <category-kind
+        v-for="kind in kinds"
+        :key="kind.id"
+        :title="kind.title"
+        :products="kind.products"
+      />
+    </div>
     <div class="cg-category__info-block container">
       <ui-row>
         <ui-col :sm="12">
