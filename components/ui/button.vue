@@ -65,8 +65,8 @@ $--button-warning-border: $body-color;
 .el-button {
   border: 2px solid $body-color;
   border-radius: 0;
-  line-height: 24px;
   font-size: 12px;
+  line-height: 24px;
   padding: 5px 7px;
   text-transform: uppercase;
   transition: background 0.3s ease, color 0.3s ease;

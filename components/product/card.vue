@@ -1,9 +1,11 @@
 <template>
   <div :class="classes">
     <figure>
-      <img
-        :src="product.imageUrl"
-        :alt="product.title">
+      <nuxt-link to="#">
+        <img
+          :src="product.imageUrl"
+          :alt="product.title">
+      </nuxt-link>
     </figure>
     <div class="product-card__content">
       <div class="product-card__title">
@@ -126,20 +128,33 @@ export default {
     }
 
     .el-select {
-      height: 35px;
-      margin: 0 15px 0 0;
+      margin-right: 15px;
       width: 60px;
+
+      .el-input__inner {
+        height: 35px;
+        user-select: none;
+      }
 
       .el-input__suffix {
         background: $gray-100;
-        border-radius: 4px;
-        left: 29px;
-        width: 50px;
+        border-radius: 0 3px 3px 0;
+        height: calc(100% - 2px);
+        right: 1px;
+        top: 1px;
+        width: 27px;
 
-        @include svg-icon(
-          14px,
-          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M 1 4 L 12 22.300781 L 23 4 L 1 4 z"></path></svg>'
-        );
+        .el-select__caret {
+          &::after {
+            pointer-events: none;
+            width: 100% !important;
+
+            @include svg-icon(
+              12px,
+              '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#{$gray-900}" d="M 1 4 L 12 22.300781 L 23 4 L 1 4 z"></path></svg>'
+            );
+          }
+        }
       }
     }
   }
@@ -148,8 +163,8 @@ export default {
     @include flex();
 
     figure {
-      position: relative;
       margin: 20px;
+      position: relative;
       width: 33%;
 
       img {
@@ -190,8 +205,8 @@ export default {
   @include media-breakpoint-only('xs') {
     &--mode-horizontal {
       figure {
-        margin: 10px;
         height: auto;
+        margin: 10px;
       }
 
       .product-card-content {
@@ -204,39 +219,11 @@ export default {
         @include flex(flex-start, flex-end);
       }
     }
-
-    &--mode-vertical {
-      margin-top: 0;
-
-      @include flex();
-
-      .product-card__content {
-        flex-grow: 1;
-        padding-left: 0;
-      }
-
-      figure {
-        border: 1px solid $gray-400;
-        margin: 10px;
-        height: auto;
-        width: 25%;
-
-        @include flex(center, center);
-
-        img {
-          padding: 10px;
-        }
-      }
-
-      .el-button {
-        @include position(relative, 3px 0 0 0);
-      }
-    }
   }
 
   @include media-breakpoint-down('md') {
     h3 {
-      font-size: 19.2px
+      font-size: 19.2px;
     }
 
     p {
@@ -246,7 +233,7 @@ export default {
 
   @include media-breakpoint-down('xs') {
     h3 {
-      font-size: 16.8px
+      font-size: 16.8px;
     }
   }
 }

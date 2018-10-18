@@ -24,9 +24,8 @@ export default {
 
 <style lang="scss">
 .seo-block {
-  @include media-breakpoint-up('md') {
-    padding: 20px 0 40px;
-  }
+  background: $primary-100;
+  padding: 20px;
 
   h2 {
     font-size: $font-size-h5;

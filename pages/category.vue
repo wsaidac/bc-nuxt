@@ -13,7 +13,7 @@
       :title="kind.title"
       :products="kind.products"
     />
-    <div class="container">
+    <div class="cg-category__info-block container">
       <ui-row>
         <ui-col :sm="12">
           <category-accordion
@@ -93,6 +93,39 @@ const usps = {
 const kinds = [
   {
     id: 1,
+    title: 'EasyGO Refill',
+    products: [
+      {
+        id: 2,
+        price: {
+          amount: 5,
+          currency: 'USD',
+        },
+        title: 'Verizon Prepaid Refill $10',
+        imageUrl: 'https://static.rapido.com/categories/2098/xbox_logo_09.png?1538569956',
+      },
+      {
+        id: 5,
+        price: {
+          amount: 6,
+          currency: 'USD',
+        },
+        title: 'Verizon Prepaid Refill $20',
+        imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png',
+      },
+      {
+        id: 6,
+        price: {
+          amount: 7,
+          currency: 'USD',
+        },
+        title: 'Verizon Prepaid Refill $20',
+        imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png',
+      },
+    ],
+  },
+  {
+    id: 2,
     title: 'EasyGO Refill',
     products: [
       {
@@ -217,6 +250,47 @@ export default {
   @include media-breakpoint-only('xs') {
     &__breadcrumbs {
       display: none !important;
+    }
+  }
+
+  &__info-block {
+    padding-top: 40px;
+
+    .category-highlights {
+      background: $background-color-info;
+      padding: 20px;
+    }
+  }
+
+  .product-card {
+    @include media-breakpoint-only('xs') {
+      &--mode-vertical {
+        margin-top: 0;
+
+        @include flex();
+
+        .product-card__content {
+          flex-grow: 1;
+          padding-left: 0;
+        }
+
+        figure {
+          border: 1px solid $gray-400;
+          height: auto;
+          margin: 10px;
+          width: 25%;
+
+          @include flex(center, center);
+
+          img {
+            padding: 10px;
+          }
+        }
+
+        .el-button {
+          @include position(relative, 3px 0 0 0);
+        }
+      }
     }
   }
 }

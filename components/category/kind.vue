@@ -1,11 +1,11 @@
 <template>
   <div class="category-kind">
-    <div class="category-kind__header container">
-      <div class="flex">
-        <h1 v-text="title" />
-        <product-instant-tooltip message="Instant delivery" />
-      </div>
-    </div>
+
+    <service-title
+      :title="title"
+      tooltip-message="Instant delivery"
+    />
+
     <div class="block block--gray">
       <div class="container">
         <ui-row>
@@ -30,7 +30,7 @@
 <script>
 import { UiRow, UiCol } from '~/components/ui';
 import ProductCard from '~/components/product/card';
-import ProductInstantTooltip from '~/components/product/instant-tooltip';
+import ServiceTitle from '~/components/service/title';
 
 export default {
   name: 'CategoryKind',
@@ -39,7 +39,7 @@ export default {
     UiRow,
     UiCol,
     ProductCard,
-    ProductInstantTooltip,
+    ServiceTitle,
   },
 
   props: {
@@ -60,7 +60,6 @@ export default {
 <style lang="scss">
 .category-kind {
   &__header {
-    font-size: 16.8px;
     height: 91px;
     padding-bottom: 20px;
 
@@ -72,11 +71,41 @@ export default {
       @include flex(null, center);
 
       h1 {
-        font-size: 2em;
+        font-size: 33.6px;
       }
 
       .product-instant-tooltip {
         margin-left: 20px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down('md') {
+    &__header {
+      .flex {
+        h1 {
+          font-size: 28.8px;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-only('xs') {
+    &__header {
+      background: $gray-100;
+      height: 41px;
+      padding-bottom: 0;
+
+      .flex {
+        h1 {
+          display: none;
+        }
+      }
+    }
+
+    .el-col + .el-col {
+      .product-card--mode-vertical {
+        border-top: 0;
       }
     }
   }
