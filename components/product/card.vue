@@ -29,7 +29,7 @@
           :options="options"
         />
         <ui-button type="warning">
-          Order safely
+          {{ cta }}
         </ui-button>
       </div>
     </div>
@@ -86,6 +86,10 @@ export default {
         `product-card--mode-${this.mode}`,
       ];
     },
+
+    cta() {
+      return this.mode === 'horizontal' ? 'Order now' : 'Order safely';
+    },
   },
 };
 </script>
@@ -103,12 +107,20 @@ export default {
     position: relative;
 
     h3 {
-      font-size: 22.4px;
+      font-size: $font-size-h6;
       margin: 0;
+
+      @include media-breakpoint-up('sm') {
+        font-size: $font-size-h5;
+      }
+
+      @include media-breakpoint-up('md') {
+        font-size: 22px;
+      }
     }
 
     p {
-      font-size: 16.8px;
+      font-size: $font-size-h6;
       margin: 3px 0 0;
     }
 
@@ -118,13 +130,14 @@ export default {
   }
 
   &__actions {
+    align-items: center;
+    display: flex;
     flex-flow: row wrap;
-    margin-top: 10px;
-
-    @include flex(flex-end, flex-end);
+    justify-content: flex-end;
+    margin-top: 20px;
 
     .spacer {
-      flex-grow: 1;
+      flex: 1;
     }
 
     .el-select {
@@ -160,6 +173,8 @@ export default {
   }
 
   &--mode-horizontal {
+    max-width: 520px;
+
     @include flex();
 
     figure {
@@ -170,6 +185,12 @@ export default {
       img {
         border: 1px solid $gray-400;
         padding: 10px;
+      }
+    }
+
+    .product-card__title {
+      h3 {
+        margin-bottom: 10px;
       }
     }
 
@@ -185,20 +206,13 @@ export default {
     figure {
       border-bottom: 1px solid $gray-400;
       height: 270px;
+      padding: 20px;
 
       @include flex(center, center);
-
-      img {
-        object-fit: contain;
-      }
     }
 
     .product-card__content {
       padding: 10px;
-    }
-
-    .product-card__actions {
-      margin-top: 20px;
     }
   }
 
@@ -218,22 +232,6 @@ export default {
 
         @include flex(flex-start, flex-end);
       }
-    }
-  }
-
-  @include media-breakpoint-down('md') {
-    h3 {
-      font-size: 19.2px;
-    }
-
-    p {
-      font-size: 14.4px;
-    }
-  }
-
-  @include media-breakpoint-down('xs') {
-    h3 {
-      font-size: 16.8px;
     }
   }
 }

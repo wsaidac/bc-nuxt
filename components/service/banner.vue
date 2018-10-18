@@ -82,6 +82,10 @@ export default {
     font-size: $font-size-h4;
     margin: 0 20px 0 0;
 
+    strong {
+      margin-right: 10px;
+    }
+
     @include media-breakpoint-down('md') {
       font-size: $font-size-h5;
     }

@@ -12,12 +12,10 @@
         />
       </ui-col>
       <ui-col :sm="8">
-
         <product-variants
           :product="product"
-          :related="related"
+          :variants="variants"
         />
-
       </ui-col>
     </ui-row>
   </div>
@@ -48,7 +46,7 @@ export default {
       type: Object,
       required: true,
     },
-    related: {
+    variants: {
       type: Array,
       default() {
         return [];
@@ -62,46 +60,6 @@ export default {
 .product-quickbuy {
   &__title {
     text-align: center;
-  }
-
-  &__highlight {
-    background: $white;
-    border: 1px solid $gray-400;
-    display: flex;
-    margin: 0 auto;
-    padding: 10px;
-
-    @include media-breakpoint-up('sm') {
-      max-width: 520px;
-      padding: 20px 10px 20px 20px;
-    }
-  }
-
-  &__provider {
-    border: 1px solid $gray-400;
-    cursor: pointer;
-    margin: 0;
-    padding: 20px 10px;
-  }
-
-  &__offer {
-    strong {
-      display: block;
-      font-size: $font-size-h3;
-      line-height: 32px;
-      margin-bottom: 5px;
-    }
-
-    p {
-      font-size: $font-size-h6;
-      margin: 0 0 10px;
-    }
-  }
-
-  &__form {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
   }
 }
 </style>

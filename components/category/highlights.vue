@@ -24,19 +24,17 @@ export default {
 
 <style lang="scss">
 .category-highlights {
-  padding-bottom: 20px;
+  h2 {
+    font-size: $font-size-h4;
+  }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 20px 0 0 0;
+  h3 {
+    font-size: $font-size-h6;
+    margin: 0;
   }
 
   p {
-    margin: 0;
+    margin: 0 0 20px;
   }
 }
 </style>

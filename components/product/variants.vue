@@ -1,10 +1,10 @@
 <template>
   <div>
-    <ul class="product-related">
+    <ul class="product-variants">
       <li
-        v-for="item in related"
+        v-for="item in variants"
         :key="item.id"
-        class="product-related__item"
+        class="product-variants__item"
       >
         <nuxt-link
           :to="item.url"
@@ -39,7 +39,7 @@ export default {
       type: Object,
       required: true,
     },
-    related: {
+    variants: {
       type: Array,
       required: true,
     },
@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style lang="scss">
-.product-related {
+.product-variants {
   list-style: none;
   margin: 0;
   padding: 0;

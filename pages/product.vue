@@ -44,7 +44,7 @@
     </div>
 
     <div class="container">
-      <ui-row>
+      <ui-row padded>
         <ui-col :sm="12">
           <category-accordion
             :usps="usps.items"
@@ -52,20 +52,24 @@
           />
         </ui-col>
         <ui-col :sm="12">
-          <seo-block
-            :title="seoBlock.title"
-            :description="seoBlock.description"
-          />
+          <div class="block block--blue block--padded">
+            <seo-block
+              :title="seoBlock.title"
+              :description="seoBlock.description"
+            />
+          </div>
         </ui-col>
       </ui-row>
 
       <service-button />
+
       <service-banner
         :link="customerService.link"
         :image="customerService.image"
         :title="customerService.primaryText"
         :description="customerService.secondaryText"
       />
+
       <seo-breadcrumbs
         :crumbs="crumbs"
       />

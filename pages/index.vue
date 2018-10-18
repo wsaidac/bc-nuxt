@@ -16,7 +16,7 @@
       <div class="container">
         <product-quickbuy
           :product="quickbuyProduct"
-          :related="relatedProducts"
+          :variants="relatedProducts"
         />
       </div>
     </div>
@@ -36,7 +36,7 @@
       />
       <seo-block
         :title="seoBlock.title"
-        :description="seoBlock.description"
+        :description="seoBlock.text"
       />
     </div>
   </div>

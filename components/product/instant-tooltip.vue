@@ -46,39 +46,7 @@ export default {
   p {
     color: $primary-500;
     font-size: $font-size-h6;
-  }
-
-  .el-popover__reference span {
-    font-size: 18.1px !important;
-  }
-
-  @include media-breakpoint-down('md') {
-    .el-popover__reference span {
-      font-size: 15.5px !important;
-    }
-  }
-
-  @include media-breakpoint-down('xs') {
-    .el-popover__reference span {
-      font-size: 12.96px !important;
-    }
+    margin: 6px 0;
   }
 }
-
-.el-popover.el-popper.page-popper.el-popover--plain {
-  font-size: 14px !important;
-}
-
-@include media-breakpoint-down('md') {
-  .el-popover.el-popper.page-popper.el-popover--plain {
-    font-size: 13px !important;
-  }
-}
-
-@include media-breakpoint-down('xs') {
-  .el-popover.el-popper.page-popper.el-popover--plain {
-    font-size: 12px !important;
-  }
-}
-
 </style>

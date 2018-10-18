@@ -3,11 +3,8 @@
     class="service-button"
     href="/faq"
   >
-    <div class="spacer" />
-    <div class="service-button__content">
-      <strong>Need some help?</strong>
-      <span>Take a look at the FAQ's</span>
-    </div>
+    <strong>Need some help?</strong>
+    <span>Take a look at the FAQ's</span>
     <ui-icon icon="chevron-right" />
   </a>
 </template>
@@ -27,20 +24,26 @@ export default {
 <style lang="scss">
 .service-button {
   background: $gray-100;
-  color: $black;
-  height: 63px;
-  padding: 0 20px;
+  color: $body-color;
+  display: block;
+  font-size: $font-size-h4;
+  padding: 20px;
+  text-align: center;
+  position: relative;
 
-  @include flex(space-between, center);
+  @include media-breakpoint-down('md') {
+    font-size: $font-size-h6;
+  }
 
   strong {
-    font-size: 19.6px;
     margin-right: 20px;
   }
 
   .ui-icon {
     font-size: 16px;
-    margin-right: 20px;
+    margin-top: -8px;
+
+    @include position(absolute, 50% 40px null null);
   }
 
   &:hover {
@@ -49,33 +52,17 @@ export default {
     text-decoration: none;
   }
 
-  @include media-breakpoint-down('md') {
-    strong,
-    span {
-      font-size: 16.8px;
-    }
-  }
-
-  @include media-breakpoint-down('xs') {
-    height: 74px;
-
-    .spacer {
-      display: none;
-    }
-
-    &__content {
-      flex-flow: column nowrap;
-
-      @include flex();
-    }
+  @include media-breakpoint-only('xs') {
+    font-size: $font-size-small;
+    text-align: left;
 
     strong {
-      font-size: 18.48px;
+      display: block;
+      font-size: $font-size-h5;
     }
 
-    span {
-      font-size: 13.2px;
-      margin-top: 4px;
+    .ui-icon {
+      right: 10px;
     }
   }
 }

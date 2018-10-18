@@ -1,7 +1,10 @@
 <template>
   <div class="category-accordion">
-    <ui-collapse>
-      <ui-collapse-item title="Benefits of Rapido.com">
+    <ui-collapse :value="1">
+      <ui-collapse-item
+        :name="1"
+        title="Benefits of Rapido.com"
+      >
         <cg-usps
           :usps="usps"
           mode="vertical"

@@ -2,7 +2,8 @@
   <div class="cg-category">
     <header-banner
       :image-url="header.image.sourceUrl"
-      payoff="https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png"
+      payoff-image="https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png"
+      title="EasyGO Refill"
     />
     <cg-usps
       :usps="usps.items"
@@ -16,7 +17,7 @@
       />
     </div>
     <div class="cg-category__info-block container">
-      <ui-row>
+      <ui-row padded>
         <ui-col :sm="12">
           <category-accordion
             :usps="usps.items"
@@ -24,14 +25,18 @@
           />
         </ui-col>
         <ui-col :sm="12">
-          <category-highlights
-            :title="highlights.title"
-            :description="highlights.description"
-          />
-          <seo-block
-            :title="seoBlock.title"
-            :description="seoBlock.description"
-          />
+          <div class="block block--yellow block--padded">
+            <category-highlights
+              :title="highlights.title"
+              :description="highlights.description"
+            />
+          </div>
+          <div class="block block--blue block--padded">
+            <seo-block
+              :title="seoBlock.title"
+              :description="seoBlock.description"
+            />
+          </div>
         </ui-col>
       </ui-row>
       <service-button />
@@ -189,6 +194,12 @@ const highlights = {
   description: `
   <h3>What am i buying?</h3>
   <p>These EasyGO Refills allow you to recharge/refill the amount of credits on your EasyGO mobile account.</p>
+  <h3>What do I do here?</h3>
+  <p>On this page, you can choose the amount you want to refill your mobile device with, to call/text or use data.</p>
+  <h3>After I buy</h3>
+  <p>After you have selected the amount and placed an order, you will receive a code along with clear instructions (also by email) on how to refill your AT&T mobile device/account.</p>
+  <h3>For who is it?</h3>
+  <p>Most people who use these products are prepaid/pay as you go users. They (usually) don't have a monthly subscription with EasyGo or any other provider.</p>
   `,
 };
 
@@ -239,59 +250,45 @@ export default {
       crumbs,
     };
   },
-
-  // async asyncData({ app }) {
-  //   const { post } = await app.$q('post', { slug: 'home' });
-  //   return Object.assign({}, post);
-  // },
 };
 </script>
 
 <style lang="scss">
 .cg-category {
+  .block--yellow {
+    margin-bottom: 30px;
+  }
+
   @include media-breakpoint-only('xs') {
     &__breadcrumbs {
       display: none !important;
     }
-  }
 
-  &__info-block {
-    padding-top: 40px;
+    .product-card--mode-vertical {
+      margin-top: 0;
 
-    .category-highlights {
-      background: $background-color-info;
-      padding: 20px;
-    }
-  }
+      @include flex();
 
-  .product-card {
-    @include media-breakpoint-only('xs') {
-      &--mode-vertical {
-        margin-top: 0;
+      .product-card__content {
+        flex-grow: 1;
+        padding-left: 0;
+      }
 
-        @include flex();
+      figure {
+        border: 1px solid $gray-400;
+        height: auto;
+        margin: 10px;
+        width: 25%;
 
-        .product-card__content {
-          flex-grow: 1;
-          padding-left: 0;
+        @include flex(center, center);
+
+        img {
+          padding: 10px;
         }
+      }
 
-        figure {
-          border: 1px solid $gray-400;
-          height: auto;
-          margin: 10px;
-          width: 25%;
-
-          @include flex(center, center);
-
-          img {
-            padding: 10px;
-          }
-        }
-
-        .el-button {
-          @include position(relative, 3px 0 0 0);
-        }
+      .el-button {
+        @include position(relative, 3px 0 0 0);
       }
     }
   }
