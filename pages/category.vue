@@ -204,11 +204,6 @@ export default {
       crumbs,
     };
   },
-
-  // async asyncData({ app }) {
-  //   const { post } = await app.$q('post', { slug: 'home' });
-  //   return Object.assign({}, post);
-  // },
 };
 </script>
 

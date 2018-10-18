@@ -2,7 +2,7 @@
   <div>
     <header-banner
       :image-url="post.header.image.sourceUrl"
-      :payoff="post.header.title"
+      :payoff-text="post.header.title"
     />
     <cg-usps
       :usps="post.usps.items"

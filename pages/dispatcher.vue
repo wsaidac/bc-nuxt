@@ -74,13 +74,14 @@ const mockData = {
 export default {
   components: {
     Home: () => import('~/pages/home'),
+    Category: () => import('~/pages/category'),
+    Product: () => import('~/pages/product'),
   },
+
   async asyncData({ app }) {
-    console.log('loading page');
     const { post } = await app.$q('post', { slug: 'home' });
-    console.log(post);
     Object.assign(post, mockData);
-    const layout = 'Home'; // () => import('~/pages/home');
+    const layout = 'Home';
     return { layout, post };
   },
 };
