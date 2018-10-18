@@ -93,15 +93,15 @@ export default {
 
   computed: {
     collapseable() {
-      return this.category.products.length > this.limit;
+      return this.category.categories.length > this.limit;
     },
 
     productsLimited() {
-      return this.category.products.slice(0, this.limit);
+      return this.category.categories.slice(0, this.limit);
     },
 
     productsRest() {
-      return this.category.products.slice(this.limit);
+      return this.category.categories.slice(this.limit);
     },
   },
 

@@ -7,7 +7,7 @@
       trigger="hover"
     >
       <p slot="reference">
-        <span>Instant delivery</span>
+        <span v-text="message" />
         <ui-icon icon="question-circle-o" />
       </p>
     </ui-popover>
@@ -24,11 +24,20 @@ export default {
     UiIcon,
     UiPopover,
   },
+
+  props: {
+    message: {
+      type: String,
+      default: '',
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 .product-instant-tooltip {
+  @include flex(center, center);
+
   p {
     color: $primary-500;
     font-size: $font-size-h6;

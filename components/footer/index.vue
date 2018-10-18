@@ -1,13 +1,5 @@
 <template>
   <footer class="rapido-footer">
-    <div class="container">
-      <footer-customer-service
-        :link="customerService.link"
-        :image="customerService.image"
-        :title="customerService.primaryText"
-        :description="customerService.secondaryText"
-      />
-    </div>
     <hr>
     <div class="container">
       <ui-row>
@@ -30,8 +22,6 @@
 import { mapGetters } from 'vuex';
 import { UiRow, UiCol } from '~/components/ui';
 import FooterPaymentMethods from './payment-methods';
-import FooterCustomerService from './customer-service';
-import FooterSeoBlock from './seo-block';
 import FooterLinks from './links';
 import FooterCopyright from './copyright';
 
@@ -42,8 +32,6 @@ export default {
     UiRow,
     UiCol,
     FooterPaymentMethods,
-    FooterCustomerService,
-    FooterSeoBlock,
     FooterLinks,
     FooterCopyright,
   },
@@ -76,7 +64,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters('shared', ['paymentMethods', 'customerService']),
+    ...mapGetters('shared', ['paymentMethods']),
   },
 };
 </script>

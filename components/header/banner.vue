@@ -12,6 +12,12 @@
       >
         <div class="header-banner__payoff-ribbon">
           <div
+            v-if="(/\.(gif|jpg|jpeg|tiff|png)$/i).test(payoff)"
+          >
+            <img :src="payoff">
+          </div>
+          <div
+            v-else
             class="header-banner__payoff-content"
             v-html="payoff"
           />
@@ -64,12 +70,12 @@ export default {
     padding: 3vw 0;
     transform: skewY(-10deg);
 
-    @include media-breakpoint-up("sm") {
+    @include media-breakpoint-up('sm') {
       padding: 20px 0;
       padding: 1.8vw 0;
     }
 
-    @include media-breakpoint-up("lg") {
+    @include media-breakpoint-up('lg') {
       padding: 30px 0;
       padding: 1.8vw 0;
     }
@@ -88,7 +94,7 @@ export default {
       }
     }
 
-    @include media-breakpoint-up("lg") {
+    @include media-breakpoint-up('lg') {
       font-size: 2.5em;
       font-size: 1.8vw;
       padding: 30px;

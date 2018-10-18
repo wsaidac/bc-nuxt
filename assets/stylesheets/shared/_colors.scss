@@ -10,7 +10,7 @@ $gray-500:                              $gray-base;
 $gray-600:                              mix($black, $gray-base, 5%);
 $gray-700:                              mix($black, $gray-base, 15%);
 $gray-800:                              mix($black, $gray-base, 25%);
-$gray-900:                              mix($black, $gray-base, 35%);
+$gray-900:                              #bfc5cb;
 
 $primary-base:                          #1200ff;
 $primary-100:                           mix(#dce6f5, $primary-base, 100%);

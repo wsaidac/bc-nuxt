@@ -1,5 +1,12 @@
 <template>
-  <nav class="header-navbar">
+  <nav :class="['header-navbar', { 'header-navbar--open': menuOpen }]">
+    <div class="overlay">
+      <div
+        class="overlay__black"
+        @click="toggleMenu"
+      />
+      <div class="overlay__gray" />
+    </div>
     <div class="container">
       <h1 class="header-navbar__brand">
         <nuxt-link to="/">
@@ -9,16 +16,28 @@
           >
         </nuxt-link>
       </h1>
-      <ul class="header-navbar__navigation">
+      <ul :class="classes">
+        <li class="header-navbar__main-item header-navbar__main-item-back">
+          <ui-icon icon="chevron-left" />
+          <span
+            @click="setActive('')"
+            v-text="'Main menu'"
+          />
+        </li>
         <li
           v-for="category in items"
           :key="category.title"
           class="header-navbar__main-item"
         >
-          <div>
-            <img :src="category.imageUrl" ><span v-text="category.title" />
+          <div @click="setActive(category.title)">
+            <img
+              :src="category.imageUrl"
+              alt=""
+            >
+            <span v-text="category.title" />
           </div>
-          <ul class="header-navbar__sub-navigation">
+
+          <ul :class="['header-navbar__sub-navigation', { 'header-navbar__sub-navigation--active': active === category.title }]">
             <li
               v-for="subcategory in category.categories"
               :key="subcategory.id"
@@ -33,23 +52,35 @@
             </li>
           </ul>
         </li>
+        <li class="header-navbar__help">
+          <a
+            href="https://www.rapido.com/us/faq"
+            title="help"
+          >Help</a>
+        </li>
       </ul>
-      <a
-        href="https://www.rapido.com/us/faq"
-        alt="help"
-        class="header-navbar__help">Help</a>
+      <div
+        class="header-navbar__mobile-opener"
+        @click="toggleMenu"
+      >
+        <span>Menu</span>
+        <navbar-hamburger :active="menuOpen" />
+      </div>
     </div>
   </nav>
 </template>
 
 <script>
-import { UiCol, UiRow } from '~/components/ui';
+import { UiCol, UiRow, UiIcon } from '~/components/ui';
+import NavbarHamburger from './hamburger';
 
 export default {
   name: 'HeaderNavbar',
 
   components: {
+    NavbarHamburger,
     UiCol,
+    UiIcon,
     UiRow,
   },
 
@@ -59,6 +90,32 @@ export default {
       default() {
         return [];
       },
+    },
+  },
+
+  data() {
+    return {
+      menuOpen: false,
+      active: '',
+    };
+  },
+
+  computed: {
+    classes() {
+      return [
+        'header-navbar__navigation',
+        { 'header-navbar__navigation--open': this.menuOpen },
+        { 'header-navbar__navigation--has-active': this.active !== '' },
+      ];
+    },
+  },
+
+  methods: {
+    setActive(v) {
+      this.active = v;
+    },
+    toggleMenu() {
+      this.menuOpen = !this.menuOpen;
     },
   },
 };
@@ -154,14 +211,25 @@ export default {
     &:last-child {
       border-right: 1px solid $primary-700;
     }
+
+    &-back {
+      display: none;
+      padding: 0 !important;
+    }
   }
 
   &__help {
-    color: $white;
     font-size: 15.75px;
     padding-left: 20px;
 
-    @include flex(center, center);
+    a {
+      color: $white;
+      display: block;
+      height: 100%;
+      text-decoration: none;
+
+      @include flex(center, center);
+    }
 
     &:hover {
       color: $white;
@@ -202,6 +270,10 @@ export default {
     }
   }
 
+  &__mobile-opener {
+    display: none;
+  }
+
   @include media-breakpoint-down('md') {
     &__main-item {
       font-size: 13.5px;
@@ -213,6 +285,168 @@ export default {
 
     &__sub-item {
       font-size: 12px;
+    }
+  }
+
+  @include media-breakpoint-only('xs') {
+    .container {
+      background: $primary-500;
+      height: 50px;
+      position: relative;
+      z-index: 100;
+
+      @include flex(space-between);
+    }
+
+    &__navigation {
+      background: $white;
+      border-top: 3px solid #ee4136;
+      color: $black;
+      flex-flow: column nowrap;
+      font-weight: $font-weight-bold;
+      overflow: hidden;
+      padding: 0;
+      position: relative;
+      transition: all 0.5s;
+      width: 0;
+      z-index: 10000;
+
+      @include position(absolute, 50px 0 null null);
+
+      &--open {
+        width: 80%;
+      }
+
+      &--has-active {
+        li.header-navbar__main-item {
+          border: 0;
+          padding: 0;
+          position: relative;
+          text-decoration: none;
+          z-index: 2000;
+
+          div {
+            display: none;
+          }
+
+          .header-navbar__sub-navigation--active {
+            display: flex;
+            flex-flow: column nowrap;
+            position: static;
+          }
+        }
+
+        li.header-navbar__main-item-back {
+          color: $gray-500;
+          display: flex;
+          padding: 20px 0;
+
+          .ui-icon {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    &__sub-navigation {
+      padding: 0;
+
+      li {
+        font-size: 14.4px;
+
+        &:hover {
+          color: $black;
+        }
+
+        a {
+          color: $black !important;
+          height: 40px;
+
+          @include flex(null, center);
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    &__main-item {
+      border: 0;
+      font-size: 14.4px;
+      height: auto;
+      margin: 0 20px;
+      overflow: hidden;
+      padding: 0;
+      white-space: nowrap;
+      z-index: 5000;
+
+      div {
+        width: 100%;
+      }
+
+      span {
+        padding: 20px 0;
+        width: 100%;
+      }
+
+      &:hover {
+        background: white;
+        text-decoration: underline;
+      }
+
+      & + & {
+        border-top: 1px solid $gray-200;
+      }
+    }
+
+    &__help {
+      background: $gray-200;
+      flex-grow: 1;
+
+      a {
+        color: $black;
+        display: block;
+        padding-top: 20px;
+      }
+    }
+
+    &__mobile-opener {
+      background: $primary-600;
+      display: block;
+      font-size: 16px;
+      height: 100%;
+      padding: 0 30px;
+
+      @include flex(center, center);
+      @include position(relative, 0 null null 40px);
+    }
+  }
+
+  .overlay {
+    transition: all 0.5s;
+    width: 0;
+    z-index: 50;
+
+    @include position(fixed, 0 0 0 null);
+    @include flex();
+
+    &__black {
+      background: $black;
+      flex: 0 0 20%;
+      opacity: 0.3;
+    }
+
+    &__gray {
+      background: $gray-200;
+      flex-grow: 1;
+      pointer-events: none;
+    }
+  }
+
+  &--open {
+    .overlay {
+      width: 100% !important;
     }
   }
 }

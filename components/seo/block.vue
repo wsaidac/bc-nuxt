@@ -1,13 +1,13 @@
 <template>
-  <div class="footer-seo-block">
+  <div class="seo-block">
     <h2 v-text="title" />
-    <p v-text="description" />
+    <p v-html="description" />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'FooterBlockText',
+  name: 'SeoBlock',
 
   props: {
     title: {
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss">
-.footer-seo-block {
+.seo-block {
   @include media-breakpoint-up('md') {
     padding: 20px 0 40px;
   }

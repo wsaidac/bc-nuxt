@@ -31,7 +31,7 @@
                 />
               </div>
               <div class="product-quickbuy__form">
-                <product-instant-tooltip />
+                <product-instant-tooltip message="Instant delivery" />
                 <ui-button
                   type="warning"
                 >

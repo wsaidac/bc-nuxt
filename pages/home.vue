@@ -4,8 +4,9 @@
       :image-url="post.header.image.sourceUrl"
       :payoff="post.header.title"
     />
-    <header-usps :usps="post.usps.items" />
-    <header-mobile-usps :usps="post.usps.items" />
+    <cg-usps
+      :usps="post.usps.items"
+    />
     <div class="container">
       <product-popular
         :products="post.products"
@@ -19,12 +20,24 @@
         />
       </div>
     </div>
-    <div class="block block--gray block--space-between">
+    <div class="block block--gray block--space-between block--mobile-white">
       <div class="container">
         <product-featured
-          :categories="main.products"
+          :categories="main.categories"
         />
       </div>
+    </div>
+    <div class="container">
+      <service-banner
+        :link="post.customerService.link"
+        :image="post.customerService.image"
+        :title="post.customerService.primaryText"
+        :description="post.customerService.secondaryText"
+      />
+      <seo-block
+        :title="post.seoBlock.title"
+        :description="post.seoBlock.text"
+      />
     </div>
   </div>
 </template>
@@ -32,23 +45,26 @@
 <script>
 import { UiIcon } from '~/components/ui';
 import HeaderBanner from '~/components/header/banner';
-import HeaderUsps from '~/components/header/usps';
-import HeaderMobileUsps from '~/components/header/mobile-usps';
+import CgUsps from '~/components/usps';
 import ProductPopular from '~/components/product/popular';
 import ProductQuickbuy from '~/components/product/quickbuy';
 import ProductFeatured from '~/components/product/featured';
+import ServiceBanner from '~/components/service/banner';
+import SeoBlock from '~/components/seo/block';
 import { mapGetters } from 'vuex';
 
 export default {
   components: {
     UiIcon,
     HeaderBanner,
-    HeaderUsps,
-    HeaderMobileUsps,
+    CgUsps,
     ProductPopular,
     ProductQuickbuy,
     ProductFeatured,
+    ServiceBanner,
+    SeoBlock,
   },
+
   props: {
     post: {
       type: Object,
@@ -56,16 +72,8 @@ export default {
     },
   },
 
-  // async asyncData({ app }) {
-  //   console.log('loading page');
-  //   const { post } = await app.$q('post', { slug: 'home' });
-  //   return Object.assign({}, post, mockData);
-  // },
   computed: {
     ...mapGetters('menus', ['main']),
   },
 };
 </script>
-
-<style lang="scss">
-</style>
