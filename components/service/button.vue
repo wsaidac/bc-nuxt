@@ -28,8 +28,8 @@ export default {
   display: block;
   font-size: $font-size-h4;
   padding: 20px;
-  text-align: center;
   position: relative;
+  text-align: center;
 
   @include media-breakpoint-down('md') {
     font-size: $font-size-h6;
