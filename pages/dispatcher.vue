@@ -6,8 +6,6 @@
 </template>
 
 <script>
-// import Home from '~/pages/home';
-
 const mockData = {
   products: [
     {

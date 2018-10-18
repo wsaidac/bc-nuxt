@@ -9,6 +9,18 @@
     background: $gray-100;
   }
 
+  &--blue {
+    background: $primary-100;
+  }
+
+  &--yellow {
+    background: $info-500;
+  }
+
+  &--padded {
+    padding: 20px;
+  }
+
   @include media-breakpoint-up('sm') {
     & + .block--space-between {
       margin-top: 60px;

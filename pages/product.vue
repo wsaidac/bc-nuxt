@@ -7,25 +7,36 @@
     <cg-usps
       :usps="usps.items"
     />
-    <h1 class="cg-product__title">
-      <div class="flex container">
-        {{ highlights.title }}
-        <product-instant-tooltip message="Instant delivery" />
-      </div>
-    </h1>
+
+    <service-title
+      :title="highlights.title"
+      tooltip-message="Instant delivery"
+    />
 
     <div class="block block--gray">
       <div class="container">
         <ui-row>
-          <ui-col :span="8">
-            <product-card
-
-            />
+          <ui-col
+            :lg="6"
+            :md="8"
+            :sm="12"
+            :xs="24"
+          >
+            <product-card :product="product" />
           </ui-col>
-          <ui-col :span="16">
+          <ui-col
+            :lg="18"
+            :md="16"
+            :sm="12"
+            :xs="24"
+          >
             <category-highlights
               :title="highlights.title"
               :description="highlights.description"
+            />
+            <product-variants
+              :product="product"
+              :related="relatedProducts"
             />
           </ui-col>
         </ui-row>
@@ -33,7 +44,7 @@
     </div>
 
     <div class="container">
-      <ui-row>
+      <ui-row padded>
         <ui-col :sm="12">
           <category-accordion
             :usps="usps.items"
@@ -41,19 +52,24 @@
           />
         </ui-col>
         <ui-col :sm="12">
-          <seo-block
-            :title="seoBlock.title"
-            :description="seoBlock.description"
-          />
+          <div class="block block--blue block--padded">
+            <seo-block
+              :title="seoBlock.title"
+              :description="seoBlock.description"
+            />
+          </div>
         </ui-col>
       </ui-row>
+
       <service-button />
+
       <service-banner
         :link="customerService.link"
         :image="customerService.image"
         :title="customerService.primaryText"
         :description="customerService.secondaryText"
       />
+
       <seo-breadcrumbs
         :crumbs="crumbs"
       />
@@ -73,6 +89,8 @@ import SeoBreadcrumbs from '~/components/seo/breadcrumbs';
 import { UiCol, UiRow } from '~/components/ui';
 import ProductInstantTooltip from '~/components/product/instant-tooltip';
 import ProductCard from '~/components/product/card';
+import ServiceTitle from '~/components/service/title';
+import ProductVariants from '~/components/product/variants';
 
 const header = {
   image: {
@@ -134,6 +152,12 @@ const highlights = {
   description: `
   <h5>What am i buying?</h5>
   <p>These EasyGO Refills allow you to recharge/refill the amount of credits on your EasyGO mobile account.</p>
+  <h5>What am i buying?</h5>
+  <p>These EasyGO Refills allow you to recharge/refill the amount of credits on your EasyGO mobile account.</p>
+  <h5>What am i buying?</h5>
+  <p>These EasyGO Refills allow you to recharge/refill the amount of credits on your EasyGO mobile account.</p>
+  <h5>What am i buying?</h5>
+  <p>These EasyGO Refills allow you to recharge/refill the amount of credits on your EasyGO mobile account.</p>
   `,
 };
 
@@ -157,6 +181,24 @@ const customerService = {
   image: { sourceUrl: 'http://localhost:3000/app/uploads/seeds/customer-care.jpg' },
 };
 
+const product = {
+  id: 1,
+  title: 'Verizon Prepaid Refill $5',
+  price: {
+    amount: 5.0,
+    currency: 'USD',
+  },
+  url: '/verizon',
+  imageUrl:
+    'https://static.rapido.com/categories/2023/Zeichenflche_98.png?1532587359',
+};
+
+const relatedProducts = [
+  { id: 2, title: 'Verizon Prepaid Refill $10', url: '/verizon/10-usd' },
+  { id: 3, title: 'Verizon Prepaid Refill $15', url: '/verizon/15-usd' },
+  { id: 4, title: 'Verizon Prepaid Refill $20', url: '/verizon/20-usd' },
+];
+
 export default {
   components: {
     HeaderBanner,
@@ -171,6 +213,8 @@ export default {
     UiRow,
     ProductInstantTooltip,
     ProductCard,
+    ServiceTitle,
+    ProductVariants,
   },
 
   data() {
@@ -182,10 +226,22 @@ export default {
       customerService,
       seoBlock,
       crumbs,
+      product,
+      relatedProducts,
     };
   },
 };
 </script>
 
 <style lang="scss">
+.cg-product {
+  .product-card {
+    @include media-breakpoint-only('xs') {
+      &--mode-vertical {
+        margin: 20px auto;
+        max-width: 300px;
+      }
+    }
+  }
+}
 </style>

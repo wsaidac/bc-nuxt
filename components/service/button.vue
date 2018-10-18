@@ -5,9 +5,7 @@
   >
     <strong>Need some help?</strong>
     <span>Take a look at the FAQ's</span>
-    <ui-icon
-      icon="chevron-right"
-    />
+    <ui-icon icon="chevron-right" />
   </a>
 </template>
 
@@ -25,8 +23,47 @@ export default {
 
 <style lang="scss">
 .service-button {
-  background: $gray-600;
+  background: $gray-100;
+  color: $body-color;
   display: block;
-  padding: 10px;
+  font-size: $font-size-h4;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+
+  @include media-breakpoint-down('md') {
+    font-size: $font-size-h6;
+  }
+
+  strong {
+    margin-right: 20px;
+  }
+
+  .ui-icon {
+    font-size: 16px;
+    margin-top: -8px;
+
+    @include position(absolute, 50% 40px null null);
+  }
+
+  &:hover {
+    background: $primary-base;
+    color: $white;
+    text-decoration: none;
+  }
+
+  @include media-breakpoint-only('xs') {
+    font-size: $font-size-small;
+    text-align: left;
+
+    strong {
+      display: block;
+      font-size: $font-size-h5;
+    }
+
+    .ui-icon {
+      right: 10px;
+    }
+  }
 }
 </style>

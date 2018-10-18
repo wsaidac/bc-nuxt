@@ -1,11 +1,11 @@
 <template>
   <div class="category-kind">
-    <div class="category-kind__header container">
-      <div class="flex">
-        <h1 v-text="title" />
-        <product-instant-tooltip message="Instant delivery" />
-      </div>
-    </div>
+
+    <service-title
+      :title="title"
+      tooltip-message="Instant delivery"
+    />
+
     <div class="block block--gray">
       <div class="container">
         <ui-row>
@@ -18,6 +18,7 @@
           >
             <product-card
               :product="product"
+              :has-select="true"
             />
           </ui-col>
         </ui-row>
@@ -29,7 +30,7 @@
 <script>
 import { UiRow, UiCol } from '~/components/ui';
 import ProductCard from '~/components/product/card';
-import ProductInstantTooltip from '~/components/product/instant-tooltip';
+import ServiceTitle from '~/components/service/title';
 
 export default {
   name: 'CategoryKind',
@@ -38,7 +39,7 @@ export default {
     UiRow,
     UiCol,
     ProductCard,
-    ProductInstantTooltip,
+    ServiceTitle,
   },
 
   props: {
@@ -57,20 +58,19 @@ export default {
 </script>
 
 <style lang="scss">
-.category-kind {
-  &__header {
-    height: 91px;
-    padding-bottom: 20px;
-
-    @include flex(null, flex-end);
-
+@include media-breakpoint-only('xs') {
+  .category-kind {
     .flex {
-      height: 20px;
+      h1 {
+        display: none;
+      }
+    }
+  }
 
-      @include flex(null, center);
-
-      .product-instant-tooltip {
-        margin-left: 20px;
+  .category-kind:nth-of-type(2) {
+    .flex {
+      h1 {
+        display: block;
       }
     }
   }

@@ -2,19 +2,22 @@
   <div class="cg-category">
     <header-banner
       :image-url="header.image.sourceUrl"
-      payoff="https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png"
+      payoff-image="https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png"
+      title="EasyGO Refill"
     />
     <cg-usps
       :usps="usps.items"
     />
-    <category-kind
-      v-for="kind in kinds"
-      :key="kind.id"
-      :title="kind.title"
-      :products="kind.products"
-    />
-    <div class="container">
-      <ui-row>
+    <div>
+      <category-kind
+        v-for="kind in kinds"
+        :key="kind.id"
+        :title="kind.title"
+        :products="kind.products"
+      />
+    </div>
+    <div class="cg-category__info-block container">
+      <ui-row padded>
         <ui-col :sm="12">
           <category-accordion
             :usps="usps.items"
@@ -22,14 +25,18 @@
           />
         </ui-col>
         <ui-col :sm="12">
-          <category-highlights
-            :title="highlights.title"
-            :description="highlights.description"
-          />
-          <seo-block
-            :title="seoBlock.title"
-            :description="seoBlock.description"
-          />
+          <div class="block block--yellow block--padded">
+            <category-highlights
+              :title="highlights.title"
+              :description="highlights.description"
+            />
+          </div>
+          <div class="block block--blue block--padded">
+            <seo-block
+              :title="seoBlock.title"
+              :description="seoBlock.description"
+            />
+          </div>
         </ui-col>
       </ui-row>
       <service-button />
@@ -124,6 +131,39 @@ const kinds = [
       },
     ],
   },
+  {
+    id: 2,
+    title: 'EasyGO Refill',
+    products: [
+      {
+        id: 2,
+        price: {
+          amount: 5,
+          currency: 'USD',
+        },
+        title: 'Verizon Prepaid Refill $10',
+        imageUrl: 'https://static.rapido.com/categories/2098/xbox_logo_09.png?1538569956',
+      },
+      {
+        id: 5,
+        price: {
+          amount: 6,
+          currency: 'USD',
+        },
+        title: 'Verizon Prepaid Refill $20',
+        imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png',
+      },
+      {
+        id: 6,
+        price: {
+          amount: 7,
+          currency: 'USD',
+        },
+        title: 'Verizon Prepaid Refill $20',
+        imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png',
+      },
+    ],
+  },
 ];
 
 const infoSlides = [
@@ -154,6 +194,12 @@ const highlights = {
   description: `
   <h3>What am i buying?</h3>
   <p>These EasyGO Refills allow you to recharge/refill the amount of credits on your EasyGO mobile account.</p>
+  <h3>What do I do here?</h3>
+  <p>On this page, you can choose the amount you want to refill your mobile device with, to call/text or use data.</p>
+  <h3>After I buy</h3>
+  <p>After you have selected the amount and placed an order, you will receive a code along with clear instructions (also by email) on how to refill your AT&T mobile device/account.</p>
+  <h3>For who is it?</h3>
+  <p>Most people who use these products are prepaid/pay as you go users. They (usually) don't have a monthly subscription with EasyGo or any other provider.</p>
   `,
 };
 
@@ -209,9 +255,41 @@ export default {
 
 <style lang="scss">
 .cg-category {
+  .block--yellow {
+    margin-bottom: 30px;
+  }
+
   @include media-breakpoint-only('xs') {
     &__breadcrumbs {
       display: none !important;
+    }
+
+    .product-card--mode-vertical {
+      margin-top: 0;
+
+      @include flex();
+
+      .product-card__content {
+        flex-grow: 1;
+        padding-left: 0;
+      }
+
+      figure {
+        border: 1px solid $gray-400;
+        height: auto;
+        margin: 10px;
+        width: 25%;
+
+        @include flex(center, center);
+
+        img {
+          padding: 10px;
+        }
+      }
+
+      .el-button {
+        @include position(relative, 3px 0 0 0);
+      }
     }
   }
 }

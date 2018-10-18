@@ -27,5 +27,14 @@ export default {
   h2 {
     font-size: $font-size-h4;
   }
+
+  h3 {
+    font-size: $font-size-h6;
+    margin: 0;
+  }
+
+  p {
+    margin: 0 0 20px;
+  }
 }
 </style>
