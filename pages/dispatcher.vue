@@ -1,43 +1,12 @@
 <template>
-  <div>
-    <header-banner
-      :image-url="header.image.sourceUrl"
-      :payoff="header.title"
-    />
-    <header-usps :usps="usps.items" />
-    <header-mobile-usps :usps="usps.items" />
-    <div class="container">
-      <product-popular
-        :products="products"
-      />
-    </div>
-    <div class="block block--gray">
-      <div class="container">
-        <product-quickbuy
-          :product="quickbuyProduct"
-          :related="relatedProducts"
-        />
-      </div>
-    </div>
-    <div class="block block--gray block--space-between">
-      <div class="container">
-        <product-featured
-          :categories="main.products"
-        />
-      </div>
-    </div>
-  </div>
+  <div
+    :is="layout"
+    :post="post"
+  />
 </template>
 
 <script>
-import { UiIcon } from '~/components/ui';
-import HeaderBanner from '~/components/header/banner';
-import HeaderUsps from '~/components/header/usps';
-import HeaderMobileUsps from '~/components/header/mobile-usps';
-import ProductPopular from '~/components/product/popular';
-import ProductQuickbuy from '~/components/product/quickbuy';
-import ProductFeatured from '~/components/product/featured';
-import { mapGetters } from 'vuex';
+// import Home from '~/pages/home';
 
 const mockData = {
   products: [
@@ -104,24 +73,15 @@ const mockData = {
 
 export default {
   components: {
-    UiIcon,
-    HeaderBanner,
-    HeaderUsps,
-    HeaderMobileUsps,
-    ProductPopular,
-    ProductQuickbuy,
-    ProductFeatured,
+    Home: () => import('~/pages/home'),
   },
-
   async asyncData({ app }) {
+    console.log('loading page');
     const { post } = await app.$q('post', { slug: 'home' });
-    return Object.assign({}, post, mockData);
-  },
-  computed: {
-    ...mapGetters('menus', ['main']),
+    console.log(post);
+    Object.assign(post, mockData);
+    const layout = 'Home'; // () => import('~/pages/home');
+    return { layout, post };
   },
 };
 </script>
-
-<style lang="scss">
-</style>
