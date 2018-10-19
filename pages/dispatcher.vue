@@ -69,18 +69,23 @@ const mockData = {
   ],
 };
 
+function slugFromPath(path) {
+  if (path === '/') return 'home';
+  return path.slice(1);
+}
+
 export default {
   components: {
     Home: () => import('~/pages/home'),
-    Category: () => import('~/pages/category'),
+    CategoryTerm: () => import('~/pages/category'),
     Product: () => import('~/pages/product'),
   },
 
-  async asyncData({ app }) {
-    const { post } = await app.$q('post', { slug: 'home' });
+  async asyncData({ app, route }) {
+    const slug = slugFromPath(route.path);
+    const { post } = await app.$q('post', { slug });
     Object.assign(post, mockData);
-    const layout = 'Home';
-    return { layout, post };
+    return { layout: post.__typename, post };
   },
 };
 </script>

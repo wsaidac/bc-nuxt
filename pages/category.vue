@@ -238,6 +238,13 @@ export default {
     UiRow,
   },
 
+  props: {
+    post: {
+      type: Object,
+      required: true,
+    },
+  },
+
   data() {
     return {
       header,
@@ -259,7 +266,7 @@ export default {
     margin-bottom: 30px;
   }
 
-  @include media-breakpoint-only('xs') {
+  @include media-breakpoint-only("xs") {
     &__breadcrumbs {
       display: none !important;
     }
