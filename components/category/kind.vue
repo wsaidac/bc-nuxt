@@ -7,7 +7,7 @@
     />
 
     <div class="block block--gray">
-      <div class="container--mobile-padded">
+      <div class="container container--mobile-padded">
         <ui-row>
           <ui-col
             v-for="product in products"
