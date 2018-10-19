@@ -1,31 +1,12 @@
 <template>
   <div class="footer-links container">
-    <div
-      v-for="(column, i) in columns"
-      :key="column.title"
-      :class="['footer-links__category', { 'footer-links__category--active': isExpanded(i) }]"
-    >
-      <h5 @click="toggle(i)">
-        <span v-text="column.title" />
-        <ui-icon icon="chevron-down" />
-      </h5>
-      <ul class="list-unstyled list-sm-up">
-        <li
-          v-for="link in column.links"
-          :key="link.title"
-        >
-          <nuxt-link
-            :to="link.url"
-            :title="link.title"
-          >
-            {{ link.title }}
-          </nuxt-link>
-        </li>
-      </ul>
-      <ui-transition-expand >
-        <ul
-          v-if="isExpanded(i)"
-          class="list-unstyled list-xs">
+    <ui-collapse class="footer-links__mobile">
+      <ui-collapse-item
+        v-for="(column, i) in columns"
+        :key="i"
+        :title="column.title"
+      >
+        <ul class="footer-links__list list-unstyled">
           <li
             v-for="link in column.links"
             :key="link.title"
@@ -38,21 +19,45 @@
             </nuxt-link>
           </li>
         </ul>
-      </ui-transition-expand>
-    </div>
+      </ui-collapse-item>
+    </ui-collapse>
+    <ui-row class="footer-links__desktop">
+      <ui-col
+        v-for="(column, i) in columns"
+        :key="i"
+        :span="8"
+      >
+        <h5 v-text="column.title" />
+        <ul class="footer-links__list list-unstyled">
+          <li
+            v-for="link in column.links"
+            :key="link.title"
+          >
+            <nuxt-link
+              :to="link.url"
+              :title="link.title"
+            >
+              {{ link.title }}
+            </nuxt-link>
+          </li>
+        </ul>
+      </ui-col>
+    </ui-row>
   </div>
 </template>
 
 <script>
-import { UiTransitionExpand, UiIcon } from '~/components/ui';
+import { UiCollapse, UiCollapseItem, UiRow, UiCol } from '~/components/ui'; // eslint-disable-line
 
 
 export default {
   name: 'FooterLinks',
 
   components: {
-    UiTransitionExpand,
-    UiIcon,
+    UiCollapse,
+    UiCollapseItem,
+    UiRow,
+    UiCol,
   },
 
   props: {
@@ -63,120 +68,95 @@ export default {
       },
     },
   },
-
-  data() {
-    return {
-      expanded: [],
-    };
-  },
-
-  methods: {
-    toggle(i) {
-      const index = this.expanded.indexOf(i);
-      return index >= 0 ? this.expanded.splice(index, 1) : this.expanded.push(i);
-    },
-
-    isExpanded(i) {
-      return this.expanded.includes(i);
-    },
-  },
 };
 </script>
 
 <style lang="scss">
 .footer-links {
-  align-items: flex-start;
-  display: flex;
-
-  .ui-icon {
-    display: none;
+  .el-collapse {
+    width: 100%;
   }
 
-  .list-xs {
-    display: none;
+  .el-collapse-item {
+    .el-collapse-item__content {
+      padding: 0 15px;
+    }
+
+    .el-collapse-item__header {
+      background: $gray-100;
+      border-top: 1px solid $gray-900;
+      flex-flow: row-reverse nowrap;
+      font-size: 16.8px;
+      font-weight: 900;
+      line-height: 24px;
+      padding-left: 15px;
+
+      @include flex(space-between, center);
+
+      .el-collapse-item__arrow {
+        height: 100%;
+
+        &::after {
+          @include svg-icon(
+            24px,
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"><path fill="#{$gray-900}" d="M819 1331L77 589q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 166q19 19 19 45t-19 45l-742 742q-19 19-45 19t-45-19z"/></svg>'
+          );
+        }
+      }
+
+      &.is-active {
+        border-bottom: 1px solid $gray-900;
+
+        .el-collapse-item__arrow {
+          transform: rotate(180deg);
+
+          &::after {
+            @include svg-icon(
+              24px,
+              '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"><path fill="black" d="M819 1331L77 589q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 166q19 19 19 45t-19 45l-742 742q-19 19-45 19t-45-19z"/></svg>'
+            );
+          }
+        }
+      }
+    }
+  }
+
+  ul.footer-links__list {
+    margin: 0;
+
+    li {
+      color: $black !important;
+      margin: 10px 0;
+
+      a {
+        color: $black;
+        display: block;
+        font-size: $font-size-smaller;
+      }
+    }
   }
 
   @include media-breakpoint-up('sm') {
+    &__mobile {
+      display: none;
+    }
+  }
+
+  &__desktop {
     margin-bottom: 40px;
-    margin-top: 40px;
-  }
+    width: 100%;
 
-  &__category {
-    flex: 1 1;
-    margin: 0;
-    text-align: center;
-
-    h5 {
-      margin: 0;
-    }
-
-    a {
-      color: $body-color;
-      width: 100%;
-    }
-  }
-
-  @include media-breakpoint-only('xs') {
-    .list-sm-up {
+    @include media-breakpoint-only('xs') {
       display: none;
     }
 
-    .list-xs {
-      display: block;
-    }
-
-    &.container {
-      padding: 0;
-    }
-
-    flex-flow: column nowrap;
-
-    &__category {
-      text-align: left;
-      width: 100%;
-
-      & + & {
-        border-top: 1px solid $gray-700;
-      }
-
-      &:first-child {
-        border-top: 1px solid $gray-300;
-      }
-
-      ul {
-        margin: 0;
-      }
-
-      li {
-        font-size: $font-size-smaller;
-        padding-left: 15px;
-
-        a {
-          display: block;
-          padding: 15px 0;
-        }
-      }
-
-      &--active {
-        .ui-icon {
-          transform: rotate(180deg);
-        }
-      }
+    h5,
+    a {
+      text-align: center;
     }
 
     h5 {
-      background: $gray-200;
-      font-size: $font-size-h6;
-      padding: 20px 20px 20px 10px;
-
-      @include flex(space-between);
-
-      .ui-icon {
-        color: $gray-700;
-        display: inline;
-        font-size: 22px;
-        transition: transform 0.3s;
-      }
+      margin: 15px 0 5px;
     }
   }
 }
