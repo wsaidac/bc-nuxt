@@ -1,5 +1,6 @@
 <template>
   <footer class="rapido-footer">
+    <hr>
     <div class="container">
       <ui-row>
         <ui-col :sm="12">

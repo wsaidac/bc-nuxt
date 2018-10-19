@@ -124,15 +124,6 @@ const kinds = [
         title: 'Verizon Prepaid Refill $20',
         imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png',
       },
-      {
-        id: 6,
-        price: {
-          amount: 7,
-          currency: 'USD',
-        },
-        title: 'Verizon Prepaid Refill $20',
-        imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png',
-      },
     ],
   },
   {
@@ -149,7 +140,7 @@ const kinds = [
         imageUrl: 'https://static.rapido.com/categories/2098/xbox_logo_09.png?1538569956',
       },
       {
-        id: 5,
+        id: 3,
         price: {
           amount: 6,
           currency: 'USD',
@@ -158,7 +149,16 @@ const kinds = [
         imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png',
       },
       {
-        id: 6,
+        id: 4,
+        price: {
+          amount: 7,
+          currency: 'USD',
+        },
+        title: 'Verizon Prepaid Refill $20',
+        imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png',
+      },
+      {
+        id: 5,
         price: {
           amount: 7,
           currency: 'USD',
