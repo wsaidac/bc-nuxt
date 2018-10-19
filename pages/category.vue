@@ -7,6 +7,7 @@
     />
     <cg-usps
       :usps="usps.items"
+      mobile-carousel
     />
     <div>
       <category-kind
@@ -293,6 +294,12 @@ export default {
       .el-button {
         @include position(relative, 3px 0 0 0);
       }
+    }
+  }
+
+  @include media-breakpoint-only('xs') {
+    .el-row.is-padded {
+      margin-top: 0;
     }
   }
 }

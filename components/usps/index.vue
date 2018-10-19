@@ -1,8 +1,5 @@
 <template>
-  <div
-    v-if="usps"
-    :class="classes"
-  >
+  <div :class="classes">
     <div class="container">
       <ul class="cg-usps__list">
         <li
@@ -53,7 +50,7 @@ export default {
     },
     mobileCarousel: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
 

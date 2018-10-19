@@ -6,6 +6,7 @@
     />
     <cg-usps
       :usps="usps.items"
+      mobile-carousel
     />
 
     <service-title
