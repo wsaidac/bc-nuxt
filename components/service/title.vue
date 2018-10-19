@@ -1,5 +1,5 @@
 <template>
-  <div class="service-title container">
+  <div class="service-title container--mobile-padded">
     <div class="flex">
       <h1 v-text="title" />
       <product-instant-tooltip
@@ -44,10 +44,7 @@ export default {
 
     h1 {
       font-size: 33.6px;
-    }
-
-    .product-instant-tooltip {
-      margin-left: 20px;
+      margin-right: 20px;
     }
   }
 

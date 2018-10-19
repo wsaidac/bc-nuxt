@@ -22,7 +22,10 @@
             :sm="12"
             :xs="24"
           >
-            <product-card :product="product" />
+            <product-card
+              :product="product"
+              has-select
+            />
           </ui-col>
           <ui-col
             :lg="18"

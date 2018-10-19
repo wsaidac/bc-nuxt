@@ -39,6 +39,9 @@
           </div>
         </ui-col>
       </ui-row>
+
+    </div>
+    <div class="container--mobile-padded">
       <service-button />
       <service-banner
         :link="customerService.link"
