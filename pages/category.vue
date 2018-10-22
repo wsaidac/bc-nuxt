@@ -282,22 +282,16 @@ export default {
 
       @include flex();
 
+      .product-card__image {
+        border: 1px solid $gray-400;
+        padding: 10px;
+        margin: 10px;
+        max-width: 200px;
+      }
+
       .product-card__content {
         flex-grow: 1;
         padding-left: 0;
-      }
-
-      figure {
-        border: 1px solid $gray-400;
-        height: auto;
-        margin: 10px;
-        width: 25%;
-
-        @include flex(center, center);
-
-        img {
-          padding: 10px;
-        }
       }
 
       .el-button {

@@ -1,7 +1,7 @@
 <template>
   <footer class="rapido-footer">
     <hr>
-    <div class="container">
+    <div class="container--mobile-padded">
       <ui-row>
         <ui-col :sm="12">
           <footer-payment-methods

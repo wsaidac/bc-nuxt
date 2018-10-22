@@ -15,7 +15,7 @@
     />
 
     <div class="block block--gray">
-      <div class="container">
+      <div class="container--mobile-padded">
         <ui-row>
           <ui-col
             :lg="6"
@@ -244,16 +244,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.cg-product {
-  .product-card {
-    @include media-breakpoint-only('xs') {
-      &--mode-vertical {
-        margin: 20px auto;
-        max-width: 300px;
-      }
-    }
-  }
-}
-</style>
