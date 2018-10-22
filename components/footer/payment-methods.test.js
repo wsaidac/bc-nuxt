@@ -5,9 +5,9 @@ describe('FooterPaymentMethods', () => {
   let $mounted;
 
   const methods = [
-    { name: 'Visa', image: { sourceUrl: 'https://static.rapido.com/media/topup/shop/images/paymethods/visa.png' } },
-    { name: 'Mastercard', image: { sourceUrl: 'https://static.rapido.com/media/topup/shop/images/paymethods/mastercard.png' } },
-    { name: 'Maestro', image: { sourceUrl: 'https://static.rapido.com/media/topup/shop/images/paymethods/maestro.png' } },
+    { name: 'Visa', image: { regular: '/paymethods/visa.png', retina: '/paymethods/visa-2x.png' } },
+    { name: 'Mastercard', image: { regular: '/paymethods/mastercard.png', retina: '/paymethods/mastercard-2x.png' } },
+    { name: 'Maestro', image: { regular: '/paymethods/maestro.png', retina: '/paymethods/maestro-2x.png' } },
   ];
 
   beforeEach(() => {
