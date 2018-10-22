@@ -48,18 +48,14 @@ export default {
     }
   }
 
-  @include media-breakpoint-down('md') {
-    .flex {
-      h1 {
-        font-size: 28.8px;
-      }
-    }
-  }
-
   @include media-breakpoint-only('xs') {
     background: $gray-100;
     height: 41px;
     padding-bottom: 0;
+
+    .flex h1 {
+      font-size: $font-size-h5;
+    }
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="cg-home">
     <header-banner
       :image-url="header.image.sourceUrl"
       :payoff="header.title"
@@ -8,13 +8,13 @@
       :usps="usps.items"
       mobile-carousel
     />
-    <div class="container">
+    <div class="container container--mobile-padded">
       <product-popular
         :products="products"
       />
     </div>
     <div class="block block--gray">
-      <div class="container">
+      <div class="container container--mobile-padded">
         <product-quickbuy
           :product="quickbuyProduct"
           :variants="relatedProducts"
@@ -28,7 +28,7 @@
         />
       </div>
     </div>
-    <div class="container">
+    <div class="container container--mobile-padded">
       <service-banner
         :link="customerService.link"
         :image="customerService.image"
@@ -143,4 +143,11 @@ export default {
 </script>
 
 <style lang="scss">
+.cg-home {
+  @include media-breakpoint-only('xs') {
+    .seo-block {
+      display: none;
+    }
+  }
+}
 </style>

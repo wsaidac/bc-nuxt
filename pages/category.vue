@@ -40,8 +40,8 @@
           </div>
         </ui-col>
       </ui-row>
-
     </div>
+
     <div class="container container--mobile-padded">
       <service-button />
       <service-terms :service-terms="serviceTerms" />
@@ -279,14 +279,15 @@ export default {
 
     .product-card--mode-vertical {
       margin-top: 0;
+      max-width: none;
 
       @include flex();
 
       .product-card__image {
         border: 1px solid $gray-400;
-        padding: 10px;
         margin: 10px;
         max-width: 200px;
+        padding: 10px;
       }
 
       .product-card__content {
@@ -298,9 +299,7 @@ export default {
         @include position(relative, 3px 0 0 0);
       }
     }
-  }
 
-  @include media-breakpoint-only('xs') {
     .el-row.is-padded {
       margin-top: 0;
     }

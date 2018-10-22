@@ -15,7 +15,7 @@
     />
 
     <div class="block block--gray">
-      <div class="container--mobile-padded">
+      <div class="container container--mobile-padded">
         <ui-row>
           <ui-col
             :lg="6"
@@ -40,7 +40,7 @@
             />
             <product-variants
               :product="product"
-              :related="relatedProducts"
+              :variants="relatedProducts"
             />
           </ui-col>
         </ui-row>
@@ -64,7 +64,9 @@
           </div>
         </ui-col>
       </ui-row>
+    </div>
 
+    <div class="container container--mobile-padded">
       <service-button />
       <service-terms :service-terms="serviceTerms" />
       <service-banner
@@ -244,3 +246,13 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.cg-product {
+  @include media-breakpoint-only('xs') {
+    .product-card {
+      margin: auto !important;
+    }
+  }
+}
+</style>

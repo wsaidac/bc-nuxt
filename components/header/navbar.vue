@@ -292,6 +292,7 @@ export default {
     .container {
       background: $primary-500;
       height: 50px;
+      padding-left: 15px;
       position: relative;
       z-index: 100;
 

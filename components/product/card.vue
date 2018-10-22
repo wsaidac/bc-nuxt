@@ -174,15 +174,12 @@ export default {
 
     @include flex();
 
-    figure {
+    .product-card__image {
+      border: 1px solid $gray-400;
+      height: 100px;
       margin: 20px;
-      position: relative;
-      width: 33%;
-
-      img {
-        border: 1px solid $gray-400;
-        padding: 10px;
-      }
+      padding: 10px;
+      width: 125px;
     }
 
     .product-card__title {
@@ -199,7 +196,6 @@ export default {
 
   &--mode-vertical {
     margin-top: 20px;
-    margin: auto;
     max-width: 300px;
 
     .product-card__image {
