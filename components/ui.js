@@ -1,6 +1,9 @@
 export { default as UiButton } from './ui/button';
 export { default as UiCol } from './ui/col';
+export { default as UiCollapse } from './ui/collapse';
+export { default as UiCollapseItem } from './ui/collapse-item';
 export { default as UiIcon } from './ui/icon';
 export { default as UiPopover } from './ui/popover';
 export { default as UiRow } from './ui/row';
+export { default as UiSelect } from './ui/select';
 export { default as UiTransitionExpand } from './ui/transition-expand';

@@ -1,29 +1,27 @@
 <template>
-  <div class="main-carousel">
+  <div class="usps-carousel">
     <div
-      v-for="(usp, i) in usps"
-      :key="i"
-      :class="['cell', `cell-${i}`]"
+      v-for="(usp, index) in usps"
+      :key="index"
+      class="usps-carousel__cell"
     >
       <img
         :alt="usp.text"
         :src="usp.image.sourceUrl"
       >
-      <div v-text="usp.text" />
+      <strong v-text="usp.text" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HeaderMobileUsps',
+  name: 'UspsCarousel',
 
   props: {
     usps: {
       type: Array,
-      default() {
-        return [];
-      },
+      required: true,
     },
   },
 
@@ -34,12 +32,9 @@ export default {
       autoPlay: true,
       prevNextButtons: false,
       cellAlign: 'left',
+      selectedAttraction: 0.016,
+      friction: 0.28,
     });
-  },
-
-  methods: {
-    hideCarousel() {
-    },
   },
 };
 </script>
@@ -47,15 +42,18 @@ export default {
 <style lang="scss">
 @import 'flickity/dist/flickity.css';
 
-.main-carousel {
-  background: #dce6f5;
+.usps-carousel {
   flex-grow: 1;
   padding: 5px 20px;
 
-  .cell {
+  &__cell {
     width: 100%;
 
     @include flex(null, center);
+
+    img {
+      height: 40px;
+    }
 
     div {
       font-size: $font-size-base;
@@ -63,25 +61,17 @@ export default {
     }
   }
 
-  img {
-    height: 40px;
-  }
-
-  ol {
-    bottom: 17px !important;
+  .flickity-page-dots {
+    bottom: 17px;
     margin-right: 5px;
     right: 0;
-    width: 50px !important;
+    width: 50px;
 
-    li {
-      height: 7px !important;
-      margin: 0 4px !important;
-      width: 7px !important;
+    .dot {
+      height: 7px;
+      margin: 0 4px;
+      width: 7px;
     }
-  }
-
-  @include media-breakpoint-up('sm') {
-    display: none;
   }
 }
 </style>

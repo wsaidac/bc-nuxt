@@ -8,7 +8,7 @@ describe('ProductFeatured', () => {
     {
       title: 'Mobile Recharge',
       icon: 'mobile',
-      products: [
+      categories: [
         {
           id: 1, title: 'Provider 1', imageUrl: 'https://example.com/provider-1.jpg', url: '/provider-1',
         },
@@ -26,7 +26,7 @@ describe('ProductFeatured', () => {
     {
       title: 'Game Gift cards',
       icon: 'game',
-      products: [
+      categories: [
         {
           id: 5, title: 'Playstation', imageUrl: 'https://example.com/playstation.jpg', url: '/playstation',
         },

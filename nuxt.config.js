@@ -34,6 +34,7 @@ module.exports = {
       browserUri: 'env://API_BROWSER',
       serverUri: 'env://API_SERVER',
     }],
+    ['~/modules/disable-default-router'],
   ],
   plugins: [
     '~/assets/icons.js',

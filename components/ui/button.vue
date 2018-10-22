@@ -65,15 +65,11 @@ $--button-warning-border: $body-color;
 .el-button {
   border: 2px solid $body-color;
   border-radius: 0;
+  font-size: 12px;
   line-height: 24px;
   padding: 5px 7px;
   text-transform: uppercase;
   transition: background 0.3s ease, color 0.3s ease;
-
-  @include media-breakpoint-up('sm') {
-    font-size: 1.2em;
-    padding: 3px 20px;
-  }
 
   &.is-block {
     display: block;
@@ -84,6 +80,15 @@ $--button-warning-border: $body-color;
   &--warning:hover {
     background-color: $body-color;
     color: $white;
+  }
+
+  @include media-breakpoint-up('sm') {
+    font-size: 14.4px;
+    padding: 3px 20px;
+  }
+
+  @include media-breakpoint-up('lg') {
+    font-size: 16.8px;
   }
 }
 </style>

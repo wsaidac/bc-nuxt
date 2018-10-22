@@ -1,14 +1,12 @@
 <template>
-  <div class="product-instant-tooltip">
+  <div class="product-info-tooltip">
     <ui-popover
-      :popper-class="popperClass"
-      title="Instant delivery"
-      content="You'll receive the code by email, so you can use the credit right away. In most cases your code will be displayed instantly on your screen as well."
+      :title="title"
+      :content="content"
       placement="bottom-start"
       trigger="hover"
     >
       <p slot="reference">
-        <span v-text="message" />
         <ui-icon icon="question-circle-o" />
       </p>
     </ui-popover>
@@ -19,7 +17,7 @@
 import { UiIcon, UiPopover } from '~/components/ui';
 
 export default {
-  name: 'ProductInstantTooltip',
+  name: 'ProductInfoTooltip',
 
   components: {
     UiIcon,
@@ -27,11 +25,11 @@ export default {
   },
 
   props: {
-    message: {
+    title: {
       type: String,
       default: '',
     },
-    popperClass: {
+    content: {
       type: String,
       default: '',
     },
@@ -40,13 +38,12 @@ export default {
 </script>
 
 <style lang="scss">
-.product-instant-tooltip {
+.product-info-tooltip {
   @include flex(center, center);
 
   p {
     color: $primary-500;
     font-size: $font-size-h6;
-    margin: 6px 0;
   }
 }
 </style>

@@ -43,5 +43,13 @@ export default {
   &__title {
     text-align: center;
   }
+
+  @include media-breakpoint-only('xs') {
+    background: $white;
+
+    h2 {
+      display: none;
+    }
+  }
 }
 </style>

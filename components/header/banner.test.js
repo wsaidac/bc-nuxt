@@ -9,16 +9,27 @@ describe('HeaderBanner', () => {
 
   it('should omit payoff if not given', () => {
     const $mounted = mount(HeaderBanner, { propsData: { imageUrl: 'https://example.com/banner.jpg' } });
-    expect($mounted.find('.header-banner__payoff').exists()).toBe(false);
+    expect($mounted.find('.header-banner__payoff-text').exists()).toBe(false);
+    expect($mounted.find('.header-banner__payoff-image').exists()).toBe(false);
   });
 
-  it('should mount a payoff', () => {
+  it('should mount a text payoff', () => {
     const $mounted = mount(HeaderBanner, {
       propsData: {
         imageUrl: 'https://example.com/banner.jpg',
-        payoff: '<p>Foo</p>',
+        payoffText: '<p>Foo</p>',
       },
     });
-    expect($mounted.find('.header-banner__payoff').text()).toContain('Foo');
+    expect($mounted.find('.header-banner__payoff-text').text()).toContain('Foo');
+  });
+
+  it('should mount an image payoff', () => {
+    const $mounted = mount(HeaderBanner, {
+      propsData: {
+        imageUrl: 'https://example.com/banner.jpg',
+        payoffImage: 'https://example.com/logo.png',
+      },
+    });
+    expect($mounted.find('.header-banner__payoff-image img').exists()).toBe(true);
   });
 });
