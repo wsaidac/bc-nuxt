@@ -1,0 +1,4 @@
+fragment categoryTermFields on CategoryTerm {
+  __typename
+  name
+}

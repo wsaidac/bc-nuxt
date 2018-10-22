@@ -1,4 +1,5 @@
 fragment homeFields on Home {
+  __typename
   customerService {
     primaryText
     secondaryText
