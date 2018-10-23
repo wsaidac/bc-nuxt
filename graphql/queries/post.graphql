@@ -1,9 +1,7 @@
-#import "../fragments/categoryTermFields.graphql"
 #import "../fragments/homeFields.graphql"
 
 query($slug: String!) {
   post: postBySlug(slug: $slug) {
-    ...categoryTermFields
     ...homeFields
   }
 }

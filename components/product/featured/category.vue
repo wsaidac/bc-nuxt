@@ -18,7 +18,8 @@
         >
           <img
             :alt="product.title"
-            :src="product.imageUrl"
+            :src="product.image.regular"
+            :srcset="`${product.image.regular}, ${product.image.retina} 2x`"
           >
           <div
             class="product-featured-category__item-title"
@@ -108,6 +109,12 @@ export default {
   methods: {
     toggle() {
       this.collapsed = !this.collapsed;
+    },
+    productImage(product) {
+      if (product.image) {
+        return product.image.desktop;
+      }
+      return '';
     },
   },
 };

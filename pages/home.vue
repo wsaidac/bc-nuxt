@@ -9,14 +9,14 @@
     />
     <div class="container">
       <product-popular
-        :products="post.products"
+        :products="post.popularProducts.items"
       />
     </div>
     <div class="block block--gray">
       <div class="container">
         <product-quickbuy
-          :product="post.quickbuyProduct"
-          :related="post.relatedProducts"
+          :product="post.quickbuy.quickbuyProduct"
+          :variants="post.relatedProducts"
         />
       </div>
     </div>

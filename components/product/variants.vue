@@ -17,7 +17,7 @@
     </ul>
     <p class="text-right">
       <nuxt-link
-        :to="product.url"
+        :to="product.slug"
         :title="product.title"
       >
         See all denominations

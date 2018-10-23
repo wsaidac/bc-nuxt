@@ -1,26 +1,37 @@
 <template>
   <div :class="classes">
     <figure>
-      <nuxt-link to="#">
-        <img
-          :src="product.imageUrl"
-          :alt="product.title">
+      <nuxt-link :to="product.slug">
+
+        <picture>
+          <source
+            :srcset="product.content.image.desktop"
+            media="(min-width: 768px)">
+          <source
+            :srcset="product.content.image.mobile"
+            media="(max-width: 767px)">
+          <img
+            :src="product.content.image.desktop"
+            :alt="product.content.title">
+        </picture>
+
       </nuxt-link>
     </figure>
     <div class="product-card__content">
       <div class="product-card__title">
-        <h3 v-text="$n(product.price.amount, product.price.currency)" />
-        <p v-text="product.title" />
+        <h3 v-text="$n(product.information.retailValue, 'USD')" />
+        <p v-text="product.content.title" />
         <product-info-tooltip
           v-if="mode === 'vertical'"
-          title="need data from product"
-          content="need data from product also"
+          :content="product.content.tooltip.content"
+          :title="product.content.tooltip.title"
         />
       </div>
       <div class="product-card__actions">
         <product-instant-tooltip
           v-if="mode === 'horizontal'"
-          message="Instant delivery"
+          :content="product.content.tooltip.content"
+          :message="product.content.tooltip.title"
         />
         <div class="spacer" />
         <ui-select

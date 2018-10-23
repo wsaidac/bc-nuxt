@@ -13,6 +13,44 @@ fragment homeFields on Home {
       retina: sharpieUrl(height: 260, width: 260)
     }
   }
+  quickbuy {
+    quickbuyProduct {
+      id
+      link
+      uri
+      information {
+        retailValue
+        currency
+      }
+      content {
+        title
+        image {
+        desktop: sharpieUrl(height: 250, width: 250)
+        mobile: sharpieUrl(height: 150, width: 150)
+        }
+        tooltip {
+          title
+          content
+        }
+      }
+      slug
+    }
+  }
+  popularProducts {
+    items {
+      category {
+        id
+        categoryHeader {
+          title
+          image {
+            regular: sharpieUrl(height: 84, width: 253)
+            retina: sharpieUrl(height: 168, width: 506)
+          }
+        }
+        slug
+      }
+    }
+  }
   seoBlock {
     title
     text

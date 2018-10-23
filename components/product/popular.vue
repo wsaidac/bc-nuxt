@@ -7,20 +7,22 @@
     <ui-row>
       <ui-col
         v-for="product in products"
-        :key="product.id"
+        :key="product.category.id"
         :xs="12"
         :sm="12"
         :md="8"
       >
         <nuxt-link
-          :to="product.url"
-          :title="product.title"
+          :to="product.category.slug"
+          :title="productTitle(product)"
           class="product-popular__item"
         >
           <img
-            :src="product.imageUrl"
-            :alt="product.title"
+            :alt="productTitle(product)"
+            :src="productTitle(product)"
+            :srcset="`${productImage(product, 'regular')}, ${productImage(product, 'retina')} 2x`"
           >
+
         </nuxt-link>
       </ui-col>
     </ui-row>
@@ -44,6 +46,20 @@ export default {
       default() {
         return [];
       },
+    },
+  },
+  methods: {
+    productTitle(product) {
+      if (product.category.categoryHeader) {
+        return product.category.categoryHeader.title;
+      }
+      return '';
+    },
+    productImage(product, key) {
+      if (product.category.categoryHeader) {
+        return product.category.categoryHeader.image[key];
+      }
+      return '';
     },
   },
 };
