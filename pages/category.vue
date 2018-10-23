@@ -1,8 +1,8 @@
 <template>
   <div class="cg-category">
     <header-banner
-      :image-url="header.image.sourceUrl"
-      payoff-image="https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png"
+      :image-url="header.backgroundImage"
+      :payoff-image="header.image"
       title="EasyGO Refill"
     />
     <cg-usps
@@ -64,12 +64,6 @@ import ServiceBanner from '~/components/service/banner';
 import SeoBlock from '~/components/seo/block';
 import SeoBreadcrumbs from '~/components/seo/breadcrumbs';
 import { UiCol, UiRow } from '~/components/ui';
-
-const header = {
-  image: {
-    sourceUrl: 'http://localhost:3000/app/uploads/seeds/rapido_header.jpg',
-  },
-};
 
 const usps = {
   items: [
@@ -247,7 +241,6 @@ export default {
 
   data() {
     return {
-      header,
       usps,
       kinds,
       infoSlides,
@@ -266,7 +259,7 @@ export default {
     margin-bottom: 30px;
   }
 
-  @include media-breakpoint-only("xs") {
+  @include media-breakpoint-only('xs') {
     &__breadcrumbs {
       display: none !important;
     }
