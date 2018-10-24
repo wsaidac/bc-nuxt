@@ -14,7 +14,7 @@ describe('ProductQuickbuy', () => {
       title: 'Verizon Prepaid Refill $5',
       image: {
         desktop: 'https://example.com/xbox.jpg',
-        mobile: 'https://example.com/xbox.jpg'
+        mobile: 'https://example.com/xbox.jpg',
       },
       tooltip: {
         content: 'Long text to show when tooltip is hovered',

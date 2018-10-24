@@ -14,9 +14,9 @@ describe('ProductPopular', () => {
           image: {
             regular: 'https://example.com/xbox.jpg',
             retina: 'https://example.com/xbox.jpg',
-          }
-        }
-      }
+          },
+        },
+      },
     },
     {
       category: {
@@ -27,9 +27,9 @@ describe('ProductPopular', () => {
           image: {
             regular: 'https://example.com/playstation.jpg',
             retina: 'https://example.com/playstation.jpg',
-          }
-        }
-      }
+          },
+        },
+      },
     },
     {
       category: {
@@ -40,9 +40,9 @@ describe('ProductPopular', () => {
           image: {
             regular: 'https://example.com/spotify.jpg',
             retina: 'https://example.com/spotify.jpg',
-          }
-        }
-      }
+          },
+        },
+      },
     },
   ];
 
