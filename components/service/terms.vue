@@ -1,16 +1,22 @@
 <template>
   <div class="service-terms">
-    <strong v-text="serviceTerms.title" />
-    <p v-html="serviceTerms.description" />
+    <strong v-text="title" />
+    <p v-html="description" />
   </div>
 </template>
 
 <script>
 export default {
+  name: 'ServiceTerms',
+
   props: {
-    serviceTerms: {
-      type: Object,
-      default: () => {},
+    title: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
     },
   },
 };

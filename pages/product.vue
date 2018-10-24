@@ -6,14 +6,11 @@
     />
     <cg-usps
       :usps="usps.items"
-      mobile-carousel
     />
-
     <service-title
       :title="highlights.title"
       tooltip-message="Instant delivery"
     />
-
     <div class="block block--gray">
       <div class="container container--mobile-padded">
         <ui-row>
@@ -68,7 +65,10 @@
 
     <div class="container container--mobile-padded">
       <service-button />
-      <service-terms :service-terms="serviceTerms" />
+      <service-terms
+        :title="serviceTerms.title"
+        :description="serviceTerms.description"
+      />
       <service-banner
         :link="customerService.link"
         :image="customerService.image"

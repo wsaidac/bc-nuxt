@@ -6,7 +6,6 @@
     />
     <cg-usps
       :usps="post.usps.items"
-      mobile-carousel
     />
     <div class="container container--mobile-padded">
       <product-popular
@@ -17,7 +16,7 @@
       <div class="container container--mobile-padded">
         <product-quickbuy
           :product="post.quickbuyProduct"
-          :related="post.relatedProducts"
+          :variants="post.relatedProducts"
         />
       </div>
     </div>

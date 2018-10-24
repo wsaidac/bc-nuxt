@@ -176,10 +176,10 @@ export default {
 
     .product-card__image {
       border: 1px solid $gray-400;
-      height: 100px;
       margin: 20px;
       padding: 10px;
-      width: 125px;
+
+      @include size(125px, 100px);
     }
 
     .product-card__title {

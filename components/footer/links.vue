@@ -47,17 +47,21 @@
 </template>
 
 <script>
-import { UiCollapse, UiCollapseItem, UiRow, UiCol } from '~/components/ui'; // eslint-disable-line
-
+import {
+  UiCol,
+  UiCollapse,
+  UiCollapseItem,
+  UiRow,
+} from '~/components/ui';
 
 export default {
   name: 'FooterLinks',
 
   components: {
+    UiCol,
     UiCollapse,
     UiCollapseItem,
     UiRow,
-    UiCol,
   },
 
   props: {

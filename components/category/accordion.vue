@@ -7,6 +7,7 @@
       >
         <cg-usps
           :usps="usps"
+          :mobile-carousel="false"
           mode="vertical"
         />
       </ui-collapse-item>
