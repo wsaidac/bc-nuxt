@@ -75,14 +75,6 @@ import SeoBlock from '~/components/seo/block';
 import SeoBreadcrumbs from '~/components/seo/breadcrumbs';
 import { UiCol, UiRow } from '~/components/ui';
 
-const crumbs = [
-  { url: '/', label: 'Home', title: 'Rapido Home is cool' },
-  { url: '/category', label: 'category', title: 'cat' },
-  { url: '/faq', label: 'FAQ', title: 'faq' },
-  { url: '/category', label: 'category', title: 'cat' },
-  { label: 'prod', title: 'prod' },
-];
-
 export default {
   components: {
     CategoryAccordion,
@@ -106,17 +98,18 @@ export default {
     },
   },
 
-  data() {
-    return {
-      crumbs,
-    };
-  },
-
   computed: {
     ...mapGetters('shared', ['customerService', 'usps', 'paymentMethods']),
 
     kinds() {
       return groupBy(this.post.products.nodes, p => p.kinds.nodes[0].name);
+    },
+
+    crumbs() {
+      return [
+        { url: '/', label: 'Home', title: 'Rapido.com: Buy your favorite Gift Cards online | Fast Email Delivery' },
+        { label: this.post.name },
+      ];
     },
   },
 };
