@@ -43,7 +43,8 @@
             >
               <img
                 :alt="product.title"
-                :src="product.imageUrl"
+                :src="product.image.regular"
+                :srcset="`${product.image.regular}, ${product.image.retina} 2x`"
               >
               <div
                 class="product-featured-category__item-title"
