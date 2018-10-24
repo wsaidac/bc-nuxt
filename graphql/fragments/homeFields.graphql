@@ -10,6 +10,7 @@ fragment homeFields on Home {
   usps {
     items {
       text
+      description
       image {
         regular: sharpieUrl(height: 60, width: 60)
         retina: sharpieUrl(height: 120, width: 120)
