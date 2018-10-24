@@ -8,7 +8,7 @@ const retrieveImageFromMenuItem = (node, type) => {
 
 const unwrapNode = node => ({
   title: node.label,
-  url: `/${node.label}`,
+  url: `/${getNestedKeySafelyFromObject(node, ['connectedObject', 'slug'])}`,
   image: {
     regular: retrieveImageFromMenuItem(node, 'regular'),
     retina: retrieveImageFromMenuItem(node, 'retina'),

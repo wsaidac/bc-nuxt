@@ -11,13 +11,14 @@ query($slug: String) {
               retina: sourceUrl
             }
           }
-          childItems {
+          childItems(first: 999) {
             nodes {
               label
               url
               connectedObject {
                 ... on CategoryTerm {
                   name
+                  slug
                   categoryHeader {
                     title
                     image {
