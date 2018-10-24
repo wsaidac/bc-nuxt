@@ -1,5 +1,8 @@
 <template>
-  <div :class="classes">
+  <div
+    v-if="product"
+    :class="classes"
+  >
     <figure>
       <nuxt-link :to="product.slug">
         <picture>

@@ -15,7 +15,10 @@
         </nuxt-link>
       </li>
     </ul>
-    <p class="text-right">
+    <p
+      v-if="product"
+      class="text-right"
+    >
       <nuxt-link
         :to="product.slug"
         :title="product.title"

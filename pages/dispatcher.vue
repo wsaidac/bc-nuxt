@@ -85,9 +85,7 @@ export default {
     const slug = slugFromPath(route.path);
     const { post } = await app.$q('post', { slug });
     Object.assign(post, mockData);
-    // return { layout: post.__typename, post };
-    const layout = 'Home';
-    return { layout, post };
+    return { layout: post.__typename, post };
   },
 };
 </script>
