@@ -23,7 +23,7 @@
         <h3 v-text="$n(product.information.retailValue, 'USD')" />
         <p v-text="product.content.title" />
         <product-info-tooltip
-          v-if="mode === 'vertical' && product.content.tooltip"
+          v-if="mode === 'vertical' && product.content.tooltip && product.content.tooltip.content"
           :content="product.content.tooltip.content"
           :title="product.content.tooltip.title"
         />
