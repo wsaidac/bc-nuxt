@@ -7,16 +7,25 @@ query($slug: String) {
           url
           additionalAttributes {
             attachedImage {
-              sourceUrl
+              regular: sourceUrl
+              retina: sourceUrl
             }
           }
-          childItems {
+          childItems(first: 999) {
             nodes {
               label
               url
-              additionalAttributes {
-                attachedImage {
-                  sourceUrl
+              connectedObject {
+                ... on CategoryTerm {
+                  name
+                  slug
+                  categoryHeader {
+                    title
+                    image {
+                      regular: sharpieUrl(height: 86, width: 116)
+        							retina: sharpieUrl(height: 172, width: 232)
+                    }
+                  }
                 }
               }
             }

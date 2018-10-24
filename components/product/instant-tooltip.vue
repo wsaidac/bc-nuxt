@@ -2,8 +2,8 @@
   <div class="product-instant-tooltip">
     <ui-popover
       :popper-class="popperClass"
+      :content="content"
       title="Instant delivery"
-      content="You'll receive the code by email, so you can use the credit right away. In most cases your code will be displayed instantly on your screen as well."
       placement="bottom-start"
       trigger="hover"
     >
@@ -28,6 +28,10 @@ export default {
 
   props: {
     message: {
+      type: String,
+      default: '',
+    },
+    content: {
       type: String,
       default: '',
     },

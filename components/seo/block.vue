@@ -1,7 +1,7 @@
 <template>
   <div class="seo-block">
     <h2 v-text="title" />
-    <p v-html="description" />
+    <div v-html="description" />
   </div>
 </template>
 

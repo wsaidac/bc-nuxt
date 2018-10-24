@@ -1,27 +1,38 @@
 <template>
-  <div :class="classes">
-    <nuxt-link
-      class="product-card__image"
-      to="#"
-    >
-      <img
-        :src="product.imageUrl"
-        :alt="product.title">
-    </nuxt-link>
+  <div
+    v-if="product"
+    :class="classes"
+  >
+    <figure>
+      <nuxt-link :to="product.slug">
+        <picture v-if="product.content.image">
+          <source
+            :srcset="product.content.image.desktop"
+            media="(min-width: 768px)">
+          <source
+            :srcset="product.content.image.mobile"
+            media="(max-width: 767px)">
+          <img
+            :src="product.content.image.desktop"
+            :alt="product.content.title">
+        </picture>
+      </nuxt-link>
+    </figure>
     <div class="product-card__content">
       <div class="product-card__title">
-        <h3 v-text="$n(product.price.amount, product.price.currency)" />
-        <p v-text="product.title" />
+        <h3 v-text="$n(product.information.retailValue, 'USD')" />
+        <p v-text="product.content.title" />
         <product-info-tooltip
-          v-if="mode === 'vertical'"
-          title="need data from product"
-          content="need data from product also"
+          v-if="mode === 'vertical' && product.content.tooltip && product.content.tooltip.content"
+          :content="product.content.tooltip.content"
+          :title="product.content.tooltip.title"
         />
       </div>
       <div class="product-card__actions">
         <product-instant-tooltip
           v-if="mode === 'horizontal'"
           message="Instant delivery"
+          content="You'll receive the code by email, so you can use the credit right away. In most cases the code will be displayed instantly on your screen as well."
         />
         <div class="spacer" />
         <ui-select
@@ -100,6 +111,10 @@ export default {
   background: $white;
   border: 1px solid $gray-400;
 
+  figure {
+    margin: 0;
+  }
+
   &__title {
     position: relative;
 
@@ -174,12 +189,15 @@ export default {
 
     @include flex();
 
-    .product-card__image {
-      border: 1px solid $gray-400;
+    figure {
       margin: 20px;
-      padding: 10px;
+      position: relative;
+      width: 33%;
 
-      @include size(125px, 100px);
+      img {
+        border: 1px solid $gray-400;
+        padding: 10px;
+      }
     }
 
     .product-card__title {
@@ -196,19 +214,13 @@ export default {
 
   &--mode-vertical {
     margin-top: 20px;
-    max-width: 300px;
 
-    .product-card__image {
+    figure {
       border-bottom: 1px solid $gray-400;
-      height: 200px;
+      height: 270px;
       padding: 20px;
 
       @include flex(center, center);
-
-      img {
-        max-height: 100%;
-        width: auto;
-      }
     }
 
     .product-card__content {

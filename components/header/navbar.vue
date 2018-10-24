@@ -31,8 +31,9 @@
         >
           <div @click="setActive(category.title)">
             <img
-              :src="category.imageUrl"
-              alt=""
+              :alt="category.title"
+              :src="category.image.regular"
+              :srcset="`${category.image.regular}, ${category.image.retina} 2x`"
             >
             <span v-text="category.title" />
           </div>

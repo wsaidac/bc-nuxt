@@ -1,7 +1,7 @@
 <template>
   <div class="service-terms">
     <strong v-text="title" />
-    <p v-html="description" />
+    <div v-html="description" />
   </div>
 </template>
 

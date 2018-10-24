@@ -66,7 +66,7 @@ export default {
       default: null,
     },
     payoffImage: {
-      type: String,
+      type: Object,
       default: null,
     },
     title: {

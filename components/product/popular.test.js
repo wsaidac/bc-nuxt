@@ -6,22 +6,43 @@ describe('ProductPopular', () => {
 
   const products = [
     {
-      id: 1,
-      title: 'Xbox',
-      imageUrl: 'https://example.com/xbox.jpg',
-      url: '/xbox',
+      category: {
+        id: 1,
+        slug: '/verizon/10-usd',
+        categoryHeader: {
+          title: 'Xbox',
+          image: {
+            regular: 'https://example.com/xbox.jpg',
+            retina: 'https://example.com/xbox.jpg',
+          },
+        },
+      },
     },
     {
-      id: 2,
-      title: 'Playstation',
-      imageUrl: 'https://example.com/playstation.jpg',
-      url: '/playstation',
+      category: {
+        id: 2,
+        slug: '/verizon/10-usd',
+        categoryHeader: {
+          title: 'Playstation',
+          image: {
+            regular: 'https://example.com/playstation.jpg',
+            retina: 'https://example.com/playstation.jpg',
+          },
+        },
+      },
     },
     {
-      id: 3,
-      title: 'Spotify',
-      imageUrl: 'https://example.com/spotify.jpg',
-      url: '/spotify',
+      category: {
+        id: 3,
+        slug: '/verizon/10-usd',
+        categoryHeader: {
+          title: 'Spotify',
+          image: {
+            regular: 'https://example.com/spotify.jpg',
+            retina: 'https://example.com/spotify.jpg',
+          },
+        },
+      },
     },
   ];
 

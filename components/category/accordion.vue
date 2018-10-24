@@ -14,8 +14,8 @@
       <ui-collapse-item
         v-for="(slide, index) in slides"
         :key="index"
-        :title="slide.title">
-        {{ slide.content }}
+        :title="slide.question">
+        <div v-html="slide.answer" />
       </ui-collapse-item>
     </ui-collapse>
   </div>

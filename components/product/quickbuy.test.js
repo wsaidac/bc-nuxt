@@ -6,12 +6,22 @@ describe('ProductQuickbuy', () => {
 
   const product = {
     id: 1,
-    title: 'Verizon Prepaid Refill $5',
-    price: {
-      amount: 5.0,
+    information: {
+      retailValue: 5.0,
       currency: 'USD',
     },
-    imageUrl: 'https://example.com/xbox.jpg',
+    content: {
+      title: 'Verizon Prepaid Refill $5',
+      image: {
+        desktop: 'https://example.com/xbox.jpg',
+        mobile: 'https://example.com/xbox.jpg',
+      },
+      tooltip: {
+        content: 'Long text to show when tooltip is hovered',
+        title: 'Short text to show when tooltip is not yet hovered',
+      },
+    },
+    slug: '/product123',
   };
 
   const variants = [

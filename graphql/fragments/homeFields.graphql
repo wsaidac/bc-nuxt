@@ -10,6 +10,7 @@ fragment homeFields on Home {
   usps {
     items {
       text
+      description
       image {
         regular: sharpieUrl(height: 60, width: 60)
         retina: sharpieUrl(height: 120, width: 120)
@@ -31,6 +32,56 @@ fragment homeFields on Home {
     image {
       regular: sharpieUrl(height: 130, width: 130)
       retina: sharpieUrl(height: 260, width: 260)
+    }
+  }
+  quickbuy {
+    quickbuyProduct {
+      id
+      link
+      uri
+      information {
+        retailValue
+        currency
+      }
+      content {
+        title
+        image {
+          desktop: sharpieUrl(height: 250, width: 250)
+          mobile: sharpieUrl(height: 150, width: 150)
+        }
+        tooltip {
+          title
+          content
+        }
+      }
+      slug
+      categories {
+        nodes {
+          products {
+            nodes {
+              content {
+                title
+              }
+              slug
+            }
+          }
+        }
+      }
+    }
+  }
+  popularProducts {
+    items {
+      category {
+        id
+        categoryHeader {
+          title
+          image {
+            regular: sharpieUrl(height: 84, width: 253)
+            retina: sharpieUrl(height: 168, width: 506)
+          }
+        }
+        slug
+      }
     }
   }
   seoBlock {

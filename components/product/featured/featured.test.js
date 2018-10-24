@@ -10,16 +10,40 @@ describe('ProductFeatured', () => {
       icon: 'mobile',
       categories: [
         {
-          id: 1, title: 'Provider 1', imageUrl: 'https://example.com/provider-1.jpg', url: '/provider-1',
+          id: 1,
+          title: 'Provider 1',
+          url: '/provider-1',
+          image: {
+            regular: 'https://example.com/provider-1.jpg',
+            retina: 'https://example.com/provider-1.jpg',
+          },
         },
         {
-          id: 2, title: 'Provider 2', imageUrl: 'https://example.com/provider-2.jpg', url: '/provider-2',
+          id: 2,
+          title: 'Provider 1',
+          url: '/provider-1',
+          image: {
+            regular: 'https://example.com/provider-2.jpg',
+            retina: 'https://example.com/provider-2.jpg',
+          },
         },
         {
-          id: 3, title: 'Provider 3', imageUrl: 'https://example.com/provider-3.jpg', url: '/provider-3',
+          id: 3,
+          title: 'Provider 1',
+          url: '/provider-1',
+          image: {
+            regular: 'https://example.com/provider-3.jpg',
+            retina: 'https://example.com/provider-3.jpg',
+          },
         },
         {
-          id: 4, title: 'Provider 4', imageUrl: 'https://example.com/provider-4.jpg', url: '/provider-4',
+          id: 4,
+          title: 'Provider 1',
+          url: '/provider-1',
+          image: {
+            regular: 'https://example.com/provider-4.jpg',
+            retina: 'https://example.com/provider-4.jpg',
+          },
         },
       ],
     },
@@ -28,10 +52,22 @@ describe('ProductFeatured', () => {
       icon: 'game',
       categories: [
         {
-          id: 5, title: 'Playstation', imageUrl: 'https://example.com/playstation.jpg', url: '/playstation',
+          id: 5,
+          title: 'Provider 1',
+          url: '/provider-1',
+          image: {
+            regular: 'https://example.com/provider-1.jpg',
+            retina: 'https://example.com/provider-1.jpg',
+          },
         },
         {
-          id: 6, title: 'Xbox', imageUrl: 'https://example.com/xbox.jpg', url: '/xbox',
+          id: 6,
+          title: 'Provider 1',
+          url: '/provider-1',
+          image: {
+            regular: 'https://example.com/provider-2.jpg',
+            retina: 'https://example.com/provider-2.jpg',
+          },
         },
       ],
     },
