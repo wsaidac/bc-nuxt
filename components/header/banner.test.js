@@ -27,7 +27,7 @@ describe('HeaderBanner', () => {
     const $mounted = mount(HeaderBanner, {
       propsData: {
         image: { desktop: 'https://example.com/banner.jpg', mobile: 'https://example.com/banner.jpg' },
-        payoffImage: 'https://example.com/logo.png',
+        payoffImage: { regular: 'https://example.com/logo.png', retina: 'https://example.com/logo-2x.png' },
       },
     });
     expect($mounted.find('.header-banner__payoff-image img').exists()).toBe(true);

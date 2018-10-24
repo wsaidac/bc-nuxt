@@ -33,7 +33,8 @@
           <figure>
             <img
               :alt="title"
-              :src="payoffImage"
+              :src="payoffImage.regular"
+              :srcset="`${payoffImage.regular}, ${payoffImage.retina} 2x`"
             >
           </figure>
         </div>
@@ -71,12 +72,6 @@ export default {
     title: {
       type: String,
       default: null,
-    },
-  },
-
-  computed: {
-    srcset() {
-      return `${this.image.mobile} 768w, ${this.image.desktop} 1920w`;
     },
   },
 };
