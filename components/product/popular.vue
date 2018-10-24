@@ -22,7 +22,6 @@
             :src="productTitle(product)"
             :srcset="`${productImage(product, 'regular')}, ${productImage(product, 'retina')} 2x`"
           >
-
         </nuxt-link>
       </ui-col>
     </ui-row>
