@@ -9,7 +9,8 @@ fragment homeFields on Home {
       target
     }
     image {
-      sourceUrl
+      regular: sharpieUrl(height: 130, width: 130)
+      retina: sharpieUrl(height: 260, width: 260)
     }
   }
   seoBlock {
@@ -24,14 +25,16 @@ fragment homeFields on Home {
   header {
     title
     image {
-      sourceUrl
+      desktop: sharpieUrl(height: 456, width: 1920)
+      mobile: sharpieUrl(height: 300, width: 768)
     }
   }
   usps {
     items {
       text
       image {
-        sourceUrl
+        regular: sharpieUrl(height: 60, width: 60)
+        retina: sharpieUrl(height: 120, width: 120)
       }
     }
   }
@@ -39,7 +42,8 @@ fragment homeFields on Home {
     icons {
       name
       image {
-        sourceUrl
+        regular: sharpieUrl(height: 40, width: 40)
+        retina: sharpieUrl(height: 80, width: 80)
       }
     }
   }

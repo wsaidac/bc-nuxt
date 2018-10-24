@@ -5,7 +5,8 @@
     class="service-banner"
   >
     <img
-      :src="image.sourceUrl"
+      :src="image.regular"
+      :srcset="`${image.regular}, ${image.retina} 2x`"
       alt=""
     >
     <p>
