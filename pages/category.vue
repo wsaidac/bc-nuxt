@@ -1,40 +1,40 @@
 <template>
   <div class="cg-category">
     <header-banner
-      :image="post.categoryHeader.image"
+      :image="post.categoryHeader.banner"
       :payoff-image="post.categoryHeader.image"
       :title="post.categoryHeader.title"
     />
     <cg-usps
       :usps="usps.items"
     />
-    <div>
+    <!-- <div>
       <category-kind
         v-for="kind in kinds"
         :key="kind.id"
         :title="kind.title"
         :products="kind.products"
       />
-    </div>
+    </div> -->
     <div class="cg-category__info-block container">
       <ui-row padded>
         <ui-col :sm="12">
           <category-accordion
             :usps="usps.items"
-            :slides="infoSlides"
+            :slides="post.faqQuestions.questions"
           />
         </ui-col>
         <ui-col :sm="12">
           <div class="block block--yellow block--padded">
             <category-highlights
-              :title="highlights.title"
-              :description="highlights.description"
+              :title="post.highlight.question"
+              :description="post.highlight.answer"
             />
           </div>
           <div class="block block--blue block--padded">
             <seo-block
-              :title="seoBlock.title"
-              :description="seoBlock.description"
+              :title="post.infoBlock.title"
+              :description="post.infoBlock.text"
             />
           </div>
         </ui-col>
@@ -44,8 +44,8 @@
     <div class="container container--mobile-padded">
       <service-button />
       <service-terms
-        :title="serviceTerms.title"
-        :description="serviceTerms.description"
+        :title="post.terms.title"
+        :description="post.terms.text"
       />
       <service-banner
         :link="customerService.link"
@@ -143,53 +143,6 @@ const kinds = [
   },
 ];
 
-const infoSlides = [
-  {
-    title: 'What can i use my Xbox Gift card for?',
-    content: 'You can use your Gift Card to buy Xbox games and downloadable content, movies, TV shows, music, apps and bundles. Once you’ve redeemed your Xbox Gift Card using your Microsoft account, you can spend your balance on your Xbox, through Windows and at the Microsoft Store online', // eslint-disable-line
-  },
-  {
-    title: 'What kind of account do I need to redeem my Xbox Gift Card?',
-    content: 'You can use your Gift Card to buy Xbox games and downloadable content, movies, TV shows, music, apps and bundles. Once you’ve redeemed your Xbox Gift Card using your Microsoft account, you can spend your balance on your Xbox, through Windows and at the Microsoft Store online', // eslint-disable-line
-  },
-  {
-    title: 'What can i use my Xbox Gift card for?',
-    content: 'You can use your Gift Card to buy Xbox games and downloadable content, movies, TV shows, music, apps and bundles. Once you’ve redeemed your Xbox Gift Card using your Microsoft account, you can spend your balance on your Xbox, through Windows and at the Microsoft Store online', // eslint-disable-line
-  },
-  {
-    title: 'What can i use my Xbox Gift card for?',
-    content: 'You can use your Gift Card to buy Xbox games and downloadable content, movies, TV shows, music, apps and bundles. Once you’ve redeemed your Xbox Gift Card using your Microsoft account, you can spend your balance on your Xbox, through Windows and at the Microsoft Store online', // eslint-disable-line
-  },
-  {
-    title: 'What can i use my Xbox Gift card for?',
-    content: 'You can use your Gift Card to buy Xbox games and downloadable content, movies, TV shows, music, apps and bundles. Once you’ve redeemed your Xbox Gift Card using your Microsoft account, you can spend your balance on your Xbox, through Windows and at the Microsoft Store online', // eslint-disable-line
-  },
-];
-
-const highlights = {
-  title: 'EasyGO Refill',
-  description: `
-  <h3>What am i buying?</h3>
-  <p>These EasyGO Refills allow you to recharge/refill the amount of credits on your EasyGO mobile account.</p>
-  <h3>What do I do here?</h3>
-  <p>On this page, you can choose the amount you want to refill your mobile device with, to call/text or use data.</p>
-  <h3>After I buy</h3>
-  <p>After you have selected the amount and placed an order, you will receive a code along with clear instructions (also by email) on how to refill your AT&T mobile device/account.</p>
-  <h3>For who is it?</h3>
-  <p>Most people who use these products are prepaid/pay as you go users. They (usually) don't have a monthly subscription with EasyGo or any other provider.</p>
-  `,
-};
-
-const seoBlock = {
-  title: 'Easy Refill EasyGO',
-  description: 'On Rapido.com you can easily buy an easyGO refill voucher. Receive your EasyGO recharge code within 30 seconds! All you need to do is select one of the easyGO mobile plans, submit your email address, choose one of our secure payment options and proceed to the checkout. We’ll send you the easyGO recharge voucher by email.',
-};
-
-const serviceTerms = {
-  title: 'Terms & Conditions',
-  description: 'By using this service, you consent to the Terms of Service available at www.easygowireless.com. Unlimited does not mean unreasonable use. EasyGO reserves the right to reduce data speeds and/or terminate your service for unauthorized or abnormal usage. Video streaming or other high-bandwidth applications may be available on Wi-Fi only. Many jurisdictions impose recurring taxes and fees that may be debited from your account. No refunds or exchanges. If you change plans prior to your airtime expiration date, you may lose any remaining value on your account.<br><br>Required state and local taxes or surcharges may apply to this purchase.<br><br>This PIN is Non-Refundable.',
-};
-
 const crumbs = [
   { url: '/', label: 'Home', title: 'Rapido Home is cool' },
   { url: '/category', label: 'category', title: 'cat' },
@@ -224,11 +177,7 @@ export default {
   data() {
     return {
       kinds,
-      infoSlides,
-      highlights,
-      seoBlock,
       crumbs,
-      serviceTerms,
     };
   },
 

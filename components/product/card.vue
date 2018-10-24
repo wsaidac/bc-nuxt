@@ -31,6 +31,8 @@
       <div class="product-card__actions">
         <product-instant-tooltip
           v-if="mode === 'horizontal'"
+          message="Instant delivery"
+          content="You'll receive the code by email, so you can use the credit right away. In most cases the code will be displayed instantly on your screen as well."
         />
         <div class="spacer" />
         <ui-select

@@ -16,7 +16,7 @@
       <div class="container container--mobile-padded">
         <product-quickbuy
           :product="post.quickbuy.quickbuyProduct"
-          :variants="post.relatedProducts"
+          :variants="[]"
         />
       </div>
     </div>
