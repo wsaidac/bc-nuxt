@@ -99,7 +99,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters('shared', ['customerService', 'usps', 'paymentMethods']),
+    ...mapGetters('shared', ['customerService', 'usps']),
 
     kinds() {
       return groupBy(this.post.products.nodes, p => p.kinds.nodes[0].name);

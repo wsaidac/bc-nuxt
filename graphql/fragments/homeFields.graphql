@@ -7,33 +7,6 @@ fragment homeFields on Home {
       mobile: sharpieUrl(height: 300, width: 768)
     }
   }
-  usps {
-    items {
-      text
-      description
-      image {
-        regular: sharpieUrl(height: 60, width: 60)
-        retina: sharpieUrl(height: 120, width: 120)
-      }
-    }
-  }
-  instantDelivery {
-    title
-    tooltip
-  }
-  customerService {
-    primaryText
-    secondaryText
-    link {
-      url
-      title
-      target
-    }
-    image {
-      regular: sharpieUrl(height: 130, width: 130)
-      retina: sharpieUrl(height: 260, width: 260)
-    }
-  }
   quickbuy {
     quickbuyProduct {
       id
@@ -87,19 +60,5 @@ fragment homeFields on Home {
   seoBlock {
     title
     text
-  }
-  paymentMethods {
-    icons {
-      name
-      image {
-        regular: sharpieUrl(height: 40, width: 40)
-        retina: sharpieUrl(height: 80, width: 80)
-      }
-    }
-  }
-  footer {
-    items {
-      text
-    }
   }
 }

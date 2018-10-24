@@ -5,7 +5,7 @@
       :payoff-text="post.header.title"
     />
     <cg-usps
-      :usps="post.usps.items"
+      :usps="usps.items"
     />
     <div class="container container--mobile-padded">
       <product-popular
@@ -29,10 +29,10 @@
     </div>
     <div class="container container--mobile-padded">
       <service-banner
-        :link="post.customerService.link"
-        :image="post.customerService.image"
-        :title="post.customerService.primaryText"
-        :description="post.customerService.secondaryText"
+        :link="customerService.link"
+        :image="customerService.image"
+        :title="customerService.primaryText"
+        :description="customerService.secondaryText"
       />
       <seo-block
         :title="post.seoBlock.title"
@@ -74,6 +74,9 @@ export default {
 
   computed: {
     ...mapGetters('menus', ['main']),
+
+    ...mapGetters('shared', ['customerService', 'usps']),
+
     quickbuyVariants() {
       return this.post.quickbuy.quickbuyProduct.categories.nodes[0].products.nodes.slice(0, 3);
     },
@@ -83,7 +86,7 @@ export default {
 
 <style lang="scss">
 .cg-home {
-  @include media-breakpoint-only("xs") {
+  @include media-breakpoint-only('xs') {
     .seo-block {
       display: none;
     }

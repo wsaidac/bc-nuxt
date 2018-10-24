@@ -4,7 +4,7 @@ async function fetchMenus(app, store) {
 }
 
 async function fetchShared(app, store) {
-  const { post } = await app.$q('post', { slug: 'home' });
+  const { post } = await app.$q('shared');
   store.commit('shared/setFooter', post.footer);
   store.commit('shared/setHeader', post.header);
   store.commit('shared/setCustomerService', post.customerService);
