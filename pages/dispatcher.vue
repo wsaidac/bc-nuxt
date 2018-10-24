@@ -8,6 +8,7 @@
 <script>
 function slugFromPath(path) {
   if (path === '/') return 'home';
+  if (path === '/us') return 'home';
   return path.slice(1);
 }
 
