@@ -54,6 +54,18 @@ fragment homeFields on Home {
         }
       }
       slug
+      categories {
+        nodes {
+          products {
+            nodes {
+              content {
+                title
+              }
+              slug
+            }
+          }
+        }
+      }
     }
   }
   popularProducts {

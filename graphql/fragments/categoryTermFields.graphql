@@ -20,17 +20,15 @@ fragment categoryTermFields on CategoryTerm {
     title
     text
   }
-  faqBlock {
+  faqQuestions {
     title
     questions {
       question
       answer
     }
   }
-  questions {
-    questions {
-      question
-      answer
-    }
+  highlight {
+    question
+    answer
   }
 }
