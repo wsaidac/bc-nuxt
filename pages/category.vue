@@ -1,9 +1,9 @@
 <template>
   <div class="cg-category">
     <header-banner
-      :image-url="header.backgroundImage"
-      :payoff-image="header.image"
-      title="EasyGO Refill"
+      :image="post.categoryHeader.image"
+      :payoff-image="post.categoryHeader.image"
+      :title="post.categoryHeader.title"
     />
     <cg-usps
       :usps="usps.items"
@@ -54,6 +54,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import HeaderBanner from '~/components/header/banner';
 import CgUsps from '~/components/usps';
 import CategoryKind from '~/components/category/kind';
@@ -64,32 +65,6 @@ import ServiceBanner from '~/components/service/banner';
 import SeoBlock from '~/components/seo/block';
 import SeoBreadcrumbs from '~/components/seo/breadcrumbs';
 import { UiCol, UiRow } from '~/components/ui';
-
-const usps = {
-  items: [
-    {
-      text: 'Order in Minutes',
-      description: 'Simply choose the product and amount you need',
-      image: {
-        sourceUrl: 'http://localhost:3000/app/uploads/seeds/usp-icon-fast.png',
-      },
-    },
-    {
-      text: 'Pay safely & securely',
-      description: 'Safe payment options, like Visa and PayPal',
-      image: {
-        sourceUrl: 'http://localhost:3000/app/uploads/seeds/usp-icon-fast.png',
-      },
-    },
-    {
-      text: 'Get your code instantly',
-      description: 'Receive the email with your code instantly',
-      image: {
-        sourceUrl: 'http://localhost:3000/app/uploads/seeds/usp-icon-fast.png',
-      },
-    },
-  ],
-};
 
 const kinds = [
   {
@@ -210,13 +185,6 @@ const crumbs = [
   { label: 'prod', title: 'prod' },
 ];
 
-const customerService = {
-  primaryText: 'Need more help?',
-  secondaryText: "We're happy to help out",
-  link: { url: '/us/faq/', title: 'faq', target: '' },
-  image: { sourceUrl: 'http://localhost:3000/app/uploads/seeds/customer-care.jpg' },
-};
-
 export default {
   components: {
     HeaderBanner,
@@ -241,14 +209,16 @@ export default {
 
   data() {
     return {
-      usps,
       kinds,
       infoSlides,
       highlights,
-      customerService,
       seoBlock,
       crumbs,
     };
+  },
+
+  computed: {
+    ...mapGetters('shared', ['customerService', 'usps', 'paymentMethods']),
   },
 };
 </script>
