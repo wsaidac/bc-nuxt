@@ -1,6 +1,6 @@
 <template>
   <div class="footer-copyright">
-    <div class="container">
+    <div class="container container--mobile-padded">
       <img
         src="~/assets/images/logo-white.svg"
         alt="Rapido.com"
@@ -35,7 +35,7 @@ export default {
 .footer-copyright {
   background: $primary-500;
   color: $white;
-  padding: 30px 10px;
+  padding: 30px 0;
   text-align: center;
 
   img {

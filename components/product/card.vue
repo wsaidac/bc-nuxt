@@ -2,7 +2,6 @@
   <div :class="classes">
     <figure>
       <nuxt-link :to="product.slug">
-
         <picture>
           <source
             :srcset="product.content.image.desktop"
@@ -14,7 +13,6 @@
             :src="product.content.image.desktop"
             :alt="product.content.title">
         </picture>
-
       </nuxt-link>
     </figure>
     <div class="product-card__content">

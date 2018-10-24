@@ -47,5 +47,15 @@ export default {
     margin-bottom: 30px;
     margin-top: 30px;
   }
+
+  @include media-breakpoint-only('xs') {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    .el-col {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
 }
 </style>

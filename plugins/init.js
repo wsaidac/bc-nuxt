@@ -6,9 +6,11 @@ async function fetchMenus(app, store) {
 async function fetchShared(app, store) {
   const { post } = await app.$q('post', { slug: 'home' });
   store.commit('shared/setFooter', post.footer);
+  store.commit('shared/setHeader', post.header);
   store.commit('shared/setCustomerService', post.customerService);
   store.commit('shared/setInstantDelivery', post.instantDelivery);
   store.commit('shared/setPaymentMethods', post.paymentMethods);
+  store.commit('shared/setUsps', post.usps);
 }
 
 export default async ({ app, store }) => {
