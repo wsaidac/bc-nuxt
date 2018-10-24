@@ -45,8 +45,8 @@ fragment homeFields on Home {
       content {
         title
         image {
-        desktop: sharpieUrl(height: 250, width: 250)
-        mobile: sharpieUrl(height: 150, width: 150)
+          desktop: sharpieUrl(height: 250, width: 250)
+          mobile: sharpieUrl(height: 150, width: 150)
         }
         tooltip {
           title

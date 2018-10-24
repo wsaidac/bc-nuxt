@@ -5,7 +5,7 @@
   >
     <figure>
       <nuxt-link :to="product.slug">
-        <picture>
+        <picture v-if="product.content.image">
           <source
             :srcset="product.content.image.desktop"
             media="(min-width: 768px)">
@@ -23,7 +23,7 @@
         <h3 v-text="$n(product.information.retailValue, 'USD')" />
         <p v-text="product.content.title" />
         <product-info-tooltip
-          v-if="mode === 'vertical'"
+          v-if="mode === 'vertical' && product.content.tooltip"
           :content="product.content.tooltip.content"
           :title="product.content.tooltip.title"
         />
@@ -31,8 +31,6 @@
       <div class="product-card__actions">
         <product-instant-tooltip
           v-if="mode === 'horizontal'"
-          :content="product.content.tooltip.content"
-          :message="product.content.tooltip.title"
         />
         <div class="spacer" />
         <ui-select
