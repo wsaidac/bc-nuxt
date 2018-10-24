@@ -7,14 +7,12 @@
     <cg-usps
       :usps="usps.items"
     />
-
     <service-title
       :title="highlights.title"
       tooltip-message="Instant delivery"
     />
-
     <div class="block block--gray">
-      <div class="container">
+      <div class="container container--mobile-padded">
         <ui-row>
           <ui-col
             :lg="6"
@@ -22,7 +20,10 @@
             :sm="12"
             :xs="24"
           >
-            <product-card :product="product" />
+            <product-card
+              :product="product"
+              has-select
+            />
           </ui-col>
           <ui-col
             :lg="18"
@@ -36,7 +37,7 @@
             />
             <product-variants
               :product="product"
-              :related="relatedProducts"
+              :variants="relatedProducts"
             />
           </ui-col>
         </ui-row>
@@ -60,9 +61,14 @@
           </div>
         </ui-col>
       </ui-row>
+    </div>
 
+    <div class="container container--mobile-padded">
       <service-button />
-
+      <service-terms
+        :title="serviceTerms.title"
+        :description="serviceTerms.description"
+      />
       <service-banner
         :link="customerService.link"
         :image="customerService.image"
@@ -85,6 +91,7 @@ import CategoryAccordion from '~/components/category/accordion';
 import CategoryHighlights from '~/components/category/highlights';
 import ServiceButton from '~/components/service/button';
 import ServiceBanner from '~/components/service/banner';
+import ServiceTerms from '~/components/service/terms';
 import SeoBlock from '~/components/seo/block';
 import SeoBreadcrumbs from '~/components/seo/breadcrumbs';
 import { UiCol, UiRow } from '~/components/ui';
@@ -146,6 +153,11 @@ const seoBlock = {
   description: 'On Rapido.com you can easily buy an easyGO refill voucher. Receive your EasyGO recharge code within 30 seconds! All you need to do is select one of the easyGO mobile plans, submit your email address, choose one of our secure payment options and proceed to the checkout. We’ll send you the easyGO recharge voucher by email.',
 };
 
+const serviceTerms = {
+  title: 'Terms & Conditions',
+  description: 'By using this service, you consent to the Terms of Service available at www.easygowireless.com. Unlimited does not mean unreasonable use. EasyGO reserves the right to reduce data speeds and/or terminate your service for unauthorized or abnormal usage. Video streaming or other high-bandwidth applications may be available on Wi-Fi only. Many jurisdictions impose recurring taxes and fees that may be debited from your account. No refunds or exchanges. If you change plans prior to your airtime expiration date, you may lose any remaining value on your account.<br><br>Required state and local taxes or surcharges may apply to this purchase.<br><br>This PIN is Non-Refundable.',
+};
+
 const crumbs = [
   { url: '/', label: 'Home', title: 'Rapido Home is cool' },
   { url: '/category', label: 'category', title: 'cat' },
@@ -188,6 +200,7 @@ export default {
     ProductCard,
     ServiceTitle,
     ProductVariants,
+    ServiceTerms,
   },
 
   data() {
@@ -199,6 +212,7 @@ export default {
       crumbs,
       product,
       relatedProducts,
+      serviceTerms,
     };
   },
 
@@ -210,12 +224,9 @@ export default {
 
 <style lang="scss">
 .cg-product {
-  .product-card {
-    @include media-breakpoint-only('xs') {
-      &--mode-vertical {
-        margin: 20px auto;
-        max-width: 300px;
-      }
+  @include media-breakpoint-only('xs') {
+    .product-card {
+      margin: auto !important;
     }
   }
 }

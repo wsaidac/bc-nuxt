@@ -7,16 +7,11 @@ describe('FooterLinks', () => {
   const columns = [
     {
       title: 'Rapido.com',
-      links: [
-        { title: 'About us', url: '/about-us' },
-        { title: 'Payment options', url: '/payment-options' },
-      ],
+      links: [{ title: 'About us', url: '/about-us' }, { title: 'Payment options', url: '/payment-options' }],
     },
     {
       title: 'Customer Care',
-      links: [
-        { title: 'Help', url: '/help' },
-      ],
+      links: [{ title: 'Help', url: '/help' }],
     },
   ];
 
@@ -29,10 +24,10 @@ describe('FooterLinks', () => {
   });
 
   it('should iterate through multiple columns', () => {
-    expect($mounted.findAll('.footer-links__category')).toHaveLength(2);
+    expect($mounted.findAll('.footer-links__desktop .footer-links__list')).toHaveLength(2);
   });
 
   it('should render all links', () => {
-    expect($mounted.findAll('a')).toHaveLength(3);
+    expect($mounted.findAll('.footer-links__desktop a')).toHaveLength(3);
   });
 });

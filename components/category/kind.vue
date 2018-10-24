@@ -7,7 +7,7 @@
     />
 
     <div class="block block--gray">
-      <div class="container">
+      <div class="container container--mobile-padded">
         <ui-row>
           <ui-col
             v-for="product in products"
@@ -72,6 +72,12 @@ export default {
       h1 {
         display: block;
       }
+    }
+  }
+
+  .el-col + .el-col {
+    .product-card {
+      border-top: 0;
     }
   }
 }

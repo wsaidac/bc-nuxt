@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="usps"
+    v-if="usps && usps.length > 0"
     :class="classes"
   >
     <div class="container">

@@ -1,12 +1,13 @@
 <template>
   <div :class="classes">
-    <figure>
-      <nuxt-link to="#">
-        <img
-          :src="product.imageUrl"
-          :alt="product.title">
-      </nuxt-link>
-    </figure>
+    <nuxt-link
+      class="product-card__image"
+      to="#"
+    >
+      <img
+        :src="product.imageUrl"
+        :alt="product.title">
+    </nuxt-link>
     <div class="product-card__content">
       <div class="product-card__title">
         <h3 v-text="$n(product.price.amount, product.price.currency)" />
@@ -99,10 +100,6 @@ export default {
   background: $white;
   border: 1px solid $gray-400;
 
-  figure {
-    margin: 0;
-  }
-
   &__title {
     position: relative;
 
@@ -177,15 +174,12 @@ export default {
 
     @include flex();
 
-    figure {
+    .product-card__image {
+      border: 1px solid $gray-400;
       margin: 20px;
-      position: relative;
-      width: 33%;
+      padding: 10px;
 
-      img {
-        border: 1px solid $gray-400;
-        padding: 10px;
-      }
+      @include size(125px, 100px);
     }
 
     .product-card__title {
@@ -202,13 +196,19 @@ export default {
 
   &--mode-vertical {
     margin-top: 20px;
+    max-width: 300px;
 
-    figure {
+    .product-card__image {
       border-bottom: 1px solid $gray-400;
-      height: 270px;
+      height: 200px;
       padding: 20px;
 
       @include flex(center, center);
+
+      img {
+        max-height: 100%;
+        width: auto;
+      }
     }
 
     .product-card__content {

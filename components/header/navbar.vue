@@ -292,6 +292,7 @@ export default {
     .container {
       background: $primary-500;
       height: 50px;
+      padding-left: 15px;
       position: relative;
       z-index: 100;
 
@@ -416,10 +417,9 @@ export default {
       display: block;
       font-size: 16px;
       height: 100%;
-      padding: 0 30px;
+      padding: 0 0 0 30px;
 
       @include flex(center, center);
-      @include position(relative, 0 null null 40px);
     }
   }
 
