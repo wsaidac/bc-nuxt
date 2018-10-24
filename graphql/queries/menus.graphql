@@ -8,6 +8,7 @@ query($slug: String) {
           additionalAttributes {
             attachedImage {
               regular: sourceUrl
+              retina: sourceUrl
             }
           }
           childItems {

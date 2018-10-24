@@ -30,13 +30,11 @@
           class="header-navbar__main-item"
         >
           <div @click="setActive(category.title)">
-            <figure>
-              <img
-                :alt="category.title"
-                :src="category.image.regular"
-                :srcset="`${category.image.regular}, ${category.image.retina} 2x`"
-              >
-            </figure>
+            <img
+              :alt="category.title"
+              :src="category.image.regular"
+              :srcset="`${category.image.regular}, ${category.image.retina} 2x`"
+            >
             <span v-text="category.title" />
           </div>
 
@@ -180,15 +178,9 @@ export default {
       @include flex(center, center);
     }
 
-    figure {
-      margin: 0 6px 0 0;
-      height: 20px;
-      width: 20px;
-    }
-
     img {
-      height: auto;
-      width: 10px;
+      height: 24px;
+      margin-right: 6px;
     }
 
     @include media-breakpoint-up('md') {
