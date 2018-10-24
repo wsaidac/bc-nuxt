@@ -8,14 +8,14 @@
     <cg-usps
       :usps="usps.items"
     />
-    <!-- <div>
+    <div>
       <category-kind
-        v-for="kind in kinds"
-        :key="kind.id"
-        :title="kind.title"
-        :products="kind.products"
+        v-for="(products, kind) in kinds"
+        :key="kind"
+        :title="kind"
+        :products="products"
       />
-    </div> -->
+    </div>
     <div class="cg-category__info-block container">
       <ui-row padded>
         <ui-col :sm="12">
@@ -62,6 +62,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import { groupBy } from 'lodash';
 import HeaderBanner from '~/components/header/banner';
 import CgUsps from '~/components/usps';
 import CategoryKind from '~/components/category/kind';
@@ -73,75 +74,6 @@ import ServiceTerms from '~/components/service/terms';
 import SeoBlock from '~/components/seo/block';
 import SeoBreadcrumbs from '~/components/seo/breadcrumbs';
 import { UiCol, UiRow } from '~/components/ui';
-
-const kinds = [
-  {
-    id: 1,
-    title: 'EasyGO Refill',
-    products: [
-      {
-        id: 2,
-        price: {
-          amount: 5,
-          currency: 'USD',
-        },
-        title: 'Verizon Prepaid Refill $10',
-        imageUrl: 'https://static.rapido.com/categories/2098/xbox_logo_09.png?1538569956',
-      },
-      {
-        id: 5,
-        price: {
-          amount: 6,
-          currency: 'USD',
-        },
-        title: 'Verizon Prepaid Refill $20',
-        imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png',
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: 'EasyGO Refill',
-    products: [
-      {
-        id: 2,
-        price: {
-          amount: 5,
-          currency: 'USD',
-        },
-        title: 'Verizon Prepaid Refill $10',
-        imageUrl: 'https://static.rapido.com/categories/2098/xbox_logo_09.png?1538569956',
-      },
-      {
-        id: 3,
-        price: {
-          amount: 6,
-          currency: 'USD',
-        },
-        title: 'Verizon Prepaid Refill $20',
-        imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png',
-      },
-      {
-        id: 4,
-        price: {
-          amount: 7,
-          currency: 'USD',
-        },
-        title: 'Verizon Prepaid Refill $20',
-        imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png',
-      },
-      {
-        id: 5,
-        price: {
-          amount: 7,
-          currency: 'USD',
-        },
-        title: 'Verizon Prepaid Refill $20',
-        imageUrl: 'https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png',
-      },
-    ],
-  },
-];
 
 const crumbs = [
   { url: '/', label: 'Home', title: 'Rapido Home is cool' },
@@ -176,13 +108,16 @@ export default {
 
   data() {
     return {
-      kinds,
       crumbs,
     };
   },
 
   computed: {
     ...mapGetters('shared', ['customerService', 'usps', 'paymentMethods']),
+
+    kinds() {
+      return groupBy(this.post.products.nodes, p => p.kinds.nodes[0].name);
+    },
   },
 };
 </script>

@@ -31,4 +31,32 @@ fragment categoryTermFields on CategoryTerm {
     question
     answer
   }
+  products {
+    nodes {
+      id
+      link
+      uri
+      information {
+        retailValue
+        currency
+      }
+      content {
+        title
+        image {
+          desktop: sharpieUrl(height: 250, width: 250)
+          mobile: sharpieUrl(height: 150, width: 150)
+        }
+        tooltip {
+          title
+          content
+        }
+      }
+      slug
+      kinds {
+        nodes {
+          name
+        }
+      }
+    }
+  }
 }
