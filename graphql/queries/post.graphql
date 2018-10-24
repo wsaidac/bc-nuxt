@@ -1,10 +1,12 @@
 #import "../fragments/homeFields.graphql"
 #import "../fragments/categoryTermFields.graphql"
+#import "../fragments/productFields.graphql"
 
 query($slug: String!) {
   post: postBySlug(slug: $slug) {
     __typename
     ...homeFields
     ...categoryTermFields
+    ...productFields
   }
 }

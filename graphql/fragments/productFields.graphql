@@ -1,0 +1,58 @@
+fragment productFields on Product {
+  id
+  title
+  link
+  uri
+  slug
+  information {
+    retailValue
+    currency
+  }
+  content {
+    title
+    image {
+      desktop: sharpieUrl(height: 250, width: 250)
+      mobile: sharpieUrl(height: 150, width: 150)
+    }
+    tooltip {
+      title
+      content
+    }
+  }
+  categories {
+    nodes {
+      name
+      slug
+      categoryHeader {
+        title
+        image {
+          regular: sharpieUrl(height: 250, width: 250)
+          retina: sharpieUrl(height: 500, width: 500)
+        }
+        banner {
+          desktop: sharpieUrl(height: 300, width: 1920)
+          mobile: sharpieUrl(height: 300, width: 768)
+         }
+      }
+      highlight {
+        question
+        answer
+      }
+      faqQuestions {
+        title
+        questions {
+          question
+          answer
+        }
+      }
+      infoBlock {
+        title
+        text
+      }
+      terms {
+        title
+        text
+      }
+    }
+  }
+}
