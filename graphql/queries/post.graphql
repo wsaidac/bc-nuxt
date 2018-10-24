@@ -3,6 +3,7 @@
 
 query($slug: String!) {
   post: postBySlug(slug: $slug) {
+    __typename
     ...homeFields
     ...categoryTermFields
   }

@@ -18,6 +18,12 @@ export default {
     Product: () => import('~/pages/product'),
   },
 
+  head() {
+    return {
+      title: this.post.title || this.post.description,
+    };
+  },
+
   async asyncData({ app, route }) {
     const slug = slugFromPath(route.path);
     const { post } = await app.$q('post', { slug });

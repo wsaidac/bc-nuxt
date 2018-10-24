@@ -1,5 +1,5 @@
 fragment homeFields on Home {
-  __typename
+  title
   header {
     title
     image {

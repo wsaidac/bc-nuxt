@@ -1,6 +1,6 @@
 fragment categoryTermFields on CategoryTerm {
-  __typename
   name
+  description
   categoryHeader {
     title
     image {

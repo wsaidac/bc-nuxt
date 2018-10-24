@@ -16,7 +16,7 @@
       <div class="container container--mobile-padded">
         <product-quickbuy
           :product="post.quickbuy.quickbuyProduct"
-          :variants="[]"
+          :variants="quickbuyVariants"
         />
       </div>
     </div>
@@ -74,13 +74,16 @@ export default {
 
   computed: {
     ...mapGetters('menus', ['main']),
+    quickbuyVariants() {
+      return this.post.quickbuy.quickbuyProduct.categories.nodes[0].products.nodes.slice(0, 3);
+    },
   },
 };
 </script>
 
 <style lang="scss">
 .cg-home {
-  @include media-breakpoint-only('xs') {
+  @include media-breakpoint-only("xs") {
     .seo-block {
       display: none;
     }
