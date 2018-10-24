@@ -1,8 +1,8 @@
 <template>
   <div class="cg-product">
     <header-banner
-      :image-url="header.image.sourceUrl"
-      payoff="https://static.rapido.com/media/topup/rapido/default/images/most-popular/playstation-gift-card.png"
+      :image="header.image"
+      :payoff-image="header.payoffImage"
     />
     <cg-usps
       :usps="usps.items"
@@ -84,6 +84,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import HeaderBanner from '~/components/header/banner';
 import CgUsps from '~/components/usps';
 import CategoryAccordion from '~/components/category/accordion';
@@ -101,34 +102,13 @@ import ProductVariants from '~/components/product/variants';
 
 const header = {
   image: {
-    sourceUrl: 'http://localhost:3000/app/uploads/seeds/rapido_header.jpg',
+    desktop: 'http://localhost:3000/app/uploads/seeds/rapido_header.jpg',
+    mobile: 'http://localhost:3000/app/uploads/seeds/rapido_header.jpg',
   },
-};
-
-const usps = {
-  items: [
-    {
-      text: 'Order in Minutes',
-      description: 'Simply choose the product and amount you need',
-      image: {
-        sourceUrl: 'http://localhost:3000/app/uploads/seeds/usp-icon-fast.png',
-      },
-    },
-    {
-      text: 'Pay safely & securely',
-      description: 'Safe payment options, like Visa and PayPal',
-      image: {
-        sourceUrl: 'http://localhost:3000/app/uploads/seeds/usp-icon-fast.png',
-      },
-    },
-    {
-      text: 'Get your code instantly',
-      description: 'Receive the email with your code instantly',
-      image: {
-        sourceUrl: 'http://localhost:3000/app/uploads/seeds/usp-icon-fast.png',
-      },
-    },
-  ],
+  payoffImage: {
+    regular: 'http://localhost:3000/app/uploads/seeds/rapido_header.jpg',
+    retina: 'http://localhost:3000/app/uploads/seeds/rapido_header.jpg',
+  },
 };
 
 const infoSlides = [
@@ -186,13 +166,6 @@ const crumbs = [
   { label: 'prod', title: 'prod' },
 ];
 
-const customerService = {
-  primaryText: 'Need more help?',
-  secondaryText: "We're happy to help out",
-  link: { url: '/us/faq/', title: 'faq', target: '' },
-  image: { sourceUrl: 'http://localhost:3000/app/uploads/seeds/customer-care.jpg' },
-};
-
 const product = {
   id: 1,
   title: 'Verizon Prepaid Refill $5',
@@ -233,16 +206,18 @@ export default {
   data() {
     return {
       header,
-      usps,
       infoSlides,
       highlights,
-      customerService,
       seoBlock,
       crumbs,
       product,
       relatedProducts,
       serviceTerms,
     };
+  },
+
+  computed: {
+    ...mapGetters('shared', ['customerService', 'usps', 'paymentMethods']),
   },
 };
 </script>

@@ -9,7 +9,8 @@
         >
           <img
             :alt="usp.text"
-            :src="usp.image.sourceUrl"
+            :src="usp.image.regular"
+            :srcset="`${usp.image.regular}, ${usp.image.retina} 2x`"
           >
           <div>
             <strong v-text="usp.text" />

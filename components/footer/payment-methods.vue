@@ -18,7 +18,8 @@
         >
           <img
             :alt="method.name"
-            :src="method.image.sourceUrl"
+            :src="method.image.regular"
+            :srcset="`${method.image.regular}, ${method.image.retina} 2x`"
           >
         </nuxt-link>
       </li>

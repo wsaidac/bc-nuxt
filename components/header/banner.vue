@@ -1,10 +1,18 @@
 <template>
   <div class="header-banner">
-    <img
-      :alt="imageDescription"
-      :src="imageUrl"
-      class="header-banner__image"
-    >
+    <picture>
+      <source
+        :srcset="image.desktop"
+        media="(min-width: 768px)">
+      <source
+        :srcset="image.mobile"
+        media="(max-width: 767px)">
+      <img
+        :alt="imageDescription"
+        :src="image.desktop"
+        class="header-banner__image"
+      >
+    </picture>
     <div class="container">
       <section
         v-if="payoffText"
@@ -25,7 +33,8 @@
           <figure>
             <img
               :alt="title"
-              :src="payoffImage"
+              :src="payoffImage.regular"
+              :srcset="`${payoffImage.regular}, ${payoffImage.retina} 2x`"
             >
           </figure>
         </div>
@@ -48,8 +57,8 @@ export default {
       type: String,
       default: '',
     },
-    imageUrl: {
-      type: String,
+    image: {
+      type: Object,
       required: true,
     },
     payoffText: {

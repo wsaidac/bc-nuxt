@@ -1,5 +1,25 @@
 fragment homeFields on Home {
   __typename
+  header {
+    title
+    image {
+      desktop: sharpieUrl(height: 456, width: 1920)
+      mobile: sharpieUrl(height: 300, width: 768)
+    }
+  }
+  usps {
+    items {
+      text
+      image {
+        regular: sharpieUrl(height: 60, width: 60)
+        retina: sharpieUrl(height: 120, width: 120)
+      }
+    }
+  }
+  instantDelivery {
+    title
+    tooltip
+  }
   customerService {
     primaryText
     secondaryText
@@ -9,42 +29,26 @@ fragment homeFields on Home {
       target
     }
     image {
-      sourceUrl
+      regular: sharpieUrl(height: 130, width: 130)
+      retina: sharpieUrl(height: 260, width: 260)
     }
   }
   seoBlock {
     title
     text
   }
-  footer {
-    items {
-      text
-    }
-  }
-  header {
-    title
-    image {
-      sourceUrl
-    }
-  }
-  usps {
-    items {
-      text
-      image {
-        sourceUrl
-      }
-    }
-  }
   paymentMethods {
     icons {
       name
       image {
-        sourceUrl
+        regular: sharpieUrl(height: 40, width: 40)
+        retina: sharpieUrl(height: 80, width: 80)
       }
     }
   }
-  instantDelivery {
-    title
-    tooltip
+  footer {
+    items {
+      text
+    }
   }
 }

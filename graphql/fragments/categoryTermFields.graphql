@@ -1,4 +1,36 @@
 fragment categoryTermFields on CategoryTerm {
   __typename
   name
+  categoryHeader {
+    title
+    image {
+      regular: sharpieUrl(height: 250, width: 250)
+      retina: sharpieUrl(height: 500, width: 500)
+    }
+    # backgroundImage {
+    #   desktop: sharpieUrl(height: 456, width: 1920)
+    #   mobile: sharpieUrl(height: 300, width: 768)
+    #  }
+  }
+  terms {
+    title
+    text
+  }
+  infoBlock {
+    title
+    text
+  }
+  faqBlock {
+    title
+    questions {
+      question
+      answer
+    }
+  }
+  questions {
+    questions {
+      question
+      answer
+    }
+  }
 }

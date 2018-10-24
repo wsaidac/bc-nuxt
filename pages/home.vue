@@ -1,7 +1,7 @@
 <template>
   <div class="cg-home">
     <header-banner
-      :image-url="post.header.image.sourceUrl"
+      :image="post.header.image"
       :payoff-text="post.header.title"
     />
     <cg-usps
