@@ -12,7 +12,7 @@
         :products="post.popularProducts.items"
       />
     </div>
-    <div class="block block--gray">
+    <div class="block block--gray cg-home__position-spinner">
       <div class="container container--mobile-padded">
         <product-quickbuy
           :product="post.quickbuy.quickbuyProduct"
@@ -90,6 +90,10 @@ export default {
     .seo-block {
       display: none;
     }
+  }
+
+  &__position-spinner {
+    position: relative !important;
   }
 }
 </style>
