@@ -77,11 +77,7 @@ export default {
     const { post: { quickbuy } } = await this.$q('quickbuy');
     this.asyncVariants = quickbuy.quickbuyProduct.categories.nodes[0].products.nodes.slice(0, 3);
     this.asyncProduct = quickbuy.quickbuyProduct;
-    // this.loading = false;
-
-    setInterval(() => {
-      this.loading = !this.loading;
-    }, 3000);
+    this.loading = false;
   },
 };
 </script>
