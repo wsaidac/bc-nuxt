@@ -24,7 +24,6 @@
 <script>
 /* eslint-disable-next-line */
 import { UiButton, UiCol, UiRow, UiIcon } from '~/components/ui';
-import ProductInstantTooltip from './instant-tooltip';
 import ProductCard from '~/components/product/card';
 import ProductVariants from '~/components/product/variants';
 
@@ -36,7 +35,6 @@ export default {
     UiCol,
     UiRow,
     UiIcon,
-    ProductInstantTooltip,
     ProductCard,
     ProductVariants,
   },

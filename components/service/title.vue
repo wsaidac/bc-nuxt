@@ -2,29 +2,23 @@
   <div class="service-title container container--mobile-padded">
     <div class="flex">
       <h1 v-text="title" />
-      <product-instant-tooltip
-        popper-class="page-popper"
-        message="Instant delivery" />
+      <product-instant-tooltip-wrapper />
     </div>
   </div>
 </template>
 
 <script>
-import ProductInstantTooltip from '~/components/product/instant-tooltip';
+import ProductInstantTooltipWrapper from '~/components/product/instant-tooltip-wrapper';
 
 export default {
   components: {
-    ProductInstantTooltip,
+    ProductInstantTooltipWrapper,
   },
 
   props: {
     title: {
       type: String,
       required: true,
-    },
-    tooltipMessage: {
-      type: String,
-      default: '',
     },
   },
 };

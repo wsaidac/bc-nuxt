@@ -1,11 +1,6 @@
 <template>
   <div class="category-kind">
-
-    <service-title
-      :title="title"
-      tooltip-message="Instant delivery"
-    />
-
+    <service-title :title="title" />
     <div class="block block--gray">
       <div class="container container--mobile-padded">
         <ui-row>

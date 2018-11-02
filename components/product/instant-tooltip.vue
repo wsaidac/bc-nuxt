@@ -3,7 +3,8 @@
     <ui-popover
       :popper-class="popperClass"
       :content="content"
-      title="Instant delivery"
+      :title="title"
+      :visible-arrow="false"
       placement="bottom-start"
       trigger="hover"
     >
@@ -28,6 +29,10 @@ export default {
 
   props: {
     message: {
+      type: String,
+      default: '',
+    },
+    title: {
       type: String,
       default: '',
     },
