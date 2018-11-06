@@ -42,9 +42,11 @@ export default {
       type: Object,
       required: true,
     },
-    variants: {
-      type: Array,
-      required: true,
+  },
+
+  computed: {
+    variants() {
+      return this.product.categories.nodes[0].products.nodes.slice(0, 3);
     },
   },
 };

@@ -8,10 +8,10 @@
       placement="bottom-start"
       trigger="hover"
     >
-      <p slot="reference">
+      <span slot="reference" >
         <span v-text="iconPrefixContent" />
         <ui-icon icon="question-circle-o" />
-      </p>
+      </span>
     </ui-popover>
   </div>
 </template>
@@ -38,7 +38,7 @@ export default {
     },
     content: {
       type: String,
-      default: '',
+      required: true,
     },
     popperClass: {
       type: String,
@@ -52,7 +52,7 @@ export default {
 .shared-tooltip {
   @include flex(center, center);
 
-  p {
+  & > span {
     color: $primary-500;
     font-size: $font-size-h6;
     margin: 6px 0;

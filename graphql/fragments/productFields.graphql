@@ -53,6 +53,14 @@ fragment productFields on Product {
         title
         text
       }
+      products {
+        nodes {
+          content {
+            title
+          }
+          slug
+        }
+      }
     }
   }
 }

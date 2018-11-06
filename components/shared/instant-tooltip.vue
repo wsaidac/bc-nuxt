@@ -1,8 +1,8 @@
 <template>
   <shared-tooltip
     :content="content"
-    :icon-prefix-content="message"
-    :title="message"
+    :icon-prefix-content="title"
+    :title="title"
   />
 </template>
 
@@ -17,7 +17,7 @@ export default {
 
   computed: {
     ...mapGetters('shared', ['instantDelivery']),
-    message() {
+    title() {
       return this.instantDelivery.title;
     },
     content() {

@@ -13,10 +13,7 @@
           />
         </ui-col>
         <ui-col :sm="8">
-          <product-variants
-            :product="userProduct || defaultProduct"
-            :variants="userVariants || defaultVariants"
-          />
+          <product-variants :product="userProduct || defaultProduct" />
         </ui-col>
       </ui-row>
     </shared-loader>
@@ -48,25 +45,17 @@ export default {
       type: Object,
       required: true,
     },
-    defaultVariants: {
-      type: Array,
-      default() {
-        return [];
-      },
-    },
   },
 
   data() {
     return {
       loading: true,
       userProduct: null,
-      userVariants: null,
     };
   },
 
   async mounted() {
     const { post: { quickbuy } } = await this.$q('quickbuy');
-    this.userVariants = quickbuy.quickbuyProduct.categories.nodes[0].products.nodes.slice(0, 3);
     this.userProduct = quickbuy.quickbuyProduct;
     this.loading = false;
   },

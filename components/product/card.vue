@@ -29,10 +29,8 @@
         />
       </div>
       <div class="product-card__actions">
-        <shared-tooltip
+        <shared-instant-tooltip
           v-if="mode === 'horizontal'"
-          :content="product.content.tooltip.content"
-          :title="product.content.tooltip.title"
         />
         <div class="spacer" />
         <ui-select
@@ -50,6 +48,7 @@
 
 <script>
 import SharedTooltip from '~/components/shared/tooltip';
+import SharedInstantTooltip from '~/components/shared/instant-tooltip';
 import { UiButton, UiSelect } from '~/components/ui';
 
 export default {
@@ -57,6 +56,7 @@ export default {
 
   components: {
     SharedTooltip,
+    SharedInstantTooltip,
     UiButton,
     UiSelect,
   },
@@ -134,7 +134,7 @@ export default {
       margin: 3px 0 0;
     }
 
-    .product-instant-tooltip {
+    .shared-tooltip {
       @include position(absolute, -5px 0 null null);
     }
   }
