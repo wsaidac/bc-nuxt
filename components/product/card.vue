@@ -22,14 +22,14 @@
       <div class="product-card__title">
         <h3 v-text="$n(product.information.retailValue, 'USD')" />
         <p v-text="product.content.title" />
-        <product-instant-tooltip
+        <shared-tooltip
           v-if="mode === 'vertical' && product.content.tooltip && product.content.tooltip.content"
           :content="product.content.tooltip.content"
           :title="product.content.tooltip.title"
         />
       </div>
       <div class="product-card__actions">
-        <product-instant-tooltip
+        <shared-tooltip
           v-if="mode === 'horizontal'"
           :content="product.content.tooltip.content"
           :title="product.content.tooltip.title"
@@ -49,14 +49,14 @@
 </template>
 
 <script>
-import ProductInstantTooltip from './instant-tooltip';
+import SharedTooltip from '~/components/shared/tooltip';
 import { UiButton, UiSelect } from '~/components/ui';
 
 export default {
   name: 'ProductCard',
 
   components: {
-    ProductInstantTooltip,
+    SharedTooltip,
     UiButton,
     UiSelect,
   },

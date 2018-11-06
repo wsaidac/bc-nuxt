@@ -2,17 +2,17 @@
   <div class="service-title container container--mobile-padded">
     <div class="flex">
       <h1 v-text="title" />
-      <product-instant-tooltip-wrapper />
+      <shared-instant-tooltip />
     </div>
   </div>
 </template>
 
 <script>
-import ProductInstantTooltipWrapper from '~/components/product/instant-tooltip-wrapper';
+import SharedInstantTooltip from '~/components/shared/instant-tooltip';
 
 export default {
   components: {
-    ProductInstantTooltipWrapper,
+    SharedInstantTooltip,
   },
 
   props: {

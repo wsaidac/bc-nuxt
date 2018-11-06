@@ -8,10 +8,7 @@
     <cg-usps
       :usps="usps.items"
     />
-    <service-title
-      :title="post.content.title"
-      tooltip-message="Instant delivery"
-    />
+    <service-title />
     <div class="block block--gray">
       <div class="container container--mobile-padded">
         <ui-row>
@@ -96,7 +93,6 @@ import ServiceTerms from '~/components/service/terms';
 import SeoBlock from '~/components/seo/block';
 import SeoBreadcrumbs from '~/components/seo/breadcrumbs';
 import { UiCol, UiRow } from '~/components/ui';
-import ProductInstantTooltip from '~/components/product/instant-tooltip';
 import ProductCard from '~/components/product/card';
 import ServiceTitle from '~/components/service/title';
 import ProductVariants from '~/components/product/variants';
@@ -113,7 +109,6 @@ export default {
     SeoBreadcrumbs,
     UiCol,
     UiRow,
-    ProductInstantTooltip,
     ProductCard,
     ServiceTitle,
     ProductVariants,
