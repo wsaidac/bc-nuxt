@@ -12,11 +12,11 @@
         :products="post.popularProducts.items"
       />
     </div>
-    <div class="block block--gray">
+    <div class="block block--gray cg-home__quickbuy">
       <div class="container container--mobile-padded">
         <product-quickbuy
-          :product="post.quickbuy.quickbuyProduct"
-          :variants="quickbuyVariants"
+          :default-product="post.quickbuy.quickbuyProduct"
+          :default-variants="quickbuyVariants"
         />
       </div>
     </div>
@@ -90,6 +90,10 @@ export default {
     .seo-block {
       display: none;
     }
+  }
+
+  &__quickbuy {
+    position: relative;
   }
 }
 </style>

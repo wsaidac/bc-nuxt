@@ -1,0 +1,42 @@
+# Try to write your query here
+query {
+  post: postBySlug(slug: "home") {
+    ...on Home {
+      quickbuy {
+        quickbuyProduct {
+          id
+          link
+          uri
+          information {
+            retailValue
+            currency
+          }
+          content {
+            title
+            image {
+              desktop: sharpieUrl(height: 250, width: 250)
+              mobile: sharpieUrl(height: 150, width: 150)
+            }
+            tooltip {
+              title
+              content
+            }
+          }
+          slug
+          categories {
+            nodes {
+              products {
+                nodes {
+                  content {
+                    title
+                  }
+                  slug
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
