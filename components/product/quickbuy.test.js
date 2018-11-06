@@ -25,9 +25,27 @@ describe('ProductQuickbuy', () => {
   };
 
   const variants = [
-    { id: 2, title: 'Verizon Prepaid Refill $10', url: '/verizon/10-usd' },
-    { id: 3, title: 'Verizon Prepaid Refill $15', url: '/verizon/15-usd' },
-    { id: 4, title: 'Verizon Prepaid Refill $20', url: '/verizon/20-usd' },
+    {
+      id: 2,
+      content: {
+        title: 'Verizon Prepaid Refill $10',
+      },
+      url: '/verizon/10-usd'
+    },
+    {
+      id: 3,
+      content: {
+        title: 'Verizon Prepaid Refill $15',
+      },
+      url: '/verizon/15-usd'
+    },
+    {
+      id: 4,
+      content: {
+        title: 'Verizon Prepaid Refill $20',
+      },
+      url: '/verizon/20-usd'
+    },
   ];
 
   beforeEach(() => {
