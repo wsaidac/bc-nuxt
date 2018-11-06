@@ -12,7 +12,7 @@
         :products="post.popularProducts.items"
       />
     </div>
-    <div class="block block--gray cg-home__position-spinner">
+    <div class="block block--gray cg-home__quickbuy">
       <div class="container container--mobile-padded">
         <product-quickbuy
           :default-product="post.quickbuy.quickbuyProduct"
@@ -92,8 +92,8 @@ export default {
     }
   }
 
-  &__position-spinner {
-    position: relative !important;
+  &__quickbuy {
+    position: relative;
   }
 }
 </style>
