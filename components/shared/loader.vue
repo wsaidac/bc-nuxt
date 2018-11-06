@@ -1,6 +1,8 @@
 <template>
-  <div class="shared-loader">
-    <slot />
+  <div :class="classes">
+    <div class="shared-loader__blur">
+      <slot />
+    </div>
     <div
       v-if="loading"
       class="shared-loader__overlay"
@@ -20,6 +22,12 @@ export default {
       default: true,
     },
   },
+
+  computed: {
+    classes() {
+      return ['shared-loader', { 'shared-loader--blur': this.loading }];
+    },
+  },
 };
 </script>
 
@@ -27,6 +35,17 @@ export default {
 .shared-loader {
   flex-flow: column nowrap;
   padding: 10px;
+
+  &__blur {
+    transition: transform 0.3s;
+  }
+
+  &--blur {
+    .shared-loader__blur {
+      filter: blur(2px);
+      transform: scale(0.98);
+    }
+  }
 
   &__overlay {
     flex-flow: column nowrap;

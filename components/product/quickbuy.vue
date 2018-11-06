@@ -1,5 +1,5 @@
 <template>
-  <div :class="classes" >
+  <div class="product-quickbuy" >
     <shared-loader :loading="loading">
       <h2
         class="product-quickbuy__title"
@@ -64,12 +64,6 @@ export default {
       userProduct: null,
       userVariants: null,
     };
-  },
-
-  computed: {
-    classes() {
-      return ['product-quickbuy', { 'product-quickbuy--loading': this.loading }];
-    },
   },
 
   async mounted() {
