@@ -4,7 +4,7 @@ import { mount } from '~/test/utils/with-context';
 describe('ProductQuickbuy', () => {
   let $mounted;
 
-  const product = {
+  const defaultProduct = {
     id: 1,
     information: {
       retailValue: 5.0,
@@ -24,32 +24,32 @@ describe('ProductQuickbuy', () => {
     slug: '/product123',
   };
 
-  const variants = [
+  const defaultVariants = [
     {
       id: 2,
       content: {
         title: 'Verizon Prepaid Refill $10',
       },
-      url: '/verizon/10-usd'
+      url: '/verizon/10-usd',
     },
     {
       id: 3,
       content: {
         title: 'Verizon Prepaid Refill $15',
       },
-      url: '/verizon/15-usd'
+      url: '/verizon/15-usd',
     },
     {
       id: 4,
       content: {
         title: 'Verizon Prepaid Refill $20',
       },
-      url: '/verizon/20-usd'
+      url: '/verizon/20-usd',
     },
   ];
 
   beforeEach(() => {
-    $mounted = mount(ProductQuickbuy, { propsData: { product, variants } });
+    $mounted = mount(ProductQuickbuy, { propsData: { defaultProduct, defaultVariants } });
   });
 
   it('should mount', () => {

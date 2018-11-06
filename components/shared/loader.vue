@@ -1,18 +1,39 @@
 <template>
-  <div class="service-loading">
-    <h2>Loading</h2>
-    <div class="service-loading__spinner" />
-    <div class="service-loading__background"/>
+  <div class="shared-loader">
+    <slot />
+    <div
+      v-if="loading"
+      class="shared-loader__overlay"
+    >
+      <h2>Loading</h2>
+      <div class="shared-loader__spinner" />
+      <div class="shared-loader__background"/>
+    </div>
   </div>
 </template>
 
-<style lang="scss">
-.service-loading {
-  // border: 1px solid red;
-  flex-flow: column nowrap;
+<script>
+export default {
+  props: {
+    loading: {
+      type: Boolean,
+      default: true,
+    },
+  },
+};
+</script>
 
-  @include flex(center, center);
-  @include position(absolute, 0 0 0 0);
+<style lang="scss">
+.shared-loader {
+  flex-flow: column nowrap;
+  padding: 10px;
+
+  &__overlay {
+    flex-flow: column nowrap;
+
+    @include flex(center, center);
+    @include position(absolute, 0 0 0 0);
+  }
 
   h2 {
     filter: none;
@@ -21,7 +42,7 @@
     z-index: 100;
   }
 
-  &__spinner {
+  .shared-loader__spinner {
     animation: spin 1s infinite linear;
     border: 10px solid $gray-700;
     border-bottom-color: $primary-base;
@@ -35,7 +56,7 @@
     @include size(100px);
   }
 
-  &__background {
+  .shared-loader__background {
     background: $black;
     opacity: 0.5;
 
