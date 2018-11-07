@@ -8,10 +8,7 @@
     <cg-usps
       :usps="usps.items"
     />
-    <service-title
-      :title="post.content.title"
-      tooltip-message="Instant delivery"
-    />
+    <shared-title :title="post.title" />
     <div class="block block--gray">
       <div class="container container--mobile-padded">
         <ui-row>
@@ -36,10 +33,7 @@
               :title="category.highlight.question"
               :description="category.highlight.answer"
             />
-            <!-- <product-variants
-              :product="product"
-              :variants="relatedProducts"
-            /> -->
+            <product-variants :product="post" />
           </ui-col>
         </ui-row>
       </div>
@@ -96,9 +90,8 @@ import ServiceTerms from '~/components/service/terms';
 import SeoBlock from '~/components/seo/block';
 import SeoBreadcrumbs from '~/components/seo/breadcrumbs';
 import { UiCol, UiRow } from '~/components/ui';
-import ProductInstantTooltip from '~/components/product/instant-tooltip';
 import ProductCard from '~/components/product/card';
-import ServiceTitle from '~/components/service/title';
+import SharedTitle from '~/components/shared/title';
 import ProductVariants from '~/components/product/variants';
 
 export default {
@@ -113,9 +106,8 @@ export default {
     SeoBreadcrumbs,
     UiCol,
     UiRow,
-    ProductInstantTooltip,
     ProductCard,
-    ServiceTitle,
+    SharedTitle,
     ProductVariants,
     ServiceTerms,
   },
@@ -129,11 +121,9 @@ export default {
 
   computed: {
     ...mapGetters('shared', ['customerService', 'usps']),
-
     category() {
       return this.post.categories.nodes[0];
     },
-
     crumbs() {
       return [
         { url: '/', label: 'Home', title: 'Rapido.com: Buy your favorite Gift Cards online | Fast Email Delivery' },

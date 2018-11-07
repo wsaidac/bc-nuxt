@@ -40,7 +40,6 @@ module.exports = {
     '~/assets/icons.js',
     '~/plugins/env.js',
     '~/plugins/i18n.js',
-    '~/plugins/init.js',
   ],
   watchers: {
     webpack: {

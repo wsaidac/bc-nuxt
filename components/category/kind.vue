@@ -1,11 +1,6 @@
 <template>
   <div class="category-kind">
-
-    <service-title
-      :title="title"
-      tooltip-message="Instant delivery"
-    />
-
+    <shared-title :title="title" />
     <div class="block block--gray">
       <div class="container container--mobile-padded">
         <ui-row>
@@ -30,7 +25,7 @@
 <script>
 import { UiRow, UiCol } from '~/components/ui';
 import ProductCard from '~/components/product/card';
-import ServiceTitle from '~/components/service/title';
+import SharedTitle from '~/components/shared/title';
 
 export default {
   name: 'CategoryKind',
@@ -39,7 +34,7 @@ export default {
     UiRow,
     UiCol,
     ProductCard,
-    ServiceTitle,
+    SharedTitle,
   },
 
   props: {

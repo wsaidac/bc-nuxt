@@ -16,7 +16,6 @@
       <div class="container container--mobile-padded">
         <product-quickbuy
           :default-product="post.quickbuy.quickbuyProduct"
-          :default-variants="quickbuyVariants"
         />
       </div>
     </div>
@@ -76,10 +75,6 @@ export default {
     ...mapGetters('menus', ['main']),
 
     ...mapGetters('shared', ['customerService', 'usps']),
-
-    quickbuyVariants() {
-      return this.post.quickbuy.quickbuyProduct.categories.nodes[0].products.nodes.slice(0, 3);
-    },
   },
 };
 </script>

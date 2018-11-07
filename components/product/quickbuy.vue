@@ -13,10 +13,7 @@
           />
         </ui-col>
         <ui-col :sm="8">
-          <product-variants
-            :product="userProduct || defaultProduct"
-            :variants="userVariants || defaultVariants"
-          />
+          <product-variants :product="userProduct || defaultProduct" />
         </ui-col>
       </ui-row>
     </shared-loader>
@@ -26,7 +23,6 @@
 <script>
 /* eslint-disable-next-line */
 import { UiButton, UiCol, UiRow, UiIcon } from '~/components/ui';
-import ProductInstantTooltip from './instant-tooltip';
 import ProductCard from '~/components/product/card';
 import ProductVariants from '~/components/product/variants';
 import SharedLoader from '~/components/shared/loader';
@@ -39,7 +35,6 @@ export default {
     UiCol,
     UiRow,
     UiIcon,
-    ProductInstantTooltip,
     ProductCard,
     ProductVariants,
     SharedLoader,
@@ -50,25 +45,17 @@ export default {
       type: Object,
       required: true,
     },
-    defaultVariants: {
-      type: Array,
-      default() {
-        return [];
-      },
-    },
   },
 
   data() {
     return {
       loading: true,
       userProduct: null,
-      userVariants: null,
     };
   },
 
   async mounted() {
     const { post: { quickbuy } } = await this.$q('quickbuy');
-    this.userVariants = quickbuy.quickbuyProduct.categories.nodes[0].products.nodes.slice(0, 3);
     this.userProduct = quickbuy.quickbuyProduct;
     this.loading = false;
   },
