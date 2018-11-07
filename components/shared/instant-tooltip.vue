@@ -1,23 +1,23 @@
 <template>
-  <product-instant-tooltip
+  <shared-tooltip
     :content="content"
-    :message="message"
-    :title="message"
+    :icon-prefix-content="title"
+    :title="title"
   />
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
-import ProductInstantTooltip from './instant-tooltip';
+import SharedTooltip from './tooltip';
 
 export default {
   components: {
-    ProductInstantTooltip,
+    SharedTooltip,
   },
 
   computed: {
     ...mapGetters('shared', ['instantDelivery']),
-    message() {
+    title() {
       return this.instantDelivery.title;
     },
     content() {

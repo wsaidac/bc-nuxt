@@ -12,11 +12,10 @@
         :products="post.popularProducts.items"
       />
     </div>
-    <div class="block block--gray">
+    <div class="block block--gray cg-home__quickbuy">
       <div class="container container--mobile-padded">
         <product-quickbuy
-          :product="post.quickbuy.quickbuyProduct"
-          :variants="quickbuyVariants"
+          :default-product="post.quickbuy.quickbuyProduct"
         />
       </div>
     </div>
@@ -76,10 +75,6 @@ export default {
     ...mapGetters('menus', ['main']),
 
     ...mapGetters('shared', ['customerService', 'usps']),
-
-    quickbuyVariants() {
-      return this.post.quickbuy.quickbuyProduct.categories.nodes[0].products.nodes.slice(0, 3);
-    },
   },
 };
 </script>
@@ -90,6 +85,10 @@ export default {
     .seo-block {
       display: none;
     }
+  }
+
+  &__quickbuy {
+    position: relative;
   }
 }
 </style>

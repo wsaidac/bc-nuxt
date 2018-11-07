@@ -1,5 +1,5 @@
 <template>
-  <div class="product-instant-tooltip">
+  <div class="shared-tooltip">
     <ui-popover
       :popper-class="popperClass"
       :content="content"
@@ -8,10 +8,10 @@
       placement="bottom-start"
       trigger="hover"
     >
-      <p slot="reference">
-        <span v-text="message" />
+      <span slot="reference" >
+        <span v-text="iconPrefixContent" />
         <ui-icon icon="question-circle-o" />
-      </p>
+      </span>
     </ui-popover>
   </div>
 </template>
@@ -20,7 +20,7 @@
 import { UiIcon, UiPopover } from '~/components/ui';
 
 export default {
-  name: 'ProductInstantTooltip',
+  name: 'SharedTooltip',
 
   components: {
     UiIcon,
@@ -28,7 +28,7 @@ export default {
   },
 
   props: {
-    message: {
+    iconPrefixContent: {
       type: String,
       default: '',
     },
@@ -38,7 +38,7 @@ export default {
     },
     content: {
       type: String,
-      default: '',
+      required: true,
     },
     popperClass: {
       type: String,
@@ -49,10 +49,10 @@ export default {
 </script>
 
 <style lang="scss">
-.product-instant-tooltip {
+.shared-tooltip {
   @include flex(center, center);
 
-  p {
+  & > span {
     color: $primary-500;
     font-size: $font-size-h6;
     margin: 6px 0;
