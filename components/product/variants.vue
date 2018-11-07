@@ -21,7 +21,7 @@
     >
       <nuxt-link
         :to="category.slug"
-        :title="category.title"
+        :title="category.name"
       >
         See all denominations
       </nuxt-link>
