@@ -30,6 +30,8 @@ fragment homeFields on Home {
       slug
       categories {
         nodes {
+          slug
+          name
           products {
             nodes {
               content {

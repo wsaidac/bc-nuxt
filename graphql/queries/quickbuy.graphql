@@ -25,6 +25,8 @@ query {
           slug
           categories {
             nodes {
+              name
+              slug
               products {
                 nodes {
                   content {
