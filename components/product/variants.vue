@@ -20,8 +20,8 @@
       class="text-right"
     >
       <nuxt-link
-        :to="product.slug"
-        :title="product.title"
+        :to="category.slug"
+        :title="category.title"
       >
         See all denominations
       </nuxt-link>
@@ -45,8 +45,11 @@ export default {
   },
 
   computed: {
+    category() {
+      return this.product.categories.nodes[0];
+    },
     variants() {
-      return this.product.categories.nodes[0].products.nodes.slice(0, 3);
+      return this.category.products.nodes.slice(0, 3);
     },
   },
 };
