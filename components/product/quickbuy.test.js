@@ -4,7 +4,7 @@ import { mount } from '~/test/utils/with-context';
 describe('ProductQuickbuy', () => {
   let $mounted;
 
-  const product = {
+  const defaultProduct = {
     id: 1,
     information: {
       retailValue: 5.0,
@@ -22,31 +22,43 @@ describe('ProductQuickbuy', () => {
       },
     },
     slug: '/product123',
+    title: 'title',
+    categories: {
+      nodes: [{
+        products: {
+          nodes: [
+            {
+              id: 2,
+              content: {
+                title: 'Verizon Prepaid Refill $10',
+              },
+              url: '/verizon/10-usd',
+            },
+            {
+              id: 3,
+              content: {
+                title: 'Verizon Prepaid Refill $15',
+              },
+              url: '/verizon/15-usd',
+            },
+            {
+              id: 4,
+              content: {
+                title: 'Verizon Prepaid Refill $20',
+              },
+              url: '/verizon/20-usd',
+            },
+          ],
+        },
+      }],
+    },
   };
 
-  const variants = [
-    { id: 2,
-      content: {
-        title: 'Verizon Prepaid Refill $10',
-      },
-      url: '/verizon/10-usd'
-    },
-    { id: 3,
-      content: {
-        title: 'Verizon Prepaid Refill $15',
-      },
-      url: '/verizon/15-usd'
-    },
-    { id: 4,
-      content: {
-        title: 'Verizon Prepaid Refill $20',
-      },
-      url: '/verizon/20-usd'
-    },
-  ];
-
   beforeEach(() => {
-    $mounted = mount(ProductQuickbuy, { propsData: { product, variants } });
+    $mounted = mount(ProductQuickbuy, {
+      stubs: ['product-card'],
+      propsData: { defaultProduct },
+    });
   });
 
   it('should mount', () => {
@@ -57,11 +69,8 @@ describe('ProductQuickbuy', () => {
     expect($mounted.find('.product-quickbuy__title').exists()).toBe(true);
   });
 
-  it('should render a product card with title', () => {
-    expect($mounted.find('.product-card').text()).toContain('Verizon Prepaid Refill $5');
-  });
-
   it('should iterate through multiple denominations', () => {
+    console.log($mounted);
     expect($mounted.findAll('.product-variants__item')).toHaveLength(3);
   });
 });

@@ -10,7 +10,7 @@ describe('SeoBlock', () => {
   };
 
   beforeEach(() => {
-    $mounted = mount(SeoBlock, { propsData, });
+    $mounted = mount(SeoBlock, { propsData });
   });
 
   it('should mount', () => {

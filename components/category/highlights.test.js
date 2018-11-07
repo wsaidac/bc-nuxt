@@ -10,7 +10,7 @@ describe('Highlight', () => {
   };
 
   beforeEach(() => {
-    $mounted = mount(Highlight, { propsData, });
+    $mounted = mount(Highlight, { propsData });
   });
 
   it('should mount', () => {

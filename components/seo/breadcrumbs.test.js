@@ -7,7 +7,7 @@ describe('SeoBreadcrumbs', () => {
   const crumbs = ['1-lvl-deep', '2-lvl-deep'];
 
   beforeEach(() => {
-    $mounted = mount(SeoBreadcrumbs, { propsData: { crumbs, } });
+    $mounted = mount(SeoBreadcrumbs, { propsData: { crumbs } });
   });
 
   it('should mount', () => {

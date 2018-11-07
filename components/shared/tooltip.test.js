@@ -1,21 +1,21 @@
-import ProductInstantTooltip from './instant-tooltip.vue';
+import SharedTooltip from './tooltip.vue';
 import { mount } from '~/test/utils/with-context';
 
-describe('ProductInstantTooltip', () => {
+describe('SharedTooltip', () => {
   let $mounted;
 
   const props = {
-    message: 'message',
+    iconPrefixContent: 'message',
     title: 'title',
     content: 'content',
-  }
+  };
 
   beforeEach(() => {
-    $mounted = mount(ProductInstantTooltip, { propsData: props });
+    $mounted = mount(SharedTooltip, { propsData: props });
   });
 
   it('should mount', () => {
-    expect($mounted.find('.product-instant-tooltip').exists()).toBe(true);
+    expect($mounted.find('.shared-tooltip').exists()).toBe(true);
   });
 
   it('should show the message', () => {

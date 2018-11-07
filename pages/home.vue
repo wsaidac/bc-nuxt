@@ -4,26 +4,18 @@
       :image="post.header.image"
       :payoff-text="post.header.title"
     />
-    <cg-usps
-      :usps="usps.items"
-    />
+    <cg-usps :usps="usps.items" />
     <div class="container container--mobile-padded">
-      <product-popular
-        :products="post.popularProducts.items"
-      />
+      <product-popular :products="post.popularProducts.items" />
     </div>
     <div class="block block--gray cg-home__quickbuy">
       <div class="container container--mobile-padded">
-        <product-quickbuy
-          :default-product="post.quickbuy.quickbuyProduct"
-        />
+        <product-quickbuy :default-product="post.quickbuy.quickbuyProduct" />
       </div>
     </div>
     <div class="block block--gray block--space-between block--mobile-white">
-      <div class="container">
-        <product-featured
-          :categories="main.categories"
-        />
+      <div class="container container--mobile-padded">
+        <product-featured :categories="main.categories" />
       </div>
     </div>
     <div class="container container--mobile-padded">

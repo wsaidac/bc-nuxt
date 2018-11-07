@@ -1,10 +1,10 @@
 import Footer from './index.vue';
-import { mount, createLocalVue } from '@vue/test-utils';
+import { shallowMount, createLocalVue } from '@vue/test-utils';
 import Vuex from 'vuex';
-import Shared from "~/store/shared";
+import Shared from '~/store/shared';
 
-const localVue = createLocalVue()
-localVue.use(Vuex)
+const localVue = createLocalVue();
+localVue.use(Vuex);
 
 describe('Footer', () => {
   let $mounted;
@@ -16,24 +16,24 @@ describe('Footer', () => {
       {
         name: 'Visa',
         image: {
-          regular: "http://d2ethx2wadout7.cloudfront.net/app/uploads/2018/10/23143119/7FUuxSdyoIrLuNzNATz7CO/mastercard.png",
-          retina: "http://d2ethx2wadout7.cloudfront.net/app/uploads/2018/10/23143119/Ia8FjnT1WjObEO6tGuR4d/mastercard.png"
+          regular: 'http://d2ethx2wadout7.cloudfront.net/app/uploads/2018/10/23143119/7FUuxSdyoIrLuNzNATz7CO/mastercard.png',
+          retina: 'http://d2ethx2wadout7.cloudfront.net/app/uploads/2018/10/23143119/Ia8FjnT1WjObEO6tGuR4d/mastercard.png',
         },
       },
       {
         name: 'Maestro',
         image: {
-          regular: "http://d2ethx2wadout7.cloudfront.net/app/uploads/2018/10/23143119/7FUuxSdyoIrLuNzNATz7CO/mastercard.png",
-          retina: "http://d2ethx2wadout7.cloudfront.net/app/uploads/2018/10/23143119/Ia8FjnT1WjObEO6tGuR4d/mastercard.png"
+          regular: 'http://d2ethx2wadout7.cloudfront.net/app/uploads/2018/10/23143119/7FUuxSdyoIrLuNzNATz7CO/mastercard.png',
+          retina: 'http://d2ethx2wadout7.cloudfront.net/app/uploads/2018/10/23143119/Ia8FjnT1WjObEO6tGuR4d/mastercard.png',
         },
       },
       {
         name: 'American Express',
         image: {
-          regular: "http://d2ethx2wadout7.cloudfront.net/app/uploads/2018/10/23143119/7FUuxSdyoIrLuNzNATz7CO/mastercard.png",
-          retina: "http://d2ethx2wadout7.cloudfront.net/app/uploads/2018/10/23143119/Ia8FjnT1WjObEO6tGuR4d/mastercard.png"
+          regular: 'http://d2ethx2wadout7.cloudfront.net/app/uploads/2018/10/23143119/7FUuxSdyoIrLuNzNATz7CO/mastercard.png',
+          retina: 'http://d2ethx2wadout7.cloudfront.net/app/uploads/2018/10/23143119/Ia8FjnT1WjObEO6tGuR4d/mastercard.png',
         },
-      }
+      },
     ];
 
     store = new Vuex.Store({
@@ -41,16 +41,19 @@ describe('Footer', () => {
         shared: {
           namespaced: true,
           state,
-          getters: Shared.getters
+          getters: Shared.getters,
         },
       },
     });
 
-    $mounted = mount(Footer, { store, localVue });
+    $mounted = shallowMount(Footer, {
+      stubs: ['nuxt-link'],
+      store,
+      localVue,
+    });
   });
 
   it('should mount', () => {
     expect($mounted.find('.rapido-footer').exists()).toBe(true);
   });
 });
-
