@@ -33,9 +33,6 @@ export default {
 
 <style lang="scss">
 .shared-loader {
-  flex-flow: column nowrap;
-  padding: 10px;
-
   &__blur {
     transition: transform 0.3s;
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="footer-links container">
+  <div class="footer-links">
     <ui-collapse class="footer-links__mobile">
       <ui-collapse-item
         v-for="(column, i) in columns"
@@ -21,28 +21,30 @@
         </ul>
       </ui-collapse-item>
     </ui-collapse>
-    <ui-row class="footer-links__desktop">
-      <ui-col
-        v-for="(column, i) in columns"
-        :key="i"
-        :span="8"
-      >
-        <h5 v-text="column.title" />
-        <ul class="footer-links__list list-unstyled">
-          <li
-            v-for="link in column.links"
-            :key="link.title"
-          >
-            <nuxt-link
-              :to="link.url"
-              :title="link.title"
+    <div class="container footer-links__desktop">
+      <ui-row>
+        <ui-col
+          v-for="(column, i) in columns"
+          :key="i"
+          :span="8"
+        >
+          <h5 v-text="column.title" />
+          <ul class="footer-links__list list-unstyled">
+            <li
+              v-for="link in column.links"
+              :key="link.title"
             >
-              {{ link.title }}
-            </nuxt-link>
-          </li>
-        </ul>
-      </ui-col>
-    </ui-row>
+              <nuxt-link
+                :to="link.url"
+                :title="link.title"
+              >
+                {{ link.title }}
+              </nuxt-link>
+            </li>
+          </ul>
+        </ui-col>
+      </ui-row>
+    </div>
   </div>
 </template>
 
@@ -148,7 +150,7 @@ export default {
 
   &__desktop {
     margin-bottom: 40px;
-    width: 100%;
+    // width: 100%;
 
     @include media-breakpoint-only('xs') {
       display: none;

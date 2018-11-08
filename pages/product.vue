@@ -10,7 +10,7 @@
     />
     <shared-title :title="post.title" />
     <div class="block block--gray">
-      <div class="container container--mobile-padded">
+      <div class="container">
         <ui-row>
           <ui-col
             :lg="6"
@@ -39,7 +39,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container container--mobile-not-padded">
       <ui-row padded>
         <ui-col :sm="12">
           <category-accordion
@@ -58,7 +58,7 @@
       </ui-row>
     </div>
 
-    <div class="container container--mobile-padded">
+    <div class="container">
       <service-button />
       <service-terms
         :title="category.terms.title"
@@ -140,6 +140,10 @@ export default {
   @include media-breakpoint-only('xs') {
     .product-card {
       margin: auto !important;
+    }
+
+    .service-title h1 {
+      display: none;
     }
   }
 }

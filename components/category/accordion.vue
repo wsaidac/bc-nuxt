@@ -92,7 +92,7 @@ export default {
 
     .el-collapse-item__content {
       font-size: 14px;
-      padding: 15px;
+      padding: 5px 15px;
     }
 
     &:first-child {

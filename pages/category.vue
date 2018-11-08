@@ -16,7 +16,7 @@
         :products="products"
       />
     </div>
-    <div class="cg-category__info-block container">
+    <div class="cg-category__info-block container container--mobile-not-padded">
       <ui-row padded>
         <ui-col :sm="12">
           <category-accordion
@@ -41,7 +41,7 @@
       </ui-row>
     </div>
 
-    <div class="container container--mobile-padded">
+    <div class="container">
       <service-button />
       <service-terms
         :title="post.terms.title"
