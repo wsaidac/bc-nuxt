@@ -2,6 +2,8 @@
   margin-left: auto;
   margin-right: auto;
   min-width: 320px;
+  padding-left: ($grid-gutter-width / 2);
+  padding-right: ($grid-gutter-width / 2);
 
   @each $breakpoint, $container-max-width in $container-max-widths {
     @include media-breakpoint-up($breakpoint) {
@@ -10,14 +12,9 @@
     }
   }
 
-  @include media-breakpoint-up('sm') {
-    padding-left: ($grid-gutter-width / 2);
-    padding-right: ($grid-gutter-width / 2);
-  }
-
-  &--mobile-padded {
-    padding-left: ($grid-gutter-width / 2);
-    padding-right: ($grid-gutter-width / 2);
+  &--mobile-not-padded {
+    overflow-x: hidden;
+    padding: 0;
   }
 }
 

@@ -131,17 +131,20 @@ export default {
 
     .cg-usps__item {
       justify-content: flex-start;
-      padding: 15px;
+      padding: 5px 0;
 
       @include size(auto);
 
       strong {
         display: block;
+        font-size: $font-size-h6;
+        line-height: 20px;
       }
 
       small {
         color: $body-color;
-        font-size: $font-size-base;
+        font-size: $font-size-h6;
+        line-height: 20px;
       }
     }
   }

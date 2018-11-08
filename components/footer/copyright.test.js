@@ -13,6 +13,6 @@ describe('FooterCopyright', () => {
   });
 
   it('should show the current year as the copyright year', () => {
-    expect($mounted.find('.container--mobile-padded p:first-of-type').text()).toContain((new Date()).getFullYear());
+    expect($mounted.find('.container p:first-of-type').text()).toContain((new Date()).getFullYear());
   });
 });

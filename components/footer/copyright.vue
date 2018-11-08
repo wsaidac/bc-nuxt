@@ -1,6 +1,6 @@
 <template>
   <div class="footer-copyright">
-    <div class="container container--mobile-padded">
+    <div class="container">
       <img
         src="~/assets/images/logo-white.svg"
         alt="Rapido.com"

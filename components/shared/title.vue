@@ -1,5 +1,5 @@
 <template>
-  <div class="service-title container container--mobile-padded">
+  <div class="service-title container">
     <div class="flex">
       <h1 v-text="title" />
       <shared-instant-tooltip />
