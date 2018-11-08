@@ -20,10 +20,8 @@
       </div>
     </div>
     <div class="block block--gray block--space-between block--mobile-white">
-      <div class="container">
-        <product-featured
-          :categories="main.categories"
-        />
+      <div class="container container--mobile-padded">
+        <product-featured :categories="main.categories" />
       </div>
     </div>
     <div class="container">
