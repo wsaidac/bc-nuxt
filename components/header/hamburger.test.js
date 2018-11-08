@@ -12,7 +12,7 @@ describe('HeaderHamburger', () => {
     expect($mounted.find('.is-active').exists()).toBe(false);
   });
 
-  it('should be set to active', () => {
+  it('can be set to active', () => {
     const $mounted = mount(HeaderHamburger, { propsData: { active: true } });
     expect($mounted.find('.is-active').exists()).toBe(true);
   });

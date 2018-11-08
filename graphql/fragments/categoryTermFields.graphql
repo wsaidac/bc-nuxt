@@ -1,6 +1,7 @@
 fragment categoryTermFields on CategoryTerm {
   name
   description
+  slug
   categoryHeader {
     title
     image {

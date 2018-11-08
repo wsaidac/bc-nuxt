@@ -42,7 +42,9 @@ export default {
     },
     options: {
       type: Array,
-      required: true,
+      default() {
+        return [];
+      },
     },
     block: {
       type: Boolean,
