@@ -70,7 +70,6 @@ describe('ProductQuickbuy', () => {
   });
 
   it('should iterate through multiple denominations', () => {
-    console.log($mounted);
     expect($mounted.findAll('.product-variants__item')).toHaveLength(3);
   });
 });
