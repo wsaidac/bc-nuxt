@@ -150,7 +150,6 @@ export default {
 
   &__desktop {
     margin-bottom: 40px;
-    // width: 100%;
 
     @include media-breakpoint-only('xs') {
       display: none;
