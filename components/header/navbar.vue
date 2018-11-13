@@ -53,7 +53,9 @@
             </li>
           </ul>
         </li>
-        <li class="header-navbar__help">
+        <div class="spacer" />
+        <header-login />
+        <li class="header-navbar__service help">
           <a
             href="https://www.rapido.com/us/faq"
             title="help"
@@ -72,17 +74,20 @@
 </template>
 
 <script>
-import { UiCol, UiRow, UiIcon } from '~/components/ui';
-import NavbarHamburger from './hamburger';
+/* eslint-disable */
+import { UiCol, UiRow, UiIcon } from "~/components/ui";
+import NavbarHamburger from "./hamburger";
+import HeaderLogin from "./login";
 
 export default {
-  name: 'HeaderNavbar',
+  name: "HeaderNavbar",
 
   components: {
     NavbarHamburger,
     UiCol,
     UiIcon,
     UiRow,
+    HeaderLogin
   },
 
   props: {
@@ -90,25 +95,25 @@ export default {
       type: Array,
       default() {
         return [];
-      },
-    },
+      }
+    }
   },
 
   data() {
     return {
       menuOpen: false,
-      active: '',
+      active: ""
     };
   },
 
   computed: {
     classes() {
       return [
-        'header-navbar__navigation',
-        { 'header-navbar__navigation--open': this.menuOpen },
-        { 'header-navbar__navigation--has-active': this.active !== '' },
+        "header-navbar__navigation",
+        { "header-navbar__navigation--open": this.menuOpen },
+        { "header-navbar__navigation--has-active": this.active !== "" }
       ];
-    },
+    }
   },
 
   methods: {
@@ -117,8 +122,8 @@ export default {
     },
     toggleMenu() {
       this.menuOpen = !this.menuOpen;
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -138,12 +143,12 @@ export default {
 
     @include flex(center, center);
 
-    @include media-breakpoint-up('sm') {
+    @include media-breakpoint-up("sm") {
       padding: 11px 7px;
       width: 115px;
     }
 
-    @include media-breakpoint-up('md') {
+    @include media-breakpoint-up("md") {
       width: 200px;
     }
 
@@ -160,19 +165,32 @@ export default {
   &__navigation {
     align-items: stretch;
     display: flex;
+    flex-grow: 1;
     list-style: none;
     margin: 0;
+    max-width: 985px;
+    padding-left: 10px;
+  }
+
+  .spacer {
+    flex-grow: 1;
   }
 
   &__main-item {
     align-items: center;
-    border-left: 1px solid $primary-700;
+    border-right: 1px solid $primary-700;
     cursor: pointer;
     display: flex;
     font-size: 16px;
     height: 100%;
     padding: 30px 10px;
     position: relative;
+
+    @include media-breakpoint-up("sm") {
+      &:nth-child(2) {
+        border-left: 1px solid $primary-700;
+      }
+    }
 
     & > div {
       @include flex(center, center);
@@ -183,12 +201,12 @@ export default {
       margin-right: 6px;
     }
 
-    @include media-breakpoint-up('md') {
+    @include media-breakpoint-up("md") {
       padding: 30px 15px;
     }
 
-    @include media-breakpoint-up('lg') {
-      padding: 30px 25px;
+    @include media-breakpoint-up("lg") {
+      padding: 30px 15px;
     }
 
     &:hover {
@@ -196,7 +214,7 @@ export default {
 
       &::after {
         background: $danger-500;
-        content: '';
+        content: "";
         display: block;
         z-index: ($z-index-navigation + 1);
 
@@ -219,9 +237,9 @@ export default {
     }
   }
 
-  &__help {
+  &__service {
     font-size: 15.75px;
-    padding-left: 20px;
+    padding: 0 20px;
 
     a {
       color: $white;
@@ -275,7 +293,7 @@ export default {
     display: none;
   }
 
-  @include media-breakpoint-down('md') {
+  @include media-breakpoint-down("md") {
     &__main-item {
       font-size: 13.5px;
 
@@ -289,7 +307,7 @@ export default {
     }
   }
 
-  @include media-breakpoint-only('xs') {
+  @include media-breakpoint-only("xs") {
     .container {
       background: $primary-500;
       height: 50px;
@@ -402,14 +420,20 @@ export default {
       }
     }
 
-    &__help {
-      background: $gray-200;
+    &__service {
+      background: $gray-100;
       flex-grow: 1;
 
       a {
         color: $black;
         display: block;
-        padding-top: 20px;
+        padding: 15px 0;
+      }
+
+      &:last-child {
+        a {
+          border-top: 1px solid $gray-200;
+        }
       }
     }
 
@@ -439,7 +463,7 @@ export default {
     }
 
     &__gray {
-      background: $gray-200;
+      background: $gray-100;
       flex-grow: 1;
       pointer-events: none;
     }
