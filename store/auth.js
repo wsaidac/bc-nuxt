@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 export default {
   state() {
     return {
@@ -16,11 +14,12 @@ export default {
   // },
 
   getters: {
-    currentUser: state => {
-      email: "ronald@10k.nl"
+    currentUser: (state) => {
+      'ronald@10k.nl';
     },
-    token: state => "aERBOTlCRzEwVTgyNkF4NmErOG5JYWpKdzF1QUhuTklwYXpsbFBoMklBcUxkaWd3OTh6N3NLN1djM0FVd3ZDeHljZHVPcHdRZENkdEhMRUlLR1FmR1pNSVdEUlF2SUJzZENLRUFmdkhkZVNEclBsSE5TNzNHNEtqY2JucXVMRFotLU5XMi83akp1ZWhvdW5PTDkva1JXcHc9PQ==--296392b3ea0a62aba99a499912ffb2f2ae85f026",
+    token: state => 'T1Y0bnVMNlBtUDhHRlNSMENZTlRQSXVKbUFUeGFUZUtBM0YrRVN4bDdranBFYndvUnVibGFlVnNSZCttaFIwRHhWWHYzeUZjUGJibm5TRDlIQmFHTzlBM0dNVi92ZTFuaTY3bTRYWDRJalJaOEN4QW1HVXFkM0FKc3pqbDVIc0YtLXJhVHdERGlNREZPMHVIdVAwbjBCZkE9PQ==--d0ac27c479b1bd2004882f229d7410841fab5bbc',
     context: state => 11,
+    quickbuy: state => null,
   },
 
   mutations: {

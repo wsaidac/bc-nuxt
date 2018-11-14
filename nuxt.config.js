@@ -28,9 +28,6 @@ module.exports = {
       }
     },
   },
-  router: {
-    middleware: ['auth'],
-  },
   modules: [
     ['~/modules/icons'],
     ['artemis-graphql', {

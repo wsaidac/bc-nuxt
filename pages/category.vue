@@ -75,6 +75,8 @@ import SeoBlock from '~/components/seo/block';
 import SeoBreadcrumbs from '~/components/seo/breadcrumbs';
 import { UiCol, UiRow } from '~/components/ui';
 
+import AsyncState from '~/plugins/mixins/async-state.js';
+
 export default {
   components: {
     CategoryAccordion,
@@ -90,6 +92,8 @@ export default {
     UiCol,
     UiRow,
   },
+
+  mixins: [AsyncState],
 
   props: {
     post: {

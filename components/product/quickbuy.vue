@@ -22,7 +22,7 @@
 
 <script>
 /* eslint-disable-next-line */
-import { UiButton, UiCol, UiRow, UiIcon } from '~/components/ui';
+import { UiButton, UiCol, UiRow, UiIcon } from "~/components/ui";
 import ProductCard from '~/components/product/card';
 import ProductVariants from '~/components/product/variants';
 import SharedLoader from '~/components/shared/loader';
@@ -49,15 +49,21 @@ export default {
 
   data() {
     return {
+      timerRunning: false,
       loading: true,
-      userProduct: null,
     };
   },
 
-  async mounted() {
-    const { post: { quickbuy } } = await this.$q('quickbuy');
-    this.userProduct = quickbuy.quickbuyProduct;
-    this.loading = false;
+  computed: {
+    userProduct() {
+      return this.$store.getters['auth/quickbuy'];
+    },
+  },
+
+  mounted() {
+    this.$nuxt.$on('asyncStateLoaded', () => {
+      this.loading = false;
+    });
   },
 };
 </script>

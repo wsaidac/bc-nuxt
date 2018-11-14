@@ -1,12 +1,12 @@
 <template>
   <li class="header-navbar__service">
     <a
-      v-if="currentUser"
+      v-if="currentUser && userRequestFinished"
       href="localhost:4001/account/profile"
       title="Login"
     >login</a>
     <a
-      v-else
+      v-else-if="userRequestFinished"
       href="localhost:4001"
       title="profile"
     >My account</a>
@@ -14,29 +14,33 @@
 </template>
 
 <script>
-/* eslint-disable */
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
 
 export default {
-  computed: {
-    ...mapGetters("auth", ["currentUser"])
-  }
+  data() {
+    return {
+      userRequestFinished: false,
+    };
+  },
 
-  // async mounted() {
-  //   const {
-  //     currentUser: { user }
-  //   } = await $q("currentPersonalData");
-  //   return {
-  //     personalDetails: pickPersonalDetails(user),
-  //     addressDetails: pickAddressDetails(user)
-  //   };
-  // }
-  // methods: {
-  //   async logout() {
-  //     await this.$m('logout');   $m ??????????????
-  //     window.location.reload();
-  //   },
-  // },
+  computed: {
+    ...mapGetters('auth', ['currentUser']),
+  },
+
+  async mounted() {
+    this.$nuxt.$on('asyncStateLoaded', (status) => {
+      if (status === 'finished') {
+        this.userRequestFinished = true;
+      }
+    });
+  },
+
+  methods: {
+    async logout() {
+      await this.$m('logout');
+      window.location.reload();
+    },
+  },
 };
 </script>
 

@@ -94,6 +94,8 @@ import ProductCard from '~/components/product/card';
 import SharedTitle from '~/components/shared/title';
 import ProductVariants from '~/components/product/variants';
 
+import AsyncState from '~/plugins/mixins/async-state.js';
+
 export default {
   components: {
     HeaderBanner,
@@ -111,6 +113,8 @@ export default {
     ProductVariants,
     ServiceTerms,
   },
+
+  mixins: [AsyncState],
 
   props: {
     post: {
