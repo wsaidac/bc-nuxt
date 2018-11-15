@@ -30,16 +30,20 @@ module.exports = {
   },
   modules: [
     ['~/modules/icons'],
-    ['artemis-graphql', {
-      browserUri: 'env://API_BROWSER',
-      serverUri: 'env://API_SERVER',
-    }],
+    [
+      'artemis-graphql',
+      {
+        browserUri: 'env://API_BROWSER',
+        serverUri: 'env://API_SERVER',
+      },
+    ],
     ['~/modules/disable-default-router'],
   ],
   plugins: [
     '~/assets/icons.js',
     '~/plugins/env.js',
     '~/plugins/i18n.js',
+    { src: '~/plugins/gtm.js', ssr: false },
   ],
   watchers: {
     webpack: {
