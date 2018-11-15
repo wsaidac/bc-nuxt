@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-module.exports = {
+const config = {
   head: {
     title: 'rapido_web',
     meta: [
@@ -30,20 +30,21 @@ module.exports = {
   },
   modules: [
     ['~/modules/icons'],
-    ['artemis-graphql', {
-      browserUri: 'env://API_BROWSER',
-      serverUri: 'env://API_SERVER',
-    }],
+    [
+      'artemis-graphql',
+      {
+        browserUri: 'env://API_BROWSER',
+        serverUri: 'env://API_SERVER',
+      },
+    ],
     ['~/modules/disable-default-router'],
   ],
-  plugins: [
-    '~/assets/icons.js',
-    '~/plugins/env.js',
-    '~/plugins/i18n.js',
-  ],
+  plugins: ['~/assets/icons.js', '~/plugins/env.js', '~/plugins/i18n.js'],
   watchers: {
     webpack: {
       poll: true,
     },
   },
 };
+
+module.exports = config;
