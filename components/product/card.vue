@@ -38,9 +38,14 @@
           v-model="value"
           :options="options"
         />
-        <ui-button type="warning">
-          {{ cta }}
-        </ui-button>
+        <a :href="product.slug" >
+          <ui-button
+            type="warning"
+            @click="pickItem"
+          >
+            {{ cta }}
+          </ui-button>
+        </a>
       </div>
     </div>
   </div>
@@ -91,14 +96,18 @@ export default {
 
   computed: {
     classes() {
-      return [
-        'product-card',
-        `product-card--mode-${this.mode}`,
-      ];
+      return ['product-card', `product-card--mode-${this.mode}`];
     },
 
     cta() {
       return this.mode === 'horizontal' ? 'Order now' : 'Order safely';
+    },
+  },
+
+  methods: {
+    pickItem() {
+      console.log('hi');
+      this.$store.commit('product/setAmount', this.value);
     },
   },
 };

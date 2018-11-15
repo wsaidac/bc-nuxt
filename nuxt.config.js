@@ -39,7 +39,12 @@ const config = {
     ],
     ['~/modules/disable-default-router'],
   ],
-  plugins: ['~/assets/icons.js', '~/plugins/env.js', '~/plugins/i18n.js'],
+  plugins: [
+    '~/assets/icons.js',
+    '~/plugins/env.js',
+    '~/plugins/i18n.js',
+    '~/plugins/cookie-store.js',
+  ],
   watchers: {
     webpack: {
       poll: true,

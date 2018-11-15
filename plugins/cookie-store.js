@@ -9,9 +9,7 @@ export default ({ store, req }) => {
   createPersistedState({
     key: storageKey,
 
-    paths: [
-      'auth.token',
-    ],
+    paths: ['auth.token', 'product.amount'],
 
     storage: {
       getItem: key => cookies.get(key),
