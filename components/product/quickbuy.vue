@@ -49,7 +49,6 @@ export default {
 
   data() {
     return {
-      timerRunning: false,
       loading: true,
     };
   },
