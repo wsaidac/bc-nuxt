@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const config = {
+const conf = {
   head: {
     title: 'rapido_web',
     meta: [
@@ -52,4 +52,4 @@ const config = {
   },
 };
 
-module.exports = config;
+module.exports = conf;

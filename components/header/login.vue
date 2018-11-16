@@ -28,10 +28,8 @@ export default {
   },
 
   async mounted() {
-    this.$nuxt.$on('asyncStateLoaded', (status) => {
-      if (status === 'finished') {
-        this.userRequestFinished = true;
-      }
+    this.$nuxt.$on('asyncStateLoaded', () => {
+      this.userRequestFinished = true;
     });
   },
 

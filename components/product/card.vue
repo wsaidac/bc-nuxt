@@ -106,7 +106,6 @@ export default {
 
   methods: {
     pickItem() {
-      console.log('hi');
       this.$store.commit('product/setAmount', this.value);
     },
   },
