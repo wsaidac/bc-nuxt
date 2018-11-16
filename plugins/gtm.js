@@ -1,6 +1,7 @@
+import Vue from 'vue';
+
 function log(message) {
-  console.log('trying to fire!!!! ======== !!!!!!!!!!!!!!!!!!!!!!!!!');
-  if (process.env.gtmDebug) console.log('[GTM]', message); // eslint-disable-line no-console
+  if (process.env.GTM_DEBUG) console.log('[GTM]', message); // eslint-disable-line no-console
 }
 
 function page() {
@@ -38,12 +39,16 @@ function initilialize(gtmId) {
   if (window.gtmInitialized) return;
   if (navigator.userAgent.match(/Google Page Speed Insights/)) return;
   injectBaseTag(gtmId);
-  page();
 }
 
-export default ({ store }, inject) => {
+export default ({ store, app }, inject) => {
   initilialize(store.getters['shared/gtmId']);
 
   inject('page', page);
   inject('track', track);
+  app.router.afterEach((to, from) => {
+    Vue.nextTick(() => {
+      app.$page();
+    });
+  });
 };
