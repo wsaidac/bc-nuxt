@@ -7,7 +7,7 @@ export default {
       instantDelivery: {},
       paymentMethods: {},
       usps: {},
-      gtmId: 'GTM-KWZLG26',
+      gtmId: process.env.GTM_ID,
     };
   },
 
