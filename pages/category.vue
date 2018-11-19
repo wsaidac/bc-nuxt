@@ -1,7 +1,7 @@
 <template>
   <div class="cg-category">
     <header-banner
-      :image="post.categoryHeader.banner"
+      :image="bannerImage"
       :payoff-image="post.categoryHeader.image"
       :title="post.categoryHeader.title"
     />
@@ -100,6 +100,10 @@ export default {
 
   computed: {
     ...mapGetters('shared', ['customerService', 'usps']),
+
+    bannerImage() {
+      return this.post.categoryHeader.banner || this.$store.getters['shared/header'].image;
+    },
 
     kinds() {
       return groupBy(this.post.products.nodes, p => p.kinds.nodes[0].name);
