@@ -1,7 +1,7 @@
 <template>
   <div class="cg-product">
     <header-banner
-      :image="category.categoryHeader.banner"
+      :image="bannerImage"
       :payoff-image="category.categoryHeader.image"
       :title="category.categoryHeader.title"
     />
@@ -123,6 +123,9 @@ export default {
     ...mapGetters('shared', ['customerService', 'usps']),
     category() {
       return this.post.categories.nodes[0];
+    },
+    bannerImage() {
+      return this.post.content.banner || this.category.categoryHeader.banner || this.$store.getters['shared/header'].image;
     },
     crumbs() {
       return [

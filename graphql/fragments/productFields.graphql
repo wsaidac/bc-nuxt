@@ -12,6 +12,10 @@ fragment productFields on Product {
   }
   content {
     title
+    banner {
+      desktop: sharpieUrl(height: 456, width: 1920)
+      mobile: sharpieUrl(height: 300, width: 768)
+    }
     image {
       desktop: sharpieUrl(height: 250, width: 250)
       mobile: sharpieUrl(height: 150, width: 150)
