@@ -55,10 +55,8 @@ export default {
       return '';
     },
     productImage(product, key) {
-      if (product.category.categoryHeader) {
-        return product.category.categoryHeader.image[key];
-      }
-      return '';
+      return (product.image && product.image[key])
+        || (product.category.categoryHeader.image && product.category.categoryHeader.image[key]);
     },
   },
 };
