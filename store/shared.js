@@ -7,6 +7,7 @@ export default {
       instantDelivery: {},
       paymentMethods: {},
       usps: {},
+      gtmId: process.env.GTM_ID,
     };
   },
 
@@ -17,6 +18,7 @@ export default {
     instantDelivery: ({ instantDelivery }) => instantDelivery,
     paymentMethods: ({ paymentMethods }) => paymentMethods,
     usps: ({ usps }) => usps,
+    gtmId: ({ gtmId }) => gtmId,
   },
 
   mutations: {
