@@ -50,8 +50,6 @@ import ServiceBanner from '~/components/service/banner';
 import SeoBlock from '~/components/seo/block';
 import { mapGetters } from 'vuex';
 
-import AsyncState from '~/plugins/mixins/async-state.js';
-
 export default {
   components: {
     UiIcon,
@@ -63,8 +61,6 @@ export default {
     ServiceBanner,
     SeoBlock,
   },
-
-  mixins: [AsyncState],
 
   props: {
     post: {

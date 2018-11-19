@@ -4,9 +4,11 @@
 */
 
 import Vue from 'vue';
+import Vuex from 'vuex';
 import TestUtils from '@vue/test-utils';
 
 const localVue = TestUtils.createLocalVue();
+localVue.use(Vuex);
 
 // Silence $listeners readonly error: https://github.com/vuejs/vue-test-utils/issues/532
 Vue.config.silent = true;

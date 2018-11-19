@@ -1,6 +1,6 @@
 <template>
   <div class="product-quickbuy" >
-    <shared-loader :loading="loading">
+    <shared-loader :loading="!isLoaded">
       <h2
         class="product-quickbuy__title"
         v-text="`Let's speed it up`"
@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 /* eslint-disable-next-line */
 import { UiButton, UiCol, UiRow, UiIcon } from "~/components/ui";
 import ProductCard from '~/components/product/card';
@@ -47,22 +49,12 @@ export default {
     },
   },
 
-  data() {
-    return {
-      loading: true,
-    };
-  },
-
   computed: {
-    userProduct() {
-      return this.$store.getters['auth/quickbuy'];
-    },
-  },
+    ...mapGetters('async', ['isLoaded']),
 
-  mounted() {
-    this.$nuxt.$on('asyncStateLoaded', () => {
-      this.loading = false;
-    });
+    userProduct() {
+      return this.isLoaded ? this.$store.getters['auth/currentUser'].quickbuy : undefined;
+    },
   },
 };
 </script>

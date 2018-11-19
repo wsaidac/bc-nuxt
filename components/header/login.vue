@@ -1,15 +1,15 @@
 <template>
   <li class="header-navbar__service">
     <a
-      v-if="currentUser && userRequestFinished"
-      href="localhost:4001/account/profile"
-      title="Login"
-    >login</a>
-    <a
-      v-else-if="userRequestFinished"
-      href="localhost:4001"
+      v-if="currentUser && isLoaded"
+      href="/account/profile"
       title="profile"
     >My account</a>
+    <a
+      v-else-if="isLoaded"
+      href="/sessions/login"
+      title="login"
+    >Login</a>
   </li>
 </template>
 
@@ -17,20 +17,9 @@
 import { mapGetters } from 'vuex';
 
 export default {
-  data() {
-    return {
-      userRequestFinished: false,
-    };
-  },
-
   computed: {
     ...mapGetters('auth', ['currentUser']),
-  },
-
-  async mounted() {
-    this.$nuxt.$on('asyncStateLoaded', () => {
-      this.userRequestFinished = true;
-    });
+    ...mapGetters('async', ['isLoaded']),
   },
 
   methods: {

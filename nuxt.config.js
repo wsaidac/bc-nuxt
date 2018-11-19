@@ -44,6 +44,7 @@ const conf = {
     '~/plugins/env.js',
     '~/plugins/i18n.js',
     '~/plugins/cookie-store.js',
+    { src: '~/plugins/async.js', ssr: false },
   ],
   watchers: {
     webpack: {
