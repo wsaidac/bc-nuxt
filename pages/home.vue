@@ -9,7 +9,7 @@
     />
     <div class="container">
       <product-popular
-        :products="post.popularProducts.items"
+        :popular-products="post.popularProducts"
       />
     </div>
     <div class="block block--gray cg-home__quickbuy">

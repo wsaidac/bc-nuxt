@@ -2,8 +2,11 @@
   <div class="product-popular">
     <h2
       class="product-popular__title"
-      v-text="`Popular products`"
+      v-text="popularProducts.title"
     />
+    <h6
+      class="product-popular__subtitle"
+      v-text="popularProducts.subtitle"/>
     <ui-row>
       <ui-col
         v-for="product in products"
@@ -40,11 +43,16 @@ export default {
   },
 
   props: {
-    products: {
-      type: Array,
+    popularProducts: {
+      type: Object,
       default() {
-        return [];
+        return {};
       },
+    },
+  },
+  computed: {
+    products() {
+      return this.popularProducts.items;
     },
   },
   methods: {
@@ -72,8 +80,14 @@ export default {
     padding: 40px 0 80px;
   }
 
-  &__title {
+  &__title,
+  &__subtitle {
     text-align: center;
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    margin: 20px 0;
   }
 
   &__item {
