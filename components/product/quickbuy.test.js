@@ -28,35 +28,33 @@ describe('ProductQuickbuy', () => {
     slug: '/product123',
     title: 'title',
     categories: {
-      nodes: [
-        {
-          products: {
-            nodes: [
-              {
-                id: 2,
-                content: {
-                  title: 'Verizon Prepaid Refill $10',
-                },
-                slug: '/verizon/10-usd',
+      nodes: [{
+        products: {
+          nodes: [
+            {
+              id: 2,
+              content: {
+                title: 'Verizon Prepaid Refill $10',
               },
-              {
-                id: 3,
-                content: {
-                  title: 'Verizon Prepaid Refill $15',
-                },
-                slug: '/verizon/15-usd',
+              url: '/verizon/10-usd',
+            },
+            {
+              id: 3,
+              content: {
+                title: 'Verizon Prepaid Refill $15',
               },
-              {
-                id: 4,
-                content: {
-                  title: 'Verizon Prepaid Refill $20',
-                },
-                slug: '/verizon/20-usd',
+              url: '/verizon/15-usd',
+            },
+            {
+              id: 4,
+              content: {
+                title: 'Verizon Prepaid Refill $20',
               },
-            ],
-          },
+              url: '/verizon/20-usd',
+            },
+          ],
         },
-      ],
+      }],
     },
   };
 

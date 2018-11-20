@@ -47,7 +47,15 @@ describe('ProductPopular', () => {
   ];
 
   beforeEach(() => {
-    $mounted = mount(ProductPopular, { propsData: { products } });
+    $mounted = mount(ProductPopular, {
+      propsData: {
+        popularProducts: {
+          items: products,
+          title: 'awesome title',
+          subtitle: 'awesome subtitle',
+        },
+      },
+    });
   });
 
   it('should mount', () => {
@@ -56,6 +64,16 @@ describe('ProductPopular', () => {
 
   it('should render a title', () => {
     expect($mounted.find('.product-popular__title').exists()).toBe(true);
+    expect($mounted.find('.product-popular__title').text()).toBe(
+      'awesome title',
+    );
+  });
+
+  it('should render a subtitle', () => {
+    expect($mounted.find('.product-popular__subtitle').exists()).toBe(true);
+    expect($mounted.find('.product-popular__subtitle').text()).toBe(
+      'awesome subtitle',
+    );
   });
 
   it('should iterate through multiple products', () => {
