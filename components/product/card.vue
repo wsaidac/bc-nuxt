@@ -41,7 +41,7 @@
         <a :href="product.slug" >
           <ui-button
             type="warning"
-            @click="pickItem"
+            @click="setAmount"
           >
             {{ cta }}
           </ui-button>
@@ -105,7 +105,7 @@ export default {
   },
 
   methods: {
-    pickItem() {
+    setAmount() {
       this.$store.commit('product/setAmount', this.value);
     },
   },
