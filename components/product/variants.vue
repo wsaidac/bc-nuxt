@@ -72,7 +72,7 @@ export default {
       margin: 10px 0;
       padding: 5px 10px;
 
-      @include media-breakpoint-up("sm") {
+      @include media-breakpoint-up('sm') {
         margin: 7px 0;
       }
 
@@ -84,7 +84,7 @@ export default {
       }
     }
 
-    @include media-breakpoint-up("sm") {
+    @include media-breakpoint-up('sm') {
       &:first-child a {
         margin-top: 0;
       }

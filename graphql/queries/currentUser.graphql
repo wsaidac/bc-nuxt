@@ -1,0 +1,8 @@
+query {
+  user: currentUser {
+    token
+    user {
+      email
+    }
+  }
+}

@@ -58,6 +58,19 @@ fragment categoryTermFields on CategoryTerm {
           name
         }
       }
+      categories {
+        nodes {
+          id
+          categoryHeader {
+            title
+            image {
+              regular: sharpieUrl(height: 84, width: 253)
+              retina: sharpieUrl(height: 168, width: 506)
+            }
+          }
+          slug
+        }
+      }
     }
   }
 }

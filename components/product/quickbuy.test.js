@@ -1,8 +1,12 @@
 import ProductQuickbuy from './quickbuy.vue';
 import { mount } from '~/test/utils/with-context';
+import Vuex from 'vuex';
+import Async from '~/store/async';
+import Auth from '~/store/auth';
 
 describe('ProductQuickbuy', () => {
   let $mounted;
+  let store;
 
   const defaultProduct = {
     id: 1,
@@ -55,8 +59,29 @@ describe('ProductQuickbuy', () => {
   };
 
   beforeEach(() => {
+    store = new Vuex.Store({
+      modules: {
+        auth: {
+          namespaced: true,
+          state: {
+            currentUser: {
+              quickbuy: defaultProduct,
+            },
+          },
+          getters: Auth.getters,
+        },
+
+        async: {
+          namespaced: true,
+          state: { loaded: true },
+          getters: Async.getters,
+        },
+      },
+    });
+
     $mounted = mount(ProductQuickbuy, {
-      stubs: ['product-card'],
+      stubs: ['product-card', 'product-variants'],
+      store,
       propsData: { defaultProduct },
     });
   });
@@ -67,9 +92,5 @@ describe('ProductQuickbuy', () => {
 
   it('should render a title', () => {
     expect($mounted.find('.product-quickbuy__title').exists()).toBe(true);
-  });
-
-  it('should iterate through multiple denominations', () => {
-    expect($mounted.findAll('.product-variants__item')).toHaveLength(3);
   });
 });

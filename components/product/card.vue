@@ -6,14 +6,13 @@
     <nuxt-link
       :to="product.slug"
       class="product-card__img-link">
-      <picture v-if="product.content.image">
-        <img
-          :alt="product.content.title"
-          :src="product.content.image.regular"
-          :srcset="`${product.content.image.regular}, ${product.content.image.retina} 2x`"
-        >
-      </picture>
-    </nuxt-link>
+        <picture>
+          <img
+            :src="regularImage"
+            :srcet="`${regularImage}, ${retinaImage} 2x`"
+            :alt="product.content.title">
+        </picture>
+      </nuxt-link>
     <div class="product-card__content">
       <div class="product-card__title">
         <h3 v-text="$n(product.information.retailValue, 'USD')" />
@@ -32,9 +31,14 @@
           v-model="value"
           :options="options"
         />
-        <ui-button type="warning">
-          {{ cta }}
-        </ui-button>
+        <a :href="product.slug" >
+          <ui-button
+            type="warning"
+            @click="setAmount"
+          >
+            {{ cta }}
+          </ui-button>
+        </a>
       </div>
     </div>
   </div>
@@ -79,20 +83,30 @@ export default {
         { id: 2, label: 3, value: 3 },
         { id: 3, label: 4, value: 4 },
         { id: 4, label: 5, value: 5 },
+        { id: 5, label: 10, value: 10 },
       ],
     };
   },
 
   computed: {
     classes() {
-      return [
-        'product-card',
-        `product-card--mode-${this.mode}`,
-      ];
+      return ['product-card', `product-card--mode-${this.mode}`];
     },
 
     cta() {
       return this.mode === 'horizontal' ? 'Order now' : 'Order safely';
+    },
+    retinaImage() {
+      return (this.product.content.image && this.product.content.image.retina) || this.product.categories.nodes[0].categoryHeader.image.retina;
+    },
+    regularImage() {
+      return (this.product.content.image && this.product.content.image.regular) || this.product.categories.nodes[0].categoryHeader.image.regular;
+    },
+  },
+
+  methods: {
+    setAmount() {
+      this.$store.commit('product/setAmount', this.value);
     },
   },
 };

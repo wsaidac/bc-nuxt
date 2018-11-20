@@ -1,6 +1,6 @@
 <template>
   <div class="product-quickbuy" >
-    <shared-loader :loading="loading">
+    <shared-loader :loading="!isLoaded">
       <h2
         class="product-quickbuy__title"
         v-text="`Let's speed it up`"
@@ -8,12 +8,12 @@
       <ui-row>
         <ui-col :sm="{ span: 12, offset: 2 }">
           <product-card
-            :product="userProduct || defaultProduct"
+            :product="product"
             mode="horizontal"
           />
         </ui-col>
         <ui-col :sm="8">
-          <product-variants :product="userProduct || defaultProduct" />
+          <product-variants :product="product" />
         </ui-col>
       </ui-row>
     </shared-loader>
@@ -21,8 +21,10 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 /* eslint-disable-next-line */
-import { UiButton, UiCol, UiRow, UiIcon } from '~/components/ui';
+import { UiButton, UiCol, UiRow, UiIcon } from "~/components/ui";
 import ProductCard from '~/components/product/card';
 import ProductVariants from '~/components/product/variants';
 import SharedLoader from '~/components/shared/loader';
@@ -47,17 +49,16 @@ export default {
     },
   },
 
-  data() {
-    return {
-      loading: true,
-      userProduct: null,
-    };
-  },
+  computed: {
+    ...mapGetters('async', ['isLoaded']),
 
-  async mounted() {
-    const { post: { quickbuy } } = await this.$q('quickbuy');
-    this.userProduct = quickbuy.quickbuyProduct;
-    this.loading = false;
+    userProduct() {
+      const currentUser = this.$store.getters['auth/currentUser'];
+      return this.isLoaded && currentUser ? currentUser.quickbuy : undefined;
+    },
+    product() {
+      return this.userProduct || this.defaultProduct;
+    },
   },
 };
 </script>
