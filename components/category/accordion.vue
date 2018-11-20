@@ -115,6 +115,8 @@ export default {
   }
 
   @include media-breakpoint-down('xs') {
+    margin-bottom: 20px;
+
     .el-collapse-item {
       .el-collapse-item__header {
         font-size: 15.8px;

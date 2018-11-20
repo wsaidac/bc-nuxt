@@ -64,8 +64,8 @@ fragment categoryTermFields on CategoryTerm {
           categoryHeader {
             title
             image {
-              regular: sharpieUrl(height: 84, width: 253)
-              retina: sharpieUrl(height: 168, width: 506)
+              regular: sharpieUrl(height: 159, width: 217)
+              retina: sharpieUrl(height: 318, width: 434)
             }
           }
           slug

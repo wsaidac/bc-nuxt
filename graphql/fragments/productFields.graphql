@@ -17,8 +17,8 @@ fragment productFields on Product {
       mobile: sharpieUrl(height: 300, width: 768)
     }
     image {
-      desktop: sharpieUrl(height: 250, width: 250)
-      mobile: sharpieUrl(height: 150, width: 150)
+      regular: sharpieUrl(height: 159, width: 217)
+      retina: sharpieUrl(height: 318, width: 434)
     }
     tooltip {
       title

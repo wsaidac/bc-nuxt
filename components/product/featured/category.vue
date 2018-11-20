@@ -111,12 +111,6 @@ export default {
     toggle() {
       this.collapsed = !this.collapsed;
     },
-    productImage(product) {
-      if (product.image) {
-        return product.image.desktop;
-      }
-      return '';
-    },
   },
 };
 </script>

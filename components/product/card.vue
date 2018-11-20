@@ -200,6 +200,14 @@ export default {
       padding: 10px;
     }
 
+    @include media-breakpoint-up('sm') {
+      .product-card {
+        &__content {
+          min-height: 121px;
+        }
+      }
+    }
+
     @include media-breakpoint-only('xs') {
       .product-card {
         &__content {
