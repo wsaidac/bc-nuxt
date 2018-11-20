@@ -6,11 +6,10 @@ const setCurrentUser = async (app, store, path) => {
 };
 
 export default ({ app, store }) => {
-  app.router.beforeEach((to, from, next) => {
+  app.router.afterEach((to, from) => {
     store.commit('async/setLoaded', false);
     Promise.all([setCurrentUser(app, store, to.fullPath)]).then(() => {
       store.commit('async/setLoaded', true);
     });
-    next();
   });
 };
