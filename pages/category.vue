@@ -5,9 +5,7 @@
       :payoff-image="post.categoryHeader.image"
       :title="post.categoryHeader.title"
     />
-    <cg-usps
-      :usps="usps.items"
-    />
+    <cg-usps :usps="usps.items" />
     <div>
       <category-kind
         v-for="(products, kind) in kinds"
@@ -40,9 +38,12 @@
         </ui-col>
       </ui-row>
     </div>
-
-    <div class="container">
-      <service-button />
+    <div class="container container--not-mobile-not-padded">
+      <ui-row padded>
+        <ui-col>
+          <service-button />
+        </ui-col>
+      </ui-row>
       <service-terms
         :title="post.terms.title"
         :description="post.terms.text"
@@ -53,9 +54,7 @@
         :title="customerService.primaryText"
         :description="customerService.secondaryText"
       />
-      <seo-breadcrumbs
-        :crumbs="crumbs"
-      />
+      <seo-breadcrumbs :crumbs="crumbs" />
     </div>
   </div>
 </template>

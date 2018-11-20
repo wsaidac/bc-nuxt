@@ -5,8 +5,8 @@ fragment categoryTermFields on CategoryTerm {
   categoryHeader {
     title
     image {
-      regular: sharpieUrl(height: 250, width: 250)
-      retina: sharpieUrl(height: 500, width: 500)
+      regular: sharpieUrl(height: 185, width: 250)
+      retina: sharpieUrl(height: 370, width: 500)
     }
     banner {
       desktop: sharpieUrl(height: 300, width: 1920)
@@ -44,8 +44,8 @@ fragment categoryTermFields on CategoryTerm {
       content {
         title
         image {
-          desktop: sharpieUrl(height: 250, width: 250)
-          mobile: sharpieUrl(height: 150, width: 150)
+          regular: sharpieUrl(height: 159, width: 217)
+          retina: sharpieUrl(height: 318, width: 434)
         }
         tooltip {
           title
