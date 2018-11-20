@@ -90,6 +90,7 @@ export default {
         { id: 2, label: 3, value: 3 },
         { id: 3, label: 4, value: 4 },
         { id: 4, label: 5, value: 5 },
+        { id: 5, label: 10, value: 10 },
       ],
     };
   },
