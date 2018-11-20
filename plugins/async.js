@@ -2,7 +2,6 @@ const setCurrentUser = async (app, store, path) => {
   if (path.startsWith('/account') || path.startsWith('/sessions')) return;
   const { data } = await app.$query('currentUser');
   if (!data.user) return;
-  console.log(' sdflksjdflkdsj');
   store.commit('auth/setCurrentUser', data.user);
 };
 
