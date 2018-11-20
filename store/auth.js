@@ -55,16 +55,10 @@ const temporaryDummyQuickbuy = {
 export default {
   state() {
     return {
-      context: 11,
-      currentUser: {
-        quickbuy: temporaryDummyQuickbuy,
-      },
-      token:
-        'Vm52MldvaWhaTURJUStUQ2ZwU0g2ZlM5MzdsSW9BNEhjWUxiN1Y4bzZZWmpYN2h0bUtvVmFrWHZtQ1QrNXNOMGg0R0t0L1g5aXNSNzZWNWp6b0xpTmd5RmY0RXJIaEo1eWR0SUxzSG1DMUkvb2UwOXVpb2E1dVZObFNXdXErUjItLVliU2hhMjAzc0NVMnExWlU2Q1YyR2c9PQ==--f8a617a657d463fed3dfc7e49102cb9320a91f2a',
-      // token: null,
+      currentUser: null,
+      token: null,
     };
   },
-
   getters: {
     context: state => state.context,
     currentUser: state => state.currentUser,

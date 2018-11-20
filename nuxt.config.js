@@ -16,6 +16,7 @@ const conf = {
     styleResources: {
       scss: './assets/stylesheets/_shared.scss',
     },
+    publicPath: '/__nuxt__pages',
 
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
@@ -53,5 +54,14 @@ const conf = {
     },
   },
 };
+
+if (process.env.PROXY_ACCOUNT) {
+  conf.modules.push('@nuxtjs/proxy');
+  conf.proxy = [
+    process.env.PROXY_ACCOUNT,
+    process.env.PROXY_SESSIONS,
+    process.env.PROXY_ASSETS,
+  ];
+}
 
 module.exports = conf;

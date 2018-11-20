@@ -1,9 +1,16 @@
+const setCurrentUser = async (app, store, path) => {
+  if (path.startsWith('/account') || path.startsWith('/sessions')) return;
+  const { data } = await app.$query('currentUser');
+  if (!data.user) return;
+  console.log(' sdflksjdflkdsj');
+  store.commit('auth/setCurrentUser', data.user);
+};
+
 export default ({ app, store }) => {
   app.router.beforeEach((to, from, next) => {
     store.commit('async/setLoaded', false);
-    app.$query('currentUser').then(({ data }) => {
+    Promise.all([setCurrentUser(app, store, to.fullPath)]).then(() => {
       store.commit('async/setLoaded', true);
-      store.commit('auth/setCurrentUser', data.user);
     });
     next();
   });

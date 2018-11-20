@@ -1,15 +1,11 @@
 <template>
   <li class="header-navbar__service">
     <a
-      v-if="currentUser && isLoaded"
-      href="/account/profile"
-      title="profile"
-    >My account</a>
-    <a
-      v-else-if="isLoaded"
-      href="/sessions/login"
-      title="login"
-    >Login</a>
+      v-if="isLoaded"
+      :href="href"
+      :title="title"
+      v-text="text"
+    />
   </li>
 </template>
 
@@ -20,6 +16,15 @@ export default {
   computed: {
     ...mapGetters('auth', ['currentUser']),
     ...mapGetters('async', ['isLoaded']),
+    href() {
+      return this.currentUser ? '/account/profile' : '/sessions/login';
+    },
+    title() {
+      return this.currentUser ? 'profile' : 'login';
+    },
+    text() {
+      return this.currentUser ? 'My Account' : 'Login';
+    },
   },
 
   methods: {

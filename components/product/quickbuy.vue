@@ -8,12 +8,12 @@
       <ui-row>
         <ui-col :sm="{ span: 12, offset: 2 }">
           <product-card
-            :product="userProduct || defaultProduct"
+            :product="product"
             mode="horizontal"
           />
         </ui-col>
         <ui-col :sm="8">
-          <product-variants :product="userProduct || defaultProduct" />
+          <product-variants :product="product" />
         </ui-col>
       </ui-row>
     </shared-loader>
@@ -53,7 +53,11 @@ export default {
     ...mapGetters('async', ['isLoaded']),
 
     userProduct() {
-      return this.isLoaded ? this.$store.getters['auth/currentUser'].quickbuy : undefined;
+      const currentUser = this.$store.getters['auth/currentUser'];
+      return this.isLoaded && currentUser ? currentUser.quickbuy : undefined;
+    },
+    product() {
+      return this.userProduct || this.defaultProduct;
     },
   },
 };
