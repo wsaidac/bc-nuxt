@@ -21,6 +21,21 @@ describe('ProductCard', () => {
         title: 'Short text to show when tooltip is not yet hovered',
       },
     },
+    categories: {
+      nodes: [
+        {
+          id: 3,
+          slug: '/verizon/10-usd',
+          categoryHeader: {
+            title: 'Spotify',
+            image: {
+              regular: 'https://example.com/spotify.jpg',
+              retina: 'https://example.com/spotify.jpg',
+            },
+          },
+        },
+      ],
+    },
     slug: '/product123',
   };
 
