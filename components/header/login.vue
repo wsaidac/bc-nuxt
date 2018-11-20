@@ -26,13 +26,6 @@ export default {
       return this.currentUser ? 'My Account' : 'Login';
     },
   },
-
-  methods: {
-    async logout() {
-      await this.$m('logout');
-      window.location.reload();
-    },
-  },
 };
 </script>
 
