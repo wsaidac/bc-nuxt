@@ -16,6 +16,13 @@
     overflow-x: hidden;
     padding: 0;
   }
+
+  &--not-mobile-not-padded {
+    @include media-breakpoint-up('sm') {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 }
 
 .container-fluid {

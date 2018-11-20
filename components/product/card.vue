@@ -3,8 +3,9 @@
     v-if="product"
     :class="classes"
   >
-    <figure>
-      <nuxt-link :to="product.slug">
+    <nuxt-link
+      :to="product.slug"
+      class="product-card__img-link">
         <picture>
           <img
             :src="regularImage"
@@ -12,7 +13,6 @@
             :alt="product.content.title">
         </picture>
       </nuxt-link>
-    </figure>
     <div class="product-card__content">
       <div class="product-card__title">
         <h3 v-text="$n(product.information.retailValue, 'USD')" />
@@ -24,9 +24,7 @@
         />
       </div>
       <div class="product-card__actions">
-        <shared-instant-tooltip
-          v-if="mode === 'horizontal'"
-        />
+        <shared-instant-tooltip v-if="mode === 'horizontal'" />
         <div class="spacer" />
         <ui-select
           v-if="hasSelect"
@@ -119,10 +117,6 @@ export default {
   background: $white;
   border: 1px solid $gray-400;
 
-  figure {
-    margin: 0;
-  }
-
   &__title {
     position: relative;
 
@@ -192,6 +186,38 @@ export default {
     }
   }
 
+  &__img-link {
+    padding: 20px 10px;
+
+    @include flex(center, center);
+  }
+
+  &--mode-vertical {
+    margin-top: 20px;
+
+    .product-card__content {
+      border-top: 1px solid $gray-400;
+      padding: 10px;
+    }
+
+    @include media-breakpoint-only('xs') {
+      .product-card {
+        &__content {
+          border-top: 0;
+        }
+
+        &__img-link {
+          width: 30vw;
+
+          img {
+            border: 1px solid $gray-400;
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+
   &--mode-horizontal {
     max-width: 520px;
 
@@ -218,26 +244,8 @@ export default {
       flex-grow: 1;
       padding: 20px 10px 20px 0;
     }
-  }
 
-  &--mode-vertical {
-    margin-top: 20px;
-
-    figure {
-      border-bottom: 1px solid $gray-400;
-      height: 270px;
-      padding: 20px;
-
-      @include flex(center, center);
-    }
-
-    .product-card__content {
-      padding: 10px;
-    }
-  }
-
-  @include media-breakpoint-only('xs') {
-    &--mode-horizontal {
+    @include media-breakpoint-only('xs') {
       figure {
         height: auto;
         margin: 10px;
