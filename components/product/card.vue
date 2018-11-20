@@ -6,13 +6,13 @@
     <nuxt-link
       :to="product.slug"
       class="product-card__img-link">
-        <picture>
-          <img
-            :src="regularImage"
-            :srcet="`${regularImage}, ${retinaImage} 2x`"
-            :alt="product.content.title">
-        </picture>
-      </nuxt-link>
+      <picture>
+        <img
+          :src="regularImage"
+          :srcet="`${regularImage}, ${retinaImage} 2x`"
+          :alt="product.content.title">
+      </picture>
+    </nuxt-link>
     <div class="product-card__content">
       <div class="product-card__title">
         <h3 v-text="$n(product.information.retailValue, 'USD')" />
