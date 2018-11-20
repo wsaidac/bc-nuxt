@@ -7,10 +7,9 @@
       <nuxt-link :to="product.slug">
         <picture>
           <img
-            :alt="productTitle"
-            :src="productImage('regular')"
-            :srcset="`${productImage('regular')}, ${productImage('retina')} 2x`"
-          >
+            :src="regularImage"
+            :srcet="`${regularImage}, ${retinaImage} 2x`"
+            :alt="product.content.title">
         </picture>
       </nuxt-link>
     </figure>
@@ -99,18 +98,15 @@ export default {
     cta() {
       return this.mode === 'horizontal' ? 'Order now' : 'Order safely';
     },
-    productTitle() {
-      return this.product.content.title || this.product.categories.nodes[0].categoryHeader.title;
+    retinaImage() {
+      return (this.product.content.image && this.product.content.image.retina) || this.product.categories.nodes[0].categoryHeader.image.retina;
     },
-    mainCategory() {
-      return this.product.categories.nodes[0];
+    regularImage() {
+      return (this.product.content.image && this.product.content.image.regular) || this.product.categories.nodes[0].categoryHeader.image.regular;
     },
   },
 
   methods: {
-    productImage(key) {
-      return (this.product.content.image && this.product.content.image[key]) || (this.mainCategory.categoryHeader.image && this.mainCategory.categoryHeader.image[key]);
-    },
     setAmount() {
       this.$store.commit('product/setAmount', this.value);
     },

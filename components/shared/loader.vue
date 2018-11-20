@@ -15,19 +15,21 @@
 </template>
 
 <script>
+/* eslint-disable */
+
 export default {
   props: {
     loading: {
       type: Boolean,
-      default: true,
-    },
+      default: true
+    }
   },
 
   computed: {
     classes() {
-      return ['shared-loader', { 'shared-loader--blur': this.loading }];
-    },
-  },
+      return ["shared-loader", { "shared-loader--blur": this.loading }];
+    }
+  }
 };
 </script>
 
@@ -55,7 +57,7 @@ export default {
     filter: none;
     margin-bottom: 20px;
     position: relative;
-    z-index: 100;
+    z-index: 40;
   }
 
   .shared-loader__spinner {
@@ -67,7 +69,7 @@ export default {
     filter: none;
     opacity: 1 !important;
     position: relative;
-    z-index: 100;
+    z-index: 40;
 
     @include size(100px);
   }
@@ -80,7 +82,9 @@ export default {
   }
 
   @keyframes spin {
-    100% { transform: rotate(360deg); }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
 </style>

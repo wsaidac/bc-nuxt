@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-module.exports = {
+const conf = {
   head: {
     title: 'rapido_web',
     meta: [
@@ -16,6 +16,7 @@ module.exports = {
     styleResources: {
       scss: './assets/stylesheets/_shared.scss',
     },
+    publicPath: '/__nuxt__pages',
 
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
@@ -44,6 +45,8 @@ module.exports = {
     '~/plugins/env.js',
     '~/plugins/i18n.js',
     { src: '~/plugins/gtm.js', ssr: false },
+    '~/plugins/cookie-store.js',
+    { src: '~/plugins/async.js', ssr: false },
   ],
   watchers: {
     webpack: {
@@ -51,3 +54,14 @@ module.exports = {
     },
   },
 };
+
+if (process.env.PROXY_ACCOUNT) {
+  conf.modules.push('@nuxtjs/proxy');
+  conf.proxy = [
+    process.env.PROXY_ACCOUNT,
+    process.env.PROXY_SESSIONS,
+    process.env.PROXY_ASSETS,
+  ];
+}
+
+module.exports = conf;

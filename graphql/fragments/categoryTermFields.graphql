@@ -44,8 +44,8 @@ fragment categoryTermFields on CategoryTerm {
       content {
         title
         image {
-          regular: sharpieUrl(height: 84, width: 253)
-          retina: sharpieUrl(height: 168, width: 506)
+          regular: sharpieUrl(height: 250, width: 250)
+          retina: sharpieUrl(height: 500, width: 500)
         }
         tooltip {
           title
