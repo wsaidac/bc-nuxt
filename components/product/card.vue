@@ -5,16 +5,12 @@
   >
     <figure>
       <nuxt-link :to="product.slug">
-        <picture v-if="product.content.image">
-          <source
-            :srcset="product.content.image.desktop"
-            media="(min-width: 768px)">
-          <source
-            :srcset="product.content.image.mobile"
-            media="(max-width: 767px)">
+        <picture>
           <img
-            :src="product.content.image.desktop"
-            :alt="product.content.title">
+            :alt="productTitle"
+            :src="productImage('regular')"
+            :srcset="`${productImage('regular')}, ${productImage('retina')} 2x`"
+          >
         </picture>
       </nuxt-link>
     </figure>
@@ -38,9 +34,14 @@
           v-model="value"
           :options="options"
         />
-        <ui-button type="warning">
-          {{ cta }}
-        </ui-button>
+        <a :href="product.slug" >
+          <ui-button
+            type="warning"
+            @click="setAmount"
+          >
+            {{ cta }}
+          </ui-button>
+        </a>
       </div>
     </div>
   </div>
@@ -85,20 +86,33 @@ export default {
         { id: 2, label: 3, value: 3 },
         { id: 3, label: 4, value: 4 },
         { id: 4, label: 5, value: 5 },
+        { id: 5, label: 10, value: 10 },
       ],
     };
   },
 
   computed: {
     classes() {
-      return [
-        'product-card',
-        `product-card--mode-${this.mode}`,
-      ];
+      return ['product-card', `product-card--mode-${this.mode}`];
     },
 
     cta() {
       return this.mode === 'horizontal' ? 'Order now' : 'Order safely';
+    },
+    productTitle() {
+      return this.product.content.title || this.product.categories.nodes[0].categoryHeader.title;
+    },
+    mainCategory() {
+      return this.product.categories.nodes[0];
+    },
+  },
+
+  methods: {
+    productImage(key) {
+      return (this.product.content.image && this.product.content.image[key]) || (this.mainCategory.categoryHeader.image && this.mainCategory.categoryHeader.image[key]);
+    },
+    setAmount() {
+      this.$store.commit('product/setAmount', this.value);
     },
   },
 };

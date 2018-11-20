@@ -22,7 +22,7 @@
         >
           <img
             :alt="productTitle(product)"
-            :src="productTitle(product)"
+            :src="productImage(product, 'regular')"
             :srcset="`${productImage(product, 'regular')}, ${productImage(product, 'retina')} 2x`"
           >
         </nuxt-link>

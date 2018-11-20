@@ -44,8 +44,8 @@ fragment categoryTermFields on CategoryTerm {
       content {
         title
         image {
-          desktop: sharpieUrl(height: 250, width: 250)
-          mobile: sharpieUrl(height: 150, width: 150)
+          regular: sharpieUrl(height: 84, width: 253)
+          retina: sharpieUrl(height: 168, width: 506)
         }
         tooltip {
           title
@@ -56,6 +56,19 @@ fragment categoryTermFields on CategoryTerm {
       kinds {
         nodes {
           name
+        }
+      }
+      categories {
+        nodes {
+          id
+          categoryHeader {
+            title
+            image {
+              regular: sharpieUrl(height: 84, width: 253)
+              retina: sharpieUrl(height: 168, width: 506)
+            }
+          }
+          slug
         }
       }
     }
