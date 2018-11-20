@@ -15,7 +15,13 @@ fragment homeFields on Home {
     }
   }
   popularProducts {
+    title
+    subtitle
     items {
+      image {
+        regular: sharpieUrl(height: 84, width: 253)
+        retina: sharpieUrl(height: 168, width: 506)
+      }
       category {
         id
         categoryHeader {
