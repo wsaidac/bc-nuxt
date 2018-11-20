@@ -115,12 +115,6 @@ export default {
       this.$store.commit('product/setAmount', this.value);
     },
   },
-
-  methods: {
-    setAmount() {
-      this.$store.commit('product/setAmount', this.value);
-    },
-  },
 };
 </script>
 
