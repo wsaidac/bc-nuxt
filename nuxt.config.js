@@ -16,7 +16,7 @@ const conf = {
     styleResources: {
       scss: './assets/stylesheets/_shared.scss',
     },
-    publicPath: '/__nuxt__pages',
+    publicPath: '/rapidoweb/',
 
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
