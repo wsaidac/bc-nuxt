@@ -196,6 +196,11 @@ export default {
     .product-card {
       &__img-link {
         padding: 20px 10px;
+
+        picture {
+          display: block;
+          margin: auto;
+        }
       }
 
       &__content {
