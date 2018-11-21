@@ -1,6 +1,9 @@
 <template>
   <section class="product-featured-category">
     <h3 class="product-featured-category__title">
+      <img
+        :src="category.image.regular"
+        :alt="category.title">
       <span v-text="category.title" />
     </h3>
     <ui-row>
@@ -133,6 +136,15 @@ export default {
 
   &__title {
     font-size: $font-size-h3;
+    margin-bottom: 5px;
+
+    @include flex(null, center);
+
+    img {
+      filter: invert(100%);
+      height: 25px;
+      margin-right: 15px;
+    }
   }
 
   &__item {
@@ -148,7 +160,8 @@ export default {
     }
 
     img {
-      margin: 10px auto;
+      display: block;
+      margin: auto;
       padding: 10px;
     }
   }
