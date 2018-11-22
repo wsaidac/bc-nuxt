@@ -52,7 +52,10 @@ describe('ProductFeatured', () => {
     },
     {
       title: 'Game Gift cards',
-      icon: 'game',
+      image: {
+        regular: 'https://example.com/provider-1.jpg',
+        retina: 'https://example.com/provider-1.jpg',
+      },
       categories: [
         {
           id: 5,
