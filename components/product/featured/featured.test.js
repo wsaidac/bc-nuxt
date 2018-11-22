@@ -7,7 +7,10 @@ describe('ProductFeatured', () => {
   const categories = [
     {
       title: 'Mobile Recharge',
-      icon: 'mobile',
+      image: {
+        regular: 'https://example.com/provider-1.jpg',
+        retina: 'https://example.com/provider-1.jpg',
+      },
       categories: [
         {
           id: 1,
