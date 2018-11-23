@@ -10,7 +10,9 @@
     </div>
     <div class="block block--gray cg-home__quickbuy">
       <div class="container">
-        <product-quickbuy :default-product="post.quickbuy && post.quickbuy.quickbuyProduct" />
+        <product-quickbuy
+          v-if="post.quickbuy && post.quickbuy.quickbuyProduct"
+          :default-product="post.quickbuy && post.quickbuy.quickbuyProduct" />
       </div>
     </div>
     <div class="block block--gray block--space-between block--mobile-white">
