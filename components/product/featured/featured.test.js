@@ -8,6 +8,9 @@ describe('ProductFeatured', () => {
     {
       title: 'Mobile Recharge',
       icon: 'mobile',
+      image: {
+        regular: 'https://example.com/provider-1.jpg',
+      },
       categories: [
         {
           id: 1,
@@ -50,6 +53,9 @@ describe('ProductFeatured', () => {
     {
       title: 'Game Gift cards',
       icon: 'game',
+      image: {
+        regular: 'https://example.com/provider-1.jpg',
+      },
       categories: [
         {
           id: 5,
@@ -91,17 +97,27 @@ describe('ProductFeatured', () => {
 
   it('should collapse products within category', () => {
     const firstCategory = $mounted.find('.product-featured-category');
-    expect(firstCategory.findAll('.product-featured-category__item')).toHaveLength(2);
+    expect(
+      firstCategory.findAll('.product-featured-category__item'),
+    ).toHaveLength(2);
   });
 
   it('should uncollapse products within category on toggle', () => {
     const firstCategory = $mounted.find('.product-featured-category');
     firstCategory.find('.product-featured-category__toggle').trigger('click');
-    expect($mounted.find('.product-featured-category').findAll('.product-featured-category__item')).toHaveLength(4);
+    expect(
+      $mounted
+        .find('.product-featured-category')
+        .findAll('.product-featured-category__item'),
+    ).toHaveLength(4);
   });
 
   it('should hide toggle if product limit is not met', () => {
-    const secondCategory = $mounted.find('.product-featured-category:last-child');
-    expect(secondCategory.find('.product-featured-category__toggle').exists()).toBe(false);
+    const secondCategory = $mounted.find(
+      '.product-featured-category:last-child',
+    );
+    expect(
+      secondCategory.find('.product-featured-category__toggle').exists(),
+    ).toBe(false);
   });
 });

@@ -7,6 +7,9 @@ describe('ProductCategory', () => {
   const category = {
     title: 'Mobile Recharge',
     icon: 'mobile',
+    image: {
+      regular: 'https://example.com/provider-1.jpg',
+    },
     categories: [
       {
         id: 1,
@@ -83,17 +86,25 @@ describe('ProductCategory', () => {
   });
 
   it('should render a title', () => {
-    expect($mounted.find('.product-featured-category__title').exists()).toBe(true);
+    expect($mounted.find('.product-featured-category__title').exists()).toBe(
+      true,
+    );
   });
 
   it('should have length of 4', () => {
-    expect($mounted.findAll('.product-featured-category__item')).toHaveLength(6);
+    expect($mounted.findAll('.product-featured-category__item')).toHaveLength(
+      6,
+    );
   });
 
   it('should uncollapse products within category on toggle', () => {
     const firstCategory = $mounted.find('.product-featured-category');
     firstCategory.find('.product-featured-category__toggle').trigger('click');
-    expect($mounted.find('.product-featured-category').findAll('.product-featured-category__item')).toHaveLength(7);
+    expect(
+      $mounted
+        .find('.product-featured-category')
+        .findAll('.product-featured-category__item'),
+    ).toHaveLength(7);
   });
 
   it('should have one not showing product', () => {
