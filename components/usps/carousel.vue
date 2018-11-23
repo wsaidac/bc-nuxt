@@ -6,6 +6,7 @@
       class="usps-carousel__cell"
     >
       <img
+        v-if="usp.image"
         :alt="usp.text"
         :src="usp.image.regular"
         :srcset="`${usp.image.regular}, ${usp.image.retina} 2x`"

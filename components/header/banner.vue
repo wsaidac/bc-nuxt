@@ -1,6 +1,6 @@
 <template>
   <div class="header-banner">
-    <picture>
+    <picture v-if="image">
       <source
         :srcset="image.desktop"
         media="(min-width: 768px)">

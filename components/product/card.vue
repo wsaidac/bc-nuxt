@@ -6,7 +6,7 @@
     <nuxt-link
       :to="product.slug"
       class="product-card__img-link">
-      <picture>
+      <picture v-if="hasImage">
         <img
           :src="regularImage"
           :srcet="`${regularImage}, ${retinaImage} 2x`"
@@ -95,6 +95,9 @@ export default {
 
     cta() {
       return this.mode === 'horizontal' ? 'Order now' : 'Order safely';
+    },
+    hasImage() {
+      return this.product.content.image || this.product.categories.nodes[0].categoryHeader.image;
     },
     retinaImage() {
       return (this.product.content.image && this.product.content.image.retina) || this.product.categories.nodes[0].categoryHeader.image.retina;
