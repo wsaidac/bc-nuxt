@@ -1,6 +1,6 @@
 #import "../fragments/categoryTermFields.graphql"
 
-fragment productFields on Product {
+fragment productFields on CmsProduct {
   id
   title
   link

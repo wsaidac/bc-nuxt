@@ -43,6 +43,7 @@ export default {
   async asyncData({ app, route, store }) {
     const slug = slugFromPath(route.path);
     const [{ post }] = await Promise.all([app.$q('post', { slug }), fetchMenus(app, store), fetchShared(app, store)]);
+    post.__typename = post.__typename === 'CmsProduct' ? 'Product' : post.__typename;
     return { layout: post.__typename, post };
   },
 };
