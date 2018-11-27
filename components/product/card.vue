@@ -3,16 +3,18 @@
     v-if="product"
     :class="classes"
   >
-    <nuxt-link
-      :to="product.slug"
-      class="product-card__img-link">
+    <div
+      class="product-card__img-link"
+      @click="submitForm"
+    >
       <picture>
         <img
           :src="regularImage"
           :srcet="`${regularImage}, ${retinaImage} 2x`"
-          :alt="product.content.title">
+          :alt="product.content.title"
+        >
       </picture>
-    </nuxt-link>
+    </div>
     <div class="product-card__content">
       <div class="product-card__title">
         <h3 v-text="$n(product.information.retailValue, 'USD')" />
@@ -23,23 +25,30 @@
           :title="product.content.tooltip.title"
         />
       </div>
-      <div class="product-card__actions">
+      <form
+        :action="slugTarget"
+        method="post"
+        class="product-card__actions"
+      >
         <shared-instant-tooltip v-if="mode === 'horizontal'" />
         <div class="spacer" />
+        <fieldset>
+          <input
+            type="hidden"
+            name="productId"
+            value="1"
+          >
+        </fieldset>
         <ui-select
           v-if="hasSelect"
           v-model="value"
           :options="options"
         />
-        <a :href="product.slug" >
-          <ui-button
-            type="warning"
-            @click="setAmount"
-          >
-            {{ cta }}
-          </ui-button>
-        </a>
-      </div>
+        <ui-button
+          type="warning"
+          native-type="submit"
+        >{{ cta }}</ui-button>
+      </form>
     </div>
   </div>
 </template>
@@ -89,24 +98,37 @@ export default {
   },
 
   computed: {
+    slugTarget() {
+      return (this.route && `/${this.route.params[0]}/order/quickbuy`) || '/orders/quickbuy';
+    },
     classes() {
       return ['product-card', `product-card--mode-${this.mode}`];
     },
-
     cta() {
       return this.mode === 'horizontal' ? 'Order now' : 'Order safely';
     },
     retinaImage() {
-      return (this.product.content.image && this.product.content.image.retina) || this.product.categories.nodes[0].categoryHeader.image.retina;
+      return (
+        (this.product.content.image && this.product.content.image.retina)
+        || this.product.categories.nodes[0].categoryHeader.image.retina
+      );
     },
     regularImage() {
-      return (this.product.content.image && this.product.content.image.regular) || this.product.categories.nodes[0].categoryHeader.image.regular;
+      return (
+        (this.product.content.image && this.product.content.image.regular)
+        || this.product.categories.nodes[0].categoryHeader.image.regular
+      );
     },
   },
 
   methods: {
     setAmount() {
       this.$store.commit('product/setAmount', this.value);
+    },
+    submitForm() {
+      const form = document.querySelector('.product-card__actions');
+      console.log(form);
+      form.submit();
     },
   },
 };
@@ -117,6 +139,10 @@ export default {
   background: $white;
   border: 1px solid $gray-400;
 
+  fieldset {
+    display: none;
+  }
+
   &__title {
     position: relative;
 
@@ -124,11 +150,11 @@ export default {
       font-size: $font-size-h6;
       margin: 0;
 
-      @include media-breakpoint-up('sm') {
+      @include media-breakpoint-up("sm") {
         font-size: $font-size-h5;
       }
 
-      @include media-breakpoint-up('md') {
+      @include media-breakpoint-up("md") {
         font-size: 22px;
       }
     }
@@ -209,7 +235,7 @@ export default {
       }
     }
 
-    @include media-breakpoint-up('sm') {
+    @include media-breakpoint-up("sm") {
       .product-card {
         &__content {
           min-height: 121px;
@@ -217,7 +243,7 @@ export default {
       }
     }
 
-    @include media-breakpoint-only('xs') {
+    @include media-breakpoint-only("xs") {
       .product-card {
         &__content {
           border-top: 0;
@@ -259,7 +285,7 @@ export default {
       }
     }
 
-    @include media-breakpoint-only('xs') {
+    @include media-breakpoint-only("xs") {
       .product-card {
         &__img-link {
           img {

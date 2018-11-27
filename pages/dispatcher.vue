@@ -8,8 +8,10 @@
 <script>
 function slugFromPath(path) {
   if (path === '/') return 'home';
-  if (path === '/us') return 'home';
-  return path.slice(1);
+  if (path === `/${process.env.CMS_COUNTRY}/`) {
+    return 'home';
+  }
+  return path.replace(`/${process.env.CMS_COUNTRY}/`, '');
 }
 
 async function fetchMenus(app, store) {
@@ -32,6 +34,7 @@ export default {
     Home: () => import('~/pages/home'),
     CategoryTerm: () => import('~/pages/category'),
     Product: () => import('~/pages/product'),
+    Error: () => import('~/pages/error'),
   },
 
   head() {
@@ -43,6 +46,12 @@ export default {
   async asyncData({ app, route, store }) {
     const slug = slugFromPath(route.path);
     const [{ post }] = await Promise.all([app.$q('post', { slug }), fetchMenus(app, store), fetchShared(app, store)]);
+    if (post === null) {
+      return {
+        layout: 'Error',
+        post: 'some interesting info',
+      };
+    }
     post.__typename = post.__typename === 'CmsProduct' ? 'Product' : post.__typename;
     return { layout: post.__typename, post };
   },
