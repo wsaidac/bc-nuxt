@@ -22,6 +22,7 @@
     </div>
     <div class="container">
       <service-banner
+        v-if="customerService"
         :link="customerService.link"
         :image="customerService.image"
         :title="customerService.primaryText"
