@@ -5,6 +5,7 @@
     class="service-banner"
   >
     <img
+      v-if="image"
       :src="image.regular"
       :srcset="`${image.regular}, ${image.retina} 2x`"
       alt=""
