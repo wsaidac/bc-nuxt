@@ -1,23 +1,22 @@
 <template>
   <div
     v-if="product"
-    :class="classes"
-  >
+    :class="classes">
     <div
       class="product-card__img-link"
-      @click="submitForm"
-    >
+      @click="submitForm">
       <picture v-if="hasImage">
         <img
           :src="regularImage"
           :srcet="`${regularImage}, ${retinaImage} 2x`"
-          :alt="product.content.title">
+          :alt="product.content.title"
+        >
       </picture>
     </div>
     <div class="product-card__content">
       <div class="product-card__title">
-        <h3 v-text="$n(product.information.retailValue, 'USD')" />
-        <p v-text="product.content.title" />
+        <h3 v-text="$n(product.information.retailValue, 'USD')"/>
+        <p v-text="product.content.title"/>
         <shared-tooltip
           v-if="mode === 'vertical' && product.content.tooltip && product.content.tooltip.content"
           :content="product.content.tooltip.content"
@@ -25,28 +24,32 @@
         />
       </div>
       <form
-        action="/us/orders/quickbuy"
+        action="/us/order/quickbuy"
         method="post"
-        class="product-card__actions"
-      >
-        <shared-instant-tooltip v-if="mode === 'horizontal'" />
-        <div class="spacer" />
+        class="product-card__actions">
+        <shared-instant-tooltip v-if="mode === 'horizontal'"/>
+        <div class="spacer"/>
         <fieldset>
           <input
             type="hidden"
             name="productId"
-            value="1"
-          >
+            value="211">
         </fieldset>
         <ui-select
           v-if="hasSelect"
           v-model="value"
           :options="options"
-        />
+          name="selectAmount"/>
+        <fieldset
+          v-else>
+          <input
+            type="hidden"
+            name="selectAmount"
+            value="1">
+        </fieldset>
         <ui-button
           type="warning"
-          native-type="submit"
-        >{{ cta }}</ui-button>
+          native-type="submit">{{ cta }}</ui-button>
       </form>
     </div>
   </div>
@@ -104,7 +107,10 @@ export default {
       return this.mode === 'horizontal' ? 'Order now' : 'Order safely';
     },
     hasImage() {
-      return this.product.content.image || this.product.categories.nodes[0].categoryHeader.image;
+      return (
+        this.product.content.image
+        || this.product.categories.nodes[0].categoryHeader.image
+      );
     },
     retinaImage() {
       return (
