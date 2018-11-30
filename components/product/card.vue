@@ -7,12 +7,11 @@
       class="product-card__img-link"
       @click="submitForm"
     >
-      <picture>
+      <picture v-if="hasImage">
         <img
           :src="regularImage"
           :srcet="`${regularImage}, ${retinaImage} 2x`"
-          :alt="product.content.title"
-        >
+          :alt="product.content.title">
       </picture>
     </div>
     <div class="product-card__content">
@@ -26,7 +25,7 @@
         />
       </div>
       <form
-        :action="slugTarget"
+        action="/us/orders/quickbuy"
         method="post"
         class="product-card__actions"
       >
@@ -98,14 +97,14 @@ export default {
   },
 
   computed: {
-    slugTarget() {
-      return (this.route && `/${this.route.params[0]}/order/quickbuy`) || '/orders/quickbuy';
-    },
     classes() {
       return ['product-card', `product-card--mode-${this.mode}`];
     },
     cta() {
       return this.mode === 'horizontal' ? 'Order now' : 'Order safely';
+    },
+    hasImage() {
+      return this.product.content.image || this.product.categories.nodes[0].categoryHeader.image;
     },
     retinaImage() {
       return (
