@@ -1,45 +1,56 @@
 <template>
   <div
     v-if="product"
-    :class="classes"
-  >
-    <nuxt-link
-      :to="product.slug"
-      class="product-card__img-link">
+    :class="classes">
+    <div
+      class="product-card__img-link"
+      @click="submitForm">
       <picture v-if="hasImage">
         <img
           :src="regularImage"
           :srcet="`${regularImage}, ${retinaImage} 2x`"
-          :alt="product.content.title">
+          :alt="product.content.title"
+        >
       </picture>
-    </nuxt-link>
+    </div>
     <div class="product-card__content">
       <div class="product-card__title">
-        <h3 v-text="$n(product.information.retailValue, 'USD')" />
-        <p v-text="product.content.title" />
+        <h3 v-text="$n(product.information.retailValue, 'USD')"/>
+        <p v-text="product.content.title"/>
         <shared-tooltip
           v-if="mode === 'vertical' && product.content.tooltip && product.content.tooltip.content"
           :content="product.content.tooltip.content"
           :title="product.content.tooltip.title"
         />
       </div>
-      <div class="product-card__actions">
-        <shared-instant-tooltip v-if="mode === 'horizontal'" />
-        <div class="spacer" />
+      <form
+        action="/us/order/quickbuy"
+        method="post"
+        class="product-card__actions">
+        <shared-instant-tooltip v-if="mode === 'horizontal'"/>
+        <div class="spacer"/>
+        <fieldset>
+          <input
+            type="hidden"
+            name="productId"
+            value="211">
+        </fieldset>
         <ui-select
           v-if="hasSelect"
           v-model="value"
           :options="options"
-        />
-        <a :href="product.slug" >
-          <ui-button
-            type="warning"
-            @click="setAmount"
-          >
-            {{ cta }}
-          </ui-button>
-        </a>
-      </div>
+          name="selectAmount"/>
+        <fieldset
+          v-else>
+          <input
+            type="hidden"
+            name="selectAmount"
+            value="1">
+        </fieldset>
+        <ui-button
+          type="warning"
+          native-type="submit">{{ cta }}</ui-button>
+      </form>
     </div>
   </div>
 </template>
@@ -92,24 +103,37 @@ export default {
     classes() {
       return ['product-card', `product-card--mode-${this.mode}`];
     },
-
     cta() {
       return this.mode === 'horizontal' ? 'Order now' : 'Order safely';
     },
     hasImage() {
-      return this.product.content.image || this.product.categories.nodes[0].categoryHeader.image;
+      return (
+        this.product.content.image
+        || this.product.categories.nodes[0].categoryHeader.image
+      );
     },
     retinaImage() {
-      return (this.product.content.image && this.product.content.image.retina) || this.product.categories.nodes[0].categoryHeader.image.retina;
+      return (
+        (this.product.content.image && this.product.content.image.retina)
+        || this.product.categories.nodes[0].categoryHeader.image.retina
+      );
     },
     regularImage() {
-      return (this.product.content.image && this.product.content.image.regular) || this.product.categories.nodes[0].categoryHeader.image.regular;
+      return (
+        (this.product.content.image && this.product.content.image.regular)
+        || this.product.categories.nodes[0].categoryHeader.image.regular
+      );
     },
   },
 
   methods: {
     setAmount() {
       this.$store.commit('product/setAmount', this.value);
+    },
+    submitForm() {
+      const form = document.querySelector('.product-card__actions');
+      console.log(form);
+      form.submit();
     },
   },
 };
@@ -120,6 +144,10 @@ export default {
   background: $white;
   border: 1px solid $gray-400;
 
+  fieldset {
+    display: none;
+  }
+
   &__title {
     position: relative;
 
@@ -127,11 +155,11 @@ export default {
       font-size: $font-size-h6;
       margin: 0;
 
-      @include media-breakpoint-up('sm') {
+      @include media-breakpoint-up("sm") {
         font-size: $font-size-h5;
       }
 
-      @include media-breakpoint-up('md') {
+      @include media-breakpoint-up("md") {
         font-size: 22px;
       }
     }
@@ -212,7 +240,7 @@ export default {
       }
     }
 
-    @include media-breakpoint-up('sm') {
+    @include media-breakpoint-up("sm") {
       .product-card {
         &__content {
           min-height: 121px;
@@ -220,7 +248,7 @@ export default {
       }
     }
 
-    @include media-breakpoint-only('xs') {
+    @include media-breakpoint-only("xs") {
       .product-card {
         &__content {
           border-top: 0;
@@ -262,7 +290,7 @@ export default {
       }
     }
 
-    @include media-breakpoint-only('xs') {
+    @include media-breakpoint-only("xs") {
       .product-card {
         &__img-link {
           img {
