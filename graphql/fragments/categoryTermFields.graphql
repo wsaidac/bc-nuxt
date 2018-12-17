@@ -29,8 +29,8 @@ fragment categoryTermFields on CategoryTerm {
     }
   }
   highlight {
-    question
-    answer
+    title
+    content
   }
   products {
     nodes {
