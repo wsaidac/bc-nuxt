@@ -25,14 +25,14 @@
         <ui-col :sm="12">
           <div class="block block--yellow block--padded">
             <category-highlights
-              :title="post.highlight.question"
-              :description="post.highlight.answer"
+              :title="post.highlight.title"
+              :description="post.highlight.content"
             />
           </div>
           <div class="block block--blue block--padded">
             <seo-block
               :title="post.infoBlock.title"
-              :description="post.infoBlock.text"
+              :description="post.infoBlock.content"
             />
           </div>
         </ui-col>
@@ -101,7 +101,10 @@ export default {
     ...mapGetters('shared', ['customerService', 'usps']),
 
     bannerImage() {
-      return this.post.categoryHeader.banner || this.$store.getters['shared/header'].image;
+      return (
+        this.post.categoryHeader.banner
+        || this.$store.getters['shared/header'].image
+      );
     },
 
     kinds() {
@@ -110,7 +113,12 @@ export default {
 
     crumbs() {
       return [
-        { url: '/', label: 'Home', title: 'Rapido.com: Buy your favorite Gift Cards online | Fast Email Delivery' },
+        {
+          url: '/',
+          label: 'Home',
+          title:
+            'Rapido.com: Buy your favorite Gift Cards online | Fast Email Delivery',
+        },
         { label: this.post.name },
       ];
     },
@@ -124,7 +132,7 @@ export default {
     margin-bottom: 30px;
   }
 
-  @include media-breakpoint-only('xs') {
+  @include media-breakpoint-only("xs") {
     &__breadcrumbs {
       display: none !important;
     }

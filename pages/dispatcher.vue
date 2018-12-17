@@ -7,11 +7,8 @@
 
 <script>
 function slugFromPath(path) {
-  if (path === '/') return 'home';
-  if (path === `/${process.env.CMS_COUNTRY}/`) {
-    return 'home';
-  }
-  return path.replace(`/${process.env.CMS_COUNTRY}/`, '');
+  if (path === '/' || path === `/${process.env.CMS_COUNTRY}`) return 'home';
+  return path.replace(`${process.env.CMS_COUNTRY}/`, '');
 }
 
 async function fetchMenus(app, store) {
@@ -45,7 +42,11 @@ export default {
 
   async asyncData({ app, route, store }) {
     const slug = slugFromPath(route.path);
-    const [{ post }] = await Promise.all([app.$q('post', { slug }), fetchMenus(app, store), fetchShared(app, store)]);
+    const [{ post }] = await Promise.all([
+      app.$q('post', { slug }),
+      fetchMenus(app, store),
+      fetchShared(app, store),
+    ]);
     if (post === null) {
       return {
         layout: 'Error',
