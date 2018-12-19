@@ -3,10 +3,7 @@ require('dotenv').config();
 const conf = {
   head: {
     title: 'rapido_web',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    ],
+    meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   css: [{ src: '~/assets/stylesheets/application.scss', lang: 'scss' }],
@@ -40,14 +37,7 @@ const conf = {
     ],
     ['~/modules/disable-default-router'],
   ],
-  plugins: [
-    '~/assets/icons.js',
-    '~/plugins/env.js',
-    '~/plugins/i18n.js',
-    { src: '~/plugins/gtm.js', ssr: false },
-    '~/plugins/cookie-store.js',
-    { src: '~/plugins/async.js', ssr: false },
-  ],
+  plugins: ['~/assets/icons.js', '~/plugins/env.js', '~/plugins/i18n.js', { src: '~/plugins/gtm.js', ssr: false }, '~/plugins/cookie-store.js', { src: '~/plugins/async.js', ssr: false }],
   watchers: {
     webpack: {
       poll: true,
@@ -57,11 +47,7 @@ const conf = {
 
 if (process.env.PROXY_ACCOUNT) {
   conf.modules.push('@nuxtjs/proxy');
-  conf.proxy = [
-    process.env.PROXY_ACCOUNT,
-    process.env.PROXY_SESSIONS,
-    process.env.PROXY_ASSETS,
-  ];
+  conf.proxy = [process.env.PROXY_ACCOUNT, process.env.PROXY_SESSIONS, process.env.PROXY_ASSETS, process.env.PROXY_ORDER];
 }
 
 module.exports = conf;

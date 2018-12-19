@@ -33,7 +33,7 @@
           <input
             type="hidden"
             name="productId"
-            value="211">
+            value="1465">
         </fieldset>
         <ui-select
           v-if="hasSelect"
