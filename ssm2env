@@ -1,0 +1,98 @@
+#!/usr/bin/env bash
+app_path="/rapido-frontend/"
+kms_key_id="alias/aws/ssm"
+export PATH=$PATH:$HOME/.local/bin:$HOME/bin
+
+function remove_dot_env_file {
+  rm -f .env
+}
+
+function check_dot_env_file_creation {
+  if [ -f .env ]
+  then
+      echo ".env successfully created!"
+  fi
+}
+
+function aws_cmd {
+  profile=""
+  if [ -n "$1" ]; then
+    profile="--profile $1 "
+  fi
+  echo "aws ${profile} --region eu-west-1 ssm"
+}
+
+function push_to_ssm {
+  use_path=$app_path
+  if [ ! -z "$2" ]; then
+    use_path=$2
+  fi
+  while read -r line
+  do
+    pos=$(echo "$line" | awk 'END{print index($0,"=")}')
+    ((pos = pos - 1))
+    name=$(echo "$line" | cut -c1-$pos| awk '{print tolower($0)}')
+    ((pos = pos + 2))
+    value=$(echo "$line" | cut -c$pos-${#line})
+    echo "$name = $value"
+    cmd='$(aws_cmd $1) put-parameter --name "$use_path$name" --value "$value" --type SecureString --key-id $kms_key_id --overwrite'
+    eval $cmd
+  done < .env
+}
+
+function pull_to_dot_env {
+  use_path=$app_path
+  if [ ! -z "$2" ]; then
+    use_path=$2
+  fi
+  cmd='$(aws_cmd $1) get-parameters-by-path --path $use_path --with-decryption --query "Parameters[*].[Name,Value]" --output text --recursive'
+  eval $cmd |
+    while read line
+    do
+      name=$(echo ${line} | cut -f 1 -d ' ' | awk '{print toupper($0)}')
+      value=$(echo ${line} | cut -f 2 -d ' ')
+      echo "$(basename $name)=${value}" >> .env
+    done
+}
+
+case "$1" in
+    pull)
+        echo "Pull application parameters from AWS Parameter Store"
+        remove_dot_env_file
+        pull_to_dot_env "$2" "$3"
+        check_dot_env_file_creation
+        ;;
+    push)
+        echo "Push application parameters to AWS Parameter Store"
+        path_arg=$3
+        if [ ! -z "$3" ] && [ ${path_arg: -1} != '/' ]; then
+          echo "Error, the AWS SSM path must end with a '/'."
+          exit 1
+        fi
+        push_to_ssm "$2" "$3"
+        ;;
+    help)
+        echo "
+NAME
+    ./ssm2env
+DESCRIPTION
+    Tool for application store paramater management between AWS Systems Manager Agent
+    and a .env file
+SYNOPSIS
+    ./ssm2env [options] [parameters]
+    OPTIONS
+    - pull [AWS profile] [AWS SSM path]
+        Pulling parameters from AWS Parameter Store to .env
+        Example: ./ssm2env pull cg-production
+    - push [AWS profile] [AWS SSM path]
+        Pushing parameters from .env file to AWS Parameter Store
+        Example: ./ssm2env push cg-production
+    Using an alternative AWS SSM path: ./ssm2env pull cg-development /rapido-frontend
+    AWS profile: AWS tenant name, e.g. cg-development
+    AWS SSM path: AWS SSM path name, e.g. /ci/rapido-frontend. Default: /rapido-frontend
+"
+        ;;
+     *)
+        ./ssm2env help
+        exit 1
+esac
