@@ -71,6 +71,9 @@ fragment categoryTermFields on CategoryTerm {
           slug
         }
       }
+      rapidoProduct {
+        id
+      }
     }
   }
 }

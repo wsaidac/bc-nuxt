@@ -31,9 +31,9 @@
         <div class="spacer"/>
         <fieldset>
           <input
+            :value="product.rapidoProduct.id"
             type="hidden"
-            name="productId"
-            value="1465">
+            name="productId">
         </fieldset>
         <ui-select
           v-if="hasSelect"
@@ -132,7 +132,6 @@ export default {
     },
     submitForm() {
       const form = document.querySelector('.product-card__actions');
-      console.log(form);
       form.submit();
     },
   },

@@ -1,8 +1,15 @@
+#import "../fragments/quickbuyFields.graphql"
+
 query {
   user: currentUser {
     token
     user {
       email
+    }
+    quickbuy {
+      ... on CmsProduct {
+        ...quickbuyFields
+      }
     }
   }
 }

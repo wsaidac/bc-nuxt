@@ -36,6 +36,9 @@ describe('ProductCard', () => {
         },
       ],
     },
+    rapidoProduct: {
+      id: 1465,
+    },
     slug: '/product123',
   };
 

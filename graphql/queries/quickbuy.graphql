@@ -1,39 +1,11 @@
+#import "../fragments/quickbuyFields.graphql"
+
 query {
   post: postBySlug(slug: "home") {
     ...on Home {
       quickbuy {
         quickbuyProduct {
-          ... on Product {
-            id
-            title
-            link
-            uri
-            slug
-            information {
-              retailValue
-              currency
-            }
-            content {
-              title
-              banner {
-                desktop: sharpieUrl(height: 456, width: 1920)
-                mobile: sharpieUrl(height: 300, width: 768)
-              }
-              image {
-                regular: sharpieUrl(height: 140, width: 190)
-                retina: sharpieUrl(height: 280, width: 380)
-              }
-              tooltip {
-                title
-                content
-              }
-            }
-            categories {
-              nodes {
-                ...categoryTermFields
-              }
-            }
-          }
+          ...quickbuyFields
         }
       }
     }

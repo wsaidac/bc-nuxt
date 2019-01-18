@@ -1,6 +1,6 @@
 #import "../fragments/categoryTermFields.graphql"
 
-fragment productFields on CmsProduct {
+fragment quickbuyFields on CmsProduct {
   id
   title
   link
@@ -17,8 +17,8 @@ fragment productFields on CmsProduct {
       mobile: sharpieUrl(height: 300, width: 768)
     }
     image {
-      regular: sharpieUrl(height: 159, width: 217)
-      retina: sharpieUrl(height: 318, width: 434)
+      regular: sharpieUrl(height: 140, width: 190)
+      retina: sharpieUrl(height: 280, width: 380)
     }
     tooltip {
       title
