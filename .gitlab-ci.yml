@@ -1,0 +1,46 @@
+variables:
+  REPOSITORY_URL: 031993550471.dkr.ecr.eu-west-1.amazonaws.com
+
+cache:
+  key: shared_folders_for_branches_and_jobs
+  paths:
+    - node_modules/
+
+stages:
+  - test
+
+eslint:
+  stage: test
+  image: node:8-alpine
+  before_script:
+    - apk --no-cache add git
+    - yarn install
+  script:
+    - yarn eslint
+  except:
+    variables:
+      - $ESLINT_DISABLED
+
+stylelint:
+  stage: test
+  image: node:8-alpine
+  before_script:
+    - apk --no-cache add git
+    - yarn install
+  script:
+    - yarn stylelint
+  except:
+    variables:
+      - $STYLELINT_DISABLED
+
+test-unit:
+  stage: test
+  image: node:8-alpine
+  before_script:
+    - apk --no-cache add git
+    - yarn install
+  script:
+    - yarn test:unit
+  except:
+    variables:
+      - $TEST_UNIT_DISABLED
