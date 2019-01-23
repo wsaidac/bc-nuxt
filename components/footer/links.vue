@@ -49,22 +49,17 @@
 </template>
 
 <script>
-
-import {
-  UiCol,
-  UiCollapse,
-  UiCollapseItem,
-  UiRow,
-} from '~/components/ui';
+/* eslint-disable */
+import { UiCol, UiCollapse, UiCollapseItem, UiRow } from "~/components/ui";
 
 export default {
-  name: 'FooterLinks',
+  name: "FooterLinks",
 
   components: {
     UiCol,
     UiCollapse,
     UiCollapseItem,
-    UiRow,
+    UiRow
   },
 
   props: {
@@ -72,28 +67,31 @@ export default {
       type: Object,
       default() {
         return {};
-      },
-    },
+      }
+    }
   },
 
   computed: {
     columns() {
       return [
         {
-          title: 'Rapido.com',
-          links: [this.staticPages.aboutUs, this.staticPages.paymentMethods],
+          title: "Rapido.com",
+          links: [this.staticPages.aboutUs, this.staticPages.paymentMethods]
         },
         {
-          title: 'Customer Care',
-          links: [this.staticPages.help],
+          title: "Customer Care",
+          links: [this.staticPages.help]
         },
         {
-          title: 'Terms of Use',
-          links: [this.staticPages.privacyPolicy, this.staticPages.termsAndConditions],
-        },
+          title: "Terms of Use",
+          links: [
+            this.staticPages.privacyPolicy,
+            this.staticPages.termsAndConditions
+          ]
+        }
       ];
-    },
-  },
+    }
+  }
 };
 </script>
 
