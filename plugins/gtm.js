@@ -46,7 +46,7 @@ export default ({ store, app }, inject) => {
 
   inject('page', page);
   inject('track', track);
-  app.router.afterEach((to, from) => {
+  app.router.afterEach(() => {
     Vue.nextTick(() => {
       app.$page();
     });

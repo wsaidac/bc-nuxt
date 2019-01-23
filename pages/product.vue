@@ -145,7 +145,7 @@ export default {
       margin: auto !important;
     }
 
-    .service-title h1 {
+    .shared-title h1 {
       display: none;
     }
   }

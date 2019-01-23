@@ -47,7 +47,7 @@ describe('Kind', () => {
     },
   ];
 
-  const stubs = ['service-title'];
+  const stubs = ['shared-title'];
 
   beforeEach(() => {
     $mounted = shallowMount(Kind, { stubs, propsData: { products, title } });

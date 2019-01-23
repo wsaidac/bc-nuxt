@@ -15,4 +15,8 @@ describe('FooterCopyright', () => {
   it('should show the current year as the copyright year', () => {
     expect($mounted.find('.container p:first-of-type').text()).toContain((new Date()).getFullYear());
   });
+
+  it('should have a link to the cookies page', () => {
+    expect($mounted.find('a:nth-of-type(2)').text()).toContain('Cookies');
+  });
 });

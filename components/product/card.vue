@@ -65,9 +65,9 @@
         <h3 v-text="$n(product.information.retailValue, 'USD')" />
         <p v-text="product.content.title" />
         <shared-tooltip
-          v-if="mode === 'vertical' && product.content.tooltip && product.content.tooltip.content"
-          :content="product.content.tooltip.content"
-          :title="product.content.tooltip.title"
+          v-if="mode === 'vertical' && hasTooltip"
+          :content="product | dig('content.tooltip.content')"
+          :title="product | dig('content.tooltip.title')"
         />
       </div>
       <form
@@ -111,6 +111,7 @@
 import SharedTooltip from '~/components/shared/tooltip';
 import SharedInstantTooltip from '~/components/shared/instant-tooltip';
 import { UiButton, UiSelect } from '~/components/ui';
+import { get } from 'lodash';
 
 export default {
   name: 'ProductCard',
@@ -120,6 +121,12 @@ export default {
     SharedInstantTooltip,
     UiButton,
     UiSelect,
+  },
+
+  filters: {
+    dig(product, path) {
+      return get(product, path, '');
+    },
   },
 
   props: {

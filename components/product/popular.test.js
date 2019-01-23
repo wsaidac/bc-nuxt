@@ -1,5 +1,9 @@
-import ProductPopular from './popular.vue';
 import { mount } from '~/test/utils/with-context';
+// import NuxtLink from '../../.nuxt/components/nuxt-link';
+import { RouterLinkStub } from '@vue/test-utils';
+import { merge } from 'lodash';
+
+import ProductPopular from './popular.vue';
 
 describe('ProductPopular', () => {
   let $mounted;
@@ -46,37 +50,77 @@ describe('ProductPopular', () => {
     },
   ];
 
-  beforeEach(() => {
+  const localMount = (extraData = []) => {
+    const newProducts = merge(products, extraData);
     $mounted = mount(ProductPopular, {
-      propsData: {
-        popularProducts: {
-          items: products,
-          title: 'awesome title',
-          subtitle: 'awesome subtitle',
-        },
-      },
+      propsData: { popularProducts: { items: newProducts } },
     });
-  });
+  };
 
   it('should mount', () => {
+    localMount();
     expect($mounted.find('.product-popular').exists()).toBe(true);
   });
 
   it('should render a title', () => {
+    localMount();
     expect($mounted.find('.product-popular__title').exists()).toBe(true);
-    expect($mounted.find('.product-popular__title').text()).toBe(
-      'awesome title',
-    );
   });
 
   it('should render a subtitle', () => {
     expect($mounted.find('.product-popular__subtitle').exists()).toBe(true);
-    expect($mounted.find('.product-popular__subtitle').text()).toBe(
-      'awesome subtitle',
-    );
   });
 
   it('should iterate through multiple products', () => {
+    localMount();
     expect($mounted.findAll('.product-popular__item')).toHaveLength(3);
+  });
+
+  it('should iterate through multiple products when images are missing', () => {
+    localMount([
+      {
+        category: {
+          id: 1,
+          slug: '/verizon/10-usd',
+          categoryHeader: {
+            title: 'Xbox',
+          },
+        },
+      },
+      {
+        category: {
+          id: 2,
+          slug: '/verizon/10-usd',
+          categoryHeader: {
+            title: 'Playstation',
+          },
+        },
+      },
+    ]);
+    expect($mounted.findAll('.product-popular__item')).toHaveLength(3);
+  });
+
+  it('should iterate through multiple products when images ánd title are missing', () => {
+    localMount([
+      {
+        category: {
+          id: 1,
+          slug: '/verizon/10-usd',
+          categoryHeader: null,
+        },
+      },
+      {
+        category: {
+          id: 2,
+          slug: '/verizon/10-usd',
+          categoryHeader: null,
+        },
+      },
+    ]);
+    expect($mounted.findAll('.product-popular__item')).toHaveLength(3);
+  });
+
+  it('should have a link with a "to" attribute', () => {
+    expect($mounted.find(RouterLinkStub).props().to).toBe('/verizon/10-usd');
   });
 });

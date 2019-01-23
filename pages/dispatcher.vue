@@ -29,8 +29,6 @@ async function fetchShared(app, store) {
 }
 
 export default {
-  scrollToTop: true,
-
   components: {
     Home: () => import('~/pages/home'),
     CategoryTerm: () => import('~/pages/category'),
@@ -50,6 +48,10 @@ export default {
 
   computed: {
     ...mapGetters('static', ['links']),
+  },
+
+  mounted() {
+    window.scrollTo(0, 0);
   },
 
   async asyncData({ app, route, store }) {
