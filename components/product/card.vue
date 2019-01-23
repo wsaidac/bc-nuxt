@@ -1,22 +1,69 @@
 <template>
   <div
     v-if="product"
-    :class="classes">
-    <div
+    :class="classes"
+    itemscope
+    itemtype="http://schema.org/Product"
+  >
+    <nuxt-link
+      :to="product.slug"
       class="product-card__img-link"
-      @click="submitForm">
-      <picture v-if="hasImage">
+      @click="submitForm"
+    >
+      <picture>
         <img
           :src="regularImage"
           :srcet="`${regularImage}, ${retinaImage} 2x`"
           :alt="product.content.title"
+          itemprop="image"
+        >
+        <meta
+          :content="`${product.content.title} USD - TODO`"
+          itemprop="name"
+        >
+        <meta
+          :content="product.content.title"
+          itemprop="description"
+        >
+        <meta
+          class="product-ean-code"
+          itemprop="gtin0"
+        >
+        <meta
+          itemprop="brand"
+          content="brand TODO"
+        >
+        <meta
+          content="category TODO"
+          itemprop="category"
         >
       </picture>
-    </div>
+    </nuxt-link>
     <div class="product-card__content">
-      <div class="product-card__title">
-        <h3 v-text="$n(product.information.retailValue, 'USD')"/>
-        <p v-text="product.content.title"/>
+      <div
+        class="product-card__title"
+        itemscope
+        itemtype="http://schema.org/Offer"
+        itemprop="offers"
+      >
+        <meta
+          :content="product.information.retailValue"
+          item="price"
+        >
+        <meta
+          content="product.information.currrencie TODO"
+          itemprop="pricecurrency"
+        >
+        <meta
+          itemprop="availability"
+          content="http://schema.org/InStock"
+        >
+        <meta
+          itemprop="itemCondition"
+          content="http://schema.org/NewCondition"
+        >
+        <h3 v-text="$n(product.information.retailValue, 'USD')" />
+        <p v-text="product.content.title" />
         <shared-tooltip
           v-if="mode === 'vertical' && product.content.tooltip && product.content.tooltip.content"
           :content="product.content.tooltip.content"
@@ -26,34 +73,39 @@
       <form
         action="/us/order/quickbuy"
         method="post"
-        class="product-card__actions">
-        <shared-instant-tooltip v-if="mode === 'horizontal'"/>
-        <div class="spacer"/>
+        class="product-card__actions"
+      >
+        <shared-instant-tooltip v-if="mode === 'horizontal'" />
+        <div class="spacer" />
         <fieldset>
           <input
             :value="product.rapidoProduct.id"
             type="hidden"
-            name="productId">
+            name="productId"
+          >
         </fieldset>
         <ui-select
           v-if="hasSelect"
           v-model="value"
           :options="options"
-          name="selectAmount"/>
-        <fieldset
-          v-else>
+          name="selectAmount"
+        />
+        <fieldset v-else>
           <input
             type="hidden"
             name="selectAmount"
-            value="1">
+            value="1"
+          >
         </fieldset>
         <ui-button
           type="warning"
-          native-type="submit">{{ cta }}</ui-button>
+          native-type="submit"
+        >{{ cta }}</ui-button>
       </form>
     </div>
   </div>
 </template>
+
 
 <script>
 import SharedTooltip from '~/components/shared/tooltip';
@@ -218,6 +270,10 @@ export default {
 
   &__img-link {
     @include flex();
+
+    img {
+      padding: 10px;
+    }
   }
 
   &--mode-vertical {
@@ -258,7 +314,6 @@ export default {
 
           img {
             border: 1px solid $gray-400;
-            padding: 10px;
           }
         }
       }

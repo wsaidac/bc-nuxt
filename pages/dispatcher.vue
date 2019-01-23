@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 function slugFromPath(path) {
   if (path === '/' || path === `/${process.env.CMS_COUNTRY}`) return 'home';
   return path.replace(`${process.env.CMS_COUNTRY}/`, '');
@@ -27,10 +29,16 @@ async function fetchShared(app, store) {
 }
 
 export default {
+  scrollToTop: true,
+
   components: {
     Home: () => import('~/pages/home'),
     CategoryTerm: () => import('~/pages/category'),
     Product: () => import('~/pages/product'),
+    AboutUs: () => import('~/pages/about-us'),
+    PaymentMethods: () => import('~/pages/payment-methods'),
+    PrivacyPolicy: () => import('~/pages/privacy-policy'),
+    TermsAndConditions: () => import('~/pages/terms-and-conditions'),
     Error: () => import('~/pages/error'),
   },
 
@@ -40,13 +48,24 @@ export default {
     };
   },
 
+  computed: {
+    ...mapGetters('static', ['links']),
+  },
+
   async asyncData({ app, route, store }) {
     const slug = slugFromPath(route.path);
-    const [{ post }] = await Promise.all([
-      app.$q('post', { slug }),
-      fetchMenus(app, store),
-      fetchShared(app, store),
-    ]);
+
+    const dataRequests = [fetchMenus(app, store), fetchShared(app, store)];
+    const staticPage = Object.values(store.state['static-pages']).find(({ url }) => url === route.path);
+
+    if (staticPage) {
+      await Promise.all(dataRequests);
+      return { layout: staticPage.component, post: { title: staticPage.title } };
+    }
+
+    dataRequests.unshift(app.$q('post', { slug }));
+    const [{ post }] = await Promise.all(dataRequests);
+
     if (post === null) {
       return {
         layout: 'Error',

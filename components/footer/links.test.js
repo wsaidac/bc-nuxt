@@ -1,22 +1,19 @@
 import FooterLinks from './links.vue';
 import { mount } from '~/test/utils/with-context';
 
+const staticPages = {
+  aboutUs: { title: 'About us', url: '/about-us', component: 'AboutUs' },
+  paymentMethods: { title: 'Payment options', url: '/payment-methods', component: 'PaymentMethods' },
+  help: { title: 'Help', url: '/help' },
+  privacyPolicy: { title: 'Privacy Policy', url: '/privacy-policy', component: 'PrivacyPolicy' },
+  termsAndConditions: { title: 'Conditions', url: '/general-conditions', component: 'TermsAndConditions' },
+};
+
 describe('FooterLinks', () => {
   let $mounted;
 
-  const columns = [
-    {
-      title: 'Rapido.com',
-      links: [{ title: 'About us', url: '/about-us' }, { title: 'Payment options', url: '/payment-options' }],
-    },
-    {
-      title: 'Customer Care',
-      links: [{ title: 'Help', url: '/help' }],
-    },
-  ];
-
   beforeEach(() => {
-    $mounted = mount(FooterLinks, { propsData: { columns } });
+    $mounted = mount(FooterLinks, { propsData: { staticPages } });
   });
 
   it('should mount', () => {
@@ -24,10 +21,10 @@ describe('FooterLinks', () => {
   });
 
   it('should iterate through multiple columns', () => {
-    expect($mounted.findAll('.footer-links__desktop .footer-links__list')).toHaveLength(2);
+    expect($mounted.findAll('.footer-links__desktop .footer-links__list')).toHaveLength(3);
   });
 
   it('should render all links', () => {
-    expect($mounted.findAll('.footer-links__desktop a')).toHaveLength(3);
+    expect($mounted.findAll('.footer-links__desktop a')).toHaveLength(5);
   });
 });

@@ -49,6 +49,7 @@
 </template>
 
 <script>
+
 import {
   UiCol,
   UiCollapse,
@@ -67,11 +68,30 @@ export default {
   },
 
   props: {
-    columns: {
-      type: Array,
+    staticPages: {
+      type: Object,
       default() {
-        return [];
+        return {};
       },
+    },
+  },
+
+  computed: {
+    columns() {
+      return [
+        {
+          title: 'Rapido.com',
+          links: [this.staticPages.aboutUs, this.staticPages.paymentMethods],
+        },
+        {
+          title: 'Customer Care',
+          links: [this.staticPages.help],
+        },
+        {
+          title: 'Terms of Use',
+          links: [this.staticPages.privacyPolicy, this.staticPages.termsAndConditions],
+        },
+      ];
     },
   },
 };
@@ -129,10 +149,11 @@ export default {
 
   ul.footer-links__list {
     margin: 0;
+    margin-top: 15px;
 
     li {
       color: $black !important;
-      margin: 10px 0;
+      margin: 1px 0;
 
       a {
         color: $black;
@@ -142,16 +163,26 @@ export default {
     }
   }
 
-  @include media-breakpoint-up('sm') {
+  @include media-breakpoint-up("sm") {
     &__mobile {
       display: none;
+    }
+  }
+
+  @include media-breakpoint-only("xs") {
+    ul.footer-links__list {
+      margin: 0;
+
+      li {
+        margin: 10px 0;
+      }
     }
   }
 
   &__desktop {
     margin-bottom: 40px;
 
-    @include media-breakpoint-only('xs') {
+    @include media-breakpoint-only("xs") {
       display: none;
     }
 

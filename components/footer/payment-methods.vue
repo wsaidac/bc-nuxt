@@ -8,7 +8,7 @@
     </div>
     <ul class="footer-payment-methods__list">
       <li
-        v-for="method in methods"
+        v-for="method in paymentMethods"
         :key="method.name"
         class="footer-payment-methods__item"
       >
@@ -38,7 +38,7 @@ export default {
   },
 
   props: {
-    methods: {
+    paymentMethods: {
       type: Array,
       default() {
         return [];
@@ -89,7 +89,7 @@ export default {
     }
   }
 
-  @include media-breakpoint-only('xs') {
+  @include media-breakpoint-only("xs") {
     border: 0;
 
     @include flex(center, center);

@@ -4,14 +4,14 @@ import { mount } from '~/test/utils/with-context';
 describe('FooterPaymentMethods', () => {
   let $mounted;
 
-  const methods = [
+  const paymentMethods = [
     { name: 'Visa', image: { regular: '/paymethods/visa.png', retina: '/paymethods/visa-2x.png' } },
     { name: 'Mastercard', image: { regular: '/paymethods/mastercard.png', retina: '/paymethods/mastercard-2x.png' } },
     { name: 'Maestro', image: { regular: '/paymethods/maestro.png', retina: '/paymethods/maestro-2x.png' } },
   ];
 
   beforeEach(() => {
-    $mounted = mount(FooterPaymentMethods, { propsData: { methods } });
+    $mounted = mount(FooterPaymentMethods, { propsData: { paymentMethods } });
   });
 
   it('should mount', () => {
@@ -19,6 +19,6 @@ describe('FooterPaymentMethods', () => {
   });
 
   it('should iterate through multiple methods', () => {
-    expect($mounted.findAll('.footer-payment-methods__item')).toHaveLength(3);
+    expect($mounted.findAll('.footer-payment-methods__item').length).toBe(3);
   });
 });

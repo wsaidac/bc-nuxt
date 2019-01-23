@@ -1,6 +1,6 @@
 {
   "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 10000,
+  "files.autoSaveDelay": 100000,
   "atomKeymap.promptV3Features": true,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.formatOnPaste": false,
@@ -28,5 +28,7 @@
   "prettier.singleQuote": true,
   "prettier.trailingComma": "es5",
   "prettier.eslintIntegration": true,
-  "prettier.stylelintIntegration": true
+  "prettier.stylelintIntegration": true,
+  "vetur.format.defaultFormatter.html": false,
+  "vetur.format.defaultFormatter.js": false,
 }

@@ -4,17 +4,13 @@
     <div class="container container--mobile-not-padded">
       <ui-row>
         <ui-col :sm="12">
-          <footer-payment-methods
-            :methods="paymentMethods"
-          />
+          <footer-payment-methods :methods="paymentMethods" />
         </ui-col>
       </ui-row>
     </div>
     <hr>
-    <footer-links
-      :columns="links"
-    />
-    <footer-copyright/>
+    <footer-links :static-pages="staticPages" />
+    <footer-copyright />
   </footer>
 </template>
 
@@ -36,35 +32,11 @@ export default {
     FooterCopyright,
   },
 
-  data() {
-    return {
-      links: [
-        {
-          title: 'Rapido.com',
-          links: [
-            { title: 'About us', url: '/about-us' },
-            { title: 'Payment options', url: '/payment-options' },
-          ],
-        },
-        {
-          title: 'Customer Care',
-          links: [
-            { title: 'Help', url: '/help' },
-          ],
-        },
-        {
-          title: 'Terms of Use',
-          links: [
-            { title: 'Privacy Policy', url: '/privacy-policy' },
-            { title: 'Conditions', url: '/conditions' },
-          ],
-        },
-      ],
-    };
-  },
-
   computed: {
     ...mapGetters('shared', ['paymentMethods']),
+    staticPages() {
+      return this.$store.state['static-pages'];
+    },
   },
 };
 </script>
@@ -76,6 +48,12 @@ export default {
     border: none;
     color: $gray-400;
     height: 1px;
+  }
+
+  @include media-breakpoint-only("xs") {
+    hr:nth-of-type(2) {
+      margin-bottom: 40px;
+    }
   }
 }
 </style>
