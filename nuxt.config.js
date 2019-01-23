@@ -26,6 +26,9 @@ const conf = {
       }
     },
   },
+  router: {
+    middleware: ['headers'],
+  },
   modules: [
     ['~/modules/icons'],
     [
