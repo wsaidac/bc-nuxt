@@ -18,12 +18,10 @@
         v-if="payoffText"
         class="header-banner__payoff-text"
       >
-        <div class="header-banner__payoff-text-inner">
-          <div
-            class="header-banner__payoff-text-content"
-            v-html="payoffText"
-          />
-        </div>
+        <div
+          class="header-banner__payoff-text-content"
+          v-html="payoffText"
+        />
       </section>
       <section
         v-if="payoffImage"
@@ -86,51 +84,54 @@ export default {
     width: 100%;
   }
 
+  // start white block
   &__payoff-text {
-    text-align: center;
-    transform: translateY(-50%);
-
-    @include position(absolute, 50% 18% null null);
-  }
-
-  &__payoff-text-inner {
     background: $white;
-    padding: 10px 0;
-    padding: 3vw 0;
-    transform: skewY(-10deg);
+    text-align: center;
+    transform: translateY(-50%) skewY(-10deg);
 
-    @include media-breakpoint-up('sm') {
-      padding: 20px 0;
-      padding: 1.8vw 0;
+    @include size(27%, 60%);
+    @include flex(center, center);
+    @include position(absolute, 50% 18% null null);
+
+    @include media-breakpoint-down("md") {
+      border: 1px solid blue;
+
+      @include position(absolute, 50% 14% null null);
     }
 
-    @include media-breakpoint-up('lg') {
-      padding: 30px 0;
-      padding: 1.8vw 0;
+    @include media-breakpoint-down("sm") {
+      border: 1px solid yellow;
+
+      @include position(absolute, 50% 10% null null);
+    }
+
+    @include media-breakpoint-down("xs") {
+      border: 1px solid purple;
+
+      @include size(40%, 60%);
+      @include position(absolute, 50% 10% null null);
     }
   }
 
   &__payoff-text-content {
-    line-height: 1.2;
-    padding: 10px;
+    font-size: 1.9vw;
+    line-height: 1.3em;
     transform: skewY(10deg);
 
-    p {
-      margin: 0;
+    @include media-breakpoint-down("xs") {
+      font-size: 2.8vw;
+    }
 
-      strong {
-        font-size: 1.6em;
+    strong {
+      font-size: 3vw;
+
+      @include media-breakpoint-down("xs") {
+        font-size: 4.7vw;
       }
     }
-
-    @include media-breakpoint-up('lg') {
-      font-size: 2.5em;
-      font-size: 1.8vw;
-      padding: 30px;
-      padding: 1.8vw;
-    }
   }
-
+  // end white block
   &__payoff-image {
     overflow: hidden;
     padding-bottom: 13%;
