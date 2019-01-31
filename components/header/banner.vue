@@ -87,7 +87,6 @@ export default {
     width: 100%;
   }
 
-  // start white block
   &__payoff-text {
     background: $white;
     text-align: center;
@@ -136,7 +135,7 @@ export default {
       padding: 1.8vw;
     }
   }
-  // end white block
+
   &__payoff-image {
     overflow: hidden;
     padding-bottom: 13%;
