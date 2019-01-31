@@ -5,9 +5,7 @@
       :payoff-image="category.categoryHeader.image"
       :title="category.categoryHeader.title"
     />
-    <cg-usps
-      :usps="usps.items"
-    />
+    <cg-usps :usps="usps.items" />
     <shared-title :title="post.title" />
     <div class="block block--gray">
       <div class="container">
@@ -64,16 +62,8 @@
         :title="category.terms.title"
         :description="category.terms.text"
       />
-      <service-banner
-        :link="customerService.link"
-        :image="customerService.image"
-        :title="customerService.primaryText"
-        :description="customerService.secondaryText"
-      />
-
-      <seo-breadcrumbs
-        :crumbs="crumbs"
-      />
+      <service-banner :customer-service="customerService" />
+      <seo-breadcrumbs :crumbs="crumbs" />
     </div>
   </div>
 </template>
@@ -140,7 +130,7 @@ export default {
 
 <style lang="scss">
 .cg-product {
-  @include media-breakpoint-only('xs') {
+  @include media-breakpoint-only("xs") {
     .product-card {
       margin: auto !important;
     }

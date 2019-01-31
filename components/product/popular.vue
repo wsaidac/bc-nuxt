@@ -22,7 +22,8 @@
           class="product-popular__item"
         >
           <img
-            :alt="product.title"
+            :alt="product.image.altText"
+            :longdesc="product.image.description"
             :src="product.image.regular"
             :srcset="`${product.image.regular}, ${product.image.retina} 2x`"
           >
@@ -61,6 +62,8 @@ export default {
         image: {
           regular: get(category, 'categoryHeader.image.regular'),
           retina: get(category, 'categoryHeader.image.retina'),
+          altText: get(category, 'categoryHeader.image.altText'),
+          description: get(category, 'categoryHeader.image.description'),
         },
       }));
     },
