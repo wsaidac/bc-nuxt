@@ -9,6 +9,8 @@ query($slug: String) {
             attachedImage {
               regular: sourceUrl
               retina: sourceUrl
+              altText
+              description
             }
           }
           childItems(first: 999) {
@@ -24,6 +26,8 @@ query($slug: String) {
                     image {
                       regular: sharpieUrl(height: 86, width: 116)
         							retina: sharpieUrl(height: 172, width: 232)
+                      altText
+                      description
                     }
                   }
                 }

@@ -15,10 +15,14 @@ fragment productFields on CmsProduct {
     banner {
       desktop: sharpieUrl(height: 456, width: 1920)
       mobile: sharpieUrl(height: 300, width: 768)
+      altText
+      description
     }
     image {
       regular: sharpieUrl(height: 159, width: 217)
       retina: sharpieUrl(height: 318, width: 434)
+      altText
+      description
     }
     tooltip {
       title

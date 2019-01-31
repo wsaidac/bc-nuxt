@@ -5,16 +5,18 @@ describe('ServiceBanner', () => {
   let $mounted;
 
   const propsData = {
-    link: {
-      title: 'faq',
-      url: '/us/faq',
+    customerService: {
+      link: {
+        title: 'faq',
+        url: '/us/faq',
+      },
+      title: 'Need more help?',
+      image: {
+        regular: 'http://d2ethx2wadout7.cloudfront.net/app/uploads/2018/10/23143118/5aINOIYWeN36s9ygiM0qHc/customer-care.jpg',
+        retina: 'http://d2ethx2wadout7.cloudfront.net/app/uploads/2018/10/23143118/5CC1pfrnNT15Pcm7nZmScH/customer-care.jpg',
+      },
+      description: "We're happy to help out",
     },
-    title: 'Need more help?',
-    image: {
-      regular: 'http://d2ethx2wadout7.cloudfront.net/app/uploads/2018/10/23143118/5aINOIYWeN36s9ygiM0qHc/customer-care.jpg',
-      retina: 'http://d2ethx2wadout7.cloudfront.net/app/uploads/2018/10/23143118/5CC1pfrnNT15Pcm7nZmScH/customer-care.jpg',
-    },
-    description: "We're happy to help out",
   };
 
   beforeEach(() => {

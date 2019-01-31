@@ -12,9 +12,10 @@
     >
       <picture>
         <img
-          :src="regularImage"
-          :srcet="`${regularImage}, ${retinaImage} 2x`"
-          :alt="product.content.title"
+          :src="image.regular"
+          :srcet="`${image.regular}, ${image.retina} 2x`"
+          :alt="image.altText"
+          :longdesc="image.description"
           itemprop="image"
         >
         <meta
@@ -165,23 +166,8 @@ export default {
     cta() {
       return this.mode === 'horizontal' ? 'Order now' : 'Order safely';
     },
-    hasImage() {
-      return (
-        this.product.content.image
-        || this.product.categories.nodes[0].categoryHeader.image
-      );
-    },
-    retinaImage() {
-      return (
-        (this.product.content.image && this.product.content.image.retina)
-        || this.product.categories.nodes[0].categoryHeader.image.retina
-      );
-    },
-    regularImage() {
-      return (
-        (this.product.content.image && this.product.content.image.regular)
-        || this.product.categories.nodes[0].categoryHeader.image.regular
-      );
+    image() {
+      return this.product.content.image || this.product.categories.nodes[0].categoryHeader.image;
     },
   },
 

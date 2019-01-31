@@ -10,7 +10,8 @@
         media="(max-width: 767px)"
       >
       <img
-        :alt="imageDescription"
+        :alt="image.altText"
+        :longdesc="image.description"
         :src="image.desktop"
         class="header-banner__image"
       >
@@ -92,7 +93,7 @@ export default {
     text-align: center;
     transform: translateY(-50%) skewY(-10deg);
 
-    @include size(27%, 60%);
+    @include size(27%, 56%);
     @include flex(center, center);
     @include position(absolute, 50% 18% null null);
 
@@ -105,7 +106,9 @@ export default {
     }
 
     @include media-breakpoint-down("xs") {
-      @include size(40%, 60%);
+      right: 7%;
+
+      @include size(40%, 56%);
     }
   }
 
@@ -124,6 +127,13 @@ export default {
       @include media-breakpoint-down("xs") {
         font-size: 4.7vw;
       }
+    }
+
+    @include media-breakpoint-up("lg") {
+      font-size: 2.5em;
+      font-size: 1.8vw;
+      padding: 30px;
+      padding: 1.8vw;
     }
   }
   // end white block

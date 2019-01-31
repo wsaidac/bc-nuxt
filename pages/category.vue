@@ -6,14 +6,13 @@
       :title="post.categoryHeader.title"
     />
     <cg-usps :usps="usps.items" />
-    <div>
-      <category-kind
-        v-for="(products, kind) in kinds"
-        :key="kind"
-        :title="kind"
-        :products="products"
-      />
-    </div>
+    <category-kind
+      v-for="(products, kind) in kinds"
+      :key="kind"
+      :title="kind"
+      :category-text="categoryText"
+      :products="products"
+    />
     <div class="cg-category__info-block container container--mobile-not-padded">
       <ui-row padded>
         <ui-col :sm="12">
@@ -48,12 +47,7 @@
         :title="post.terms.title"
         :description="post.terms.text"
       />
-      <service-banner
-        :link="customerService.link"
-        :image="customerService.image"
-        :title="customerService.primaryText"
-        :description="customerService.secondaryText"
-      />
+      <service-banner :customer-service="customerService" />
       <seo-breadcrumbs :crumbs="crumbs" />
     </div>
   </div>
@@ -106,11 +100,9 @@ export default {
         || this.$store.getters['shared/header'].image
       );
     },
-
     kinds() {
       return groupBy(this.post.products.nodes, p => p.kinds.nodes[0].name);
     },
-
     crumbs() {
       return [
         {
