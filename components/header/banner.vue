@@ -3,10 +3,12 @@
     <picture v-if="image">
       <source
         :srcset="image.desktop"
-        media="(min-width: 768px)">
+        media="(min-width: 768px)"
+      >
       <source
         :srcset="image.mobile"
-        media="(max-width: 767px)">
+        media="(max-width: 767px)"
+      >
       <img
         :alt="imageDescription"
         :src="image.desktop"
@@ -95,22 +97,15 @@ export default {
     @include position(absolute, 50% 18% null null);
 
     @include media-breakpoint-down("md") {
-      border: 1px solid blue;
-
-      @include position(absolute, 50% 14% null null);
+      right: 14%;
     }
 
     @include media-breakpoint-down("sm") {
-      border: 1px solid yellow;
-
-      @include position(absolute, 50% 10% null null);
+      right: 10%;
     }
 
     @include media-breakpoint-down("xs") {
-      border: 1px solid purple;
-
       @include size(40%, 60%);
-      @include position(absolute, 50% 10% null null);
     }
   }
 
@@ -146,7 +141,7 @@ export default {
     transform: skewY(-10deg);
     width: 27vw;
 
-    @include media-breakpoint-up('sm') {
+    @include media-breakpoint-up("sm") {
       width: 18vw;
     }
 
@@ -160,7 +155,7 @@ export default {
         margin: 0 auto;
         padding: 15px 15px 0;
 
-        @include media-breakpoint-up('sm') {
+        @include media-breakpoint-up("sm") {
           max-width: 15vw;
           width: 100%;
         }
@@ -175,7 +170,7 @@ export default {
 
     @include position(absolute, null null 10px 10px);
 
-    @include media-breakpoint-up('sm') {
+    @include media-breakpoint-up("sm") {
       display: none;
     }
   }
