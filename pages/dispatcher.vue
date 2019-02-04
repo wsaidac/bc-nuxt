@@ -41,9 +41,8 @@ export default {
   },
 
   head() {
-    return {
-      title: this.post.title || this.post.description,
-    };
+    if (this.layout === 'CategoryTerm') return { title: this.post.name };
+    return { title: this.post.title || this.post.description };
   },
 
   computed: {

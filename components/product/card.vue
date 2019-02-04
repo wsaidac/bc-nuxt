@@ -264,14 +264,6 @@ export default {
     }
   }
 
-  &__img-link {
-    @include flex();
-
-    img {
-      padding: 10px;
-    }
-  }
-
   &--mode-vertical {
     margin-top: 20px;
 
@@ -279,9 +271,15 @@ export default {
       &__img-link {
         padding: 20px 10px;
 
+        @include flex();
+
         picture {
           display: block;
           margin: auto;
+        }
+
+        img {
+          padding: 10px;
         }
       }
 
@@ -321,10 +319,16 @@ export default {
 
     .product-card {
       &__img-link {
+        border: 1px solid $gray-400;
+        display: block;
+        margin: 20px;
+        padding: 10px;
+
+        @include size(140px);
+        @include flex(center, center);
+
         img {
-          border: 1px solid $gray-400;
-          margin: 20px;
-          width: calc(100% - 40px);
+          object-fit: contain;
         }
       }
 
@@ -340,19 +344,31 @@ export default {
       }
     }
 
-    @include media-breakpoint-only("xs") {
-      .product-card {
-        &__img-link {
-          img {
-            height: auto;
-            margin: 10px;
-            width: 30vw;
-          }
-        }
+    @include media-breakpoint-only("md") {
+      .product-card__img-link {
+        @include size(110px);
+      }
+    }
+
+    @include media-breakpoint-only("sm") {
+      .product-card__img-link {
+        @include size(95px);
       }
 
-      .product-card-content {
-        padding: 10px;
+      .product-card__content {
+        width: 150px !important;
+      }
+    }
+
+    @include media-breakpoint-only("xs") {
+      .product-card__img-link {
+        margin: 10px;
+
+        @include size(24vw);
+      }
+
+      .product-card__content {
+        padding: 10px 10px 10px 20px;
       }
 
       .product-card__actions {

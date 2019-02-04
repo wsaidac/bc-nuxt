@@ -110,12 +110,12 @@ export default {
   },
 
   computed: {
-    ...mapGetters('shared', ['customerService', 'usps']),
+    ...mapGetters('shared', ['customerService', 'usps', 'header']),
     category() {
       return this.post.categories.nodes[0];
     },
     bannerImage() {
-      return this.post.content.banner || this.category.categoryHeader.banner || this.$store.getters['shared/header'].image;
+      return this.post.content.banner || this.category.categoryHeader.banner || this.header.image;
     },
     crumbs() {
       return [
