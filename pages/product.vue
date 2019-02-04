@@ -28,8 +28,8 @@
             :xs="24"
           >
             <category-highlights
-              :title="category.highlight.question"
-              :description="category.highlight.answer"
+              :title="category.highlight.title"
+              :description="category.highlight.content"
             />
             <product-variants :product="post" />
           </ui-col>
@@ -46,7 +46,10 @@
           />
         </ui-col>
         <ui-col :sm="12">
-          <div class="block block--blue block--padded">
+          <div
+            v-if="category.infoBlock.title || category.infoBlock.text"
+            class="block block--blue block--padded"
+          >
             <seo-block
               :title="category.infoBlock.title"
               :description="category.infoBlock.text"

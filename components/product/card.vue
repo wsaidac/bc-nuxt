@@ -379,4 +379,20 @@ export default {
     }
   }
 }
+
+@include media-breakpoint-only("xs") {
+  .cg-product .product-card--mode-vertical {
+    max-width: 250px;
+
+    .product-card__img-link {
+      border-bottom: 1px solid $gray-400;
+      padding: 20px;
+      width: auto;
+
+      img {
+        border: none;
+      }
+    }
+  }
+}
 </style>

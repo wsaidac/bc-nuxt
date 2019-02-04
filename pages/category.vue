@@ -21,16 +21,22 @@
           />
         </ui-col>
         <ui-col :sm="12">
-          <div class="block block--yellow block--padded">
+          <div
+            v-if="post.highlight.title || post.highlight.content"
+            class="block block--yellow block--padded"
+          >
             <category-highlights
               :title="post.highlight.title"
               :description="post.highlight.content"
             />
           </div>
-          <div class="block block--blue block--padded">
+          <div
+            v-if="post.infoBlock.title || post.infoBlock.text"
+            class="block block--blue block--padded"
+          >
             <seo-block
               :title="post.infoBlock.title"
-              :description="post.infoBlock.content"
+              :description="post.infoBlock.text"
             />
           </div>
         </ui-col>
