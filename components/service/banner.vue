@@ -12,8 +12,8 @@
       :longdesc="image.description"
     >
     <p>
-      <strong v-text="title" />
-      <span v-text="description" />
+      <strong v-text="customerService.primaryText" />
+      <span v-text="customerService.secondaryText" />
     </p>
     <ui-icon icon="chevron-right" />
   </a>
