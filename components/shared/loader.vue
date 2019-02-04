@@ -9,7 +9,7 @@
     >
       <h2>Loading</h2>
       <div class="shared-loader__spinner" />
-      <div class="shared-loader__background"/>
+      <div class="shared-loader__background" />
     </div>
   </div>
 </template>

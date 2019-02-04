@@ -10,7 +10,6 @@
       v-for="(products, kind) in kinds"
       :key="kind"
       :title="kind"
-      :category-text="categoryText"
       :products="products"
     />
     <div class="cg-category__info-block container container--mobile-not-padded">
@@ -93,7 +92,9 @@ export default {
 
   computed: {
     ...mapGetters('shared', ['customerService', 'usps']),
-
+    categoryText() {
+      return this.post.name;
+    },
     bannerImage() {
       return (
         this.post.categoryHeader.banner

@@ -160,6 +160,9 @@ export default {
   },
 
   computed: {
+    hasTooltip() {
+      return this.product.content.tooltip && (this.product.content.tooltip.title && this.product.content.tooltip.content);
+    },
     classes() {
       return ['product-card', `product-card--mode-${this.mode}`];
     },
