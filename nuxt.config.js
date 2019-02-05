@@ -27,7 +27,7 @@ const conf = {
     },
   },
   router: {
-    middleware: ['headers'],
+    middleware: ['headers', 'context'],
   },
   modules: [
     ['~/modules/icons'],
@@ -36,6 +36,7 @@ const conf = {
       {
         browserUri: 'env://API_BROWSER',
         serverUri: 'env://API_SERVER',
+        extendedHeaders: 'extendedGraphqlHeaders',
       },
     ],
     ['~/modules/disable-default-router'],

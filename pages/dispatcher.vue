@@ -8,9 +8,9 @@
 <script>
 import { mapGetters } from 'vuex';
 
-function slugFromPath(path) {
-  if (path === '/' || path === `/${process.env.CMS_COUNTRY}`) return 'home';
-  return path.replace(`${process.env.CMS_COUNTRY}/`, '');
+function slugFromPath(path, contextSlug) {
+  if (path === `/${contextSlug}/`) return 'home';
+  return path.replace(`${contextSlug}/`, '');
 }
 
 async function fetchMenus(app, store) {
@@ -54,25 +54,31 @@ export default {
   },
 
   async asyncData({ app, route, store }) {
-    const slug = slugFromPath(route.path);
+    const contextSlug = store.getters['context/contextSlug'];
+    const slug = slugFromPath(route.path, contextSlug);
 
     const dataRequests = [fetchMenus(app, store), fetchShared(app, store)];
-    const staticPage = Object.values(store.state['static-pages']).find(({ url }) => url === route.path);
+    const staticPage = Object.values(store.state['static-pages']).find(
+      ({ url }) => url === route.path,
+    );
 
     if (staticPage) {
       await Promise.all(dataRequests);
-      return { layout: staticPage.component, post: { title: staticPage.title } };
+      return {
+        layout: staticPage.component,
+        post: { title: staticPage.title },
+      };
     }
 
     dataRequests.unshift(app.$q('post', { slug }));
     const [{ post }] = await Promise.all(dataRequests);
-
     if (post === null) {
       return {
         layout: 'Error',
         post: 'some interesting info',
       };
     }
+    /* prettier-ignore */
     post.__typename = post.__typename === 'CmsProduct' ? 'Product' : post.__typename;
     return { layout: post.__typename, post };
   },

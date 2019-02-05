@@ -13,7 +13,7 @@
     "cypress": "cypress open"
   },
   "dependencies": {
-    "artemis-graphql": "https://github.com/10KB/artemis-graphql.git",
+    "artemis-graphql": "https://github.com/10KB/artemis-graphql/archive/v1.1.0.tar.gz",
     "deepmerge": "^2.2.1",
     "dotenv": "^6.1.0",
     "element-ui": "~2.1",
