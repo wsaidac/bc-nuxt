@@ -39,7 +39,6 @@ const conf = {
         extendedHeaders: 'extendedGraphqlHeaders',
       },
     ],
-    ['~/modules/disable-default-router'],
   ],
   plugins: ['~/assets/icons.js', '~/plugins/env.js', '~/plugins/i18n.js', { src: '~/plugins/gtm.js', ssr: false }, '~/plugins/cookie-store.js', { src: '~/plugins/async.js', ssr: false }],
   watchers: {
