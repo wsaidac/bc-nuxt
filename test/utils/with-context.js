@@ -18,6 +18,7 @@ Vue.config.silent = true;
 const defaultOptions = {
   mocks: {
     $n: key => key,
+    $track: key => key,
   },
   stubs: {
     NuxtLink: TestUtils.RouterLinkStub,

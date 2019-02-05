@@ -8,6 +8,7 @@ export default {
       paymentMethods: {},
       usps: {},
       gtmId: process.env.GTM_ID,
+      page: '', // home / category / product
     };
   },
 
@@ -19,6 +20,7 @@ export default {
     paymentMethods: ({ paymentMethods }) => paymentMethods,
     usps: ({ usps }) => usps,
     gtmId: ({ gtmId }) => gtmId,
+    page: ({ page }) => page,
   },
 
   mutations: {
@@ -39,6 +41,9 @@ export default {
     },
     setPaymentMethods(state, paymentMethods) {
       state.paymentMethods = paymentMethods.icons;
+    },
+    setPage(state, page) {
+      state.page = page;
     },
   },
 };

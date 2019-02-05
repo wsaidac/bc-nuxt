@@ -87,6 +87,8 @@ import ProductCard from '~/components/product/card';
 import SharedTitle from '~/components/shared/title';
 import ProductVariants from '~/components/product/variants';
 
+import { viewTransformDetail } from '~/plugins/gtm';
+
 export default {
   components: {
     HeaderBanner,
@@ -127,6 +129,11 @@ export default {
         { label: this.post.content.title },
       ];
     },
+  },
+
+  mounted() {
+    this.$store.commit('shared/setPage', 'product');
+    this.$track(viewTransformDetail(this.post));
   },
 };
 </script>

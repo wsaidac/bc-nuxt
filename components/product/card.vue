@@ -8,7 +8,7 @@
     <nuxt-link
       :to="product.slug"
       class="product-card__img-link"
-      @click="submitForm"
+      @click.native="submitForm"
     >
       <picture>
         <img
@@ -72,6 +72,7 @@
         />
       </div>
       <form
+        ref="submitForm"
         action="/us/order/quickbuy"
         method="post"
         class="product-card__actions"
@@ -100,7 +101,8 @@
         </fieldset>
         <ui-button
           type="warning"
-          native-type="submit"
+          native-type="button"
+          @click="submitForm"
         >{{ cta }}</ui-button>
       </form>
     </div>
@@ -109,10 +111,13 @@
 
 
 <script>
+import { mapGetters } from 'vuex';
 import SharedTooltip from '~/components/shared/tooltip';
 import SharedInstantTooltip from '~/components/shared/instant-tooltip';
 import { UiButton, UiSelect } from '~/components/ui';
 import { get } from 'lodash';
+
+import { measureProductClick, clickTransformProductAddToCart } from '~/plugins/gtm.js';
 
 export default {
   name: 'ProductCard',
@@ -160,6 +165,7 @@ export default {
   },
 
   computed: {
+    ...mapGetters('shared', ['page']),
     hasTooltip() {
       return this.product.content.tooltip && (this.product.content.tooltip.title && this.product.content.tooltip.content);
     },
@@ -175,12 +181,15 @@ export default {
   },
 
   methods: {
-    setAmount() {
+    productClick() {
       this.$store.commit('product/setAmount', this.value);
+      if (this.page === 'category') this.$track(measureProductClick({ page: this.page, product: this.product }));
+      if (this.page === 'product' || this.page === 'category') this.$track(clickTransformProductAddToCart({ product: this.product, quantity: this.value }));
     },
-    submitForm() {
-      const form = document.querySelector('.product-card__actions');
-      form.submit();
+    submitForm(e) {
+      e.preventDefault();
+      this.productClick();
+      this.$refs.submitForm.submit();
     },
   },
 };

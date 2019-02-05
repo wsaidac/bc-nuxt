@@ -73,6 +73,9 @@ import SeoBlock from '~/components/seo/block';
 import SeoBreadcrumbs from '~/components/seo/breadcrumbs';
 import { UiCol, UiRow } from '~/components/ui';
 
+import { impressionTransformPop } from '~/plugins/gtm.js';
+
+
 export default {
   components: {
     CategoryAccordion,
@@ -98,6 +101,7 @@ export default {
 
   computed: {
     ...mapGetters('shared', ['customerService', 'usps']),
+
     categoryText() {
       return this.post.name;
     },
@@ -107,8 +111,14 @@ export default {
         || this.$store.getters['shared/header'].image
       );
     },
+    /* eslint-disable */
     kinds() {
-      return groupBy(this.post.products.nodes, p => p.kinds.nodes[0].name);
+      let count = 0;
+      let kinds = groupBy(this.post.products.nodes, p => p.kinds.nodes[0].name);
+      for (var key in kinds) {
+        kinds[key] = kinds[key].map(node => ({ ...node, position: count++ }));
+      }
+      return kinds;
     },
     crumbs() {
       return [
@@ -121,6 +131,11 @@ export default {
         { label: this.post.name },
       ];
     },
+  },
+
+  mounted() {
+    this.$store.commit('shared/setPage', 'category');
+    this.$track(impressionTransformPop(this.post));
   },
 };
 </script>
