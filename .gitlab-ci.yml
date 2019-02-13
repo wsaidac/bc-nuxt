@@ -1,13 +1,14 @@
+include:
+  - https://gitlab.cgaws.cloud/infra/ci/raw/master/capistrano.yml
+
 variables:
-  REPOSITORY_URL: 031993550471.dkr.ecr.eu-west-1.amazonaws.com
+  ECR_REGISTRY: 031993550471.dkr.ecr.eu-west-1.amazonaws.com
 
-cache:
-  key: shared_folders_for_branches_and_jobs
-  paths:
-    - node_modules/
-
-stages:
-  - test
+.yarn-cache:
+  cache:
+    key: yarn
+    paths:
+    - node-modules/
 
 eslint:
   stage: test

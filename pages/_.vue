@@ -47,8 +47,6 @@ export default {
       };
     }
 
-    console.log(post);
-
     /* prettier-ignore */
     post.__typename = post.__typename === 'CmsProduct' ? 'Product' : post.__typename;
     return { layout: post.__typename, post };
