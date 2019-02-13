@@ -8,13 +8,14 @@
     <nuxt-link
       :to="product.slug"
       class="product-card__img-link"
-      @click="submitForm"
+      @click.native="submitForm"
     >
       <picture>
         <img
-          :src="regularImage"
-          :srcet="`${regularImage}, ${retinaImage} 2x`"
-          :alt="product.content.title"
+          :src="image.regular"
+          :srcet="`${image.regular}, ${image.retina} 2x`"
+          :alt="image.altText"
+          :longdesc="image.description"
           itemprop="image"
         >
         <meta
@@ -65,12 +66,13 @@
         <h3 v-text="$n(product.information.retailValue, 'USD')" />
         <p v-text="product.content.title" />
         <shared-tooltip
-          v-if="mode === 'vertical' && product.content.tooltip && product.content.tooltip.content"
-          :content="product.content.tooltip.content"
-          :title="product.content.tooltip.title"
+          v-if="mode === 'vertical' && hasTooltip"
+          :content="product | dig('content.tooltip.content')"
+          :title="product | dig('content.tooltip.title')"
         />
       </div>
       <form
+        ref="submitForm"
         action="/us/order/quickbuy"
         method="post"
         class="product-card__actions"
@@ -99,7 +101,8 @@
         </fieldset>
         <ui-button
           type="warning"
-          native-type="submit"
+          native-type="button"
+          @click="submitForm"
         >{{ cta }}</ui-button>
       </form>
     </div>
@@ -108,9 +111,13 @@
 
 
 <script>
+import { mapGetters } from 'vuex';
 import SharedTooltip from '~/components/shared/tooltip';
 import SharedInstantTooltip from '~/components/shared/instant-tooltip';
 import { UiButton, UiSelect } from '~/components/ui';
+import { get } from 'lodash';
+
+import { measureProductClick, clickTransformProductAddToCart } from '~/plugins/gtm.js';
 
 export default {
   name: 'ProductCard',
@@ -120,6 +127,12 @@ export default {
     SharedInstantTooltip,
     UiButton,
     UiSelect,
+  },
+
+  filters: {
+    dig(product, path) {
+      return get(product, path, '');
+    },
   },
 
   props: {
@@ -152,39 +165,31 @@ export default {
   },
 
   computed: {
+    ...mapGetters('shared', ['page']),
+    hasTooltip() {
+      return this.product.content.tooltip && (this.product.content.tooltip.title && this.product.content.tooltip.content);
+    },
     classes() {
       return ['product-card', `product-card--mode-${this.mode}`];
     },
     cta() {
       return this.mode === 'horizontal' ? 'Order now' : 'Order safely';
     },
-    hasImage() {
-      return (
-        this.product.content.image
-        || this.product.categories.nodes[0].categoryHeader.image
-      );
-    },
-    retinaImage() {
-      return (
-        (this.product.content.image && this.product.content.image.retina)
-        || this.product.categories.nodes[0].categoryHeader.image.retina
-      );
-    },
-    regularImage() {
-      return (
-        (this.product.content.image && this.product.content.image.regular)
-        || this.product.categories.nodes[0].categoryHeader.image.regular
-      );
+    image() {
+      return this.product.content.image || this.product.categories.nodes[0].categoryHeader.image;
     },
   },
 
   methods: {
-    setAmount() {
+    productClick() {
       this.$store.commit('product/setAmount', this.value);
+      if (this.page === 'category') this.$track(measureProductClick({ page: this.page, product: this.product }));
+      if (this.page === 'product' || this.page === 'category') this.$track(clickTransformProductAddToCart({ product: this.product, quantity: this.value }));
     },
-    submitForm() {
-      const form = document.querySelector('.product-card__actions');
-      form.submit();
+    submitForm(e) {
+      e.preventDefault();
+      this.productClick();
+      this.$refs.submitForm.submit();
     },
   },
 };
@@ -268,14 +273,6 @@ export default {
     }
   }
 
-  &__img-link {
-    @include flex();
-
-    img {
-      padding: 10px;
-    }
-  }
-
   &--mode-vertical {
     margin-top: 20px;
 
@@ -283,9 +280,15 @@ export default {
       &__img-link {
         padding: 20px 10px;
 
+        @include flex();
+
         picture {
           display: block;
           margin: auto;
+        }
+
+        img {
+          padding: 10px;
         }
       }
 
@@ -325,10 +328,16 @@ export default {
 
     .product-card {
       &__img-link {
+        border: 1px solid $gray-400;
+        display: block;
+        margin: 20px;
+        padding: 10px;
+
+        @include size(140px);
+        @include flex(center, center);
+
         img {
-          border: 1px solid $gray-400;
-          margin: 20px;
-          width: calc(100% - 40px);
+          object-fit: contain;
         }
       }
 
@@ -344,25 +353,53 @@ export default {
       }
     }
 
-    @include media-breakpoint-only("xs") {
-      .product-card {
-        &__img-link {
-          img {
-            height: auto;
-            margin: 10px;
-            width: 30vw;
-          }
-        }
+    @include media-breakpoint-only("md") {
+      .product-card__img-link {
+        @include size(110px);
+      }
+    }
+
+    @include media-breakpoint-only("sm") {
+      .product-card__img-link {
+        @include size(95px);
       }
 
-      .product-card-content {
-        padding: 10px;
+      .product-card__content {
+        width: 150px !important;
+      }
+    }
+
+    @include media-breakpoint-only("xs") {
+      .product-card__img-link {
+        margin: 10px;
+
+        @include size(24vw);
+      }
+
+      .product-card__content {
+        padding: 10px 10px 10px 20px;
       }
 
       .product-card__actions {
         flex-flow: column-reverse nowrap;
 
         @include flex(flex-start, flex-end);
+      }
+    }
+  }
+}
+
+@include media-breakpoint-only("xs") {
+  .cg-product .product-card--mode-vertical {
+    max-width: 250px;
+
+    .product-card__img-link {
+      border-bottom: 1px solid $gray-400;
+      padding: 20px;
+      width: auto;
+
+      img {
+        border: none;
       }
     }
   }

@@ -4,7 +4,7 @@
     <div class="container container--mobile-not-padded">
       <ui-row>
         <ui-col :sm="12">
-          <footer-payment-methods :methods="paymentMethods" />
+          <footer-payment-methods :payment-methods="paymentMethods" />
         </ui-col>
       </ui-row>
     </div>

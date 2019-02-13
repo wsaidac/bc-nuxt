@@ -1,5 +1,5 @@
 <template>
-  <div class="product-quickbuy" >
+  <div class="product-quickbuy">
     <shared-loader :loading="!isLoaded">
       <h2
         class="product-quickbuy__title"
@@ -28,6 +28,8 @@ import { UiButton, UiCol, UiRow, UiIcon } from "~/components/ui";
 import ProductCard from '~/components/product/card';
 import ProductVariants from '~/components/product/variants';
 import SharedLoader from '~/components/shared/loader';
+
+import { impressionTransformQuickbuy } from '~/plugins/gtm';
 
 export default {
   name: 'ProductQuickbuy',
@@ -59,6 +61,10 @@ export default {
     product() {
       return this.userProduct || this.defaultProduct;
     },
+  },
+
+  mounted() {
+    this.$track(impressionTransformQuickbuy(this.product));
   },
 };
 </script>

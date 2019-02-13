@@ -55,13 +55,16 @@ export default {
         {
           image: PaypalImage,
           name: 'Paypal',
-          text1: 'You can pay with PayPal on Rapido.com. After selecting this payment option, you log into your PayPal account and confirm the payment. Next, the transaction is processed.',
+          text1: `You can pay with PayPal on Rapido.com. After selecting this payment option, you log into your PayPal account and confirm the payment.
+          Next, the transaction is processed.`,
           text2: 'Upon receipt of payment, the top up voucher code is sent immediately.',
         },
         {
           image: CreditcardImage,
           name: 'Credit / Debit card',
-          text1: 'On Rapido.com, you can pay via VISA credit card, VISA debit card (Delta and Electron) and MasterCard. At the checkout, you select payment by credit card. Then you enter your credit card details, including the card holder, the card number, expiration date and CVV code. Then confirm payment.',
+          text1: `On Rapido.com, you can pay via VISA credit card, VISA debit card (Delta and Electron) and MasterCard.
+            At the checkout, you select payment by credit card. Then you enter your credit card details, including the card holder, the card number,
+            expiration date and CVV code. Then confirm payment.`,
           text2: 'Upon receipt of payment, the top up code is sent immediately.',
         },
       ],

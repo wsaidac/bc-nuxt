@@ -3,7 +3,8 @@
     <h3 class="product-featured-category__title">
       <img
         :src="category.image.regular"
-        :alt="category.title">
+        :alt="category.title"
+      >
       <span v-text="category.title" />
     </h3>
     <ui-row>
@@ -20,7 +21,8 @@
           class="product-featured-category__item"
         >
           <img
-            :alt="product.title"
+            :alt="product.image.altText"
+            :longdesc="product.image.description"
             :src="product.image.regular"
             :srcset="`${product.image.regular}, ${product.image.retina} 2x`"
           >
@@ -45,7 +47,7 @@
               class="product-featured-category__item"
             >
               <img
-                :alt="product.title"
+                :alt="product.image.altText"
                 :src="product.image.regular"
                 :srcset="`${product.image.regular}, ${product.image.retina} 2x`"
               >
@@ -122,14 +124,14 @@ export default {
 .product-featured-category {
   margin-bottom: 60px;
 
-  @include media-breakpoint-up('sm') {
+  @include media-breakpoint-up("sm") {
     background: $white;
     border: 1px solid $gray-400;
     margin: 10px 0;
     padding: 20px;
   }
 
-  @include media-breakpoint-up('lg') {
+  @include media-breakpoint-up("lg") {
     margin: 25px 0;
     padding: 0 75px 30px;
   }

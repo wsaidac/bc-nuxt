@@ -3,12 +3,15 @@
     <picture v-if="image">
       <source
         :srcset="image.desktop"
-        media="(min-width: 768px)">
+        media="(min-width: 768px)"
+      >
       <source
         :srcset="image.mobile"
-        media="(max-width: 767px)">
+        media="(max-width: 767px)"
+      >
       <img
-        :alt="imageDescription"
+        :alt="image.altText"
+        :longdesc="image.description"
         :src="image.desktop"
         class="header-banner__image"
       >
@@ -18,12 +21,10 @@
         v-if="payoffText"
         class="header-banner__payoff-text"
       >
-        <div class="header-banner__payoff-text-inner">
-          <div
-            class="header-banner__payoff-text-content"
-            v-html="payoffText"
-          />
-        </div>
+        <div
+          class="header-banner__payoff-text-content"
+          v-html="payoffText"
+        />
       </section>
       <section
         v-if="payoffImage"
@@ -87,43 +88,47 @@ export default {
   }
 
   &__payoff-text {
-    text-align: center;
-    transform: translateY(-50%);
-
-    @include position(absolute, 50% 18% null null);
-  }
-
-  &__payoff-text-inner {
     background: $white;
-    padding: 10px 0;
-    padding: 3vw 0;
-    transform: skewY(-10deg);
+    text-align: center;
+    transform: translateY(-50%) skewY(-10deg);
 
-    @include media-breakpoint-up('sm') {
-      padding: 20px 0;
-      padding: 1.8vw 0;
+    @include size(27%, 56%);
+    @include flex(center, center);
+    @include position(absolute, 50% 18% null null);
+
+    @include media-breakpoint-down("md") {
+      right: 14%;
     }
 
-    @include media-breakpoint-up('lg') {
-      padding: 30px 0;
-      padding: 1.8vw 0;
+    @include media-breakpoint-down("sm") {
+      right: 10%;
+    }
+
+    @include media-breakpoint-down("xs") {
+      right: 7%;
+
+      @include size(40%, 56%);
     }
   }
 
   &__payoff-text-content {
-    line-height: 1.2;
-    padding: 10px;
+    font-size: 1.9vw;
+    line-height: 1.3em;
     transform: skewY(10deg);
 
-    p {
-      margin: 0;
+    @include media-breakpoint-down("xs") {
+      font-size: 2.8vw;
+    }
 
-      strong {
-        font-size: 1.6em;
+    strong {
+      font-size: 3vw;
+
+      @include media-breakpoint-down("xs") {
+        font-size: 4.7vw;
       }
     }
 
-    @include media-breakpoint-up('lg') {
+    @include media-breakpoint-up("lg") {
       font-size: 2.5em;
       font-size: 1.8vw;
       padding: 30px;
@@ -145,7 +150,7 @@ export default {
     transform: skewY(-10deg);
     width: 27vw;
 
-    @include media-breakpoint-up('sm') {
+    @include media-breakpoint-up("sm") {
       width: 18vw;
     }
 
@@ -159,7 +164,7 @@ export default {
         margin: 0 auto;
         padding: 15px 15px 0;
 
-        @include media-breakpoint-up('sm') {
+        @include media-breakpoint-up("sm") {
           max-width: 15vw;
           width: 100%;
         }
@@ -174,7 +179,7 @@ export default {
 
     @include position(absolute, null null 10px 10px);
 
-    @include media-breakpoint-up('sm') {
+    @include media-breakpoint-up("sm") {
       display: none;
     }
   }

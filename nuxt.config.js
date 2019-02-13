@@ -27,7 +27,7 @@ const conf = {
     },
   },
   router: {
-    middleware: ['headers'],
+    middleware: ['headers', 'context'],
   },
   modules: [
     ['~/modules/icons'],
@@ -36,9 +36,9 @@ const conf = {
       {
         browserUri: 'env://API_BROWSER',
         serverUri: 'env://API_SERVER',
+        extendedHeaders: 'extendedGraphqlHeaders',
       },
     ],
-    ['~/modules/disable-default-router'],
   ],
   plugins: ['~/assets/icons.js', '~/plugins/env.js', '~/plugins/i18n.js', { src: '~/plugins/gtm.js', ssr: false }, '~/plugins/cookie-store.js', { src: '~/plugins/async.js', ssr: false }],
   watchers: {

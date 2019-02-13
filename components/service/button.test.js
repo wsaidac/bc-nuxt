@@ -12,11 +12,11 @@ describe('ServiceButton', () => {
     expect($mounted.find('.service-button').exists()).toBe(true);
   });
 
-  // it('should show a title', () => {
-  //   expect($mounted.find('.seo-block h2').text()).toContain('title');
-  // });
+  it('should show a strong-text "Need some help?"', () => {
+    expect($mounted.find('.service-button strong').text()).toContain('Need some help');
+  });
 
-  // it('should show content', () => {
-  //   expect($mounted.find('.seo-block div').text()).toContain('description');
-  // });
+  it('should show content', () => {
+    expect($mounted.find('.service-button span').text()).toContain("Take a look at the FAQ's");
+  });
 });

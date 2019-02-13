@@ -1,18 +1,19 @@
 <template>
   <a
-    :href="link.url"
-    :title="link.title"
+    :href="customerService.link.url"
+    :title="customerService.link.title"
     class="service-banner"
   >
     <img
       v-if="image"
       :src="image.regular"
       :srcset="`${image.regular}, ${image.retina} 2x`"
-      alt=""
+      :alt="image.altText"
+      :longdesc="image.description"
     >
     <p>
-      <strong v-text="title" />
-      <span v-text="description" />
+      <strong v-text="customerService.primaryText" />
+      <span v-text="customerService.secondaryText" />
     </p>
     <ui-icon icon="chevron-right" />
   </a>
@@ -27,23 +28,18 @@ export default {
   components: {
     UiIcon,
   },
-
   props: {
-    link: {
+    customerService: { // image, primaryText, secondaryText, link
       type: Object,
-      required: true,
+      default() {
+        return {};
+      },
     },
-    image: {
-      type: Object,
-      required: true,
-    },
-    title: {
-      type: String,
-      default: '',
-    },
-    description: {
-      type: String,
-      default: '',
+  },
+
+  computed: {
+    image() {
+      return this.customerService.image;
     },
   },
 };
@@ -59,7 +55,7 @@ export default {
 
   @include flex(null, center);
 
-  @include media-breakpoint-up('md') {
+  @include media-breakpoint-up("md") {
     padding: 10px 20px;
   }
 
@@ -73,7 +69,7 @@ export default {
     height: 80px;
     margin-right: 10px;
 
-    @include media-breakpoint-up('md') {
+    @include media-breakpoint-up("md") {
       height: 130px;
       margin-right: 20px;
     }
@@ -88,11 +84,11 @@ export default {
       margin-right: 10px;
     }
 
-    @include media-breakpoint-down('md') {
+    @include media-breakpoint-down("md") {
       font-size: $font-size-h5;
     }
 
-    @include media-breakpoint-down('xs') {
+    @include media-breakpoint-down("xs") {
       font-size: $font-size-smaller;
       margin-right: 10px;
 

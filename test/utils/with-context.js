@@ -3,6 +3,7 @@
   - nuxt-link component stub
 */
 
+import { merge } from 'lodash';
 import Vue from 'vue';
 import Vuex from 'vuex';
 import TestUtils from '@vue/test-utils';
@@ -17,6 +18,7 @@ Vue.config.silent = true;
 const defaultOptions = {
   mocks: {
     $n: key => key,
+    $track: key => key,
   },
   stubs: {
     NuxtLink: TestUtils.RouterLinkStub,
@@ -25,7 +27,7 @@ const defaultOptions = {
 };
 
 // Wrap vue-test-utils methods with default mounting options
-const wrap = method => (component, options) => TestUtils[method](component, Object.assign({}, defaultOptions, options));
+const wrap = method => (component, options) => TestUtils[method](component, merge({}, defaultOptions, options));
 
 export const mount = wrap('mount');
 export const shallowMount = wrap('shallowMount');

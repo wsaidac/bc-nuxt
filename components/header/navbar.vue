@@ -53,7 +53,7 @@
             </li>
           </ul>
         </li>
-        <div class="spacer" />
+        <li class="spacer" />
         <header-login />
         <li class="header-navbar__service help">
           <a
@@ -143,12 +143,12 @@ export default {
 
     @include flex(center, center);
 
-    @include media-breakpoint-up('sm') {
+    @include media-breakpoint-up("sm") {
       padding: 11px 7px;
       width: 115px;
     }
 
-    @include media-breakpoint-up('md') {
+    @include media-breakpoint-up("md") {
       width: 200px;
     }
 
@@ -186,7 +186,7 @@ export default {
     padding: 30px 10px;
     position: relative;
 
-    @include media-breakpoint-up('sm') {
+    @include media-breakpoint-up("sm") {
       &:nth-child(2) {
         border-left: 1px solid $primary-700;
       }
@@ -201,11 +201,11 @@ export default {
       margin-right: 6px;
     }
 
-    @include media-breakpoint-up('md') {
+    @include media-breakpoint-up("md") {
       padding: 30px 15px;
     }
 
-    @include media-breakpoint-up('lg') {
+    @include media-breakpoint-up("lg") {
       padding: 30px 15px;
     }
 
@@ -214,7 +214,7 @@ export default {
 
       &::after {
         background: $danger-500;
-        content: '';
+        content: "";
         display: block;
         z-index: ($z-index-navigation + 1);
 
@@ -293,7 +293,7 @@ export default {
     display: none;
   }
 
-  @include media-breakpoint-down('md') {
+  @include media-breakpoint-down("md") {
     &__main-item {
       font-size: 13.5px;
 
@@ -307,7 +307,7 @@ export default {
     }
   }
 
-  @include media-breakpoint-only('xs') {
+  @include media-breakpoint-only("xs") {
     .container {
       background: $primary-500;
       height: 50px;

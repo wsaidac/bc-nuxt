@@ -5,9 +5,7 @@
       :payoff-image="category.categoryHeader.image"
       :title="category.categoryHeader.title"
     />
-    <cg-usps
-      :usps="usps.items"
-    />
+    <cg-usps :usps="usps.items" />
     <shared-title :title="post.title" />
     <div class="block block--gray">
       <div class="container">
@@ -30,8 +28,8 @@
             :xs="24"
           >
             <category-highlights
-              :title="category.highlight.question"
-              :description="category.highlight.answer"
+              :title="category.highlight.title"
+              :description="category.highlight.content"
             />
             <product-variants :product="post" />
           </ui-col>
@@ -48,7 +46,10 @@
           />
         </ui-col>
         <ui-col :sm="12">
-          <div class="block block--blue block--padded">
+          <div
+            v-if="category.infoBlock.title || category.infoBlock.text"
+            class="block block--blue block--padded"
+          >
             <seo-block
               :title="category.infoBlock.title"
               :description="category.infoBlock.text"
@@ -64,16 +65,8 @@
         :title="category.terms.title"
         :description="category.terms.text"
       />
-      <service-banner
-        :link="customerService.link"
-        :image="customerService.image"
-        :title="customerService.primaryText"
-        :description="customerService.secondaryText"
-      />
-
-      <seo-breadcrumbs
-        :crumbs="crumbs"
-      />
+      <service-banner :customer-service="customerService" />
+      <seo-breadcrumbs :crumbs="crumbs" />
     </div>
   </div>
 </template>
@@ -93,6 +86,8 @@ import { UiCol, UiRow } from '~/components/ui';
 import ProductCard from '~/components/product/card';
 import SharedTitle from '~/components/shared/title';
 import ProductVariants from '~/components/product/variants';
+
+import { viewTransformDetail } from '~/plugins/gtm';
 
 export default {
   components: {
@@ -120,12 +115,12 @@ export default {
   },
 
   computed: {
-    ...mapGetters('shared', ['customerService', 'usps']),
+    ...mapGetters('shared', ['customerService', 'usps', 'header']),
     category() {
       return this.post.categories.nodes[0];
     },
     bannerImage() {
-      return this.post.content.banner || this.category.categoryHeader.banner || this.$store.getters['shared/header'].image;
+      return this.post.content.banner || this.category.categoryHeader.banner || this.header.image;
     },
     crumbs() {
       return [
@@ -135,17 +130,22 @@ export default {
       ];
     },
   },
+
+  mounted() {
+    this.$store.commit('shared/setPage', 'product');
+    this.$track(viewTransformDetail(this.post));
+  },
 };
 </script>
 
 <style lang="scss">
 .cg-product {
-  @include media-breakpoint-only('xs') {
+  @include media-breakpoint-only("xs") {
     .product-card {
       margin: auto !important;
     }
 
-    .service-title h1 {
+    .shared-title h1 {
       display: none;
     }
   }

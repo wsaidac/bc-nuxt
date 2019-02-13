@@ -6,24 +6,26 @@
     />
     <h6
       class="product-popular__subtitle"
-      v-text="popularProducts.subtitle"/>
+      v-text="popularProducts.subtitle"
+    />
     <ui-row>
       <ui-col
-        v-for="product in products"
-        :key="product.category.id"
+        v-for="product in decoratedProducts"
+        :key="product.id"
         :xs="12"
         :sm="12"
         :md="8"
       >
         <nuxt-link
-          :to="product.category.slug"
-          :title="productTitle(product)"
+          :to="product.slug"
+          :title="product.title"
           class="product-popular__item"
         >
           <img
-            :alt="productTitle(product)"
-            :src="productImage(product, 'regular')"
-            :srcset="`${productImage(product, 'regular')}, ${productImage(product, 'retina')} 2x`"
+            :alt="product.image.altText"
+            :longdesc="product.image.description"
+            :src="product.image.regular"
+            :srcset="`${product.image.regular}, ${product.image.retina} 2x`"
           >
         </nuxt-link>
       </ui-col>
@@ -33,6 +35,7 @@
 
 <script>
 import { UiCol, UiRow } from '~/components/ui';
+import { get } from 'lodash';
 
 export default {
   name: 'ProductPopular',
@@ -50,21 +53,19 @@ export default {
       },
     },
   },
+
   computed: {
-    products() {
-      return this.popularProducts.items;
-    },
-  },
-  methods: {
-    productTitle(product) {
-      if (product.category.categoryHeader) {
-        return product.category.categoryHeader.title;
-      }
-      return '';
-    },
-    productImage(product, key) {
-      return (product.image && product.image[key])
-        || (product.category.categoryHeader.image && product.category.categoryHeader.image[key]);
+    decoratedProducts() {
+      return this.popularProducts.items.map(({ category }) => ({
+        ...category,
+        title: get(category, 'categoryHeader.title'),
+        image: {
+          regular: get(category, 'categoryHeader.image.regular'),
+          retina: get(category, 'categoryHeader.image.retina'),
+          altText: get(category, 'categoryHeader.image.altText'),
+          description: get(category, 'categoryHeader.image.description'),
+        },
+      }));
     },
   },
 };
@@ -76,7 +77,7 @@ export default {
   max-width: 830px;
   padding: 20px 0;
 
-  @include media-breakpoint-up('md') {
+  @include media-breakpoint-up("md") {
     padding: 40px 0 80px;
   }
 

@@ -22,7 +22,6 @@ export default {
 };
 </script>
 
-
 <style lang="scss">
 .service-terms {
   font-size: $font-size-small;

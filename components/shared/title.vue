@@ -1,5 +1,5 @@
 <template>
-  <div class="service-title container">
+  <div class="shared-title container">
     <div class="flex">
       <h1 v-text="title" />
       <shared-instant-tooltip />
@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style lang="scss">
-.service-title {
+.shared-title {
   height: 91px;
   padding-bottom: 20px;
 

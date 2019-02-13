@@ -6,14 +6,12 @@
       :title="post.categoryHeader.title"
     />
     <cg-usps :usps="usps.items" />
-    <div>
-      <category-kind
-        v-for="(products, kind) in kinds"
-        :key="kind"
-        :title="kind"
-        :products="products"
-      />
-    </div>
+    <category-kind
+      v-for="(products, kind) in kinds"
+      :key="kind"
+      :title="kind"
+      :products="products"
+    />
     <div class="cg-category__info-block container container--mobile-not-padded">
       <ui-row padded>
         <ui-col :sm="12">
@@ -23,16 +21,22 @@
           />
         </ui-col>
         <ui-col :sm="12">
-          <div class="block block--yellow block--padded">
+          <div
+            v-if="post.highlight.title || post.highlight.content"
+            class="block block--yellow block--padded"
+          >
             <category-highlights
               :title="post.highlight.title"
               :description="post.highlight.content"
             />
           </div>
-          <div class="block block--blue block--padded">
+          <div
+            v-if="post.infoBlock.title || post.infoBlock.text"
+            class="block block--blue block--padded"
+          >
             <seo-block
               :title="post.infoBlock.title"
-              :description="post.infoBlock.content"
+              :description="post.infoBlock.text"
             />
           </div>
         </ui-col>
@@ -48,12 +52,7 @@
         :title="post.terms.title"
         :description="post.terms.text"
       />
-      <service-banner
-        :link="customerService.link"
-        :image="customerService.image"
-        :title="customerService.primaryText"
-        :description="customerService.secondaryText"
-      />
+      <service-banner :customer-service="customerService" />
       <seo-breadcrumbs :crumbs="crumbs" />
     </div>
   </div>
@@ -73,6 +72,9 @@ import ServiceTerms from '~/components/service/terms';
 import SeoBlock from '~/components/seo/block';
 import SeoBreadcrumbs from '~/components/seo/breadcrumbs';
 import { UiCol, UiRow } from '~/components/ui';
+
+import { impressionTransformPop } from '~/plugins/gtm.js';
+
 
 export default {
   components: {
@@ -100,17 +102,24 @@ export default {
   computed: {
     ...mapGetters('shared', ['customerService', 'usps']),
 
+    categoryText() {
+      return this.post.name;
+    },
     bannerImage() {
       return (
         this.post.categoryHeader.banner
         || this.$store.getters['shared/header'].image
       );
     },
-
+    /* eslint-disable */
     kinds() {
-      return groupBy(this.post.products.nodes, p => p.kinds.nodes[0].name);
+      let count = 0;
+      let kinds = groupBy(this.post.products.nodes, p => p.kinds.nodes[0].name);
+      for (var key in kinds) {
+        kinds[key] = kinds[key].map(node => ({ ...node, position: count++ }));
+      }
+      return kinds;
     },
-
     crumbs() {
       return [
         {
@@ -122,6 +131,11 @@ export default {
         { label: this.post.name },
       ];
     },
+  },
+
+  mounted() {
+    this.$store.commit('shared/setPage', 'category');
+    this.$track(impressionTransformPop(this.post));
   },
 };
 </script>
