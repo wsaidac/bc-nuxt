@@ -11,6 +11,7 @@ variables:
     - node-modules/
 
 eslint:
+  extends: .yarn-cache
   stage: test
   image: node:8-alpine
   before_script:
@@ -23,6 +24,7 @@ eslint:
       - $ESLINT_DISABLED
 
 stylelint:
+  extends: .yarn-cache
   stage: test
   image: node:8-alpine
   before_script:
@@ -35,6 +37,7 @@ stylelint:
       - $STYLELINT_DISABLED
 
 test-unit:
+  extends: .yarn-cache
   stage: test
   image: node:8-alpine
   before_script:
