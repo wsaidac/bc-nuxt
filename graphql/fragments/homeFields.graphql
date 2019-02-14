@@ -3,7 +3,8 @@
 fragment homeFields on Home {
   title
   header {
-    title
+    titlePart1
+    titlePart2
     image {
       desktop: sharpieUrl(height: 456, width: 1920)
       mobile: sharpieUrl(height: 300, width: 768)
