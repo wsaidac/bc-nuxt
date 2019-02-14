@@ -15,7 +15,9 @@
         from you, including how such information is collected and securely stored when it is shared with others, and how you can request its correction or deletion.<br>
         By visiting this website (the “website”), or providing your information to us, you are accepting the practices described in this Privacy Policy and our Cookie Policy
         (which is incorporated herein). For more detailed information on our use of “cookies”, including instructions for disabling cookies, please visit our Cookie Policy at
-        the <a href="https://www.rapido.com/us/privacy">Rapido privacy page</a><br>
+        the <a href="https://www.rapido.com/us/privacy">
+          Rapido privacy page
+        </a><br>
       </p>
       <p>
         Please exit this website immediately if you do not accept this Privacy Policy or our Cookie Policy, or if you are accessing the website in a country or other
@@ -120,7 +122,9 @@
       <h5>How can you opt-out or withdraw your consent?</h5>
       <p>
         If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your
-        personal information, at any time, by contacting us via email at our <a href="https://www.rapido.com/us/contact">contact page</a>.
+        personal information, at any time, by contacting us via email at our <a href="https://www.rapido.com/us/contact">
+          contact page
+        </a>.
       </p>
       <h5>How can you correct or delete your personal information?</h5>
       <p>
@@ -132,7 +136,9 @@
         We may update this Privacy Policy from time to time. Whenever we make a change, we will post the updated policy on this website and we encourage you to check our
         policy periodically. If we make a material change to this Privacy Policy that would lessen your privacy rights, we will either continue to honor our prior policy
         for information that we collected when it was in force, or we will ask for your consent to the change. If you have any questions or concerns regarding this Privacy
-        Policy, please <a href="https://www.rapido.com/us/contact">contact us</a> or write to us at the following address:
+        Policy, please <a href="https://www.rapido.com/us/contact">
+          contact us
+        </a> or write to us at the following address:
       </p>
       <p>
         Rapido US Inc<br>

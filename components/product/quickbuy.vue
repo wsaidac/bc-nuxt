@@ -24,7 +24,7 @@
 import { mapGetters } from 'vuex';
 
 /* eslint-disable-next-line */
-import { UiButton, UiCol, UiRow, UiIcon } from "~/components/ui";
+import { UiCol, UiRow } from "~/components/ui";
 import ProductCard from '~/components/product/card';
 import ProductVariants from '~/components/product/variants';
 import SharedLoader from '~/components/shared/loader';
@@ -35,10 +35,8 @@ export default {
   name: 'ProductQuickbuy',
 
   components: {
-    UiButton,
     UiCol,
     UiRow,
-    UiIcon,
     ProductCard,
     ProductVariants,
     SharedLoader,

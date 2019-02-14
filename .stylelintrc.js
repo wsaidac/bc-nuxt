@@ -8,5 +8,6 @@ module.exports = {
     "at-rule-no-unknown": null,
     "order/properties-alphabetical-order": true,
     "scss/at-rule-no-unknown": true
-  }
+  },
+  ignoreFiles: ['**/*.js'],
 };

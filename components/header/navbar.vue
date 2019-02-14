@@ -59,7 +59,9 @@
           <a
             href="https://www.rapido.com/us/faq"
             title="help"
-          >Help</a>
+          >
+            Help
+          </a>
         </li>
       </ul>
       <div

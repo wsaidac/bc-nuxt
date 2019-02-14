@@ -1,4 +1,6 @@
-require('dotenv').config();
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const conf = {
   head: {
@@ -6,13 +8,10 @@ const conf = {
     meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-  css: [{ src: '~/assets/stylesheets/application.scss', lang: 'scss' }],
+  css: ['~/assets/stylesheets/application.scss'],
   store: true,
   loading: { color: '#3B8070' },
   build: {
-    styleResources: {
-      scss: './assets/stylesheets/_shared.scss',
-    },
     publicPath: '/rapidoweb/',
 
     extend(config, { isDev, isClient }) {
@@ -25,12 +24,24 @@ const conf = {
         });
       }
     },
+    postcss: {
+      plugins: {
+        'postcss-import': {},
+        'postcss-url': {},
+        'postcss-preset-env': {},
+      },
+    },
+    extractCSS: process.env.NODE_ENV === 'production',
+  },
+  styleResources: {
+    scss: './assets/stylesheets/_shared.scss',
   },
   router: {
     middleware: ['headers', 'context'],
   },
   modules: [
-    ['~/modules/icons'],
+    ['@nuxtjs/style-resources'],
+    ['~/modules/iconsWeb'],
     [
       'artemis-graphql',
       {
@@ -40,7 +51,13 @@ const conf = {
       },
     ],
   ],
-  plugins: ['~/assets/icons.js', '~/plugins/env.js', '~/plugins/i18n.js', { src: '~/plugins/gtm.js', ssr: false }, '~/plugins/cookie-store.js', { src: '~/plugins/async.js', ssr: false }],
+  env: {
+    API_BROWSER: process.env.API_BROWSER,
+    API_SERVER: process.env.API_SERVER,
+    GTM_ID: 'GTM - KWZLG26',
+    GTM_DEBUG: 'true',
+  },
+  plugins: ['~/assets/iconsWeb.js', '~/plugins/i18n.js', { src: '~/plugins/gtm.js', ssr: false }, '~/plugins/cookie-store.js', { src: '~/plugins/async.js', ssr: false }],
   watchers: {
     webpack: {
       poll: true,

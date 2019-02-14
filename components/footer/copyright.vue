@@ -9,11 +9,17 @@
         &copy; {{ year }} - Rapido.com is part of CG | Millions of satisfied customers |
       </p>
       <p>
-        <nuxt-link to="/privacy">Privacy statement</nuxt-link>
+        <nuxt-link to="/privacy">
+          Privacy statement
+        </nuxt-link>
         |
-        <nuxt-link to="/cookies">Cookies</nuxt-link>
+        <nuxt-link to="/cookies">
+          Cookies
+        </nuxt-link>
         |
-        <nuxt-link to="/general-conditions">General conditions</nuxt-link>
+        <nuxt-link to="/general-conditions">
+          General conditions
+        </nuxt-link>
       </p>
     </div>
   </div>

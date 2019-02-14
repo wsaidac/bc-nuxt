@@ -1,10 +1,9 @@
 <template>
-  <el-popover
-    v-bind="$attrs"
-  >
+  <el-popover v-bind="$attrs">
     <template
       v-for="(nodes, slot) in $slots"
-      :slot="slot">
+      :slot="slot"
+    >
       <slot :name="slot" />
     </template>
   </el-popover>

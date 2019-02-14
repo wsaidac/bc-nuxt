@@ -103,7 +103,9 @@
           type="warning"
           native-type="button"
           @click="submitForm"
-        >{{ cta }}</ui-button>
+        >
+          {{ cta }}
+        </ui-button>
       </form>
     </div>
   </div>

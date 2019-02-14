@@ -6,8 +6,8 @@
   src:
     local('Nunito Sans Light '),
     local('Nunito Sans-Light'),
-    url('~typeface-nunito-sans/files/nunito-sans-latin-300.woff2') format('woff2'),
-    url('~typeface-nunito-sans/files/nunito-sans-latin-300.woff') format('woff');
+    url('../../node_modules/typeface-nunito-sans/files/nunito-sans-latin-300.woff') format('woff2'),
+    url('../../node_modules/typeface-nunito-sans/files/nunito-sans-latin-300.woff') format('woff');
 }
 
 @font-face {
@@ -18,8 +18,8 @@
   src:
     local('Nunito Sans Regular '),
     local('Nunito Sans-Regular'),
-    url('~typeface-nunito-sans/files/nunito-sans-latin-400.woff2') format('woff2'),
-    url('~typeface-nunito-sans/files/nunito-sans-latin-400.woff') format('woff');
+    url('../../node_modules/typeface-nunito-sans/files/nunito-sans-latin-400.woff2') format('woff2'),
+    url('../../node_modules/typeface-nunito-sans/files/nunito-sans-latin-400.woff') format('woff');
 }
 
 @font-face {
@@ -30,8 +30,8 @@
   src:
     local('Nunito Sans SemiBold '),
     local('Nunito Sans-SemiBold'),
-    url('~typeface-nunito-sans/files/nunito-sans-latin-600.woff2') format('woff2'),
-    url('~typeface-nunito-sans/files/nunito-sans-latin-600.woff') format('woff');
+    url('../../node_modules/typeface-nunito-sans/files/nunito-sans-latin-600.woff2') format('woff2'),
+    url('../../node_modules/typeface-nunito-sans/files/nunito-sans-latin-600.woff') format('woff');
 }
 
 @font-face {
@@ -42,8 +42,8 @@
   src:
     local('Nunito Sans Bold '),
     local('Nunito Sans-Bold'),
-    url('~typeface-nunito-sans/files/nunito-sans-latin-700.woff2') format('woff2'),
-    url('~typeface-nunito-sans/files/nunito-sans-latin-700.woff') format('woff');
+    url('../../node_modules/typeface-nunito-sans/files/nunito-sans-latin-700.woff2') format('woff2'),
+    url('../../node_modules/typeface-nunito-sans/files/nunito-sans-latin-700.woff') format('woff');
 }
 
 @font-face {
@@ -54,6 +54,6 @@
   src:
     local('Nunito Sans ExtraBold '),
     local('Nunito Sans-ExtraBold'),
-    url('~typeface-nunito-sans/files/nunito-sans-latin-800.woff2') format('woff2'),
-    url('~typeface-nunito-sans/files/nunito-sans-latin-800.woff') format('woff');
+    url('../../node_modules/typeface-nunito-sans/files/nunito-sans-latin-800.woff2') format('woff2'),
+    url('../../node_modules/typeface-nunito-sans/files/nunito-sans-latin-800.woff') format('woff');
 }

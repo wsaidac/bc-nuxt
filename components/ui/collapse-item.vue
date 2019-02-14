@@ -24,7 +24,8 @@
     </div>
     <template
       v-for="(nodes, slot) in $slots"
-      :slot="slot">
+      :slot="slot"
+    >
       <slot :name="slot" />
     </template>
   </el-collapse-item>

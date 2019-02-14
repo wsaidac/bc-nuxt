@@ -38,16 +38,22 @@
         and <strong>customer support that’s quick, friendly and helpful.</strong>
       </p>
       <p>
-        Rapido.com is made possible by <a href="https://www.cg.nl/">Creative Group</a>, a company founded by two friends in 2002.<br>
+        Rapido.com is made possible by <a href="https://www.cg.nl/">
+          Creative Group
+        </a>, a company founded by two friends in 2002.<br>
         Now we have three offices, millions of satisfied users worldwide<br>
-        and another venture that goes by the name of <a href="https://www.cg.nl/recharge">Recharge</a>. Talk about a growth spurt.<br>
+        and another venture that goes by the name of <a href="https://www.cg.nl/recharge">
+          Recharge
+        </a>. Talk about a growth spurt.<br>
         We’re also proud to mention some of our international business partners,<br>
         like Spotify, PlayStation, Apple, Netflix and many more.
       </p>
       <p>
         <strong>What do we stand for?</strong><br>
         We put our Customers First, we Always Deliver, we care about Being Well and we Love Change.<br>
-        Don’t believe it? Hear it from <a href="https://www.cg.nl/working-with-us">Creative Group employees</a> themselves.<br>
+        Don’t believe it? Hear it from <a href="https://www.cg.nl/working-with-us">
+          Creative Group employees
+        </a> themselves.<br>
         We’re always looking for talented people to help us grow.<br>
         So, make sure to check out our vacancies and you might become part of our unique adventure.
       </p>

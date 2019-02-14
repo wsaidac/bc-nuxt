@@ -1,7 +1,10 @@
-version: '3'
+version: '3.7'
+
 services:
   web:
-    build: .
+    build:
+      context: .
+      target: dev
     command: /sbin/tini -- yarn dev
     user: root
     environment:

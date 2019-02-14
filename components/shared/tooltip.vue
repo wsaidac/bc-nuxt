@@ -8,7 +8,7 @@
       placement="bottom-start"
       trigger="hover"
     >
-      <span slot="reference" >
+      <span slot="reference">
         <span v-text="iconPrefixContent" />
         <ui-icon icon="question-circle-o" />
       </span>

@@ -14,7 +14,7 @@ async function fetchShared(app, store) {
 }
 
 export default ({ req, store, app }) => {
-  if (!process.server) return;
+  if (!process.server) return [];
   // let label = req.headers.host.split('.').slice(-2)[0];
   const contextSlug = req.url.split('/')[1];
   const [language, country] = contextSlug.split('-');
@@ -27,5 +27,5 @@ export default ({ req, store, app }) => {
   store.commit('context/setCurrentCountry', country);
   store.commit('context/setCurrentLanguage', language);
 
-  Promise.all([fetchMenus(app, store), fetchShared(app, store)]);
+  return Promise.all([fetchMenus(app, store), fetchShared(app, store)]);
 };
