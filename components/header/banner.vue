@@ -18,7 +18,7 @@
     </picture>
     <div class="container">
       <section
-        v-if="headerImage"
+        v-if="header.titlePart1 || header.titlePart2"
         class="header-banner__payoff-text"
       >
         <div class="header-banner__payoff-text-content">
@@ -27,7 +27,7 @@
         </div>
       </section>
       <section
-        v-if="header.image"
+        v-else
         class="header-banner__payoff-image"
       >
         <div class="header-banner__payoff-image-inner">
@@ -56,15 +56,15 @@ export default {
   props: {
     post: {
       type: Object,
-      default: () => { },
+      default: () => {},
     },
     image: {
       type: Object,
-      default: () => { },
+      default: () => {},
     },
     header: {
       type: Object,
-      default: () => { },
+      default: () => {},
     },
   },
 

@@ -27,6 +27,7 @@ fragment productFields on CmsProduct {
       title
       content
     }
+    subtext
   }
   categories {
     nodes {

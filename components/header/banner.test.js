@@ -5,24 +5,13 @@ describe('HeaderBanner', () => {
   it('should mount with an image', () => {
     const $mounted = mount(HeaderBanner, {
       propsData: {
-        image: { desktop: 'https://example.com/banner.jpg', mobile: 'https://example.com/banner.jpg' },
         post: {},
-        header: {},
+        header: {
+          image: { desktop: 'https://example.com/banner.jpg', mobile: 'https://example.com/banner.jpg' },
+        },
       },
     });
     expect($mounted.find('.header-banner').exists()).toBe(true);
-  });
-
-  it('should omit payoff if not given', () => {
-    const $mounted = mount(HeaderBanner, {
-      propsData: {
-        image: { desktop: 'https://example.com/banner.jpg', mobile: 'https://example.com/banner.jpg' },
-        post: {},
-        header: {},
-      },
-    });
-    expect($mounted.find('.header-banner__payoff-text').exists()).toBe(false);
-    expect($mounted.find('.header-banner__payoff-image').exists()).toBe(false);
   });
 
   it('should mount a text payoff', () => {

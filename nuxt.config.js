@@ -36,6 +36,12 @@ const conf = {
   styleResources: {
     scss: './assets/stylesheets/_shared.scss',
   },
+  render: {
+    static: {
+      maxAge: 2592000000,
+    },
+    csp: true,
+  },
   router: {
     middleware: ['headers', 'context'],
   },

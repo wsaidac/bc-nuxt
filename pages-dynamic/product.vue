@@ -30,7 +30,7 @@
               :title="category.highlight.title"
               :description="category.highlight.content"
             >
-              <p>post.content.subtext</p>
+              <p v-text="post.content.subtext"/>
             </category-highlights>
             <product-variants :product="post" />
           </ui-col>
@@ -121,11 +121,20 @@ export default {
       return this.post.categories.nodes[0];
     },
     bannerImage() {
-      return this.post.content.banner || this.category.categoryHeader.banner || this.header.image;
+      return (
+        this.post.content.banner
+        || this.category.categoryHeader.banner
+        || this.header.image
+      );
     },
     crumbs() {
       return [
-        { url: '/', label: 'Home', title: 'Rapido.com: Buy your favorite Gift Cards online | Fast Email Delivery' },
+        {
+          url: '/',
+          label: 'Home',
+          title:
+            'Rapido.com: Buy your favorite Gift Cards online | Fast Email Delivery',
+        },
         { url: this.category.slug, label: this.category.name },
         { label: this.post.content.title },
       ];
