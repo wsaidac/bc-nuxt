@@ -18,24 +18,24 @@
     </picture>
     <div class="container">
       <section
-        v-if="payoffText"
+        v-if="headerImage"
         class="header-banner__payoff-text"
       >
-        <div
-          class="header-banner__payoff-text-content"
-          v-html="payoffText"
-        />
+        <div class="header-banner__payoff-text-content">
+          <p v-text="header.titlePart1" />
+          <p v-text="header.titlePart2" />
+        </div>
       </section>
       <section
-        v-if="payoffImage"
+        v-if="header.image"
         class="header-banner__payoff-image"
       >
         <div class="header-banner__payoff-image-inner">
           <figure>
             <img
-              :alt="title"
-              :src="payoffImage.regular"
-              :srcset="`${payoffImage.regular}, ${payoffImage.retina} 2x`"
+              :alt="header.image.altText"
+              :src="header.image.regular"
+              :srcset="`${header.image.regular}, ${header.image.retina} 2x`"
             >
           </figure>
         </div>
@@ -54,25 +54,23 @@ export default {
   name: 'HeaderBanner',
 
   props: {
-    imageDescription: {
-      type: String,
-      default: '',
+    post: {
+      type: Object,
+      default: () => { },
     },
     image: {
       type: Object,
-      required: true,
+      default: () => { },
     },
-    payoffText: {
-      type: String,
-      default: null,
-    },
-    payoffImage: {
+    header: {
       type: Object,
-      default: null,
+      default: () => { },
     },
-    title: {
-      type: String,
-      default: null,
+  },
+
+  computed: {
+    headerImage() {
+      return this.header && (this.header.titlePart1 || this.header.titlePart2);
     },
   },
 };
@@ -120,8 +118,13 @@ export default {
       font-size: 2.8vw;
     }
 
-    strong {
+    p {
+      margin: 3px 0;
+    }
+
+    p:nth-child(2) {
       font-size: 3vw;
+      font-weight: $font-weight-bold;
 
       @include media-breakpoint-down("xs") {
         font-size: 4.7vw;

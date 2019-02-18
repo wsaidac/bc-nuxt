@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="product"
+    v-if="product && product.rapidoProduct"
     :class="classes"
     itemscope
     itemtype="http://schema.org/Product"
@@ -63,8 +63,8 @@
           itemprop="itemCondition"
           content="http://schema.org/NewCondition"
         >
-        <h3 v-text="$n(product.information.retailValue, 'USD')" />
-        <p v-text="product.content.title" />
+        <h3 v-text="$n(product.information.retailValue, product.information.currency)" />
+        <p v-text="product.title" />
         <shared-tooltip
           v-if="mode === 'vertical' && hasTooltip"
           :content="product | dig('content.tooltip.content')"

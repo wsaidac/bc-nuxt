@@ -2,8 +2,7 @@
   <div class="cg-product">
     <header-banner
       :image="bannerImage"
-      :payoff-image="category.categoryHeader.image"
-      :title="category.categoryHeader.title"
+      :header="category.categoryHeader"
     />
     <cg-usps :usps="usps.items" />
     <shared-title :title="post.title" />
@@ -30,7 +29,9 @@
             <category-highlights
               :title="category.highlight.title"
               :description="category.highlight.content"
-            />
+            >
+              <p>post.content.subtext</p>
+            </category-highlights>
             <product-variants :product="post" />
           </ui-col>
         </ui-row>

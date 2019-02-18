@@ -7,6 +7,7 @@ describe('ProductCard', () => {
 
   const props = {
     product: {
+      title: 'Verizon Prepaid Refill $5',
       rapidoProduct: {
         id: 1,
       },
@@ -15,7 +16,6 @@ describe('ProductCard', () => {
         currency: 'USD',
       },
       content: {
-        title: 'Verizon Prepaid Refill $5',
         image: {
           desktop: 'https://example.com/xbox.jpg',
           mobile: 'https://example.com/xbox.jpg',
