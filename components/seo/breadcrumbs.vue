@@ -8,7 +8,7 @@
       >
         <span v-if="crumb.url">
           <nuxt-link
-            :to="crumb.url"
+            :to="$contextPath(crumb.url)"
             :title="crumb.title"
           >
             {{ crumb.label }}
@@ -62,7 +62,7 @@ export default {
 
       & + li::before {
         color: $gray-700;
-        content: '<';
+        content: "<";
       }
 
       a {

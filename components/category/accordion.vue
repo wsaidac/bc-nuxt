@@ -3,7 +3,7 @@
     <ui-collapse :value="1">
       <ui-collapse-item
         :name="1"
-        title="Benefits of Rapido.com"
+        :title="`Benefits of ${$t('domain-name')}`"
       >
         <cg-usps
           :usps="usps"

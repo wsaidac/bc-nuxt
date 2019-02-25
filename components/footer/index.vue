@@ -9,7 +9,7 @@
       </ui-row>
     </div>
     <hr>
-    <footer-links :static-pages="staticPages" />
+    <footer-links />
     <footer-copyright />
   </footer>
 </template>
@@ -34,9 +34,6 @@ export default {
 
   computed: {
     ...mapGetters('shared', ['paymentMethods']),
-    staticPages() {
-      return this.$store.state['static-pages'];
-    },
   },
 };
 </script>

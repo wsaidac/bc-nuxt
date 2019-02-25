@@ -10,7 +10,7 @@ export default {
     label: ({ label }) => label,
     country: ({ country }) => country,
     language: ({ language }) => language,
-    contextSlug: ({ country, language }) => `${language}-${country}`,
+    locale: ({ country, language }) => `${language}-${country}`,
     cmsContext: ({ label, country, language }) => `${label}-${language}-${country}`,
   },
 

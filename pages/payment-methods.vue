@@ -7,8 +7,8 @@
     <cg-usps :usps="usps.items" />
     <div class="container">
       <seo-breadcrumbs :crumbs="crumbs" />
-      <h2>Payment options</h2>
-      <p>On Rapido.com, you can checkout with the following trusted payment options. Each payment option will be described below.</p>
+      <h2>{{ $t('payment-options') }}</h2>
+      <p v-t="'checkout-options'" />
       <div
         v-for="(payment, i) in payments"
         :key="i"
@@ -21,7 +21,7 @@
         <p>
           <strong v-text="payment.name" /><br>
           {{ payment.text1 }}<br>
-          <strong>Shipping: </strong>{{ payment.text2 }}
+          <strong>{{ $t('shipping') }}: </strong>{{ payment.text2 }}
         </p>
       </div>
     </div>
@@ -29,7 +29,6 @@
 </template>
 
 <script>
-
 import { mapGetters } from 'vuex';
 import HeaderBanner from '~/components/header/banner';
 import CgUsps from '~/components/usps';
@@ -45,27 +44,26 @@ export default {
     SeoBreadcrumbs,
   },
 
+  asyncData({ app }) {
+    return {
+      crumbs: app.$crumbs('Payment methods us'),
+    };
+  },
+
   data() {
     return {
-      crumbs: [
-        { url: '/', label: 'Home', title: 'Rapido.com: Buy your favorite Gift Cards online | Fast Email Delivery' },
-        { label: 'Payment methods' },
-      ],
       payments: [
         {
           image: PaypalImage,
-          name: 'Paypal',
-          text1: `You can pay with PayPal on Rapido.com. After selecting this payment option, you log into your PayPal account and confirm the payment.
-          Next, the transaction is processed.`,
-          text2: 'Upon receipt of payment, the top up voucher code is sent immediately.',
+          name: this.$t('paypal'),
+          text1: this.$t('paypal_text_1'),
+          text2: this.$t('paypal_text_2'),
         },
         {
           image: CreditcardImage,
-          name: 'Credit / Debit card',
-          text1: `On Rapido.com, you can pay via VISA credit card, VISA debit card (Delta and Electron) and MasterCard.
-            At the checkout, you select payment by credit card. Then you enter your credit card details, including the card holder, the card number,
-            expiration date and CVV code. Then confirm payment.`,
-          text2: 'Upon receipt of payment, the top up code is sent immediately.',
+          name: this.$t('credit-or-debit-card'),
+          text1: this.$t('visa_and_mastercard_text_1'),
+          text2: this.$t('visa_and_mastercard_text_2'),
         },
       ],
     };

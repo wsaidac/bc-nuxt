@@ -7,10 +7,10 @@
         class="product-variants__item"
       >
         <nuxt-link
-          :to="item.slug"
-          :title="item.content.title"
+          :to="$contextPath(item.slug)"
+          :title="item.title"
         >
-          <span v-text="item.content.title" />
+          <span v-text="item.title" />
           <ui-icon icon="chevron-right" />
         </nuxt-link>
       </li>
@@ -20,10 +20,10 @@
       class="text-right"
     >
       <nuxt-link
-        :to="category.slug"
+        :to="$contextPath(category.slug)"
         :title="category.name"
       >
-        See all denominations
+        {{ $t('home.see-all-denominations') }}
       </nuxt-link>
     </p>
   </div>
@@ -72,7 +72,7 @@ export default {
       margin: 10px 0;
       padding: 5px 10px;
 
-      @include media-breakpoint-up('sm') {
+      @include media-breakpoint-up("sm") {
         margin: 7px 0;
       }
 
@@ -84,7 +84,7 @@ export default {
       }
     }
 
-    @include media-breakpoint-up('sm') {
+    @include media-breakpoint-up("sm") {
       &:first-child a {
         margin-top: 0;
       }

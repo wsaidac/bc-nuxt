@@ -3,6 +3,7 @@
     <header-banner
       :image="bannerImage"
       :header="category.categoryHeader"
+      :title="post.title"
     />
     <cg-usps :usps="usps.items" />
     <shared-title :title="post.title" />
@@ -30,7 +31,7 @@
               :title="category.highlight.title"
               :description="category.highlight.content"
             >
-              <p v-text="post.content.subtext"/>
+              <p v-text="post.content.subtext" />
             </category-highlights>
             <product-variants :product="post" />
           </ui-col>
@@ -128,16 +129,9 @@ export default {
       );
     },
     crumbs() {
-      return [
-        {
-          url: '/',
-          label: 'Home',
-          title:
-            'Rapido.com: Buy your favorite Gift Cards online | Fast Email Delivery',
-        },
+      return this.$crumbs(this.post.title, [
         { url: this.category.slug, label: this.category.name },
-        { label: this.post.content.title },
-      ];
+      ]);
     },
   },
 

@@ -3,6 +3,7 @@
     <header-banner
       :image="bannerImage"
       :header="post.categoryHeader"
+      :title="`${post.categoryHeader.title} ${Object.keys(kinds)[0]}`"
     />
     <cg-usps :usps="usps.items" />
     <category-kind
@@ -123,9 +124,9 @@ export default {
       return [
         {
           url: '/',
-          label: 'Home',
+          label: this.$t('home-text'),
           title:
-            'Rapido.com: Buy your favorite Gift Cards online | Fast Email Delivery',
+            this.post.title,
         },
         { label: this.post.name },
       ];

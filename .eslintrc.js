@@ -22,6 +22,8 @@ module.exports = {
     "import/extensions": 0,
     "no-unused-vars": 1,
     "func-names": 0,
-    "no-underscore-dangle": 0
+    "no-underscore-dangle": 0,
+    'vue/no-v-html': 0,
+    'vue/singleline-html-element-content-newline': 0,
   }
 };

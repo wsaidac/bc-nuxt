@@ -2,7 +2,7 @@
   <li class="header-navbar__service">
     <a
       v-if="isLoaded"
-      :href="href"
+      :href="$contextPath(to)"
       :title="title"
       v-text="text"
     />
@@ -12,18 +12,20 @@
 <script>
 import { mapGetters } from 'vuex';
 
+
 export default {
   computed: {
     ...mapGetters('auth', ['currentUser']),
     ...mapGetters('async', ['isLoaded']),
-    href() {
-      return this.currentUser ? '/account/profile' : '/sessions/login';
+    ...mapGetters('context', ['locale']),
+    to() {
+      return this.currentUser ? 'account/profile' : 'sessions/login';
     },
     title() {
-      return this.currentUser ? 'profile' : 'login';
+      return this.currentUser ? this.$t('header.profile') : this.$t('header.login');
     },
     text() {
-      return this.currentUser ? 'My Account' : 'Login';
+      return this.currentUser ? this.$t('header.my-account') : this.$t('header.login');
     },
   },
 };

@@ -18,7 +18,7 @@
     </picture>
     <div class="container">
       <section
-        v-if="header.titlePart1 || header.titlePart2"
+        v-if="header && (header.titlePart1 || header.titlePart2)"
         class="header-banner__payoff-text"
       >
         <div class="header-banner__payoff-text-content">
@@ -27,7 +27,7 @@
         </div>
       </section>
       <section
-        v-else
+        v-else-if="header"
         class="header-banner__payoff-image"
       >
         <div class="header-banner__payoff-image-inner">
@@ -41,7 +41,6 @@
         </div>
       </section>
       <span
-        v-if="title"
         class="header-banner__title"
         v-text="title"
       />
@@ -65,6 +64,10 @@ export default {
     header: {
       type: Object,
       default: () => {},
+    },
+    title: {
+      type: String,
+      default: '',
     },
   },
 

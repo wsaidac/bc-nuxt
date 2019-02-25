@@ -1,5 +1,5 @@
 <template>
-  <div class="cg-payment-options">
+  <div class="cg-cookies">
     <header-banner
       :image="header.image"
       :payoff-text="header.title"
@@ -7,7 +7,7 @@
     <cg-usps :usps="usps.items" />
     <div class="container">
       <seo-breadcrumbs :crumbs="crumbs" />
-      <div class="cg-payment-options__content">
+      <div class="cg-cookies__content">
         <div v-html="htmlText" />
       </div>
     </div>
@@ -29,8 +29,21 @@ export default {
 
   asyncData({ app }) {
     return {
-      crumbs: app.$crumbs('Privacy policy'),
-      htmlText: app.$staticHtmlContent('privacy-policy'),
+      crumbs: app.$crumbs('Cookie statement'),
+      htmlText: app.$staticHtmlContent('cookies'),
+    };
+  },
+
+  data() {
+    return {
+      crumbs: [
+        {
+          url: '/',
+          label: this.$t('home-text'),
+          title: this.$t('buy-cards-online'),
+        },
+        { label: 'Cookie statement' },
+      ],
     };
   },
 
@@ -41,25 +54,28 @@ export default {
 </script>
 
 <style lang="scss">
-.cg-payment-options {
+.cg-cookies {
   padding-bottom: 30px;
+
+  p {
+    line-height: 20px;
+    margin: 0;
+  }
+
+  .COOKIES-POLICY {
+    font-size: 18px;
+    font-weight: $font-weight-mediumbold;
+  }
 
   &__content {
     h5 {
+      line-height: 25px;
       margin-bottom: 0;
     }
 
-    h5 ~ p {
-      margin-top: 0;
-    }
-
     ul {
-      margin: 3px;
+      margin-top: 3px;
       padding-left: 19px;
-    }
-
-    .no-margin {
-      margin: 0;
     }
   }
 }

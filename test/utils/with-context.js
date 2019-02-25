@@ -19,6 +19,8 @@ const defaultOptions = {
   mocks: {
     $n: key => key,
     $track: key => key,
+    $t: key => key,
+    $contextPath: key => key,
   },
   stubs: {
     NuxtLink: TestUtils.RouterLinkStub,

@@ -1,10 +1,10 @@
 <template>
   <a
+    :href="$contextPath('faq')"
     class="service-button"
-    href="/faq"
   >
-    <strong>Need some help?</strong>
-    <span>Take a look at the FAQ's</span>
+    <strong>{{ $t('need-some-help') }}</strong>
+    <span>{{ $t('look-at-faqs') }}</span>
     <ui-icon icon="chevron-right" />
   </a>
 </template>
@@ -31,7 +31,7 @@ export default {
   position: relative;
   text-align: center;
 
-  @include media-breakpoint-down('md') {
+  @include media-breakpoint-down("md") {
     font-size: $font-size-h6;
   }
 
@@ -52,7 +52,7 @@ export default {
     text-decoration: none;
   }
 
-  @include media-breakpoint-only('xs') {
+  @include media-breakpoint-only("xs") {
     font-size: $font-size-small;
     text-align: left;
 

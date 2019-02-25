@@ -1,10 +1,7 @@
 <template>
   <div class="product-quickbuy">
     <shared-loader :loading="!isLoaded">
-      <h2
-        class="product-quickbuy__title"
-        v-text="`Let's speed it up`"
-      />
+      <h2 class="product-quickbuy__title">{{ $t('home.lets-speed-it-up') }}</h2>
       <ui-row>
         <ui-col :sm="{ span: 12, offset: 2 }">
           <product-card

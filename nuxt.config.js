@@ -23,6 +23,11 @@ const conf = {
           exclude: /(node_modules)/,
         });
       }
+
+      config.module.rules.push({
+        test: /\.html$/,
+        use: ['html-loader'],
+      });
     },
     postcss: {
       plugins: {
@@ -56,6 +61,32 @@ const conf = {
         extendedHeaders: 'extendedGraphqlHeaders',
       },
     ],
+    [
+      'nuxt-i18n',
+      {
+        strategy: 'prefix',
+        seo: false,
+        parsePages: false,
+        lazy: true,
+        langDir: './assets/locales/',
+        locales: [
+          {
+            code: 'en-us',
+            iso: 'en-US',
+            file: 'en-us.json',
+          },
+          {
+            code: 'es-us',
+            iso: 'es-ES',
+            file: 'es-us.json',
+          },
+        ],
+        defaultLocale: 'en-us',
+        vueI18n: {
+          fallbackLocale: 'en-us',
+        },
+      },
+    ],
   ],
   env: {
     API_BROWSER: process.env.API_BROWSER,
@@ -63,7 +94,7 @@ const conf = {
     GTM_ID: 'GTM - KWZLG26',
     GTM_DEBUG: 'true',
   },
-  plugins: ['~/assets/iconsWeb.js', '~/plugins/i18n.js', { src: '~/plugins/gtm.js', ssr: false }, '~/plugins/cookie-store.js', { src: '~/plugins/async.js', ssr: false }],
+  plugins: ['~/assets/iconsWeb.js', { src: '~/plugins/gtm.js', ssr: false }, '~/plugins/cookie-store.js', { src: '~/plugins/async.js', ssr: false }, '~/plugins/shared.js'],
   watchers: {
     webpack: {
       poll: true,

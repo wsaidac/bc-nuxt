@@ -36,6 +36,7 @@ fragment categoryTermFields on CategoryTerm {
   }
   products {
     nodes {
+      title
       id
       link
       uri

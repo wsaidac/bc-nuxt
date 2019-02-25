@@ -1,9 +1,6 @@
 <template>
   <div class="product-featured">
-    <h2
-      class="product-featured__title"
-      v-text="'Featured products'"
-    />
+    <h2 class="product-featured__title">{{ $t('home.featured-products') }}</h2>
     <product-featured-category
       v-for="category in categories"
       :key="category.title"
@@ -44,7 +41,7 @@ export default {
     text-align: center;
   }
 
-  @include media-breakpoint-only('xs') {
+  @include media-breakpoint-only("xs") {
     background: $white;
 
     h2 {
