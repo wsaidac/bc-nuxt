@@ -9,9 +9,9 @@
     </div>
     <div class="container">
       <h1 class="header-navbar__brand">
-        <nuxt-link to="/">
+        <nuxt-link :to="$contextPath('')">
           <img
-            alt="Rapido"
+            :alt="$t('domain-name')"
             src="~/assets/images/logo-white.svg"
           >
         </nuxt-link>
@@ -19,10 +19,7 @@
       <ul :class="classes">
         <li class="header-navbar__main-item header-navbar__main-item-back">
           <ui-icon icon="chevron-left" />
-          <span
-            @click="setActive('')"
-            v-text="'Main menu'"
-          />
+          <span @click="setActive('')">{{ $t('header.main-nav') }}</span>
         </li>
         <li
           v-for="category in items"
@@ -45,7 +42,7 @@
               class="header-navbar__sub-item"
             >
               <nuxt-link
-                :to="subcategory.url"
+                :to="$contextPath(subcategory.url)"
                 :title="subcategory.title"
               >
                 {{ subcategory.title }}
@@ -57,16 +54,18 @@
         <header-login />
         <li class="header-navbar__service help">
           <a
-            href="https://www.rapido.com/us/faq"
+            :href="$contextPath('faq')"
             title="help"
-          >Help</a>
+          >
+            {{ $t('header.help') }}
+          </a>
         </li>
       </ul>
       <div
         class="header-navbar__mobile-opener"
         @click="toggleMenu"
       >
-        <span>Menu</span>
+        <span>{{ $t('header.menu') }}</span>
         <navbar-hamburger :active="menuOpen" />
       </div>
     </div>
@@ -74,20 +73,17 @@
 </template>
 
 <script>
-/* eslint-disable */
-import { UiCol, UiRow, UiIcon } from "~/components/ui";
-import NavbarHamburger from "./hamburger";
-import HeaderLogin from "./login";
+import { UiIcon } from '~/components/ui';
+import NavbarHamburger from './hamburger';
+import HeaderLogin from './login';
 
 export default {
-  name: "HeaderNavbar",
+  name: 'HeaderNavbar',
 
   components: {
     NavbarHamburger,
-    UiCol,
     UiIcon,
-    UiRow,
-    HeaderLogin
+    HeaderLogin,
   },
 
   props: {
@@ -95,25 +91,25 @@ export default {
       type: Array,
       default() {
         return [];
-      }
-    }
+      },
+    },
   },
 
   data() {
     return {
       menuOpen: false,
-      active: ""
+      active: '',
     };
   },
 
   computed: {
     classes() {
       return [
-        "header-navbar__navigation",
-        { "header-navbar__navigation--open": this.menuOpen },
-        { "header-navbar__navigation--has-active": this.active !== "" }
+        'header-navbar__navigation',
+        { 'header-navbar__navigation--open': this.menuOpen },
+        { 'header-navbar__navigation--has-active': this.active !== '' },
       ];
-    }
+    },
   },
 
   methods: {
@@ -122,8 +118,8 @@ export default {
     },
     toggleMenu() {
       this.menuOpen = !this.menuOpen;
-    }
-  }
+    },
+  },
 };
 </script>
 

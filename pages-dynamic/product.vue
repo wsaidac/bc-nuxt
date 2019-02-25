@@ -2,8 +2,8 @@
   <div class="cg-product">
     <header-banner
       :image="bannerImage"
-      :payoff-image="category.categoryHeader.image"
-      :title="category.categoryHeader.title"
+      :header="category.categoryHeader"
+      :title="post.title"
     />
     <cg-usps :usps="usps.items" />
     <shared-title :title="post.title" />
@@ -30,7 +30,9 @@
             <category-highlights
               :title="category.highlight.title"
               :description="category.highlight.content"
-            />
+            >
+              <p v-text="post.content.subtext" />
+            </category-highlights>
             <product-variants :product="post" />
           </ui-col>
         </ui-row>
@@ -120,14 +122,16 @@ export default {
       return this.post.categories.nodes[0];
     },
     bannerImage() {
-      return this.post.content.banner || this.category.categoryHeader.banner || this.header.image;
+      return (
+        this.post.content.banner
+        || this.category.categoryHeader.banner
+        || this.header.image
+      );
     },
     crumbs() {
-      return [
-        { url: '/', label: 'Home', title: 'Rapido.com: Buy your favorite Gift Cards online | Fast Email Delivery' },
+      return this.$crumbs(this.post.title, [
         { url: this.category.slug, label: this.category.name },
-        { label: this.post.content.title },
-      ];
+      ]);
     },
   },
 

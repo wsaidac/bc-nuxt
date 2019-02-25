@@ -5,52 +5,11 @@
       :payoff-text="header.title"
     />
     <cg-usps :usps="usps.items" />
-    <div class="cg-about-us__content container">
+    <div class="container">
       <seo-breadcrumbs :crumbs="crumbs" />
-      <h2>About us</h2>
-      <p>
-        Rapido.com is an <strong>official & international digital code reseller.</strong><br>
-        Paying for something online should be easy for everyone.<br>
-        Helping people pay quickly for their products with our digital cards is what we do best.
-      </p>
-      <p>
-        <strong>Buy our digital cards online!</strong><br>
-        It’s a lot simpler and quicker: you’ll never have to leave your home for a gift card again.<br>
-        Your Digital Gift Card is worth exactly the same as an offline gift card that you buy in a store.
-      </p>
-      <p>
-        We have a <strong>broad selection</strong> of digital cards<br>
-        (also known as E-Vouchers or Gift Cards) which will continue to grow in the future.<br>
-        We currently have four different product categories:<br>
-        game cards, entertainment cards, gift cards, and call credit refills.
-      </p>
-      <p>
-        Our main goal is to make it super simple to find the right card on our website.<br>
-        We offer <strong>multiple relevant and safe payment options</strong><br>
-        and we <strong>deliver your code instantly by email.</strong><br>
-        Customers choose us because they want to pay for a product quickly.<br>
-        We take speed seriously. That’s why we’re <em>Rapido</em>.
-      </p>
-      <p>
-        Our customers are just as diverse as our selection of products.<br>
-        We work very hard to make sure our customers get the best from us:<br>
-        instant delivery, relevant payment options, a website that’s simple to use<br>
-        and <strong>customer support that’s quick, friendly and helpful.</strong>
-      </p>
-      <p>
-        Rapido.com is made possible by <a href="https://www.cg.nl/">Creative Group</a>, a company founded by two friends in 2002.<br>
-        Now we have three offices, millions of satisfied users worldwide<br>
-        and another venture that goes by the name of <a href="https://www.cg.nl/recharge">Recharge</a>. Talk about a growth spurt.<br>
-        We’re also proud to mention some of our international business partners,<br>
-        like Spotify, PlayStation, Apple, Netflix and many more.
-      </p>
-      <p>
-        <strong>What do we stand for?</strong><br>
-        We put our Customers First, we Always Deliver, we care about Being Well and we Love Change.<br>
-        Don’t believe it? Hear it from <a href="https://www.cg.nl/working-with-us">Creative Group employees</a> themselves.<br>
-        We’re always looking for talented people to help us grow.<br>
-        So, make sure to check out our vacancies and you might become part of our unique adventure.
-      </p>
+      <div class="cg-about-us__content">
+        <div v-html="htmlText" />
+      </div>
     </div>
   </div>
 </template>
@@ -68,12 +27,10 @@ export default {
     SeoBreadcrumbs,
   },
 
-  data() {
+  asyncData({ app }) {
     return {
-      crumbs: [
-        { url: '/', label: 'Home', title: 'Rapido.com: Buy your favorite Gift Cards online | Fast Email Delivery' },
-        { label: 'About us' },
-      ],
+      crumbs: app.$crumbs('About us'),
+      htmlText: app.$staticHtmlContent('about-us'),
     };
   },
 

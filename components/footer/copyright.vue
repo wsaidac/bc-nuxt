@@ -2,18 +2,24 @@
   <div class="footer-copyright">
     <div class="container">
       <img
+        :alt="$t('domain-name')"
         src="~/assets/images/logo-white.svg"
-        alt="Rapido.com"
       >
       <p>
         &copy; {{ year }} - Rapido.com is part of CG | Millions of satisfied customers |
       </p>
       <p>
-        <nuxt-link to="/privacy">Privacy statement</nuxt-link>
+        <nuxt-link :to="$contextPath ('privacy-policy')">
+          Privacy statement
+        </nuxt-link>
         |
-        <nuxt-link to="/cookies">Cookies</nuxt-link>
+        <nuxt-link :to="$contextPath ('cookies')">
+          {{ $t('footer.cookies') }}
+        </nuxt-link>
         |
-        <nuxt-link to="/general-conditions">General conditions</nuxt-link>
+        <nuxt-link :to="$contextPath ('terms-and-conditions')">
+          {{ $t('footer.general-conditions') }}
+        </nuxt-link>
       </p>
     </div>
   </div>
@@ -25,7 +31,7 @@ export default {
 
   computed: {
     year() {
-      return (new Date()).getFullYear();
+      return new Date().getFullYear();
     },
   },
 };

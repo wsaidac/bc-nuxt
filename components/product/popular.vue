@@ -17,7 +17,7 @@
         :md="8"
       >
         <nuxt-link
-          :to="product.slug"
+          :to="$contextPath(product.slug)"
           :title="product.title"
           class="product-popular__item"
         >

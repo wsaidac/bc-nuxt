@@ -2,17 +2,17 @@
   <div class="footer-links">
     <ui-collapse class="footer-links__mobile">
       <ui-collapse-item
-        v-for="(column, i) in columns"
-        :key="i"
-        :title="column.title"
+        v-for="(links, title) in columns"
+        :key="title"
+        :title="title"
       >
         <ul class="footer-links__list list-unstyled">
           <li
-            v-for="link in column.links"
+            v-for="link in links"
             :key="link.title"
           >
             <nuxt-link
-              :to="link.url"
+              :to="$contextPath(link.url)"
               :title="link.title"
             >
               {{ link.title }}
@@ -24,18 +24,18 @@
     <div class="container footer-links__desktop">
       <ui-row>
         <ui-col
-          v-for="(column, i) in columns"
-          :key="i"
+          v-for="(links, title) in columns"
+          :key="title"
           :span="8"
         >
-          <h5 v-text="column.title" />
+          <h5 v-text="title" />
           <ul class="footer-links__list list-unstyled">
             <li
-              v-for="link in column.links"
+              v-for="link in links"
               :key="link.title"
             >
               <nuxt-link
-                :to="link.url"
+                :to="$contextPath(link.url)"
                 :title="link.title"
               >
                 {{ link.title }}
@@ -62,35 +62,27 @@ export default {
     UiRow
   },
 
-  props: {
-    staticPages: {
-      type: Object,
-      default() {
-        return {};
-      }
-    }
-  },
+  data() {
+    const columns = {};
 
-  computed: {
-    columns() {
-      return [
-        {
-          title: "Rapido.com",
-          links: [this.staticPages.aboutUs, this.staticPages.paymentMethods]
-        },
-        {
-          title: "Customer Care",
-          links: [this.staticPages.help]
-        },
-        {
-          title: "Terms of Use",
-          links: [
-            this.staticPages.privacyPolicy,
-            this.staticPages.termsAndConditions
-          ]
-        }
-      ];
-    }
+    columns[this.$t("domain-name")] = [
+      { title: this.$t("footer.about-us"), url: "about-us" },
+      { title: this.$t("footer.payment-methods"), url: "payment-methods" }
+    ];
+
+    columns[this.$t("footer.customer-care")] = [
+      { title: this.$t("footer.help"), url: "help" }
+    ];
+
+    columns[this.$t("footer.terms-of-use")] = [
+      { title: this.$t("footer.privacy-policy"), url: "privacy-policy" },
+      {
+        title: this.$t("footer.general-conditions"),
+        url: "terms-and-conditions"
+      }
+    ];
+
+    return { columns };
   }
 };
 </script>

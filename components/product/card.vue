@@ -1,12 +1,12 @@
 <template>
   <div
-    v-if="product"
+    v-if="product && product.rapidoProduct"
     :class="classes"
     itemscope
     itemtype="http://schema.org/Product"
   >
     <nuxt-link
-      :to="product.slug"
+      :to="$contextPath(product.slug)"
       class="product-card__img-link"
       @click.native="submitForm"
     >
@@ -63,8 +63,8 @@
           itemprop="itemCondition"
           content="http://schema.org/NewCondition"
         >
-        <h3 v-text="$n(product.information.retailValue, 'USD')" />
-        <p v-text="product.content.title" />
+        <h3 v-text="$n(product.information.retailValue, product.information.currency)" />
+        <p v-text="product.title" />
         <shared-tooltip
           v-if="mode === 'vertical' && hasTooltip"
           :content="product | dig('content.tooltip.content')"
@@ -73,7 +73,7 @@
       </div>
       <form
         ref="submitForm"
-        action="/us/order/quickbuy"
+        :action="$contextPath('order/quickbuy')"
         method="post"
         class="product-card__actions"
       >
@@ -103,7 +103,9 @@
           type="warning"
           native-type="button"
           @click="submitForm"
-        >{{ cta }}</ui-button>
+        >
+          {{ cta }}
+        </ui-button>
       </form>
     </div>
   </div>
@@ -116,7 +118,6 @@ import SharedTooltip from '~/components/shared/tooltip';
 import SharedInstantTooltip from '~/components/shared/instant-tooltip';
 import { UiButton, UiSelect } from '~/components/ui';
 import { get } from 'lodash';
-
 import { measureProductClick, clickTransformProductAddToCart } from '~/plugins/gtm.js';
 
 export default {
@@ -173,7 +174,7 @@ export default {
       return ['product-card', `product-card--mode-${this.mode}`];
     },
     cta() {
-      return this.mode === 'horizontal' ? 'Order now' : 'Order safely';
+      return this.mode === 'horizontal' ? this.$t('order-now') : this.$t('order-safely');
     },
     image() {
       return this.product.content.image || this.product.categories.nodes[0].categoryHeader.image;

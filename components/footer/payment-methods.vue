@@ -3,7 +3,7 @@
     <div class="footer-payment-methods__quote">
       <ui-icon icon="protected-shield" />
       <p>
-        <strong>Safely</strong> order with:
+        <strong>{{ $t('footer.safely') }}</strong> {{ $t('footer.order-with') }}:
       </p>
     </div>
     <ul class="footer-payment-methods__list">
@@ -13,8 +13,8 @@
         class="footer-payment-methods__item"
       >
         <nuxt-link
-          :title="`Safely order with ${method.name}`"
-          to="/payment-methods"
+          :title="`${$t('footer.safely-order-with')} ${method.name}`"
+          :to="$contextPath ('payment-methods')"
         >
           <img
             :alt="method.name"

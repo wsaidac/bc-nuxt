@@ -16,7 +16,7 @@
         :md="4"
       >
         <nuxt-link
-          :to="product.url"
+          :to="$contextPath(product.url)"
           :title="product.title"
           class="product-featured-category__item"
         >
@@ -42,7 +42,7 @@
             :md="4"
           >
             <nuxt-link
-              :to="product.url"
+              :to="$contextPath(product.url)"
               :title="product.title"
               class="product-featured-category__item"
             >
@@ -64,7 +64,7 @@
       v-if="collapseable"
       class="product-featured-category__toggle"
       @click="toggle"
-      v-text="collapsed ? 'Show more' : 'Show less'"
+      v-text="collapsed ? $t('show-more') : $t('show-less')"
     />
   </section>
 </template>

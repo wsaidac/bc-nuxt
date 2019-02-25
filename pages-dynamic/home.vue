@@ -2,7 +2,7 @@
   <div class="cg-home">
     <header-banner
       :image="post.header.image"
-      :payoff-text="post.header.title"
+      :header="post.header"
     />
     <cg-usps :usps="usps.items" />
     <div class="container">
@@ -35,7 +35,6 @@
 </template>
 
 <script>
-import { UiIcon } from '~/components/ui';
 import HeaderBanner from '~/components/header/banner';
 import CgUsps from '~/components/usps';
 import ProductPopular from '~/components/product/popular';
@@ -47,7 +46,6 @@ import { mapGetters } from 'vuex';
 
 export default {
   components: {
-    UiIcon,
     HeaderBanner,
     CgUsps,
     ProductPopular,

@@ -2,6 +2,7 @@
   <div class="category-highlights">
     <h2 v-text="title" />
     <div v-html="description" />
+    <slot />
   </div>
 </template>
 

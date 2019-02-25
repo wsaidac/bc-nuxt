@@ -1,7 +1,6 @@
 <template>
   <div class="cg-error container">
-    <p>It looks like the page you would like to see no longer exists.</p>
-    <p>Sorry</p>
+    <p>{{ $t('error.error_text') }}</p>
   </div>
 </template>
 

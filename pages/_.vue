@@ -6,11 +6,9 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-
-function slugFromPath(path, contextSlug) {
-  if (path === `/${contextSlug}/`) return 'home';
-  return path.replace(`${contextSlug}/`, '');
+function slugFromPath(path, locale) {
+  if (path === `/${locale}/`) return 'home';
+  return path.replace(`${locale}/`, '');
 }
 
 export default {
@@ -27,17 +25,9 @@ export default {
     };
   },
 
-  computed: {
-    ...mapGetters('static', ['links']),
-  },
-
-  mounted() {
-    window.scrollTo(0, 0);
-  },
-
   async asyncData({ app, route, store }) {
-    const contextSlug = store.getters['context/contextSlug'];
-    const slug = slugFromPath(route.path, contextSlug);
+    const locale = store.getters['context/locale'];
+    const slug = slugFromPath(route.path, locale);
 
     const { post } = await app.$q('post', { slug });
     if (post === null) {
@@ -50,6 +40,10 @@ export default {
     /* prettier-ignore */
     post.__typename = post.__typename === 'CmsProduct' ? 'Product' : post.__typename;
     return { layout: post.__typename, post };
+  },
+
+  mounted() {
+    window.scrollTo(0, 0);
   },
 };
 </script>

@@ -1,25 +1,35 @@
-FROM node:8-alpine
+###################################################################
+# Base container with shared deps
+###################################################################
 
-RUN apk add --update \
-    git \
-    tini \
-    curl
+FROM node:8-alpine as base
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+ENV APP_HOME=/usr/src/app\
+    HOST=0.0.0.0\
+    PORT=4000
+RUN apk add --update --quiet git curl &&\
+    mkdir -p /usr/src/app
 
-COPY package.json yarn.lock /usr/src/app/
-RUN yarn install \
- && npm install pm2 -g
+WORKDIR $APP_HOME
 
-COPY . /usr/src/app
+###################################################################
+# Development container with devkit deps
+###################################################################
 
-ENV HOST=0.0.0.0 \
-    PORT=4000 \
-    NODE_ENV=production
+FROM base as dev
+RUN apk add --quiet tini
+
+###################################################################
+# Final optimized container for production
+###################################################################
+
+FROM base as prod
+
+COPY package.json yarn.lock $APP_HOME/
+RUN yarn global add pm2 --silent &&\
+    yarn install --silent
+COPY . $APP_HOME
 RUN yarn build
-
 EXPOSE 4000
-
 USER node
-CMD ["pm2-runtime", "node_modules/nuxt/bin/nuxt-start", "--web"]
+CMD ["pm2", "start", "npm", "--attach", "--name", "\"nuxt\"", "--", "start"]

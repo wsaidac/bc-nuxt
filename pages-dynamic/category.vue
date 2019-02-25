@@ -2,14 +2,14 @@
   <div class="cg-category">
     <header-banner
       :image="bannerImage"
-      :payoff-image="post.categoryHeader.image"
-      :title="post.categoryHeader.title"
+      :header="post.categoryHeader"
+      :title="`${post.categoryHeader.title} ${Object.keys(kinds)[0]}`"
     />
     <cg-usps :usps="usps.items" />
     <category-kind
       v-for="(products, kind) in kinds"
       :key="kind"
-      :title="kind"
+      :title="`${post.categoryHeader.title} ${kind}`"
       :products="products"
     />
     <div class="cg-category__info-block container container--mobile-not-padded">
@@ -124,9 +124,9 @@ export default {
       return [
         {
           url: '/',
-          label: 'Home',
+          label: this.$t('home-text'),
           title:
-            'Rapido.com: Buy your favorite Gift Cards online | Fast Email Delivery',
+            this.post.title,
         },
         { label: this.post.name },
       ];

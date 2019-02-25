@@ -7,6 +7,7 @@ describe('ProductCard', () => {
 
   const props = {
     product: {
+      title: 'Verizon Prepaid Refill $5',
       rapidoProduct: {
         id: 1,
       },
@@ -15,7 +16,6 @@ describe('ProductCard', () => {
         currency: 'USD',
       },
       content: {
-        title: 'Verizon Prepaid Refill $5',
         image: {
           desktop: 'https://example.com/xbox.jpg',
           mobile: 'https://example.com/xbox.jpg',
@@ -59,12 +59,12 @@ describe('ProductCard', () => {
 
   it('should render a button with "Order now" in horizontal mode', () => {
     localMount({ mode: 'horizontal' });
-    expect($mounted.find('button').text()).toBe('Order now');
+    expect($mounted.find('button').text()).toBe('order-now');
   });
 
   it('should render a button with "Order safely" in vertical mode', () => {
     localMount({ mode: 'horizontal' });
-    expect($mounted.find('button').text()).toBe('Order now');
+    expect($mounted.find('button').text()).toBe('order-now');
   });
 
   it('should render an image', () => {

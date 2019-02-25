@@ -36,6 +36,7 @@ fragment categoryTermFields on CategoryTerm {
   }
   products {
     nodes {
+      title
       id
       link
       uri
@@ -44,7 +45,6 @@ fragment categoryTermFields on CategoryTerm {
         currency
       }
       content {
-        title
         image {
           regular: sharpieUrl(height: 159, width: 217)
           retina: sharpieUrl(height: 318, width: 434)
