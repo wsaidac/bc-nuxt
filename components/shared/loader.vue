@@ -57,7 +57,7 @@ export default {
     filter: none;
     margin-bottom: 20px;
     position: relative;
-    z-index: 40;
+    z-index: $z-index-loader;
   }
 
   .shared-loader__spinner {
@@ -69,7 +69,7 @@ export default {
     filter: none;
     opacity: 1 !important;
     position: relative;
-    z-index: 40;
+    z-index: $z-index-loader;
 
     @include size(100px);
   }
