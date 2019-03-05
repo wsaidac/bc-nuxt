@@ -174,7 +174,7 @@ export default {
       return ['product-card', `product-card--mode-${this.mode}`];
     },
     cta() {
-      return this.mode === 'horizontal' ? this.$t('order-now') : this.$t('order-safely');
+      return this.mode === 'horizontal' ? this.$t('general.order-now') : this.$t('general.order-safely');
     },
     image() {
       return this.product.content.image || this.product.categories.nodes[0].categoryHeader.image;

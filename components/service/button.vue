@@ -3,8 +3,8 @@
     :href="$contextPath('faq')"
     class="service-button"
   >
-    <strong>{{ $t('need-some-help') }}</strong>
-    <span>{{ $t('look-at-faqs') }}</span>
+    <strong>{{ $t('general.need-some-help') }}</strong>
+    <span>{{ $t('general.look-at-faqs') }}</span>
     <ui-icon icon="chevron-right" />
   </a>
 </template>

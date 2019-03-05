@@ -64,7 +64,7 @@
       v-if="collapseable"
       class="product-featured-category__toggle"
       @click="toggle"
-      v-text="collapsed ? $t('show-more') : $t('show-less')"
+      v-text="collapsed ? $t('general.show-more') : $t('general.show-less')"
     />
   </section>
 </template>

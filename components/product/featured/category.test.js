@@ -113,8 +113,8 @@ describe('ProductCategory', () => {
 
   it('should change text on toggle', () => {
     const showMoreButton = $mounted.find('.product-featured-category__toggle');
-    expect(showMoreButton.text()).toEqual('show-more');
+    expect(showMoreButton.text()).toEqual('general.show-more');
     showMoreButton.find('.product-featured-category__toggle').trigger('click');
-    expect(showMoreButton.text()).toEqual('show-less');
+    expect(showMoreButton.text()).toEqual('general.show-less');
   });
 });

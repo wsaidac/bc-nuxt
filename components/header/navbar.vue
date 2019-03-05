@@ -10,7 +10,7 @@
         <h1 class="header-navbar__brand">
           <nuxt-link :to="$contextPath('')">
             <img
-              :alt="$t('domain-name')"
+              :alt="$t('general.domain')"
               src="~/assets/images/logo-white.svg"
             >
           </nuxt-link>
@@ -23,7 +23,7 @@
             :href="$contextPath('faq')"
             title="help"
           >
-            {{ $t('header.help') }}
+            {{ $t('general.help') }}
           </a>
           <div class="header-navbar__locale">
             language
@@ -88,6 +88,8 @@ export default {
 
 <style lang="scss">
 .header-navbar {
+  font-size: 14px;
+
   .spacer {
     flex-grow: 1;
   }
@@ -123,6 +125,7 @@ export default {
 
   &__top {
     background: $primary-500;
+    font-size: 1.125em;
     position: relative;
     z-index: $z-index-header-navbar-top;
 
@@ -144,13 +147,13 @@ export default {
     }
 
     & > * {
-      padding: 0 20px;
+      padding: 0 30px;
     }
   }
 
   &__brand {
-    margin: 0;
-    width: 120px;
+    margin: 2px 0 0 33.5px;
+    width: 131.49px;
   }
 
   &__help {
@@ -169,11 +172,15 @@ export default {
     @include flex(center, center);
 
     .header-navbar__menu-text {
-      font-size: $font-size-h6;
+      font-size: 15px;
       margin-right: 10px;
       position: relative;
       top: -2px;
     }
+  }
+
+  @include media-breakpoint-down("md") {
+    font-size: 12px;
   }
 
   @include media-breakpoint-up("sm") {

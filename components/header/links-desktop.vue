@@ -1,5 +1,5 @@
 <template>
-  <div class="header-links-desktop">
+  <div class="header-links-desktop legacy-links-desktop">
     <div class="container">
       <ul class="header-links-desktop__nav">
         <li
@@ -51,6 +51,7 @@ export default {
 <style lang="scss">
 .header-links-desktop {
   background: #dce6f5;
+  border-top: 1px solid #0e00d6;
   height: 50px;
 
   @include flex();
@@ -66,15 +67,16 @@ export default {
 
   &__main-item {
     border-right: 1px solid $gray-300;
-    position: relative;
+    cursor: pointer;
 
     &:first-child {
       border-left: 1px solid $gray-300;
     }
 
     & > div {
+      font-size: 1.125em;
       height: 100%;
-      padding: 0 10px;
+      padding: 0 15px;
 
       @include flex(center, center);
 
@@ -92,6 +94,7 @@ export default {
       &::after {
         border-top: 3px solid #ee4136;
         content: "";
+        z-index: 600;
 
         @include position(absolute, 100% 0 null 0);
       }
@@ -140,6 +143,10 @@ export default {
       width: 140px;
 
       @include flex(null, center);
+
+      &:hover {
+        color: $primary-500;
+      }
     }
   }
 
@@ -153,6 +160,36 @@ export default {
 
   @include media-breakpoint-only("xs") {
     display: none;
+  }
+}
+
+.legacy-links-desktop {
+  .header-links-desktop {
+    &__main-item {
+      position: relative;
+
+      &:first-child {
+        img {
+          @include size(16px, 24px);
+          @include position(relative, -2px null null null);
+        }
+      }
+
+      &:nth-child(2) img {
+        @include size(22px);
+        @include position(relative, -1px null null null);
+      }
+
+      &:nth-child(3) img {
+        @include size(36px, 20px);
+        @include position(relative, -1px null null null);
+      }
+
+      &:nth-child(4) img {
+        @include size(28px, 20px);
+        @include position(relative, -1px null null null);
+      }
+    }
   }
 }
 </style>

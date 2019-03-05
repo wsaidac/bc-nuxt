@@ -91,15 +91,15 @@ export default {
     return {
       active: '',
       links: [
-        { title: this.$t("footer.about-us"), url: "about-us" },
-        { title: this.$t("footer.payment-methods"), url: "payment-methods" },
-        { title: this.$t("footer.help"), url: "help" },
-        { title: this.$t("footer.privacy-policy"), url: "privacy-policy" },
+        { title: this.$t("internal-links.about-us"), url: "about-us" },
+        { title: this.$t("internal-links.payment-methods"), url: "payment-methods" },
+        { title: this.$t("general.help"), url: "help" },
+        { title: this.$t("internal-links.privacy-policy"), url: "privacy-policy" },
         {
-          title: this.$t("footer.general-conditions"),
+          title: this.$t("internal-links.general-conditions"),
           url: "terms-and-conditions",
         },
-        { title: this.$t("footer.cookies"), url: "cookies" },
+        { title: this.$t("internal-links.cookies"), url: "cookies" },
       ],
     };
   },
@@ -126,6 +126,7 @@ export default {
 .header-links-mobile {
   background: $white;
   border-top: 3px solid red;
+  font-size: 14.4px;
   overflow: hidden;
   position: absolute;
   right: 0;
@@ -165,7 +166,7 @@ export default {
   }
 
   &__main-item {
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-mediumbold;
   }
 
   &__nav {
@@ -174,7 +175,7 @@ export default {
         border-bottom: 1px solid $gray-100;
         color: $black;
         display: block;
-        font-weight: $font-weight-bold;
+        font-weight: $font-weight-mediumbold;
         padding: 15px 0;
         width: 100%;
 
@@ -194,7 +195,7 @@ export default {
 
   &__back-to-main {
     color: $gray-600;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-mediumbold;
     overflow: hidden;
     padding: 15px 0;
     white-space: nowrap;
@@ -212,7 +213,7 @@ export default {
   }
 
   &__sub {
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-mediumbold;
   }
 
   &__login {

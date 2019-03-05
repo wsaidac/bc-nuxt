@@ -7,8 +7,8 @@
     <cg-usps :usps="usps.items" />
     <div class="container">
       <seo-breadcrumbs :crumbs="crumbs" />
-      <h2>{{ $t('payment-options') }}</h2>
-      <p v-t="'checkout-options'" />
+      <h2>{{ $t('payment-methods.payment-options') }}</h2>
+      <p v-t="'payment-methods.checkout-options'" />
       <div
         v-for="(payment, i) in payments"
         :key="i"
@@ -21,7 +21,7 @@
         <p>
           <strong v-text="payment.name" /><br>
           {{ payment.text1 }}<br>
-          <strong>{{ $t('shipping') }}: </strong>{{ payment.text2 }}
+          <strong>{{ $t('payment-methods.shipping') }}: </strong>{{ payment.text2 }}
         </p>
       </div>
     </div>
@@ -46,7 +46,13 @@ export default {
 
   asyncData({ app }) {
     return {
-      crumbs: app.$crumbs('Payment methods us'),
+      crumbs: app.$crumbs('Payment methods'),
+    };
+  },
+
+  head() {
+    return {
+      title: this.$t('internal-links.payment-methods'),
     };
   },
 
@@ -55,15 +61,15 @@ export default {
       payments: [
         {
           image: PaypalImage,
-          name: this.$t('paypal'),
-          text1: this.$t('paypal_text_1'),
-          text2: this.$t('paypal_text_2'),
+          name: this.$t('payment-methods.paypal'),
+          text1: this.$t('payment-methods.paypal_text_1'),
+          text2: this.$t('payment-methods.paypal_text_2'),
         },
         {
           image: CreditcardImage,
-          name: this.$t('credit-or-debit-card'),
-          text1: this.$t('visa_and_mastercard_text_1'),
-          text2: this.$t('visa_and_mastercard_text_2'),
+          name: this.$t('payment-methods.credit-or-debit-card'),
+          text1: this.$t('payment-methods.visa_and_mastercard_text_1'),
+          text2: this.$t('payment-methods.visa_and_mastercard_text_2'),
         },
       ],
     };

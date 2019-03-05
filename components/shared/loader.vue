@@ -7,7 +7,7 @@
       v-if="loading"
       class="shared-loader__overlay"
     >
-      <h2>{{ $t('loading') }}</h2>
+      <h2>{{ $t('general.loading') }}</h2>
       <div class="shared-loader__spinner" />
       <div class="shared-loader__background" />
     </div>
