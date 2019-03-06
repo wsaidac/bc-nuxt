@@ -1,10 +1,12 @@
 async function fetchMenus(app, store) {
   const { menus } = await app.$q('menus', { slug: 'main' });
+  if (!menus) return;
   store.commit('menus/setMain', menus.nodes[0]);
 }
 
 async function fetchShared(app, store) {
   const { post } = await app.$q('shared');
+  if (!post) return;
   store.commit('shared/setHomeTitle', post.title);
   store.commit('shared/setFooter', post.footer);
   store.commit('shared/setHeader', post.header);
