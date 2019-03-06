@@ -19,8 +19,8 @@
         <div class="header-navbar__top-right">
           <header-login />
           <a
-            class="header-navbar__help"
             :href="$contextPath('faq')"
+            class="header-navbar__help"
             title="help"
           >
             {{ $t('general.help') }}
@@ -48,10 +48,10 @@
 </template>
 
 <script>
-import HeaderLogin from './login';
-import HeaderLinksDesktop from './links-desktop';
-import HeaderLinksMobile from './links-mobile';
-import HeaderHamburger from './hamburger';
+import HeaderLogin from "./login";
+import HeaderLinksDesktop from "./links-desktop";
+import HeaderLinksMobile from "./links-mobile";
+import HeaderHamburger from "./hamburger";
 
 export default {
   components: {
@@ -73,13 +73,13 @@ export default {
   data() {
     return {
       menuOpen: false,
-      active: '',
+      active: "",
     };
   },
 
   computed: {
     classes() {
-      return ['header-navbar', { 'header-navbar--open': this.menuOpen }];
+      return ["header-navbar", { "header-navbar--open": this.menuOpen }];
     },
   },
 };

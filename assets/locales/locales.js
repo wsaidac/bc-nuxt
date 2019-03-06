@@ -5,9 +5,9 @@ const locales = [
     file: 'en-us.json',
   },
   {
-    code: 'es-us',
-    iso: 'es-ES',
-    file: 'es-us.json',
+    code: 'de-at',
+    iso: 'es-AT',
+    file: 'de-at.json',
   },
 ];
 
