@@ -3,7 +3,7 @@
 set :application,           'rapido_web'
 set :repo_url,              "git@github.com:/cgservices/#{fetch(:application)}.git"
 set :branch,                ENV['BRANCH'] || 'master'
-set :yarn_flags,            '--silent --no-progress'
+set :yarn_flags,            '--silent --no-progress --no-optional'
 
 set :deploy_to,             "/data/www/#{fetch(:application)}"
 
