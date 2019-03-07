@@ -3,7 +3,7 @@
     :class="classes"
     v-on="$listeners"
   >
-    <slot/>
+    <slot />
   </i>
 </template>
 

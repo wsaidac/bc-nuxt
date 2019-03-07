@@ -2,6 +2,7 @@
   <div class="category-highlights">
     <h2 v-text="title" />
     <div v-html="description" />
+    <slot />
   </div>
 </template>
 
@@ -12,11 +13,11 @@ export default {
   props: {
     title: {
       type: String,
-      required: true,
+      default: '',
     },
     description: {
       type: String,
-      required: true,
+      default: '',
     },
   },
 };

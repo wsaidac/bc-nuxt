@@ -1,56 +1,74 @@
+import { merge } from 'lodash';
 import ProductCard from './card.vue';
 import { mount } from '~/test/utils/with-context';
 
 describe('ProductCard', () => {
   let $mounted;
 
-  const product = {
-    id: 1,
-    information: {
-      retailValue: 5.0,
-      currency: 'USD',
-    },
-    content: {
+  const props = {
+    product: {
       title: 'Verizon Prepaid Refill $5',
-      image: {
-        desktop: 'https://example.com/xbox.jpg',
-        mobile: 'https://example.com/xbox.jpg',
+      rapidoProduct: {
+        id: 1,
       },
-      tooltip: {
-        content: 'Long text to show when tooltip is hovered',
-        title: 'Short text to show when tooltip is not yet hovered',
+      information: {
+        retailValue: 5.0,
+        currency: 'USD',
       },
-    },
-    categories: {
-      nodes: [
-        {
-          id: 3,
-          slug: '/verizon/10-usd',
-          categoryHeader: {
-            title: 'Spotify',
-            image: {
-              regular: 'https://example.com/spotify.jpg',
-              retina: 'https://example.com/spotify.jpg',
+      content: {
+        image: {
+          desktop: 'https://example.com/xbox.jpg',
+          mobile: 'https://example.com/xbox.jpg',
+        },
+        tooltip: {
+          content: 'Long text to show when tooltip is hovered',
+          title: 'Short text to show when tooltip is not yet hovered',
+        },
+      },
+      slug: '/product123',
+      categories: {
+        nodes: [
+          {
+            categoryHeader: {
+              image: 'fakeLink',
             },
           },
-        },
-      ],
+        ],
+      },
     },
-    rapidoProduct: {
-      id: 1465,
-    },
-    slug: '/product123',
   };
 
-  beforeEach(() => {
-    $mounted = mount(ProductCard, { propsData: { product } });
-  });
+  const localMount = (extraProps = {}) => {
+    const extendedProps = merge({}, props, extraProps);
+    $mounted = mount(ProductCard, {
+      stubs: ['shared-instant-tooltip'],
+      propsData: extendedProps,
+    });
+  };
 
   it('should mount', () => {
+    localMount();
     expect($mounted.find('.product-card').exists()).toBe(true);
   });
 
+  // test horizontal productCard (bij product card)
+  it('should mount in horizontal mode', () => {
+    localMount({ mode: 'horizontal' });
+    expect($mounted.find('.product-card').exists()).toBe(true);
+  });
+
+  it('should render a button with "Order now" in horizontal mode', () => {
+    localMount({ mode: 'horizontal' });
+    expect($mounted.find('button').text()).toBe('general.order-now');
+  });
+
+  it('should render a button with "Order safely" in vertical mode', () => {
+    localMount({ mode: 'horizontal' });
+    expect($mounted.find('button').text()).toBe('general.order-now');
+  });
+
   it('should render an image', () => {
+    localMount();
     expect($mounted.contains('img')).toBe(true);
   });
 });

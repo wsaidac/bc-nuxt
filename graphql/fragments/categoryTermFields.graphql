@@ -7,6 +7,8 @@ fragment categoryTermFields on CategoryTerm {
     image {
       regular: sharpieUrl(height: 185, width: 250)
       retina: sharpieUrl(height: 370, width: 500)
+      altText
+      description
     }
     banner {
       desktop: sharpieUrl(height: 300, width: 1920)
@@ -34,6 +36,7 @@ fragment categoryTermFields on CategoryTerm {
   }
   products {
     nodes {
+      title
       id
       link
       uri
@@ -42,10 +45,11 @@ fragment categoryTermFields on CategoryTerm {
         currency
       }
       content {
-        title
         image {
           regular: sharpieUrl(height: 159, width: 217)
           retina: sharpieUrl(height: 318, width: 434)
+          altText
+          description
         }
         tooltip {
           title
@@ -66,6 +70,8 @@ fragment categoryTermFields on CategoryTerm {
             image {
               regular: sharpieUrl(height: 159, width: 217)
               retina: sharpieUrl(height: 318, width: 434)
+              altText
+              description
             }
           }
           slug

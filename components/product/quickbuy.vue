@@ -1,10 +1,7 @@
 <template>
-  <div class="product-quickbuy" >
+  <div class="product-quickbuy">
     <shared-loader :loading="!isLoaded">
-      <h2
-        class="product-quickbuy__title"
-        v-text="`Let's speed it up`"
-      />
+      <h2 class="product-quickbuy__title">{{ $t('home.lets-speed-it-up') }}</h2>
       <ui-row>
         <ui-col :sm="{ span: 12, offset: 2 }">
           <product-card
@@ -24,19 +21,19 @@
 import { mapGetters } from 'vuex';
 
 /* eslint-disable-next-line */
-import { UiButton, UiCol, UiRow, UiIcon } from "~/components/ui";
+import { UiCol, UiRow } from "~/components/ui";
 import ProductCard from '~/components/product/card';
 import ProductVariants from '~/components/product/variants';
 import SharedLoader from '~/components/shared/loader';
+
+import { impressionTransformQuickbuy } from '~/plugins/gtm';
 
 export default {
   name: 'ProductQuickbuy',
 
   components: {
-    UiButton,
     UiCol,
     UiRow,
-    UiIcon,
     ProductCard,
     ProductVariants,
     SharedLoader,
@@ -59,6 +56,10 @@ export default {
     product() {
       return this.userProduct || this.defaultProduct;
     },
+  },
+
+  mounted() {
+    this.$track(impressionTransformQuickbuy(this.product));
   },
 };
 </script>

@@ -3,7 +3,8 @@
     <h3 class="product-featured-category__title">
       <img
         :src="category.image.regular"
-        :alt="category.title">
+        :alt="category.title"
+      >
       <span v-text="category.title" />
     </h3>
     <ui-row>
@@ -15,12 +16,14 @@
         :md="4"
       >
         <nuxt-link
-          :to="product.url"
+          :to="$contextPath(product.url)"
           :title="product.title"
           class="product-featured-category__item"
         >
           <img
-            :alt="product.title"
+            v-if="product.image"
+            :alt="product.image.altText"
+            :longdesc="product.image.description"
             :src="product.image.regular"
             :srcset="`${product.image.regular}, ${product.image.retina} 2x`"
           >
@@ -40,12 +43,13 @@
             :md="4"
           >
             <nuxt-link
-              :to="product.url"
+              :to="$contextPath(product.url)"
               :title="product.title"
               class="product-featured-category__item"
             >
               <img
-                :alt="product.title"
+                v-if="product.image"
+                :alt="product.image.altText"
                 :src="product.image.regular"
                 :srcset="`${product.image.regular}, ${product.image.retina} 2x`"
               >
@@ -62,16 +66,16 @@
       v-if="collapseable"
       class="product-featured-category__toggle"
       @click="toggle"
-      v-text="collapsed ? 'Show more' : 'Show less'"
+      v-text="collapsed ? $t('general.show-more') : $t('general.show-less')"
     />
   </section>
 </template>
 
 <script>
-import { UiRow, UiCol, UiTransitionExpand } from '~/components/ui';
+import { UiRow, UiCol, UiTransitionExpand } from "~/components/ui";
 
 export default {
-  name: 'ProductFeaturedCategory',
+  name: "ProductFeaturedCategory",
 
   components: {
     UiRow,
@@ -122,14 +126,14 @@ export default {
 .product-featured-category {
   margin-bottom: 60px;
 
-  @include media-breakpoint-up('sm') {
+  @include media-breakpoint-up("sm") {
     background: $white;
     border: 1px solid $gray-400;
     margin: 10px 0;
     padding: 20px;
   }
 
-  @include media-breakpoint-up('lg') {
+  @include media-breakpoint-up("lg") {
     margin: 25px 0;
     padding: 0 75px 30px;
   }

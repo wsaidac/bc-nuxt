@@ -3,10 +3,13 @@
 fragment homeFields on Home {
   title
   header {
-    title
+    titlePart1
+    titlePart2
     image {
       desktop: sharpieUrl(height: 456, width: 1920)
       mobile: sharpieUrl(height: 300, width: 768)
+      altText
+      description
     }
   }
   quickbuy {
@@ -21,6 +24,8 @@ fragment homeFields on Home {
       image {
         regular: sharpieUrl(height: 84, width: 253)
         retina: sharpieUrl(height: 168, width: 506)
+        altText
+        description
       }
       category {
         id
@@ -29,6 +34,8 @@ fragment homeFields on Home {
           image {
             regular: sharpieUrl(height: 84, width: 253)
             retina: sharpieUrl(height: 168, width: 506)
+            altText
+            description
           }
         }
         slug

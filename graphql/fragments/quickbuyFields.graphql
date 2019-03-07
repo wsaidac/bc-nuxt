@@ -11,14 +11,17 @@ fragment quickbuyFields on CmsProduct {
     currency
   }
   content {
-    title
     banner {
       desktop: sharpieUrl(height: 456, width: 1920)
       mobile: sharpieUrl(height: 300, width: 768)
+      altText
+      description
     }
     image {
       regular: sharpieUrl(height: 140, width: 190)
       retina: sharpieUrl(height: 280, width: 380)
+      altText
+      description
     }
     tooltip {
       title

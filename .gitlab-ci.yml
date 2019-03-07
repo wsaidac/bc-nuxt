@@ -1,15 +1,17 @@
+include:
+  - https://gitlab.cgaws.cloud/infra/ci/raw/master/capistrano.yml
+
 variables:
-  REPOSITORY_URL: 031993550471.dkr.ecr.eu-west-1.amazonaws.com
+  ECR_REGISTRY: 031993550471.dkr.ecr.eu-west-1.amazonaws.com
 
-cache:
-  key: shared_folders_for_branches_and_jobs
-  paths:
-    - node_modules/
-
-stages:
-  - test
+.yarn-cache:
+  cache:
+    key: yarn
+    paths:
+    - node-modules/
 
 eslint:
+  extends: .yarn-cache
   stage: test
   image: node:8-alpine
   before_script:
@@ -22,6 +24,7 @@ eslint:
       - $ESLINT_DISABLED
 
 stylelint:
+  extends: .yarn-cache
   stage: test
   image: node:8-alpine
   before_script:
@@ -34,6 +37,7 @@ stylelint:
       - $STYLELINT_DISABLED
 
 test-unit:
+  extends: .yarn-cache
   stage: test
   image: node:8-alpine
   before_script:

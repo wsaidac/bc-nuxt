@@ -5,149 +5,16 @@
       :payoff-text="header.title"
     />
     <cg-usps :usps="usps.items" />
-    <div class="cg-payment-options__content container">
+    <div class="container">
       <seo-breadcrumbs :crumbs="crumbs" />
-      <h2>Privacy Policy</h2>
-      <p><em>As of 11th of July 2018</em></p>
-      <p>
-        Rapido US Inc (“Rapido”, “we”, “our”, “us”) and its subsidiary and affiliate companies respect the privacy rights of its online visitors (“you” “your”, “yours”) and
-        recognize the importance of protecting the information collected about them. This Privacy Policy addresses the use and disclosure of personal information we collect
-        from you, including how such information is collected and securely stored when it is shared with others, and how you can request its correction or deletion.<br>
-        By visiting this website (the “website”), or providing your information to us, you are accepting the practices described in this Privacy Policy and our Cookie Policy
-        (which is incorporated herein). For more detailed information on our use of “cookies”, including instructions for disabling cookies, please visit our Cookie Policy at
-        the <a href="https://www.rapido.com/us/privacy">Rapido privacy page</a><br>
-      </p>
-      <p>
-        Please exit this website immediately if you do not accept this Privacy Policy or our Cookie Policy, or if you are accessing the website in a country or other
-        territory where use of the website is not permitted.
-      </p>
-      <h5>What information do we collect and how is it used?</h5>
-      <p>
-        Rapido collects and stores information from visitors to this website and/or our affiliated social media accounts, including those who register their information online,
-        subscribe to our email newsletter, engage with us through social media or customer care, participate in surveys, or who use the online store. For example, when you place
-        an order, we collect and store some or all of the following information that you provide: name, billing address, shipping address, email address, birthdate, credit card
-        number and expiration date. <strong>By providing this personal information to us, you consent to the practices described in this Privacy Policy.</strong> This information is used to provide
-        the products and services that you have ordered or requested, to process and deliver orders, to send order and delivery confirmations and to provide customer service. This
-        information also may be used for our own marketing and internal business purposes, and to contact you about sales, special offers and new site features, unless you have
-        opted not to receive promotional communications in connection with this website. To serve you better, we may combine information you give us with other information that
-        we have previously collected from you and/or is publicly available.<br>
-        We may collect and store certain other information automatically whenever you interact with this website. This information may include your device type, browser type, IP
-        address, browsing activities, traffic patterns and/or search history. This information is used to analyze and improve this website and to provide our customers with a
-        fulfilling shopping experience.
-      </p>
-      <p>
-        Also, like many websites, we use “cookies”, which are files stored on your computer’s hard drive by your browser. We use cookies to ascertain which web pages are
-        visited and how often, to make our website more user-friendly, and to give you a better experience when you return to the website. For example, cookies allow us to
-        save your password so you do not have to re-enter it every time you visit our website. Most browsers accept cookies automatically but allow you to disable them. While
-        you are free to decline cookies, we recommend that you leave cookies “turned on” so that we can offer you a better shopping experience on this website. For more detailed
-        information on our use of “cookies”, including how to disable them, please visit our Cookie Policy.
-      </p>
-      <h5>How long is your information stored?</h5>
-      <p>
-        We will not retain your data longer than is necessary to fulfill the purposes for which it was collected or as required by applicable laws or regulations.
-        If you request deletion of your personal information by contacting us via email at support@rapido.com or by writing to us Rapido, all of your personal information
-        collected by Rapido will be deleted, as required by applicable law.
-      </p>
-      <h5>Your California rights</h5>
-      <p>
-        Rapido collects various types of personal information about you both online and offline, as described in this Privacy Policy. Under California law, customers of
-        Rapido who are residents of California may request certain information about our disclosure of personal information during the prior calendar year to third parties
-        for their direct marketing purposes. To make such a request, please contact us at support@rapido.com or write to us at the following address:
-      </p>
-      <p>
-        Rapido US Inc<br>
-        228 East 45th Street<br>
-        Suite 9E<br>
-        New York<br>
-        NY<br>
-        Delaware 6953872
-      </p>
-      <h5>Is information collected from children?</h5>
-      <p>
-        This website is not intended or directed to anyone under the age of 13. We do not sell or ship any items ordered through this website directly to anyone who we know to
-        be under the age of 13, nor do we collect any personal information from anyone who we know to be under the age of 13. If you are under the age of 13, you should use this
-        website only with the involvement of a parent or guardian and should not submit any personal information to us.
-      </p>
-      <h5>Does Rapido share your information with others?</h5>
-      <p>
-        We do not share with others or sell or rent to others, any personal information that you provide to us through this website except with your consent or as described in
-        this Privacy Policy.
-      </p>
-      <p>
-        We may share your personal information with our subsidiaries, affiliates and/or partners (collectively, “Affiliates”) in connection with marketing and promotional
-        material distribution related to Rapido products and/or services.
-      </p>
-      <p>
-        The information that we collect from you may be transferred to and stored at, a destination inside or outside the US. Information we collect may also be processed by
-        staff operating inside or outside the US who work for us, our Affiliates or for one of our suppliers or service providers. Such staff may be engaged in, among other things,
-        the fulfillment of your order, the processing of your payment details and the provision of support services. At all times, we take reasonable steps to ensure that your
-        personal information is treated securely and in accordance with this Privacy Policy. By submitting your personal information, you agree to this transfer,
-        storing or processing.
-      </p>
-      <p>
-        We may engage third parties to perform services in connection with the operation of our business. Examples of these services include payment processing and
-        authorization, fraud protection and credit risk reduction, product customization, order fulfillment and shipping, marketing and promotional material distribution,
-        website evaluation, data analysis and, where applicable, data cleansing. We provide personal information to these third parties, but we authorize them to use this
-        information only in connection with the services they perform.
-      </p>
-      <p><strong>At this time, our third party partners include:</strong></p>
-      <ul>
-        <li>Google Analytics – website analytics</li>
-        <li>Hotjar – website analytics</li>
-      </ul>
-      <p>
-        In the unlikely event of a sale of some or all of our business, Rapido may disclose your personal information to a purchaser that agrees to abide by the terms and
-        conditions of this Privacy Policy. You should also be aware that we may disclose specific information about you if required to do so by law, governmental request,
-        process or court order or based on our good faith belief that it is necessary to conform or comply with such law, request or court order or to protect the users of our
-        websites or the public.
-      </p>
-      <h5>Security</h5>
-      <p>
-        The security of your information is very important to us and will only collect personally identifiable information to the extent we deem necessary to serve you in
-        view of our legitimate business purposes as set out above. We use Secure Socket Layer (SSL) encryption technology to protect the security of your online order
-        information.
-      </p>
-      <p>
-        Any information stored by us is treated as confidential. All information is stored securely and is accessed by authorized personnel only. We implement and maintain
-        appropriate technical, security and organizational measures to protect your personal information against unauthorized or unlawful processing and use, and against
-        accidental loss, destruction, damage, theft or disclosure. In the unlikely event of a security breach compromising your personally identifiable information, we will
-        notify you within 72 hours of our becoming aware of its occurrence.
-      </p>
-      <p>
-        While we implement these and other security measures on our sites, please note that 100% security is not always possible. You play a role in protecting your
-        information as well. Because your password permits access to your personal information, please keep your password secret and do not disclose it to others.
-      </p>
-      <h5>How can you opt-out or withdraw your consent?</h5>
-      <p>
-        If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your
-        personal information, at any time, by contacting us via email at our <a href="https://www.rapido.com/us/contact">contact page</a>.
-      </p>
-      <h5>How can you correct or delete your personal information?</h5>
-      <p>
-        If you are registered with Rapido and/or have accessed our website and you would like to correct or delete your personal information,
-        please contact via email at our contact page.
-      </p>
-      <h5>Privacy Policy Updates</h5>
-      <p>
-        We may update this Privacy Policy from time to time. Whenever we make a change, we will post the updated policy on this website and we encourage you to check our
-        policy periodically. If we make a material change to this Privacy Policy that would lessen your privacy rights, we will either continue to honor our prior policy
-        for information that we collected when it was in force, or we will ask for your consent to the change. If you have any questions or concerns regarding this Privacy
-        Policy, please <a href="https://www.rapido.com/us/contact">contact us</a> or write to us at the following address:
-      </p>
-      <p>
-        Rapido US Inc<br>
-        228 East 45th Street<br>
-        Suite 9E<br>
-        New York<br>
-        NY<br>
-        Delaware 6953872
-      </p>
+      <div class="cg-payment-options__content">
+        <div v-html="htmlText" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-
 import { mapGetters } from 'vuex';
 import HeaderBanner from '~/components/header/banner';
 import CgUsps from '~/components/usps';
@@ -160,17 +27,21 @@ export default {
     SeoBreadcrumbs,
   },
 
-  data() {
+  asyncData({ app }) {
     return {
-      crumbs: [
-        { url: '/', label: 'Home', title: 'Rapido.com: Buy your favorite Gift Cards online | Fast Email Delivery' },
-        { label: 'Privacy policy' },
-      ],
+      crumbs: app.$crumbs('Privacy policy'),
+      htmlText: app.$staticHtmlContent('privacy-policy'),
+    };
+  },
+
+  head() {
+    return {
+      title: this.$t('internal-links.privacy-policy'),
     };
   },
 
   computed: {
-    ...mapGetters('shared', ['customerService', 'usps', 'header']),
+    ...mapGetters('shared', ['usps', 'header']),
   },
 };
 </script>
@@ -189,7 +60,12 @@ export default {
     }
 
     ul {
+      margin: 3px;
       padding-left: 19px;
+    }
+
+    .no-margin {
+      margin: 0;
     }
   }
 }

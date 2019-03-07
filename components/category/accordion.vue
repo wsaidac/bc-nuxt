@@ -3,7 +3,7 @@
     <ui-collapse :value="1">
       <ui-collapse-item
         :name="1"
-        title="Benefits of Rapido.com"
+        :title="`Benefits of ${$t('general.domain')}`"
       >
         <cg-usps
           :usps="usps"
@@ -14,7 +14,8 @@
       <ui-collapse-item
         v-for="(slide, index) in slides"
         :key="index"
-        :title="slide.question">
+        :title="slide.question"
+      >
         <div v-html="slide.answer" />
       </ui-collapse-item>
     </ui-collapse>
@@ -102,7 +103,7 @@ export default {
     }
   }
 
-  @include media-breakpoint-down('md') {
+  @include media-breakpoint-down("md") {
     .el-collapse-item {
       .el-collapse-item__header {
         font-size: 14.4px;
@@ -114,7 +115,7 @@ export default {
     }
   }
 
-  @include media-breakpoint-down('xs') {
+  @include media-breakpoint-down("xs") {
     margin-bottom: 20px;
 
     .el-collapse-item {

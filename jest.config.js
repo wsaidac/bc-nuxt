@@ -25,4 +25,5 @@ module.exports = {
     '<rootDir>/cypress',
   ],
   snapshotSerializers: ['<rootDir>/node_modules/jest-serializer-vue'],
+  transformIgnorePatterns: ['<rootDir>/node_modules/(?!@babel/runtime/helpers/esm)'],
 };

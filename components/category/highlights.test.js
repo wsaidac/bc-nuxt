@@ -1,7 +1,7 @@
-import Highlight from './highlights.vue';
+import CategoryHighlight from './highlights.vue';
 import { mount } from '~/test/utils/with-context';
 
-describe('Highlight', () => {
+describe('CategoryHighlight', () => {
   let $mounted;
 
   const propsData = {
@@ -10,7 +10,7 @@ describe('Highlight', () => {
   };
 
   beforeEach(() => {
-    $mounted = mount(Highlight, { propsData });
+    $mounted = mount(CategoryHighlight, { propsData });
   });
 
   it('should mount', () => {

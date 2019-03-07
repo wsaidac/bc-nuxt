@@ -53,7 +53,7 @@ export default {
 </script>
 
 <style lang="scss">
-@include media-breakpoint-only('xs') {
+@include media-breakpoint-only("xs") {
   .category-kind {
     .flex {
       h1 {

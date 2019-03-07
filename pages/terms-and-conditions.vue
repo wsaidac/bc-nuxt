@@ -5,231 +5,11 @@
       :payoff-text="header.title"
     />
     <cg-usps :usps="usps.items" />
-    <div class="cg-conditions__content container">
+    <div class="container">
       <seo-breadcrumbs :crumbs="crumbs" />
-      <h2><strong>Conditions Rapido.com</strong></h2>
-      <p>
-        <strong>
-          Effective:
-          These Terms of Service (the “Terms”) apply to Customer use of the Rapido website and any purchases/orders from Rapido made by Customer (each an “Order”).
-          In the event of any inconsistencies between the Terms and an Order, the individual terms of the Order take precedence. Rapido, as used in these Terms, means
-          Topup BV, Customer as used in these Terms shall refer to any user of the website and/or purchaser of Rapido’s products or services.
-        </strong>
-      </p>
-      <h5><strong>1. Website Use</strong></h5>
-      <ul>
-        <li>By accessing this website www.rapido.com, Customer agrees to be bound by these Terms. If Customer does not agree to these Terms Customer must cease use of the website.</li>
-        <li>
-          Rapido shall have the right at any time, at its sole discretion, to revise these Terms or to impose new terms and conditions with
-          respect to access to or use of the website. Such revisions and additions shall be effective immediately upon the posting thereof. Any access or
-          use of the website by Customer after these revisions or additions have been posted shall constitute and be deemed to be Customer’s acceptance thereof.
-        </li>
-        <li>
-          This website is not designed or intended for use by children under 13. If you are under 16, you should use the website only with involvement of a parent or
-          guardian. Children under 13 may not submit any personally identifiable information to Rapido, and if Rapido discovers that they have inadvertently gathered any
-          such information from a child under 13, Rapido will take appropriate steps to delete it.
-        </li>
-        <li>
-          Customer may be able to link (through various methods including hyperlinks, clickable images or words, banners and widgets) from this website to
-          third-party websites, applications and services, and third-party websites may link to the website (“Linked Sites”). Linked Sites are not operated,
-          controlled or maintained by Rapido, and Customer acknowledges and agrees that Rapido has no responsibility for any information, content, advertising,
-          products, services or other materials on any Linked Sites, and that links to Linked Sites do not constitute an endorsement, approval or sponsorship thereof.
-          Rapido disclaims all responsibility for any viruses or malicious code that may appear on any Linked Sites, for the accuracy of any of the information they
-          provide and for any goods or services provided by or purchased from such Linked Sites. If Customer relies on any Linked Site, Customer shall do so at their
-          own risk and shall assume all resulting responsibilities and consequences.
-        </li>
-      </ul>
-      <h5><strong>2. Prices and Taxes</strong></h5>
-      <ul>
-        <li>
-          Configurations and prices of products or services are subject to change at any time, and Rapido shall at all times be entitled to
-          modify price lists, brochures, printed matter, quotations and other documents.
-        </li>
-        <li>
-          All prices are exclusive of, and Customer shall pay, all taxes, duties, levies or fees, or other similar charges imposed on Rapido or Customer by any taxing
-          authority (other than taxes imposed on Rapido’s income), related to Customer’s Order. In case of changes in the law, such that a tax is levied that is or becomes
-          irrecoverable with a consequent increase to the costs to Rapido of delivering the products and/or services, Rapido is entitled to increase its prices accordingly and
-          retro-actively.
-        </li>
-        <li>
-          The prices or fees quoted are in U.S. dollars unless stated otherwise by Rapido in writing.
-        </li>
-      </ul>
-      <h5><strong>3. Orders and Payment</strong></h5>
-      <ul>
-        <li>
-          Customer may order products from the website only if Customer has reached the age of majority in their jurisdiction. Customer agrees to pay in full the prices for their
-          Orders, plus any applicable taxes and delivery charges. Certain products and services that Customer may be able to purchase or download through the website may be subject
-          to additional terms and conditions presented to Customer during such purchase or download.
-        </li>
-        <li>
-          To place an Order, Customer must: (i) select the product(s) desired, (ii) select the desired amount/value, (iii) enter a valid email address for delivery of the product
-          activation code, (iv) confirm order details, (v) submit payment. Once the Order details are confirmed and payment is received by Rapido the Order is deemed to be
-          final. Upon the finalization of an Order, Rapido shall delivery the activation code(s) necessary for Customer to use/activate the product(s) in the Order.
-        </li>
-        <li>
-          [Optional: Any time after receipt of an Order, Rapido may, in its sole discretion, accept or decline all or part of the Order or any future Orders. In the event that
-          Rapido makes a change to or cancels an Order, Rapido will attempt to notify Customer by contacting the email and/or billing address/phone number provided at the time the
-          Order was made. Customer may not purchase Rapido’s products for resale purposes.]
-        </li>
-        <li>
-          By placing an order with Rapido Customer assumes full responsibility for the Order. Orders cannot be refunded or exchanged once they have been placed.
-        </li>
-        <li>
-          Customer is solely responsible for ensuring that all information submitted in connection with an Order is complete and accurate. Rapido shall not be liable for any
-          failure to process or deliver an Order as a result of the provision of incorrect or incomplete information by the Customer.
-        </li>
-        <li>
-          In the event that the card or other payment option designated by the Customer cannot be verified, is invalid or is otherwise unacceptable, Rapido may immediately
-          suspend the delivery of or cancel the Order.
-        </li>
-      </ul>
-      <h5><strong>4. Delivery</strong></h5>
-      <ul>
-        <li>
-          Once an Order is finalized, Rapido shall deliver to the Customer the activation code(s) necessary for Customer to use/activate the product(s) in that Order.
-          Delivery of the product(s) will be completed the moment the product(s) is made available to Customer. The product(s) is deemed accepted, if it materially meets
-          the written specifications agreed upon by the parties.
-        </li>
-        <li>
-          Rapido shall provide the product(s) on the basis of the best efforts obligation, unless and in so far as Rapido has explicitly undertaken in writing to achieve a
-          specific result and the result in question is sufficiently determined.
-        </li>
-        <li>
-          Upon Customer’s first use/activation of the product and/or activation code(s) received, such use may be subject to the terms and conditions of a third party.
-        </li>
-        <li>
-          Using certain features on this website may require creating an account (“Account”) and submitting personal information (including creating a username and
-          password used to access the Account). The website’s information collection and use policies are set forth in the website’s Privacy Policy, which is incorporated
-          herein by reference. Customer agrees to provide only true, accurate, current and complete information.
-        </li>
-        <li>
-          Customer agrees to accept responsibility for all activities that occur under their Account, if any, and agrees not to sell, transfer or assign their Account or
-          any rights associated with such Account. Customer is responsible for maintaining the confidentiality of their password, if any, and for restricting access to Customer’s
-          computer(s) so that others may not access the password protected portions of the website using Customer’s Account. Rapido is not under any obligation to verify the actual
-          identity or authority of any person using Customer’s Account. Rapido reserves the right, in its sole discretion and without notice to Customer, to suspend or
-          terminate Customer’s Account or to restrict Customer’s access to all or part of the website for any reason.
-        </li>
-        <li>
-          Rapido endeavors to provide complete, accurate, up-to-date information on its website. Unfortunately, despite those efforts, human or technological errors may
-          occur. This site may contain typographical mistakes, inaccuracies, or omissions, some of which may relate to product descriptions, pricing, and availability,
-          and some information may not be complete, accurate or current. Rapido reserves the right to correct any errors, inaccuracies or omissions, including after an
-          order has been submitted and whether or not the order has been confirmed.
-        </li>
-        <li>
-          TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, RAPIDO, ITS LICENSORS, THIRD PARTY SUPPLIERS, AND AFFILIATES HEREBY DISCLAIM ALL WARRANTIES, CONDITIONS,
-          CLAIMS OR REPRESENTATIONS WITH RESPECT TO THE RAPIDO PRODUCTS AND/OR SERVICES WHETHER EXPRESS, IMPLIED OR STATUTORY OR OTHERWISE, INCLUDING, BUT NOT LIMITED
-          TO IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, QUALITY, COMPATIBILITY OR OF FITNESS FOR A PARTICULAR PURPOSE. NO ADVICE OR INFORMATION, WHETHER ORAL
-          OR WRITTEN, OBTAINED FROM RAPIDO OR ELSEWHERE WILL CREATE ANY WARRANTY OR CONDITION NOT EXPRESSLY STATED IN THESE TERMS.
-        </li>
-        <li>
-          Customer must report any purported errors or defects in the products within fourteen (14) days after delivery. Once Rapido has confirmed the existence of such errors
-          or defects in the product(s) that prevented Customer from using the product(s) in whole or in part and Rapido has provided Customer with notice of such determination,
-          Rapido will provide Customer with an appropriate replacement product(s) within two (2) business days. However, any such errors or defects encountered in the use of the
-          products that arise out of user errors or inexpert use on the part of Customer shall be at Customer’s own risk and expense and Rapido shall not be obligated to provide
-          any remedy.
-        </li>
-        <li>
-          THE SOLE AND EXCLUSIVE REMEDY FOR ALLEGED ERRORS OR ANY DEFECT IN THE PRODUCTS IS THE DELIVERY OF A REPLACEMENT PRODUCT, IN RAPIDO’S SOLE DISCRETION, AT NO COSTS
-          FOR CUSTOMER.
-        </li>
-        <li>
-          All intellectual property rights, e.g., patents, copyrights, trademarks, designs, models, know-how and all proprietary and/or commercial rights and trade secret rights,
-          tools, documentations, etc., in relation to the website, products, and/or services, including modifications thereto, delivered and/or used by Rapido, are owned by Rapido
-          or its licensor(s). No transfer or other grant of rights is given to Customer, unless explicitly stated in writing.
-        </li>
-        <li>
-          Customer is not entitled to use any of the Rapido trademarks or trade dress without our prior written permission. Trademarks or trade dress include the Rapido name and
-          logos, and other graphics, logos, page headers, button icons, scripts, and service names of Rapido’s products, services, and programs. Any other trademarks that appear
-          on Rapido’s website are the property of their owners, who may or may not be affiliated with, connected to, or sponsored by Rapido or its affiliates.
-        </li>
-        <li>
-          Any use of any content included on the website for purposes other than for the (potential) purchase of products by Customer, including linking or framing to this
-          website, are strictly prohibited unless Customer first obtains Rapido’s prior written consent.
-        </li>
-        <li>
-          Customer agrees and warrants that all of its users agrees as well, not to: (i) copy, modify, translate, or reverse engineer any portion of the website and/or
-          services; (ii) use any robot, spider, other automated device, or manual process to monitor or copy the website and/or services, or parts thereof; (iii) reformat or
-          frame any portion of the website and/or services; (iv) interfere with the access of any other users of the website and/or services to it; (v) transmit any viruses,
-          worms, defects, Trojan horses or other items of a destructive nature through the website and/or services; (vi) use the website and/or services to violate the security
-          of any computer network, crack passwords or security encryption codes; or (vii) use any device, software or routine that interferes with the proper working of the website
-          and/or services.
-        </li>
-        <li>
-          Violations of system or network security may result in civil or criminal liability. Rapido reserves the right to investigate occurrences and prosecute any user or
-          users who are involved in such violations. Customers are prohibited from violating or attempting to violate the security of the website, including, without limitation,
-          the following:
-          <ul>
-            <li>
-              Accessing data not intended for Customer or logging on to a server or account, which Customer is not authorized to access;
-            </li>
-            <li>
-              Attempting to probe, scan or test the vulnerability of a system or network or to breach security or authentication measures without proper
-              authorization (or succeeding in such an attempt);
-            </li>
-            <li>
-              Attempting to interfere or interfering with the operation of the website, Rapido’s provision of services to any other visitors to the website, Rapido’s hosting
-              provider or network, including, without limitation, via means of submitting a virus to the website, overloading, “flooding”, “mailbombing” or “crashing” the website; and
-            </li>
-            <li>
-              Forging any TCP/IP packet header or any part of the header information in any e-mail or transmission to the website.
-            </li>
-          </ul>
-        </li>
-        <li>
-          Rapido, in its sole discretion, may implement technical measures aimed at protecting the website, products, and/or services, and Customer is prohibited from
-          attempting to remove or circumvent such protections.
-        </li>
-        <li>
-          Customer shall not be permitted to affix any other trademark to the products, or to remove any copyright, trademark or other proprietary rights notices on same,
-          or to use the relevant mark in any other way, or to register it in Customer’s own name, and specifically Customer shall not be permitted to register any copyright
-          or patent involving, based upon, or for any of the products and/or services.
-        </li>
-        <li>
-          If and when requested by Rapido, Customer shall provide all cooperation and information that Rapido may reasonably request to fulfill any of its obligations towards Customer.
-        </li>
-        <li>
-          Customer shall timely provide Rapido with all details and information required by Rapido for the delivery of the product(s) set forth in the Order.
-        </li>
-        <li>Any Order for a certain product or service will end after delivery of such product or service.</li>
-        <li>Customer cannot terminate an Order for convenience.</li>
-        <li>
-          If Customer believes that Rapido has failed to perform under an Order, it must notify Rapido in writing and allow thirty (30) days for Rapido to
-          cure if it has failed to perform.
-        </li>
-        <li>
-          If Customer fails to make payment of any amount due or Customer otherwise fails to perform its obligations under the Order or Agreement, or
-          if Rapido reasonably expects that Customer will not fulfill its obligations, Rapido may in its sole and absolute discretion suspend performance under the Order
-          or the and/or terminate the Order, with immediate effect, without being liable for any damages to Customer.
-        </li>
-        <li>
-          Notwithstanding the above and without any obligation to return any service fee or prepaid expenses, Rapido may terminate its relationship with Customer, or
-          may terminate or suspend Rapido’s delivery of products and/or services at any time, or terminate or suspend Customer’s use of the website and/or services at any
-          time: (i) if Customer is in breach of the Order and or these Terms; (ii) if Rapido reasonably suspects that Customer is using website, products and/or services to
-          breach the law or violate third party rights; (iii) if Rapido reasonably suspects that Customer is using website, products and/or services fraudulently, or that
-          products and/or services provided to Customer are being used by a third party fraudulently; (iv) for a force majeure event that continues for more than sixty (60)
-          days upon notice; (v) if Customer fails to pay any amounts due to Rapido; (vi) if required due to change in laws/regulation by a regulator or authority with a lawful
-          mandate, or by any of Rapido’s partners; (vii) in respect to a particular Rapido product, and/or service, upon thirty (30) days’ notice if Rapido decides to cease
-          offering that product and/or service; and/or (viii) Customer is in violation of any applicable laws or regulations.
-        </li>
-        <li>
-          RAPIDO DISCLAIMS ANY AND ALL RESPONSIBILITY OR LIABILITY IN RELATION TO RAPIDO’S WEBSITE, PRODUCTS, AND/OR SERVICES. NEITHER RAPIDO NOR ITS OFFICERS OR AFFILIATES
-          MAY BE HELD LIABLE WHETHER IN CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE), OR ANY OTHER FORM OF LIABILITY FOR ANY CLAIM, DAMAGE, OR LOSS, (AND CUSTOMER HEREBY
-          WAIVES ANY AND ALL SUCH CLAIMS OR CAUSES OF ACTION), ARISING FROM OR RELATING TO SUCH WEBSITE, PRODUCTS, AND/OR SERVICES.
-        </li>
-        <li>
-          IN NO EVENT SHALL RAPIDO, ITS AFFILIATES OR ITS LICENSORS BE LIABLE, HOWEVER CAUSED AND WHETHER ARISING UNDER CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE),
-          PRODUCT LIABILITY OR ANY OTHER FORM OF LIABILITY, FOR ANY INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE OR CONSEQUENTIAL DAMAGES.
-        </li>
-        <li>
-          NOTWITHSTANDING ANYTHING ELSE IN THIS AGREEMENT TO THE CONTRARY, RAPIDO’S AGGREGATE LIABILITY FOR ALL CLAIMS OF ANY KIND SHALL NOT EXCEED THE TOTAL PAID BY CUSTOMER
-          FOR THE PRODUCTS AND/OR SERVICES IN CONNECTION TO WHICH THE DAMAGING EVENT OCCURRED.
-        </li>
-        <li>
-          THE LIMITATIONS ON RAPIDO’S LIABILITY ABOVE SHALL APPLY WHETHER OR NOT RAPIDO, ITS EMPLOYEES, LICENSORS OR ITS AFFILIATES HAVE BEEN ADVISED OF THE POSSIBILITY OF
-          SUCH LOSSES OR DAMAGES ARISING.
-        </li>
-      </ul>
+      <div class="cg-conditions__content">
+        <div v-html="htmlText" />
+      </div>
     </div>
   </div>
 </template>
@@ -247,12 +27,16 @@ export default {
     SeoBreadcrumbs,
   },
 
-  data() {
+  asyncData({ app }) {
     return {
-      crumbs: [
-        { url: '/', label: 'Home', title: 'Rapido.com: Buy your favorite Gift Cards online | Fast Email Delivery' },
-        { label: 'Terms and conditions' },
-      ],
+      crumbs: app.$crumbs('Terms and conditions'),
+      htmlText: app.$staticHtmlContent('terms-and-conditions'),
+    };
+  },
+
+  head() {
+    return {
+      title: this.$t('internal-links.general-conditions'),
     };
   },
 
@@ -265,6 +49,16 @@ export default {
 <style lang="scss">
 .cg-conditions {
   padding-bottom: 30px;
+
+  h5 {
+    margin: 50px 0 20px;
+  }
+
+  ul {
+    ul {
+      margin: 3px;
+    }
+  }
 
   @include media-breakpoint-down("md") {
     &__content {

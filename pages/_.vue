@@ -1,0 +1,49 @@
+<template>
+  <div
+    :is="layout"
+    :post="post"
+  />
+</template>
+
+<script>
+function slugFromPath(path, locale) {
+  if (path === `/${locale}/`) return 'home';
+  return path.replace(`${locale}/`, '');
+}
+
+export default {
+  components: {
+    Home: () => import('~/pages-dynamic/home'),
+    CategoryTerm: () => import('~/pages-dynamic/category'),
+    Product: () => import('~/pages-dynamic/product'),
+    Error: () => import('~/pages-dynamic/error'),
+  },
+
+  head() {
+    return {
+      title: this.post.title || this.post.name || this.post.description,
+    };
+  },
+
+  async asyncData({ app, route, store }) {
+    const locale = store.getters['context/locale'];
+    const slug = slugFromPath(route.path, locale);
+
+    const { post } = await app.$q('post', { slug });
+    if (post === null) {
+      return {
+        layout: 'Error',
+        post: 'some interesting info',
+      };
+    }
+
+    /* prettier-ignore */
+    post.__typename = post.__typename === 'CmsProduct' ? 'Product' : post.__typename;
+    return { layout: post.__typename, post };
+  },
+
+  mounted() {
+    window.scrollTo(0, 0);
+  },
+};
+</script>

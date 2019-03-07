@@ -1,19 +1,11 @@
 import FooterLinks from './links.vue';
 import { mount } from '~/test/utils/with-context';
 
-const staticPages = {
-  aboutUs: { title: 'About us', url: '/about-us', component: 'AboutUs' },
-  paymentMethods: { title: 'Payment options', url: '/payment-methods', component: 'PaymentMethods' },
-  help: { title: 'Help', url: '/help' },
-  privacyPolicy: { title: 'Privacy Policy', url: '/privacy-policy', component: 'PrivacyPolicy' },
-  termsAndConditions: { title: 'Conditions', url: '/general-conditions', component: 'TermsAndConditions' },
-};
-
 describe('FooterLinks', () => {
   let $mounted;
 
   beforeEach(() => {
-    $mounted = mount(FooterLinks, { propsData: { staticPages } });
+    $mounted = mount(FooterLinks);
   });
 
   it('should mount', () => {

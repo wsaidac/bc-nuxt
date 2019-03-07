@@ -2,7 +2,7 @@
   <div class="cg-home">
     <header-banner
       :image="post.header.image"
-      :payoff-text="post.header.title"
+      :header="post.header"
     />
     <cg-usps :usps="usps.items" />
     <div class="container">
@@ -12,7 +12,8 @@
       <div class="container">
         <product-quickbuy
           v-if="post.quickbuy && post.quickbuy.quickbuyProduct"
-          :default-product="post.quickbuy && post.quickbuy.quickbuyProduct" />
+          :default-product="post.quickbuy && post.quickbuy.quickbuyProduct"
+        />
       </div>
     </div>
     <div class="block block--gray block--space-between block--mobile-white">
@@ -23,10 +24,7 @@
     <div class="container">
       <service-banner
         v-if="customerService"
-        :link="customerService.link"
-        :image="customerService.image"
-        :title="customerService.primaryText"
-        :description="customerService.secondaryText"
+        :customer-service="customerService"
       />
       <seo-block
         :title="post.seoBlock.title"
@@ -37,7 +35,6 @@
 </template>
 
 <script>
-import { UiIcon } from '~/components/ui';
 import HeaderBanner from '~/components/header/banner';
 import CgUsps from '~/components/usps';
 import ProductPopular from '~/components/product/popular';
@@ -49,7 +46,6 @@ import { mapGetters } from 'vuex';
 
 export default {
   components: {
-    UiIcon,
     HeaderBanner,
     CgUsps,
     ProductPopular,
@@ -76,7 +72,7 @@ export default {
 
 <style lang="scss">
 .cg-home {
-  @include media-breakpoint-only('xs') {
+  @include media-breakpoint-only("xs") {
     .seo-block {
       display: none;
     }
