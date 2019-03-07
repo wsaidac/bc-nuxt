@@ -48,3 +48,9 @@ test-unit:
   except:
     variables:
       - $TEST_UNIT_DISABLED
+
+production:
+  extends: capistrano
+  when: manual
+  only:
+    - master
