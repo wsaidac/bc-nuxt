@@ -65,19 +65,19 @@ export default {
   data() {
     const columns = {};
 
-    columns[this.$t("domain-name")] = [
-      { title: this.$t("footer.about-us"), url: "about-us" },
-      { title: this.$t("footer.payment-methods"), url: "payment-methods" }
+    columns[this.$t("general.domain")] = [
+      { title: this.$t("internal-links.about-us"), url: "about-us" },
+      { title: this.$t("internal-links.payment-methods"), url: "payment-methods" }
     ];
 
     columns[this.$t("footer.customer-care")] = [
-      { title: this.$t("footer.help"), url: "help" }
+      { title: this.$t("general.help"), url: "help" }
     ];
 
-    columns[this.$t("footer.terms-of-use")] = [
-      { title: this.$t("footer.privacy-policy"), url: "privacy-policy" },
+    columns[this.$t("internal-links.terms-of-use")] = [
+      { title: this.$t("internal-links.privacy-policy"), url: "privacy-policy" },
       {
-        title: this.$t("footer.general-conditions"),
+        title: this.$t("internal-links.general-conditions"),
         url: "terms-and-conditions"
       }
     ];

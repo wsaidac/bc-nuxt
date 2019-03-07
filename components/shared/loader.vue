@@ -7,7 +7,7 @@
       v-if="loading"
       class="shared-loader__overlay"
     >
-      <h2>{{ $t('loading') }}</h2>
+      <h2>{{ $t('general.loading') }}</h2>
       <div class="shared-loader__spinner" />
       <div class="shared-loader__background" />
     </div>
@@ -57,7 +57,7 @@ export default {
     filter: none;
     margin-bottom: 20px;
     position: relative;
-    z-index: 40;
+    z-index: $z-index-loader;
   }
 
   .shared-loader__spinner {
@@ -69,7 +69,7 @@ export default {
     filter: none;
     opacity: 1 !important;
     position: relative;
-    z-index: 40;
+    z-index: $z-index-loader;
 
     @include size(100px);
   }

@@ -1,0 +1,53 @@
+{
+
+  "checkout-options": "En Rapido.com, puede realizar el pago con las siguientes opciones de pago de confianza. Cada opción de pago se describirá a continuación.",
+  "buy-cards-online": "Rapido.com: Compre sus tarjetas de regalo favoritas en línea | Entrega rápida por correo electrónico",
+  "credit-or-debit-card": "Tarjeta de crédito / débito",
+  "domain-name": "Rapido.com",
+  "home-text": "Home",
+  "loading": "Cargando",
+  "look-at-faqs": "Echa un vistazo a las preguntas frecuentes",
+  "need-some-help": "Necesito ayuda?",
+  "order-now": "Ordenar ahora",
+  "order-safely": "Ordenar con seguridad",
+  "payment-options": "Opciones de pago",
+  "paypal_text_1": "Puedes pagar con PayPal en Rapido.com. Después de seleccionar esta opción de pago, inicie sesión en su cuenta de PayPal y confirme el pago. A continuación, se procesa la transacción.",
+  "paypal_text_2": "Una vez recibido el pago, el código de cupón de recarga se envía inmediatamente.",
+  "paypal": "Paypal",
+  "shipping": "Envío",
+  "show-less": "Muestra menos",
+  "show-more": "Mostrar más",
+  "visa-and-mastercard_text-1": "En Rapido.com, puede pagar con tarjeta de crédito VISA, tarjeta de débito VISA (Delta y Electron) y MasterCard. En la caja, selecciona pago con tarjeta de crédito. Luego ingresa los datos de su tarjeta de crédito, incluido el titular de la tarjeta, el número de la tarjeta, la fecha de vencimiento y el código CVV. Luego confirme el pago.",
+  "visa-and-mastercard_text-2": "Una vez recibido el pago, el código de recarga se envía inmediatamente.",
+  "footer": {
+    "cookies": "Cookies",
+    "customer-care": "Atención al cliente",
+    "general-conditions": "Condiciones generales",
+    "order-with": "orden con",
+    "safely-order-with": "Orden de seguridad con",
+    "safely": "Sin peligro",
+    "terms-of-use": "Términos de Uso",
+    "about-us": "Sobre nosotros",
+    "help": "Ayuda",
+    "privacy-policy": "Política de privacidad",
+    "payment-methods": "Opciones de pago"
+  },
+  "header": {
+    "help": "Ayuda",
+    "login": "Iniciar sesión",
+    "main-nav": "Menú principal",
+    "menu": "Menú",
+    "my-account": "Mi cuenta",
+    "profile": "perfil",
+    "rapido": "Rapido"
+  },
+  "home": {
+    "benefits-of-rapido": "ESBeneficios de Rapido.com",
+    "featured-products": "Productos Destacados",
+    "lets-speed-it-up": "Vamos a acelerarlo",
+    "see-all-denominations": "Ver todas las denominaciones"
+  },
+  "error": {
+    "error_text": "Parece que la página que te gustaría ver ya no existe, lo siento."
+  }
+}

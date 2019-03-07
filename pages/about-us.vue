@@ -34,6 +34,12 @@ export default {
     };
   },
 
+  head() {
+    return {
+      title: this.$t('internal-links.about-us'),
+    };
+  },
+
   computed: {
     ...mapGetters('shared', ['customerService', 'usps', 'header']),
   },

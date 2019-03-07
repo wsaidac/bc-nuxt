@@ -1,17 +1,15 @@
 <template>
-  <li class="header-navbar__service">
-    <a
-      v-if="isLoaded"
-      :href="$contextPath(to)"
-      :title="title"
-      v-text="text"
-    />
-  </li>
+  <a
+    v-if="isLoaded"
+    class="header-login"
+    :href="$contextPath(to)"
+    :title="title"
+    v-text="text"
+  />
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
-
 
 export default {
   computed: {
@@ -30,3 +28,14 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.header-login {
+  color: $white;
+
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+}
+</style>

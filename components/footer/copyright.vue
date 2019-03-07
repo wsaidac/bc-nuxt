@@ -2,7 +2,7 @@
   <div class="footer-copyright">
     <div class="container">
       <img
-        :alt="$t('domain-name')"
+        :alt="$t('general.domain')"
         src="~/assets/images/logo-white.svg"
       >
       <p>
@@ -14,11 +14,11 @@
         </nuxt-link>
         |
         <nuxt-link :to="$contextPath ('cookies')">
-          {{ $t('footer.cookies') }}
+          {{ $t('internal-links.cookies') }}
         </nuxt-link>
         |
         <nuxt-link :to="$contextPath ('terms-and-conditions')">
-          {{ $t('footer.general-conditions') }}
+          {{ $t('internal-links.general-conditions') }}
         </nuxt-link>
       </p>
     </div>

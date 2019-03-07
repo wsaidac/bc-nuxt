@@ -10,7 +10,8 @@
       class="product-card__img-link"
       @click.native="submitForm"
     >
-      <picture>
+      <picture
+        v-if="image">
         <img
           :src="image.regular"
           :srcet="`${image.regular}, ${image.retina} 2x`"
@@ -113,15 +114,18 @@
 
 
 <script>
-import { mapGetters } from 'vuex';
-import SharedTooltip from '~/components/shared/tooltip';
-import SharedInstantTooltip from '~/components/shared/instant-tooltip';
-import { UiButton, UiSelect } from '~/components/ui';
-import { get } from 'lodash';
-import { measureProductClick, clickTransformProductAddToCart } from '~/plugins/gtm.js';
+import { mapGetters } from "vuex";
+import SharedTooltip from "~/components/shared/tooltip";
+import SharedInstantTooltip from "~/components/shared/instant-tooltip";
+import { UiButton, UiSelect } from "~/components/ui";
+import { get } from "lodash";
+import {
+  measureProductClick,
+  clickTransformProductAddToCart,
+} from "~/plugins/gtm.js";
 
 export default {
-  name: 'ProductCard',
+  name: "ProductCard",
 
   components: {
     SharedTooltip,
@@ -132,14 +136,14 @@ export default {
 
   filters: {
     dig(product, path) {
-      return get(product, path, '');
+      return get(product, path, "");
     },
   },
 
   props: {
     mode: {
       type: String,
-      default: 'vertical',
+      default: "vertical",
     },
     product: {
       type: Object,
@@ -166,26 +170,46 @@ export default {
   },
 
   computed: {
-    ...mapGetters('shared', ['page']),
+    ...mapGetters("shared", ["page"]),
     hasTooltip() {
-      return this.product.content.tooltip && (this.product.content.tooltip.title && this.product.content.tooltip.content);
+      return (
+        this.product.content.tooltip
+        && (this.product.content.tooltip.title
+          && this.product.content.tooltip.content)
+      );
     },
     classes() {
-      return ['product-card', `product-card--mode-${this.mode}`];
+      return ["product-card", `product-card--mode-${this.mode}`];
     },
     cta() {
-      return this.mode === 'horizontal' ? this.$t('order-now') : this.$t('order-safely');
+      return this.mode === "horizontal"
+        ? this.$t("general.order-now")
+        : this.$t("general.order-safely");
     },
     image() {
-      return this.product.content.image || this.product.categories.nodes[0].categoryHeader.image;
+      return (
+        this.product.content.image
+        || this.product.categories.nodes[0].categoryHeader.image
+      );
     },
   },
 
   methods: {
     productClick() {
-      this.$store.commit('product/setAmount', this.value);
-      if (this.page === 'category') this.$track(measureProductClick({ page: this.page, product: this.product }));
-      if (this.page === 'product' || this.page === 'category') this.$track(clickTransformProductAddToCart({ product: this.product, quantity: this.value }));
+      this.$store.commit("product/setAmount", this.value);
+      if (this.page === "category") {
+        this.$track(
+          measureProductClick({ page: this.page, product: this.product }),
+        );
+      }
+      if (this.page === "product" || this.page === "category") {
+        this.$track(
+          clickTransformProductAddToCart({
+            product: this.product,
+            quantity: this.value,
+          }),
+        );
+      }
     },
     submitForm(e) {
       e.preventDefault();

@@ -10,10 +10,10 @@ const unwrapNode = node => ({
   title: node.label,
   url: `/${getNestedKeySafelyFromObject(node, ['connectedObject', 'slug'])}`,
   image: retrieveImageFromMenuItem(node),
-  categories: node.childItems && node.childItems.nodes.map(unwrapNode),
+  categories: node.childItems && node.childItems.nodes && node.childItems.nodes.map(unwrapNode),
 });
 
-const unwrap = menu => ({ categories: menu.menuItems.nodes.map(unwrapNode) });
+const unwrap = menu => ({ categories: menu && menu.menuItems.nodes && menu.menuItems.nodes.map(unwrapNode) });
 
 export default {
   state() {

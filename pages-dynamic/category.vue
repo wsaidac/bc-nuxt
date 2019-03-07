@@ -124,7 +124,7 @@ export default {
       return [
         {
           url: '/',
-          label: this.$t('home-text'),
+          label: this.$t('general.home-text'),
           title:
             this.post.title,
         },

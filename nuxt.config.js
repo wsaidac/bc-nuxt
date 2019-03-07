@@ -1,4 +1,5 @@
 const dotenv = require('dotenv');
+const locales = require('./assets/locales/locales.js');
 
 dotenv.config();
 
@@ -69,18 +70,7 @@ const conf = {
         parsePages: false,
         lazy: true,
         langDir: './assets/locales/',
-        locales: [
-          {
-            code: 'en-us',
-            iso: 'en-US',
-            file: 'en-us.json',
-          },
-          {
-            code: 'es-us',
-            iso: 'es-ES',
-            file: 'es-us.json',
-          },
-        ],
+        locales,
         defaultLocale: 'en-us',
         vueI18n: {
           fallbackLocale: 'en-us',

@@ -21,6 +21,7 @@
           class="product-featured-category__item"
         >
           <img
+            v-if="product.image"
             :alt="product.image.altText"
             :longdesc="product.image.description"
             :src="product.image.regular"
@@ -47,6 +48,7 @@
               class="product-featured-category__item"
             >
               <img
+                v-if="product.image"
                 :alt="product.image.altText"
                 :src="product.image.regular"
                 :srcset="`${product.image.regular}, ${product.image.retina} 2x`"
@@ -64,16 +66,16 @@
       v-if="collapseable"
       class="product-featured-category__toggle"
       @click="toggle"
-      v-text="collapsed ? $t('show-more') : $t('show-less')"
+      v-text="collapsed ? $t('general.show-more') : $t('general.show-less')"
     />
   </section>
 </template>
 
 <script>
-import { UiRow, UiCol, UiTransitionExpand } from '~/components/ui';
+import { UiRow, UiCol, UiTransitionExpand } from "~/components/ui";
 
 export default {
-  name: 'ProductFeaturedCategory',
+  name: "ProductFeaturedCategory",
 
   components: {
     UiRow,

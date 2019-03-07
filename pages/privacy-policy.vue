@@ -34,6 +34,12 @@ export default {
     };
   },
 
+  head() {
+    return {
+      title: this.$t('internal-links.privacy-policy'),
+    };
+  },
+
   computed: {
     ...mapGetters('shared', ['usps', 'header']),
   },

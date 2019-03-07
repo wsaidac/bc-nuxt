@@ -34,16 +34,9 @@ export default {
     };
   },
 
-  data() {
+  head() {
     return {
-      crumbs: [
-        {
-          url: '/',
-          label: this.$t('home-text'),
-          title: this.$t('buy-cards-online'),
-        },
-        { label: 'Cookie statement' },
-      ],
+      title: this.$t('internal-links.cookies'),
     };
   },
 

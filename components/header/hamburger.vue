@@ -33,11 +33,11 @@ export default {
 </script>
 
 <style lang="scss">
-$hamburger-padding-x: 15px;
-$hamburger-padding-y: 15px;
-$hamburger-layer-width: 16px;
+$hamburger-padding-x: 0;
+$hamburger-padding-y: 0;
+$hamburger-layer-width: 18px;
 $hamburger-layer-height: 2px;
-$hamburger-layer-spacing: 3px;
+$hamburger-layer-spacing: 4px;
 $hamburger-layer-color: $white;
 $hamburger-layer-border-radius: 2px;
 $hamburger-hover-opacity: 0.7;
@@ -48,8 +48,8 @@ $hamburger-hover-filter: opacity(50%);
 $hamburger-active-hover-filter: $hamburger-hover-filter;
 $hamburger-types: (spin);
 
-@import '~hamburgers/_sass/hamburgers/_base.scss';
-@import '~hamburgers/_sass/hamburgers/types/_spin.scss';
+@import "~hamburgers/_sass/hamburgers/_base.scss";
+@import "~hamburgers/_sass/hamburgers/types/_spin.scss";
 
 .hamburger {
   outline: none;

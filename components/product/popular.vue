@@ -22,6 +22,7 @@
           class="product-popular__item"
         >
           <img
+            v-if="product.image"
             :alt="product.image.altText"
             :longdesc="product.image.description"
             :src="product.image.regular"
@@ -34,11 +35,11 @@
 </template>
 
 <script>
-import { UiCol, UiRow } from '~/components/ui';
-import { get } from 'lodash';
+import { UiCol, UiRow } from "~/components/ui";
+import { get } from "lodash";
 
 export default {
-  name: 'ProductPopular',
+  name: "ProductPopular",
 
   components: {
     UiCol,
@@ -56,14 +57,15 @@ export default {
 
   computed: {
     decoratedProducts() {
+      if (!this.popularProducts.items) return [];
       return this.popularProducts.items.map(({ category }) => ({
         ...category,
-        title: get(category, 'categoryHeader.title'),
+        title: get(category, "categoryHeader.title"),
         image: {
-          regular: get(category, 'categoryHeader.image.regular'),
-          retina: get(category, 'categoryHeader.image.retina'),
-          altText: get(category, 'categoryHeader.image.altText'),
-          description: get(category, 'categoryHeader.image.description'),
+          regular: get(category, "categoryHeader.image.regular"),
+          retina: get(category, "categoryHeader.image.retina"),
+          altText: get(category, "categoryHeader.image.altText"),
+          description: get(category, "categoryHeader.image.description"),
         },
       }));
     },

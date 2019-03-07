@@ -21,7 +21,7 @@ export default {
 
   head() {
     return {
-      title: this.post.title || this.post.description,
+      title: this.post.title || this.post.name || this.post.description,
     };
   },
 
