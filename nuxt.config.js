@@ -84,7 +84,14 @@ const conf = {
     GTM_ID: 'GTM - KWZLG26',
     GTM_DEBUG: 'true',
   },
-  plugins: ['~/assets/iconsWeb.js', { src: '~/plugins/gtm.js', ssr: false }, '~/plugins/cookie-store.js', { src: '~/plugins/async.js', ssr: false }, '~/plugins/shared.js'],
+  plugins: [
+    '~/plugins/vuetouch.js',
+    '~/plugins/media-queries.js',
+    '~/assets/iconsWeb.js',
+    { src: '~/plugins/gtm.js', ssr: false },
+    '~/plugins/cookie-store.js',
+    { src: '~/plugins/async.js', ssr: false },
+    '~/plugins/shared.js'],
   watchers: {
     webpack: {
       poll: true,

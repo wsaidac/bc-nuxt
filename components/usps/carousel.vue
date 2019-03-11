@@ -1,79 +1,194 @@
 <template>
-  <div class="usps-carousel">
-    <div
-      v-for="(usp, index) in usps"
-      :key="index"
-      class="usps-carousel__cell"
+  <div
+    v-if="showCarousel"
+    class="ui-carousel"
+  >
+    <transition-group
+      name="scale"
+      mode="in-out"
+      tag="ul"
+      class="ui-carousel__items list-unstyled"
     >
-      <img
-        v-if="usp.image"
-        :alt="usp.text"
-        :src="usp.image.regular"
-        :srcset="`${usp.image.regular}, ${usp.image.retina} 2x`"
+      <li
+        v-for="usp in activeItem"
+        :key="usp.text"
+        v-touch:swipe="handleSwipe"
+        class="ui-carousel__item"
       >
-      <strong v-text="usp.text" />
+        <img
+          v-if="usp.image"
+          :alt="usp.text"
+          :src="usp.image.regular"
+          :srcset="`${usp.image.regular}, ${usp.image.retina} 2x`"
+        >
+        <strong v-text="usp.text" />
+      </li>
+    </transition-group>
+    <ul class="ui-carousel__pag list-unstyled">
+      <li
+        v-for="(usp, index) in usps"
+        :key="index"
+        :class="{ 'ui-carousel__pag-bullet--active': index === activeIndex }"
+        class="ui-carousel__pag-bullet"
+        @click="activeIndex = index"
+      />
+    </ul>
+    <div
+      class="ui-carousel__hide-btn"
+      @click="hideCarousel"
+    >
+      <ui-icon icon="close" />
     </div>
   </div>
 </template>
 
 <script>
+import { UiIcon } from '~/components/ui';
+
+const autoTiming = 3000;
+
 export default {
-  name: 'UspsCarousel',
+  name: 'UiCarousel',
+
+  components: { UiIcon },
 
   props: {
     usps: {
       type: Array,
-      required: true,
+      default() {
+        return [];
+      },
+    },
+  },
+
+  data() {
+    return {
+      showCarousel: true,
+      activeIndex: 0,
+      slideInterval: 0,
+    };
+  },
+
+  computed: {
+    activeItem() {
+      return this.usps.filter((usp, index) => index === this.activeIndex);
     },
   },
 
   mounted() {
-    const Flickity = require('flickity'); // eslint-disable-line
-    this.instance = new Flickity(this.$el, {
-      wrapAround: true,
-      autoPlay: true,
-      prevNextButtons: false,
-      cellAlign: 'left',
-      selectedAttraction: 0.016,
-      friction: 0.28,
-    });
+    if (this.$mq === 'sm') {
+      this.startAutoSlide();
+    }
+  },
+
+  methods: {
+    hideCarousel() {
+      this.showCarousel = false;
+    },
+    handleSwipe(direction) {
+      this.stopAutoSlide();
+      if (direction === 'left') {
+        this.prevSlide();
+      } else {
+        this.nextSlide();
+      }
+    },
+    nextSlide() {
+      this.activeIndex = (this.activeIndex + 1) % this.usps.length;
+    },
+    prevSlide() {
+      const uspsLength = this.usps.length;
+      this.activeIndex = (this.activeIndex + uspsLength - 1) % uspsLength;
+    },
+    startAutoSlide() {
+      this.slideInterval = setInterval(() => {
+        if (this.$mq === 'sm') {
+          this.nextSlide();
+        } else {
+          this.stopAutoSlide();
+        }
+      }, autoTiming);
+    },
+    stopAutoSlide() {
+      clearInterval(this.slideInterval);
+    },
   },
 };
 </script>
 
 <style lang="scss">
-@import 'flickity/dist/flickity.css';
+.ui-carousel {
+  background-color: #dce6f5;
+  flex-flow: row nowrap;
+  height: 54px;
+  padding: 5px 10px;
 
-.usps-carousel {
-  flex-grow: 1;
-  padding: 5px 20px;
+  @include flex(center, center);
+}
 
-  &__cell {
-    width: 100%;
+.ui-carousel__items {
+  flex-grow: 2;
+  margin: 0;
+  padding-left: 10px;
 
-    @include flex(null, center);
-
-    img {
-      height: 40px;
-    }
-
-    div {
-      font-size: $font-size-base;
-      font-weight: $font-weight-bold;
-    }
-  }
-
-  .flickity-page-dots {
-    bottom: 17px;
+  img {
     margin-right: 5px;
-    right: 0;
     width: 50px;
-
-    .dot {
-      height: 7px;
-      margin: 0 4px;
-      width: 7px;
-    }
   }
+}
+
+.ui-carousel__item {
+  @include flex(null, center);
+
+  span {
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    padding-top: 5px;
+  }
+
+  &.scale-enter-active,
+  &.scale-move,
+  &.scale-leave-active {
+    transition: all 0.7s cubic-bezier(0.55, 0, 0.1, 1);
+  }
+
+  &.scale-enter {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  &.scale-leave-active {
+    opacity: 0;
+    position: absolute;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  @include media-breakpoint-up("sm") {
+    display: none;
+  }
+}
+
+.ui-carousel__pag {
+  padding-right: 5px;
+}
+
+.ui-carousel__pag-bullet {
+  background-color: #969696;
+  border-radius: 100%;
+  display: inline-block;
+  height: 6px;
+  margin: 0 3px;
+  width: 6px;
+
+  &--active {
+    background-color: #000;
+  }
+}
+
+.ui-carousel__hide-btn {
+  color: #969696;
+  font-weight: light;
 }
 </style>
