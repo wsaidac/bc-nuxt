@@ -6,11 +6,11 @@
         src="~/assets/images/logo-white.svg"
       >
       <p>
-        &copy; {{ year }} - Rapido.com is part of CG | Millions of satisfied customers |
+        &copy; {{ year }} - {{ $t('footer.quote') }}
       </p>
       <p>
         <nuxt-link :to="$contextPath ('privacy-policy')">
-          Privacy statement
+          {{ $t('privacy-statement') }}
         </nuxt-link>
         |
         <nuxt-link :to="$contextPath ('cookies')">

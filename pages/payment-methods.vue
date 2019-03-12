@@ -44,18 +44,6 @@ export default {
     SeoBreadcrumbs,
   },
 
-  asyncData({ app }) {
-    return {
-      crumbs: app.$crumbs('Payment methods'),
-    };
-  },
-
-  head() {
-    return {
-      title: this.$t('internal-links.payment-methods'),
-    };
-  },
-
   data() {
     return {
       payments: [
@@ -72,6 +60,18 @@ export default {
           text2: this.$t('payment-methods.visa_and_mastercard_text_2'),
         },
       ],
+    };
+  },
+
+  asyncData({ app }) {
+    return {
+      crumbs: app.$crumbs('Payment methods'),
+    };
+  },
+
+  head() {
+    return {
+      title: this.$t('internal-links.payment-methods'),
     };
   },
 

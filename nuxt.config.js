@@ -1,5 +1,5 @@
 const dotenv = require('dotenv');
-const locales = require('./assets/locales/locales.js');
+const i18nConfig = require('./config/i18nConfig.js');
 
 dotenv.config();
 
@@ -62,21 +62,7 @@ const conf = {
         extendedHeaders: 'extendedGraphqlHeaders',
       },
     ],
-    [
-      'nuxt-i18n',
-      {
-        strategy: 'prefix',
-        seo: false,
-        parsePages: false,
-        lazy: true,
-        langDir: './assets/locales/',
-        locales,
-        defaultLocale: 'en-us',
-        vueI18n: {
-          fallbackLocale: 'en-us',
-        },
-      },
-    ],
+    ['nuxt-i18n', i18nConfig('rapido')],
   ],
   env: {
     API_BROWSER: process.env.API_BROWSER,
@@ -91,7 +77,8 @@ const conf = {
     { src: '~/plugins/gtm.js', ssr: false },
     '~/plugins/cookie-store.js',
     { src: '~/plugins/async.js', ssr: false },
-    '~/plugins/shared.js'],
+    '~/plugins/shared.js',
+  ],
   watchers: {
     webpack: {
       poll: true,

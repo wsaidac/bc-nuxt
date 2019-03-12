@@ -56,11 +56,7 @@ export default {
 $--button-default-border: $body-color;
 $--button-font-weight: 700;
 
-$--button-warning-color: $body-color;
-$--button-warning-fill: $warning-500;
-$--button-warning-border: $body-color;
-
-@import 'element-ui/packages/theme-chalk/src/button.scss';
+@import "element-ui/packages/theme-chalk/src/button.scss";
 
 .el-button {
   border: 2px solid $body-color;
@@ -82,12 +78,12 @@ $--button-warning-border: $body-color;
     color: $white;
   }
 
-  @include media-breakpoint-up('sm') {
+  @include media-breakpoint-up("sm") {
     font-size: 14.4px;
     padding: 3px 20px;
   }
 
-  @include media-breakpoint-up('lg') {
+  @include media-breakpoint-up("lg") {
     font-size: 16.8px;
   }
 }

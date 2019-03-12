@@ -78,17 +78,49 @@ export default {
 
 <style lang="scss">
 @import "element-ui/packages/theme-chalk/src/select.scss";
+@import "element-ui/packages/theme-chalk/src/option.scss";
 
 .el-select {
-  &.is-block {
-    display: block;
-    text-align: center;
-    width: 100%;
-  }
+  margin-bottom: 20px;
+  width: 100%;
+}
 
-  &.is-small {
-    display: inline-block;
-    max-width: 80px;
+.el-input__inner {
+  background-color: #f3f3f3;
+  border: 1px solid #d8d8d8;
+}
+
+.el-select-dropdown {
+  border-radius: 0;
+  margin-top: 0;
+}
+
+.el-select-dropdown__list {
+  padding: 0;
+}
+
+.el-select-dropdown__item {
+  padding: 0 10px;
+
+  &.hover,
+  &:hover {
+    background-color: #1200ff;
+    color: #fff;
   }
+}
+
+.el-input__suffix {
+  background-color: $black;
+  background-image: url("~assets/images/icons/caret-white.svg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  height: 100%;
+  right: 0;
+  width: 47px;
+}
+
+.el-popper .popper__arrow {
+  display: none;
 }
 </style>
