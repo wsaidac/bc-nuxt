@@ -24,7 +24,7 @@ export default ({
   const locale = req.url.split('/')[1];
   const [language, country] = locale.split('-');
 
-  if (!language || !country) return redirect('/en-us/');
+  if (!language || !country) return redirect('/en-US/');
 
   // let label = req.headers.host.split('.').slice(-2)[0];
   // if (label.startsWith('localhost')) {

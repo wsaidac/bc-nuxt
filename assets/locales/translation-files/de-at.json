@@ -1,0 +1,67 @@
+{
+  "general": {
+    "domain": "Rapido.com DE-AT",
+    "label": "Rapido DE-AT",
+    "home-text": "Home DE-AT",
+    "loading": "Loading DE-AT",
+    "look-at-faqs": "Take a look at the FAQ's DE-AT",
+    "need-some-help": "Need some help? DE-AT",
+    "order-now": "Order now DE-AT",
+    "order-safely": "Order safely DE-AT",
+    "show-less": "Show less DE-AT",
+    "show-more": "Show more DE-AT",
+    "help": "Hel DE-ATp"
+  },
+  "header": {
+    "login": "Login",
+    "main-nav": "Main Menu",
+    "menu": "Menu",
+    "my-account": "My Account",
+    "profile": "profile"
+  },
+  "internal-links": {
+    "about-us": "About us",
+    "cookies": "Cookies",
+    "general-conditions": "General conditions",
+    "payment-methods": "Payment options",
+    "privacy-policy": "Privacy Policy",
+    "terms-of-use": "Terms of Use"
+  },
+  "footer": {
+    "order-with": "order with",
+    "safely-order-with": "Safely order with",
+    "safely": "Safely",
+    "customer-care": "Customer Care",
+    "privacy-statement": "Privacy statement",
+    "quote": "Rapido.com is part of CG | Millions of satisfied customers |"
+  },
+  "home": {
+    "featured-products": "Featured products",
+    "lets-speed-it-up": "Let's speed it up",
+    "see-all-denominations": "See all denominations"
+  },
+ "payment-methods": {
+    "checkout-options": "On Rapido.com, you can checkout with the following trusted payment options. Each payment option will be described below.",
+    "credit-or-debit-card": "Credit / Debit card",
+    "payment-options": "Payment options",
+    "paypal_text_1": "You can pay with PayPal on Rapido.com. After selecting this payment option, you log into your PayPal account and confirm the payment. Next, the transaction is processed.",
+    "paypal_text_2": "Upon receipt of payment, the top up voucher code is sent immediately.",
+    "paypal": "Paypal",
+    "shipping": "Shipping",
+    "visa_and_mastercard_text_1": "On Rapido.com, you can pay via VISA credit card, VISA debit card (Delta and Electron) and MasterCard. At the checkout, you select payment by credit card. Then you enter your credit card details, including the card holder, the card number, expiration date and CVV code. Then confirm payment.",
+    "visa_and_mastercard_text_2": "Upon receipt of payment, the top up code is sent immediately."
+  },
+  "error": {
+    "error_text": "It looks like the page you would like to see no longer exists, sorry"
+  },
+  "country_select": {
+    "button_name": "Confirm",
+    "description": "Your country selection will ensure that we offer the correct products and payment methods. Please ensure that it corresponds to your country and the account(s) on which you are planning to redeem the product.",
+    "title": "Select your country",
+    "country_names": {
+      "United States": "United States",
+      "Belgium": "Belgium",
+      "Austria": "Austria"
+    }
+  }
+}

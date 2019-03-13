@@ -31,7 +31,9 @@
     "order-with": "order with",
     "safely-order-with": "Safely order with",
     "safely": "Safely",
-    "customer-care": "Customer Care"
+    "customer-care": "Customer Care",
+    "privacy-statement": "Privacy statement",
+    "quote": "Rapido.com is part of CG | Millions of satisfied customers |"
   },
   "home": {
     "featured-products": "Featured products",
@@ -51,5 +53,15 @@
   },
   "error": {
     "error_text": "It looks like the page you would like to see no longer exists, sorry"
+  },
+  "country_select": {
+    "button_name": "Confirm",
+    "description": "Your country selection will ensure that we offer the correct products and payment methods. Please ensure that it corresponds to your country and the account(s) on which you are planning to redeem the product.",
+    "title": "Select your country",
+    "country_names": {
+      "United States": "United States",
+      "Belgium": "Belgium",
+      "Austria": "Austria"
+    }
   }
 }

@@ -29,6 +29,7 @@
 
     <usps-carousel
       v-if="mobileCarousel"
+      class="usps-carousel"
       :usps="usps"
     />
   </div>
@@ -81,7 +82,7 @@ export default {
   padding: 10px 0;
   position: relative;
 
-  @include media-breakpoint-up('sm') {
+  @include media-breakpoint-up("sm") {
     padding: 15px 0;
   }
 
@@ -103,23 +104,19 @@ export default {
     }
   }
 
-  .usps-carousel {
-    display: none;
-  }
-
   &--mobile-carousel {
     .container {
       display: none;
 
-      @include media-breakpoint-up('sm') {
+      @include media-breakpoint-up("sm") {
         display: block;
       }
     }
 
     .usps-carousel {
-      display: block;
+      display: flex;
 
-      @include media-breakpoint-up('sm') {
+      @include media-breakpoint-up("sm") {
         display: none;
       }
     }
