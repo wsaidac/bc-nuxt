@@ -7,16 +7,17 @@
 
 <script>
 function slugFromPath(path, locale) {
-  if (path === `/${locale}/`) return 'home';
-  return path.replace(`${locale}/`, '');
+  if (path === `/${locale}/`) return "home";
+  return path.replace(`${locale}/`, "");
 }
 
 export default {
   components: {
-    Home: () => import('~/pages-dynamic/home'),
-    CategoryTerm: () => import('~/pages-dynamic/category'),
-    Product: () => import('~/pages-dynamic/product'),
-    Error: () => import('~/pages-dynamic/error'),
+    Home: () => import("~/pages-dynamic/home"),
+    CategoryTerm: () => import("~/pages-dynamic/category"),
+    Product: () => import("~/pages-dynamic/product"),
+    Error: () => import("~/pages-dynamic/error"),
+    ServicePage: () => import("~/pages-dynamic/service-page"),
   },
 
   head() {
@@ -26,14 +27,14 @@ export default {
   },
 
   async asyncData({ app, route, store }) {
-    const locale = store.getters['context/locale'];
+    const locale = store.getters["context/locale"];
     const slug = slugFromPath(route.path, locale);
 
-    const { post } = await app.$q('post', { slug });
+    const { post } = await app.$q("post", { slug });
     if (post === null) {
       return {
-        layout: 'Error',
-        post: 'some interesting info',
+        layout: "Error",
+        post: "some interesting info",
       };
     }
 

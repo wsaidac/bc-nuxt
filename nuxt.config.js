@@ -46,7 +46,7 @@ const conf = {
     static: {
       maxAge: 2592000000,
     },
-    csp: true,
+    // csp: true,
   },
   router: {
     middleware: ['headers', 'context'],
