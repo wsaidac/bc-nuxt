@@ -1,16 +1,16 @@
 {
   "general": {
-    "domain": "Rapido.com DE-AT",
-    "label": "Rapido DE-AT",
-    "home-text": "Home DE-AT",
-    "loading": "Loading DE-AT",
-    "look-at-faqs": "Take a look at the FAQ's DE-AT",
-    "need-some-help": "Need some help? DE-AT",
-    "order-now": "Order now DE-AT",
-    "order-safely": "Order safely DE-AT",
-    "show-less": "Show less DE-AT",
-    "show-more": "Show more DE-AT",
-    "help": "Hel DE-ATp"
+    "domain": "Rapido.com",
+    "label": "Rapido",
+    "home-text": "Home",
+    "loading": "Loading",
+    "look-at-faqs": "Take a look at the FAQ's",
+    "need-some-help": "Need some help?",
+    "order-now": "Order now",
+    "order-safely": "Order safely",
+    "show-less": "Show less",
+    "show-more": "Show more",
+    "help": "Help"
   },
   "header": {
     "login": "Login",

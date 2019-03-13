@@ -1,16 +1,16 @@
 {
   "general": {
-    "domain": "Rapido.com FR-BE",
-    "label": "Rapido FR-BE",
-    "home-text": "Home FR-BE",
-    "loading": "Loading FR-BE",
-    "look-at-faqs": "Take a look at the FAQ's FR-BE",
-    "need-some-help": "Need some help? FR-BE",
-    "order-now": "Order now FR-BE",
-    "order-safely": "Order safely FR-BE",
-    "show-less": "Show less FR-BE",
-    "show-more": "Show more FR-BE",
-    "help": "Hel FR-BEp"
+    "domain": "Rapido.com",
+    "label": "Rapido",
+    "home-text": "Home",
+    "loading": "Loading",
+    "look-at-faqs": "Take a look at the FAQ's",
+    "need-some-help": "Need some help?",
+    "order-now": "Order now",
+    "order-safely": "Order safely",
+    "show-less": "Show less",
+    "show-more": "Show more",
+    "help": "Help"
   },
   "header": {
     "login": "Login",

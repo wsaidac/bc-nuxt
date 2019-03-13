@@ -1,16 +1,16 @@
 {
   "general": {
-    "domain": "Rapido.com PL-PL",
-    "label": "Rapido PL-PL",
-    "home-text": "Home PL-PL",
-    "loading": "Loading PL-PL",
-    "look-at-faqs": "Take a look at the FAQ's PL-PL",
-    "need-some-help": "Need some help? PL-PL",
-    "order-now": "Order now PL-PL",
-    "order-safely": "Order safely PL-PL",
-    "show-less": "Show less PL-PL",
-    "show-more": "Show more PL-PL",
-    "help": "Hel PL-PLp"
+    "domain": "Rapido.com",
+    "label": "Rapido",
+    "home-text": "Home",
+    "loading": "Loading",
+    "look-at-faqs": "Take a look at the FAQ's",
+    "need-some-help": "Need some help?",
+    "order-now": "Order now",
+    "order-safely": "Order safely",
+    "show-less": "Show less",
+    "show-more": "Show more",
+    "help": "Help"
   },
   "header": {
     "login": "Login",
