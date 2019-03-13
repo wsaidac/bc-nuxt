@@ -1,0 +1,4 @@
+fragment servicePageFields on ServicePage {
+  title
+  html: content
+}

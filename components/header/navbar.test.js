@@ -6,7 +6,29 @@ describe('HeaderNavbar', () => {
 
   beforeEach(() => {
     $mounted = mount(HeaderNavbar, {
-      stubs: ['header-login', 'header-links-desktop', 'header-links-mobile'],
+      stubs: ['header-login', 'header-links-desktop', 'header-links-mobile', 'header-locale-select'],
+      mocks: {
+        $i18n: {
+          locale: {
+            code: 'en-us',
+            iso: 'en-US',
+            file: 'en-us.json',
+            name: 'US',
+            displayName: 'United States',
+          },
+        },
+      },
+      computed: {
+        country() {
+          return {
+            code: 'en-us',
+            iso: 'en-US',
+            file: 'en-us.json',
+            name: 'US',
+            displayName: 'United States',
+          };
+        },
+      },
     });
   });
 

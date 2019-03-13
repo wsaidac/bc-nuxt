@@ -1,5 +1,5 @@
 const dotenv = require('dotenv');
-const locales = require('./assets/locales/locales.js');
+const i18nConfig = require('./config/i18nConfig.js');
 
 dotenv.config();
 
@@ -46,7 +46,7 @@ const conf = {
     static: {
       maxAge: 2592000000,
     },
-    csp: true,
+    // csp: true,
   },
   router: {
     middleware: ['headers', 'context'],
@@ -62,21 +62,7 @@ const conf = {
         extendedHeaders: 'extendedGraphqlHeaders',
       },
     ],
-    [
-      'nuxt-i18n',
-      {
-        strategy: 'prefix',
-        seo: false,
-        parsePages: false,
-        lazy: true,
-        langDir: './assets/locales/',
-        locales,
-        defaultLocale: 'en-us',
-        vueI18n: {
-          fallbackLocale: 'en-us',
-        },
-      },
-    ],
+    ['nuxt-i18n', i18nConfig('rapido')],
   ],
   env: {
     API_BROWSER: process.env.API_BROWSER,
@@ -84,7 +70,15 @@ const conf = {
     GTM_ID: 'GTM - KWZLG26',
     GTM_DEBUG: 'true',
   },
-  plugins: ['~/assets/iconsWeb.js', { src: '~/plugins/gtm.js', ssr: false }, '~/plugins/cookie-store.js', { src: '~/plugins/async.js', ssr: false }, '~/plugins/shared.js'],
+  plugins: [
+    '~/plugins/vuetouch.js',
+    '~/plugins/media-queries.js',
+    '~/assets/iconsWeb.js',
+    { src: '~/plugins/gtm.js', ssr: false },
+    '~/plugins/cookie-store.js',
+    { src: '~/plugins/async.js', ssr: false },
+    '~/plugins/shared.js',
+  ],
   watchers: {
     webpack: {
       poll: true,

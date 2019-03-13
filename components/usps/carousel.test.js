@@ -10,31 +10,6 @@ describe('UspsCarousel', () => {
 
   it('should mount', () => {
     const $mounted = mount(UspsCarousel, { propsData: { usps } });
-    expect($mounted.find('.usps-carousel').exists()).toBe(true);
+    expect($mounted.find('.ui-carousel').exists()).toBe(true);
   });
-
-  // it('should hide if no usps given', () => {
-  //   const $mounted = mount(CgUsps);
-  //   expect($mounted.find('.cg-usps').exists()).toBe(false);
-  // });
-
-  // it('should iterate through multiple usps', () => {
-  //   const $mounted = mount(CgUsps, { propsData: { usps } });
-  //   expect($mounted.findAll('.cg-usps__item')).toHaveLength(3);
-  // });
-
-  // it('should mount horizontal by default', () => {
-  //   const $mounted = mount(CgUsps, { propsData: { usps } });
-  //   expect($mounted.find('.cg-usps').classes()).toContain('cg-usps--mode-horizontal');
-  // });
-
-  // it('should not display description in horizontal mode', () => {
-  //   const $mounted = mount(CgUsps, { propsData: { usps, mode: 'horizontal' } });
-  //   expect($mounted.find('.cg-usps__item small').exists()).toBe(false);
-  // });
-
-  // it('should display description in vertical mode', () => {
-  //   const $mounted = mount(CgUsps, { propsData: { usps, mode: 'vertical' } });
-  //   expect($mounted.find('.cg-usps__item small').exists()).toBe(true);
-  // });
 });

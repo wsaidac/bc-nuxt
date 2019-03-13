@@ -31,8 +31,7 @@
         class="header-banner__payoff-image"
       >
         <div class="header-banner__payoff-image-inner">
-          <figure
-            v-if="header.image">
+          <figure v-if="header.image">
             <img
               :alt="header.image.altText"
               :src="header.image.regular"
@@ -56,15 +55,15 @@ export default {
   props: {
     post: {
       type: Object,
-      default: () => {},
+      default: () => { },
     },
     image: {
       type: Object,
-      default: () => {},
+      default: () => { },
     },
     header: {
       type: Object,
-      default: () => {},
+      default: () => { },
     },
     title: {
       type: String,

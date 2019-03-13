@@ -27,4 +27,11 @@ export default {
       state.language = language;
     },
   },
+
+  actions: {
+    changeContext(context, locale) {
+      context.commit('setCurrentCountry', locale.slice(3));
+      context.commit('setCurrentLanguage', locale.slice(0, 2));
+    },
+  },
 };

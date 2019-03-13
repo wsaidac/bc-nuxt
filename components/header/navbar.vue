@@ -25,9 +25,17 @@
           >
             {{ $t('general.help') }}
           </a>
-          <div class="header-navbar__locale">
-            language
-          </div>
+          <button
+            class="header-navbar__country-select"
+            @click="showDialog = true"
+          >
+            <span class="header-navbar__country-name">{{ country.name }}</span>
+            <img
+              :src="countryFlag"
+              alt="country-flag"
+            >
+            <ui-icon icon="caret-white" />
+          </button>
           <div
             class="header-navbar__menu"
             @click="menuOpen = !menuOpen"
@@ -44,14 +52,22 @@
       :menu-open="menuOpen"
       @close-menu="menuOpen = false"
     />
+    <header-locale-select
+      :showdialog="showDialog"
+      @hideDialog="showDialog = false"
+    />
   </nav>
 </template>
 
 <script>
-import HeaderLogin from "./login";
-import HeaderLinksDesktop from "./links-desktop";
-import HeaderLinksMobile from "./links-mobile";
-import HeaderHamburger from "./hamburger";
+import HeaderLogin from './login';
+import HeaderLinksDesktop from './links-desktop';
+import HeaderLinksMobile from './links-mobile';
+import HeaderHamburger from './hamburger';
+import HeaderLocaleSelect from './locale-select';
+import { UiIcon } from '~/components/ui';
+
+import flags from '~/assets/flags.js';
 
 export default {
   components: {
@@ -59,6 +75,8 @@ export default {
     HeaderLinksDesktop,
     HeaderLinksMobile,
     HeaderHamburger,
+    HeaderLocaleSelect,
+    UiIcon,
   },
 
   props: {
@@ -73,13 +91,20 @@ export default {
   data() {
     return {
       menuOpen: false,
-      active: "",
+      active: '',
+      showDialog: false,
     };
   },
 
   computed: {
     classes() {
       return ["header-navbar", { "header-navbar--open": this.menuOpen }];
+    },
+    country() {
+      return this.$i18n.locales.find(i => i.code === this.$i18n.locale);
+    },
+    countryFlag() {
+      return flags[this.country.name.toLowerCase()];
     },
   },
 };
@@ -151,6 +176,30 @@ export default {
     }
   }
 
+  &__country-select {
+    background-color: #1000e3;
+    border: 0;
+    color: var(--header-color-base, #000);
+    font-size: $font-size-h5;
+    height: 100%;
+    padding: 0 15px;
+
+    @include flex(null, center);
+
+    .ui-icon-caret-white {
+      color: white;
+    }
+
+    img {
+      height: 20px;
+      margin: 0 7px;
+    }
+  }
+
+  &__country-name {
+    color: $white;
+  }
+
   &__brand {
     margin: 2px 0 0 33.5px;
     width: 131.49px;
@@ -203,6 +252,15 @@ export default {
     .header-login,
     .header-navbar__help {
       display: none;
+    }
+
+    &__country-select {
+      background: $primary-500;
+      border-left: 1px solid #1000e3;
+
+      .ui-icon-caret-white {
+        display: none;
+      }
     }
   }
 }

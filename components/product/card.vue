@@ -10,8 +10,7 @@
       class="product-card__img-link"
       @click.native="submitForm"
     >
-      <picture
-        v-if="image">
+      <picture v-if="image">
         <img
           :src="image.regular"
           :srcet="`${image.regular}, ${image.retina} 2x`"
@@ -64,7 +63,7 @@
           itemprop="itemCondition"
           content="http://schema.org/NewCondition"
         >
-        <h3 v-text="$n(product.information.retailValue, product.information.currency)" />
+        <h3 v-text="$n(product.information.retailValue, 'currency')" />
         <p v-text="product.title" />
         <shared-tooltip
           v-if="mode === 'vertical' && hasTooltip"
@@ -101,7 +100,6 @@
           >
         </fieldset>
         <ui-button
-          type="warning"
           native-type="button"
           @click="submitForm"
         >
@@ -227,6 +225,17 @@ export default {
 
   fieldset {
     display: none;
+  }
+
+  .el-button {
+    background: #ffea6b;
+    border: 2px solid $black;
+    color: $black;
+
+    &:hover {
+      background: $black;
+      color: $white;
+    }
   }
 
   &__title {
