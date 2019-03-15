@@ -1,7 +1,11 @@
 const setCurrentUser = async (app, store) => {
-  const { data } = await app.$query('currentUser');
-  if (!data.user) return;
-  store.commit('auth/setCurrentUser', data.user);
+  try {
+    const { data } = await app.$query('currentUser');
+    if (!data.user) return;
+    store.commit('auth/setCurrentUser', data.user);
+  } catch (error) {
+    throw new Error(error);
+  }
 };
 
 export default ({ app, store }) => {
