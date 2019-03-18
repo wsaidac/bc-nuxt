@@ -3,7 +3,7 @@ async function fetchMenus(app, store, error) {
     const { menus } = await app.$q('menus', { slug: 'main' });
 
     if (!menus) {
-      error({ statusCode: 404, message: 'Something went wrong. Reload the page to try again.' });
+      error({ statusCode: 404, message: app.i18n.t('error.critical_error') });
     } else {
       store.commit('menus/setMain', menus.nodes[0]);
     }
@@ -17,7 +17,7 @@ async function fetchShared(app, store, error) {
     const { post } = await app.$q('shared');
 
     if (!post) {
-      error({ statusCode: 404, message: 'Something went wrong. Reload the page to try again.' });
+      error({ statusCode: 404, message: app.i18n.t('error.critical_error') });
     } else {
       store.commit('shared/setHomeTitle', post.title);
       store.commit('shared/setFooter', post.footer);
@@ -42,6 +42,8 @@ export default ({
   const locale = urlPaths[1];
   const [language, country] = locale.split('-');
 
+  // if the locale slug in the url is not supported for this merchant
+  // redirect to the homepage with the default locale slug
   if (!app.i18n.locales.find(el => el.code.toUpperCase() === locale.toUpperCase())) {
     return redirect(301, `/${app.i18n.defaultLocale}/`);
   }

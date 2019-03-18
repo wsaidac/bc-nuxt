@@ -1,6 +1,6 @@
 <template>
   <div class="cg-error container">
-    <p>{{ $t('error.error_text') }}</p>
+    <p>{{ $t('error.page_missing') }}</p>
   </div>
 </template>
 
