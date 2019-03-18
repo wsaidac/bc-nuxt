@@ -1,5 +1,6 @@
 {
   "general": {
+    "critical_error": "Something went wrong. Reload the page to try again.",
     "domain": "Rapido.com",
     "label": "Rapido",
     "home-text": "Home",
@@ -52,8 +53,9 @@
     "visa_and_mastercard_text_2": "Upon receipt of payment, the top up code is sent immediately."
   },
   "error": {
-    "page_missing": "It looks like the page you would like to see no longer exists, sorry",
-    "critical_error": "Something went wrong. Reload the page to try again."
+    "description": "Whoops! This is embarrassing, we can't find this page right now. Can you please try again later?",
+    "title": "Page not found",
+    "button_name": "Rapido Homepage"
   },
   "country_select": {
     "button_name": "Confirm",

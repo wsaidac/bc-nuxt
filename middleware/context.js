@@ -3,7 +3,7 @@ async function fetchMenus(app, store, error) {
     const { menus } = await app.$q('menus', { slug: 'main' });
 
     if (!menus) {
-      error({ statusCode: 404, message: app.i18n.t('error.critical_error') });
+      error({ statusCode: 404, message: app.i18n.t('general.critical_error') });
     } else {
       store.commit('menus/setMain', menus.nodes[0]);
     }
@@ -17,7 +17,7 @@ async function fetchShared(app, store, error) {
     const { post } = await app.$q('shared');
 
     if (!post) {
-      error({ statusCode: 404, message: app.i18n.t('error.critical_error') });
+      error({ statusCode: 404, message: app.i18n.t('general.critical_error') });
     } else {
       store.commit('shared/setHomeTitle', post.title);
       store.commit('shared/setFooter', post.footer);

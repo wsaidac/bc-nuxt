@@ -34,8 +34,10 @@ export default {
       const { post } = await app.$q("post", { slug });
       if (post === null) {
         return {
-          layout: "Error",
-          post: "",
+          layout: 'Error',
+          post: {
+            title: `${app.i18n.t('error.title')} - ${app.i18n.t('general.domain')}`,
+          },
         };
       }
       /* prettier-ignore */
@@ -43,8 +45,10 @@ export default {
       return { layout: post.__typename, post };
     } catch (event) {
       return {
-        layout: "Error",
-        post: "",
+        layout: 'Error',
+        post: {
+          title: `${app.i18n.t('error.title')} - ${app.i18n.t('general.domain')}`,
+        },
       };
     }
   },
