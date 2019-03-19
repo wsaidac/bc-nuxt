@@ -1,5 +1,6 @@
 {
   "general": {
+    "critical_error": "Something went wrong. Reload the page to try again.",
     "domain": "Rapido.com DA-DK",
     "label": "Rapido DA-DK",
     "home-text": "Home DA-DK",
@@ -40,7 +41,7 @@
     "lets-speed-it-up": "Let's speed it up",
     "see-all-denominations": "See all denominations"
   },
- "payment-methods": {
+  "payment-methods": {
     "checkout-options": "On Rapido.com, you can checkout with the following trusted payment options. Each payment option will be described below.",
     "credit-or-debit-card": "Credit / Debit card",
     "payment-options": "Payment options",
@@ -52,7 +53,9 @@
     "visa_and_mastercard_text_2": "Upon receipt of payment, the top up code is sent immediately."
   },
   "error": {
-    "error_text": "It looks like the page you would like to see no longer exists, sorry"
+    "description": "Whoops! This is embarrassing, we can't find this page right now. Can you please try again later?",
+    "critical_error": "Something went wrong. Reload the page to try again.",
+    "title": "Page not found"
   },
   "country_select": {
     "button_name": "Confirm",
