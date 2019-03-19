@@ -79,7 +79,8 @@ export default {
       {
         title: this.$t("internal-links.general-conditions"),
         url: "terms-and-conditions"
-      }
+      },
+      { title: this.$t("internal-links.cookies"), url: "cookies" },
     ];
 
     return { columns };

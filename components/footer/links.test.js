@@ -17,6 +17,6 @@ describe('FooterLinks', () => {
   });
 
   it('should render all links', () => {
-    expect($mounted.findAll('.footer-links__desktop a')).toHaveLength(5);
+    expect($mounted.findAll('.footer-links__desktop a')).toHaveLength(6);
   });
 });
