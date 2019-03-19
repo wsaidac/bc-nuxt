@@ -2,6 +2,7 @@
   <section class="product-featured-category">
     <h3 class="product-featured-category__title">
       <img
+        v-if="category.imaage"
         :src="category.image.regular"
         :alt="category.title"
       >

@@ -17,6 +17,7 @@
           :to="$contextPath ('payment-methods')"
         >
           <img
+            v-if="method.image"
             :alt="method.name"
             :src="method.image.regular"
             :srcset="`${method.image.regular}, ${method.image.retina} 2x`"
