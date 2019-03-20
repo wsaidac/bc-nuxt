@@ -1,6 +1,26 @@
 {
+  "country_select": {
+    "button_name": "Confirm",
+    "country_names": {
+      "Austria": "Austria",
+      "Belgium": "Belgium",
+      "United States": "United States"
+    },
+    "description": "Your country selection will ensure that we offer the correct products and payment methods. Please ensure that it corresponds to your country and the account(s) on which you are planning to redeem the product.",
+    "title": "Select your country"
+  },
+  "error": {
+    "error_text": "It looks like the page you would like to see no longer exists, sorry"
+  },
+  "footer": {
+    "customer-care": "Customer Care",
+    "order-with": "order with",
+    "privacy-statement": "Privacy statement",
+    "quote": "Rapido.com is part of CG | Millions of satisfied customers |",
+    "safely": "Safely",
+    "safely-order-with": "Safely order with"
+  },
   "general": {
-    "critical_error": "Something went wrong. Reload the page to try again.",
     "domain": "Rapido.com",
     "help": "Help",
     "home-text": "Home",
@@ -33,14 +53,6 @@
     "privacy-policy": "Privacy Policy",
     "terms-of-use": "Terms of Use"
   },
-  "footer": {
-    "order-with": "order with",
-    "safely-order-with": "Safely order with",
-    "safely": "Safely",
-    "customer-care": "Customer Care",
-    "privacy-statement": "Privacy statement",
-    "quote": "Rapido.com is part of CG | Millions of satisfied customers |"
-  },
   "payment-methods": {
     "checkout-options": "On Rapido.com, you can checkout with the following trusted payment options. Each payment option will be described below.",
     "credit-or-debit-card": "Credit / Debit card",
@@ -51,20 +63,5 @@
     "shipping": "Shipping",
     "visa_and_mastercard_text_1": "On Rapido.com, you can pay via VISA credit card, VISA debit card (Delta and Electron) and MasterCard. At the checkout, you select payment by credit card. Then you enter your credit card details, including the card holder, the card number, expiration date and CVV code. Then confirm payment.",
     "visa_and_mastercard_text_2": "Upon receipt of payment, the top up code is sent immediately."
-  },
-  "error": {
-    "description": "Whoops! This is embarrassing, we can't find this page right now. Can you please try again later?",
-    "title": "Page not found",
-    "button_name": "Rapido Homepage"
-  },
-  "country_select": {
-    "button_name": "Confirm",
-    "description": "Your country selection will ensure that we offer the correct products and payment methods. Please ensure that it corresponds to your country and the account(s) on which you are planning to redeem the product.",
-    "title": "Select your country",
-    "country_names": {
-      "United States": "United States",
-      "Belgium": "Belgium",
-      "Austria": "Austria"
-    }
   }
 }
