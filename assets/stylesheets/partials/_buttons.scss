@@ -1,0 +1,21 @@
+.button {
+  &.button--primary {
+    background: $warning-base;
+    border: 2px solid $black;
+    color: $black;
+    text-transform: uppercase;
+
+    &:hover,
+    .hover {
+      background-color: $black;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  &.button--med {
+    font-size: $font-size-h6;
+    font-weight: bold;
+    padding: 10px 25px;
+  }
+}

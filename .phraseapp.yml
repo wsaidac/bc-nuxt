@@ -1,0 +1,14 @@
+phraseapp:
+  access_token: e82edf9eff8cf36cc4c3b1bafdf0a8946c154dbdfa35069d420f2318fcd8328a
+  project_id: 0e60214e84f55a0834c0705bf46181b4
+  push:
+    sources:
+    - file: ./assets/locales/translation-files/<locale_name>.json
+      params:
+        file_format: nested_json
+        update_translations: true
+  pull:
+    targets:
+    - file: ./assets/locales/translation-files/<locale_name>.json
+      params:
+        file_format: nested_json
