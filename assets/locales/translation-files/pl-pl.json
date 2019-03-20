@@ -11,7 +11,7 @@
     "order-now": "",
     "order-safely": "",
     "show-less": "",
-    "show-more": "e"
+    "show-more": ""
   },
   "header": {
     "login": "",
@@ -31,7 +31,7 @@
     "general-conditions": "",
     "payment-methods": "",
     "privacy-policy": "",
-    "terms-of-use": "e"
+    "terms-of-use": ""
   },
   "footer": {
     "order-with": "",
@@ -55,7 +55,7 @@
   "error": {
     "description": "",
     "title": "",
-    "button_name": "e"
+    "button_name": ""
   },
   "country_select": {
     "button_name": "",
