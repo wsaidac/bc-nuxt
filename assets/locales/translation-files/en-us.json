@@ -11,7 +11,8 @@
   },
   "error": {
     "description": "Whoops! This is embarrassing, we can't find this page right now. Can you please try again later?",
-    "title": "Page not found"
+    "title": "Page not found",
+    "button_name": "Rapido Homepage"
   },
   "footer": {
     "customer-care": "Customer Care",
