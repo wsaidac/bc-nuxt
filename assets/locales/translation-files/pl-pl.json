@@ -1,67 +1,70 @@
 {
-  "country_select": {
-    "button_name": "Confirm",
-    "country_names": {
-      "Austria": "Austria",
-      "Belgium": "Belgium",
-      "United States": "United States"
-    },
-    "description": "Your country selection will ensure that we offer the correct products and payment methods. Please ensure that it corresponds to your country and the account(s) on which you are planning to redeem the product.",
-    "title": "Select your country"
-  },
-  "error": {
-    "error_text": "It looks like the page you would like to see no longer exists, sorry"
-  },
-  "footer": {
-    "customer-care": "Customer Care",
-    "order-with": "order with",
-    "privacy-statement": "Privacy statement",
-    "quote": "Rapido.com is part of CG | Millions of satisfied customers |",
-    "safely": "Safely",
-    "safely-order-with": "Safely order with"
-  },
   "general": {
-    "domain": "Rapido.com PL-PL",
-    "help": "Hel PL-PLp",
-    "home-text": "Home PL-PL",
-    "label": "Rapido PL-PL",
-    "loading": "Loading PL-PL",
-    "look-at-faqs": "Take a look at the FAQ's PL-PL",
-    "need-some-help": "Need some help? PL-PL",
-    "order-now": "Order now PL-PL",
-    "order-safely": "Order safely PL-PL",
-    "show-less": "Show less PL-PL",
-    "show-more": "Show more PL-PL"
+    "critical_error": "",
+    "domain": "",
+    "help": "",
+    "home-text": "",
+    "label": "",
+    "loading": "",
+    "look-at-faqs": "",
+    "need-some-help": "",
+    "order-now": "",
+    "order-safely": "",
+    "show-less": "",
+    "show-more": "e"
   },
   "header": {
-    "login": "Login",
-    "main-nav": "Main Menu",
-    "menu": "Menu",
-    "my-account": "My Account",
-    "profile": "profile"
+    "login": "",
+    "main-nav": "",
+    "menu": "",
+    "my-account": "",
+    "profile": ""
   },
   "home": {
-    "featured-products": "Featured products",
-    "lets-speed-it-up": "Let's speed it up",
-    "see-all-denominations": "See all denominations"
+    "featured-products": "",
+    "lets-speed-it-up": "",
+    "see-all-denominations": ""
   },
   "internal-links": {
-    "about-us": "About us",
-    "cookies": "Cookies",
-    "general-conditions": "General conditions",
-    "payment-methods": "Payment options",
-    "privacy-policy": "Privacy Policy",
-    "terms-of-use": "Terms of Use"
+    "about-us": "",
+    "cookies": "",
+    "general-conditions": "",
+    "payment-methods": "",
+    "privacy-policy": "",
+    "terms-of-use": "e"
+  },
+  "footer": {
+    "order-with": "",
+    "safely-order-with": "",
+    "safely": "",
+    "customer-care": "",
+    "privacy-statement": "",
+    "quote": "|"
   },
   "payment-methods": {
-    "checkout-options": "On Rapido.com, you can checkout with the following trusted payment options. Each payment option will be described below.",
-    "credit-or-debit-card": "Credit / Debit card",
-    "payment-options": "Payment options",
-    "paypal": "Paypal",
-    "paypal_text_1": "You can pay with PayPal on Rapido.com. After selecting this payment option, you log into your PayPal account and confirm the payment. Next, the transaction is processed.",
-    "paypal_text_2": "Upon receipt of payment, the top up voucher code is sent immediately.",
-    "shipping": "Shipping",
-    "visa_and_mastercard_text_1": "On Rapido.com, you can pay via VISA credit card, VISA debit card (Delta and Electron) and MasterCard. At the checkout, you select payment by credit card. Then you enter your credit card details, including the card holder, the card number, expiration date and CVV code. Then confirm payment.",
-    "visa_and_mastercard_text_2": "Upon receipt of payment, the top up code is sent immediately."
+    "checkout-options": "",
+    "credit-or-debit-card": "",
+    "payment-options": "",
+    "paypal": "",
+    "paypal_text_1": "",
+    "paypal_text_2": "",
+    "shipping": "",
+    "visa_and_mastercard_text_1": "",
+    "visa_and_mastercard_text_2": ""
+  },
+  "error": {
+    "description": "",
+    "title": "",
+    "button_name": "e"
+  },
+  "country_select": {
+    "button_name": "",
+    "description": "",
+    "title": "",
+    "country_names": {
+      "United States": "",
+      "Belgium": "",
+      "Austria": ""
+    }
   }
 }
