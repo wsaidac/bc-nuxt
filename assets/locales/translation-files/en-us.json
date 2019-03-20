@@ -10,7 +10,9 @@
     "title": "Select your country"
   },
   "error": {
-    "error_text": "It looks like the page you would like to see no longer exists, sorry"
+    "description": "Whoops! This is embarrassing, we can't find this page right now. Can you please try again later?",
+    "title": "Page not found",
+    "button_name": "Rapido Homepage"
   },
   "footer": {
     "customer-care": "Customer Care",
@@ -21,6 +23,7 @@
     "safely-order-with": "Safely order with"
   },
   "general": {
+    "critical_error": "Something went wrong. Reload the page to try again.",
     "domain": "Rapido.com",
     "help": "Help",
     "home-text": "Home",
