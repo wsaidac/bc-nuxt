@@ -26,6 +26,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    justify: {
+      type: Boolean,
+      default: false,
+    },
     icon: {
       type: String,
       default: null,
@@ -42,7 +46,7 @@ export default {
 
   computed: {
     classes() {
-      return [{ 'is-block': this.block }];
+      return [{ 'is-block': this.block }, { 'is-justified': this.justify }];
     },
 
     uiIcon() {
@@ -66,6 +70,13 @@ $--button-font-weight: 700;
   padding: 5px 7px;
   text-transform: uppercase;
   transition: background 0.3s ease, color 0.3s ease;
+
+  &.is-justified {
+    display: block;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+  }
 
   &.is-block {
     display: block;
