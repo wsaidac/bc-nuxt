@@ -56,7 +56,7 @@ export default {
 .category-accordion {
   .el-collapse-item {
     .el-collapse-item__header {
-      flex-flow: row-reverse nowrap;
+      flex-flow: row nowrap;
       font-size: 16.8px;
       font-weight: 900;
       line-height: 24px;

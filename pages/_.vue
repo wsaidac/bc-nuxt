@@ -30,17 +30,27 @@ export default {
     const locale = store.getters["context/locale"];
     const slug = slugFromPath(route.path, locale);
 
-    const { post } = await app.$q("post", { slug });
-    if (post === null) {
+    try {
+      const { post } = await app.$q("post", { slug });
+      if (post === null) {
+        return {
+          layout: 'Error',
+          post: {
+            title: `${app.i18n.t('error.title')} - ${app.i18n.t('general.domain')}`,
+          },
+        };
+      }
+      /* prettier-ignore */
+      post.__typename = post.__typename === 'CmsProduct' ? 'Product' : post.__typename;
+      return { layout: post.__typename, post };
+    } catch (event) {
       return {
-        layout: "Error",
-        post: "some interesting info",
+        layout: 'Error',
+        post: {
+          title: `${app.i18n.t('error.title')} - ${app.i18n.t('general.domain')}`,
+        },
       };
     }
-
-    /* prettier-ignore */
-    post.__typename = post.__typename === 'CmsProduct' ? 'Product' : post.__typename;
-    return { layout: post.__typename, post };
   },
 
   mounted() {

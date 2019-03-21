@@ -9,6 +9,7 @@
         >
           <div @click="setActive(category.title)">
             <img
+              v-if="category.image"
               :alt="category.title"
               :src="category.image.regular"
               :srcset="`${category.image.regular}, ${category.image.retina} 2x`"

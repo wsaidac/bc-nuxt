@@ -276,6 +276,7 @@ export default {
     }
 
     .el-select {
+      margin-bottom: 0;
       margin-right: 15px;
       width: 60px;
 

@@ -8,19 +8,6 @@
       <p>
         &copy; {{ year }} - {{ $t('footer.quote') }}
       </p>
-      <p>
-        <nuxt-link :to="$contextPath ('privacy-policy')">
-          {{ $t('privacy-statement') }}
-        </nuxt-link>
-        |
-        <nuxt-link :to="$contextPath ('cookies')">
-          {{ $t('internal-links.cookies') }}
-        </nuxt-link>
-        |
-        <nuxt-link :to="$contextPath ('terms-and-conditions')">
-          {{ $t('internal-links.general-conditions') }}
-        </nuxt-link>
-      </p>
     </div>
   </div>
 </template>
