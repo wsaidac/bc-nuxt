@@ -71,6 +71,7 @@ const conf = {
     GTM_DEBUG: 'true',
   },
   plugins: [
+    '~/plugins/env.js',
     '~/plugins/vuelidate.js',
     '~/plugins/vuetouch.js',
     '~/plugins/media-queries.js',
@@ -79,6 +80,8 @@ const conf = {
     '~/plugins/cookie-store.js',
     { src: '~/plugins/async.js', ssr: false },
     '~/plugins/shared.js',
+    '~/plugins/moment.js',
+    '~/plugins/pagination.js',
   ],
   watchers: {
     webpack: {
