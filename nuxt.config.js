@@ -1,6 +1,7 @@
-const dotenv = require('dotenv');
+
 const i18nConfig = require('./config/i18nConfig.js');
 
+const dotenv = require('dotenv');
 dotenv.config();
 
 const conf = {
