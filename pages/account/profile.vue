@@ -1,0 +1,196 @@
+<template>
+  <section class="cg-profile">
+    <ui-row>
+      <ui-col :md="8">
+        <sidebar-main />
+      </ui-col>
+      <ui-col :md="16">
+        <ui-alert
+          v-if="error"
+          :description="$t(error)"
+          type="error"
+          @close="error = null"
+        />
+        <ui-alert
+          v-if="message"
+          :description="$t(message)"
+          type="success"
+          @close="message = null"
+        />
+
+        <ui-panel
+          :title="$t('personal-details')"
+          color="primary"
+        >
+          <ui-form-section :title="$t('your-login-details')">
+            <ui-collapse
+              ref="collapse"
+              accordion
+            >
+              <ui-collapse-item
+                :title="{
+                  label: $t('account-email-address'),
+                  value: currentUser.email,
+                  toggle: $t('change-email'),
+                }"
+                title-design="form-toggle"
+              >
+                <form-change-email
+                  @cancel="onCancel"
+                  @error="showError"
+                  @submit="showMessage('change-email-requested')"
+                />
+              </ui-collapse-item>
+              <ui-collapse-item
+                :title="{
+                  label: $t('password'),
+                  value: '********',
+                  toggle: $t('change-password'),
+                }"
+                title-design="form-toggle"
+              >
+                <form-change-password
+                  @cancel="onCancel"
+                  @error="showError('change-password-error')"
+                  @submit="showMessage('change-password-submit')"
+                />
+              </ui-collapse-item>
+            </ui-collapse>
+          </ui-form-section>
+          <ui-form-section :title="$t('personal-details')">
+            <form-personal-details v-model="personalDetails" />
+          </ui-form-section>
+          <ui-form-section :title="$t('address-details')">
+            <form-address-details v-model="addressDetails" />
+          </ui-form-section>
+          <ui-form-section>
+            <ui-button
+              type="secondary"
+              native-type="submit"
+              @click="saveDetails"
+            >
+              {{ $t('save') }}
+            </ui-button>
+          </ui-form-section>
+        </ui-panel>
+      </ui-col>
+    </ui-row>
+  </section>
+</template>
+
+<script>
+import SidebarMain from '~/components/sidebar/main';
+import FormChangeEmail from '~/components/form/change-email';
+import FormChangePassword from '~/components/form/change-password';
+import FormPersonalDetails from '~/components/form/personal-details';
+import FormAddressDetails from '~/components/form/address-details';
+
+import {
+  UiAlert, UiButton, UiCol, UiCollapse, UiCollapseItem, UiFormSection, UiPanel, UiRow,
+} from '~/components/ui';
+
+import { mapGetters } from 'vuex';
+import { pick } from 'lodash';
+
+function pickPersonalDetails(user) {
+  return pick(user.currentPersonalData, [
+    'firstName',
+    'lastNamePrefix',
+    'lastName',
+    'birthDate',
+    'gender',
+    'phone',
+    'phonePrefix',
+    'phoneCountryIso',
+  ]);
+}
+
+function pickAddressDetails(user) {
+  return pick(user.currentPersonalData, ['address', 'houseNumber', 'zipCode', 'city']);
+}
+
+export default {
+  components: {
+    SidebarMain,
+    FormChangeEmail,
+    FormChangePassword,
+    FormPersonalDetails,
+    FormAddressDetails,
+    UiAlert,
+    UiButton,
+    UiCol,
+    UiCollapse,
+    UiCollapseItem,
+    UiFormSection,
+    UiPanel,
+    UiRow,
+  },
+
+  async asyncData({ app }) {
+    const {
+      currentUser: { user },
+    } = await app.$q('currentPersonalData');
+    return {
+      personalDetails: pickPersonalDetails(user),
+      addressDetails: pickAddressDetails(user),
+    };
+  },
+
+  data() {
+    return {
+      error: null,
+      message: null,
+    };
+  },
+
+  computed: {
+    ...mapGetters('auth', ['currentUser']),
+
+    personalData() {
+      return {
+        ...this.personalDetails,
+        ...this.addressDetails,
+      };
+    },
+  },
+
+  methods: {
+    showMessage(message) {
+      this.message = message;
+      this.$refs.collapse.collapseAll();
+    },
+
+    showError(error) {
+      this.error = error;
+      // this.$refs.collapse.collapseAll();
+    },
+
+    onCancel() {
+      this.$refs.collapse.collapseAll();
+    },
+
+    async saveDetails() {
+      const { errors } = await this.$mutate('createPersonalData', {
+        personalData: this.personalData,
+      });
+      if (errors.length > 0) {
+        this.error = errors[0].message;
+        return;
+      }
+      this.showMessage(this.$t('personal-data-submit'));
+    },
+  },
+};
+</script>
+
+<style lang="scss">
+.cg-profile {
+  .el-collapse {
+    margin-bottom: 25px;
+  }
+
+  .el-alert {
+    margin-bottom: 25px;
+  }
+}
+</style>
