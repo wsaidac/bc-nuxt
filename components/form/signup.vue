@@ -5,10 +5,11 @@
   >
     <ui-form-item
       :label="$t('email-address')"
+      :error="$error('email')"
       required
     >
       <ui-input
-        v-model="user.email"
+        v-model="$v.user.email.$model"
         :placeholder="$t('email-address')"
         type="email"
       />
@@ -16,10 +17,11 @@
 
     <ui-form-item
       :label="$t('password')"
+      :error="$error('password')"
       required
     >
       <ui-input
-        v-model="user.password"
+        v-model="$v.user.password.$model"
         :placeholder="$t('password')"
         :type="passwordInputType"
       />
@@ -27,10 +29,11 @@
 
     <ui-form-item
       :label="$t('repeat-password')"
+      :error="$error('passwordConfirmation')"
       required
     >
       <ui-input-password
-        v-model="user.passwordConfirmation"
+        v-model="$v.user.passwordConfirmation.$model"
         @toggle-password="togglePassword"
       />
     </ui-form-item>
@@ -95,25 +98,19 @@ export default {
   },
 
   methods: {
-    register() {
-      console.log('hi');
+    async register() {
+      this.$v.$touch();
+      if (!this.$v.$invalid) {
+        const { user } = await this.$m('register', this.user);
+        if (this.$graphQLErrors.length > 0) {
+          this.$graphQLErrors = monkeyPatchPaths(this.$graphQLErrors);
+          this.$emit('error', this.$graphQLErrors[0].message);
+        } else {
+          this.$emit('submit', { email: user.email });
+        }
+      }
     },
   },
-
-  // methods: {
-  //   async register() {
-  //     this.$v.$touch();
-  //     if (!this.$v.$invalid) {
-  //       const { user } = await this.$m('register', this.user);
-  //       if (this.$graphQLErrors.length > 0) {
-  //         this.$graphQLErrors = monkeyPatchPaths(this.$graphQLErrors);
-  //         this.$emit('error', this.$graphQLErrors[0].message);
-  //       } else {
-  //         this.$emit('submit', { email: user.email });
-  //       }
-  //     }
-  //   },
-  // },
 };
 </script>
 

@@ -71,6 +71,7 @@ const conf = {
     GTM_DEBUG: 'true',
   },
   plugins: [
+    '~/plugins/vuelidate.js',
     '~/plugins/vuetouch.js',
     '~/plugins/media-queries.js',
     '~/assets/iconsWeb.js',
