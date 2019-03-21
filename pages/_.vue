@@ -21,6 +21,7 @@ export default {
   },
 
   head() {
+    if (this.layout === "Error") return {};
     return {
       title:
         this.post.meta.title
