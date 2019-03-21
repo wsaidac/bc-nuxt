@@ -22,7 +22,10 @@ export default {
 
   head() {
     return {
-      title: this.post.title || this.post.name || this.post.description,
+      title: this.post.meta.title || this.post.title || this.post.name || this.post.description,
+      meta: [
+        { name: 'description', content: this.post.meta.description },
+      ],
     };
   },
 

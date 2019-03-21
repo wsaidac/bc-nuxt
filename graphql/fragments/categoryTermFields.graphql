@@ -2,6 +2,10 @@ fragment categoryTermFields on CategoryTerm {
   name
   description
   slug
+  meta {
+    title
+    description
+  }
   categoryHeader {
     title
     image {
@@ -57,12 +61,12 @@ fragment categoryTermFields on CategoryTerm {
         }
       }
       slug
-      kinds {
+      kinds:kindTerms {
         nodes {
           name
         }
       }
-      categories {
+      categories: categoryTerms {
         nodes {
           id
           categoryHeader {
