@@ -22,11 +22,28 @@ export default {
 
   head() {
     return {
-      title: this.post.meta.title || this.post.title || this.post.name || this.post.description,
+      title:
+        this.post.meta.title
+        || (this.post.category && this.post.category.meta.description)
+        || this.post.title
+        || this.post.name
+        || this.post.description,
       meta: [
-        { name: 'description', content: this.post.meta.description },
+        {
+          name: "description",
+          content:
+            this.post.meta.description
+            || (this.category && this.category.meta.description),
+        },
       ],
     };
+  },
+
+  computed: {
+    category() {
+      if (this.post.__typename !== "Product") return null;
+      return this.post.categories && this.post.categories.nodes[0];
+    },
   },
 
   async asyncData({ app, route, store }) {
@@ -37,9 +54,11 @@ export default {
       const { post } = await app.$q("post", { slug });
       if (post === null) {
         return {
-          layout: 'Error',
+          layout: "Error",
           post: {
-            title: `${app.i18n.t('error.title')} - ${app.i18n.t('general.domain')}`,
+            title: `${app.i18n.t("error.title")} - ${app.i18n.t(
+              "general.domain",
+            )}`,
           },
         };
       }
@@ -48,9 +67,11 @@ export default {
       return { layout: post.__typename, post };
     } catch (event) {
       return {
-        layout: 'Error',
+        layout: "Error",
         post: {
-          title: `${app.i18n.t('error.title')} - ${app.i18n.t('general.domain')}`,
+          title: `${app.i18n.t("error.title")} - ${app.i18n.t(
+            "general.domain",
+          )}`,
         },
       };
     }
