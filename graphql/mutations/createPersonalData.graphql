@@ -1,0 +1,7 @@
+#import "../fragments/personalDataFields.graphql"
+
+mutation($personalData: PersonalDataInput!) {
+  personalData: createPersonalData(personalData: $personalData) {
+    ...personalDataFields
+  }
+}
