@@ -179,7 +179,7 @@ export default {
   &__country-select {
     background-color: #1000e3;
     border: 0;
-    color: var(--header-color-base, #000);
+    color: $black;
     font-size: $font-size-h5;
     height: 100%;
     padding: 0 15px;

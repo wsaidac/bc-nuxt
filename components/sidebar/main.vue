@@ -73,23 +73,23 @@ export default {
   }
 
   a {
-    // color: var(--gray-900);
+    color: $gray-900; // checky
     display: block;
     margin-left: 30px;
     margin-top: 5px;
     position: relative;
 
     &:hover {
-      // color: var(--gray-800);
+      color: $gray-800; // checky
     }
 
     &.nuxt-link-exact-active {
-      // color: var(--gray-800);
+      color: $gray-800; // checky
       font-weight: $font-weight-bold;
     }
 
     .ui-icon-arrow-right-open {
-      // color: var(--primary-500);
+      color: $primary-500; // checky
 
       @include position(absolute, 3px null null -20px);
     }
@@ -97,7 +97,7 @@ export default {
 
   &__help {
     a:first-child {
-      // color: var(--gray-800);
+      color: $gray-800; // checky
       cursor: default;
       pointer-events: none;
     }

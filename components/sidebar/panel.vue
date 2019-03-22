@@ -37,14 +37,14 @@ export default {
 
 <style lang="scss">
 .cg-sidebar-panel {
-  // border: 1px solid var(--gray-200);
-  // color: var(--gray-900);
+  border: 1px solid $gray-200; // checky
+  color: $gray-900; // checky
   font-weight: $font-weight-bold;
   margin-bottom: 20px;
   width: 100%;
 
   h3 {
-    // border-bottom: 1px solid var(--gray-100);
+    border-bottom: 1px solid $gray-100; // checky
     font-weight: $font-weight-bold;
     margin: 0;
     padding: 15px 10px 10px;
@@ -56,7 +56,7 @@ export default {
   }
 
   &--solid {
-    // background: var(--gray-100);
+    background: $gray-100; // checky
     border: 1px solid #007bb8;
 
     h3 {

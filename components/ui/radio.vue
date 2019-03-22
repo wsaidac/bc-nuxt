@@ -20,8 +20,8 @@ export default {
 </script>
 
 <style lang="scss">
-// $--input-border-radius: 5px;
-// $--input-focus-border: var(--primary-500);
+// $--input-border-radius: 5px; // checky
+// $--input-focus-border: var(--primary-500); // checky
 
-@import 'element-ui/packages/theme-chalk/src/radio.scss';
+@import "element-ui/packages/theme-chalk/src/radio.scss";
 </style>

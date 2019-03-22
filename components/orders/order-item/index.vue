@@ -189,9 +189,9 @@ export default {
 }
 
 .cg-order-item {
-  // background: var(--gray-100);
-  // border: 1px solid var(--gray-200);
-  // color: var(--gray-700);
+  background: $gray-100; // checky
+  border: $gray-200; // checky
+  color: $gray-700; // checky
   line-height: 1.5;
   margin-top: 10px;
 
@@ -203,7 +203,7 @@ export default {
   }
 
   figure {
-    // border: 1px solid var(--gray-200);
+    border: 1px solid $gray-200; // checky
     margin: 15px 15px 0 0;
 
     @include size(100px);
@@ -227,7 +227,7 @@ export default {
   }
 
   &__name {
-    // color: var(--gray-900);
+    color: $gray-900; // checky
     font-size: 16px;
     font-weight: $font-weight-bold;
   }
@@ -255,7 +255,7 @@ export default {
   }
 
   &__status {
-    // background: var(--danger-500);
+    background: $danger-500; // checky
     color: $white;
     font-variant: small-caps;
     padding: 0 7px;
@@ -269,22 +269,22 @@ export default {
     }
 
     &--unpaid {
-      // background: var(--warning-500);
+      background: $warning-500; // checky
     }
 
     &--chargedback,
     &--refunded {
-      // background: var(--info-500);
+      background: $info-500; // checky
     }
 
     &--shipped {
-      // background: var(--success-500);
+      background: $success-500; // checky
     }
 
     &--paid {
       background: $white;
-      // border: 1px solid var(--success-500);
-      // color: var(--success-500);
+      border: 1px solid $success-500; // checky
+      color: $success-500; // checky
     }
   }
 
@@ -330,7 +330,7 @@ export default {
       }
 
       &:nth-child(2) {
-        // border-bottom: 2px solid var(--gray-200);
+        border-bottom: 2px solid $gray-200; // checky
         margin-bottom: 5px;
         padding-bottom: 5px;
       }

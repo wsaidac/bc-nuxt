@@ -36,12 +36,12 @@ export default {
 
 <style lang="scss">
 .ui-panel {
-  // border: 1px solid var(--gray-200);
+  border: 1px solid $gray-200; // checky
   padding: 20px;
 
   &__title {
-    // border-bottom: 1px solid var(--gray-200);
-    // color: var(--gray-900);
+    border-bottom: 1px solid $gray-200; // checky
+    color: $gray-900; // checky
     font-size: $font-size-h5;
     font-weight: $font-weight-bold;
     margin: 0 -20px 20px -20px;

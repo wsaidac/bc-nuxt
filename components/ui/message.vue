@@ -38,12 +38,12 @@ export default {
 
 <style lang="scss">
 .ui-message {
-  //   border: 1px solid var(--gray-900);
+  border: 1px solid $gray-900; // checky
   margin-bottom: 20px;
   padding: 20px;
 
   h4 {
-    // color: var(--gray-900);
+    color: $gray-900; // checky
     font-weight: $font-weight-bold;
     margin: 0 0 20px;
   }
