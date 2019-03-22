@@ -1,13 +1,13 @@
 {
   "country_select": {
-    "button_name": "Confirm",
+    "button_name": "Continue shopping",
+    "description": "Your country selection will ensure that we offer the <strong>correct products and payment methods</strong>. Please ensure that it corresponds to your country and the account(s) on which you are planning to redeem the product.",
+    "title": "Select your country",
     "country_names": {
-      "Austria": "Austria",
+      "United States": "United States",
       "Belgium": "Belgium",
-      "United States": "United States"
-    },
-    "description": "Your country selection will ensure that we offer the correct products and payment methods. Please ensure that it corresponds to your country and the account(s) on which you are planning to redeem the product.",
-    "title": "Select your country"
+      "Austria": "Austria"
+    }
   },
   "error": {
     "description": "Whoops! This is embarrassing, we can't find this page right now. Can you please try again later?",
@@ -20,7 +20,9 @@
     "privacy-statement": "Privacy statement",
     "quote": "Rapido.com is part of CG | Millions of satisfied customers |",
     "safely": "Safely",
-    "safely-order-with": "Safely order with"
+    "safely-order-with": "Safely order with",
+    "need-help": "Do you need help? Check out our <a>frequently asked questions</a>.",
+    "safe-methods": "<strong>Safe</strong> payments with:"
   },
   "general": {
     "critical_error": "Something went wrong. Reload the page to try again.",
@@ -89,16 +91,6 @@
     "invalid_token": "Your confirmation link is invalid."
   },
   "continue": "Continue",
-  "country_select": {
-    "title": "Select your country",
-    "description": "Your country selection will ensure that we offer the <strong>correct products and payment methods</strong>. Please ensure that it corresponds to your country and the account(s) on which you are planning to redeem the product.",
-    "button_name": "Continue shopping",
-    "country_names": {
-      "United States": "United States",
-      "Belgium": "Belgium",
-      "Austria": "Austria"
-    }
-  },
   "create-new-account": "Create a new account",
   "current-password": "Current password",
   "description-birthdate": "Please enter your date of birth",
@@ -115,10 +107,6 @@
   },
   "female": "Female",
   "first-name": "First name",
-  "footer": {
-    "need-help": "Do you need help? Check out our <a>frequently asked questions</a>.",
-    "safe-methods": "<strong>Safe</strong> payments with:"
-  },
   "forgot-password": "Help, I forgot my password",
   "format": "dd/MM/yyyy",
   "gender": "Gender",
