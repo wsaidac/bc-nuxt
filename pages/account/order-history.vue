@@ -1,5 +1,5 @@
 <template>
-  <section class="cg-order-history">
+  <section class="cg-order-history container">
     <ui-row>
       <ui-col :md="8">
         <sidebar-main />

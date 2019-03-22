@@ -1,5 +1,5 @@
 <template>
-  <div class="cg-sessions">
+  <div class="cg-sessions container">
     <ui-row>
       <ui-col :md="8">
         <sidebar-main />

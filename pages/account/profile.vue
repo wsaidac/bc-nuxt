@@ -1,5 +1,5 @@
 <template>
-  <section class="cg-profile">
+  <section class="cg-profile container">
     <ui-row>
       <ui-col :md="8">
         <sidebar-main />

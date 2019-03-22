@@ -1,5 +1,5 @@
 <template>
-  <section class="cg-confirm">
+  <section class="cg-confirm container">
     <ui-row v-if="error">
       <ui-col :lg="{span: 12, offset: 6}">
         <ui-message :title="$t('invalid')">

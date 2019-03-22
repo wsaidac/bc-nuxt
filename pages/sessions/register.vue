@@ -1,5 +1,5 @@
 <template>
-  <section class="cg-register">
+  <section class="cg-register container">
     <ui-alert
       v-if="signupError"
       :title="$t('registerError.title')"
@@ -36,9 +36,7 @@
     </ui-row>
 
     <ui-row v-else>
-      <ui-col
-        :md="{span: 12, offset: 6}"
-      >
+      <ui-col :md="{span: 12, offset: 6}">
         <ui-panel :title="$t('create new account')">
           <form-signup
             @submit="onSignup"
