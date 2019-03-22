@@ -16,6 +16,7 @@
   "dependencies": {
     "@nuxtjs/style-resources": "^0.1.2",
     "artemis-graphql": "https://github.com/10KB/artemis-graphql#v2.0.2",
+    "axios": "^0.18.0",
     "deepmerge": "^2.2.1",
     "dotenv": "^6.1.0",
     "element-ui": "^2.6.1",
@@ -26,6 +27,7 @@
     "normalize-scss": "^7.0.1",
     "nuxt": "^2.4.0",
     "nuxt-i18n": "^5.8.0",
+    "sitemap": "^2.1.0",
     "typeface-nunito-sans": "^0.0.54",
     "universal-cookie": "^3.0.4",
     "vue": "~2.6.6",

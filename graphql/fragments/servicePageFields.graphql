@@ -1,4 +1,8 @@
 fragment servicePageFields on ServicePage {
   title
+  meta {
+    title
+    description
+  }
   html: content
 }
