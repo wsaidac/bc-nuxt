@@ -72,18 +72,18 @@ export default {
     UiRow,
   },
 
+  data() {
+    return {
+      reset: false,
+      resetError: null,
+    };
+  },
+
   asyncData({ query }) {
     return {
       resetPasswordToken: query.token,
       userId: parseInt(query.user_id),
       invalid: !query.token || !query.user_id,
-    };
-  },
-
-  data() {
-    return {
-      reset: false,
-      resetError: null,
     };
   },
 

@@ -126,16 +126,6 @@ export default {
     UiRow,
   },
 
-  async asyncData({ app }) {
-    const {
-      currentUser: { user },
-    } = await app.$q('currentPersonalData');
-    return {
-      personalDetails: pickPersonalDetails(user),
-      addressDetails: pickAddressDetails(user),
-    };
-  },
-
   data() {
     return {
       error: null,
@@ -152,6 +142,16 @@ export default {
         ...this.addressDetails,
       };
     },
+  },
+
+  async asyncData({ app }) {
+    const {
+      currentUser: { user },
+    } = await app.$q('currentPersonalData');
+    return {
+      personalDetails: pickPersonalDetails(user),
+      addressDetails: pickAddressDetails(user),
+    };
   },
 
   methods: {

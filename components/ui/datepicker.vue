@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'element-ui/lib/theme-chalk/date-picker.css';
+@import "element-ui/lib/theme-chalk/date-picker.css";
 
 .el-date-editor {
   &.el-input,
