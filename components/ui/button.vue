@@ -63,13 +63,21 @@ $--button-font-weight: 700;
 @import "element-ui/packages/theme-chalk/src/button.scss";
 
 .el-button {
-  border: 2px solid $body-color;
+  background: #ffea6b;
+  border: 2px solid $black;
   border-radius: 0;
+  color: $black;
   font-size: 12px;
   line-height: 24px;
   padding: 5px 7px;
   text-transform: uppercase;
   transition: background 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background: $black;
+    border: 2px solid $black;
+    color: $white;
+  }
 
   &.is-justified {
     display: block;
@@ -82,11 +90,6 @@ $--button-font-weight: 700;
     display: block;
     text-align: center;
     width: 100%;
-  }
-
-  &--warning:hover {
-    background-color: $body-color;
-    color: $white;
   }
 
   @include media-breakpoint-up("sm") {

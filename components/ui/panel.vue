@@ -36,11 +36,11 @@ export default {
 
 <style lang="scss">
 .ui-panel {
-  border: 1px solid $gray-200; // checky
+  border: 1px solid $gray-400; // checky, made same as footer-lines
   padding: 20px;
 
   &__title {
-    border-bottom: 1px solid $gray-200; // checky
+    border-bottom: 1px solid $gray-400; // checky, made same as footer-lines
     color: $gray-900; // checky
     font-size: $font-size-h5;
     font-weight: $font-weight-bold;

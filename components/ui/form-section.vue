@@ -36,7 +36,7 @@ export default {
   }
 
   & + .ui-form-section {
-    border-top: 1px solid $gray-200; // checky
+    border-top: 1px solid $gray-400; // checky
   }
 }
 </style>

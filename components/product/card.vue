@@ -227,17 +227,6 @@ export default {
     display: none;
   }
 
-  .el-button {
-    background: #ffea6b;
-    border: 2px solid $black;
-    color: $black;
-
-    &:hover {
-      background: $black;
-      color: $white;
-    }
-  }
-
   &__title {
     position: relative;
 

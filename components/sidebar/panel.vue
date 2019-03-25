@@ -23,7 +23,7 @@ export default {
     },
     version: {
       type: String,
-      default: '', // [ '', solid ]
+      default: '', // [ '', solid ] checky, maybe un-used
     },
   },
 
@@ -37,14 +37,14 @@ export default {
 
 <style lang="scss">
 .cg-sidebar-panel {
-  border: 1px solid $gray-200; // checky
+  border: 1px solid $gray-400; // checky, made same as footer-lines
   color: $gray-900; // checky
   font-weight: $font-weight-bold;
   margin-bottom: 20px;
   width: 100%;
 
   h3 {
-    border-bottom: 1px solid $gray-100; // checky
+    border-bottom: 1px solid $gray-400; // checky, made same as footer-lines
     font-weight: $font-weight-bold;
     margin: 0;
     padding: 15px 10px 10px;
@@ -56,7 +56,7 @@ export default {
   }
 
   &--solid {
-    background: $gray-100; // checky
+    background: red; // checky
     border: 1px solid #007bb8;
 
     h3 {

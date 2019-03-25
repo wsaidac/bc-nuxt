@@ -30,7 +30,7 @@
               <ui-collapse-item
                 :title="{
                   label: $t('account-email-address'),
-                  value: currentUser.email,
+                  value: currentUser && currentUser.email || '',
                   toggle: $t('change-email'),
                 }"
                 title-design="form-toggle"
@@ -79,6 +79,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import SidebarMain from '~/components/sidebar/main';
 import FormChangeEmail from '~/components/form/change-email';
 import FormChangePassword from '~/components/form/change-password';
@@ -145,9 +146,7 @@ export default {
   },
 
   async asyncData({ app }) {
-    const {
-      currentUser: { user },
-    } = await app.$q('currentPersonalData');
+    const { currentUser: { user }, } = await app.$q('currentPersonalData');
     return {
       personalDetails: pickPersonalDetails(user),
       addressDetails: pickAddressDetails(user),
