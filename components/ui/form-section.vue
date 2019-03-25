@@ -29,7 +29,7 @@ export default {
   padding-top: 25px;
 
   &__title {
-    color: $gray-900; // checky
+    color: $black; // checky
     font-size: $font-size-h6;
     font-weight: $font-weight-bold;
     margin: 0 0 25px 0;

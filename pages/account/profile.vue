@@ -191,5 +191,65 @@ export default {
   .el-alert {
     margin-bottom: 25px;
   }
+
+  .el-collapse-item {
+    background: #eaf2fa; // checky
+    border: 1px solid rgb(0, 123, 184); // checky
+    padding: 10px;
+
+    &__header {
+      background: transparent;
+      border: none;
+      font-size: $font-size-base;
+    }
+
+    &__wrap {
+      background: transparent;
+      border: none;
+    }
+
+    &__content {
+      color: $body-color;
+      font-size: $font-size-base;
+      line-height: $line-height-base;
+      padding: 25px 0 0 0;
+    }
+
+    & + .el-collapse-item {
+      margin-top: 4px;
+    }
+  }
+
+  .ui-collapse-item {
+    &__title-form-toggle {
+      line-height: 24px;
+      position: relative;
+      width: 100%;
+
+      .label {
+        color: $black;
+        font-size: $font-size-h6;
+      }
+
+      .value {
+        color: $gray-500;
+      }
+
+      .toggle {
+        color: $link-color;
+        line-height: 48px;
+
+        @include position(absolute, 0 0 null null);
+
+        .is-active & {
+          color: var(--gray-800);
+        }
+
+        @include media-breakpoint-down("sm") {
+          display: none;
+        }
+      }
+    }
+  }
 }
 </style>

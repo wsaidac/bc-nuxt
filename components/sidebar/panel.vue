@@ -38,7 +38,7 @@ export default {
 <style lang="scss">
 .cg-sidebar-panel {
   border: 1px solid $gray-400; // checky, made same as footer-lines
-  color: $gray-900; // checky
+  color: $black; // checky
   font-weight: $font-weight-bold;
   margin-bottom: 20px;
   width: 100%;

@@ -73,7 +73,7 @@ export default {
   }
 
   a {
-    color: $gray-900; // checky
+    color: $black; // checky
     display: block;
     margin-left: 30px;
     margin-top: 5px;

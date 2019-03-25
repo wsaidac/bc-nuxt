@@ -92,6 +92,22 @@ $--button-font-weight: 700;
     width: 100%;
   }
 
+  &--plain {
+    background: transparent;
+    border: 1px solid $gray-600;
+    border-radius: 3px;
+    color: $primary-500;
+    font-weight: $font-weight-regular;
+
+    @include size(100px, 43px);
+
+    &:hover {
+      background: $primary-500 !important;
+      border: 1px solid $black !important;
+      color: $white;
+    }
+  }
+
   @include media-breakpoint-up("sm") {
     font-size: 14.4px;
     padding: 3px 20px;
