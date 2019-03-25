@@ -116,6 +116,10 @@ export default {
       left: 30px !important;
       right: 30px !important;
     }
+
+    span {
+      @include flex(space-between, center);
+    }
   }
 }
 </style>
