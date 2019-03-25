@@ -1,0 +1,38 @@
+<template>
+  <div class="cg-error block block--blue">
+    <div class="container">
+      <h3 class="cg-error--desc">{{ $t('error.description') }}</h3>
+      <p class="cg-error--help">{{ $t('error.help') }}</p>
+      <nuxt-link
+        :to="`/${$i18n.locale}/`"
+        class="button button--primary button--med"
+      >
+        {{ $t('error.button_name') }}
+      </nuxt-link>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  head() {
+    return {
+      title: `${this.$t("error.title")} - ${this.$t("general.domain")}`,
+    };
+  },
+};
+</script>
+
+<style lang="scss">
+.cg-error {
+  text-align: center;
+
+  &--help {
+    margin-bottom: 40px;
+  }
+
+  .button {
+    display: inline-block;
+  }
+}
+</style>
