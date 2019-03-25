@@ -34,8 +34,8 @@ export default {
 </script>
 
 <style lang="scss">
-// $--radio-button-checked-fill: var(--primary-500);
-// $--radio-button-checked-border-color: var(--primary-500);
+$--radio-button-checked-background-color: $primary-500;
+$--radio-button-checked-border-color: $primary-500;
 
 @import "element-ui/packages/theme-chalk/src/radio-button.scss";
 
