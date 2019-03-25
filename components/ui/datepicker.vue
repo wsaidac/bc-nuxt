@@ -53,6 +53,15 @@ export default {
   &.el-input__inner {
     width: 100%;
   }
+
+  .ui-icon-calendar {
+    position: relative;
+    top: 10px;
+  }
+
+  .el-input__suffix {
+    right: 0;
+  }
 }
 
 .el-date-picker.el-popper {

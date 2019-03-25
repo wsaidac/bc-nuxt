@@ -28,9 +28,7 @@
           <template slot="label">
             {{ $t('birthdate') }}
           </template>
-          <ui-date-picker
-            v-model="birthDate"
-          />
+          <ui-date-picker v-model="birthDate" />
         </ui-form-item>
       </ui-col>
     </ui-row>
@@ -57,9 +55,7 @@
     <ui-row>
       <ui-col :md="12">
         <ui-form-item :label="$t('phone-number')">
-          <ui-input-phone-number
-            v-model="phoneNumber"
-          />
+          <ui-input-phone-number v-model="phoneNumber" />
         </ui-form-item>
       </ui-col>
     </ui-row>
