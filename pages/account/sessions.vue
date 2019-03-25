@@ -1,5 +1,5 @@
 <template>
-  <div class="cg-sessions container">
+  <div class="cg-sessions container container-margin">
     <ui-row>
       <ui-col :md="8">
         <sidebar-main />

@@ -1,5 +1,5 @@
 <template>
-  <section class="cg-login container">
+  <section class="cg-login container container-margin">
     <ui-alert
       v-if="loginError"
       :title="$t('loginError.title')"
