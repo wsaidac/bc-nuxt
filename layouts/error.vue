@@ -1,8 +1,8 @@
 <template>
   <div class="cg-error block block--blue">
     <div class="container">
-      <h3 class="cg-error--desc">{{ $t('error.description') }}</h3>
-      <p class="cg-error--help">{{ $t('error.help') }}</p>
+      <h3 class="cg-error__desc">{{ $t('error.description') }}</h3>
+      <p class="cg-error__help">{{ $t('error.help') }}</p>
       <nuxt-link
         :to="`/${$i18n.locale}/`"
         class="button button--primary button--med"
@@ -27,7 +27,7 @@ export default {
 .cg-error {
   text-align: center;
 
-  &--help {
+  &__help {
     margin-bottom: 40px;
   }
 
