@@ -2,6 +2,10 @@
 
 fragment homeFields on Home {
   title
+  meta {
+    title
+    description
+  }
   header {
     titlePart1
     titlePart2

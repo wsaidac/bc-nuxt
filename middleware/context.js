@@ -42,14 +42,13 @@ export default ({
   const locale = urlPaths[1];
   const [language, country] = locale.split('-');
 
-  // if the locale slug in the url is not supported for this merchant
-  // redirect to the homepage with the default locale slug
-  if (!app.i18n.locales.find(el => el.code.toUpperCase() === locale.toUpperCase())) {
+  // if there is no locale slug in the url, redirect to default locale
+  if (!locale) {
     return redirect(301, `/${app.i18n.defaultLocale}/`);
   }
 
   // if the locale has uppercase letters, redirect to lowercase locale
-  // ex /en-US will redirect to /en-us for SEO purposes
+  // ex /en-US/ will redirect to /en-us/ for SEO purposes
   if (locale !== locale.toLowerCase()) {
     urlPaths.splice(1, 1, locale.toLowerCase());
 
