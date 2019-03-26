@@ -16,7 +16,7 @@
             tag="p"
           >
             <strong place="email">
-              {{ user.email }}
+              {{ user && user.email || '' }}
             </strong>
           </i18n>
         </ui-message>
