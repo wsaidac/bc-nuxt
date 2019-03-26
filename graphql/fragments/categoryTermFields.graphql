@@ -2,6 +2,7 @@ fragment categoryTermFields on CategoryTerm {
   name
   description
   slug
+  id
   meta {
     title
     description
