@@ -20,7 +20,6 @@
             <p class="text-right">
               <ui-button
                 class="cg-sessions__log-al-out"
-                size="mini"
                 @click="logoutAll"
               >
                 {{ $t('logout-everywhere') }}
