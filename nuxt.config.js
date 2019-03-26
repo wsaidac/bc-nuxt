@@ -50,7 +50,7 @@ const conf = {
     // csp: true,
   },
   router: {
-    middleware: ['headers', 'context'],
+    middleware: ['auth', 'headers', 'context'],
   },
   modules: [
     ['@nuxtjs/style-resources'],
