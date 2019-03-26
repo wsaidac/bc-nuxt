@@ -46,7 +46,12 @@ const conf = {
   },
   render: {
     static: {
-      maxAge: 2592000000,
+      maxAge: '30d',
+    },
+    dist: {
+      maxAge: '30d',
+      immutable: true,
+      public: true,
     },
     // csp: true,
   },
