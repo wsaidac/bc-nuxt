@@ -1,4 +1,6 @@
 .button {
+  cursor: pointer;
+
   &.button--primary {
     background: $warning-base;
     border: 2px solid $black;

@@ -28,7 +28,7 @@ fragment quickbuyFields on CmsProduct {
       content
     }
   }
-  categories {
+  categories: categoryTerms {
     nodes {
       ...categoryTermFields
     }
