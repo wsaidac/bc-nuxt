@@ -6,6 +6,10 @@ fragment productFields on CmsProduct {
   link
   uri
   slug
+  meta {
+    title
+    description
+  }
   information {
     retailValue
     currency
@@ -29,7 +33,7 @@ fragment productFields on CmsProduct {
     }
     subtext
   }
-  categories {
+  categories: categoryTerms {
     nodes {
       ...categoryTermFields
     }
