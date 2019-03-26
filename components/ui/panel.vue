@@ -41,7 +41,6 @@ export default {
 
   &__title {
     border-bottom: 1px solid $gray-400; // checky, made same as footer-lines
-    color: $primary-500; // checky
     font-size: $font-size-h5;
     font-weight: $font-weight-bold;
     margin: 0 -20px 20px -20px;

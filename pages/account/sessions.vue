@@ -19,6 +19,7 @@
 
             <p class="text-right">
               <ui-button
+                class="cg-sessions__log-al-out"
                 size="mini"
                 @click="logoutAll"
               >
@@ -67,3 +68,17 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.cg-sessions {
+  &__log-al-out {
+    background: $white;
+    border-radius: 3px;
+
+    &:hover {
+      background: $black;
+      color: $white;
+    }
+  }
+}
+</style>

@@ -78,14 +78,21 @@ export default {
     font-size: $font-size-small;
 
     strong {
-      color: var(--success-500);
+      color: $success-500;
     }
   }
 
   .el-button {
+    background: $white;
+    border-radius: 3px;
     margin-top: -14px;
 
     @include position(absolute, 50% 0 null null);
+
+    &:hover {
+      background: $black;
+      color: $white;
+    }
   }
 }
 </style>

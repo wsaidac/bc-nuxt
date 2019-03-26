@@ -65,7 +65,7 @@
           </ui-form-section>
           <ui-form-section>
             <ui-button
-              type="secondary"
+              class="cg-profile__submit"
               native-type="submit"
               @click="saveDetails"
             >
@@ -249,6 +249,18 @@ export default {
           display: none;
         }
       }
+    }
+  }
+
+  &__submit {
+    background: $gray-300;
+    border: 0;
+    border-radius: 3px;
+    padding: 10px 15px;
+    text-transform: none;
+
+    &:hover {
+      border: 0;
     }
   }
 }
