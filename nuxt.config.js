@@ -9,7 +9,7 @@ const conf = {
     title: 'rapido_web',
     meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [{ src: 'https://cdn.blueconic.net/cg.js' }],
+    script: [{ async: true, src: '//cg.sb.blueconic.net/frontend/static/javascript/blueconic/blueconic.min.js' }],
   },
   css: ['~/assets/stylesheets/application.scss'],
   store: true,
@@ -53,7 +53,18 @@ const conf = {
       immutable: true,
       public: true,
     },
-    // csp: true,
+    csp: {
+      hashAlgorithm: 'sha256',
+      policies: {
+        'script-src': [
+          '*.googletagmanager.com',
+          '*.blueconic.net',
+        ],
+        'report-uri': [
+          'https://sentry.io/api/1424268/security/?sentry_key=c82b3b97e8af426da4eb2b24099ca8ff',
+        ],
+      },
+    },
   },
   router: {
     middleware: ['headers', 'context'],
@@ -64,8 +75,8 @@ const conf = {
     [
       'artemis-graphql',
       {
-        browserUri: 'env://API_BROWSER',
-        serverUri: 'env://API_SERVER',
+        browserUri: 'https://api-hub.eu-west-1.acceptance.cgaws.cloud',
+        serverUri: 'https://api-hub.eu-west-1.acceptance.cgaws.cloud',
         extendedHeaders: 'extendedGraphqlHeaders',
       },
     ],
