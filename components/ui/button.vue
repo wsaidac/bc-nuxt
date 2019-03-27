@@ -63,21 +63,7 @@ $--button-font-weight: 700;
 @import "element-ui/packages/theme-chalk/src/button.scss";
 
 .el-button {
-  background: #ffea6b;
-  border: 2px solid $black;
-  border-radius: 0;
-  color: $black;
-  font-size: 12px;
-  line-height: 24px;
-  padding: 5px 7px;
-  text-transform: uppercase;
   transition: background 0.3s ease, color 0.3s ease;
-
-  &:hover {
-    background: $black;
-    border: 2px solid $black;
-    color: $white;
-  }
 
   &.is-justified {
     display: block;
@@ -92,7 +78,23 @@ $--button-font-weight: 700;
     width: 100%;
   }
 
-  &--plain {
+  &--primary {
+    background: #ffea6b;
+    border-radius: 0;
+    border: 2px solid $black;
+    color: $black;
+    font-size: 12px;
+    padding: 5px 7px;
+    text-transform: uppercase;
+
+    &:hover {
+      background: $black;
+      border: 2px solid $black;
+      color: $white;
+    }
+  }
+
+  &--secondary {
     background: transparent;
     border: 1px solid $gray-600;
     border-radius: 3px;
@@ -105,6 +107,22 @@ $--button-font-weight: 700;
       background: $primary-500 !important;
       border: 1px solid $black !important;
       color: $white;
+    }
+  }
+
+  // &--tertiary {
+
+  // }
+
+  &--quaternary {
+    background: $gray-300;
+    border: 0;
+    border-radius: 3px;
+    padding: 10px 15px !important;
+    text-transform: none;
+
+    &:hover {
+      border: 0;
     }
   }
 

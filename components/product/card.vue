@@ -100,6 +100,7 @@
           >
         </fieldset>
         <ui-button
+          type="primary"
           native-type="button"
           @click="submitForm"
         >

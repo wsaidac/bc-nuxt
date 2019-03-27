@@ -41,14 +41,14 @@
     </small>
     <ui-form-item>
       <ui-button
-        type="plain"
+        type="secondary"
         native-type="button"
         @click="cancel"
       >
         {{ $t('cancel') }}
       </ui-button>
       <ui-button
-        type="plain"
+        type="secondary"
         native-type="submit"
       >
         {{ $t('save') }}
