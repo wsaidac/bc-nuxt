@@ -54,7 +54,7 @@ export default {
       return this.isLoaded && currentUser ? currentUser.quickbuy : undefined;
     },
     product() {
-      return this.userProduct || this.defaultProduct;
+      return (this.userProduct && this.userProduct.id) || this.defaultProduct;
     },
   },
 

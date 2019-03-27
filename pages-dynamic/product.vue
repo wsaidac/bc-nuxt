@@ -116,8 +116,19 @@ export default {
     },
   },
 
+  head() {
+    const category = this.post.categories.nodes[0].name.toLowerCase();
+    const url = `https://${this.domain}/${this.locale}/${category}`;
+    return {
+      meta: [
+        { rel: 'canonical', href: url },
+      ],
+    };
+  },
+
   computed: {
     ...mapGetters('shared', ['customerService', 'usps', 'header']),
+    ...mapGetters('context', ['locale', 'domain']),
     category() {
       return this.post.categories.nodes[0];
     },
