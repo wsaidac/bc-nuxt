@@ -6,17 +6,16 @@
       "Belgium": "Belgique",
       "United States": "États-Unis"
     },
-    "description": "Afin d'accéder aux produits et aux méthodes de paiement spécifiques à votre pays de résidence, merci de sélectionner le pays du compte que vous souhaitez recharger.\n",
-    "title": "Sélectionner votre pays\n"
+    "description": "Afin d'accéder aux produits et aux méthodes de paiement spécifiques à votre pays de résidence, merci de sélectionner le pays du compte que vous souhaitez recharger.",
+    "title": "Sélectionner votre pays"
   },
   "error": {
-    "button_name": "La page d’accueil\t\n",
-    "description": "Oups... cette page est introuvable\t\n",
-    "error_text": "La page demandée n’a pas été trouvée.",
+    "button_name": "La page d’accueil",
+    "description": "Oups... cette page est introuvable",
     "title": "La page demandée n’a pas été trouvée."
   },
   "footer": {
-    "customer-care": "Service clients\t\n",
+    "customer-care": "Service clients",
     "order-with": "Moyen de paiement",
     "privacy-statement": "Politique de confidentialite",
     "quote": "Rapido.com",
@@ -31,34 +30,34 @@
     "label": "Rapido",
     "loading": "En cours de chargement",
     "look-at-faqs": "Nous sommes à votre écoute",
-    "need-some-help": "Vous avez une question?\n",
+    "need-some-help": "Vous avez une question?",
     "order-now": "Commander",
     "order-safely": "Paiement sécurisé",
     "show-less": "Réduire",
-    "show-more": "Montre plus\t\n"
+    "show-more": "Montre plus"
   },
   "header": {
     "login": "En cours de chargement",
-    "main-nav": "Menu principal\t\n",
-    "menu": "Accueil\t\n",
+    "main-nav": "Menu principal",
+    "menu": "Accueil",
     "my-account": "Mon compte",
     "profile": "Mon compte"
   },
   "home": {
-    "featured-products": "Notre sélection\n",
-    "lets-speed-it-up": "N'attendez plus pour vos recharges !\n",
+    "featured-products": "Notre sélection",
+    "lets-speed-it-up": "N'attendez plus pour vos recharges !",
     "see-all-denominations": "Voir tous les produits"
   },
   "internal-links": {
     "about-us": "Qui sommes-nous ?",
-    "cookies": "Cookies\n",
-    "general-conditions": "Conditions\t\n",
+    "cookies": "Cookies",
+    "general-conditions": "Conditions",
     "payment-methods": "Modes de paiement",
     "privacy-policy": "Politique de confidentialite",
-    "terms-of-use": "À propos de Rapido.com\t\n"
+    "terms-of-use": "À propos de Rapido.com"
   },
   "payment-methods": {
-    "checkout-options": "Sur Rapido.com vous pouvez payer avec les modes de paiement suivants, retrouvez toutes les informations ci-dessous.\n",
+    "checkout-options": "Sur Rapido.com vous pouvez payer avec les modes de paiement suivants, retrouvez toutes les informations ci-dessous.",
     "credit-or-debit-card": "Carte de crédit ou débit  ",
     "payment-options": "Modes de paiement",
     "paypal": "PayPal",
