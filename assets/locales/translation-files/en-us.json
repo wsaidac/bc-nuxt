@@ -10,10 +10,10 @@
     "title": "Select your country"
   },
   "error": {
-    "description": "Whoops! This is embarrassing, we can't find this page right now.",
+    "button_name": "Rapido Homepage",
+    "description": "Whoops! This is embarrassing, we can't find this page right now. Can you please try again later?",
     "help": "Please click on the button bellow to return to the homepage or select your country from top menu.",
-    "title": "Page not found",
-    "button_name": "Rapido Homepage"
+    "title": "Page not found"
   },
   "footer": {
     "customer-care": "Customer Care",

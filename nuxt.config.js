@@ -9,7 +9,7 @@ const conf = {
     title: 'rapido_web',
     meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [{ src: 'https://cdn.blueconic.net/cg.js' }],
+    script: [{ async: true, src: '//cg.sb.blueconic.net/frontend/static/javascript/blueconic/blueconic.min.js' }],
   },
   css: ['~/assets/stylesheets/application.scss'],
   store: true,
