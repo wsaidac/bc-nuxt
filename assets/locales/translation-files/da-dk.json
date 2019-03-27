@@ -1,70 +1,44 @@
 {
-  "general": {
-    "critical_error": "",
-    "domain": "",
-    "help": "",
-    "home-text": "",
-    "label": "",
-    "loading": "",
-    "look-at-faqs": "",
-    "need-some-help": "",
-    "order-now": "",
-    "order-safely": "",
-    "show-less": "",
-    "show-more": ""
-  },
-  "header": {
-    "login": "",
-    "main-nav": "",
-    "menu": "",
-    "my-account": "",
-    "profile": ""
-  },
-  "home": {
-    "featured-products": "",
-    "lets-speed-it-up": "",
-    "see-all-denominations": ""
-  },
-  "internal-links": {
-    "about-us": "",
-    "cookies": "",
-    "general-conditions": "",
-    "payment-methods": "",
-    "privacy-policy": "",
-    "terms-of-use": ""
+  "country_select": {
+    "description": "Dit landevalg sikrer, at vi tilbyder de rigtige produkter og betalingsmetoder. Sørg for, at det svarer til dit land og den eller de konti, som du planlægger at indløse produktet med.",
+    "title": "Vælg dit land"
   },
   "footer": {
-    "order-with": "",
-    "safely-order-with": "",
-    "safely": "",
-    "customer-care": "",
-    "privacy-statement": "",
-    "quote": ""
+    "customer-care": "Kundeservice",
+    "privacy-statement": "Fortrolighedsmeddelelse",
+    "quote": "Rapido.com er en del af CG |  Millioner af tilfredse kunder |",
+    "safely-order-with": "Bestil sikkert og trygt med:"
+  },
+  "general": {
+    "domain": "Rapido.com",
+    "help": "Hjælp",
+    "home-text": "Forside",
+    "label": "Rapido",
+    "look-at-faqs": "Se vores ofte stillede spørgsmål",
+    "need-some-help": "Har du brug for hjælp?",
+    "order-now": "Bestil nu",
+    "order-safely": "Bestil sikkert og trygt",
+    "show-less": "Vis mindre",
+    "show-more": "Vis mere"
+  },
+  "header": {
+    "login": "Log ind",
+    "main-nav": "Hovedmenu",
+    "menu": "Menu",
+    "my-account": "Min konto"
+  },
+  "home": {
+    "featured-products": "Udvalgte produkter",
+    "lets-speed-it-up": "Lad os sætte farten op",
+    "see-all-denominations": "Se alle kategorier"
+  },
+  "internal-links": {
+    "cookies": "Cookies",
+    "general-conditions": "Betingelser",
+    "payment-methods": "Betalingsmuligheder",
+    "terms-of-use": "Vilkår for brug"
   },
   "payment-methods": {
-    "checkout-options": "",
-    "credit-or-debit-card": "",
-    "payment-options": "",
-    "paypal": "",
-    "paypal_text_1": "",
-    "paypal_text_2": "",
-    "shipping": "",
-    "visa_and_mastercard_text_1": "",
-    "visa_and_mastercard_text_2": ""
-  },
-  "error": {
-    "description": "",
-    "title": "",
-    "button_name": ""
-  },
-  "country_select": {
-    "button_name": "",
-    "description": "",
-    "title": "",
-    "country_names": {
-      "United States": "",
-      "Belgium": "",
-      "Austria": ""
-    }
+    "paypal": "PayPal"
   }
 }
