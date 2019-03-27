@@ -102,7 +102,7 @@ export default {
     .el-collapse-item__header {
       background: $gray-100;
       border-top: 1px solid $gray-900;
-      flex-flow: row-reverse nowrap;
+      flex-flow: row nowrap;
       font-size: 16.8px;
       font-weight: 900;
       line-height: 24px;
