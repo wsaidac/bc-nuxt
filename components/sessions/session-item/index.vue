@@ -22,8 +22,8 @@
       />
     </div>
     <ui-button
+      type="tertiary"
       v-if="!session.currentSession"
-      size="mini"
       @click="logout(session.id)"
     >
       {{ $t('logout') }}
@@ -59,7 +59,8 @@ export default {
 
 <style lang="scss">
 .cg-session-item {
-  border-bottom: 1px solid var(--gray-200);
+  border-bottom: 1px solid $gray-600;
+  color: $gray-600;
   padding: 8px 8px 8px 40px;
   position: relative;
 
@@ -83,16 +84,9 @@ export default {
   }
 
   .el-button {
-    background: $white;
-    border-radius: 3px;
     margin-top: -14px;
 
     @include position(absolute, 50% 0 null null);
-
-    &:hover {
-      background: $black;
-      color: $white;
-    }
   }
 }
 </style>
