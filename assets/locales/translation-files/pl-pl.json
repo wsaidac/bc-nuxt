@@ -1,70 +1,41 @@
 {
-  "general": {
-    "critical_error": "",
-    "domain": "",
-    "help": "",
-    "home-text": "",
-    "label": "",
-    "loading": "",
-    "look-at-faqs": "",
-    "need-some-help": "",
-    "order-now": "",
-    "order-safely": "",
-    "show-less": "",
-    "show-more": ""
-  },
-  "header": {
-    "login": "",
-    "main-nav": "",
-    "menu": "",
-    "my-account": "",
-    "profile": ""
-  },
-  "home": {
-    "featured-products": "",
-    "lets-speed-it-up": "",
-    "see-all-denominations": ""
-  },
-  "internal-links": {
-    "about-us": "",
-    "cookies": "",
-    "general-conditions": "",
-    "payment-methods": "",
-    "privacy-policy": "",
-    "terms-of-use": ""
+  "country_select": {
+    "description": "Dzięki opcji wyboru kraju możemy się upewnić, że oferujemy odpowiednie produkty i metody płatności. Upewnij się, że produkt jest dostępny w Twoim kraju i może zostać zrealizowany na Twoim koncie/kontach.",
+    "title": "Wybierz swój kraj"
   },
   "footer": {
-    "order-with": "",
-    "safely-order-with": "",
-    "safely": "",
-    "customer-care": "",
-    "privacy-statement": "",
-    "quote": "|"
+    "customer-care": "Obsługa klienta",
+    "safely-order-with": "Zamów bezpiecznie z:"
+  },
+  "general": {
+    "domain": "Rapido.com",
+    "home-text": "Strona główna",
+    "look-at-faqs": "Sprawdź często zadawane pytania",
+    "need-some-help": "Potrzebujesz pomocy?",
+    "order-now": "Zamów teraz",
+    "order-safely": "Zamów bezpiecznie",
+    "show-less": "Pokaż mniej",
+    "show-more": "Pokaż więcej"
+  },
+  "header": {
+    "login": "Login",
+    "main-nav": "Menu główne",
+    "menu": "Menu",
+    "my-account": "Moje konto"
+  },
+  "home": {
+    "featured-products": "Produkty specjalne",
+    "lets-speed-it-up": "Przyśpieszmy to",
+    "see-all-denominations": "Zobacz wszystkie waluty"
+  },
+  "internal-links": {
+    "cookies": "Pliki cookie",
+    "general-conditions": "Warunki",
+    "payment-methods": "Metody płatności",
+    "terms-of-use": "Warunki użytkowania"
   },
   "payment-methods": {
-    "checkout-options": "",
-    "credit-or-debit-card": "",
-    "payment-options": "",
-    "paypal": "",
-    "paypal_text_1": "",
-    "paypal_text_2": "",
-    "shipping": "",
-    "visa_and_mastercard_text_1": "",
-    "visa_and_mastercard_text_2": ""
-  },
-  "error": {
-    "description": "",
-    "title": "",
-    "button_name": ""
-  },
-  "country_select": {
-    "button_name": "",
-    "description": "",
-    "title": "",
-    "country_names": {
-      "United States": "",
-      "Belgium": "",
-      "Austria": ""
-    }
+    "payment-options": "Metody płatności",
+    "paypal": "PayPal"
   }
 }

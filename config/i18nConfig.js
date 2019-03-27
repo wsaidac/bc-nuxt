@@ -11,6 +11,8 @@ const localeFormats = {
 const merchantLocales = (label) => merchants[label].locales
 const labelLocales = (label) => merchantLocales(label).map(locale => allLocales[locale]);
 const formatOflabelAndType = (label, dataType) => lodash.pick(localeFormats[dataType], merchantLocales(label));
+const defaultLocale = (label) => merchants[label].default;
+const defaultLocaleFile = (label) => `../assets/locales/translation-files/${label}.json`;
 
 module.exports = function (label) {
   return {
@@ -20,19 +22,22 @@ module.exports = function (label) {
     lazy: true,
     langDir: './assets/locales/translation-files/',
     locales: labelLocales(label),
-    defaultLocale: merchants[label].default,
+    defaultLocale: defaultLocale(label),
     vueI18nLoader: true,
     vueI18n: {
-      fallbackLocale: merchants[label].default,
+      fallbackLocale: defaultLocale(label),
       silentTranslationWarn: true,
       dateTimeFormats: formatOflabelAndType(label, 'dateTimeFormats'),
       numberFormats: formatOflabelAndType(label, 'numberFormats'),
+      messages: {
+        [defaultLocale(label)]: require(defaultLocaleFile(defaultLocale(label))),
+      },
     },
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'country',
       alwaysRedirect: false,
-      fallbackLocale: null,
+      fallbackLocale: defaultLocale(label),
     },
   };
 };
