@@ -146,7 +146,6 @@ export default {
     @include flex(null, center);
 
     img {
-      filter: invert(100%);
       height: 25px;
       margin-right: 15px;
     }
