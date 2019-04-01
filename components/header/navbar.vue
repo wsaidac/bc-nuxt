@@ -64,8 +64,6 @@ import HeaderHamburger from './hamburger';
 import HeaderLocaleSelect from './locale-select';
 import { UiIcon } from '~/components/ui';
 
-import flags from '~/assets/flags.js';
-
 export default {
   components: {
     HeaderLogin,
@@ -99,9 +97,6 @@ export default {
     },
     country() {
       return this.$i18n.locales.find(i => i.code === this.$i18n.locale);
-    },
-    countryFlag() {
-      return flags[this.country.name.toLowerCase()];
     },
   },
 };

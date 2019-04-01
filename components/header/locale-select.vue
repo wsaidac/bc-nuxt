@@ -40,8 +40,6 @@
 import ElOption from 'element-ui/lib/option.js';
 import { UiSelect, UiDialog, UiButton } from '~/components/ui.js';
 
-import flags from '~/assets/flags.js';
-
 export default {
   components: {
     ElOption,
@@ -70,9 +68,6 @@ export default {
   },
 
   methods: {
-    itemFlag(name) {
-      return flags[name.toLowerCase()];
-    },
     changeLocale() {
       this.$emit('hideDialog');
       if (this.$i18n.locale !== this.localeSelected) {
