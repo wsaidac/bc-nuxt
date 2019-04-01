@@ -4,6 +4,8 @@ const i18nConfig = require('./config/i18nConfig.js');
 require('dotenv').config();
 
 
+const label = 'rapido';
+
 const conf = {
   head: {
     title: 'rapido_web',
@@ -80,13 +82,15 @@ const conf = {
         extendedHeaders: 'extendedGraphqlHeaders',
       },
     ],
-    ['nuxt-i18n', i18nConfig('rapido')],
+    ['nuxt-i18n', i18nConfig(label)],
   ],
   env: {
     API_BROWSER: process.env.API_BROWSER,
     API_SERVER: process.env.API_SERVER,
     GTM_ID: 'GTM - KWZLG26',
     GTM_DEBUG: 'true',
+    DOMAIN: 'www.rapido.com',
+    LABEL: label,
   },
   plugins: [
     '~/plugins/vuetouch.js',

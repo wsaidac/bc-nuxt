@@ -58,14 +58,22 @@ export default {
   computed: {
     decoratedProducts() {
       if (!this.popularProducts.items) return [];
-      return this.popularProducts.items.map(({ category }) => ({
+      return this.popularProducts.items.map(({ image, category }) => ({
         ...category,
         title: get(category, "categoryHeader.title"),
         image: {
-          regular: get(category, "categoryHeader.image.regular"),
-          retina: get(category, "categoryHeader.image.retina"),
-          altText: get(category, "categoryHeader.image.altText"),
-          description: get(category, "categoryHeader.image.description"),
+          regular:
+            get(image, "regular")
+            || get(category, "categoryHeader.image.regular"),
+          retina:
+            get(image, "retina")
+            || get(category, "categoryHeader.image.retina"),
+          altText:
+            get(image, "altText")
+            || get(category, "categoryHeader.image.altText"),
+          description:
+            get(image, "description")
+            || get(category, "categoryHeader.image.description"),
         },
       }));
     },
