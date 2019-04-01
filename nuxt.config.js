@@ -69,8 +69,8 @@ const conf = {
     ['nuxt-i18n', i18nConfig(label)],
   ],
   env: {
-    API_BROWSER: 'https://api-hub.eu-west-1.acceptance.cgaws.cloud',
-    API_SERVER: 'https://api-hub.eu-west-1.acceptance.cgaws.cloud',
+    API_BROWSER: process.env.API_BROWSER,
+    API_SERVER: process.env.API_SERVER,
     GTM_ID: 'GTM - KWZLG26',
     GTM_DEBUG: 'true',
     DOMAIN: 'www.rapido.com',

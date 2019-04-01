@@ -229,6 +229,7 @@ export default {
 
     &__brand {
       margin: 2px 0 0 0;
+      width: 100px;
     }
 
     &__country-select {
