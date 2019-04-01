@@ -73,6 +73,7 @@ const conf = {
   },
   modules: [
     ['@nuxtjs/style-resources'],
+    ['@nuxtjs/sentry'],
     ['~/modules/iconsWeb'],
     [
       'artemis-graphql',
@@ -101,6 +102,10 @@ const conf = {
     { src: '~/plugins/async.js', ssr: false },
     '~/plugins/shared.js',
   ],
+  sentry: {
+    dsn: 'https://c82b3b97e8af426da4eb2b24099ca8ff@sentry.io/1424268',
+    config: {}, // Additional config
+  },
   watchers: {
     webpack: {
       poll: true,
