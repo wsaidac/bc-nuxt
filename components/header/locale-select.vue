@@ -138,8 +138,10 @@ export default {
   }
 }
 
-.flag-icon {
-  margin-right: 5px;
-  vertical-align: middle;
+.el-select-dropdown {
+  .flag-icon {
+    margin-right: 5px;
+    vertical-align: middle;
+  }
 }
 </style>
