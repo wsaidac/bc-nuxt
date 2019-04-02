@@ -82,8 +82,8 @@ export default {
   padding: 10px 0;
   position: relative;
 
-  @include media-breakpoint-up("sm") {
-    padding: 15px 0;
+  @include media-breakpoint-down("md") {
+    padding: 0;
   }
 
   &__list {
