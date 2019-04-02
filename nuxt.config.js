@@ -61,8 +61,8 @@ const conf = {
     [
       'artemis-graphql',
       {
-        browserUri: 'env://API_BROWSER',
-        serverUri: 'env://API_SERVER',
+        browserUri: 'https://api-hub.eu-west-1.acceptance.cgaws.cloud',
+        serverUri: 'https://api-hub.eu-west-1.acceptance.cgaws.cloud',
         extendedHeaders: 'extendedGraphqlHeaders',
       },
     ],
@@ -71,7 +71,7 @@ const conf = {
   env: {
     API_BROWSER: process.env.API_BROWSER,
     API_SERVER: process.env.API_SERVER,
-    GTM_ID: 'GTM - KWZLG26',
+    GTM_ID: 'GTM-KBPKD5V',
     GTM_DEBUG: 'true',
     DOMAIN: 'www.rapido.com',
     LABEL: label,

@@ -93,8 +93,11 @@ export default {
   },
 
   head() {
+    const url = `https://${this.domain}${this.$route.path}`;
+
     return {
       meta: [
+        { rel: 'canonical', href: url },
         { property: 'og:type', content: 'og:product' },
         { property: 'bc:pagetype', content: 'POP' },
         { property: 'bc:pop:identifier', content: `${this.post.id}${this.$i18n.locale}` },
@@ -102,7 +105,7 @@ export default {
         { property: 'bc:pop:slug', content: this.$router.currentRoute.path },
         { property: 'bc:product:title', content: this.post.meta.title },
         { property: 'bc:product:description', content: this.post.meta.description },
-        { property: 'bc:product:brand', content: this.post.name },
+        // { property: 'bc:product:brand', content: this.post.name },
         // { property: 'bc:product:type', content: 'callcredit' },
         // { property: 'bc:product:subcategory', content: 'Mobile Recharge' },
         // { property: "bc:product:image", content: "https://static.rapido.com/categories/2023/verizon.png?1543831182" },
@@ -118,15 +121,6 @@ export default {
       type: Object,
       required: true,
     },
-  },
-
-  head() {
-    const url = `https://${this.domain}${this.$route.path}`;
-    return {
-      meta: [
-        { rel: 'canonical', href: url },
-      ],
-    };
   },
 
   computed: {
