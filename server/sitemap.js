@@ -49,7 +49,7 @@ router.get('/', async (req, res) => {
   const context = `${domain}-${locale}`;
   request(context).then((result) => {
     const { servicePages, categoryTerms } = result.data.data;
-    const sitemap = createSitemap('http://www.', domain, locale, servicePages, categoryTerms);
+    const sitemap = createSitemap('https://', req.headers.host, locale, servicePages, categoryTerms);
 
     sitemap.toXML((err, xml) => {
       if (err) {

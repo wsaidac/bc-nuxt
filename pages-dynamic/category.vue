@@ -99,8 +99,18 @@ export default {
     },
   },
 
+  head() {
+    const url = `https://${this.domain}${this.$route.path}`;
+    return {
+      meta: [
+        { rel: 'canonical', href: url },
+      ],
+    };
+  },
+
   computed: {
     ...mapGetters('shared', ['customerService', 'usps']),
+    ...mapGetters('context', ['locale', 'domain']),
 
     categoryText() {
       return this.post.name;

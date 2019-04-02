@@ -4,12 +4,14 @@ const i18nConfig = require('./config/i18nConfig.js');
 require('dotenv').config();
 
 
+const label = 'rapido';
+
 const conf = {
   head: {
     title: 'rapido_web',
     meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [{ src: 'https://cdn.blueconic.net/cg.js' }],
+    script: [{ async: true, src: '//cg.sb.blueconic.net/frontend/static/javascript/blueconic/blueconic.min.js' }],
   },
   css: ['~/assets/stylesheets/application.scss'],
   store: true,
@@ -64,13 +66,15 @@ const conf = {
         extendedHeaders: 'extendedGraphqlHeaders',
       },
     ],
-    ['nuxt-i18n', i18nConfig('rapido')],
+    ['nuxt-i18n', i18nConfig(label)],
   ],
   env: {
     API_BROWSER: process.env.API_BROWSER,
     API_SERVER: process.env.API_SERVER,
     GTM_ID: 'GTM - KWZLG26',
     GTM_DEBUG: 'true',
+    DOMAIN: 'www.rapido.com',
+    LABEL: label,
   },
   plugins: [
     '~/plugins/env.js',
