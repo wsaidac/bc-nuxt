@@ -12,6 +12,7 @@
   "error": {
     "button_name": "Rapido Homepage",
     "description": "Die angeforderte Seite konnte leider nicht gefunden werden.",
+    "help": "Klicken Sie auf die Schaltfläche unten, um zur Startseite zurückzukehren, oder wählen Sie Ihr Land aus dem oberen Menü aus.",
     "title": "Error - Seite nicht gefunden"
   },
   "footer": {
@@ -23,6 +24,7 @@
     "safely-order-with": "Sicher bestellen mit"
   },
   "general": {
+    "critical_error": "Etwas ist schief gelaufen. Bitte aktualisieren Sie die Seite, um es erneut zu versuchen.",
     "domain": "Rapido.com",
     "help": "Hilfe",
     "home-text": "Home",
@@ -44,6 +46,7 @@
   },
   "home": {
     "featured-products": "Unsere beliebtesten Angebote",
+    "lets-speed-it-up": "Jetzt schnell einkaufen!",
     "see-all-denominations": "Alle Kategorien anzeigen"
   },
   "internal-links": {
