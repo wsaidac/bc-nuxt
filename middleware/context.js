@@ -34,13 +34,12 @@ async function fetchShared(app, store, error) {
 }
 
 export default ({
-  req, store, app, redirect, error,
+  store, app, redirect, error, route,
 }) => {
-  if (!process.server) return [];
+  if (!process.server && route.path.substring(1).startsWith(app.i18n.locale)) return null;
 
-  const urlPaths = req.url.split('/');
+  const urlPaths = route.path.split('/');
   const locale = urlPaths[1];
-  const [language, country] = locale.split('-');
 
   // if there is no locale slug in the url, redirect to default locale
   if (!locale) {
@@ -55,11 +54,7 @@ export default ({
     return redirect(301, urlPaths.join('/'));
   }
 
-  const label = 'rapido';
-
-  store.commit('context/setCurrentLabel', label);
-  store.commit('context/setCurrentCountry', country);
-  store.commit('context/setCurrentLanguage', language);
+  store.dispatch("context/changeContext", locale);
 
   return Promise.all([fetchMenus(app, store, error), fetchShared(app, store, error)]);
 };
