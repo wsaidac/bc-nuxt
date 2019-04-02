@@ -22,7 +22,11 @@ export default {
 
   head() {
     if (this.layout === "Error") return {};
+    const locale = this.$store.getters['context/locale'];
     return {
+      htmlAttrs: {
+        lang: locale,
+      },
       title:
         this.post.meta.title
         || (this.post.category && this.post.category.meta.description)
@@ -36,6 +40,8 @@ export default {
             this.post.meta.description
             || (this.category && this.category.meta.description),
         },
+        { rel: 'alternate', href: this.$route.path, hreflang: locale },
+        { 'http-equiv': 'content-language', "content": locale },
       ],
     };
   },

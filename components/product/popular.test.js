@@ -21,6 +21,10 @@ describe('ProductPopular', () => {
           },
         },
       },
+      image: {
+        regular: 'https://example.com/xbox.jpg',
+        retina: 'https://example.com/xbox.jpg',
+      },
     },
     {
       category: {
@@ -34,6 +38,7 @@ describe('ProductPopular', () => {
           },
         },
       },
+      image: {},
     },
     {
       category: {
@@ -47,6 +52,7 @@ describe('ProductPopular', () => {
           },
         },
       },
+      image: {},
     },
   ];
 
