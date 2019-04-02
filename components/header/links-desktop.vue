@@ -82,7 +82,6 @@ export default {
       @include flex(center, center);
 
       img {
-        filter: invert(100%);
         margin-right: 10px;
       }
 

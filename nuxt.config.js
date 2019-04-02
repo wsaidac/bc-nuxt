@@ -4,6 +4,8 @@ const i18nConfig = require('./config/i18nConfig.js');
 require('dotenv').config();
 
 
+const label = 'rapido';
+
 const conf = {
   head: {
     title: 'rapido_web',
@@ -46,15 +48,34 @@ const conf = {
   },
   render: {
     static: {
-      maxAge: 2592000000,
+      maxAge: '30d',
     },
-    // csp: true,
+    dist: {
+      maxAge: '30d',
+      immutable: true,
+      public: true,
+    },
+    csp: {
+      hashAlgorithm: 'sha256',
+      policies: {
+        'script-src': [
+          '*.googletagmanager.com',
+          '*.blueconic.net',
+          '*.rapido.com',
+          '*.cgaws.cloud',
+        ],
+        'report-uri': [
+          'https://sentry.io/api/1424268/security/?sentry_key=c82b3b97e8af426da4eb2b24099ca8ff',
+        ],
+      },
+    },
   },
   router: {
     middleware: ['headers', 'context'],
   },
   modules: [
     ['@nuxtjs/style-resources'],
+    ['@nuxtjs/sentry'],
     ['~/modules/iconsWeb'],
     [
       'artemis-graphql',
@@ -64,13 +85,15 @@ const conf = {
         extendedHeaders: 'extendedGraphqlHeaders',
       },
     ],
-    ['nuxt-i18n', i18nConfig('rapido')],
+    ['nuxt-i18n', i18nConfig(label)],
   ],
   env: {
     API_BROWSER: process.env.API_BROWSER,
     API_SERVER: process.env.API_SERVER,
     GTM_ID: 'GTM - KWZLG26',
     GTM_DEBUG: 'true',
+    DOMAIN: 'www.rapido.com',
+    LABEL: label,
   },
   plugins: [
     '~/plugins/vuetouch.js',
@@ -81,6 +104,10 @@ const conf = {
     { src: '~/plugins/async.js', ssr: false },
     '~/plugins/shared.js',
   ],
+  sentry: {
+    dsn: 'https://c82b3b97e8af426da4eb2b24099ca8ff@sentry.io/1424268',
+    config: {}, // Additional config
+  },
   watchers: {
     webpack: {
       poll: true,
