@@ -62,6 +62,7 @@ const conf = {
           '*.googletagmanager.com',
           '*.blueconic.net',
           '*.rapido.com',
+          '*.cgaws.cloud',
         ],
         'report-uri': [
           'https://sentry.io/api/1424268/security/?sentry_key=c82b3b97e8af426da4eb2b24099ca8ff',
