@@ -39,7 +39,7 @@ export default {
     }
 
     &::after {
-      color: $danger-base; // checky
+      color: $danger-base;
       content: "*";
       margin-left: 4px;
     }

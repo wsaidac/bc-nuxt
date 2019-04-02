@@ -29,14 +29,14 @@ export default {
   padding-top: 25px;
 
   &__title {
-    color: $black; // checky
+    color: $black;
     font-size: $font-size-h6;
     font-weight: $font-weight-bold;
     margin: 0 0 25px 0;
   }
 
   & + .ui-form-section {
-    border-top: 1px solid $gray-400; // checky
+    border-top: 1px solid $gray-400;
   }
 }
 </style>

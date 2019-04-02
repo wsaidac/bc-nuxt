@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang="scss">
-$--input-focus-border: $primary-500; // checky
+$--input-focus-border: $primary-500;
 
 @import "element-ui/packages/theme-chalk/src/input.scss";
 
@@ -62,7 +62,7 @@ $--input-focus-border: $primary-500; // checky
     padding-right: 10px;
 
     &:focus {
-      border-color: $primary-500; // checky
+      border-color: $primary-500;
     }
   }
 

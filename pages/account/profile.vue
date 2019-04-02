@@ -194,8 +194,8 @@ export default {
   }
 
   .el-collapse-item {
-    background: #eaf2fa; // checky
-    border: 1px solid rgb(0, 123, 184); // checky
+    background: #eaf2fa;
+    border: 1px solid rgb(0, 123, 184);
     padding: 10px;
 
     &__header {

@@ -22,8 +22,8 @@
       />
     </div>
     <ui-button
-      type="tertiary"
       v-if="!session.currentSession"
+      type="tertiary"
       @click="logout(session.id)"
     >
       {{ $t('logout') }}

@@ -82,8 +82,8 @@ $--button-font-weight: 700;
 
   &--primary {
     background: $warning-500;
-    border-radius: 0;
     border: 2px solid $black;
+    border-radius: 0;
     color: $black;
     font-size: 12px;
     padding: 10px 7px !important;
