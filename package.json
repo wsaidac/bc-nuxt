@@ -14,6 +14,7 @@
     "dev-debug": "node --inspect node_modules/.bin/nuxt --port 4000"
   },
   "dependencies": {
+    "@nuxtjs/sentry": "^2.3.1",
     "@nuxtjs/style-resources": "^0.1.2",
     "artemis-graphql": "https://github.com/10KB/artemis-graphql#v2.0.2",
     "axios": "^0.18.0",
