@@ -80,8 +80,8 @@ const conf = {
     [
       'artemis-graphql',
       {
-        browserUri: 'https://api-hub.eu-west-1.acceptance.cgaws.cloud',
-        serverUri: 'https://api-hub.eu-west-1.acceptance.cgaws.cloud',
+        browserUri: 'env://API_BROWSER',
+        serverUri: 'env://API_SERVER',
         extendedHeaders: 'extendedGraphqlHeaders',
       },
     ],
