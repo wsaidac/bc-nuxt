@@ -91,7 +91,7 @@ const conf = {
     API_BROWSER: process.env.API_BROWSER,
     API_SERVER: process.env.API_SERVER,
     GTM_ID: 'GTM-KBPKD5V',
-    GTM_DEBUG: 'true',
+    GTM_DEBUG: 'false',
     DOMAIN: 'www.rapido.com',
     LABEL: label,
   },
