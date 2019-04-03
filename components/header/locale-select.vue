@@ -1,8 +1,8 @@
 <template>
   <ui-dialog
-    class="header-locale-select"
     :title="$t('country_select.title')"
     :showdialog="showdialog"
+    class="header-locale-select"
     @hideDialog="$emit('hideDialog')"
   >
     <p
@@ -37,8 +37,8 @@
 </template>
 
 <script>
-import ElOption from 'element-ui/lib/option.js';
-import { UiSelect, UiDialog, UiButton } from '~/components/ui.js';
+import ElOption from "element-ui/lib/option.js";
+import { UiSelect, UiDialog, UiButton } from "~/components/ui.js";
 
 export default {
   components: {
@@ -69,9 +69,8 @@ export default {
 
   methods: {
     changeLocale() {
-      this.$emit('hideDialog');
+      this.$emit("hideDialog");
       if (this.$i18n.locale !== this.localeSelected) {
-        this.$store.dispatch('context/changeContext', this.localeSelected);
         this.$router.push(`/${this.localeSelected}/`);
       }
     },

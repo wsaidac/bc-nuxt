@@ -17,10 +17,6 @@ export default {
   },
 
   mutations: {
-    setCurrentLabel(state, label) {
-      state.label = label;
-    },
-
     setCurrentCountry(state, country) {
       state.country = country;
     },

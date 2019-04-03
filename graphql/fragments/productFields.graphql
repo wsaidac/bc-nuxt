@@ -11,8 +11,7 @@ fragment productFields on CmsProduct {
     description
   }
   information {
-    retailValue
-    currency
+    issueValue
   }
   content {
     banner {

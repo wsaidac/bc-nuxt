@@ -48,7 +48,7 @@
         itemprop="offers"
       >
         <meta
-          :content="product.information.retailValue"
+          :content="product.information.issueValue"
           item="price"
         >
         <meta
@@ -63,7 +63,7 @@
           itemprop="itemCondition"
           content="http://schema.org/NewCondition"
         >
-        <h3 v-text="$n(product.information.retailValue, 'currency')" />
+        <h3 v-text="$n(product.information.issueValue, 'currency')" />
         <p v-text="product.title" />
         <shared-tooltip
           v-if="mode === 'vertical' && hasTooltip"
