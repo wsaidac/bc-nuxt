@@ -55,7 +55,7 @@ function transformProduct(product) {
     category: 'TODO category',
     id: product.id,
     name: product.content.title,
-    price: product.information.retailValue,
+    price: product.information.issueValue,
   }
 }
 
