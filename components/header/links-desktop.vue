@@ -3,9 +3,9 @@
     <div class="container">
       <ul class="header-links-desktop__nav">
         <li
-          v-for="category in items"
+          v-for="(category, i) in items"
           :key="category.title"
-          class="header-links-desktop__main-item"
+          :class="classes(category.title, i)"
         >
           <div @click="setActive(category.title)">
             <img
@@ -44,6 +44,16 @@ export default {
       default() {
         return [];
       },
+    },
+  },
+
+  methods: {
+    classes(title, index) {
+      const amount = this.items.find(e => e.title === title).categories.length;
+      if (index > 2 && amount > 10) {
+        return ['header-links-desktop__main-item', 'header-links-desktop__main-item--shifted'];
+      }
+      return ['header-links-desktop__main-item'];
     },
   },
 };
@@ -121,7 +131,7 @@ export default {
     @include position(absolute, calc(100%) null null 0);
   }
 
-  &__main-item:last-child {
+  &__main-item--shifted {
     .header-links-desktop__sub {
       @include position(absolute, calc(100%) null null -200px);
     }

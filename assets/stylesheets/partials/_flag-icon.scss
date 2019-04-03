@@ -1,0 +1,10 @@
+.flag-icon {
+  &--bordered {
+    border: 1px #ddd solid;
+  }
+
+  &--medium {
+    height: 23px;
+    width: 30px;
+  }
+}

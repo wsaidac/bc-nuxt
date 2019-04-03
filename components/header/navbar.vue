@@ -30,10 +30,7 @@
             @click="showDialog = true"
           >
             <span class="header-navbar__country-name">{{ country.name }}</span>
-            <img
-              :src="countryFlag"
-              alt="country-flag"
-            >
+            <span :class="`flag-icon flag-icon--bordered flag-icon--medium flag-icon-${country.name.toLowerCase()}`" />
             <ui-icon icon="caret-white" />
           </button>
           <div
@@ -66,8 +63,6 @@ import HeaderLinksMobile from './links-mobile';
 import HeaderHamburger from './hamburger';
 import HeaderLocaleSelect from './locale-select';
 import { UiIcon } from '~/components/ui';
-
-import flags from '~/assets/flags.js';
 
 export default {
   components: {
@@ -102,9 +97,6 @@ export default {
     },
     country() {
       return this.$i18n.locales.find(i => i.code === this.$i18n.locale);
-    },
-    countryFlag() {
-      return flags[this.country.name.toLowerCase()];
     },
   },
 };
@@ -198,6 +190,7 @@ export default {
 
   &__country-name {
     color: $white;
+    margin-right: 5px;
   }
 
   &__brand {
@@ -224,12 +217,33 @@ export default {
       font-size: 15px;
       margin-right: 10px;
       position: relative;
-      top: -2px;
     }
   }
 
+  .hamburger {
+    margin-top: 2px;
+  }
+
   @include media-breakpoint-down("md") {
-    font-size: 12px;
+    font-size: $font-size-h6;
+
+    &__brand {
+      margin: 2px 0 0 0;
+      width: 100px;
+    }
+
+    &__country-select {
+      font-size: $font-size-h6;
+      padding: 0 10px;
+
+      img {
+        font-size: 16px;
+      }
+    }
+
+    &__menu {
+      padding: 5px 15px;
+    }
   }
 
   @include media-breakpoint-up("sm") {
