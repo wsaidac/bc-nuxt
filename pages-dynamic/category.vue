@@ -52,7 +52,6 @@
         :title="post.terms.title"
         :description="post.terms.text"
       />
-      <service-banner :customer-service="customerService" />
       <seo-breadcrumbs :crumbs="crumbs" />
     </div>
   </div>
@@ -67,7 +66,6 @@ import CategoryKind from '~/components/category/kind';
 import CategoryAccordion from '~/components/category/accordion';
 import CategoryHighlights from '~/components/category/highlights';
 import ServiceButton from '~/components/service/button';
-import ServiceBanner from '~/components/service/banner';
 import ServiceTerms from '~/components/service/terms';
 import SeoBlock from '~/components/seo/block';
 import SeoBreadcrumbs from '~/components/seo/breadcrumbs';
@@ -85,7 +83,6 @@ export default {
     HeaderBanner,
     SeoBlock,
     SeoBreadcrumbs,
-    ServiceBanner,
     ServiceButton,
     ServiceTerms,
     UiCol,
