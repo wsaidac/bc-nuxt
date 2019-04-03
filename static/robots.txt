@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.rapido.com/en-us/sitemap.xml
+Sitemap: https://www.rapido.com/fr-be/sitemap.xml
+Sitemap: https://www.rapido.com/de-at/sitemap.xml
+Sitemap: https://www.rapido.com/pl-pl/sitemap.xml
+Sitemap: https://www.rapido.com/da-dk/sitemap.xml
