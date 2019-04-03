@@ -48,15 +48,34 @@ const conf = {
   },
   render: {
     static: {
-      maxAge: 2592000000,
+      maxAge: '30d',
     },
-    // csp: true,
+    dist: {
+      maxAge: '30d',
+      immutable: true,
+      public: true,
+    },
+    csp: {
+      hashAlgorithm: 'sha256',
+      policies: {
+        'script-src': [
+          '*.googletagmanager.com',
+          '*.blueconic.net',
+          '*.rapido.com',
+          '*.cgaws.cloud',
+        ],
+        'report-uri': [
+          'https://sentry.io/api/1424268/security/?sentry_key=c82b3b97e8af426da4eb2b24099ca8ff',
+        ],
+      },
+    },
   },
   router: {
     middleware: ['auth', 'headers', 'context'],
   },
   modules: [
     ['@nuxtjs/style-resources'],
+    ['@nuxtjs/sentry'],
     ['~/modules/iconsWeb'],
     [
       'artemis-graphql',
@@ -89,6 +108,10 @@ const conf = {
     '~/plugins/moment.js',
     '~/plugins/pagination.js',
   ],
+  sentry: {
+    dsn: 'https://c82b3b97e8af426da4eb2b24099ca8ff@sentry.io/1424268',
+    config: {}, // Additional config
+  },
   watchers: {
     webpack: {
       poll: true,

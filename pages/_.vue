@@ -22,7 +22,7 @@ export default {
 
   head() {
     if (this.layout === "Error") return {};
-    const locale = this.$store.getters['context/locale'];
+    const { locale } = this.$i18n;
     return {
       htmlAttrs: {
         lang: locale,
@@ -40,8 +40,9 @@ export default {
             this.post.meta.description
             || (this.category && this.category.meta.description),
         },
-        { rel: 'alternate', href: this.$route.path, hreflang: locale },
-        { 'http-equiv': 'content-language', "content": locale },
+      ],
+      link: [
+        { rel: "alternate", href: `https://${process.env.DOMAIN}${this.$route.path}`, hreflang: locale },
       ],
     };
   },
@@ -53,9 +54,8 @@ export default {
     },
   },
 
-  async asyncData({ app, route, store }) {
-    const locale = store.getters["context/locale"];
-    const slug = slugFromPath(route.path, locale);
+  async asyncData({ app, route }) {
+    const slug = slugFromPath(route.path, app.i18n.locale);
 
     try {
       const { post } = await app.$q("post", { slug });

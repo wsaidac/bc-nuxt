@@ -10,8 +10,7 @@ describe('Kind', () => {
     {
       id: 1,
       information: {
-        retailValue: 5.0,
-        currency: 'USD',
+        issueValue: 5.0,
       },
       content: {
         title: 'Verizon Prepaid Refill $5',
@@ -29,8 +28,7 @@ describe('Kind', () => {
     {
       id: 2,
       information: {
-        retailValue: 4.0,
-        currency: 'USD',
+        issueValue: 4.0,
       },
       content: {
         title: 'Verizon Prepaid Refill $5',

@@ -1,6 +1,10 @@
 // External dependencies
 @import "~normalize-scss";
 
+$flag-icon-css-path: '../../node_modules/flag-icon-css/flags';
+
+@import '~flag-icon-css/sass/flag-icon';
+
 // Shared variables, mixins and functions
 @import "shared";
 
@@ -10,3 +14,5 @@
 @import "partials/grid";
 @import "partials/blocks";
 @import "partials/type";
+@import "partials/buttons";
+@import "partials/flag-icon";

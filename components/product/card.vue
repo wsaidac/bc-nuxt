@@ -48,7 +48,7 @@
         itemprop="offers"
       >
         <meta
-          :content="product.information.retailValue"
+          :content="product.information.issueValue"
           item="price"
         >
         <meta
@@ -63,7 +63,7 @@
           itemprop="itemCondition"
           content="http://schema.org/NewCondition"
         >
-        <h3 v-text="$n(product.information.retailValue, 'currency')" />
+        <h3 v-text="$n(product.information.issueValue, 'currency')" />
         <p v-text="product.title" />
         <shared-tooltip
           v-if="mode === 'vertical' && hasTooltip"
@@ -258,7 +258,7 @@ export default {
     align-items: center;
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
     margin-top: 20px;
 
     .spacer {
@@ -267,11 +267,12 @@ export default {
 
     .el-select {
       margin-bottom: 0;
-      margin-right: 15px;
+      margin-right: 10px;
       width: 60px;
 
       .el-input__inner {
-        height: 35px;
+        border-radius: 0;
+        height: 34px;
         user-select: none;
       }
 
@@ -300,12 +301,11 @@ export default {
 
   &--mode-vertical {
     margin-top: 20px;
+    padding: 15px;
 
     .product-card {
       &__img-link {
-        padding: 20px 10px;
-
-        @include flex();
+        padding-right: 15px;
 
         picture {
           display: block;
@@ -319,7 +319,7 @@ export default {
 
       &__content {
         border-top: 1px solid $gray-400;
-        padding: 10px;
+        padding-top: 15px;
       }
     }
 
@@ -349,7 +349,7 @@ export default {
   }
 
   &--mode-horizontal {
-    @include flex();
+    @include flex(null, null);
 
     .product-card {
       &__img-link {
