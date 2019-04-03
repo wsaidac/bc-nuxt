@@ -10,6 +10,8 @@ export default {
       return {
         'Authorization': `Bearer ${token}`,
         'X-Cms-Context': cmsContext,
+        'X-Authorization-Context': 11,
+        'X-Locale-Context': 'en-us',
       };
     },
   },

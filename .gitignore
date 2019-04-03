@@ -13,3 +13,5 @@ log/
 
 # Nuxt generate
 dist
+
+components/orders/order-item/__snapshots__/
