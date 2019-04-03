@@ -52,7 +52,6 @@
         :title="post.terms.title"
         :description="post.terms.text"
       />
-      <service-banner :customer-service="customerService" />
       <seo-breadcrumbs :crumbs="crumbs" />
     </div>
   </div>
@@ -67,7 +66,6 @@ import CategoryKind from '~/components/category/kind';
 import CategoryAccordion from '~/components/category/accordion';
 import CategoryHighlights from '~/components/category/highlights';
 import ServiceButton from '~/components/service/button';
-import ServiceBanner from '~/components/service/banner';
 import ServiceTerms from '~/components/service/terms';
 import SeoBlock from '~/components/seo/block';
 import SeoBreadcrumbs from '~/components/seo/breadcrumbs';
@@ -85,7 +83,6 @@ export default {
     HeaderBanner,
     SeoBlock,
     SeoBreadcrumbs,
-    ServiceBanner,
     ServiceButton,
     ServiceTerms,
     UiCol,
@@ -165,7 +162,7 @@ export default {
       margin-top: 0;
       max-width: none;
 
-      @include flex();
+      @include flex(null, null);
 
       .product-card__image {
         border: 1px solid $gray-400;
@@ -176,11 +173,11 @@ export default {
 
       .product-card__content {
         flex-grow: 1;
-        padding-left: 0;
+        padding-top: 0;
       }
 
       .el-button {
-        @include position(relative, 3px 0 0 0);
+        padding: 3px 10px;
       }
     }
 

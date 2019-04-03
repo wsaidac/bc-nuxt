@@ -1,8 +1,8 @@
 <template>
   <ui-dialog
-    class="header-locale-select"
     :title="$t('country_select.title')"
     :showdialog="showdialog"
+    class="header-locale-select"
     @hideDialog="$emit('hideDialog')"
   >
     <p
@@ -10,23 +10,17 @@
       v-text="$t('country_select.description')"
     />
     <ui-select v-model="localeSelected">
-      <img
+      <span
         slot="prefix"
-        class="header-locale-select__selected-flag"
-        :src="selectedCountryFlag"
-        alt="country-flag"
-      >
+        :class="`flag-icon flag-icon--medium flag-icon-${selectedCountryFlag}`"
+      />
       <el-option
         v-for="item in $i18n.locales"
         :key="item.code"
         :label="item.displayName"
         :value="item.code"
       >
-        <img
-          class="header-locale-select__dropdown-img"
-          :src="itemFlag(item.name)"
-          alt="country-flag"
-        >
+        <span :class="`flag-icon flag-icon--bordered flag-icon--medium flag-icon-${item.name.toLowerCase()}`" />
         {{ item.displayName }}
       </el-option>
     </ui-select>
@@ -43,10 +37,8 @@
 </template>
 
 <script>
-import ElOption from 'element-ui/lib/option.js';
-import { UiSelect, UiDialog, UiButton } from '~/components/ui.js';
-
-import flags from '~/assets/flags.js';
+import ElOption from "element-ui/lib/option.js";
+import { UiSelect, UiDialog, UiButton } from "~/components/ui.js";
 
 export default {
   components: {
@@ -71,19 +63,14 @@ export default {
 
   computed: {
     selectedCountryFlag() {
-      const country = this.localeSelected.slice(3);
-      return flags[country];
+      return this.localeSelected.slice(3);
     },
   },
 
   methods: {
-    itemFlag(name) {
-      return flags[name.toLowerCase()];
-    },
     changeLocale() {
-      this.$emit('hideDialog');
+      this.$emit("hideDialog");
       if (this.$i18n.locale !== this.localeSelected) {
-        this.$store.dispatch('context/changeContext', this.localeSelected);
         this.$router.push(`/${this.localeSelected}/`);
       }
     },
@@ -102,11 +89,6 @@ export default {
   .locale-select__desc {
     color: #000;
     margin-bottom: 20px;
-  }
-
-  .flag-icon {
-    margin-right: 5px;
-    vertical-align: middle;
   }
 
   .dialog-footer {
@@ -129,25 +111,17 @@ export default {
 
   .el-input__inner {
     border-radius: 0;
-    padding-left: 60px;
+    padding-left: 50px;
   }
 
   .el-input__prefix {
-    margin: 10px 0 0 5px;
-
-    img {
-      height: 20px;
-    }
+    left: 10px;
+    top: 9px;
   }
 
   .el-button {
     display: block;
     margin: 0 auto;
-  }
-
-  &__flag-icon {
-    margin-right: 5px;
-    vertical-align: middle;
   }
 
   &__selected-flag {
@@ -160,6 +134,13 @@ export default {
     width: 40px;
 
     @include position(relative, 6px 0 0 0);
+  }
+}
+
+.el-select-dropdown {
+  .flag-icon {
+    margin-right: 5px;
+    vertical-align: middle;
   }
 }
 </style>
