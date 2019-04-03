@@ -40,8 +40,9 @@ export default {
             this.post.meta.description
             || (this.category && this.category.meta.description),
         },
-        { rel: "alternate", href: this.$route.path, hreflang: locale },
-        { "http-equiv": "content-language", "content": locale },
+      ],
+      link: [
+        { rel: "alternate", href: `https://${process.env.DOMAIN}${this.$route.path}`, hreflang: locale },
       ],
     };
   },
