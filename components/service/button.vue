@@ -1,6 +1,6 @@
 <template>
   <a
-    :href="$contextPath('faq')"
+    :href="$faqUrl"
     class="service-button"
   >
     <strong>{{ $t('general.need-some-help') }}</strong>
