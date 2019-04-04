@@ -8,8 +8,8 @@
       >
         <ul class="footer-links__list list-unstyled">
           <li
-            v-for="link in links"
-            :key="link.title"
+            v-for="(link, i) in links"
+            :key="i"
           >
             <nuxt-link
               :to="$contextPath(link.url)"
@@ -31,8 +31,8 @@
           <h5 v-text="title" />
           <ul class="footer-links__list list-unstyled">
             <li
-              v-for="link in links"
-              :key="link.title"
+              v-for="(link, i) in links"
+              :key="i"
             >
               <a
                 v-if="link.help"
