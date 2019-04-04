@@ -9,7 +9,7 @@ const sitemap = require('./server/sitemap.js');
 // Import and Set Nuxt.js options
 const config = require('./nuxt.config.js');
 
-config.dev = !(process.env.NODE_ENV === 'production');
+config.dev = (process.env.NODE_ENV === 'development');
 
 async function start() {
   // Init Nuxt.js
