@@ -41,7 +41,7 @@ const conf = {
         'postcss-preset-env': {},
       },
     },
-    extractCSS: process.env.NODE_ENV === 'production',
+    extractCSS: process.env.NODE_ENV !== 'development',
   },
   styleResources: {
     scss: './assets/stylesheets/_shared.scss',
@@ -96,7 +96,7 @@ const conf = {
     API_BROWSER: process.env.API_BROWSER,
     API_SERVER: process.env.API_SERVER,
     GTM_ID: process.env.GTM_ID_RAPIDO,
-    GTM_DEBUG: process.env.NODE_ENV !== 'production',
+    GTM_DEBUG: process.env.NODE_ENV === 'development',
     DOMAIN: 'www.rapido.com',
     LABEL: label,
   },
@@ -112,7 +112,7 @@ const conf = {
   sentry: {
     dsn: process.env.SENTRY_DNS,
     config: {
-      disabled: process.env.NODE_ENV !== 'production',
+      disabled: process.env.NODE_ENV === 'development',
     }, // Additional config
   },
   watchers: {

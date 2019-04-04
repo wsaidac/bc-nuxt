@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "nodemon app.js --legacy-watch",
     "build": "nuxt build",
-    "start": "node app.js",
+    "start": "NODE_ENV=production node app.js",
     "generate": "nuxt generate",
     "eslint": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "stylelint": "stylelint ./**/*.{vue,scss} --syntax scss --ignore-path .gitignore",
