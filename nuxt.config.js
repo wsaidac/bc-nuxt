@@ -90,8 +90,8 @@ const conf = {
   env: {
     API_BROWSER: process.env.API_BROWSER,
     API_SERVER: process.env.API_SERVER,
-    GTM_ID: 'GTM-KWZLG26',
-    GTM_DEBUG: 'true',
+    GTM_ID: process.env.GTM_ID_RAPIDO,
+    GTM_DEBUG: process.env.NODE_ENV !== 'production',
     DOMAIN: 'www.rapido.com',
     LABEL: label,
   },
@@ -105,7 +105,7 @@ const conf = {
     '~/plugins/shared.js',
   ],
   sentry: {
-    dsn: 'https://c82b3b97e8af426da4eb2b24099ca8ff@sentry.io/1424268',
+    dsn: process.env.SENTRY_DNS,
     config: {
       disabled: process.env.NODE_ENV !== 'production',
     }, // Additional config
