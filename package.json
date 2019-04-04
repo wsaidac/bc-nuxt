@@ -16,7 +16,7 @@
   "dependencies": {
     "@nuxtjs/sentry": "^2.3.1",
     "@nuxtjs/style-resources": "^0.1.2",
-    "artemis-graphql": "https://github.com/10KB/artemis-graphql#v2.0.2",
+    "artemis-graphql": "https://github.com/10KB/artemis-graphql#v2.0.3",
     "axios": "^0.18.0",
     "deepmerge": "^3.0.0",
     "dotenv": "^7.0.0",
