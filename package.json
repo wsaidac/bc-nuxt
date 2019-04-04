@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "nodemon app.js --legacy-watch",
     "build": "nuxt build",
-    "start": "NODE_ENV=production node app.js",
+    "start": "node app.js",
     "generate": "nuxt generate",
     "eslint": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "stylelint": "stylelint ./**/*.{vue,scss} --syntax scss --ignore-path .gitignore",
@@ -16,7 +16,7 @@
   "dependencies": {
     "@nuxtjs/sentry": "^2.3.1",
     "@nuxtjs/style-resources": "^0.1.2",
-    "artemis-graphql": "https://github.com/10KB/artemis-graphql#v2.0.2",
+    "artemis-graphql": "https://github.com/10KB/artemis-graphql#v2.0.3",
     "axios": "^0.18.0",
     "deepmerge": "^3.0.0",
     "dotenv": "^7.0.0",
