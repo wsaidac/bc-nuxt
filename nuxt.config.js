@@ -106,7 +106,9 @@ const conf = {
   ],
   sentry: {
     dsn: process.env.SENTRY_DNS,
-    config: {}, // Additional config
+    config: {
+      disabled: process.env.NODE_ENV !== 'production',
+    }, // Additional config
   },
   watchers: {
     webpack: {

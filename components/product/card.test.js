@@ -12,8 +12,7 @@ describe('ProductCard', () => {
         id: 1,
       },
       information: {
-        retailValue: 5.0,
-        currency: 'USD',
+        issueValue: 5.0,
       },
       content: {
         image: {

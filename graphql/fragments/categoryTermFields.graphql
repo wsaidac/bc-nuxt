@@ -46,8 +46,7 @@ fragment categoryTermFields on CategoryTerm {
       link
       uri
       information {
-        retailValue
-        currency
+        issueValue
       }
       content {
         image {

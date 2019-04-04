@@ -7,8 +7,7 @@ describe('ProductQuickbuy', () => {
   const defaultProduct = {
     id: 1,
     information: {
-      retailValue: 5.0,
-      currency: 'USD',
+      issueValue: 5.0,
     },
     content: {
       title: 'Verizon Prepaid Refill $5',
