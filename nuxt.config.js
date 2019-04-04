@@ -59,11 +59,16 @@ const conf = {
       hashAlgorithm: 'sha256',
       policies: {
         'script-src': [
-          '*.googletagmanager.com',
+          "'unsafe-eval'",
+          "'unsafe-inline'",
+          'https://www.googletagmanager.com',
+          'https://tagmanager.google.com/',
           '*.blueconic.net',
           '*.rapido.com',
           '*.cgaws.cloud',
         ],
+        'style-src': ["'self'", "'unsafe-inline'", 'https://tagmanager.google.com/', 'https://fonts.googleapis.com/', '*.rapido.com', '*.cgaws.cloud'],
+        'img-src': ["'self'", "'unsafe-inline'", 'https://ssl.gstatic.com/', '*.rapido.com', '*.cgaws.cloud'],
         'report-uri': [
           'https://sentry.io/api/1424268/security/?sentry_key=c82b3b97e8af426da4eb2b24099ca8ff',
         ],
