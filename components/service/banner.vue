@@ -1,6 +1,6 @@
 <template>
   <a
-    :href="$contextPath('faq')"
+    :href="$faqUrl"
     :title="customerService.link.title"
     class="service-banner"
   >

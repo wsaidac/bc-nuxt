@@ -19,7 +19,7 @@
         <div class="header-navbar__top-right">
           <header-login />
           <a
-            :href="$contextPath('faq')"
+            :href="$faqUrl"
             class="header-navbar__help"
             title="help"
           >
