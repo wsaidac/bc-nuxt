@@ -5,7 +5,26 @@ describe('FooterLinks', () => {
   let $mounted;
 
   beforeEach(() => {
-    $mounted = mount(FooterLinks);
+    $mounted = mount(FooterLinks, {
+      computed: {
+        footerLinks() {
+          return {
+            one: [
+              { displayName: 'help', url: "help" },
+            ],
+            two: [
+              { displayName: 'help', url: "help" },
+              { displayName: 'help', url: "help" },
+            ],
+            three: [
+              { displayName: 'help', url: "help" },
+              { displayName: 'help', url: "help" },
+              { displayName: 'help', url: "help" },
+            ],
+          };
+        },
+      },
+    });
   });
 
   it('should mount', () => {

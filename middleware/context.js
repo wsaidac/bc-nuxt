@@ -1,3 +1,17 @@
+async function fetchFooterMenu(app, store, error) {
+  try {
+    const footerMenu = await app.$q('footer');
+
+    if (!footerMenu) {
+      error({ statusCode: 404, message: app.i18n.t('general.critical_error') });
+    } else {
+      store.commit('menus/setFooter', footerMenu);
+    }
+  } catch ({ statusCode, message }) {
+    error({ statusCode, message });
+  }
+}
+
 async function fetchMenus(app, store, error) {
   try {
     const { menus } = await app.$q('menus', { slug: 'main' });
@@ -56,5 +70,5 @@ export default ({
 
   store.dispatch("context/changeContext", locale);
 
-  return Promise.all([fetchMenus(app, store, error), fetchShared(app, store, error)]);
+  return Promise.all([fetchMenus(app, store, error), fetchFooterMenu(app, store, error), fetchShared(app, store, error)]);
 };
