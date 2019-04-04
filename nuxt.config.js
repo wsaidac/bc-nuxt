@@ -41,7 +41,7 @@ const conf = {
         'postcss-preset-env': {},
       },
     },
-    extractCSS: process.env.NODE_ENV === 'production',
+    extractCSS: process.env.NODE_ENV !== 'development',
   },
   styleResources: {
     scss: './assets/stylesheets/_shared.scss',
@@ -56,19 +56,19 @@ const conf = {
       public: true,
     },
     csp: {
-      hashAlgorithm: 'sha256',
       policies: {
         'script-src': [
           "'unsafe-eval'",
           "'unsafe-inline'",
           'https://www.googletagmanager.com',
-          'https://tagmanager.google.com/',
+          'https://tagmanager.google.com',
+          'https://www.googleadservices.com',
+          'https://www.google-analytics.com',
           '*.blueconic.net',
           '*.rapido.com',
           '*.cgaws.cloud',
         ],
-        'style-src': ["'self'", "'unsafe-inline'", 'https://tagmanager.google.com/', 'https://fonts.googleapis.com/', '*.rapido.com', '*.cgaws.cloud'],
-        'img-src': ["'self'", "'unsafe-inline'", 'https://ssl.gstatic.com/', '*.rapido.com', '*.cgaws.cloud'],
+        'style-src': ["'self'", "'unsafe-inline'", 'https://tagmanager.google.com', 'https://fonts.googleapis.com', '*.rapido.com', '*.cgaws.cloud'],
         'report-uri': [
           'https://sentry.io/api/1424268/security/?sentry_key=c82b3b97e8af426da4eb2b24099ca8ff',
         ],
@@ -96,7 +96,7 @@ const conf = {
     API_BROWSER: process.env.API_BROWSER,
     API_SERVER: process.env.API_SERVER,
     GTM_ID: process.env.GTM_ID_RAPIDO,
-    GTM_DEBUG: process.env.NODE_ENV !== 'production',
+    GTM_DEBUG: process.env.NODE_ENV === 'development',
     DOMAIN: 'www.rapido.com',
     LABEL: label,
   },
@@ -116,7 +116,7 @@ const conf = {
   sentry: {
     dsn: process.env.SENTRY_DNS,
     config: {
-      disabled: process.env.NODE_ENV !== 'production',
+      disabled: process.env.NODE_ENV === 'development',
     }, // Additional config
   },
   watchers: {

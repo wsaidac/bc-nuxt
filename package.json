@@ -11,12 +11,12 @@
     "test:unit": "NODE_ENV=test jest --config=jest.config.js",
     "test:e2e": "cypress run",
     "cypress": "cypress open",
-    "dev-debug": "API_BROWSER='https://api-hub.eu-west-1.acceptance.cgaws.cloud' API_SERVER='https://api-hub.eu-west-1.acceptance.cgaws.cloud' node --inspect node_modules/.bin/nuxt --port 4000"
+    "dev-debug": "NODE_ENV=development API_BROWSER='https://api-hub.eu-west-1.acceptance.cgaws.cloud' API_SERVER='https://api-hub.eu-west-1.acceptance.cgaws.cloud' node --inspect node_modules/.bin/nuxt --port 4000"
   },
   "dependencies": {
     "@nuxtjs/sentry": "^2.3.1",
     "@nuxtjs/style-resources": "^0.1.2",
-    "artemis-graphql": "https://github.com/10KB/artemis-graphql#v2.0.2",
+    "artemis-graphql": "https://github.com/10KB/artemis-graphql#v2.0.3",
     "axios": "^0.18.0",
     "deepmerge": "^3.0.0",
     "dotenv": "^7.0.0",
