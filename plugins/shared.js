@@ -6,6 +6,19 @@ function contextPath(store) {
   };
 }
 
+function faqUrl(store) {
+  const locale = store.getters['context/locale'];
+  const links = {
+    'en-us': 'https://faq.rapido.com/hc/en-us',
+    'fr-be': 'https://faq.rapido.com/hc/fr',
+    'de-at': 'https://faq.rapido.com/hc/de',
+  };
+  if (links[locale]) {
+    return links[locale];
+  }
+  return links['en-us'];
+}
+
 function crumbs(store) {
   return function (label, additionalCrumbs) {
     const homeTitle = store.getters['shared/homeTitle'];
@@ -22,6 +35,7 @@ function staticHtmlContent(store) {
 
 export default ({ store }, inject) => {
   inject('contextPath', contextPath(store));
+  inject('faqUrl', faqUrl(store));
   inject('crumbs', crumbs(store));
   inject('staticHtmlContent', staticHtmlContent(store));
 };

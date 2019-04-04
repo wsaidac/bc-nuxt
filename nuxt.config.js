@@ -59,11 +59,16 @@ const conf = {
       hashAlgorithm: 'sha256',
       policies: {
         'script-src': [
-          '*.googletagmanager.com',
+          "'unsafe-eval'",
+          "'unsafe-inline'",
+          'https://www.googletagmanager.com',
+          'https://tagmanager.google.com/',
           '*.blueconic.net',
           '*.rapido.com',
           '*.cgaws.cloud',
         ],
+        'style-src': ["'self'", "'unsafe-inline'", 'https://tagmanager.google.com/', 'https://fonts.googleapis.com/', '*.rapido.com', '*.cgaws.cloud'],
+        'img-src': ["'self'", "'unsafe-inline'", 'https://ssl.gstatic.com/', '*.rapido.com', '*.cgaws.cloud'],
         'report-uri': [
           'https://sentry.io/api/1424268/security/?sentry_key=c82b3b97e8af426da4eb2b24099ca8ff',
         ],
@@ -90,8 +95,8 @@ const conf = {
   env: {
     API_BROWSER: process.env.API_BROWSER,
     API_SERVER: process.env.API_SERVER,
-    GTM_ID: 'GTM - KWZLG26',
-    GTM_DEBUG: 'true',
+    GTM_ID: process.env.GTM_ID_RAPIDO,
+    GTM_DEBUG: process.env.NODE_ENV !== 'production',
     DOMAIN: 'www.rapido.com',
     LABEL: label,
   },
@@ -109,8 +114,10 @@ const conf = {
     '~/plugins/pagination.js',
   ],
   sentry: {
-    dsn: 'https://c82b3b97e8af426da4eb2b24099ca8ff@sentry.io/1424268',
-    config: {}, // Additional config
+    dsn: process.env.SENTRY_DNS,
+    config: {
+      disabled: process.env.NODE_ENV !== 'production',
+    }, // Additional config
   },
   watchers: {
     webpack: {

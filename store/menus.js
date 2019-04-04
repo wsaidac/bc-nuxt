@@ -19,16 +19,21 @@ export default {
   state() {
     return {
       main: {},
+      footer: {}
     };
   },
 
   getters: {
     main: ({ main }) => main,
+    footer: ({ footer }) => footer,
   },
 
   mutations: {
     setMain(state, menu) {
       state.main = unwrap(menu);
+    },
+    setFooter(state, menu) {
+      state.footer = menu;
     },
   },
 };

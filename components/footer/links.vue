@@ -2,7 +2,7 @@
   <div class="footer-links">
     <ui-collapse class="footer-links__mobile">
       <ui-collapse-item
-        v-for="(links, title) in columns"
+        v-for="(links, title) in footerLinks"
         :key="title"
         :title="title"
       >
@@ -15,7 +15,7 @@
               :to="$contextPath(link.url)"
               :title="link.title"
             >
-              {{ link.title }}
+              {{ link.displayName }}
             </nuxt-link>
           </li>
         </ul>
@@ -24,7 +24,7 @@
     <div class="container footer-links__desktop">
       <ui-row>
         <ui-col
-          v-for="(links, title) in columns"
+          v-for="(links, title) in footerLinks"
           :key="title"
           :span="8"
         >
@@ -34,11 +34,18 @@
               v-for="link in links"
               :key="link.title"
             >
+              <a
+                v-if="link.help"
+                :href="link.url"
+              >
+                {{ link.displayName }}
+              </a>
               <nuxt-link
+                v-else
                 :to="$contextPath(link.url)"
                 :title="link.title"
               >
-                {{ link.title }}
+                {{ link.displayName }}
               </nuxt-link>
             </li>
           </ul>
@@ -49,6 +56,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 /* eslint-disable */
 import { UiCol, UiCollapse, UiCollapseItem, UiRow } from "~/components/ui";
 
@@ -63,28 +71,48 @@ export default {
   },
 
   data() {
-    const columns = {};
+    return {}
+  },
 
-    columns[this.$t("general.domain")] = [
-      { title: this.$t("internal-links.about-us"), url: "about-us" },
-      { title: this.$t("internal-links.payment-methods"), url: "payment-methods" }
-    ];
+  computed: {
+    ...mapGetters('menus', ['footer']),
+    footerLinks() {
+      const columns = {};
 
-    columns[this.$t("footer.customer-care")] = [
-      { title: this.$t("general.help"), url: "help" }
-    ];
+      columns[this.$t("general.domain")] = [
+        this.transformLink('aboutUs'),
+        this.transformLink('paymentMethods'),
+      ];
+      columns[this.$t("footer.customer-care")] = [
+        { help: true, displayName: this.$t("general.help"), url: this.$faqUrl, title: this.$t("general.help") },
+      ];
+      columns[this.$t("internal-links.terms-of-use")] = [
+        this.transformLink('privacyPolicy'),
+        this.transformLink('generalConditions'),
+        this.transformLink('cookieStatement'),
+      ];
 
-    columns[this.$t("internal-links.terms-of-use")] = [
-      { title: this.$t("internal-links.privacy-policy"), url: "privacy-policy" },
-      {
-        title: this.$t("internal-links.general-conditions"),
-        url: "terms-and-conditions"
-      },
-      { title: this.$t("internal-links.cookies"), url: "cookies" },
-    ];
+      Object.keys(columns).forEach(key => {
+        columns[key] = columns[key].filter(v => v);
+      });
 
-    return { columns };
-  }
+      return columns;
+    },
+  },
+
+  methods: {
+    transformLink(linkName) {
+      const link = this.footer[linkName];
+      if (!link || !link.slug) return null;
+      let displayName = link.slug;
+      displayName = displayName[0].toUpperCase() + displayName.slice(1).replace(/-/g, ' ');
+      return {
+        displayName,
+        title: (link.meta && link.meta.title) || '',
+        url: link.slug
+      };
+    }
+  },
 };
 </script>
 
