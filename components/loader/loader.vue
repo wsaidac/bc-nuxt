@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="loading"
+    v-if="hasContextChanged"
     class="global-loader"
   >
     <div class="lds-roller">
@@ -17,10 +17,12 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
-  data: () => ({
-    loading: false,
-  }),
+  computed: {
+    ...mapGetters('async', ['hasContextChanged']),
+  },
   methods: {
     start() {
       this.loading = true;

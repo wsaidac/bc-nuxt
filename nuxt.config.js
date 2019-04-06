@@ -15,7 +15,10 @@ const conf = {
   },
   css: ['~/assets/stylesheets/application.scss'],
   store: true,
-  loading: '~/components/loader/loader.vue',
+  loading: {
+    color: '#1200ff',
+    height: '3px',
+  },
   build: {
     publicPath: '/rapidoweb/',
 

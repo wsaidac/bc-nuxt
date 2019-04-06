@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import removeContextChangeLoader from '~/mixins/removeContextChangeLoader';
+
 function slugFromPath(path, locale) {
   if (path === `/${locale}/`) return "home";
   return path.replace(`${locale}/`, "");
@@ -46,6 +48,8 @@ export default {
       ],
     };
   },
+
+  mixins: [removeContextChangeLoader],
 
   computed: {
     category() {
