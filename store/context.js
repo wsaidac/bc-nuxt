@@ -27,9 +27,13 @@ export default {
   },
 
   actions: {
-    changeContext(context, locale) {
-      context.commit('setCurrentCountry', locale.slice(3));
-      context.commit('setCurrentLanguage', locale.slice(0, 2));
+    changeContext({ commit, dispatch }, { app, error, locale }) {
+      commit('setCurrentCountry', locale.slice(3));
+      commit('setCurrentLanguage', locale.slice(0, 2));
+
+      dispatch('shared/fetchShared', { app, error }, { root: true });
+      dispatch('menus/fetchHeaderMenu', { app, error }, { root: true });
+      dispatch('menus/fetchFooterMenu', { app, error }, { root: true });
     },
   },
 };

@@ -15,7 +15,7 @@ const conf = {
   },
   css: ['~/assets/stylesheets/application.scss'],
   store: true,
-  loading: { color: '#3B8070' },
+  loading: '~/components/loader/loader.vue',
   build: {
     publicPath: '/rapidoweb/',
 
@@ -108,6 +108,7 @@ const conf = {
     '~/plugins/cookie-store.js',
     { src: '~/plugins/async.js', ssr: false },
     '~/plugins/shared.js',
+    '~/plugins/i18n.js',
   ],
   sentry: {
     dsn: process.env.SENTRY_DNS,

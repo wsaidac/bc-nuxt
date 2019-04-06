@@ -1,3 +1,5 @@
+import i18n from '../plugins/i18n';
+
 export default {
   state() {
     return {};
@@ -11,6 +13,12 @@ export default {
         'Authorization': `Bearer ${token}`,
         'X-Cms-Context': cmsContext,
       };
+    },
+  },
+
+  actions: {
+    nuxtServerInit({ dispatch, state }, { app, error }) {
+      dispatch("context/changeContext", { app, error, locale: state.i18n.locale });
     },
   },
 };
