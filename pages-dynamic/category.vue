@@ -122,7 +122,7 @@ export default {
 
   computed: {
     ...mapGetters('shared', ['customerService', 'usps']),
-
+    ...mapGetters('context', ['domain']),
     categoryText() {
       return this.post.name;
     },
