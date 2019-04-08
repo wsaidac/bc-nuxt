@@ -122,7 +122,6 @@ export default {
 
   computed: {
     ...mapGetters('shared', ['customerService', 'usps']),
-    ...mapGetters('context', ['locale', 'domain']),
 
     categoryText() {
       return this.post.name;
