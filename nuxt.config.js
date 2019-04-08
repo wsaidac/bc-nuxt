@@ -45,6 +45,20 @@ const conf = {
       },
     },
     extractCSS: process.env.NODE_ENV !== 'development',
+    babel: {
+      presets({ isServer }) {
+        return [
+          [
+            require.resolve('@nuxt/babel-preset-app'),
+            // require.resolve('@nuxt/babel-preset-app-edge'), // For nuxt-edge users
+            {
+              targets: isServer ? { node: '10' } : { ie: '11' },
+              corejs: { version: 2 },
+            },
+          ],
+        ];
+      },
+    },
   },
   styleResources: {
     scss: './assets/stylesheets/_shared.scss',
