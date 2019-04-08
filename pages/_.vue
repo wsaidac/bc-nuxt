@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import removeContextChangeLoader from '~/mixins/removeContextChangeLoader';
+
 function slugFromPath(path, locale) {
   if (path === `/${locale}/`) return "home";
   return path.replace(`${locale}/`, "");
@@ -47,6 +49,8 @@ export default {
     };
   },
 
+  mixins: [removeContextChangeLoader],
+
   computed: {
     category() {
       if (this.post.__typename !== "Product") return null;
@@ -69,6 +73,7 @@ export default {
           },
         };
       }
+
       /* prettier-ignore */
       post.__typename = post.__typename === 'CmsProduct' ? 'Product' : post.__typename;
       return { layout: post.__typename, post };
@@ -83,6 +88,7 @@ export default {
       };
     }
   },
+
 
   mounted() {
     window.scrollTo(0, 0);

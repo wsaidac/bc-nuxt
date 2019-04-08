@@ -25,6 +25,29 @@ export default {
     homeTitle: ({ title }) => title,
   },
 
+  actions: {
+    async fetchShared({ commit }, { app, error }) {
+      try {
+        const { post } = await app.$q('shared');
+
+        if (!post) {
+          error({ statusCode: 404, message: app.i18n.t('general.critical_error') });
+        } else {
+          commit('setHomeTitle', post.title);
+          commit('setFooter', post.footer);
+          commit('setHeader', post.header);
+          commit('setCustomerService', post.customerService);
+          commit('setInstantDelivery', post.instantDelivery);
+          commit('setPaymentMethods', post.paymentMethods);
+        }
+
+        commit('setUsps', post.usps);
+      } catch ({ statusCode, message }) {
+        error({ statusCode, message });
+      }
+    },
+  },
+
   mutations: {
     setCustomerService(state, customerService) {
       state.customerService = customerService;
