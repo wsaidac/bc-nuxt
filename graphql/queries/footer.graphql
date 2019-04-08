@@ -1,0 +1,34 @@
+#import "../fragments/footerLinkFields.graphql"
+
+query {
+  aboutUs: postByIdentifier(identifier: "about_us", type:  "cg_service_page") {
+    ... on ServicePage {
+      ...footerLinkFields
+    }
+  }
+  paymentMethods: postByIdentifier(identifier: "payment_methods", type:  "cg_service_page") {
+    ... on ServicePage {
+      ...footerLinkFields
+    }
+  }
+  rightOfWithdrawel: postByIdentifier(identifier: "right_of_withdrawel", type:  "cg_service_page") {
+    ... on ServicePage {
+      ...footerLinkFields
+    }
+  }
+  generalConditions: postByIdentifier(identifier: "general_conditions", type:  "cg_service_page") {
+    ... on ServicePage {
+      ...footerLinkFields
+    }
+  }
+  cookieStatement: postByIdentifier(identifier: "cookie_statement", type:  "cg_service_page") {
+    ... on ServicePage {
+      ...footerLinkFields
+    }
+  }
+  privacyPolicy: postByIdentifier(identifier: "privacy_policy", type:  "cg_service_page") {
+    ... on ServicePage {
+      ...footerLinkFields
+    }
+  }
+}

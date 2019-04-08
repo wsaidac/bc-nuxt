@@ -15,7 +15,10 @@ const conf = {
   },
   css: ['~/assets/stylesheets/application.scss'],
   store: true,
-  loading: { color: '#3B8070' },
+  loading: {
+    color: '#1200ff',
+    height: '3px',
+  },
   build: {
     publicPath: '/rapidoweb/',
 
@@ -41,7 +44,21 @@ const conf = {
         'postcss-preset-env': {},
       },
     },
-    extractCSS: process.env.NODE_ENV === 'production',
+    extractCSS: process.env.NODE_ENV !== 'development',
+    babel: {
+      presets({ isServer }) {
+        return [
+          [
+            require.resolve('@nuxt/babel-preset-app'),
+            // require.resolve('@nuxt/babel-preset-app-edge'), // For nuxt-edge users
+            {
+              targets: isServer ? { node: '10' } : { ie: '11' },
+              corejs: { version: 2 },
+            },
+          ],
+        ];
+      },
+    },
   },
   styleResources: {
     scss: './assets/stylesheets/_shared.scss',
@@ -56,14 +73,19 @@ const conf = {
       public: true,
     },
     csp: {
-      hashAlgorithm: 'sha256',
       policies: {
         'script-src': [
-          '*.googletagmanager.com',
+          "'unsafe-eval'",
+          "'unsafe-inline'",
+          'https://www.googletagmanager.com',
+          'https://tagmanager.google.com',
+          'https://www.googleadservices.com',
+          'https://www.google-analytics.com',
           '*.blueconic.net',
           '*.rapido.com',
           '*.cgaws.cloud',
         ],
+        'style-src': ["'self'", "'unsafe-inline'", 'https://tagmanager.google.com', 'https://fonts.googleapis.com', '*.rapido.com', '*.cgaws.cloud'],
         'report-uri': [
           'https://sentry.io/api/1424268/security/?sentry_key=c82b3b97e8af426da4eb2b24099ca8ff',
         ],
@@ -90,8 +112,8 @@ const conf = {
   env: {
     API_BROWSER: process.env.API_BROWSER,
     API_SERVER: process.env.API_SERVER,
-    GTM_ID: 'GTM - KWZLG26',
-    GTM_DEBUG: 'true',
+    GTM_ID: process.env.GTM_ID_RAPIDO,
+    GTM_DEBUG: process.env.NODE_ENV === 'development',
     DOMAIN: 'www.rapido.com',
     LABEL: label,
   },
@@ -103,10 +125,13 @@ const conf = {
     '~/plugins/cookie-store.js',
     { src: '~/plugins/async.js', ssr: false },
     '~/plugins/shared.js',
+    '~/plugins/i18n.js',
   ],
   sentry: {
-    dsn: 'https://c82b3b97e8af426da4eb2b24099ca8ff@sentry.io/1424268',
-    config: {}, // Additional config
+    dsn: process.env.SENTRY_DNS,
+    config: {
+      disabled: process.env.NODE_ENV === 'development',
+    }, // Additional config
   },
   watchers: {
     webpack: {

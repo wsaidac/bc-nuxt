@@ -15,7 +15,6 @@ export default {
   computed: {
     ...mapGetters('auth', ['currentUser']),
     ...mapGetters('async', ['isLoaded']),
-    ...mapGetters('context', ['locale']),
     to() {
       return this.currentUser ? 'account/profile' : 'sessions/login';
     },

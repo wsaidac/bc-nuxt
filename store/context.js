@@ -3,33 +3,20 @@ export default {
     return {
       label: process.env.LABEL,
       domain: process.env.DOMAIN,
-      country: null,
-      language: null,
+      cmsContext: '',
     };
   },
   getters: {
     label: ({ label }) => label,
     domain: ({ domain }) => domain,
-    country: ({ country }) => country,
-    language: ({ language }) => language,
-    locale: ({ country, language }) => `${language}-${country}`,
-    cmsContext: ({ label, country, language }) => `${label}-${language}-${country}`,
-  },
-
-  mutations: {
-    setCurrentCountry(state, country) {
-      state.country = country;
-    },
-
-    setCurrentLanguage(state, language) {
-      state.language = language;
-    },
+    cmsContext: (_, { label }, { i18n }) => `${label}-${i18n.locale}`,
   },
 
   actions: {
-    changeContext(context, locale) {
-      context.commit('setCurrentCountry', locale.slice(3));
-      context.commit('setCurrentLanguage', locale.slice(0, 2));
+    changeContext({ dispatch }, { app, error }) {
+      dispatch('shared/fetchShared', { app, error }, { root: true });
+      dispatch('menus/fetchHeaderMenu', { app, error }, { root: true });
+      dispatch('menus/fetchFooterMenu', { app, error }, { root: true });
     },
   },
 };

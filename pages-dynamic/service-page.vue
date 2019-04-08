@@ -2,7 +2,7 @@
   <div>
     <header-banner
       :image="header.image"
-      :payoff-text="header.title"
+      :header="header"
     />
     <cg-usps :usps="usps.items" />
     <div class="container">
