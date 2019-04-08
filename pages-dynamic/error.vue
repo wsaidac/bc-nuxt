@@ -12,6 +12,14 @@
   </div>
 </template>
 
+<script>
+import removeContextChangeLoader from '~/mixins/removeContextChangeLoader';
+
+export default {
+  mixins: [removeContextChangeLoader],
+};
+</script>
+
 <style lang="scss">
 .cg-error {
   text-align: center;
