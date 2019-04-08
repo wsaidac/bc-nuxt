@@ -12,7 +12,8 @@ const merchantLocales = (label) => merchants[label].locales
 const labelLocales = (label) => merchantLocales(label).map(locale => allLocales[locale]);
 const formatOflabelAndType = (label, dataType) => lodash.pick(localeFormats[dataType], merchantLocales(label));
 const defaultLocale = (label) => merchants[label].default;
-const defaultLocaleFile = (label) => `../assets/locales/translation-files/${label}.json`;
+const defaultLocaleFile = (label) => `../assets/locales/translation-files/${label}/index.js`;
+
 
 module.exports = function (label) {
   return {
@@ -23,6 +24,7 @@ module.exports = function (label) {
     langDir: './assets/locales/translation-files/',
     locales: labelLocales(label),
     defaultLocale: defaultLocale(label),
+    defaultLocale: 'en-us',
     vueI18nLoader: true,
     vueI18n: {
       fallbackLocale: defaultLocale(label),
@@ -41,3 +43,4 @@ module.exports = function (label) {
     },
   };
 };
+

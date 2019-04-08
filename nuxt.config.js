@@ -112,6 +112,7 @@ const conf = {
     '~/plugins/shared.js',
     '~/plugins/moment.js',
     '~/plugins/pagination.js',
+    '~/plugins/element-ui.js',
   ],
   sentry: {
     dsn: process.env.SENTRY_DNS,

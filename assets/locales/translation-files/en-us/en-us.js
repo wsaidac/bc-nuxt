@@ -1,4 +1,5 @@
-{
+/* eslint-disable */
+module.exports = {
   "country_select": {
     "button_name": "Continue shopping",
     "description": "Your country selection will ensure that we offer the <strong>correct products and payment methods</strong>. Please ensure that it corresponds to your country and the account(s) on which you are planning to redeem the product.",
@@ -225,5 +226,8 @@
   "where-youre-logged-in": "Devices you’ve used to log in to your account",
   "your-account-is-confirmed": "Your account with the email address {email} is verified. You can now log in to your account.",
   "your-email-is-changed": "Your email address has been updated to {email}. You can now login into your account.",
-  "your-login-details": "Your login details"
+  "your-login-details": "Your login details",
+  "date": {
+    "format": "dd/MM/yyyy",
+  }
 }

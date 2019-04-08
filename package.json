@@ -2,7 +2,7 @@
   "name": "rapido_web",
   "private": true,
   "scripts": {
-    "dev": "nodemon app.js --legacy-watch",
+    "dev": "nodemon app.js",
     "build": "nuxt build",
     "start": "node app.js",
     "generate": "nuxt generate",
@@ -12,6 +12,13 @@
     "test:e2e": "cypress run",
     "cypress": "cypress open",
     "dev-debug": "NODE_ENV=development API_BROWSER='https://api-hub.eu-west-1.acceptance.cgaws.cloud' API_SERVER='https://api-hub.eu-west-1.acceptance.cgaws.cloud' node --inspect node_modules/.bin/nuxt --port 4000"
+  },
+  "nodemonConfig": {
+    "legacyWatch": true,
+    "watch": [
+      "app.js",
+      "nuxt-config.js"
+    ]
   },
   "dependencies": {
     "@nuxtjs/sentry": "^2.3.1",

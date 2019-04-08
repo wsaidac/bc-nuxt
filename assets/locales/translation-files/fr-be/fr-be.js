@@ -1,4 +1,5 @@
-{
+/* eslint-disable */
+module.exports = {
   "country_select": {
     "button_name": "Confirmez",
     "country_names": {

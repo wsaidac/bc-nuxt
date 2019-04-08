@@ -1,4 +1,5 @@
-{
+/* eslint-disable */
+module.exports = {
   "country_select": {
     "button_name": "Abrechnen",
     "country_names": {
@@ -67,5 +68,8 @@
     "shipping": "Versand",
     "visa_and_mastercard_text_1": "Mit einer VISA Card oder einer Mastercard zu bezahlen, ist sehr einfach. Sie bezahlen mit den Angaben, die auf Ihrer VISA Kreditkarte, VISA Debitkarte order Mastercard stehen. Sie benutzen die Kartennummer, das Verfalldatum, den Validierungscode von der Rückseite und in manchen Fällen auch einen zusätzlichen Pincode, wodurch die Online-Zahlung sicher verläuft.",
     "visa_and_mastercard_text_2": "Sobald wir Ihre Zahlung erhalten haben, senden wir Ihnen direkt den Telefonguthabencode."
+  },
+  "date": {
+    "format": "dd/MM/yyyy",
   }
 }
