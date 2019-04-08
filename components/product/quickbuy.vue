@@ -53,6 +53,7 @@ export default {
       const currentUser = this.$store.getters['auth/currentUser'];
       return this.isLoaded && currentUser ? currentUser.quickbuy : undefined;
     },
+    /* eslint-disable */
     product() {
       return (this.userProduct && this.userProduct.id) && this.userProduct || this.defaultProduct;
     },
