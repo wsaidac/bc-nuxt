@@ -8,8 +8,8 @@
     </div>
     <ul class="footer-payment-methods__list">
       <li
-        v-for="method in paymentMethods"
-        :key="method.name"
+        v-for="(method, i) in paymentMethods"
+        :key="i"
         class="footer-payment-methods__item"
       >
         <nuxt-link
