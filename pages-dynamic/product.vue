@@ -114,8 +114,9 @@ export default {
   },
 
   head() {
+    debugger // eslint-disable-line
     const category = this.post.categories.nodes[0].name.toLowerCase();
-    const url = `https://${this.domain}/${this.locale}/${category}`;
+    const url = `https://${this.domain}/${this.$i18n.locale}/${category}`;
     return {
       meta: [
         { rel: 'canonical', href: url },
@@ -125,7 +126,7 @@ export default {
 
   computed: {
     ...mapGetters('shared', ['customerService', 'usps', 'header']),
-    ...mapGetters('context', ['locale', 'domain']),
+    ...mapGetters('context', ['domain']),
     category() {
       return this.post.categories.nodes[0];
     },
