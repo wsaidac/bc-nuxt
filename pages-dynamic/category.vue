@@ -9,7 +9,7 @@
     <category-kind
       v-for="(products, kind) in kinds"
       :key="kind"
-      :title="`${post.categoryHeader.title} ${kind}`"
+      :title="`${post.categoryHeader.title}`"
       :products="products"
     />
     <div class="cg-category__info-block container container--mobile-not-padded">
