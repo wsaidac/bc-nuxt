@@ -20,7 +20,6 @@ export default {
 };
 </script>
 
-
 <style lang="scss">
 .cg-error {
   text-align: center;
