@@ -56,8 +56,4 @@ describe('order-item', () => {
     $mounted.vm.toggleTerms();
     expect($mounted.vm.$data.showTerms).toBe(true);
   });
-
-  it('shoud render all bound props', () => {
-    expect($mounted.html()).toMatchSnapshot();
-  });
 });
