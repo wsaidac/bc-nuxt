@@ -13,4 +13,10 @@ export default {
       };
     },
   },
+
+  actions: {
+    nuxtServerInit({ dispatch, state }, { app, error }) {
+      dispatch("context/changeContext", { app, error, locale: state.i18n.locale });
+    },
+  },
 };

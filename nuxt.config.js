@@ -15,7 +15,10 @@ const conf = {
   },
   css: ['~/assets/stylesheets/application.scss'],
   store: true,
-  loading: { color: '#3B8070' },
+  loading: {
+    color: '#1200ff',
+    height: '3px',
+  },
   build: {
     publicPath: '/rapidoweb/',
 
@@ -42,6 +45,20 @@ const conf = {
       },
     },
     extractCSS: process.env.NODE_ENV !== 'development',
+    babel: {
+      presets({ isServer }) {
+        return [
+          [
+            require.resolve('@nuxt/babel-preset-app'),
+            // require.resolve('@nuxt/babel-preset-app-edge'), // For nuxt-edge users
+            {
+              targets: isServer ? { node: '10' } : { ie: '11' },
+              corejs: { version: 2 },
+            },
+          ],
+        ];
+      },
+    },
   },
   styleResources: {
     scss: './assets/stylesheets/_shared.scss',
@@ -108,6 +125,7 @@ const conf = {
     '~/plugins/cookie-store.js',
     { src: '~/plugins/async.js', ssr: false },
     '~/plugins/shared.js',
+    '~/plugins/i18n.js',
   ],
   sentry: {
     dsn: process.env.SENTRY_DNS,
