@@ -67,5 +67,8 @@
     "shipping": "Levering",
     "visa_and_mastercard_text_1": "På Rapido.com kan du betale med VISA-kreditkort, VISA-betalingskort (Delta og Electron) og MasterCard. Ved kassen skal du vælge betaling med kreditkort. Derefter indtaster du dine kreditkortoplysninger, herunder navn på kortindehaver, kortnummer, udløbsdato og CVV-kode. Bekræft betalingen.",
     "visa_and_mastercard_text_2": "Når betalingen er modtaget, sendes optankningskoden med det samme."
+  },
+  "usps": {
+    "title": "Fordelene ved"
   }
 }
