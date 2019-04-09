@@ -1,7 +1,7 @@
 <template>
   <el-date-picker
     v-model="date"
-    :format="$t('date.format')"
+    :format="$t('account.format')"
     :placeholder="$t('pickADay')"
     :prefix-icon="prefixIcon"
     value-format="yyyy-MM-dd"

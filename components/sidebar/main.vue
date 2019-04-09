@@ -1,6 +1,6 @@
 <template>
   <div class="cg-sidebar">
-    <sidebar-panel :title="$t('my-account')">
+    <sidebar-panel :title="$t('account.my-account')">
       <div class="cg-sidebar__content">
         <nuxt-link
           v-for="link in accountLinks"
@@ -48,9 +48,9 @@ export default {
   data() {
     return {
       accountLinks: [
-        { label: 'orders.order-history', to: 'order-history' },
-        { label: 'personal-details', to: 'profile' },
-        { label: 'sessions-management', to: 'sessions' },
+        { label: 'account.orders.order-history', to: 'order-history' },
+        { label: 'account.personal-details', to: 'profile' },
+        { label: 'account.sessions-management', to: 'sessions' },
       ],
     };
   },

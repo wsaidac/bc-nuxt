@@ -20,13 +20,13 @@
             v-if="code.code && code.code != '0'"
             class="cg-order-item__top-up-code"
           >
-            {{ $t('orders.your-top-up-code') }}: <span>{{ code.code }}</span>
+            {{ $t('account.orders.your-top-up-code') }}: <span>{{ code.code }}</span>
           </div>
           <div
             v-if="code.serial_number"
             class="cg-order-item__top-up-code"
           >
-            {{ $t('orders.serial-number') }}: <span>{{ code.serial_number }}</span>
+            {{ $t('account.orders.serial-number') }}: <span>{{ code.serial_number }}</span>
           </div>
           <div
             v-if="code.image_url"
@@ -38,7 +38,7 @@
             v-if="code.redeem_url"
             class="cg-order-item__top-up-code"
           >
-            {{ $t('orders.redeem-url') }}:
+            {{ $t('account.orders.redeem-url') }}:
             <a
               :href="code.redeem_url"
               target="_blank"
@@ -49,10 +49,10 @@
         </div>
       </div>
       <div class="cg-order-item__purchase-status">
-        <div>{{ $t('orders.order-id') }}: {{ order.id }}</div>
-        <div>{{ $t('orders.purchased-on') }}: {{ order.created_at | moment("DD/MM/YYYY, HH:mm") }}</div>
+        <div>{{ $t('account.orders.order-id') }}: {{ order.id }}</div>
+        <div>{{ $t('account.orders.purchased-on') }}: {{ order.created_at | moment("DD/MM/YYYY, HH:mm") }}</div>
         <div>
-          {{ $t('orders.status') }}:
+          {{ $t('account.orders.status') }}:
           <span
             v-t="status"
             :class="['cg-order-item__status', `cg-order-item__status--${order.status}`]"
@@ -62,7 +62,7 @@
               placement="top-start"
               trigger="hover"
             >
-              <p v-html="$t('orders.description-inprogress')" />
+              <p v-html="$t('account.orders.description-inprogress')" />
               <ui-icon
                 slot="reference"
                 class="input-help"
@@ -72,7 +72,7 @@
           </span>
         </div>
         <a
-          v-t="showDetails ? 'orders.close-details' : 'orders.more-details'"
+          v-t="showDetails ? 'account.orders.close-details' : 'account.orders.more-details'"
           @click="toggleDetails"
         />
       </div>
@@ -81,7 +81,7 @@
     <ui-transition-expand>
       <div v-if="showDetails">
         <div class="cg-order-item__terms">
-          <p>{{ $t('orders.general-terms-and-conditions') }}</p>
+          <p>{{ $t('account.orders.general-terms-and-conditions') }}</p>
           <ui-transition-expand>
             <div v-if="showTerms">
               <p v-html="product.terms_and_conditions" />
@@ -100,17 +100,17 @@
         <div class="cg-order-item__payment">
           <div class="cg-order-item__info">
             <p v-if="code">
-              {{ $t('orders.ordernumber') }}: {{ code.reference }}
+              {{ $t('account.orders.ordernumber') }}: {{ code.reference }}
             </p>
             <p v-if="code">
-              {{ $t('orders.productstatus') }}: <em v-t="code.status" />
+              {{ $t('account.orders.productstatus') }}: <em v-t="code.status" />
             </p>
-            <p>{{ $t('orders.payment-method') }}: {{ order.pay_method }}</p>
+            <p>{{ $t('account.orders.payment-method') }}: {{ order.pay_method }}</p>
           </div>
           <div class="cg-order-item__costs">
-            <p>{{ $t('orders.price') }}: <span>{{ order.price }}</span></p>
-            <p>{{ $t('orders.service-costs') }}: <span>{{ order.service_fee }} </span></p>
-            <p>{{ $t('orders.total') }}: <span>{{ order.total_price }} </span></p>
+            <p>{{ $t('account.orders.price') }}: <span>{{ order.price }}</span></p>
+            <p>{{ $t('account.orders.service-costs') }}: <span>{{ order.service_fee }} </span></p>
+            <p>{{ $t('account.orders.total') }}: <span>{{ order.total_price }} </span></p>
           </div>
         </div>
       </div>
