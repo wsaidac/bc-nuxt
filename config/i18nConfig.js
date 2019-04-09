@@ -24,7 +24,6 @@ module.exports = function (label) {
     langDir: './assets/locales/translation-files/',
     locales: labelLocales(label),
     defaultLocale: defaultLocale(label),
-    defaultLocale: 'en-us',
     vueI18nLoader: true,
     vueI18n: {
       fallbackLocale: defaultLocale(label),
