@@ -12,6 +12,7 @@
   "error": {
     "button_name": "Rapido Homepage",
     "description": "Die angeforderte Seite konnte leider nicht gefunden werden.",
+    "error_text": "Die angeforderte Seite konnte leider nicht gefunden werden.",
     "help": "Klicken Sie auf die Schaltfläche unten, um zur Startseite zurückzukehren, oder wählen Sie Ihr Land aus dem oberen Menü aus.",
     "title": "Error - Seite nicht gefunden"
   },
