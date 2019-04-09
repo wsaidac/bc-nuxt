@@ -7,15 +7,13 @@
           :key="category.title"
           :class="classes(category.title, i)"
         >
-          <div @click="setActive(category.title)">
-            <img
-              v-if="category.image"
-              :alt="category.title"
-              :src="category.image.regular"
-              :srcset="`${category.image.regular}, ${category.image.retina} 2x`"
-            >
-            <span v-text="category.title" />
-          </div>
+          <img
+            v-if="category.image"
+            :alt="category.title"
+            :src="category.image.regular"
+            :srcset="`${category.image.regular}, ${category.image.retina} 2x`"
+          >
+          <span v-text="category.title" />
           <ul class="header-links-desktop__sub">
             <li
               v-for="subcategory in category.categories"
@@ -79,28 +77,23 @@ export default {
   &__main-item {
     border-right: 1px solid $gray-300;
     cursor: pointer;
+    font-size: 1.125em;
+    height: 100%;
+    padding: 0 15px;
 
     &:first-child {
       border-left: 1px solid $gray-300;
     }
 
-    & > div {
-      font-size: 1.125em;
-      height: 100%;
-      padding: 0 15px;
+    @include flex(center, center);
 
-      @include flex(center, center);
-
-      img {
-        margin-right: 10px;
-      }
-
-      &:hover {
-        background: $gray-200;
-      }
+    img {
+      margin-right: 10px;
     }
 
     &:hover {
+      background: $gray-200;
+
       &::after {
         border-top: 3px solid #ee4136;
         content: "";
@@ -178,25 +171,7 @@ export default {
     &__main-item {
       position: relative;
 
-      &:first-child {
-        img {
-          @include size(16px, 24px);
-          @include position(relative, -2px null null null);
-        }
-      }
-
-      &:nth-child(2) img {
-        @include size(22px);
-        @include position(relative, -1px null null null);
-      }
-
-      &:nth-child(3) img {
-        @include size(36px, 20px);
-        @include position(relative, -1px null null null);
-      }
-
-      &:nth-child(4) img {
-        @include size(28px, 20px);
+      & > img {
         @include position(relative, -1px null null null);
       }
     }
