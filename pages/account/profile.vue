@@ -19,7 +19,7 @@
         />
 
         <ui-panel
-          :title="$t('personal-details')"
+          :title="$t('account.personal-details')"
           color="primary"
         >
           <ui-form-section :title="$t('account.your-login-details')">
