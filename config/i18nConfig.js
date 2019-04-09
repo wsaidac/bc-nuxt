@@ -12,8 +12,6 @@ const merchantLocales = (label) => merchants[label].locales
 const labelLocales = (label) => merchantLocales(label).map(locale => allLocales[locale]);
 const formatOflabelAndType = (label, dataType) => lodash.pick(localeFormats[dataType], merchantLocales(label));
 const defaultLocale = (label) => merchants[label].default;
-const defaultLocaleFile = (label) => `../assets/locales/assemble-translations/${label}.js`;
-
 
 module.exports = function (label) {
   return {
