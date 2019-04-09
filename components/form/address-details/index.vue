@@ -5,36 +5,36 @@
   >
     <ui-row>
       <ui-col :md="9">
-        <ui-form-item :label="$t('street')">
+        <ui-form-item :label="$t('account.street')">
           <ui-input
             v-model="address"
-            :placeholder="$t('street')"
+            :placeholder="$t('account.street')"
           />
         </ui-form-item>
       </ui-col>
       <ui-col :md="6">
-        <ui-form-item :label="$t('house-number')">
+        <ui-form-item :label="$t('account.house-number')">
           <ui-input
             v-model="houseNumber"
-            :placeholder="$t('house-number')"
+            :placeholder="$t('account.house-number')"
           />
         </ui-form-item>
       </ui-col>
     </ui-row>
     <ui-row>
       <ui-col :md="6">
-        <ui-form-item :label="$t('postal-code')">
+        <ui-form-item :label="$t('account.postal-code')">
           <ui-input
             v-model="zipCode"
-            :placeholder="$t('postal-code')"
+            :placeholder="$t('account.postal-code')"
           />
         </ui-form-item>
       </ui-col>
       <ui-col :md="9">
-        <ui-form-item :label="$t('city')">
+        <ui-form-item :label="$t('account.city')">
           <ui-input
             v-model="city"
-            :placeholder="$t('city')"
+            :placeholder="$t('account.city')"
           />
         </ui-form-item>
       </ui-col>

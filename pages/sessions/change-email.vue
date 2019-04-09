@@ -2,7 +2,7 @@
   <section class="cg-confirm container container-margin">
     <ui-row v-if="error">
       <ui-col :lg="{span: 12, offset: 6}">
-        <ui-message :title="$t('invalid')">
+        <ui-message :title="$t('account.invalid')">
           <p v-text="$t(error)" />
         </ui-message>
       </ui-col>
@@ -10,7 +10,7 @@
 
     <ui-row v-else>
       <ui-col :lg="{span: 12, offset: 6}">
-        <ui-message :title="$t('account-confirmed')">
+        <ui-message :title="$t('account.account-confirmed')">
           <i18n
             path="your-email-is-changed"
             tag="p"
@@ -25,7 +25,7 @@
           justify
           @click="$router.push(localePath('sessions-login'))"
         >
-          {{ $t('go-to-login') }}
+          {{ $t('account.go-to-login') }}
           <ui-icon icon="arrow-right-open" />
         </ui-button>
       </ui-col>

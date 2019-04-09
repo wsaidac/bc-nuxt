@@ -2,14 +2,14 @@
   <section class="cg-login container container-margin">
     <ui-alert
       v-if="loginError"
-      :title="$t('loginError.title')"
+      :title="$t('account.loginError.title')"
       :description="$t(loginError)"
       type="error"
       @close="loginError = null"
     />
     <ui-alert
       v-if="signUpError"
-      :title="$t('signupError.title')"
+      :title="$t('account.signupError.title')"
       :description="$t(signUpError)"
       type="error"
       @close="signUpError = null"
@@ -19,7 +19,7 @@
         :md="{span: 18, offset: 3}"
         :xl="{span: 12, offset: 6}"
       >
-        <ui-message :title="$t('account-created')">
+        <ui-message :title="$t('account.account-created')">
           <i18n
             path="validation-send"
             tag="p"
@@ -35,7 +35,7 @@
           @click="tryAgain"
         >
           <span>
-            {{ $t('try-again') }}
+            {{ $t('account.try-again') }}
           </span>
           <ui-icon icon="arrow-right-open" />
         </ui-button>
@@ -47,7 +47,7 @@
         :md="11"
         :lg="{span: 8, offset: 2}"
       >
-        <ui-panel :title="$t('login.title')">
+        <ui-panel :title="$t('account.login.title')">
           <form-login @error="onError" />
         </ui-panel>
       </ui-col>
@@ -56,7 +56,7 @@
         :md="{span: 12, offset: 1}"
         :lg="{span: 10, offset: 2}"
       >
-        <ui-panel :title="$t('create-new-account')">
+        <ui-panel :title="$t('account.create-new-account')">
           <form-signup
             @submit="onSignup"
             @error="onSignupError"

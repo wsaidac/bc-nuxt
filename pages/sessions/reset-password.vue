@@ -4,42 +4,42 @@
       <ui-col :lg="{ span: 12, offset: 6 }">
         <ui-alert
           v-if="resetError"
-          :title="$t('reset_password.resetError.title')"
+          :title="$t('account.reset_password.resetError.title')"
           :description="$t(reset_password.resetError)"
           type="error"
           @close="resetError = null"
         />
         <template v-if="reset">
           <ui-message
-            :title="$t('reset_password.submit.title')"
-            :message="$t('reset_password.submit.message')"
+            :title="$t('account.reset_password.submit.title')"
+            :message="$t('account.reset_password.submit.message')"
           />
           <ui-button
             type="primary"
             justify
             @click="$router.push(localePath('account-profile'))"
           >
-            {{ $t('reset_password.submit.profile') }}
+            {{ $t('account.reset_password.submit.profile') }}
             <ui-icon icon="arrow-right-open" />
           </ui-button>
         </template>
         <template v-else-if="invalid">
           <ui-message
-            :title="$t('reset_password.invalid.title')"
-            :message="$t('reset_password.invalid.message')"
+            :title="$t('account.reset_password.invalid.title')"
+            :message="$t('account.reset_password.invalid.message')"
           />
           <ui-button
             type="primary"
             justify
             @click="$router.push(localePath('sessions-request-reset'))"
           >
-            {{ $t('reset_password.invalid.retry') }}
+            {{ $t('account.reset_password.invalid.retry') }}
             <ui-icon icon="arrow-right-open" />
           </ui-button>
         </template>
         <ui-panel
           v-else
-          :title="$t('reset_password.reset')"
+          :title="$t('account.reset_password.reset')"
           color="success"
         >
           <form-reset-password

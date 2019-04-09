@@ -6,10 +6,10 @@
       </ui-col>
       <ui-col :md="16">
         <ui-panel
-          :title="$t('login-history')"
+          :title="$t('account.login-history')"
           color="primary"
         >
-          <ui-form-section :title="$t('where-youre-logged-in')">
+          <ui-form-section :title="$t('account.where-youre-logged-in')">
             <session-item
               v-for="session in activeSessions"
               :key="session.id"
@@ -23,7 +23,7 @@
                 class="cg-sessions__log-al-out"
                 @click="logoutAll"
               >
-                {{ $t('logout-everywhere') }}
+                {{ $t('account.logout-everywhere') }}
               </ui-button>
             </p>
           </ui-form-section>

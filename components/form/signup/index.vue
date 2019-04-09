@@ -4,31 +4,31 @@
     @submit="register"
   >
     <ui-form-item
-      :label="$t('email-address')"
+      :label="$t('account.email-address')"
       :error="$error('email')"
       required
     >
       <ui-input
         v-model="$v.user.email.$model"
-        :placeholder="$t('email-address')"
+        :placeholder="$t('account.email-address')"
         type="email"
       />
     </ui-form-item>
 
     <ui-form-item
-      :label="$t('password')"
+      :label="$t('account.password')"
       :error="$error('password')"
       required
     >
       <ui-input
         v-model="$v.user.password.$model"
-        :placeholder="$t('password')"
+        :placeholder="$t('account.password')"
         :type="passwordInputType"
       />
     </ui-form-item>
 
     <ui-form-item
-      :label="$t('repeat-password')"
+      :label="$t('account.repeat-password')"
       :error="$error('passwordConfirmation')"
       required
     >
@@ -43,11 +43,11 @@
         type="primary"
         native-type="submit"
       >
-        {{ $t('secure-signup') }}
+        {{ $t('account.secure-signup') }}
         <ui-icon icon="arrow-right" />
       </ui-button>
     </ui-form-item>
-    <small v-html="$t('agree-to-terms')" />
+    <small v-html="$t('account.agree-to-terms')" />
   </ui-form>
 </template>
 

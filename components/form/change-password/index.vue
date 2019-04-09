@@ -4,34 +4,34 @@
     @submit="changePassword"
   >
     <ui-form-item
-      :label="$t('current-password')"
+      :label="$t('account.current-password')"
       required
     >
       <ui-input
         v-model="user.oldPassword"
-        :placeholder="$t('password')"
+        :placeholder="$t('account.password')"
         :type="passwordInputType"
       />
     </ui-form-item>
     <ui-form-item
-      :label="$t('new-password')"
+      :label="$t('account.new-password')"
       :error="$error('password')"
       required
     >
       <ui-input
         v-model="$v.user.password.$model"
-        :placeholder="$t('new-password')"
+        :placeholder="$t('account.new-password')"
         :type="passwordInputType"
       />
     </ui-form-item>
     <ui-form-item
-      :label="$t('repeat-new-password')"
+      :label="$t('account.repeat-new-password')"
       required
     >
       <ui-input-password
         v-model="$v.user.passwordConfirmation.$model"
         :error="$error('passwordConfirmation')"
-        :label="$t('repeat-new-password')"
+        :label="$t('account.repeat-new-password')"
         @toggle-password="togglePassword"
       />
     </ui-form-item>
@@ -41,13 +41,13 @@
         native-type="cancel"
         @click="cancel"
       >
-        {{ $t('cancel') }}
+        {{ $t('account.cancel') }}
       </ui-button>
       <ui-button
         type="secondary"
         native-type="submit"
       >
-        {{ $t('save') }}
+        {{ $t('account.save') }}
       </ui-button>
     </ui-form-item>
   </ui-form>

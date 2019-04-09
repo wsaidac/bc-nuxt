@@ -3,18 +3,16 @@
     class="form-request-reset"
     @submit="request"
   >
-    <p
-      v-text="$t('quick-signin')"
-    />
+    <p v-text="$t('account.quick-signin')" />
 
     <ui-form-item
-      :label="$t('enter-email-address')"
+      :label="$t('account.enter-email-address')"
       :error="$error('email')"
       required
     >
       <ui-input
         v-model="$v.user.email.$model"
-        :placeholder="$t('email-address')"
+        :placeholder="$t('account.email-address')"
         type="email"
       />
     </ui-form-item>
@@ -25,7 +23,7 @@
         type="primary"
         native-type="submit"
       >
-        {{ $t('continue') }}
+        {{ $t('account.continue') }}
         <ui-icon icon="arrow-right-open" />
       </ui-button>
     </ui-form-item>

@@ -2,7 +2,7 @@
   <section class="cg-request-reset container container-margin">
     <ui-alert
       v-if="resetError"
-      :title="$t('request_reset_password.error_title')"
+      :title="$t('account.request_reset_password.error_title')"
       :description="$t(resetError)"
       type="error"
       @close="resetError = null"
@@ -10,8 +10,8 @@
     <ui-row>
       <ui-col :lg="{ span: 16, offset: 3 }">
         <div v-if="requested">
-          <ui-message :title="$t('password-reset-sent')">
-            <p v-text="$t('check-your-email')" />
+          <ui-message :title="$t('account.password-reset-sent')">
+            <p v-text="$t('account.check-your-email')" />
             <i18n
               path="email-sent-to"
               tag="p"
@@ -26,13 +26,13 @@
             justify
             @click="tryAgain"
           >
-            {{ $t('retry-reset') }}
+            {{ $t('account.retry-reset') }}
             <ui-icon icon="arrow-right-open" />
           </ui-button>
         </div>
         <ui-panel
           v-else
-          :title="$t('lost-password-help')"
+          :title="$t('account.lost-password-help')"
         >
           <form-request-reset
             @submit="onRequest"

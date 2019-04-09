@@ -2,7 +2,7 @@
   <section class="cg-register container container-margin">
     <ui-alert
       v-if="signupError"
-      :title="$t('registerError.title')"
+      :title="$t('account.registerError.title')"
       :description="$t(signupError)"
       type="error"
       @close="signupError = null"
@@ -12,7 +12,7 @@
         :md="{span: 18, offset: 3}"
         :xl="{span: 12, offset: 6}"
       >
-        <ui-message :title="$t('account created')">
+        <ui-message :title="$t('account.account created')">
           <i18n
             path="validation was send"
             tag="p"
@@ -28,7 +28,7 @@
           @click="tryAgain"
         >
           <span>
-            {{ $t('try again') }}
+            {{ $t('account.try-again') }}
           </span>
           <ui-icon icon="arrow-right-open" />
         </ui-button>
@@ -37,7 +37,7 @@
 
     <ui-row v-else>
       <ui-col :md="{span: 12, offset: 6}">
-        <ui-panel :title="$t('create new account')">
+        <ui-panel :title="$t('account.create-new-account')">
           <form-signup
             @submit="onSignup"
             @error="onError"

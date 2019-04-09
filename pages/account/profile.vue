@@ -22,16 +22,16 @@
           :title="$t('personal-details')"
           color="primary"
         >
-          <ui-form-section :title="$t('your-login-details')">
+          <ui-form-section :title="$t('account.your-login-details')">
             <ui-collapse
               ref="collapse"
               accordion
             >
               <ui-collapse-item
                 :title="{
-                  label: $t('account-email-address'),
+                  label: $t('account.account-email-address'),
                   value: currentUser && currentUser.email || '',
-                  toggle: $t('change-email'),
+                  toggle: $t('account.change-email'),
                 }"
                 title-design="form-toggle"
               >
@@ -43,9 +43,9 @@
               </ui-collapse-item>
               <ui-collapse-item
                 :title="{
-                  label: $t('password'),
+                  label: $t('account.password'),
                   value: '********',
-                  toggle: $t('change-password'),
+                  toggle: $t('account.change-password'),
                 }"
                 title-design="form-toggle"
               >
@@ -57,10 +57,10 @@
               </ui-collapse-item>
             </ui-collapse>
           </ui-form-section>
-          <ui-form-section :title="$t('personal-details')">
+          <ui-form-section :title="$t('account.personal-details')">
             <form-personal-details v-model="personalDetails" />
           </ui-form-section>
-          <ui-form-section :title="$t('address-details')">
+          <ui-form-section :title="$t('account.address-details')">
             <form-address-details v-model="addressDetails" />
           </ui-form-section>
           <ui-form-section>
@@ -70,7 +70,7 @@
               native-type="submit"
               @click="saveDetails"
             >
-              {{ $t('save') }}
+              {{ $t('account.save') }}
             </ui-button>
           </ui-form-section>
         </ui-panel>

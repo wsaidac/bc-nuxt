@@ -4,27 +4,26 @@
     @submit="resetPassword"
   >
     <ui-form-item
-      :label="$t('password')"
+      :label="$t('account.password')"
       :error="$error('password')"
       required
     >
       <ui-input
         v-model="$v.user.password.$model"
-        :placeholder="$t('password')"
+        :placeholder="$t('account.password')"
         :type="passwordInputType"
       />
     </ui-form-item>
 
-
     <ui-form-item
-      :label="$t('repeat-password')"
+      :label="$t('account.repeat-password')"
       :error="$error('passwordConfirmation')"
       required
     >
       <ui-input-password
         v-model="$v.user.passwordConfirmation.$model"
         :error="$error('passwordConfirmation')"
-        :label="$t('repeat-password')"
+        :label="$t('account.repeat-password')"
         @toggle-password="togglePassword"
       />
     </ui-form-item>
@@ -35,7 +34,7 @@
         type="primary"
         native-type="submit"
       >
-        {{ $t('reset-password') }}
+        {{ $t('account.reset-password') }}
         <ui-icon icon="arrow-right" />
       </ui-button>
     </ui-form-item>

@@ -5,18 +5,18 @@
   >
     <ui-row>
       <ui-col :md="12">
-        <ui-form-item :label="$t('first-name')">
+        <ui-form-item :label="$t('account.first-name')">
           <ui-input
             v-model="firstName"
-            :placeholder="$t('first-name')"
+            :placeholder="$t('account.first-name')"
           />
         </ui-form-item>
       </ui-col>
       <ui-col :md="12">
-        <ui-form-item :label="$t('last-name')">
+        <ui-form-item :label="$t('account.last-name')">
           <ui-input
             v-model="lastName"
-            :placeholder="$t('last-name')"
+            :placeholder="$t('account.last-name')"
             class="input-help"
           />
         </ui-form-item>
@@ -26,7 +26,7 @@
       <ui-col :md="12">
         <ui-form-item>
           <template slot="label">
-            {{ $t('birthdate') }}
+            {{ $t('account.birthdate') }}
           </template>
           <ui-date-picker v-model="birthDate" />
         </ui-form-item>
@@ -34,18 +34,18 @@
     </ui-row>
     <ui-row>
       <ui-col :md="24">
-        <ui-form-item :label="$t('gender')">
+        <ui-form-item :label="$t('account.gender')">
           <ui-radio-group v-model="gender">
             <ui-radio-button
-              :label="$t('male')"
+              :label="$t('account.male')"
               value="male"
             />
             <ui-radio-button
-              :label="$t('female')"
+              :label="$t('account.female')"
               value="female"
             />
             <ui-radio-button
-              :label="$t('i-prefer-not-to-say')"
+              :label="$t('account.i-prefer-not-to-say')"
               value="undefined"
             />
           </ui-radio-group>
@@ -54,7 +54,7 @@
     </ui-row>
     <ui-row>
       <ui-col :md="12">
-        <ui-form-item :label="$t('phone-number')">
+        <ui-form-item :label="$t('account.phone-number')">
           <ui-input-phone-number v-model="phoneNumber" />
         </ui-form-item>
       </ui-col>

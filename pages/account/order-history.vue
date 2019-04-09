@@ -5,8 +5,8 @@
         <sidebar-main />
       </ui-col>
       <ui-col :md="16">
-        <ui-panel :title="$t('orders.order-history')">
-          <ui-form-section :title="$t('orders.your-orders')">
+        <ui-panel :title="$t('account.orders.order-history')">
+          <ui-form-section :title="$t('account.orders.your-orders')">
             <orders-pagination :orders="orders" />
           </ui-form-section>
         </ui-panel>

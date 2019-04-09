@@ -4,30 +4,30 @@
     @submit="changeEmail"
   >
     <ui-form-item
-      :label="$t('new-email-address')"
+      :label="$t('account.new-email-address')"
       :error="$error('unconfirmedEmail')"
       required
     >
       <ui-input
         v-model="$v.user.unconfirmedEmail.$model"
-        :placeholder="$t('email-address')"
+        :placeholder="$t('account.email-address')"
         type="email"
       />
     </ui-form-item>
     <ui-form-item
-      :label="$t('repeat-email-address')"
+      :label="$t('account.repeat-email-address')"
       :error="$error('unconfirmedEmailConfirmation')"
       required
     >
       <ui-input
         v-model="$v.user.unconfirmedEmailConfirmation.$model"
-        :placeholder="$t('email-address')"
+        :placeholder="$t('account.email-address')"
         type="email"
       />
     </ui-form-item>
 
     <ui-form-item
-      :label="$t('please-enter-password-for-confirmation')"
+      :label="$t('account.please-enter-password-for-confirmation')"
       required
     >
       <ui-input-password v-model="user.password" />
@@ -36,7 +36,7 @@
     <small class="form-change-email__lost-password">
       <nuxt-link
         :to="localePath('sessions-request-reset')"
-        v-text="$t('lost-password-help')"
+        v-text="$t('account.lost-password-help')"
       />
     </small>
     <ui-form-item>
@@ -45,13 +45,13 @@
         native-type="button"
         @click="cancel"
       >
-        {{ $t('cancel') }}
+        {{ $t('account.cancel') }}
       </ui-button>
       <ui-button
         type="secondary"
         native-type="submit"
       >
-        {{ $t('save') }}
+        {{ $t('account.save') }}
       </ui-button>
     </ui-form-item>
   </ui-form>
