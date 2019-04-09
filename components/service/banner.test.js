@@ -21,7 +21,15 @@ describe('ServiceBanner', () => {
   };
 
   beforeEach(() => {
-    $mounted = mount(ServiceBanner, { propsData });
+    $mounted = mount(ServiceBanner,
+      {
+        propsData,
+        computed: {
+          faqUrl() {
+            return 'en-us';
+          },
+        },
+      });
   });
 
   it('should mount', () => {
