@@ -177,7 +177,7 @@ export default {
         this.error = errors[0].message;
         return;
       }
-      this.showMessage(this.$t('personal-data-submit'));
+      this.showMessage(this.$t('account.personal-data-submit'));
     },
   },
 };

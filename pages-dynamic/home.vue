@@ -35,6 +35,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import HeaderBanner from '~/components/header/banner';
 import CgUsps from '~/components/usps';
 import ProductPopular from '~/components/product/popular';

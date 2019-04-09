@@ -17,7 +17,8 @@
     "legacyWatch": true,
     "watch": [
       "app.js",
-      "nuxt-config.js"
+      "nuxt-config.js",
+      "config/i18nConfig.js"
     ]
   },
   "dependencies": {

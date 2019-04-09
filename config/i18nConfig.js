@@ -24,15 +24,11 @@ module.exports = function (label) {
     langDir: './assets/locales/assemble-translations/',
     locales: labelLocales(label),
     defaultLocale: defaultLocale(label),
-    vueI18nLoader: true,
     vueI18n: {
       fallbackLocale: defaultLocale(label),
       silentTranslationWarn: true,
       dateTimeFormats: formatOflabelAndType(label, 'dateTimeFormats'),
       numberFormats: formatOflabelAndType(label, 'numberFormats'),
-      messages: {
-        [defaultLocale(label)]: require(defaultLocaleFile(defaultLocale(label))),
-      },
     },
     detectBrowserLanguage: {
       useCookie: true,

@@ -1,5 +1,7 @@
-/* eslint-disable */
-const translations = require('../translation-files/de-at.json');
-const elementi18n = require('element-ui/lib/locale/lang/de');
+import elementi18n from 'element-ui/lib/locale/lang/de';
+import translations from '../translation-files/de-at.json';
 
-module.exports = Object.assign({}, translations, elementi18n.default);
+export default {
+  ...translations,
+  ...elementi18n,
+};

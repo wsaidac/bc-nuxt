@@ -111,8 +111,8 @@
   </div>
 </template>
 
-
 <script>
+/* eslint-disable */
 import { mapGetters } from "vuex";
 import SharedTooltip from "~/components/shared/tooltip";
 import SharedInstantTooltip from "~/components/shared/instant-tooltip";
