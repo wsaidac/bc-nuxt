@@ -59,6 +59,7 @@
 import { mapGetters } from 'vuex';
 /* eslint-disable */
 import { UiCol, UiCollapse, UiCollapseItem, UiRow } from "~/components/ui";
+import faqUrl from '~/mixins/faqUrl';
 
 export default {
   name: "FooterLinks",
@@ -73,7 +74,7 @@ export default {
   data() {
     return {}
   },
-
+  mixins: [faqUrl],
   computed: {
     ...mapGetters('menus', ['footer']),
     footerLinks() {
@@ -84,7 +85,7 @@ export default {
         this.transformLink('paymentMethods'),
       ];
       columns[this.$t("footer.customer-care")] = [
-        { help: true, displayName: this.$t("general.help"), url: this.$faqUrl, title: this.$t("general.help") },
+        { help: true, displayName: this.$t("general.help"), url: this.faqUrl, title: this.$t("general.help") },
       ];
       columns[this.$t("internal-links.terms-of-use")] = [
         this.transformLink('privacyPolicy'),

@@ -19,7 +19,7 @@
         <div class="header-navbar__top-right">
           <header-login />
           <a
-            :href="$faqUrl"
+            :href="faqUrl"
             class="header-navbar__help"
             title="help"
           >
@@ -63,6 +63,7 @@ import HeaderLinksMobile from './links-mobile';
 import HeaderHamburger from './hamburger';
 import HeaderLocaleSelect from './locale-select';
 import { UiIcon } from '~/components/ui';
+import faqUrl from '~/mixins/faqUrl';
 
 export default {
   components: {
@@ -73,7 +74,7 @@ export default {
     HeaderLocaleSelect,
     UiIcon,
   },
-
+  mixins: [faqUrl],
   props: {
     items: {
       type: Array,
