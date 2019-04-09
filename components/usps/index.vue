@@ -82,7 +82,7 @@ export default {
   padding: 10px 0;
   position: relative;
 
-  @include media-breakpoint-down("md") {
+  @include media-breakpoint-down("xs") {
     padding: 0;
   }
 

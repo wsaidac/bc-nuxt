@@ -1,0 +1,6 @@
+fragment footerLinkFields on ServicePage {
+    slug
+    meta {
+      title
+    }
+}

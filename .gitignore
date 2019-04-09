@@ -13,3 +13,5 @@ log/
 
 # Nuxt generate
 dist
+
+*.snap

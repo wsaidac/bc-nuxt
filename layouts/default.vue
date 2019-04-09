@@ -1,5 +1,6 @@
 <template>
   <div>
+    <loader />
     <header-navbar :items="main.categories" />
     <nuxt />
     <rapido-footer />
@@ -7,12 +8,15 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
+import Loader from '~/components/loader/loader';
 import HeaderNavbar from '~/components/header/navbar';
 import RapidoFooter from '~/components/footer';
-import { mapGetters } from 'vuex';
 
 export default {
   components: {
+    Loader,
     HeaderNavbar,
     RapidoFooter,
   },

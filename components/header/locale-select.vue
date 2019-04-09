@@ -116,7 +116,7 @@ export default {
 
   .el-input__prefix {
     left: 10px;
-    top: 9px;
+    top: 5px;
   }
 
   .el-button {

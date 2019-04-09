@@ -12,6 +12,7 @@
   "error": {
     "button_name": "Rapido Homepage",
     "description": "Whoops! This is embarrassing, we can't find this page right now. Can you please try again later?",
+    "error_text": "It looks like the page you would like to see no longer exists, sorry",
     "help": "Please click on the button bellow to return to the homepage or select your country from top menu.",
     "title": "Page not found"
   },
@@ -67,5 +68,8 @@
     "shipping": "Shipping",
     "visa_and_mastercard_text_1": "On Rapido.com, you can pay via VISA credit card, VISA debit card (Delta and Electron) and MasterCard. At the checkout, you select payment by credit card. Then you enter your credit card details, including the card holder, the card number, expiration date and CVV code. Then confirm payment.",
     "visa_and_mastercard_text_2": "Upon receipt of payment, the top up code is sent immediately."
+  },
+  "usps": {
+    "title": "Benefits of {domain}"
   }
 }
