@@ -5,7 +5,13 @@ describe('ServiceButton', () => {
   let $mounted;
 
   beforeEach(() => {
-    $mounted = mount(ServiceButton);
+    $mounted = mount(ServiceButton, {
+      computed: {
+        faqUrl() {
+          return 'en-us';
+        },
+      },
+    });
   });
 
   it('should mount', () => {
