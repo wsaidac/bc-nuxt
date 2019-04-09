@@ -13,6 +13,7 @@ module.exports = {
   "error": {
     "button_name": "La page d’accueil",
     "description": "Oups... cette page est introuvable",
+    "error_text": "La page demandée n’a pas été trouvée.",
     "title": "La page demandée n’a pas été trouvée."
   },
   "footer": {

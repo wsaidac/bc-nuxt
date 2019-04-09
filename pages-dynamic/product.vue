@@ -86,6 +86,7 @@ import { UiCol, UiRow } from '~/components/ui';
 import ProductCard from '~/components/product/card';
 import SharedTitle from '~/components/shared/title';
 import ProductVariants from '~/components/product/variants';
+import generateCrumbs from '~/mixins/generateCrumbs';
 
 import { viewTransformDetail } from '~/plugins/gtm';
 
@@ -106,6 +107,8 @@ export default {
     ServiceTerms,
   },
 
+  mixins: [generateCrumbs],
+
   props: {
     post: {
       type: Object,
@@ -114,7 +117,6 @@ export default {
   },
 
   head() {
-    debugger // eslint-disable-line
     const category = this.post.categories.nodes[0].name.toLowerCase();
     const url = `https://${this.domain}/${this.$i18n.locale}/${category}`;
     return {
@@ -138,7 +140,7 @@ export default {
       );
     },
     crumbs() {
-      return this.$crumbs(this.post.title, [
+      return this.generateCrumbs(this.post.title, [
         { url: this.category.slug, label: this.category.name },
       ]);
     },

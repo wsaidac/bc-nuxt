@@ -66,5 +66,8 @@ module.exports = {
     "shipping": "Dostawa",
     "visa_and_mastercard_text_1": "Na stronie Rapido.com możesz zapłacić kartą kredytową VISA, kartą debetową VISA (Delta i Electron) oraz kartą MasterCard. Podczas płatności można wybrać płatność kartą kredytową. Następnie należy wpisać dane karty, w tym dane posiadacza karty, numer karty, datę ważności i kod CVV. Następnie należy potwierdzić płatność.",
     "visa_and_mastercard_text_2": "Kod doładowania jest wysłany natychmiast po otrzymaniu płatności."
+  },
+  "usps": {
+    "title": "Zalety zakupów na {domain}"
   }
 }
