@@ -67,6 +67,6 @@
     "visa_and_mastercard_text_2": "Kod doładowania jest wysłany natychmiast po otrzymaniu płatności."
   },
   "usps": {
-    "title": "Zalety zakupów na"
+    "title": "Zalety zakupów na {domain}"
   }
 }

@@ -69,6 +69,6 @@
     "visa_and_mastercard_text_2": "Når betalingen er modtaget, sendes optankningskoden med det samme."
   },
   "usps": {
-    "title": "Fordelene ved"
+    "title": "Fordelene ved {domain}"
   }
 }
