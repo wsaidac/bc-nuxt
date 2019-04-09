@@ -12,7 +12,7 @@ const merchantLocales = (label) => merchants[label].locales
 const labelLocales = (label) => merchantLocales(label).map(locale => allLocales[locale]);
 const formatOflabelAndType = (label, dataType) => lodash.pick(localeFormats[dataType], merchantLocales(label));
 const defaultLocale = (label) => merchants[label].default;
-const defaultLocaleFile = (label) => `../assets/locales/translation-files/${label}/index.js`;
+const defaultLocaleFile = (label) => `../assets/locales/assemble-translations/${label}.js`;
 
 
 module.exports = function (label) {
@@ -21,7 +21,7 @@ module.exports = function (label) {
     seo: false,
     parsePages: false,
     lazy: true,
-    langDir: './assets/locales/translation-files/',
+    langDir: './assets/locales/assemble-translations/',
     locales: labelLocales(label),
     defaultLocale: defaultLocale(label),
     vueI18nLoader: true,

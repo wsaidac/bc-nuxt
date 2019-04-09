@@ -1,5 +1,4 @@
-/* eslint-disable */
-module.exports = {
+{
   "country_select": {
     "button_name": "Abrechnen",
     "country_names": {
@@ -71,6 +70,6 @@ module.exports = {
     "visa_and_mastercard_text_2": "Sobald wir Ihre Zahlung erhalten haben, senden wir Ihnen direkt den Telefonguthabencode."
   },
   "date": {
-    "format": "dd/MM/yyyy",
+    "format": "dd/MM/yyyy"
   }
 }
