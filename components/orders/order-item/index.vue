@@ -86,14 +86,14 @@
             <div v-if="showTerms">
               <p v-html="product.terms_and_conditions" />
               <a
-                v-t="'orders.close'"
+                v-t="'account.orders.close'"
                 @click="showTerms = !showTerms"
               />
             </div>
           </ui-transition-expand>
           <a
             v-if="!showTerms"
-            v-t="'orders.show'"
+            v-t="'account.orders.show'"
             @click="toggleTerms"
           />
         </div>
