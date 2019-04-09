@@ -114,7 +114,6 @@ export default {
   },
 
   head() {
-    debugger // eslint-disable-line
     const category = this.post.categories.nodes[0].name.toLowerCase();
     const url = `https://${this.domain}/${this.$i18n.locale}/${category}`;
     return {
