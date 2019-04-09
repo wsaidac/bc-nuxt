@@ -57,7 +57,6 @@ export default {
 
   computed: {
     decoratedProducts() {
-      debugger // eslint-disable-line
       if (!this.popularProducts.items) return [];
       return this.popularProducts.items.map(({ image, category }) => ({
         ...category,
