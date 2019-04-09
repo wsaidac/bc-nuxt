@@ -1,6 +1,6 @@
 <template>
   <a
-    :href="$faqUrl"
+    :href="faqUrl"
     class="service-button"
   >
     <strong>{{ $t('general.need-some-help') }}</strong>
@@ -11,6 +11,7 @@
 
 <script>
 import UiIcon from '~/components/ui/icon';
+import faqUrl from '~/mixins/faqUrl';
 
 export default {
   name: 'ServiceButton',
@@ -18,6 +19,8 @@ export default {
   components: {
     UiIcon,
   },
+
+  mixins: [faqUrl],
 };
 </script>
 
