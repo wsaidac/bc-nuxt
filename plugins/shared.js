@@ -6,19 +6,6 @@ function contextPath({ state }) {
   };
 }
 
-function faqUrl({ state }) {
-  const { locale } = state.i18n;
-  const links = {
-    'en-us': 'https://faq.rapido.com/hc/en-us',
-    'fr-be': 'https://faq.rapido.com/hc/fr',
-    'de-at': 'https://faq.rapido.com/hc/de',
-  };
-  if (links[locale]) {
-    return links[locale];
-  }
-  return links['en-us'];
-}
-
 function staticHtmlContent({ state }) {
   return function (pagename) {
     const lang = state.i18n.locale.substr(0, 2);
@@ -28,6 +15,5 @@ function staticHtmlContent({ state }) {
 
 export default ({ store }, inject) => {
   inject('contextPath', contextPath(store));
-  inject('faqUrl', faqUrl(store));
   inject('staticHtmlContent', staticHtmlContent(store));
 };
