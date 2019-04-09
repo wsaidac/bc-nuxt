@@ -19,13 +19,6 @@ function faqUrl({ state }) {
   return links['en-us'];
 }
 
-function crumbs({ state }) {
-  return function (label, additionalCrumbs) {
-    const homeTitle = { state }.getters['shared/homeTitle'];
-    return [{ url: '/', label: 'Home', title: homeTitle }, ...(additionalCrumbs || []), { label }];
-  };
-}
-
 function staticHtmlContent({ state }) {
   return function (pagename) {
     const lang = state.i18n.locale.substr(0, 2);
@@ -36,6 +29,5 @@ function staticHtmlContent({ state }) {
 export default ({ store }, inject) => {
   inject('contextPath', contextPath(store));
   inject('faqUrl', faqUrl(store));
-  inject('crumbs', crumbs(store));
   inject('staticHtmlContent', staticHtmlContent(store));
 };
