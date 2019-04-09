@@ -63,7 +63,9 @@ export default {
     UiInput,
     UiRow,
   },
+
   mixins: [objectModel(['address', 'houseNumber', 'zipCode', 'city'])],
+
   methods: {
     onSubmit() {
       this.$emit('submit');

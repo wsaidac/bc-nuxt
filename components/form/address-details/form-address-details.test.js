@@ -25,20 +25,20 @@ describe('FormAddressDetails', () => {
 
   it('should prefill street with passed prop', () => {
     expect(
-      $mounted.find('.el-form-item[label="street"] input').element.value,
+      $mounted.find('.el-form-item[label="account.street"] input').element.value,
     ).toEqual(value.address);
   });
 
   it('should emit value object on input', () => {
     $mounted
-      .find('.el-form-item[label="street"] input')
+      .find('.el-form-item[label="account.street"] input')
       .setValue('Gorterplaats');
     expect($mounted.emitted().input);
     expect($mounted.emitted().input[0][0].address).toEqual('Gorterplaats');
   });
 
   it('should change the value on input', () => {
-    const inputFirstName = $mounted.find('.el-form-item[label="street"] input');
+    const inputFirstName = $mounted.find('.el-form-item[label="account.street"] input');
     inputFirstName.setValue('Broadway');
     expect(inputFirstName.element.value).toEqual('Broadway');
   });

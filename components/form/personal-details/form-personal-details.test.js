@@ -26,17 +26,17 @@ describe('FormPersonalDetails', () => {
   });
 
   it('should prefill first-name with passed prop', () => {
-    expect($mounted.find('.el-form-item[label="first-name"] input').element.value).toEqual(value.firstName);
+    expect($mounted.find('.el-form-item[label="account.first-name"] input').element.value).toEqual(value.firstName);
   });
 
   it('should emit value object on input', () => {
-    $mounted.find('.el-form-item[label="first-name"] input').setValue('FooTwo');
+    $mounted.find('.el-form-item[label="account.first-name"] input').setValue('FooTwo');
     expect($mounted.emitted().input);
     expect($mounted.emitted().input[0][0].firstName).toEqual('FooTwo');
   });
 
   it('should change the value on input', () => {
-    const inputFirstName = $mounted.find('.el-form-item[label="first-name"] input');
+    const inputFirstName = $mounted.find('.el-form-item[label="account.first-name"] input');
     inputFirstName.setValue('FooTwo');
     expect(inputFirstName.element.value).toEqual('FooTwo');
   });
