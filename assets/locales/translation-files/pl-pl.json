@@ -18,7 +18,7 @@
   "footer": {
     "customer-care": "Obsługa klienta",
     "order-with": "Zamów przez",
-    "quote": "Rapido.com jest częścią CG | Miliony zadowolonych klientów |\n",
+    "quote": "Rapido.com jest częścią CG | Miliony zadowolonych klientów |",
     "safely": "Bezpiecznie",
     "safely-order-with": "Zamów bezpiecznie z:"
   },
@@ -68,5 +68,40 @@
   },
   "usps": {
     "title": "Zalety zakupów na {domain}"
+  },
+  "account": {
+    "birthdate": "Fødselsdag",
+    "cancel": "Annuller",
+    "city": "By",
+    "country_select": {
+      "button_name": "Shop videre",
+      "country_names": {
+        "Austria": "Østrig",
+        "Belgium": "Belgien",
+        "United States": "USA"
+      },
+      "title": "Vælg dit land"
+    },
+    "footer": {
+      "need-help": "Har du brug for hjælp?\nSe vores ofte stillede spørgsmål"
+    },
+    "last-name": "Efternavn",
+    "login": {
+      "title": "Log ind"
+    },
+    "my-account": "Min konto",
+    "name": "Navn",
+    "orders": {
+      "ordernumber": "Ordrenummer",
+      "paid": "Betalt",
+      "payment-method": "Betalingsmulighed",
+      "price": "Pris",
+      "total": "I alt"
+    },
+    "personal-details": "Personlige oplysninger",
+    "postal-code": "Postnummer",
+    "validations": {
+      "required": "Obligatoriske felter"
+    }
   }
 }
