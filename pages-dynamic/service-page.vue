@@ -19,6 +19,7 @@ import { mapGetters } from "vuex";
 import HeaderBanner from "~/components/header/banner";
 import CgUsps from "~/components/usps";
 import SeoBreadcrumbs from "~/components/seo/breadcrumbs";
+import generateCrumbs from '~/mixins/generateCrumbs';
 
 export default {
   components: {
@@ -26,6 +27,8 @@ export default {
     CgUsps,
     SeoBreadcrumbs,
   },
+
+  mixins: [generateCrumbs],
 
   props: {
     post: {
@@ -37,7 +40,7 @@ export default {
   computed: {
     ...mapGetters("shared", ["usps", "header"]),
     crumbs() {
-      return this.$crumbs(this.post.title);
+      return this.generateCrumbs(this.post.title);
     },
   },
 
