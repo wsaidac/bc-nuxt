@@ -13,6 +13,7 @@ module.exports = {
   "error": {
     "button_name": "Rapido Homepage",
     "description": "Whoops! This is embarrassing, we can't find this page right now. Can you please try again later?",
+    "error_text": "It looks like the page you would like to see no longer exists, sorry",
     "help": "Please click on the button bellow to return to the homepage or select your country from top menu.",
     "title": "Page not found"
   },
