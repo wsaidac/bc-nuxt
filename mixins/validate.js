@@ -47,7 +47,7 @@ export default (field, attributes) => ({
           && error.path[0] === field && error.path[1] === attr);
 
       if (!this.$v.$anyDirty && graphQLErrors) {
-        return this.$t(`validations.${graphQLErrors.message}`);
+        return this.$t(`account.validations.${graphQLErrors.message}`);
       }
 
       if (v.$error === false) {
@@ -58,7 +58,7 @@ export default (field, attributes) => ({
       for (let i = 0; i < validators.length; i++) {
         const validator = validators[i];
         if (v[validator] === false) {
-          return this.$t(`validations.${validator}`, v.$params[validator]);
+          return this.$t(`account.validations.${validator}`, v.$params[validator]);
         }
       }
 

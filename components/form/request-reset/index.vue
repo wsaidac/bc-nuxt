@@ -64,7 +64,7 @@ export default {
         const { errors } = await this.$mutate('requestResetPassword', this.user);
 
         if (errors.length > 0) {
-          this.$emit('error', errors[0].message);
+          this.$emit('error', `account.${errors[0].message}`);
         } else {
           this.$emit('submit', this.user);
         }

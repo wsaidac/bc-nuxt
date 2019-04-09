@@ -12,9 +12,9 @@
         :md="{span: 18, offset: 3}"
         :xl="{span: 12, offset: 6}"
       >
-        <ui-message :title="$t('account.account created')">
+        <ui-message :title="$t('account.account-created')">
           <i18n
-            path="validation was send"
+            path="validation-was-send"
             tag="p"
           >
             <strong place="email">

@@ -79,8 +79,9 @@ export default {
       this.$v.$touch();
       if (!this.$v.$invalid) {
         const { data, errors } = await this.$mutate('login', this.user);
+        console.log(errors);
         if (errors.length > 0) {
-          this.$emit('error', errors[0].message);
+          this.$emit('error', `account.${errors[0].message}`);
         } else {
           this.$store.commit('auth/setCurrentUser', data.login);
           this.$router.push(this.localePath('account-order-history'));

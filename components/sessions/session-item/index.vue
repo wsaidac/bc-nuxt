@@ -14,7 +14,7 @@
       &middot;
       <strong
         v-if="session.currentSession"
-        v-text="$t('active-now')"
+        v-text="$t('account.active-now')"
       />
       <span
         v-else
@@ -26,7 +26,7 @@
       type="tertiary"
       @click="logout(session.id)"
     >
-      {{ $t('logout') }}
+      {{ $t('account.logout') }}
     </ui-button>
   </div>
 </template>

@@ -21,7 +21,7 @@
       >
         <ui-message :title="$t('account.account-created')">
           <i18n
-            path="validation-send"
+            path="account.validation-send"
             tag="p"
           >
             <strong place="email">
@@ -109,7 +109,7 @@ export default {
     onSignupError(error) {
       switch (error) {
         case 'uniqueness':
-          this.signUpError = 'request_change_email.invalid';
+          this.signUpError = 'account.request_change_email.invalid';
           break;
 
         default:

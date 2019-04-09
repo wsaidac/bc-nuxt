@@ -87,7 +87,7 @@ export default {
       const { resetPasswordToken, userId } = this;
       const { data, errors } = await this.$mutate('resetPassword', { resetPasswordToken, userId, ...this.user });
       if (errors.length > 0) {
-        this.$emit('error', errors[0].message);
+        this.$emit('error', `account.${errors[0].message}`);
       } else {
         this.$store.commit('auth/setCurrentUser', data.resetPassword);
         this.$emit('submit');

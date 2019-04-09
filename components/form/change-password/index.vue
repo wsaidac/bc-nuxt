@@ -87,7 +87,7 @@ export default {
     async changePassword() {
       const { errors } = await this.$mutate('changePassword', this.user);
       if (errors.length > 0) {
-        this.$emit('error', errors[0].message);
+        this.$emit('error', `account.${errors[0].message}`);
       } else {
         this.$emit('submit', this.user);
       }
