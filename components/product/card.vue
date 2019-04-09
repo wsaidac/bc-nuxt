@@ -6,7 +6,7 @@
     itemtype="http://schema.org/Product"
   >
     <nuxt-link
-      :to="$contextPath(product.slug)"
+      :to="$contextPath(`${category.slug}/${product.slug}`)"
       class="product-card__img-link"
       @click.native="submitForm"
     >
@@ -121,6 +121,7 @@ import {
   measureProductClick,
   clickTransformProductAddToCart,
 } from "~/plugins/gtm.js";
+import productCategory from '~/mixins/productCategory';
 
 export default {
   name: "ProductCard",
@@ -131,21 +132,17 @@ export default {
     UiButton,
     UiSelect,
   },
-
   filters: {
     dig(product, path) {
       return get(product, path, "");
     },
   },
 
+  mixins: [productCategory],
   props: {
     mode: {
       type: String,
       default: "vertical",
-    },
-    product: {
-      type: Object,
-      required: true,
     },
     hasSelect: {
       type: Boolean,
