@@ -143,7 +143,8 @@ export default {
 
   &__top {
     background: $primary-500;
-    font-size: 1.125em;
+    font-size: 1em;
+    font-weight: 300;
     position: relative;
     z-index: $z-index-header-navbar-top;
 
