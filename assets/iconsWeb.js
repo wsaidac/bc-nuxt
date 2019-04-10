@@ -7,4 +7,9 @@ module.exports = {
   fontName: 'UiIcons',
   types: ['woff2'],
   fileName: 'app.[fontname].[hash].[ext]',
+  formatOptions: {
+    woff2: {
+      ts: 1451512800000
+    }
+  },
 };
