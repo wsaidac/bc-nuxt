@@ -4,8 +4,30 @@ function log(message) {
   if (process.env.GTM_DEBUG) console.log('[GTM]', message); // eslint-disable-line no-console
 }
 
+function checkPageType(path) {
+  const pathArr = path.split('/').filter(el => el);
+
+  switch (pathArr.length) {
+    case 1:
+      return 'HOME';
+
+    case 2:
+      return 'POP';
+
+    case 3:
+      return 'PDP';
+
+    default:
+      return 'HOME';
+  }
+}
+
 function page() {
+  const pageType = checkPageType(window.location.pathname);
+
   const data = {
+    contentGroupLoaded: true,
+    contentGroup: pageType,
     event: 'pageView',
     url: window.location.href,
     path: window.location.pathname,
@@ -50,9 +72,13 @@ function getMenuHeader({ brand, mainMenu }) {
 }
 
 function transformProduct(product) {
+  const kind = product.kinds && product.kinds["nodes"][0].name || null;
+  const brand = product.categories && product.categories["nodes"][0].categoryHeader.title || null;
+
   return {
-    brand: 'TODO brand',
-    category: 'TODO category',
+    brand,
+    // category: 'TODO category',
+    kind,
     id: product.id,
     name: product.content.title,
     price: product.information.issueValue,
