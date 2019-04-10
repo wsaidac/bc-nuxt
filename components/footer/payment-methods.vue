@@ -51,11 +51,10 @@ export default {
 
 <style lang="scss">
 .footer-payment-methods {
-  border-right: 1px solid $gray-400;
   flex-flow: row wrap;
   padding: 10px;
 
-  @include flex(flex-end, center);
+  @include flex(center, center);
 
   &__quote {
     @include flex(null, center);
@@ -91,9 +90,18 @@ export default {
   }
 
   @include media-breakpoint-only("xs") {
-    border: 0;
+    p,
+    .ui-icon {
+      font-size: $font-size-h6;
+    }
 
-    @include flex(center, center);
+    &__item {
+      width: 30px;
+    }
+
+    &__quote {
+      margin-bottom: 15px;
+    }
   }
 }
 </style>
