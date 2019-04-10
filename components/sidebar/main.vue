@@ -112,10 +112,9 @@ export default {
   }
 
   &__logout {
-    padding: {
-      left: 30px !important;
-      right: 30px !important;
-    }
+    margin-bottom: 20px;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
 
     span {
       @include flex(space-between, center);
