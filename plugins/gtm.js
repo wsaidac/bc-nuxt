@@ -72,12 +72,13 @@ function getMenuHeader({ brand, mainMenu }) {
 }
 
 function transformProduct(product) {
-  const kind = product.kinds && product.kinds["nodes"][0].name;
+  const kind = product.kinds && product.kinds["nodes"][0].name || null;
+  const brand = product.categories && product.categories["nodes"][0].categoryHeader.title || null;
 
   return {
-    brand: product.categories["nodes"][0].categoryHeader.title,
+    brand,
     // category: 'TODO category',
-    kind: kind,
+    kind,
     id: product.id,
     name: product.content.title,
     price: product.information.issueValue,
