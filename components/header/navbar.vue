@@ -8,12 +8,12 @@
     <div class="header-navbar__top">
       <div class="header-navbar__top-content container">
         <h1 class="header-navbar__brand">
-          <nuxt-link :to="$contextPath('')">
+          <a :href="$route.path.slice(0,7)">
             <img
               :alt="$t('general.domain')"
               src="~/assets/images/logo-white.svg"
             >
-          </nuxt-link>
+          </a>
         </h1>
         <div class="spacer" />
         <div class="header-navbar__top-right">
