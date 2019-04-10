@@ -320,6 +320,8 @@ export default {
         }
 
         img {
+          display: block;
+          margin: auto;
           padding: 10px;
         }
       }
