@@ -8,7 +8,7 @@
     <div class="header-navbar__top">
       <div class="header-navbar__top-content container">
         <h1 class="header-navbar__brand">
-          <a :href="$route.path.slice(0,7)">
+          <a :href="homeLink">
             <img
               :alt="$t('general.domain')"
               src="~/assets/images/logo-white.svg"
@@ -106,6 +106,9 @@ export default {
     },
     country() {
       return this.$i18n.locales.find(i => i.code === this.$i18n.locale);
+    },
+    homeLink() {
+      return this.$route.path.slice(0, 7);
     },
   },
 };

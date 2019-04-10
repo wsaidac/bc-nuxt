@@ -1,10 +1,10 @@
 <template>
   <div>
     <loader />
-    <header-navbar onUsers />
+    <header-navbar on-users />
     <cg-usps :usps="usps.items" />
     <nuxt />
-    <rapido-footer onUsers />
+    <rapido-footer on-users />
   </div>
 </template>
 
