@@ -34,6 +34,7 @@
             <ui-icon icon="caret-white" />
           </button>
           <div
+            v-if="!onUsers"
             class="header-navbar__menu"
             @click="menuOpen = !menuOpen"
           >
@@ -275,11 +276,6 @@ export default {
       padding-right: 0;
     }
 
-    .header-login,
-    .header-navbar__help {
-      display: none;
-    }
-
     &__country-select {
       background: $primary-500;
       border-left: 1px solid #1000e3;
@@ -287,6 +283,21 @@ export default {
       .ui-icon-caret-white {
         display: none;
       }
+    }
+  }
+}
+
+.layout-users {
+  .header-login {
+    display: none;
+  }
+}
+
+@include media-breakpoint-only("xs") {
+  .layout-default {
+    .header-login,
+    .header-navbar__help {
+      display: none;
     }
   }
 }
