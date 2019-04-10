@@ -135,6 +135,10 @@ export default {
     margin-right: 5px;
     width: 50px;
   }
+
+  @include media-breakpoint-down("xs") {
+    padding-left: 0;
+  }
 }
 
 .ui-carousel__item {
@@ -168,10 +172,18 @@ export default {
   @include media-breakpoint-up("sm") {
     display: none;
   }
+
+  @include media-breakpoint-down("xs") {
+    font-size: $font-size-small;
+  }
 }
 
 .ui-carousel__pag {
   padding-right: 5px;
+
+  @include media-breakpoint-down("xs") {
+    display: none;
+  }
 }
 
 .ui-carousel__pag-bullet {

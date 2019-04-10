@@ -132,7 +132,7 @@ export default {
       background: $gray-100;
       border-top: 1px solid $gray-900;
       flex-flow: row nowrap;
-      font-size: 16.8px;
+      font-size: 1.3em;
       font-weight: 900;
       line-height: 24px;
       padding-left: 15px;
@@ -178,7 +178,7 @@ export default {
       a {
         color: $black;
         display: block;
-        font-size: $font-size-smaller;
+        font-size: $font-size-base;
       }
     }
   }
