@@ -1,6 +1,6 @@
 {
   "country_select": {
-    "button_name": "Abrechnen",
+    "button_name": "Auswählen",
     "country_names": {
       "Austria": "Österreich",
       "Belgium": "Belgien",
@@ -34,7 +34,7 @@
     "look-at-faqs": "Wir helfen Ihnen gerne weiter",
     "need-some-help": "Sie haben eine Frage?",
     "order-now": "Jetzt bestellen",
-    "order-safely": "Sicher bestellen",
+    "order-safely": "Auswählen",
     "show-less": "Weniger anzeigen",
     "show-more": "Mehr entdecken"
   },
