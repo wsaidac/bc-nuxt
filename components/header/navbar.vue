@@ -44,11 +44,11 @@
       </div>
     </div>
     <header-links-desktop
-      v-if="notOnAccountPage"
+      v-if="!onUsers"
       :items="items"
     />
     <header-links-mobile
-      v-if="notOnAccountPage"
+      v-if="!onUsers"
       :items="items"
       :menu-open="menuOpen"
       @close-menu="menuOpen = false"
@@ -86,6 +86,10 @@ export default {
         return [];
       },
     },
+    onUsers: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
@@ -102,11 +106,6 @@ export default {
     },
     country() {
       return this.$i18n.locales.find(i => i.code === this.$i18n.locale);
-    },
-    notOnAccountPage() {
-      const firstSlug = this.$route.path.split('/')[2];
-      const accountPages = ['sessions', 'account'];
-      return !accountPages.includes(firstSlug);
     },
   },
 };

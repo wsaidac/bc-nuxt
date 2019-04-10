@@ -93,7 +93,7 @@ const conf = {
     },
   },
   router: {
-    middleware: ['auth', 'headers', 'context'],
+    middleware: ['auth', 'headers', 'context', 'usps'],
   },
   modules: [
     ['@nuxtjs/style-resources'],

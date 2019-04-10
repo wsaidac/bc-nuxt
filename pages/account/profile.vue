@@ -112,6 +112,8 @@ function pickAddressDetails(user) {
 }
 
 export default {
+  layout: 'users',
+
   components: {
     SidebarMain,
     FormChangeEmail,

@@ -51,6 +51,8 @@ import {
 } from '~/components/ui.js';
 
 export default {
+  layout: 'users',
+
   components: {
     FormRequestReset,
     UiAlert,

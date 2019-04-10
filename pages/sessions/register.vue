@@ -55,6 +55,8 @@ import {
 } from '~/components/ui.js';
 
 export default {
+  layout: 'users',
+
   components: {
     FormSignup,
     UiAlert,

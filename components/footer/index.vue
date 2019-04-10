@@ -1,6 +1,6 @@
 <template>
   <footer class="rapido-footer">
-    <div v-if="notOnAccountPage">
+    <div v-if="!onUsers">
       <hr>
       <div class="container container--mobile-not-padded">
         <ui-row>
@@ -11,7 +11,7 @@
       </div>
       <hr>
     </div>
-    <footer-links v-if="notOnAccountPage" />
+    <footer-links v-if="!onUsers" />
     <footer-copyright />
   </footer>
 </template>
@@ -34,13 +34,15 @@ export default {
     FooterCopyright,
   },
 
+  props: {
+    onUsers: {
+      type: Boolean,
+      default: false,
+    },
+  },
+
   computed: {
     ...mapGetters('shared', ['paymentMethods']),
-    notOnAccountPage() {
-      const firstSlug = this.$route.path.split('/')[2];
-      const accountPages = ['sessions', 'account'];
-      return !accountPages.includes(firstSlug);
-    },
   },
 };
 </script>

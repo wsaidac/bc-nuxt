@@ -39,6 +39,8 @@ import {
 } from '~/components/ui';
 
 export default {
+  layout: 'users',
+
   components: {
     UiButton,
     UiCol,
