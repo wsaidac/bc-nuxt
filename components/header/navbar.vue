@@ -43,8 +43,12 @@
         </div>
       </div>
     </div>
-    <header-links-desktop :items="items" />
+    <header-links-desktop
+      v-if="notOnAccountPage"
+      :items="items"
+    />
     <header-links-mobile
+      v-if="notOnAccountPage"
       :items="items"
       :menu-open="menuOpen"
       @close-menu="menuOpen = false"
@@ -98,6 +102,11 @@ export default {
     },
     country() {
       return this.$i18n.locales.find(i => i.code === this.$i18n.locale);
+    },
+    notOnAccountPage() {
+      const firstSlug = this.$route.path.split('/')[2];
+      const accountPages = ['sessions', 'account'];
+      return !accountPages.includes(firstSlug);
     },
   },
 };

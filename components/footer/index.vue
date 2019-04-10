@@ -1,15 +1,17 @@
 <template>
   <footer class="rapido-footer">
-    <hr>
-    <div class="container container--mobile-not-padded">
-      <ui-row>
-        <ui-col :sm="12">
-          <footer-payment-methods :payment-methods="paymentMethods" />
-        </ui-col>
-      </ui-row>
+    <div v-if="notOnAccountPage">
+      <hr>
+      <div class="container container--mobile-not-padded">
+        <ui-row>
+          <ui-col :sm="12">
+            <footer-payment-methods :payment-methods="paymentMethods" />
+          </ui-col>
+        </ui-row>
+      </div>
+      <hr>
     </div>
-    <hr>
-    <footer-links />
+    <footer-links v-if="notOnAccountPage" />
     <footer-copyright />
   </footer>
 </template>
@@ -34,6 +36,11 @@ export default {
 
   computed: {
     ...mapGetters('shared', ['paymentMethods']),
+    notOnAccountPage() {
+      const firstSlug = this.$route.path.split('/')[2];
+      const accountPages = ['sessions', 'account'];
+      return !accountPages.includes(firstSlug);
+    },
   },
 };
 </script>
