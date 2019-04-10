@@ -73,7 +73,7 @@ export default {
 
   computed: {
     ...mapGetters('menus', ['main']),
-
+    ...mapGetters('context', ['domain']),
     ...mapGetters('shared', ['customerService', 'usps']),
   },
 };
