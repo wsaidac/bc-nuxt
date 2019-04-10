@@ -104,7 +104,7 @@
           native-type="button"
           @click="submitForm"
         >
-          {{ cta }}
+          {{ $t("general.order-safely") }}
         </ui-button>
       </form>
     </div>
@@ -177,11 +177,11 @@ export default {
     classes() {
       return ["product-card", `product-card--mode-${this.mode}`];
     },
-    cta() {
-      return this.mode === "horizontal"
-        ? this.$t("general.order-now")
-        : this.$t("general.order-safely");
-    },
+    // cta() {
+    //   return this.mode === "horizontal"
+    //     ? this.$t("general.order-now")
+    //     : this.$t("general.order-safely");
+    // },
     image() {
       return (
         this.product.content.image
@@ -310,6 +310,8 @@ export default {
         }
 
         img {
+          display: block;
+          margin: auto;
           padding: 10px;
         }
       }

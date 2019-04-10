@@ -1,6 +1,6 @@
 {
   "country_select": {
-    "button_name": "Confirm",
+    "button_name": "Auswählen",
     "country_names": {
       "Austria": "Austria",
       "Belgium": "Belgium",
@@ -30,13 +30,13 @@
     "help": "Help",
     "home-text": "Home",
     "label": "Rapido",
-    "loading": "Loading",
-    "look-at-faqs": "Take a look at the FAQ's",
-    "need-some-help": "Need some help?",
-    "order-now": "Order now",
-    "order-safely": "Order safely",
-    "show-less": "Show less",
-    "show-more": "Show more"
+    "loading": "Wird geladen",
+    "look-at-faqs": "Wir helfen Ihnen gerne weiter",
+    "need-some-help": "Sie haben eine Frage?",
+    "order-now": "Jetzt bestellen",
+    "order-safely": "Auswählen",
+    "show-less": "Weniger anzeigen",
+    "show-more": "Mehr entdecken"
   },
   "header": {
     "login": "Login",

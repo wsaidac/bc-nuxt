@@ -57,15 +57,16 @@ export default {
   .el-collapse-item {
     .el-collapse-item__header {
       flex-flow: row nowrap;
-      font-size: 16.8px;
-      font-weight: 900;
-      line-height: 24px;
+      font-size: $font-size-base;
+      font-weight: 700;
+      line-height: 20px;
       padding-left: 15px;
 
       @include flex(space-between, center);
 
       .el-collapse-item__arrow {
         height: 100%;
+        padding-left: 5px;
 
         &::after {
           @include svg-icon(
@@ -120,7 +121,8 @@ export default {
 
     .el-collapse-item {
       .el-collapse-item__header {
-        font-size: 15.8px;
+        font-size: $font-size-base;
+        line-height: 16px;
       }
 
       .el-collapse-item__content {

@@ -17,7 +17,7 @@
         </h1>
         <div class="spacer" />
         <div class="header-navbar__top-right">
-          <header-login />
+          <!-- <header-login /> -->
           <a
             :href="faqUrl"
             class="header-navbar__help"
@@ -72,7 +72,7 @@ import faqUrl from '~/mixins/faqUrl';
 
 export default {
   components: {
-    HeaderLogin,
+    // HeaderLogin,
     HeaderLinksDesktop,
     HeaderLinksMobile,
     HeaderHamburger,
@@ -155,7 +155,8 @@ export default {
 
   &__top {
     background: $primary-500;
-    font-size: 1.125em;
+    font-size: 1em;
+    font-weight: 300;
     position: relative;
     z-index: $z-index-header-navbar-top;
 
