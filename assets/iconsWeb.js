@@ -6,9 +6,8 @@ module.exports = {
   fixedWidth: true,
   fontName: 'UiIcons',
   types: ['woff2'],
-  fileName: 'app.[fontname].[hash].[ext]',
   formatOptions: {
-    woff2: {
+    ttf: {
       ts: 1451512800000
     }
   },
