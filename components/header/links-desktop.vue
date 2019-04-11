@@ -89,6 +89,7 @@ export default {
 
     img {
       margin-right: 10px;
+      max-height: 30px;
     }
 
     &:hover {
