@@ -38,6 +38,7 @@ export default {
   },
 
   computed: {
+    ...mapGetters('context', ['domain']),
     ...mapGetters("shared", ["usps", "header"]),
     crumbs() {
       return this.generateCrumbs(this.post.title);
@@ -45,8 +46,13 @@ export default {
   },
 
   head() {
+    const url = `https://${this.domain}${this.$route.path}`;
+
     return {
       title: this.post.title,
+      meta: [
+        { rel: 'canonical', href: url },
+      ],
     };
   },
 };
