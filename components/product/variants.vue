@@ -10,7 +10,7 @@
           :to="$contextPath(`${category.slug}/${item.slug}`)"
           :title="item.title"
         >
-          <span v-text="item.title" />
+          <span v-html="item.title" />
           <ui-icon icon="chevron-right" />
         </nuxt-link>
       </li>
