@@ -27,12 +27,13 @@ $--popover-border-color: $gray-300;
 $--popover-padding: 10px 6px;
 $--popover-padding-large: 10px;
 
-@import 'element-ui/packages/theme-chalk/src/common/transition.scss';
-@import 'element-ui/packages/theme-chalk/src/popover.scss';
+@import "element-ui/packages/theme-chalk/src/common/transition.scss";
+@import "element-ui/packages/theme-chalk/src/popover.scss";
 
 .el-popover {
   border-radius: 0;
   max-width: 400px;
+  word-wrap: normal;
 
   &__title {
     background: #59698e;
