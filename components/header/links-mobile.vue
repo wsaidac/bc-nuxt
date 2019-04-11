@@ -41,23 +41,23 @@
       </li>
     </ul>
     <ul class="header-links-mobile__pages">
-      <li>
+      <!-- <li>
         <header-login
           class="header-links-mobile__main-item, header-links-mobile__login"
           @click.native="$emit('closemenu')"
         />
-      </li>
+      </li> -->
       <li
         v-for="link in links"
-        :key="link.title"
+        :key="link.displayName"
         class="header-links-mobile__main-item"
       >
         <nuxt-link
           :to="$contextPath(link.url)"
-          :title="link.title"
+          :title="link.displayName"
           @click.native="$emit('close-menu')"
         >
-          {{ link.title }}
+          {{ link.displayName }}
         </nuxt-link>
       </li>
     </ul>
@@ -67,12 +67,16 @@
 <script>
 import HeaderLogin from './login';
 import { UiIcon } from '~/components/ui';
+import { mapGetters } from 'vuex';
+import faqUrl from '~/mixins/faqUrl';
 
 export default {
   components: {
-    HeaderLogin,
+    // HeaderLogin,
     UiIcon,
   },
+
+  mixins: [faqUrl],
 
   props: {
     menuOpen: {
@@ -90,21 +94,11 @@ export default {
   data() {
     return {
       active: '',
-      links: [
-        { title: this.$t("internal-links.about-us"), url: "about-us" },
-        { title: this.$t("internal-links.payment-methods"), url: "payment-methods" },
-        { title: this.$t("general.help"), url: "help" },
-        { title: this.$t("internal-links.privacy-policy"), url: "privacy-policy" },
-        {
-          title: this.$t("internal-links.general-conditions"),
-          url: "terms-and-conditions",
-        },
-        { title: this.$t("internal-links.cookies"), url: "cookies" },
-      ],
     };
   },
 
   computed: {
+    ...mapGetters('menus', ['footer']),
     classes() {
       return [
         'header-links-mobile',
@@ -112,11 +106,32 @@ export default {
         { 'header-links-mobile--active': this.active },
       ];
     },
+    links() {
+      return [
+        this.transformLink('aboutUs'),
+        this.transformLink('paymentMethods'),
+        { displayName: this.$t("general.help"), url: this.faqUrl },
+        this.transformLink('privacyPolicy'),
+        this.transformLink('generalConditions'),
+        this.transformLink('cookieStatement'),
+      ];
+    },
   },
 
   methods: {
     setActive(v) {
       this.active = v;
+    },
+    transformLink(linkName) {
+      const link = this.footer[linkName];
+      if (!link || !link.slug) return null;
+      let displayName = link.slug;
+      displayName = displayName[0].toUpperCase() + displayName.slice(1).replace(/-/g, ' ');
+      return {
+        displayName,
+        title: (link.meta && link.meta.title) || '',
+        url: link.slug,
+      };
     },
   },
 };
@@ -153,7 +168,6 @@ export default {
 
     &.header-links-mobile__pages {
       background: $gray-100;
-      padding-top: 10px;
 
       a:hover {
         background: #f8f8f8;

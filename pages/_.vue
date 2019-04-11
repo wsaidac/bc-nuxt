@@ -24,10 +24,10 @@ export default {
 
   head() {
     if (this.layout === "Error") return {};
-    const { locale } = this.$i18n;
+    const locale = this.$i18n.locale.split('-');
     return {
       htmlAttrs: {
-        lang: locale,
+        lang: `${locale[0]}-${locale[1].toUpperCase()}`,
       },
       title:
         this.post.meta.title
