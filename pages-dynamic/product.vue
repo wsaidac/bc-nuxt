@@ -117,7 +117,7 @@ export default {
   },
 
   head() {
-    const category = this.post.categories.nodes[0].name.toLowerCase();
+    const category = this.post.categories.nodes[0].slug;
     const url = `https://${this.domain}/${this.$i18n.locale}/${category}`;
     return {
       meta: [
