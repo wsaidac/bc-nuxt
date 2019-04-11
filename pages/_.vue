@@ -2,6 +2,7 @@
   <div
     :is="layout"
     :post="post"
+    class="cg-container"
   />
 </template>
 

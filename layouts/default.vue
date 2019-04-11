@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-default">
+  <div class="cg-layout layout-default">
     <loader />
     <header-navbar :items="main.categories" />
     <nuxt />

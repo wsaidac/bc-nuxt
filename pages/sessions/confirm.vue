@@ -1,5 +1,5 @@
 <template>
-  <section class="cg-confirm container container-margin">
+  <section class="cg-container cg-confirm container container-margin">
     <ui-row v-if="error">
       <ui-col :lg="{span: 12, offset: 6}">
         <ui-message :title="$t('account.invalid')">

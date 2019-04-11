@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-users">
+  <div class="cg-layout layout-users">
     <loader />
     <header-navbar on-users />
     <cg-usps :usps="usps.items" />

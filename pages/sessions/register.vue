@@ -1,5 +1,5 @@
 <template>
-  <section class="cg-register container container-margin">
+  <section class="cg-container cg-register container container-margin">
     <ui-alert
       v-if="signupError"
       :title="$t('account.registerError.title')"

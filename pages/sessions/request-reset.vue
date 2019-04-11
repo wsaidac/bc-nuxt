@@ -1,5 +1,5 @@
 <template>
-  <section class="cg-request-reset container container-margin">
+  <section class="cg-container cg-request-reset container container-margin">
     <ui-alert
       v-if="resetError"
       :title="$t('account.request_reset_password.error_title')"
