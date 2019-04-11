@@ -107,7 +107,6 @@ export default {
       ];
     },
     links() {
-      debugger // eslint-disable-line
       return [
         this.transformLink('aboutUs'),
         this.transformLink('paymentMethods'),
