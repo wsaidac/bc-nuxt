@@ -33,6 +33,7 @@ $--popover-padding-large: 10px;
 .el-popover {
   border-radius: 0;
   max-width: 400px;
+  word-break: normal;
   word-wrap: normal;
 
   &__title {
