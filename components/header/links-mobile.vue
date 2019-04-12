@@ -53,12 +53,21 @@
         class="header-links-mobile__main-item"
       >
         <nuxt-link
+          v-if="link.title !== 'Help'"
           :to="$contextPath(link.url)"
           :title="link.displayName"
           @click.native="$emit('close-menu')"
         >
           {{ link.displayName }}
         </nuxt-link>
+
+        <a
+          v-if="link.title === 'Help'"
+          :href="link.url"
+          :title="link.displayName"
+        >
+          {{ link.displayName }}
+        </a>
       </li>
     </ul>
   </div>
@@ -110,11 +119,11 @@ export default {
       return [
         this.transformLink('aboutUs'),
         this.transformLink('paymentMethods'),
-        { displayName: this.$t("general.help"), url: this.faqUrl },
+        { displayName: this.$t("general.help"), url: this.faqUrl, title: 'Help' },
         this.transformLink('privacyPolicy'),
         this.transformLink('generalConditions'),
         this.transformLink('cookieStatement'),
-      ];
+      ].filter(link => link);
     },
   },
 
@@ -124,7 +133,7 @@ export default {
     },
     transformLink(linkName) {
       const link = this.footer[linkName];
-      if (!link || !link.slug) return null;
+      if (!link || !link.slug) return '';
       let displayName = link.slug;
       displayName = displayName[0].toUpperCase() + displayName.slice(1).replace(/-/g, ' ');
       return {

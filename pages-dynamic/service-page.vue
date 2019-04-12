@@ -14,6 +14,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import { mapGetters } from "vuex";
 import HeaderBanner from "~/components/header/banner";
@@ -57,3 +58,40 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+/* below is wp-styling for correct img-text-wrapping */
+.cg-service-page-content {
+  img.alignright {
+    float: right;
+    margin: 0 0 1em 1em;
+  }
+
+  img.alignleft {
+    float: left;
+    margin: 0 1em 1em 0;
+  }
+
+  img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .alignright {
+    float: right;
+  }
+
+  .alignleft {
+    float: left;
+  }
+
+  .aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* end of wp-img-text-wrapping */
+</style>
