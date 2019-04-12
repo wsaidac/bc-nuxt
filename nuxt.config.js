@@ -84,6 +84,7 @@ const conf = {
           'https://bat.bing.com',
           'https://connect.facebook.net',
           'https://static.hotjar.com',
+          'https://script.hotjar.com',
           'https://googleads.g.doubleclick.net',
           '*.trackedlink.net',
           '*.blueconic.net',
