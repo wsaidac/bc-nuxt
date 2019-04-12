@@ -91,6 +91,12 @@ export default {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .clearfix {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
 /* end of wp-img-text-wrapping */
