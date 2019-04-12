@@ -63,9 +63,18 @@ export default {
     },
   },
 
+  head() {
+    const url = `https://${this.domain}/${this.$i18n.locale}/`;
+    return {
+      meta: [
+        { rel: 'canonical', href: url },
+      ],
+    };
+  },
+
   computed: {
     ...mapGetters('menus', ['main']),
-
+    ...mapGetters('context', ['domain']),
     ...mapGetters('shared', ['customerService', 'usps']),
   },
 };
