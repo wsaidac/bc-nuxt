@@ -1,5 +1,5 @@
 <template>
-  <section class="cg-reset-password container container-margin">
+  <section class="cg-container cg-reset-password container container-margin">
     <ui-row>
       <ui-col :lg="{ span: 12, offset: 6 }">
         <ui-alert

@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-users">
+  <div class="cg-layout layout-users">
     <loader />
     <header-navbar on-users />
     <cg-usps :usps="usps.items" />
@@ -16,6 +16,19 @@ import HeaderNavbar from '~/components/header/navbar';
 import RapidoFooter from '~/components/footer';
 
 export default {
+  head() {
+    const { locale } = this.$i18n;
+    return {
+      htmlAttrs: {
+        lang: locale,
+      },
+      title: this.$t('account.my-account'),
+      link: [
+        { rel: "alternate", href: `https://${process.env.DOMAIN}${this.$route.path}`, hreflang: locale },
+      ],
+    };
+  },
+
   components: {
     CgUsps,
     Loader,

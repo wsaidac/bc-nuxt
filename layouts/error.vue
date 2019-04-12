@@ -1,5 +1,5 @@
 <template>
-  <div class="cg-error block block--blue">
+  <div class="cg-layout cg-error block block--blue">
     <div class="container">
       <h3 class="cg-error__desc">{{ $t('error.description') }}</h3>
       <p class="cg-error__help">{{ $t('error.help') }}</p>

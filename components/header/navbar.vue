@@ -17,7 +17,7 @@
         </h1>
         <div class="spacer" />
         <div class="header-navbar__top-right">
-          <!-- <header-login /> -->
+          <header-login />
           <a
             :href="faqUrl"
             class="header-navbar__help"
@@ -72,7 +72,7 @@ import faqUrl from '~/mixins/faqUrl';
 
 export default {
   components: {
-    // HeaderLogin,
+    HeaderLogin,
     HeaderLinksDesktop,
     HeaderLinksMobile,
     HeaderHamburger,

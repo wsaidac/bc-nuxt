@@ -70,38 +70,150 @@
     "title": "Zalety zakupów na {domain}"
   },
   "account": {
-    "birthdate": "Fødselsdag",
-    "cancel": "Annuller",
-    "city": "By",
+    "account-confirmed": "Utworzenie konta zostało potwierdzone",
+    "account-created": "Twoje konto w serwisie Rapido zostało utworzone",
+    "account-email-address": "Adres e-mail powiązany z kontem",
+    "active-now": "Teraz aktywny",
+    "address-details": "Twój adres",
+    "agree-to-terms": "Zakładając konto, wyrażasz zgodę na <a href='/us/general-conditions'>Warunki użytkowania</a> i <a href='/us/privacy'>Politykę prywatności</a> Rapido.",
+    "all-questions": "Wszystkie pytania",
+    "birthdate": "Data urodzenia",
+    "cancel": "Anuluj",
+    "change-email": "Zmień adres e-mail",
+    "change-email-requested": "Wysłaliśmy do Ciebie wiadomość umożliwiającą potwierdzenie zmiany adresu e-mail",
+    "change-password-error": "Aktualizacja hasła zakończona niepowodzeniem",
+    "change-password-submit": "Twoje hasło zostało zaktualizowane",
+    "confirm_email": {
+      "already_confirmed": "Twoje konto zostało już potwierdzone.",
+      "expired_token": "Twoje łącze potwierdzające jest nieaktualne.",
+      "invalid_token": "Twoje konto zostało już potwierdzone."
+    },
+    "continue": "Kontynuuj",
     "country_select": {
-      "button_name": "Shop videre",
+      "button_name": "Kontynuuj zakupy",
       "country_names": {
-        "Austria": "Østrig",
-        "Belgium": "Belgien",
-        "United States": "USA"
+        "Austria": "Austria",
+        "Belgium": "Belgia",
+        "United States": "Stany Zjednoczone"
       },
-      "title": "Vælg dit land"
+      "title": "Wybierz swój kraj"
     },
+    "create-new-account": "Utwórz nowe konto",
+    "current-password": "Obecne hasło",
+    "description-birthdate": "Wprowadź swoją datę urodzenia",
+    "email-address": "Adres e-mail",
+    "email-sent-to": "Wiadomość została wysłana na adres: {email}",
+    "faq": {
+      "faq-all": "Wszystkie często zadawane pytania",
+      "faq-other": "Inne pytania",
+      "faq-payment": "Instrukcje dotyczące płatności"
+    },
+    "female": "kobieta",
+    "first-name": "Imię",
     "footer": {
-      "need-help": "Har du brug for hjælp?\nSe vores ofte stillede spørgsmål"
+      "safe-methods": "<strong>Bezpieczne</strong> płatności z:"
     },
-    "last-name": "Efternavn",
+    "forgot-password": "Nie pamiętam hasła",
+    "format": "dd/MM/rrrr",
+    "gender": "Płeć",
+    "go-to-login": "Przejdź do strony logowania",
+    "help-with-account": "Pomoc dotycząca konta",
+    "house-number": "Numer domu",
+    "i-need-help": "Potrzebuję pomocy",
+    "i-prefer-not-to-say": "Inne",
+    "invalid": "Potwierdzanie zakończone niepowodzeniem",
+    "login-history": "Historia logowania na konto",
     "login": {
-      "title": "Log ind"
+      "invalid_credentials": "Wprowadzony adres e-mail lub hasło jest nieprawidłowe.",
+      "title": "Zaloguj się",
+      "unconfirmed_email": "Adres e-mail nie został potwierdzony",
+      "unknown_user": "Do tego adresu e-mail nie przypisano jeszcze konta."
     },
-    "my-account": "Min konto",
-    "name": "Navn",
+    "logout": "Wyloguj się",
+    "logout-everywhere": "Wyloguj na wszystkich urządzeniach",
+    "lost-password": "Nie pamiętasz hasła?",
+    "lost-password-help": "Nie mogę odnaleźć hasła",
+    "male": "mężczyzna",
+    "name": "Imię",
+    "new-email-address": "Nowy adres e-mail",
+    "new-password": "Nowe hasło",
     "orders": {
-      "ordernumber": "Ordrenummer",
-      "paid": "Betalt",
-      "payment-method": "Betalingsmulighed",
-      "price": "Pris",
-      "total": "I alt"
+      "cancelled": "anulowano",
+      "close": "Zamknij",
+      "close-details": "Zamknij szczegóły",
+      "description-inprogress": "Czy po 12 godzinach Twoje zamówienie wciąż nie zostało zrealizowane? <b><a href='/us/contact'>Skontaktuj się z nami</a>, a my chętnie Ci pomożemy!</b>",
+      "general-terms-and-conditions": "Ogólne warunki świadczenia usług",
+      "more-details": "Więcej informacji",
+      "order-history": "Historia zamówień",
+      "order-id": "Identyfikator zamówienia",
+      "ordernumber": "Numer zamówienia",
+      "paid": "Zapłacono",
+      "payment-method": "Sposób płatności",
+      "price": "Cena",
+      "productstatus": "Stan produktu",
+      "purchased-on": "Zakupiono dnia",
+      "redeem-url": "Łącze umożliwiające realizację",
+      "refunded": "zwrócono środki",
+      "serial-number": "Numer seryjny",
+      "service-costs": "Koszty usługi",
+      "shipped": "wysłano",
+      "status": "Stan",
+      "total": "Łącznie",
+      "unpaid": "nie opłacono",
+      "your-top-up-code": "Twój cyfrowy kod"
     },
-    "personal-details": "Personlige oplysninger",
-    "postal-code": "Postnummer",
+    "password": "Hasło",
+    "password-reset-sent": "Wiadomość e-mail z nowym hasłem została wysłana",
+    "personal-data-submit": "Profil został zapisany",
+    "phone-number": "Numer kierunkowy kraju (Polska: +48) / Numer telefonu",
+    "pickADay": "Wybierz datę urodzenia",
+    "please-enter-password-for-confirmation": "Wprowadź hasło w celu potwierdzenia",
+    "postal-code": "Kod pocztowy",
+    "prefix": "Prefiks",
+    "quick-signin": "Możemy pomóc Ci zalogować się do Twojego konta w mgnieniu oka.",
+    "repeat-new-password": "Powtórz nowe hasło",
+    "repeat-password": "Powtórz hasło",
+    "request_change_email": {
+      "invalid": "This email address is already in use."
+    },
+    "request_reset_password": {
+      "unknown_user": "Nie znaleziono konta przypisanego do tego adresu e-mail."
+    },
+    "reset-password": "Zresetuj hasło",
+    "reset_password": {
+      "invalid": {
+        "message": "Please use a valid reset link to change your password.",
+        "retry": "Poproś o nowe łącze do zresetowania hasła",
+        "title": "Nieprawidłowe"
+      },
+      "reset": "Zresetuj hasło",
+      "resetError": {
+        "title": "Resetowanie hasła zakończone niepowodzeniem"
+      },
+      "submit": {
+        "message": "Twoje hasło zostało zaktualizowane i jesteś teraz zalogowany.",
+        "profile": "Przejdź do profilu",
+        "title": "Hasło zostało zmienione"
+      }
+    },
+    "retry-reset": "Użyłem nieprawidłowego adresu e-mail. Chcę spróbować ponownie",
+    "save": "Zapisz",
+    "secure-signup": "Utwórz konto Rapido",
+    "sessions-management": "Aktywność na koncie",
+    "signupError": {
+      "title": "Rejestracja zakończona niepowodzeniem"
+    },
+    "street": "Ulica",
+    "try-again": "Nieprawidłowy adres e-mail? Utwórz nowe konto tutaj",
+    "validation-send": "Aby zweryfikować swoje konto Rapido, użyj łącza w wiadomości dotyczącej weryfikacji konta, którą wysłaliśmy na adres {email}. Do zobaczenia wkrótce!",
     "validations": {
-      "required": "Obligatoriske felter"
-    }
+      "maxLength": "Maksymalna liczba znaków: {min}",
+      "minLength": "Minimalna liczba znaków: {min}",
+      "required": "Wymagane pole",
+      "sameAs": "Musi być identyczne",
+      "uniqueness": "Znajduje się już w użyciu"
+    },
+    "where-youre-logged-in": "Urządzenia, z których logowano się na konto",
+    "your-login-details": "Twoje dane logowania"
   }
 }
