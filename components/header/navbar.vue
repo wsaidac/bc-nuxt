@@ -249,6 +249,8 @@ export default {
   }
 
   @include media-breakpoint-up("sm") {
+    .header-navbar__overlay-black,
+    .header-navbar__overlay-gray,
     .header-navbar__menu {
       display: none;
     }
