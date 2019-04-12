@@ -93,9 +93,9 @@ export default {
   }
 
   .clearfix {
+    clear: both;
     content: "";
     display: table;
-    clear: both;
   }
 }
 
