@@ -49,6 +49,11 @@ test-unit:
     variables:
       - $TEST_UNIT_DISABLED
 
+capistrano:
+  only:
+    - release
+    - feature/rap-1504-merge_rapido_and_users
+
 production:
   extends: capistrano
   when: manual
