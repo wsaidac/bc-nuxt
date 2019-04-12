@@ -14,9 +14,11 @@ export default {
 
   actions: {
     changeContext({ dispatch }, { app, error }) {
-      dispatch('shared/fetchShared', { app, error }, { root: true });
-      dispatch('menus/fetchHeaderMenu', { app, error }, { root: true });
-      dispatch('menus/fetchFooterMenu', { app, error }, { root: true });
+      return Promise.all([
+        dispatch('shared/fetchShared', { app, error }, { root: true }),
+        dispatch('menus/fetchHeaderMenu', { app, error }, { root: true }),
+        dispatch('menus/fetchFooterMenu', { app, error }, { root: true }),
+      ]);
     },
   },
 };

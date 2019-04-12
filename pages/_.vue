@@ -8,6 +8,7 @@
 
 <script>
 import removeContextChangeLoader from '~/mixins/removeContextChangeLoader';
+import uppercaseCountryInLocale from '~/utils/';
 
 function slugFromPath(path, locale) {
   if (path === `/${locale}/`) return "home";
@@ -26,9 +27,10 @@ export default {
   head() {
     if (this.layout === "Error") return {};
     const { locale } = this.$i18n;
+
     return {
       htmlAttrs: {
-        lang: locale,
+        lang: uppercaseCountryInLocale(locale),
       },
       title:
         this.post.meta.title
@@ -45,7 +47,7 @@ export default {
         },
       ],
       link: [
-        { rel: "alternate", href: `https://${process.env.DOMAIN}${this.$route.path}`, hreflang: locale },
+        { rel: "alternate", href: `https://${process.env.DOMAIN}${this.$route.path}`, hreflang: uppercaseCountryInLocale(locale) },
       ],
     };
   },

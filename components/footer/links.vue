@@ -90,6 +90,7 @@ export default {
       columns[this.$t("internal-links.terms-of-use")] = [
         this.transformLink('privacyPolicy'),
         this.transformLink('generalConditions'),
+        this.transformLink('rightOfWithdrawal'),
         this.transformLink('cookieStatement'),
       ];
 

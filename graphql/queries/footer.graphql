@@ -11,7 +11,7 @@ query {
       ...footerLinkFields
     }
   }
-  rightOfWithdrawel: postByIdentifier(identifier: "right_of_withdrawel", type:  "cg_service_page") {
+  rightOfWithdrawal: postByIdentifier(identifier: "right_of_withdrawal", type:  "cg_service_page") {
     ... on ServicePage {
       ...footerLinkFields
     }

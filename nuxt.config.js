@@ -16,8 +16,8 @@ const conf = {
   css: ['~/assets/stylesheets/application.scss'],
   store: true,
   loading: {
-    color: '#1200ff',
-    height: '3px',
+    color: '#dce6f5',
+    height: '2px',
   },
   build: {
     publicPath: '/rapidoweb/',
@@ -81,6 +81,12 @@ const conf = {
           'https://tagmanager.google.com',
           'https://www.googleadservices.com',
           'https://www.google-analytics.com',
+          'https://bat.bing.com',
+          'https://connect.facebook.net',
+          'https://static.hotjar.com',
+          'https://script.hotjar.com',
+          'https://googleads.g.doubleclick.net',
+          '*.trackedlink.net',
           '*.blueconic.net',
           '*.rapido.com',
           '*.cgaws.cloud',

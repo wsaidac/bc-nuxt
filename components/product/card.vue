@@ -64,7 +64,7 @@
           content="http://schema.org/NewCondition"
         >
         <h3 v-text="$n(product.information.issueValue, 'currency')" />
-        <p v-text="product.title" />
+        <p v-html="product.title" />
         <shared-tooltip
           v-if="mode === 'vertical' && hasTooltip"
           :content="product | dig('content.tooltip.content')"
