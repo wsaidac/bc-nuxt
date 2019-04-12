@@ -123,7 +123,7 @@ export default {
         this.transformLink('privacyPolicy'),
         this.transformLink('generalConditions'),
         this.transformLink('cookieStatement'),
-      ];
+      ].filter(link => link);
     },
   },
 
@@ -133,7 +133,7 @@ export default {
     },
     transformLink(linkName) {
       const link = this.footer[linkName];
-      if (!link || !link.slug) return null;
+      if (!link || !link.slug) return '';
       let displayName = link.slug;
       displayName = displayName[0].toUpperCase() + displayName.slice(1).replace(/-/g, ' ');
       return {
