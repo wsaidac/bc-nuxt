@@ -120,7 +120,7 @@ export default {
     const category = this.post.categories.nodes[0].slug;
     const url = `https://${this.domain}/${this.$i18n.locale}/${category}`;
     return {
-      meta: [
+      link: [
         { rel: 'canonical', href: url },
       ],
     };
