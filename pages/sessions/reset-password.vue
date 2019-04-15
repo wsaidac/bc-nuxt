@@ -5,7 +5,6 @@
         <ui-alert
           v-if="resetError"
           :title="$t('account.reset_password.resetError.title')"
-          :description="$t(reset_password.resetError)"
           type="error"
           @close="resetError = null"
         />
