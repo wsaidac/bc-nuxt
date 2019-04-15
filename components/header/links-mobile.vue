@@ -33,9 +33,8 @@
               :to="$contextPath(subcategory.url)"
               :title="subcategory.title"
               @click.native="$emit('close-menu')"
-            >
-              {{ subcategory.title }}
-            </nuxt-link>
+              v-html="subcategory.title"
+            />
           </li>
         </ul>
       </li>
