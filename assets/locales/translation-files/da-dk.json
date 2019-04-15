@@ -77,13 +77,16 @@
     "account-email-address": "Kontoens e-mailadresse",
     "active-now": "Aktiv nu",
     "address-details": "Din adresse",
-    "agree-to-terms": "Når du opretter en konto, accepterer du Rapidos <a href='/us/general-conditions'>brugsvilkår</a> og <a href='/us/privacy'>politik om beskyttelse af personlige oplysninger</a>.",
+    "agree-to-terms": "Når du opretter en konto, accepterer du Rapidos <a href='/da-dk/generelle-betingelser'>brugsvilkår</a> og <a href='/da-dk/fortrolighedspolitik'>politik om beskyttelse af personlige oplysninger</a>.",
     "all-questions": "Alle spørgsmål",
     "birthdate": "Fødselsdag",
     "cancel": "Annuller",
     "change-email": "Skift e-mail",
     "change-email-requested": "Vi har sendt dig en e-mail for at bekræfte ændringen af din e-mailadresse",
+    "change-password": "Skift adgangskode",
     "change-password-error": "Din adgangskode kunne ikke opdateres",
+    "change-password-submit": "Din adgangskode er opdateret",
+    "check-your-email": "Tjek din e-mail. Vi har lige sendt dig en vejledning til, hvordan du nulstiller din adgangskode. Hvis du ikke modtager en e-mail inden for de næste 30 minutter, så prøv igen.",
     "city": "By",
     "confirm_email": {
       "already_confirmed": "Din konto er allerede blevet bekræftet.",
@@ -111,6 +114,7 @@
     "faq": {
       "faq-all": "Alle ofte stillede spørgsmål",
       "faq-code": "Sådan bruger du en kode",
+      "faq-delivery": "Kodelevering",
       "faq-other": "Andre spørgsmål",
       "faq-payment": "Sådan betaler du"
     },
@@ -123,15 +127,18 @@
     "forgot-password": "Hjælp! Jeg har glemt min adgangskode.",
     "format": "dd/MM/åååå",
     "gender": "Køn",
+    "go-to-login": "Gå til login-formularen",
     "help-with-account": "Hjælp til konto",
     "house-number": "Husnummer",
     "i-need-help": "Jeg har brug for hjælp",
     "i-prefer-not-to-say": "Andet",
+    "invalid": "Bekræftelse mislykkedes",
     "last-name": "Efternavn",
     "login-history": "Loginhistorik for konto",
     "login": {
       "invalid_credentials": "Den indtastede e-mailadresse og/eller adgangskode er forkert.",
       "title": "Log ind",
+      "unconfirmed_email": "E-mailadressen er ikke bekræftet",
       "unknown_user": "Der er ikke knyttet en konto til denne e-mailadresse."
     },
     "loginError": {
@@ -139,6 +146,7 @@
     },
     "logout": "Log ud",
     "logout-everywhere": "Log ud på alle enheder",
+    "lost-password": "Har du glemt din adgangskode??",
     "lost-password-help": "Hjælp! Jeg har mistet min adgangskode.",
     "male": "Mand",
     "my-account": "Min konto",
@@ -147,6 +155,7 @@
     "new-password": "Ny adgangskode",
     "orders": {
       "cancelled": "annulleret",
+      "close": "luk",
       "close-details": "Luk detaljer",
       "description-inprogress": "Er din ordre stadig ikke blevet leveret efter 12 timer? <b><a href='/us/contact'>Kontakt os</a>, så vi kan hjælpe dig!</b>",
       "general-terms-and-conditions": "Generelle vilkår og betingelser",
@@ -164,8 +173,11 @@
       "serial-number": "Serienummer",
       "service-costs": "Serviceomkostninger",
       "shipped": "sendt",
+      "show": "Vis",
+      "status": "Status",
       "total": "I alt",
       "unpaid": "ubetalt",
+      "your-orders": "Dine ordrer",
       "your-top-up-code": "Din digitale kode"
     },
     "password": "Adgangskode",
@@ -181,15 +193,22 @@
     "repeat-email-address": "Gentag ny e-mailadresse",
     "repeat-new-password": "Gentag ny adgangskode",
     "repeat-password": "Gentag adgangskode",
+    "request_change_email": {
+      "invalid": "Denne e-mailadresse er allerede brugt.",
+      "invalid_credentials": "Indtast din adgangskode."
+    },
     "request_reset_password": {
       "error_title": "Adgangskoden blev ikke nulstillet",
       "unknown_user": "Der blev ikke fundet nogen konto til denne e-mailadresse."
     },
+    "reset-password": "Nulstil adgangskode",
     "reset_password": {
       "invalid": {
         "message": "Brug et gyldigt nulstillingslink for at ændre din adgangskode.",
+        "retry": "Anmod om et nyt nulstillingslink",
         "title": "Ugyldig"
       },
+      "reset": "Nulstil adgangskode",
       "resetError": {
         "title": "Adgangskoden blev ikke nulstillet"
       },
@@ -205,6 +224,7 @@
     "retry-reset": "Jeg har brugt en forkert e-mailadresse. Jeg vil gerne prøve igen",
     "save": "gem",
     "secure-signup": "Opret Rapido-konto",
+    "sessions-management": "Kontoaktivitet",
     "signupError": {
       "title": "Registreringen mislykkedes"
     },
@@ -220,6 +240,7 @@
     },
     "where-youre-logged-in": "Enheder, du har brugt til at logge ind på din konto",
     "your-account-is-confirmed": "Din konto med e-mailadressen {email} er blevet bekræftet. Du kan nu logge på din konto.",
+    "your-email-is-changed": "Din e-mailadresse er blevet opdateret til {e-mail}. Du kan nu logge på din konto.",
     "your-login-details": "Dine loginoplysninger"
   }
 }

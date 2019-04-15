@@ -87,7 +87,7 @@
     "change-password": "Change password",
     "change-password-error": "Failed to update your password",
     "change-password-submit": "Your password is updated",
-    "check-your-email": "Check your email. We just sent you instructions for resetting your password. If you do not recive an email in 30 minutes. please try again.",
+    "check-your-email": "Check your email. We just sent you instructions for resetting your password. If you do not receive an email in 30 minutes. please try again.",
     "city": "City",
     "confirm_email": {
       "already_confirmed": "Your account is already confirmed.",
