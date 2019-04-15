@@ -1,7 +1,7 @@
 <template>
   <div class="shared-title container">
     <div class="flex">
-      <h1 v-text="title" />
+      <h1 v-html="title" />
       <shared-instant-tooltip />
     </div>
   </div>
@@ -42,7 +42,7 @@ export default {
     }
   }
 
-  @include media-breakpoint-only('xs') {
+  @include media-breakpoint-only("xs") {
     background: $gray-100;
     height: 41px;
     padding-bottom: 0;

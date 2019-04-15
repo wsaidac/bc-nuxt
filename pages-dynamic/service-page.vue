@@ -51,7 +51,7 @@ export default {
 
     return {
       title: this.post.title,
-      meta: [
+      link: [
         { rel: 'canonical', href: url },
       ],
     };

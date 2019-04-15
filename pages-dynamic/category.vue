@@ -94,7 +94,7 @@ export default {
 
     return {
       meta: [
-        { rel: 'canonical', href: url },
+
         { property: 'og:type', content: 'og:product' },
         { property: 'bc:pagetype', content: 'POP' },
         { property: 'bc:pop:identifier', content: `${this.post.id}${this.$i18n.locale}` },
@@ -109,6 +109,9 @@ export default {
         // { property: "bc:product:image_small", content: "https://static.rapido.com/categories/2023/verizon.png?1543831182" },
         // { property: "bc:product:image_banner_desktop", content: "https://static.rapido.com/categories/2023/header/Verizon_desktop.jpg" },
         // { property: "bc:product:image_banner_mobile", content: "https://static.rapido.com/categories/2023/mobileheader/Verizon_mobile.jpg" },
+      ],
+      link: [
+        { rel: 'canonical', href: url },
       ],
     };
   },
