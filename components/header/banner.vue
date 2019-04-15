@@ -42,7 +42,7 @@
       </section>
       <span
         class="header-banner__title"
-        v-text="title"
+        v-html="title"
       />
     </div>
   </div>
