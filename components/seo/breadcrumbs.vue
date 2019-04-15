@@ -10,13 +10,13 @@
           <nuxt-link
             :to="$contextPath(crumb.url)"
             :title="crumb.title"
-          >
-            {{ crumb.label }}
-          </nuxt-link>
+            v-html="crumb.label"
+          />
         </span>
-        <span v-else>
-          {{ crumb.label }}
-        </span>
+        <span
+          v-else
+          v-html="crumb.label"
+        />
       </li>
     </ul>
   </div>
@@ -48,6 +48,7 @@ export default {
   .ui-icon {
     color: $primary-500;
     font-size: 24px;
+    margin-right: 5px;
   }
 
   ul {
@@ -63,6 +64,7 @@ export default {
       & + li::before {
         color: $gray-700;
         content: "<";
+        margin-right: 5px;
       }
 
       a {
