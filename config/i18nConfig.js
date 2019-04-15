@@ -12,6 +12,7 @@ const merchantLocales = (label) => merchants[label].locales
 const labelLocales = (label) => merchantLocales(label).map(locale => allLocales[locale]);
 const formatOflabelAndType = (label, dataType) => lodash.pick(localeFormats[dataType], merchantLocales(label));
 const defaultLocale = (label) => merchants[label].default;
+const defaultLocaleFile = (label) => `../assets/locales/translation-files/${label}.json`;
 
 module.exports = function (label) {
   return {
@@ -27,6 +28,9 @@ module.exports = function (label) {
       silentTranslationWarn: true,
       dateTimeFormats: formatOflabelAndType(label, 'dateTimeFormats'),
       numberFormats: formatOflabelAndType(label, 'numberFormats'),
+      messages: {
+        [defaultLocale(label)]: require(defaultLocaleFile(defaultLocale(label))),
+      },
     },
     detectBrowserLanguage: {
       useCookie: true,
