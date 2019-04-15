@@ -43,8 +43,8 @@ export default {
   padding: 20px;
 
   h4 {
-    color: $gray-900;
-    font-weight: $font-weight-bold;
+    color: $black;
+    font-weight: $font-weight-semibold;
     margin: 0 0 20px;
   }
 

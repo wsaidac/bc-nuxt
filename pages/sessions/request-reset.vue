@@ -13,7 +13,7 @@
           <ui-message :title="$t('account.password-reset-sent')">
             <p v-text="$t('account.check-your-email')" />
             <i18n
-              path="email-sent-to"
+              path="account.email-sent-to"
               tag="p"
             >
               <strong place="email">

@@ -66,6 +66,7 @@ $--button-font-weight: 700;
   cursor: pointer;
   text-decoration: none;
   transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: initial;
 
   &.is-justified {
     display: block;
