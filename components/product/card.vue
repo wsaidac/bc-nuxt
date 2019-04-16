@@ -280,6 +280,8 @@ export default {
       .el-input__inner {
         border-radius: 0;
         height: 34px;
+        padding: 5px 25px 5px 5px;
+        text-align: center;
         user-select: none;
       }
 

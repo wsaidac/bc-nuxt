@@ -23,9 +23,8 @@
               <nuxt-link
                 :to="$contextPath(subcategory.url)"
                 :title="subcategory.title"
-              >
-                {{ subcategory.title }}
-              </nuxt-link>
+                v-html="subcategory.title"
+              />
             </li>
           </ul>
         </li>
