@@ -65,7 +65,7 @@
           </ui-form-section>
           <ui-form-section>
             <ui-button
-              type="quaternary"
+              type="primary"
               class="cg-profile__submit"
               native-type="submit"
               @click="saveDetails"
