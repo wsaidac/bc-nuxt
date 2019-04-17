@@ -1,0 +1,14 @@
+query($model: String!) {
+  data: introspectModel(model: $model) {
+    attributes {
+      name
+      validations {
+        validator
+        options {
+          key
+          value
+        }
+      }
+    }
+  }
+}

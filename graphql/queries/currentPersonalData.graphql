@@ -1,0 +1,11 @@
+#import "../fragments/personalDataFields.graphql"
+
+query {
+  currentUser {
+    user {
+      currentPersonalData {
+        ...personalDataFields
+      }
+    }
+  }
+}

@@ -100,6 +100,7 @@
           >
         </fieldset>
         <ui-button
+          type="primary"
           native-type="button"
           @click="submitForm"
         >
@@ -110,8 +111,8 @@
   </div>
 </template>
 
-
 <script>
+/* eslint-disable */
 import { mapGetters } from "vuex";
 import SharedTooltip from "~/components/shared/tooltip";
 import SharedInstantTooltip from "~/components/shared/instant-tooltip";
@@ -222,17 +223,6 @@ export default {
 
   fieldset {
     display: none;
-  }
-
-  .el-button {
-    background: #ffea6b;
-    border: 2px solid $black;
-    color: $black;
-
-    &:hover {
-      background: $black;
-      color: $white;
-    }
   }
 
   &__title {

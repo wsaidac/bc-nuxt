@@ -3,13 +3,15 @@ export default {
     return {};
   },
   getters: {
-    extendedGraphqlHeaders: (_state, _getters, _rootState, rootGetters) => {
+    extendedGraphqlHeaders: (_state, _getters, rootState, rootGetters) => {
       const token = rootGetters['auth/token'];
       const cmsContext = rootGetters['context/cmsContext'];
 
       return {
         'Authorization': `Bearer ${token}`,
         'X-Cms-Context': cmsContext,
+        'X-Authorization-Context': 11,
+        'X-Locale-Context': rootState.i18n.locale,
       };
     },
   },

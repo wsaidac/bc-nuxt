@@ -70,5 +70,177 @@
   },
   "usps": {
     "title": "Fordelene ved {domain}"
+  },
+  "account": {
+    "account-confirmed": "Kontoen er blevet bekræftet",
+    "account-created": "Du har oprettet en konto hos Rapido",
+    "account-email-address": "Kontoens e-mailadresse",
+    "active-now": "Aktiv nu",
+    "address-details": "Din adresse",
+    "agree-to-terms": "Når du opretter en konto, accepterer du Rapidos <a href='/da-dk/generelle-betingelser'>brugsvilkår</a> og <a href='/da-dk/fortrolighedspolitik'>politik om beskyttelse af personlige oplysninger</a>.",
+    "all-questions": "Alle spørgsmål",
+    "birthdate": "Fødselsdag",
+    "cancel": "Annuller",
+    "change-email": "Skift e-mail",
+    "change-email-requested": "Vi har sendt dig en e-mail for at bekræfte ændringen af din e-mailadresse",
+    "change-password": "Skift adgangskode",
+    "change-password-error": "Din adgangskode kunne ikke opdateres",
+    "change-password-submit": "Din adgangskode er opdateret",
+    "check-your-email": "Tjek din e-mail. Vi har lige sendt dig en vejledning til, hvordan du nulstiller din adgangskode. Hvis du ikke modtager en e-mail inden for de næste 30 minutter, så prøv igen.",
+    "city": "By",
+    "confirm_email": {
+      "already_confirmed": "Din konto er allerede blevet bekræftet.",
+      "expired_token": "Dit bekræftelseslink er udløbet.",
+      "invalid_token": "Dit bekræftelseslink er ugyldigt."
+    },
+    "continue": "fortsæt",
+    "country_select": {
+      "button_name": "Shop videre",
+      "country_names": {
+        "Austria": "Østrig",
+        "Belgium": "Belgien",
+        "United States": "USA"
+      },
+      "description": "Dit valg af land sikrer, at vi tilbyder de <strong>rigtige produkter og betalingsmetoder</strong>. Sørg for, at det svarer til dit land og den eller de konti, som du planlægger at indløse produktet med.",
+      "title": "Vælg dit land"
+    },
+    "create-new-account": "Opret en ny konto",
+    "current-password": "Nuværende adgangskode",
+    "description-birthdate": "Indtast din fødselsdato",
+    "email-address": "E-mailadresse",
+    "email-changed": "E-mailadressen blev ændret",
+    "email-sent-to": "E-mail sendt til: {email}",
+    "enter-email-address": "Indtast din e-mailadresse.",
+    "faq": {
+      "faq-all": "Alle ofte stillede spørgsmål",
+      "faq-code": "Sådan bruger du en kode",
+      "faq-delivery": "Kodelevering",
+      "faq-other": "Andre spørgsmål",
+      "faq-payment": "Sådan betaler du"
+    },
+    "female": "Kvinde",
+    "first-name": "Fornavn",
+    "footer": {
+      "need-help": "Har du brug for hjælp?\nSe vores ofte stillede spørgsmål",
+      "safe-methods": "<strong>Sikre</strong> betalinger med:"
+    },
+    "forgot-password": "Hjælp! Jeg har glemt min adgangskode.",
+    "format": "dd/MM/åååå",
+    "gender": "Køn",
+    "go-to-login": "Gå til login-formularen",
+    "help-with-account": "Hjælp til konto",
+    "house-number": "Husnummer",
+    "i-need-help": "Jeg har brug for hjælp",
+    "i-prefer-not-to-say": "Andet",
+    "invalid": "Bekræftelse mislykkedes",
+    "last-name": "Efternavn",
+    "login-history": "Loginhistorik for konto",
+    "login": {
+      "invalid_credentials": "Den indtastede e-mailadresse og/eller adgangskode er forkert.",
+      "title": "Log ind",
+      "unconfirmed_email": "E-mailadressen er ikke bekræftet",
+      "unknown_user": "Der er ikke knyttet en konto til denne e-mailadresse."
+    },
+    "loginError": {
+      "title": "Login mislykkedes"
+    },
+    "logout": "Log ud",
+    "logout-everywhere": "Log ud på alle enheder",
+    "lost-password": "Har du glemt din adgangskode??",
+    "lost-password-help": "Hjælp! Jeg har mistet min adgangskode.",
+    "male": "Mand",
+    "my-account": "Min konto",
+    "name": "Navn",
+    "new-email-address": "Ny e-mailadresse",
+    "new-password": "Ny adgangskode",
+    "orders": {
+      "cancelled": "annulleret",
+      "close": "luk",
+      "close-details": "Luk detaljer",
+      "description-inprogress": "Er din ordre stadig ikke blevet leveret efter 12 timer? <b><a href='/us/contact'>Kontakt os</a>, så vi kan hjælpe dig!</b>",
+      "general-terms-and-conditions": "Generelle vilkår og betingelser",
+      "more-details": "Flere detaljer",
+      "order-history": "Ordrehistorik",
+      "order-id": "Ordre-id",
+      "ordernumber": "Ordrenummer",
+      "paid": "Betalt",
+      "payment-method": "Betalingsmulighed",
+      "price": "Pris",
+      "productstatus": "Produktstatus",
+      "purchased-on": "Købt den",
+      "redeem-url": "Indløs URL",
+      "refunded": "refunderet",
+      "serial-number": "Serienummer",
+      "service-costs": "Serviceomkostninger",
+      "shipped": "sendt",
+      "show": "Vis",
+      "status": "Status",
+      "total": "I alt",
+      "unpaid": "ubetalt",
+      "your-orders": "Dine ordrer",
+      "your-top-up-code": "Din digitale kode"
+    },
+    "password": "Adgangskode",
+    "password-reset-sent": "Ny adgangskodemail sendt",
+    "personal-data-submit": "Profilen blev gemt",
+    "personal-details": "Personlige oplysninger",
+    "phone-number": "Landekode (USA: +1)/Telefonnummer",
+    "pickADay": "Vælg fødselsdato",
+    "please-enter-password-for-confirmation": "Indtast din adgangskode for at bekræfte",
+    "postal-code": "Postnummer",
+    "prefix": "Præfiks",
+    "quick-signin": "Vi kan logge dig på din konto igen på ingen tid.",
+    "repeat-email-address": "Gentag ny e-mailadresse",
+    "repeat-new-password": "Gentag ny adgangskode",
+    "repeat-password": "Gentag adgangskode",
+    "request_change_email": {
+      "invalid": "Denne e-mailadresse er allerede brugt.",
+      "invalid_credentials": "Indtast din adgangskode."
+    },
+    "request_reset_password": {
+      "error_title": "Adgangskoden blev ikke nulstillet",
+      "unknown_user": "Der blev ikke fundet nogen konto til denne e-mailadresse."
+    },
+    "reset-password": "Nulstil adgangskode",
+    "reset_password": {
+      "invalid": {
+        "message": "Brug et gyldigt nulstillingslink for at ændre din adgangskode.",
+        "retry": "Anmod om et nyt nulstillingslink",
+        "title": "Ugyldig"
+      },
+      "reset": "Nulstil adgangskode",
+      "resetError": {
+        "title": "Adgangskoden blev ikke nulstillet"
+      },
+      "reset_password": {
+        "invalid_token": "Linket til nulstilling af adgangskoden er udløbet. Udfyld formularen \"Glemt adgangskode\"."
+      },
+      "submit": {
+        "message": "Din adgangskode er blevet opdateret, og du er nu logget ind.",
+        "profile": "Gå til profil",
+        "title": "Adgangskoden blev ændret"
+      }
+    },
+    "retry-reset": "Jeg har brugt en forkert e-mailadresse. Jeg vil gerne prøve igen",
+    "save": "gem",
+    "secure-signup": "Opret Rapido-konto",
+    "sessions-management": "Kontoaktivitet",
+    "signupError": {
+      "title": "Registreringen mislykkedes"
+    },
+    "street": "Adresse",
+    "try-again": "Forkert e-mailadresse? Opret en ny konto her",
+    "validation-send": "For at bekræfte din Rapido-konto skal du bruge linket i den kontovalideringsmail, vi netop har sendt til {email}. Vi ses snart!",
+    "validations": {
+      "maxLength": "Maks. {min} tegn",
+      "minLength": "Min. {min} tegn",
+      "required": "Obligatoriske felter",
+      "sameAs": "Skal være lige",
+      "uniqueness": "Den er allerede taget"
+    },
+    "where-youre-logged-in": "Enheder, du har brugt til at logge ind på din konto",
+    "your-account-is-confirmed": "Din konto med e-mailadressen {email} er blevet bekræftet. Du kan nu logge på din konto.",
+    "your-email-is-changed": "Din e-mailadresse er blevet opdateret til {e-mail}. Du kan nu logge på din konto.",
+    "your-login-details": "Dine loginoplysninger"
   }
 }
