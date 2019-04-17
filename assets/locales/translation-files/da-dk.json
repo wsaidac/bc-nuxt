@@ -125,7 +125,7 @@
       "safe-methods": "<strong>Sikre</strong> betalinger med:"
     },
     "forgot-password": "Hjælp! Jeg har glemt min adgangskode.",
-    "format": "dd/MM/åååå",
+    "format": "dd/MM/yyyy",
     "gender": "Køn",
     "go-to-login": "Gå til login-formularen",
     "help-with-account": "Hjælp til konto",

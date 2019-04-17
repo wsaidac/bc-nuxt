@@ -1,7 +1,7 @@
 <template>
   <ui-input
     v-model="shadowValue"
-    :placeholder="$t('password')"
+    :placeholder="$t('account.password')"
     :type="passwordInputType"
   >
     <ui-button
