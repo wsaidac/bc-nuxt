@@ -53,7 +53,7 @@
       "safe-methods": "<strong>Bezpieczne</strong> płatności z:"
     },
     "forgot-password": "Nie pamiętam hasła",
-    "format": "dd/MM/rrrr",
+    "format": "dd/MM/yyyy",
     "gender": "Płeć",
     "go-to-login": "Przejdź do strony logowania",
     "help-with-account": "Pomoc dotycząca konta",
@@ -122,7 +122,6 @@
     "repeat-new-password": "Powtórz nowe hasło",
     "repeat-password": "Powtórz hasło",
     "request_change_email": {
-      "invalid": "This email address is already in use.",
       "invalid_credentials": "Wprowadź poprawne hasło."
     },
     "request_reset_password": {
@@ -209,7 +208,7 @@
     "show-more": "Pokaż więcej"
   },
   "header": {
-    "login": "Login",
+    "login": "Zaloguj się",
     "main-nav": "Menu główne",
     "menu": "Menu",
     "my-account": "Moje konto",
