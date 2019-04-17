@@ -40,7 +40,7 @@ export default {
 
   props: {
     paymentMethods: {
-      type: Array,
+      type: [Array, Object],
       default() {
         return [];
       },
