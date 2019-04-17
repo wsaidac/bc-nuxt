@@ -1,4 +1,176 @@
 {
+  "account": {
+    "account-confirmed": "Konto-Anmeldung bestätigt",
+    "account-created": "Sie haben Ihr Konto erfolgreich erstellt.",
+    "account-email-address": "E-Mail-Adresse des Kontos",
+    "active-now": "Jetzt aktiv",
+    "address-details": "Ihre Adresse",
+    "agree-to-terms": "Ja, ich habe die <a href='/de-at/webseitenfunktion'>AGB</a> und die <a href='/de-at/datenschutzerklaerung'>Datenschutzbestimmungen</a> von Rapido gelesen und akzeptiere diese",
+    "all-questions": "Alle Fragen",
+    "birthdate": "Geburtsdatum",
+    "cancel": "Abbrechen",
+    "change-email": "E-Mail-Adresse ändern",
+    "change-email-requested": "Soeben haben Sie eine Bestätigungsmail zur Änderung Ihrer E-Mail-Adresse von uns erhalten",
+    "change-password": "Passwort ändern",
+    "change-password-error": "Die Erstellung eines neuen Passwortes ist fehlgeschlagen.",
+    "change-password-submit": "Ihr Passwort ist gespeichert",
+    "check-your-email": "Bitte überprüfen Sie Ihr E-Mail-Postfach. Soeben haben wir Ihnen eine Anleitung zur Zurücksetzung Ihres Passwortes gesendet. Sollten Sie innerhalb der nächsten 30 Minuten keine E-Mail erhalten, versuchen Sie es noch einmal.",
+    "city": "Stadt",
+    "confirm_email": {
+      "already_confirmed": "Ihr Konto wurde bereits bestätigt.",
+      "expired_token": "Ihr Bestätigungslink ist abgelaufen.",
+      "invalid_token": "Ihr Bestätigungslink ist ungültig."
+    },
+    "continue": "Weiter",
+    "country_select": {
+      "button_name": "Einkauf fortsetzen",
+      "country_names": {
+        "Austria": "Österreich",
+        "Belgium": "Belgien",
+        "United States": "Vereinigte Staaten"
+      },
+      "description": "Durch Ihre Länderauswahl wird sichergestellt, dass wir Ihnen die <strong>korrekten Produkte und Zahlungsoptionen anbieten</strong>. Bitte stellen Sie sicher, dass Ihre Auswahl mit Ihrem Land und dem Account, mit welchem Sie Ihr Guthaben einlösen möchten, übereinstimmt.",
+      "title": "Wählen Sie Ihr Land aus"
+    },
+    "create-new-account": "Neues Konto erstellen",
+    "current-password": "Aktuelles Passwort",
+    "description-birthdate": "Bitte geben Sie Ihr Geburtsdatum ein",
+    "email-address": "E-Mail-Adresse",
+    "email-changed": "E-Mail-Adresse geändert",
+    "email-sent-to": "E-Mail versendet an: {e-mail}",
+    "enter-email-address": "E-Mail-Adresse eingeben",
+    "faq": {
+      "faq-all": "Alle häufig gestellten Fragen",
+      "faq-code": "Wie benutze ich meinen Code?",
+      "faq-delivery": "Versand & Lieferung",
+      "faq-other": "Sonstige Fragen",
+      "faq-payment": "Wie kann ich bezahlen?"
+    },
+    "female": "weiblich",
+    "first-name": "Vorname",
+    "footer": {
+      "need-help": "Brauchen Sie Hilfe? Schauen Sie sich unsere <a>Fragen & Antworten an</a>.",
+      "safe-methods": "<strong>Sichere Zahlungsmethoden</strong> mit:"
+    },
+    "forgot-password": "Passwort vergessen",
+    "format": "dd/MM/yyyy",
+    "gender": "Geschlecht",
+    "go-to-login": "Zur Anmeldung",
+    "help-with-account": "Hilfe mit dem Konto",
+    "house-number": "Hausnummer",
+    "i-need-help": "Ich benötige Hilfe",
+    "i-prefer-not-to-say": "divers",
+    "invalid": "Ungültig",
+    "last-name": "Nachname",
+    "login-history": "Letzte Kontoaktivität",
+    "login": {
+      "invalid_credentials": "Die Eingabe Ihrer E-Mail-Adresse oder/und Ihres Passworts ist/sind ungültig.",
+      "title": "Anmelden",
+      "unconfirmed_email": "Ihre E-Mail-Adresse wurde noch nicht bestätigt",
+      "unknown_user": "Diese E-Mail-Adresse ist unbekannt."
+    },
+    "loginError": {
+      "title": "Log in fehler"
+    },
+    "logout": "Abmelden",
+    "logout-everywhere": "Auf allen Geräten abmelden",
+    "lost-password": "Passwort vergessen?",
+    "lost-password-help": "Hilfe, ich habe mein Passwort vergessen",
+    "male": "männlich",
+    "my-account": "Mein Konto",
+    "name": "Name",
+    "new-email-address": "Neue E-Mail-Adresse",
+    "new-password": "Neues Passwort",
+    "orders": {
+      "cancelled": "Abgebrochen",
+      "close": "Schließen",
+      "close-details": "Details schließen",
+      "description-inprogress": "Ist Ihre Bestellung nach 12 Stunden immer noch nicht geliefert? <b>Bitte nehmen Sie mit uns <a href='de-AT/kundenservice'>Kontakt auf</a>, wir helfen Ihnen gerne weiter!</b>",
+      "general-terms-and-conditions": "Datenschutzerklärung",
+      "more-details": "Mehr Details",
+      "order-history": "Bestellhistorie",
+      "order-id": "Bestell-ID",
+      "ordernumber": "Bestellnummer",
+      "paid": "Bezahlt",
+      "payment-method": "Zahlungsmethoden",
+      "price": "Preis",
+      "productstatus": "Produktstatus",
+      "purchased-on": "Bestelldatum",
+      "redeem-url": "Einlösen",
+      "refunded": "Zurückerstattet",
+      "serial-number": "Seriennummer",
+      "service-costs": "Servicegebühren",
+      "shipped": "Versendet",
+      "show": "Ansehen",
+      "status": "Status",
+      "total": "Gesamt",
+      "unpaid": "Noch nicht bezahlt",
+      "your-orders": "Ihre Bestellungen",
+      "your-top-up-code": "Ihr digitaler Code"
+    },
+    "password": "Passwort",
+    "password-reset-sent": "Eine E-Mail zur Zurücksetzung Ihres Passwortes wurde an Sie gesendet.",
+    "personal-data-submit": "Profil gespeichert",
+    "personal-details": "Persönliche Daten",
+    "phone-number": "Telefonnummer",
+    "pickADay": "Bitte geben Sie Ihr Geburtsdatum ein",
+    "please-enter-password-for-confirmation": "Bitte geben Sie zur Bestätigung Ihr Passwort ein",
+    "postal-code": "Postleitzahl",
+    "prefix": "Prefix",
+    "quick-signin": "Schnell anmelden",
+    "repeat-email-address": "E-Mail-Adresse wiederholen",
+    "repeat-new-password": "Neues Passwort wiederholen",
+    "repeat-password": "Passwort wiederholen",
+    "request_change_email": {
+      "invalid": "Diese E-Mail-Adresse wird bereits verwendet",
+      "invalid_credentials": "Bitte geben Sie das richtige Passwort ein"
+    },
+    "request_reset_password": {
+      "error_title": "Passwort zurücksetzen fehlgeschlagen.",
+      "unknown_user": "Es wurde keine Übereinstimmung mit dieser E-Mail-Adresse gefunden."
+    },
+    "reset-password": "Passwort zurücksetzen",
+    "reset_password": {
+      "invalid": {
+        "message": "Bitte benutzen Sie einen gültigen Link um Ihr Passwort zu ändern.",
+        "retry": "Neuen Link zur Zurücksetzung des Passwortes anfragen.",
+        "title": "Ungültig"
+      },
+      "reset": "Passwort zurücksetzen",
+      "resetError": {
+        "title": "Passwort zurücksetzen fehlgeschlagen"
+      },
+      "reset_password": {
+        "invalid_token": "Der Link zum Zurücksetzen Ihres Passwortes ist abgelaufen. Bitte füllen Sie das Formular zum Zurücksetzen Ihres Passwortes nochmal aus."
+      },
+      "submit": {
+        "message": "Sie haben Ihr Passwort erfolgreich geändert. Sie sind jetzt angemeldet.",
+        "profile": "Zum Profil",
+        "title": "Passwort geändert"
+      }
+    },
+    "retry-reset": "Ich habe eine falsche E-Mail-Adresse eingegeben. Ich möchte es nochmal versuchen.",
+    "save": "Speichern",
+    "secure-signup": "Konto anlegen",
+    "sessions-management": "Konto Aktivitäten",
+    "signupError": {
+      "title": "Anmeldung fehlgeschlagen"
+    },
+    "street": "Straße",
+    "try-again": "Falsche E-Mail-Adresse. Bitte versuchen Sie es nochmal",
+    "validation-send": "Bitte benutzen Sie den Link in unserer Bestätigungsmail, um Ihr Konto freizuschalten. Bis bald!",
+    "validations": {
+      "maxLength": "Maximal {max} Zeichen eingeben.",
+      "minLength": "Mindestens {min} Zeichen eingeben.",
+      "required": "Bitte Feld ausfüllen",
+      "sameAs": "Muss gleich sein wie",
+      "uniqueness": "Bereits vergeben"
+    },
+    "where-youre-logged-in": "Geräte über die Sie sich in Ihr Konto eingeloggt haben",
+    "your-account-is-confirmed": "Die erfolgreiche Anmeldung Ihres Kontos wurde bestätigt.",
+    "your-email-is-changed": "Ihre E-Mail-Adresse wurde geändert",
+    "your-login-details": "Ihre Anmeldedaten"
+  },
   "country_select": {
     "button_name": "Auswählen",
     "country_names": {

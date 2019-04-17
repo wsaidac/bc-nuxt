@@ -1,4 +1,176 @@
 {
+  "account": {
+    "account-confirmed": "Utworzenie konta zostało potwierdzone",
+    "account-created": "Twoje konto w serwisie Rapido zostało utworzone",
+    "account-email-address": "Adres e-mail powiązany z kontem",
+    "active-now": "Teraz aktywny",
+    "address-details": "Twój adres",
+    "agree-to-terms": "Zakładając konto, wyrażasz zgodę na <a href='/pl-pl/warunki'>Warunki użytkowania</a> i <a href='/pl-pl/prywatnosc-i-bezpieczenstwo'>Politykę prywatności</a> Rapido.",
+    "all-questions": "Wszystkie pytania",
+    "birthdate": "Data urodzenia",
+    "cancel": "Anuluj",
+    "change-email": "Zmień adres e-mail",
+    "change-email-requested": "Wysłaliśmy do Ciebie wiadomość umożliwiającą potwierdzenie zmiany adresu e-mail",
+    "change-password": "Zmiana hasła",
+    "change-password-error": "Aktualizacja hasła zakończona niepowodzeniem",
+    "change-password-submit": "Twoje hasło zostało zaktualizowane",
+    "check-your-email": "Sprawdź pocztę. Wysłaliśmy do Ciebie wskazówki dotyczące resetowania hasła. Jeśli nie otrzymasz wiadomości e-mail w ciągu 30 minut, spróbuj ponownie.",
+    "city": "Miasto",
+    "confirm_email": {
+      "already_confirmed": "Twoje konto zostało już potwierdzone.",
+      "expired_token": "Twoje łącze potwierdzające jest nieaktualne.",
+      "invalid_token": "Twoje konto zostało już potwierdzone."
+    },
+    "continue": "Kontynuuj",
+    "country_select": {
+      "button_name": "Kontynuuj zakupy",
+      "country_names": {
+        "Austria": "Austria",
+        "Belgium": "Belgia",
+        "United States": "Stany Zjednoczone"
+      },
+      "description": "Dzięki opcji wyboru kraju możemy się upewnić, że oferujemy <strong>odpowiednie produkty i metody płatności</strong>. Upewnij się, że produkt jest dostępny w Twoim kraju i może zostać zrealizowany na Twoim koncie/kontach.",
+      "title": "Wybierz swój kraj"
+    },
+    "create-new-account": "Utwórz nowe konto",
+    "current-password": "Obecne hasło",
+    "description-birthdate": "Wprowadź swoją datę urodzenia",
+    "email-address": "Adres e-mail",
+    "email-changed": "Adres e-mail został zmieniony",
+    "email-sent-to": "Wiadomość została wysłana na adres: {email}",
+    "enter-email-address": "Podaj adres e-mail.",
+    "faq": {
+      "faq-all": "Wszystkie często zadawane pytania",
+      "faq-code": "Jak użyć kodu",
+      "faq-delivery": "Dostawa kodu",
+      "faq-other": "Inne pytania",
+      "faq-payment": "Instrukcje dotyczące płatności"
+    },
+    "female": "kobieta",
+    "first-name": "Imię",
+    "footer": {
+      "need-help": "Potrzebujesz pomocy? Poznaj odpowiedzi na <a>najczęściej zadawane pytania</a>.",
+      "safe-methods": "<strong>Bezpieczne</strong> płatności z:"
+    },
+    "forgot-password": "Nie pamiętam hasła",
+    "format": "dd/MM/rrrr",
+    "gender": "Płeć",
+    "go-to-login": "Przejdź do strony logowania",
+    "help-with-account": "Pomoc dotycząca konta",
+    "house-number": "Numer domu",
+    "i-need-help": "Potrzebuję pomocy",
+    "i-prefer-not-to-say": "Inne",
+    "invalid": "Potwierdzanie zakończone niepowodzeniem",
+    "last-name": "Nazwisko",
+    "login-history": "Historia logowania na konto",
+    "login": {
+      "invalid_credentials": "Wprowadzony adres e-mail lub hasło jest nieprawidłowe.",
+      "title": "Zaloguj się",
+      "unconfirmed_email": "Adres e-mail nie został potwierdzony",
+      "unknown_user": "Do tego adresu e-mail nie przypisano jeszcze konta."
+    },
+    "loginError": {
+      "title": "Logowanie nie powiodło się"
+    },
+    "logout": "Wyloguj się",
+    "logout-everywhere": "Wyloguj na wszystkich urządzeniach",
+    "lost-password": "Nie pamiętasz hasła?",
+    "lost-password-help": "Nie mogę odnaleźć hasła",
+    "male": "mężczyzna",
+    "my-account": "Moje konto",
+    "name": "Imię",
+    "new-email-address": "Nowy adres e-mail",
+    "new-password": "Nowe hasło",
+    "orders": {
+      "cancelled": "anulowano",
+      "close": "Zamknij",
+      "close-details": "Zamknij szczegóły",
+      "description-inprogress": "Czy po 12 godzinach Twoje zamówienie wciąż nie zostało zrealizowane? <b><a href='/us/contact'>Skontaktuj się z nami</a>, a my chętnie Ci pomożemy!</b>",
+      "general-terms-and-conditions": "Ogólne warunki świadczenia usług",
+      "more-details": "Więcej informacji",
+      "order-history": "Historia zamówień",
+      "order-id": "Identyfikator zamówienia",
+      "ordernumber": "Numer zamówienia",
+      "paid": "Zapłacono",
+      "payment-method": "Sposób płatności",
+      "price": "Cena",
+      "productstatus": "Stan produktu",
+      "purchased-on": "Zakupiono dnia",
+      "redeem-url": "Łącze umożliwiające realizację",
+      "refunded": "zwrócono środki",
+      "serial-number": "Numer seryjny",
+      "service-costs": "Koszty usługi",
+      "shipped": "wysłano",
+      "show": "Pokaż",
+      "status": "Stan",
+      "total": "Łącznie",
+      "unpaid": "nie opłacono",
+      "your-orders": "Twoje zamówienia",
+      "your-top-up-code": "Twój cyfrowy kod"
+    },
+    "password": "Hasło",
+    "password-reset-sent": "Wiadomość e-mail z nowym hasłem została wysłana",
+    "personal-data-submit": "Profil został zapisany",
+    "personal-details": "Dane osobowe",
+    "phone-number": "Numer kierunkowy kraju (Polska: +48) / Numer telefonu",
+    "pickADay": "Wybierz datę urodzenia",
+    "please-enter-password-for-confirmation": "Wprowadź hasło w celu potwierdzenia",
+    "postal-code": "Kod pocztowy",
+    "prefix": "Prefiks",
+    "quick-signin": "Możemy pomóc Ci zalogować się do Twojego konta w mgnieniu oka.",
+    "repeat-email-address": "Powtórz nowy adres e-mail",
+    "repeat-new-password": "Powtórz nowe hasło",
+    "repeat-password": "Powtórz hasło",
+    "request_change_email": {
+      "invalid": "This email address is already in use.",
+      "invalid_credentials": "Wprowadź poprawne hasło."
+    },
+    "request_reset_password": {
+      "error_title": "Resetowanie hasła nie powiodło się",
+      "unknown_user": "Nie znaleziono konta przypisanego do tego adresu e-mail."
+    },
+    "reset-password": "Zresetuj hasło",
+    "reset_password": {
+      "invalid": {
+        "message": "Please use a valid reset link to change your password.",
+        "retry": "Poproś o nowe łącze do zresetowania hasła",
+        "title": "Nieprawidłowe"
+      },
+      "reset": "Zresetuj hasło",
+      "resetError": {
+        "title": "Resetowanie hasła zakończone niepowodzeniem"
+      },
+      "reset_password": {
+        "invalid_token": "Łącze do zresetowania hasła jest już nieaktualne. Uzupełnij formularz odzyskiwania hasła."
+      },
+      "submit": {
+        "message": "Twoje hasło zostało zaktualizowane i jesteś teraz zalogowany.",
+        "profile": "Przejdź do profilu",
+        "title": "Hasło zostało zmienione"
+      }
+    },
+    "retry-reset": "Użyłem nieprawidłowego adresu e-mail. Chcę spróbować ponownie",
+    "save": "Zapisz",
+    "secure-signup": "Utwórz konto Rapido",
+    "sessions-management": "Aktywność na koncie",
+    "signupError": {
+      "title": "Rejestracja zakończona niepowodzeniem"
+    },
+    "street": "Ulica",
+    "try-again": "Nieprawidłowy adres e-mail? Utwórz nowe konto tutaj",
+    "validation-send": "Aby zweryfikować swoje konto Rapido, użyj łącza w wiadomości dotyczącej weryfikacji konta, którą wysłaliśmy na adres {email}. Do zobaczenia wkrótce!",
+    "validations": {
+      "maxLength": "Maksymalna liczba znaków: {min}",
+      "minLength": "Minimalna liczba znaków: {min}",
+      "required": "Wymagane pole",
+      "sameAs": "Musi być identyczne",
+      "uniqueness": "Znajduje się już w użyciu"
+    },
+    "where-youre-logged-in": "Urządzenia, z których logowano się na konto",
+    "your-account-is-confirmed": "Twoje konto powiązane z adresem {email} zostało zweryfikowane. Możesz teraz zalogować się do swojego konta.",
+    "your-email-is-changed": "Twój adres e-mail został zaktualizowany do {email}. Możesz teraz zalogować się do swojego konta.",
+    "your-login-details": "Twoje dane logowania"
+  },
   "country_select": {
     "button_name": "Potwierdzać",
     "country_names": {
