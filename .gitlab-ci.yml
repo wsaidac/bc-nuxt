@@ -49,15 +49,6 @@ test-unit:
     variables:
       - $TEST_UNIT_DISABLED
 
-capistrano:
-  script:
-    - capistrano_prepare_ssh
-    - capistrano_install
-    - BRANCH=feature/rap-1504-merge_rapido_and_users BASTION_USER=cgdeployer bundle exec cap acceptance deploy
-  only:
-    - release
-    - feature/rap-1504-merge_rapido_and_users
-
 production:
   extends: capistrano
   when: manual
