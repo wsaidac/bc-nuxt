@@ -24,7 +24,7 @@
       class="cg-sidebar__logout"
       @click="logout"
     >
-      {{ $t('logout') }}
+      {{ $t('account.logout') }}
       <ui-icon icon="arrow-right-open" />
     </ui-button>
   </div>
