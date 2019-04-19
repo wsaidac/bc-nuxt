@@ -117,9 +117,26 @@ export default {
   },
 
   head() {
-    const category = this.post.categories.nodes[0].slug;
-    const url = `https://${this.domain}/${this.$i18n.locale}/${category}`;
+    const date = new Date();
+    const category = this.post.categories.nodes[0];
+    const url = `https://${this.domain}/${this.$i18n.locale}/${category.slug}`;
     return {
+      meta: [
+        { property: 'og:type', content: 'og:product' },
+        { property: "og:updated_time", content: date.toISOString() },
+        { property: 'bc:pagetype', content: 'PDP' },
+        { property: 'bc:pdp:identifier', content: `${this.post.rapidoProduct.id}${this.$i18n.locale}` },
+        { property: 'bc:pdp:code', content: this.post.rapidoProduct.id },
+        { property: 'bc:pdp:slug', content: this.$router.currentRoute.path },
+        { property: 'bc:pdp:title', content: this.post.title },
+        { property: 'bc:pdp:denomination', content: this.$n(this.post.information.issueValue, 'currency') },
+        { property: 'bc:brand', content: category.name },
+        // { property: 'bc:product:category', content: this.post.categories.nodes[0].name },
+        { property: "bc:pdp:image", content: category.categoryHeader.image.regular },
+        { property: "bc:pdp:image_banner_desktop", content: category.categoryHeader.banner.desktop },
+        { property: "bc:pdp:image_banner_mobile", content: category.categoryHeader.banner.mobile },
+        { itemprop: "availability", content: 'http://schema.org/InStock' },
+      ],
       link: [
         { rel: 'canonical', href: url },
       ],
