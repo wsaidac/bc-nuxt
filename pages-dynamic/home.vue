@@ -66,7 +66,7 @@ export default {
   head() {
     const url = `https://${this.domain}/${this.$i18n.locale}/`;
     return {
-      meta: [
+      link: [
         { rel: 'canonical', href: url },
       ],
     };

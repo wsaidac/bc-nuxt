@@ -91,24 +91,23 @@ export default {
 
   head() {
     const url = `https://${this.domain}${this.$route.path}`;
-
     return {
       meta: [
-        { rel: 'canonical', href: url },
+
         { property: 'og:type', content: 'og:product' },
         { property: 'bc:pagetype', content: 'POP' },
         { property: 'bc:pop:identifier', content: `${this.post.id}${this.$i18n.locale}` },
         { property: 'bc:pop:code', content: this.post.id },
         { property: 'bc:pop:slug', content: this.$router.currentRoute.path },
-        { property: 'bc:product:title', content: this.post.meta.title },
-        { property: 'bc:product:description', content: this.post.meta.description },
-        // { property: 'bc:product:brand', content: this.post.name },
-        // { property: 'bc:product:type', content: 'callcredit' },
-        // { property: 'bc:product:subcategory', content: 'Mobile Recharge' },
-        // { property: "bc:product:image", content: "https://static.rapido.com/categories/2023/verizon.png?1543831182" },
-        // { property: "bc:product:image_small", content: "https://static.rapido.com/categories/2023/verizon.png?1543831182" },
-        // { property: "bc:product:image_banner_desktop", content: "https://static.rapido.com/categories/2023/header/Verizon_desktop.jpg" },
-        // { property: "bc:product:image_banner_mobile", content: "https://static.rapido.com/categories/2023/mobileheader/Verizon_mobile.jpg" },
+        { property: 'bc:pop:title', content: this.post.infoBlock.title },
+        { property: 'bc:brand', content: this.post.infoBlock.title },
+        // { property: 'bc:product:category', content: 'Mobile Recharge' },
+        { property: "bc:pop:image", content: this.post.categoryHeader.image.regular },
+        { property: "bc:pop:image_banner_desktop", content: this.post.categoryHeader.banner.desktop },
+        { property: "bc:pop:image_banner_mobile", content: this.post.categoryHeader.banner.mobile },
+      ],
+      link: [
+        { rel: 'canonical', href: url },
       ],
     };
   },
