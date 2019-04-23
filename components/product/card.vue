@@ -18,26 +18,6 @@
           :longdesc="image.description"
           itemprop="image"
         >
-        <meta
-          :content="`${product.content.title} USD - TODO`"
-          itemprop="name"
-        >
-        <meta
-          :content="product.content.title"
-          itemprop="description"
-        >
-        <meta
-          class="product-ean-code"
-          itemprop="gtin0"
-        >
-        <meta
-          itemprop="brand"
-          content="brand TODO"
-        >
-        <meta
-          content="category TODO"
-          itemprop="category"
-        >
       </picture>
     </nuxt-link>
     <div class="product-card__content">
@@ -47,22 +27,6 @@
         itemtype="http://schema.org/Offer"
         itemprop="offers"
       >
-        <meta
-          :content="product.information.issueValue"
-          item="price"
-        >
-        <meta
-          content="product.information.currrencie TODO"
-          itemprop="pricecurrency"
-        >
-        <meta
-          itemprop="availability"
-          content="http://schema.org/InStock"
-        >
-        <meta
-          itemprop="itemCondition"
-          content="http://schema.org/NewCondition"
-        >
         <h3 v-text="$n(product.information.issueValue, 'currency')" />
         <p v-html="product.title" />
         <shared-tooltip
