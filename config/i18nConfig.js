@@ -32,12 +32,6 @@ module.exports = function (label) {
         [defaultLocale(label)]: require(defaultLocaleFile(defaultLocale(label))),
       },
     },
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'country',
-      alwaysRedirect: false,
-      fallbackLocale: defaultLocale(label),
-    },
   };
 };
 
