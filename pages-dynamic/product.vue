@@ -119,6 +119,7 @@ export default {
   head() {
     const date = new Date();
     const category = this.post.categories.nodes[0];
+    const { banner, image } = category.categoryHeader;
     const url = `https://${this.domain}/${this.$i18n.locale}/${category.slug}`;
     return {
       meta: [
@@ -132,9 +133,9 @@ export default {
         { property: 'bc:pdp:denomination', content: this.$n(this.post.information.issueValue, 'currency') },
         { property: 'bc:brand', content: category.name },
         // { property: 'bc:product:category', content: this.post.categories.nodes[0].name },
-        { property: "bc:pdp:image", content: category.categoryHeader.image.regular },
-        { property: "bc:pdp:image_banner_desktop", content: category.categoryHeader.banner.desktop },
-        { property: "bc:pdp:image_banner_mobile", content: category.categoryHeader.banner.mobile },
+        { property: "bc:pdp:image", content: image && image.regular },
+        { property: "bc:pdp:image_banner_desktop", content: banner && banner.desktop },
+        { property: "bc:pdp:image_banner_mobile", content: banner && banner.mobile },
         { itemprop: "availability", content: 'http://schema.org/InStock' },
       ],
       link: [
