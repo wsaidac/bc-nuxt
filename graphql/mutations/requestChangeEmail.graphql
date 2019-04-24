@@ -1,0 +1,3 @@
+mutation($unconfirmedEmail: String!, $unconfirmedEmailConfirmation: String!, $password: String!) {
+  requestChangeEmail(unconfirmedEmail: $unconfirmedEmail, unconfirmedEmailConfirmation: $unconfirmedEmailConfirmation, password: $password)
+}

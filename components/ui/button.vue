@@ -26,6 +26,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    justify: {
+      type: Boolean,
+      default: false,
+    },
     icon: {
       type: String,
       default: null,
@@ -42,7 +46,7 @@ export default {
 
   computed: {
     classes() {
-      return [{ 'is-block': this.block }];
+      return [{ 'is-block': this.block }, { 'is-justified': this.justify }];
     },
 
     uiIcon() {
@@ -59,13 +63,17 @@ $--button-font-weight: 700;
 @import "element-ui/packages/theme-chalk/src/button.scss";
 
 .el-button {
-  border: 2px solid $body-color;
-  border-radius: 0;
-  font-size: 12px;
-  line-height: 24px;
-  padding: 5px 7px;
-  text-transform: uppercase;
-  transition: background 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: initial;
+
+  &.is-justified {
+    display: block;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+  }
 
   &.is-block {
     display: block;
@@ -73,9 +81,60 @@ $--button-font-weight: 700;
     width: 100%;
   }
 
-  &--warning:hover {
-    background-color: $body-color;
-    color: $white;
+  &--primary {
+    background: $warning-500;
+    border: 2px solid $black;
+    border-radius: 0;
+    color: $black;
+    font-size: 12px;
+    padding: 10px 7px !important;
+    text-transform: uppercase;
+
+    &:hover {
+      background: $black;
+      border: 2px solid $black;
+      color: $white;
+    }
+  }
+
+  &--secondary {
+    background: transparent;
+    border: 1px solid $gray-600;
+    color: $primary-500;
+    font-weight: $font-weight-regular;
+
+    @include size(100px, 43px);
+
+    &:hover {
+      background: $primary-500 !important;
+      border: 1px solid $black !important;
+      color: $white;
+    }
+  }
+
+  &--tertiary {
+    border: 2px solid $black;
+    color: $black;
+    font-size: 12px !important;
+    padding: 6px 20px !important;
+
+    &:hover {
+      background: $black;
+      color: $white;
+    }
+  }
+
+  &--quaternary {
+    background: $gray-300;
+    border: 0;
+    padding: 10px 25px !important;
+    text-transform: none;
+
+    &:hover {
+      background: $primary-500;
+      border: 0;
+      color: $white;
+    }
   }
 
   @include media-breakpoint-up("sm") {

@@ -109,7 +109,7 @@ export default {
   }
 }
 
-.el-input__suffix {
+.el-select .el-input__suffix {
   background-color: $black;
   background-image: url("~assets/images/icons/caret-white.svg");
   background-position: 50% 50%;
@@ -120,7 +120,7 @@ export default {
   width: 47px;
 }
 
-.el-popper .popper__arrow {
+.el-popper[x-placement^="bottom"] .popper__arrow {
   display: none;
 }
 </style>

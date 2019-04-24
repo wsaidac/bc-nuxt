@@ -8,16 +8,16 @@
     <div class="header-navbar__top">
       <div class="header-navbar__top-content container">
         <h1 class="header-navbar__brand">
-          <nuxt-link :to="$contextPath('')">
+          <a :href="homeLink">
             <img
               :alt="$t('general.domain')"
               src="~/assets/images/logo-white.svg"
             >
-          </nuxt-link>
+          </a>
         </h1>
         <div class="spacer" />
         <div class="header-navbar__top-right">
-          <!-- <header-login /> -->
+          <header-login />
           <a
             :href="faqUrl"
             class="header-navbar__help"
@@ -34,6 +34,7 @@
             <ui-icon icon="caret-white" />
           </button>
           <div
+            v-if="!onUsers"
             class="header-navbar__menu"
             @click="menuOpen = !menuOpen"
           >
@@ -43,8 +44,12 @@
         </div>
       </div>
     </div>
-    <header-links-desktop :items="items" />
+    <header-links-desktop
+      v-if="!onUsers"
+      :items="items"
+    />
     <header-links-mobile
+      v-if="!onUsers"
       :items="items"
       :menu-open="menuOpen"
       @close-menu="menuOpen = false"
@@ -67,7 +72,7 @@ import faqUrl from '~/mixins/faqUrl';
 
 export default {
   components: {
-    // HeaderLogin,
+    HeaderLogin,
     HeaderLinksDesktop,
     HeaderLinksMobile,
     HeaderHamburger,
@@ -81,6 +86,10 @@ export default {
       default() {
         return [];
       },
+    },
+    onUsers: {
+      type: Boolean,
+      default: false,
     },
   },
 
@@ -98,6 +107,9 @@ export default {
     },
     country() {
       return this.$i18n.locales.find(i => i.code === this.$i18n.locale);
+    },
+    homeLink() {
+      return this.$route.path.slice(0, 7);
     },
   },
 };
@@ -173,7 +185,7 @@ export default {
   &__country-select {
     background-color: #1000e3;
     border: 0;
-    color: var(--header-color-base, #000);
+    color: $black;
     font-size: $font-size-h5;
     height: 100%;
     padding: 0 15px;
@@ -267,11 +279,6 @@ export default {
       padding-right: 0;
     }
 
-    .header-login,
-    .header-navbar__help {
-      display: none;
-    }
-
     &__country-select {
       background: $primary-500;
       border-left: 1px solid #1000e3;
@@ -279,6 +286,21 @@ export default {
       .ui-icon-caret-white {
         display: none;
       }
+    }
+  }
+}
+
+.layout-users {
+  .header-login {
+    display: none;
+  }
+}
+
+@include media-breakpoint-only("xs") {
+  .layout-default {
+    .header-login,
+    .header-navbar__help {
+      display: none;
     }
   }
 }
