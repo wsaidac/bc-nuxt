@@ -1,20 +1,15 @@
-
 const i18nConfig = require('./config/i18nConfig.js');
 
 require('dotenv').config();
-
 
 const label = 'rapido';
 
 const conf = {
   head: {
-    title: 'rapido_web',
+    titleTemplate: '%s - Rapido.com',
     meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [
-      { src: '/blueconic.js' },
-      { src: '//cdn.blueconic.net/cg.js' },
-    ],
+    script: [{ src: '/blueconic.js' }, { src: '//cdn.blueconic.net/cg.js' }],
   },
   css: ['~/assets/stylesheets/application.scss'],
   store: true,
@@ -96,13 +91,13 @@ const conf = {
         ],
         'style-src': ["'self'", "'unsafe-inline'", 'https://tagmanager.google.com', 'https://fonts.googleapis.com', '*.rapido.com', '*.cgaws.cloud'],
         'report-uri': [
-          'https://sentry.io/api/1424268/security/?sentry_key=c82b3b97e8af426da4eb2b24099ca8ff',
+          'https://sentry.io/api/1441242/security/?sentry_key=98825ca3d73c4dd58305cd0e794873c4',
         ],
       },
     },
   },
   router: {
-    middleware: ['headers', 'context'],
+    middleware: ['auth', 'headers', 'context', 'usps'],
   },
   modules: [
     ['@nuxtjs/style-resources'],
@@ -127,6 +122,8 @@ const conf = {
     LABEL: label,
   },
   plugins: [
+    '~/plugins/env.js',
+    '~/plugins/vuelidate.js',
     '~/plugins/vuetouch.js',
     '~/plugins/media-queries.js',
     '~/assets/iconsWeb.js',
@@ -135,6 +132,9 @@ const conf = {
     { src: '~/plugins/async.js', ssr: false },
     '~/plugins/shared.js',
     '~/plugins/i18n.js',
+    '~/plugins/moment.js',
+    '~/plugins/pagination.js',
+    '~/plugins/element-ui.js',
   ],
   sentry: {
     dsn: process.env.SENTRY_DNS,

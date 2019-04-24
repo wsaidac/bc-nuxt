@@ -1,0 +1,11 @@
+query {
+  activeSessions {
+    mobile
+    platform
+    createdAt
+    browser
+    ip
+    id
+    currentSession
+  }
+}

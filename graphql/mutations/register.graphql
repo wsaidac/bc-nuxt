@@ -1,0 +1,6 @@
+mutation($email: String!, $password: String!, $passwordConfirmation: String!) {
+  user: register(email: $email, password: $password, passwordConfirmation: $passwordConfirmation) {
+    id
+    email
+  }
+}

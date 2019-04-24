@@ -40,12 +40,12 @@
       </li>
     </ul>
     <ul class="header-links-mobile__pages">
-      <!-- <li>
+      <li>
         <header-login
           class="header-links-mobile__main-item, header-links-mobile__login"
           @click.native="$emit('closemenu')"
         />
-      </li> -->
+      </li>
       <li
         v-for="link in links"
         :key="link.displayName"
@@ -80,7 +80,7 @@ import faqUrl from '~/mixins/faqUrl';
 
 export default {
   components: {
-    // HeaderLogin,
+    HeaderLogin,
     UiIcon,
   },
 

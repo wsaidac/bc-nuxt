@@ -1,0 +1,3 @@
+mutation($action: LogoutAction!, $sessionId: ID) {
+  logout(action: $action, sessionId: $sessionId)
+}

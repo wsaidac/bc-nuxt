@@ -18,26 +18,6 @@
           :longdesc="image.description"
           itemprop="image"
         >
-        <meta
-          :content="`${product.content.title} USD - TODO`"
-          itemprop="name"
-        >
-        <meta
-          :content="product.content.title"
-          itemprop="description"
-        >
-        <meta
-          class="product-ean-code"
-          itemprop="gtin0"
-        >
-        <meta
-          itemprop="brand"
-          content="brand TODO"
-        >
-        <meta
-          content="category TODO"
-          itemprop="category"
-        >
       </picture>
     </nuxt-link>
     <div class="product-card__content">
@@ -47,22 +27,6 @@
         itemtype="http://schema.org/Offer"
         itemprop="offers"
       >
-        <meta
-          :content="product.information.issueValue"
-          item="price"
-        >
-        <meta
-          content="product.information.currrencie TODO"
-          itemprop="pricecurrency"
-        >
-        <meta
-          itemprop="availability"
-          content="http://schema.org/InStock"
-        >
-        <meta
-          itemprop="itemCondition"
-          content="http://schema.org/NewCondition"
-        >
         <h3 v-text="$n(product.information.issueValue, 'currency')" />
         <p v-html="product.title" />
         <shared-tooltip
@@ -100,6 +64,7 @@
           >
         </fieldset>
         <ui-button
+          type="primary"
           native-type="button"
           @click="submitForm"
         >
@@ -110,8 +75,8 @@
   </div>
 </template>
 
-
 <script>
+/* eslint-disable */
 import { mapGetters } from "vuex";
 import SharedTooltip from "~/components/shared/tooltip";
 import SharedInstantTooltip from "~/components/shared/instant-tooltip";
@@ -222,17 +187,6 @@ export default {
 
   fieldset {
     display: none;
-  }
-
-  .el-button {
-    background: #ffea6b;
-    border: 2px solid $black;
-    color: $black;
-
-    &:hover {
-      background: $black;
-      color: $white;
-    }
   }
 
   &__title {

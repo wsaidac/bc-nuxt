@@ -31,6 +31,9 @@ describe('HeaderNavbar', () => {
         faqUrl() {
           return 'en-us';
         },
+        homeLink() {
+          return '/en-us/';
+        },
       },
     });
   });
