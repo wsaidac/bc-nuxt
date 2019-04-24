@@ -1,8 +1,6 @@
-
 const i18nConfig = require('./config/i18nConfig.js');
 
 require('dotenv').config();
-
 
 const label = 'rapido';
 
@@ -11,10 +9,7 @@ const conf = {
     titleTemplate: '%s - Rapido.com',
     meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [
-      { src: '/blueconic.js' },
-      { src: '//cdn.blueconic.net/cg.js' },
-    ],
+    script: [{ src: '/blueconic.js' }, { src: '//cdn.blueconic.net/cg.js' }],
   },
   css: ['~/assets/stylesheets/application.scss'],
   store: true,
