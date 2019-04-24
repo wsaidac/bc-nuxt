@@ -1,8 +1,6 @@
-
 const i18nConfig = require('./config/i18nConfig.js');
 
 require('dotenv').config();
-
 
 const label = 'rapido';
 
@@ -11,10 +9,8 @@ const conf = {
     title: 'rapido_web',
     meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [
-      { src: '/blueconic.js' },
-      { src: '//cdn.blueconic.net/cg.js' },
-    ],
+    // script: [{ src: '/blueconic.js' }, { src: '//cdn.blueconic.net/cg.js' }],
+    script: [{ src: '/blueconic.js' }, { src: '//cdn.blueconic.net/cg.js' }],
   },
   css: ['~/assets/stylesheets/application.scss'],
   store: true,
@@ -95,9 +91,7 @@ const conf = {
           '*.cgaws.cloud',
         ],
         'style-src': ["'self'", "'unsafe-inline'", 'https://tagmanager.google.com', 'https://fonts.googleapis.com', '*.rapido.com', '*.cgaws.cloud'],
-        'report-uri': [
-          'https://sentry.io/api/1424268/security/?sentry_key=c82b3b97e8af426da4eb2b24099ca8ff',
-        ],
+        'report-uri': ['https://sentry.io/api/1424268/security/?sentry_key=c82b3b97e8af426da4eb2b24099ca8ff'],
       },
     },
   },
