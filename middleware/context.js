@@ -20,8 +20,8 @@ export default ({
     const cloudfrontViewerCountry = req.headers['cloudfront-viewer-country'];
     if (cloudfrontViewerCountry) {
       const cloudfrontLocale = Object.values(locales).find(locale => locale.name.toLowerCase() === cloudfrontViewerCountry.toLowerCase());
-      console.log(cloudfrontLocale);
       const localeCode = cloudfrontLocale && cloudfrontLocale.code;
+
       if (localeCode) {
         cookies.set('country', localeCode, { path: '/' });
         return redirect(301, `/${localeCode}/`);
