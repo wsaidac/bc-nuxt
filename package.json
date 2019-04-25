@@ -11,7 +11,7 @@
     "test:unit": "NODE_ENV=test jest --config=jest.config.js",
     "test:e2e": "cypress run",
     "cypress": "cypress open",
-    "dev-debug": "NODE_ENV=development API_BROWSER='https://api-hub.eu-west-1.acceptance.cgaws.cloud' API_SERVER='https://api-hub.eu-west-1.acceptance.cgaws.cloud' node --inspect node_modules/.bin/nuxt --port 4000"
+    "dev-debug": "NODE_ENV=development API_BROWSER='https://api-hub.eu-west-1.production.cgaws.cloud' API_SERVER='https://api-hub.eu-west-1.production.cgaws.cloud' node --inspect node_modules/.bin/nuxt --port 4000"
   },
   "nodemonConfig": {
     "legacyWatch": true,
