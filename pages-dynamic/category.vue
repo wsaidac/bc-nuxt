@@ -91,7 +91,7 @@ export default {
 
   head() {
     const url = `https://${this.domain}${this.$route.path}`;
-    const { banner, image } = this.post.categoryHeader;
+    const { banner, image, title } = this.post.categoryHeader;
 
     return {
       meta: [
@@ -101,12 +101,13 @@ export default {
         { property: 'bc:pop:identifier', content: `${this.post.id}${this.$i18n.locale}` },
         { property: 'bc:pop:code', content: this.post.id },
         { property: 'bc:pop:slug', content: this.$router.currentRoute.path },
-        { property: 'bc:pop:title', content: this.post.infoBlock.title },
-        { property: 'bc:brand', content: this.post.infoBlock.title },
+        { property: 'bc:pop:title', content: title },
+        { property: 'bc:brand', content: this.post.name },
         // { property: 'bc:product:category', content: 'Mobile Recharge' },
         { property: 'bc:pop:image', content: image && image.regular },
         { property: 'bc:pop:image_banner_desktop', content: banner && banner.desktop },
         { property: 'bc:pop:image_banner_mobile', content: banner && banner.mobile },
+        { itemprop: 'availability', content: 'http://schema.org/InStock' },
       ],
       link: [
         { rel: 'canonical', href: url },
