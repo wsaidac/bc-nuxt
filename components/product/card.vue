@@ -5,10 +5,9 @@
     itemscope
     itemtype="http://schema.org/Product"
   >
-    <nuxt-link
-      :to="$contextPath(`${category.slug}/${product.slug}`)"
+    <a
       class="product-card__img-link"
-      @click.native="submitForm"
+      @click="submitForm"
     >
       <picture v-if="image">
         <img
@@ -19,7 +18,7 @@
           itemprop="image"
         >
       </picture>
-    </nuxt-link>
+    </a>
     <div class="product-card__content">
       <div
         class="product-card__title"
