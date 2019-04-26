@@ -104,9 +104,9 @@ export default {
         { property: 'bc:pop:title', content: this.post.infoBlock.title },
         { property: 'bc:brand', content: this.post.infoBlock.title },
         // { property: 'bc:product:category', content: 'Mobile Recharge' },
-        { property: "bc:pop:image", content: image && image.regular },
-        { property: "bc:pop:image_banner_desktop", content: banner && banner.desktop },
-        { property: "bc:pop:image_banner_mobile", content: banner && banner.mobile },
+        { property: 'bc:pop:image', content: image && image.regular },
+        { property: 'bc:pop:image_banner_desktop', content: banner && banner.desktop },
+        { property: 'bc:pop:image_banner_mobile', content: banner && banner.mobile },
       ],
       link: [
         { rel: 'canonical', href: url },

@@ -104,7 +104,6 @@ export default {
         const { user } = await this.$m('register', this.user);
         if (this.$graphQLErrors.length > 0) {
           this.$graphQLErrors = monkeyPatchPaths(this.$graphQLErrors);
-          console.log(this.$graphQLErrors);
           this.$emit('error', this.$graphQLErrors[0].message);
         } else {
           this.$emit('submit', { email: user.email });

@@ -9,15 +9,25 @@ module.exports = {
   parserOptions: {
     parser: "babel-eslint"
   },
-  extends: ["airbnb-base", "plugin:vue/recommended"],
+  extends: [
+    "airbnb-base",
+    "plugin:vue/recommended",
+    "eslint:recommended",
+  ],
   plugins: ["vue", "cypress"],
   rules: {
-    "max-len": [1, 220, 2, { ignoreComments: true }],
+    "max-len": [1, 220, 2, {
+      ignoreComments: true
+    }],
     "quote-props": [1, "consistent-as-needed"],
     radix: 0,
-    "no-param-reassign": [2, { props: false }],
+    "no-param-reassign": [2, {
+      props: false
+    }],
     "no-bitwise": 0,
-    "no-plusplus": [2, { allowForLoopAfterthoughts: true }],
+    "no-plusplus": [2, {
+      allowForLoopAfterthoughts: true
+    }],
     "import/no-unresolved": 0,
     "import/extensions": 0,
     "no-unused-vars": 1,
@@ -25,6 +35,8 @@ module.exports = {
     "no-underscore-dangle": 0,
     'vue/no-v-html': 0,
     'vue/singleline-html-element-content-newline': 0,
-    'quotes': 0,
+    'quotes': [2, "single", {
+      "allowTemplateLiterals": true
+    }],
   }
 };

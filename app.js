@@ -32,6 +32,5 @@ async function start() {
 
   // Listen the server
   app.listen(port, host);
-  console.log(`Server listening on http://${host}:${port}`);
 }
 start();

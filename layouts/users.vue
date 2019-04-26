@@ -24,7 +24,7 @@ export default {
       },
       title: this.$t('account.my-account'),
       link: [
-        { rel: "alternate", href: `https://${process.env.DOMAIN}${this.$route.path}`, hreflang: locale },
+        { rel: 'alternate', href: `https://${process.env.DOMAIN}${this.$route.path}`, hreflang: locale },
       ],
     };
   },
