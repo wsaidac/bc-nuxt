@@ -9,5 +9,5 @@ module.exports = {
     "order/properties-alphabetical-order": true,
     "scss/at-rule-no-unknown": true
   },
-  ignoreFiles: ['**/*.js'],
+  ignoreFiles: ['**/*.js', '*.js'],
 };

@@ -118,7 +118,7 @@ export default {
       return [
         this.transformLink('aboutUs'),
         this.transformLink('paymentMethods'),
-        { displayName: this.$t("general.help"), url: this.faqUrl, title: 'Help' },
+        { displayName: this.$t('general.help'), url: this.faqUrl, title: 'Help' },
         this.transformLink('privacyPolicy'),
         this.transformLink('generalConditions'),
         this.transformLink('cookieStatement'),

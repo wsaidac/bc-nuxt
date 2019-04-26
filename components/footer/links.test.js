@@ -10,16 +10,16 @@ describe('FooterLinks', () => {
         footerLinks() {
           return {
             one: [
-              { displayName: 'help', url: "help" },
+              { displayName: 'help', url: 'help' },
             ],
             two: [
-              { displayName: 'help', url: "help" },
-              { displayName: 'help', url: "help" },
+              { displayName: 'help', url: 'help' },
+              { displayName: 'help', url: 'help' },
             ],
             three: [
-              { displayName: 'help', url: "help" },
-              { displayName: 'help', url: "help" },
-              { displayName: 'help', url: "help" },
+              { displayName: 'help', url: 'help' },
+              { displayName: 'help', url: 'help' },
+              { displayName: 'help', url: 'help' },
             ],
           };
         },

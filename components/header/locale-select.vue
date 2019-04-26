@@ -37,8 +37,8 @@
 </template>
 
 <script>
-import ElOption from "element-ui/lib/option.js";
-import { UiSelect, UiDialog, UiButton } from "~/components/ui.js";
+import ElOption from 'element-ui/lib/option.js';
+import { UiSelect, UiDialog, UiButton } from '~/components/ui.js';
 
 export default {
   components: {
@@ -69,7 +69,7 @@ export default {
 
   methods: {
     changeLocale() {
-      this.$emit("hideDialog");
+      this.$emit('hideDialog');
       if (this.$i18n.locale !== this.localeSelected) {
         this.$router.push(`/${this.localeSelected}/`);
       }

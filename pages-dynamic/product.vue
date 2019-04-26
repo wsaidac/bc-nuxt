@@ -124,7 +124,7 @@ export default {
     return {
       meta: [
         { property: 'og:type', content: 'og:product' },
-        { property: "og:updated_time", content: date.toISOString() },
+        { property: 'og:updated_time', content: date.toISOString() },
         { property: 'bc:pagetype', content: 'PDP' },
         { property: 'bc:pdp:identifier', content: `${this.post.rapidoProduct.id}${this.$i18n.locale}` },
         { property: 'bc:product:code', content: this.post.rapidoProduct.id },
@@ -133,10 +133,10 @@ export default {
         { property: 'bc:pdp:denomination', content: this.$n(this.post.information.issueValue, 'currency') },
         { property: 'bc:brand', content: category.name },
         // { property: 'bc:product:category', content: this.post.categories.nodes[0].name },
-        { property: "bc:pdp:image", content: image && image.regular },
-        { property: "bc:pdp:image_banner_desktop", content: banner && banner.desktop },
-        { property: "bc:pdp:image_banner_mobile", content: banner && banner.mobile },
-        { itemprop: "availability", content: 'http://schema.org/InStock' },
+        { property: 'bc:pdp:image', content: image && image.regular },
+        { property: 'bc:pdp:image_banner_desktop', content: banner && banner.desktop },
+        { property: 'bc:pdp:image_banner_mobile', content: banner && banner.mobile },
+        { itemprop: 'availability', content: 'http://schema.org/InStock' },
       ],
       link: [
         { rel: 'canonical', href: url },

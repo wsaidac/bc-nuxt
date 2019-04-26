@@ -10,7 +10,7 @@ export default function ({ app, error }) {
     const cookies = new Cookies();
     cookies.set('country', newLocale, { path: '/' });
 
-    app.store.commit("async/setContextChange", true);
-    app.store.dispatch("context/changeContext", { app, error, locale: newLocale });
+    app.store.commit('async/setContextChange', true);
+    app.store.dispatch('context/changeContext', { app, error, locale: newLocale });
   };
 }

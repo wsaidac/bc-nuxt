@@ -16,10 +16,10 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import HeaderBanner from "~/components/header/banner";
-import CgUsps from "~/components/usps";
-import SeoBreadcrumbs from "~/components/seo/breadcrumbs";
+import { mapGetters } from 'vuex';
+import HeaderBanner from '~/components/header/banner';
+import CgUsps from '~/components/usps';
+import SeoBreadcrumbs from '~/components/seo/breadcrumbs';
 import generateCrumbs from '~/mixins/generateCrumbs';
 
 export default {
@@ -40,7 +40,7 @@ export default {
 
   computed: {
     ...mapGetters('context', ['domain']),
-    ...mapGetters("shared", ["usps", "header"]),
+    ...mapGetters('shared', ['usps', 'header']),
     crumbs() {
       return this.generateCrumbs(this.post.title);
     },
