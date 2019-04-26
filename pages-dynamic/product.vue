@@ -127,7 +127,7 @@ export default {
         { property: "og:updated_time", content: date.toISOString() },
         { property: 'bc:pagetype', content: 'PDP' },
         { property: 'bc:pdp:identifier', content: `${this.post.rapidoProduct.id}${this.$i18n.locale}` },
-        { property: 'bc:pdp:code', content: this.post.rapidoProduct.id },
+        { property: 'bc:product:code', content: this.post.rapidoProduct.id },
         { property: 'bc:pdp:slug', content: this.$router.currentRoute.path },
         { property: 'bc:pdp:title', content: this.post.title },
         { property: 'bc:pdp:denomination', content: this.$n(this.post.information.issueValue, 'currency') },
