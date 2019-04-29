@@ -12,7 +12,7 @@
     <ui-select v-model="localeSelected">
       <span
         slot="prefix"
-        :class="`flag-icon flag-icon--medium flag-icon-${selectedCountryFlag}`"
+        :class="`flag-icon flag-icon--medium flag-icon--bordered flag-icon-${selectedCountryFlag}`"
       />
       <el-option
         v-for="item in $i18n.locales"
