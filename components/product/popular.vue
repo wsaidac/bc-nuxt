@@ -35,11 +35,11 @@
 </template>
 
 <script>
-import { UiCol, UiRow } from "~/components/ui";
-import { get } from "lodash";
+import { UiCol, UiRow } from '~/components/ui';
+import { get } from 'lodash';
 
 export default {
-  name: "ProductPopular",
+  name: 'ProductPopular',
 
   components: {
     UiCol,
@@ -60,20 +60,20 @@ export default {
       if (!this.popularProducts.items) return [];
       return this.popularProducts.items.map(({ image, category }) => ({
         ...category,
-        title: get(category, "categoryHeader.title"),
+        title: get(category, 'categoryHeader.title'),
         image: {
           regular:
-            get(image, "regular")
-            || get(category, "categoryHeader.image.regular"),
+            get(image, 'regular')
+            || get(category, 'categoryHeader.image.regular'),
           retina:
-            get(image, "retina")
-            || get(category, "categoryHeader.image.retina"),
+            get(image, 'retina')
+            || get(category, 'categoryHeader.image.retina'),
           altText:
-            get(image, "altText")
-            || get(category, "categoryHeader.image.altText"),
+            get(image, 'altText')
+            || get(category, 'categoryHeader.image.altText'),
           description:
-            get(image, "description")
-            || get(category, "categoryHeader.image.description"),
+            get(image, 'description')
+            || get(category, 'categoryHeader.image.description'),
         },
       }));
     },

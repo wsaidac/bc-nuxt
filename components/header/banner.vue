@@ -50,7 +50,7 @@
 
 <script>
 export default {
-  name: "HeaderBanner",
+  name: 'HeaderBanner',
 
   props: {
     post: {
@@ -67,7 +67,7 @@ export default {
     },
     title: {
       type: String,
-      default: "",
+      default: '',
     },
   },
 

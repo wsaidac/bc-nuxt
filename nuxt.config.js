@@ -73,8 +73,8 @@ const conf = {
     csp: {
       policies: {
         'script-src': [
-          "'unsafe-eval'",
-          "'unsafe-inline'",
+          '\'unsafe-eval\'',
+          '\'unsafe-inline\'',
           'https://www.googletagmanager.com',
           'https://tagmanager.google.com',
           'https://www.googleadservices.com',
@@ -89,7 +89,7 @@ const conf = {
           '*.rapido.com',
           '*.cgaws.cloud',
         ],
-        'style-src': ["'self'", "'unsafe-inline'", 'https://tagmanager.google.com', 'https://fonts.googleapis.com', '*.rapido.com', '*.cgaws.cloud'],
+        'style-src': ['\'self\'', '\'unsafe-inline\'', 'https://tagmanager.google.com', 'https://fonts.googleapis.com', '*.rapido.com', '*.cgaws.cloud'],
         'report-uri': [
           'https://sentry.io/api/1441242/security/?sentry_key=98825ca3d73c4dd58305cd0e794873c4',
         ],

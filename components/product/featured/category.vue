@@ -73,10 +73,10 @@
 </template>
 
 <script>
-import { UiRow, UiCol, UiTransitionExpand } from "~/components/ui";
+import { UiRow, UiCol, UiTransitionExpand } from '~/components/ui';
 
 export default {
-  name: "ProductFeaturedCategory",
+  name: 'ProductFeaturedCategory',
 
   components: {
     UiRow,

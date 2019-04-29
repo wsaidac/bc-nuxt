@@ -9,6 +9,7 @@
     "dbaeumer.vscode-eslint",
     "dzannotti.vscode-babel-coloring",
     "formulahendry.auto-close-tag",
-    "octref.vetur"
+    "octref.vetur",
+    "hookyqr.beautify"
   ]
 }

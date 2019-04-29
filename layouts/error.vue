@@ -19,7 +19,7 @@ import removeContextChangeLoader from '~/mixins/removeContextChangeLoader';
 export default {
   head() {
     return {
-      title: `${this.$t("error.title")} - ${this.$t("general.domain")}`,
+      title: `${this.$t('error.title')} - ${this.$t('general.domain')}`,
     };
   },
   mixins: [removeContextChangeLoader],
