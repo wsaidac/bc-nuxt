@@ -186,7 +186,7 @@ export default {
     background-color: #1000e3;
     border: 0;
     color: $black;
-    font-size: $font-size-h5;
+    font-size: $font-size-base;
     height: 100%;
     padding: 0 15px;
 
@@ -194,6 +194,7 @@ export default {
 
     .ui-icon-caret-white {
       color: white;
+      margin-left: 5px;
     }
 
     img {
@@ -204,7 +205,7 @@ export default {
 
   &__country-name {
     color: $white;
-    margin-right: 5px;
+    margin-right: 7px;
   }
 
   &__brand {

@@ -14,7 +14,7 @@
       >
         <nuxt-link
           :title="`${$t('footer.safely-order-with')} ${method.name}`"
-          :to="$contextPath ('payment-methods')"
+          :to="$contextPath(paymentMethodsLink)"
         >
           <img
             v-if="method.image"
@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import { UiIcon } from '~/components/ui';
 
 export default {
@@ -45,6 +46,13 @@ export default {
         return [];
       },
     },
+  },
+
+  computed: {
+    ...mapGetters('menus', ['footer']),
+    paymentMethodsLink() {
+      return this.footer['paymentMethods'].slug;
+    }
   },
 };
 </script>
