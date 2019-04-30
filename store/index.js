@@ -18,9 +18,8 @@ export default {
 
   actions: {
     nuxtServerInit({ dispatch, state }, { app, error, query }) {
-
       if (query.aid) {
-        app.$cookies.set('aid', query.aid, { path: '/'});
+        app.$cookies.set('aid', query.aid, { path: '/' });
       }
 
       return dispatch('context/changeContext', { app, error, locale: state.i18n.locale });

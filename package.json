@@ -6,7 +6,7 @@
     "build": "nuxt build",
     "start": "node app.js",
     "generate": "nuxt generate",
-    "eslint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "eslint": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "stylelint": "stylelint ./**/*.{vue,scss} --syntax scss --ignore-path .gitignore",
     "lint": "yarn run eslint && yarn run stylelint",
     "precommit": "yarn run lint",
