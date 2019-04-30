@@ -131,7 +131,6 @@
     "reset-password": "Zresetuj hasło",
     "reset_password": {
       "invalid": {
-        "message": "Please use a valid reset link to change your password.",
         "retry": "Poproś o nowe łącze do zresetowania hasła",
         "title": "Nieprawidłowe"
       },
