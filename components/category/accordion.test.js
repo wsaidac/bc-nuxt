@@ -12,9 +12,19 @@ describe('CategoryAccordion', () => {
       },
     ],
     usps: [
-      { image: { sourceUrl: '/clock.png' }, text: 'Order in Minutes', description: 'Simply choose the product and amount you need' },
-      { image: { sourceUrl: '/lock.png' }, text: 'Pay safely & securely' },
-      { image: { sourceUrl: '/envelope.png' }, text: 'Get your code instantly' },
+      {
+        image: { sourceUrl: '/clock.png' },
+        text: 'Order in Minutes',
+        description: 'Simply choose the product and amount you need',
+      },
+      {
+        image: { sourceUrl: '/lock.png' },
+        text: 'Pay safely & securely',
+      },
+      {
+        image: { sourceUrl: '/envelope.png' },
+        text: 'Get your code instantly',
+      },
     ],
   };
 
