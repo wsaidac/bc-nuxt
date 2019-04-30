@@ -2,16 +2,20 @@ import Cookies from 'universal-cookie';
 import locales from '~/config/i18n/locales';
 
 export default ({
-  app, req, redirect, route,
+  app, req, redirect, route, query,
 }) => {
   if (!process.server && route.path.substring(1).startsWith(app.i18n.locale)) return null;
 
   const urlPaths = route.path.split('/');
   const currentLocale = urlPaths[1];
+  const cookies = new Cookies(req.headers.cookie);
+
+  if (query.aid) {
+    cookies.set('aid', query.aid, { path: '/'});
+  }
 
   // if there is no locale slug in the url, redirect to default locale
   if (!currentLocale) {
-    const cookies = new Cookies(req.headers.cookie);
     const countryCookie = cookies.get('country');
     if (countryCookie) {
       return redirect(301, `/${countryCookie}/`);
