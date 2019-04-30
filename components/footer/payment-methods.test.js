@@ -14,8 +14,8 @@ describe('FooterPaymentMethods', () => {
     $mounted = mount(FooterPaymentMethods, {
       propsData: { paymentMethods },
       computed: {
-        paymentMethodsLink: 'payment-methods'
-      }
+        paymentMethodsLink: 'payment-methods',
+      },
     });
   });
 

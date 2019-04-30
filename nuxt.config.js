@@ -152,7 +152,12 @@ const conf = {
 
 if (process.env.PROXY_ACCOUNT) {
   conf.modules.push('@nuxtjs/proxy');
-  conf.proxy = [process.env.PROXY_ACCOUNT, process.env.PROXY_SESSIONS, process.env.PROXY_ASSETS, process.env.PROXY_ORDER];
+  conf.proxy = [
+    process.env.PROXY_ACCOUNT,
+    process.env.PROXY_SESSIONS,
+    process.env.PROXY_ASSETS,
+    process.env.PROXY_ORDER,
+  ];
 }
 
 module.exports = conf;
