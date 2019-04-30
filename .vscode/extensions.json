@@ -2,7 +2,6 @@
   "recommendations": [
     "EditorConfig.editorconfig",
     "shinnn.stylelint",
-    "abusaidm.html-snippets",
     "Tyriar.sort-lines",
     "formulahendry.auto-rename-tag",
     "PeterJausovec.vscode-docker",

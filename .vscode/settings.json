@@ -8,8 +8,7 @@
   "explorer.confirmDragAndDrop": false,
   "eslint.autoFixOnSave": true,
   "eslint.packageManager": "yarn",
-  "eslint.validate": [
-    {
+  "eslint.validate": [{
       "language": "vue",
       "autoFix": true
     },
@@ -30,5 +29,5 @@
       "wrap_attributes": "auto"
     }
   },
-  "vetur.format.defaultFormatter.js": "vscode-typescript"
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
 }
