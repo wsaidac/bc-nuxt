@@ -101,6 +101,7 @@ const conf = {
   },
   modules: [
     ['@nuxtjs/style-resources'],
+    'cookie-universal-nuxt',
     ['@nuxtjs/sentry'],
     ['~/modules/iconsWeb'],
     [
