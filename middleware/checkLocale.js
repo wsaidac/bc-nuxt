@@ -1,4 +1,3 @@
-import Cookies from 'universal-cookie';
 import locales from '~/config/i18n/locales';
 
 export default ({
@@ -11,8 +10,7 @@ export default ({
 
   // if there is no locale slug in the url, redirect to default locale
   if (!currentLocale) {
-    const cookies = new Cookies(req.headers.cookie);
-    const countryCookie = cookies.get('country');
+    const countryCookie = app.$cookies.get('country');
     if (countryCookie) {
       return redirect(301, `/${countryCookie}/`);
     }
@@ -23,7 +21,7 @@ export default ({
       const localeCode = cloudfrontLocale && cloudfrontLocale.code;
 
       if (localeCode) {
-        cookies.set('country', localeCode, { path: '/' });
+        app.$cookies.set('country', localeCode, { path: '/' });
         return redirect(301, `/${localeCode}/`);
       }
     }

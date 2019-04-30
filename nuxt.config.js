@@ -97,10 +97,11 @@ const conf = {
     },
   },
   router: {
-    middleware: ['auth', 'headers', 'context', 'usps'],
+    middleware: ['auth', 'headers', 'checkLocale', 'usps'],
   },
   modules: [
     ['@nuxtjs/style-resources'],
+    'cookie-universal-nuxt',
     ['@nuxtjs/sentry'],
     ['~/modules/iconsWeb'],
     [
