@@ -79,8 +79,8 @@ function transformProduct(product) {
     brand,
     // category: 'TODO category',
     kind,
-    id: product.id,
-    name: product.content.title,
+    id: product.rapidoProduct.id,
+    name: product.title,
     price: product.information.issueValue,
   }
 }

@@ -22,6 +22,9 @@ describe('ProductQuickbuy', () => {
       ],
     },
     id: 1,
+    rapidoProduct: {
+      id: 1,
+    },
     information: {
       issueValue: 5.0,
     },
