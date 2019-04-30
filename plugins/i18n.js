@@ -4,9 +4,11 @@ export default function ({ app, error }) {
     app.store.commit('async/setContextChange', true);
     app.store.dispatch('context/changeContext', { app, error, locale: newLocale });
 
-    // BlueConic Variables
+    // Declare BlueConic Variables
     const { hostname } = window.location;
-    // var locale = window.location.pathname.split('/')[1];
     bcChannelIdentifier = newLocale + '.' + hostname; /* eslint-disable-line */
+    // Send pageview event to Blueconic
+    const bcEvent = new Event('pageReadyEvent');
+    window.dispatchEvent(bcEvent);
   };
 }
