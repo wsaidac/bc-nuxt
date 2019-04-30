@@ -56,16 +56,6 @@ describe('ProductCard', () => {
     expect($mounted.find('.product-card').exists()).toBe(true);
   });
 
-  xit('should render a button with "Order now" in horizontal mode', () => {
-    localMount({ mode: 'horizontal' });
-    expect($mounted.find('button').text()).toBe('general.order-now');
-  });
-
-  xit('should render a button with "Order safely" in vertical mode', () => {
-    localMount({ mode: 'horizontal' });
-    expect($mounted.find('button').text()).toBe('general.order-now');
-  });
-
   it('should render an image', () => {
     localMount();
     expect($mounted.contains('img')).toBe(true);

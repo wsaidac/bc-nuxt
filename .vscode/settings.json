@@ -32,5 +32,5 @@
   //     "wrap_attributes": "auto"
   //   },
   // },
-  // "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
 }
