@@ -122,7 +122,6 @@
     "repeat-new-password": "Powtórz nowe hasło",
     "repeat-password": "Powtórz hasło",
     "request_change_email": {
-      "invalid": "This email address is already in use.",
       "invalid_credentials": "Wprowadź poprawne hasło."
     },
     "request_reset_password": {
