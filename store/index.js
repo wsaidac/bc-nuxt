@@ -1,3 +1,5 @@
+import Cookies from 'universal-cookie';
+
 export default {
   state() {
     return {};
@@ -17,7 +19,13 @@ export default {
   },
 
   actions: {
-    nuxtServerInit({ dispatch, state }, { app, error }) {
+    nuxtServerInit({ dispatch, state }, { app, error, query, req }) {
+
+      if (query.aid) {
+        const cookies = new Cookies(req.headers.cookie);
+        cookies.set('aid', query.aid, { path: '/'});
+      }
+
       return dispatch('context/changeContext', { app, error, locale: state.i18n.locale });
     },
   },
