@@ -122,6 +122,7 @@
     "repeat-new-password": "Powtórz nowe hasło",
     "repeat-password": "Powtórz hasło",
     "request_change_email": {
+      "invalid": "This email address is already in use.",
       "invalid_credentials": "Wprowadź poprawne hasło."
     },
     "request_reset_password": {
@@ -131,6 +132,7 @@
     "reset-password": "Zresetuj hasło",
     "reset_password": {
       "invalid": {
+        "message": "Please use a valid reset link to change your password.",
         "retry": "Poproś o nowe łącze do zresetowania hasła",
         "title": "Nieprawidłowe"
       },
