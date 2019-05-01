@@ -17,7 +17,8 @@ export default ({
 
     const cloudfrontViewerCountry = req.headers['cloudfront-viewer-country'];
     if (cloudfrontViewerCountry) {
-      const cloudfrontLocale = Object.values(locales).find(locale => locale.name.toLowerCase() === cloudfrontViewerCountry.toLowerCase());
+      const cloudfrontLocale = Object.values(locales)
+        .find(locale => locale.name.toLowerCase() === cloudfrontViewerCountry.toLowerCase());
       const localeCode = cloudfrontLocale && cloudfrontLocale.code;
 
       if (localeCode) {

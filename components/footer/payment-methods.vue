@@ -51,8 +51,8 @@ export default {
   computed: {
     ...mapGetters('menus', ['footer']),
     paymentMethodsLink() {
-      return this.footer['paymentMethods'].slug;
-    }
+      return this.footer.paymentMethods.slug;
+    },
   },
 };
 </script>
