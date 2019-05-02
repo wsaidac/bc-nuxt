@@ -59,5 +59,7 @@ export default {
     }
     return { user, error: null };
   },
+
+  middleware: ['usps'],
 };
 </script>

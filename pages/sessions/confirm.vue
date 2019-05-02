@@ -42,6 +42,7 @@
 </template>
 
 <script>
+/* prettier-ignore */
 import {
   UiButton, UiCol, UiIcon, UiMessage, UiRow,
 } from '~/components/ui';
@@ -70,5 +71,7 @@ export default {
     }
     return { user };
   },
+
+  middleware: ['usps'],
 };
 </script>

@@ -19,6 +19,7 @@
 import SidebarMain from '~/components/sidebar/main';
 import OrdersPagination from '~/components/orders/pagination';
 
+/* prettier-ignore */
 import {
   UiCol, UiRow, UiPanel, UiFormSection,
 } from '~/components/ui';
@@ -40,6 +41,8 @@ export default {
       orders: [],
     };
   },
+
+  middleware: ['auth', 'usps'],
 
   async asyncData({ app }) {
     const {

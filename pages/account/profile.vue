@@ -80,7 +80,6 @@
 </template>
 
 <script>
-/* eslint-disable */
 import SidebarMain from '~/components/sidebar/main';
 import FormChangeEmail from '~/components/form/change-email';
 import FormChangePassword from '~/components/form/change-password';
@@ -88,7 +87,14 @@ import FormPersonalDetails from '~/components/form/personal-details';
 import FormAddressDetails from '~/components/form/address-details';
 
 import {
-  UiAlert, UiButton, UiCol, UiCollapse, UiCollapseItem, UiFormSection, UiPanel, UiRow,
+  UiAlert,
+  UiButton,
+  UiCol,
+  UiCollapse,
+  UiCollapseItem,
+  UiFormSection,
+  UiPanel,
+  UiRow,
 } from '~/components/ui';
 
 import { mapGetters } from 'vuex';
@@ -108,7 +114,12 @@ function pickPersonalDetails(user) {
 }
 
 function pickAddressDetails(user) {
-  return pick(user.currentPersonalData, ['address', 'houseNumber', 'zipCode', 'city']);
+  return pick(user.currentPersonalData, [
+    'address',
+    'houseNumber',
+    'zipCode',
+    'city',
+  ]);
 }
 
 export default {
@@ -149,12 +160,16 @@ export default {
   },
 
   async asyncData({ app }) {
-    const { currentUser: { user }, } = await app.$q('currentPersonalData');
+    const {
+      currentUser: { user },
+    } = await app.$q('currentPersonalData');
     return {
       personalDetails: pickPersonalDetails(user),
       addressDetails: pickAddressDetails(user),
     };
   },
+
+  middleware: ['auth', 'usps'],
 
   methods: {
     showMessage(message) {

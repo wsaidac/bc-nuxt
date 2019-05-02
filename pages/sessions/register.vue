@@ -51,7 +51,13 @@
 <script>
 import FormSignup from '~/components/form/signup';
 import {
-  UiAlert, UiButton, UiCol, UiMessage, UiIcon, UiPanel, UiRow,
+  UiAlert,
+  UiButton,
+  UiCol,
+  UiMessage,
+  UiIcon,
+  UiPanel,
+  UiRow,
 } from '~/components/ui.js';
 
 export default {
@@ -90,6 +96,8 @@ export default {
       this.signedUp = false;
     },
   },
+
+  middleware: ['usps'],
 };
 </script>
 

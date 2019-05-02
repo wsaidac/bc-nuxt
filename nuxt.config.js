@@ -97,7 +97,7 @@ const conf = {
     },
   },
   router: {
-    middleware: ['auth', 'headers', 'checkLocale', 'usps'],
+    middleware: ['checkLocale'],
   },
   modules: [
     ['@nuxtjs/style-resources'],
