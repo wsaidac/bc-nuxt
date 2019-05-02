@@ -56,7 +56,13 @@
 <script>
 import FormResetPassword from '~/components/form/reset-password';
 import {
-  UiAlert, UiButton, UiCol, UiIcon, UiMessage, UiPanel, UiRow,
+  UiAlert,
+  UiButton,
+  UiCol,
+  UiIcon,
+  UiMessage,
+  UiPanel,
+  UiRow,
 } from '~/components/ui.js';
 
 export default {
@@ -87,6 +93,8 @@ export default {
       invalid: !query.token || !query.user_id,
     };
   },
+
+  middleware: ['usps'],
 
   methods: {
     onError(error) {

@@ -47,7 +47,11 @@ export default {
         },
       ],
       link: [
-        { rel: 'alternate', href: `https://${process.env.DOMAIN}${this.$route.path}`, hreflang: uppercaseCountryInLocale(locale) },
+        {
+          rel: 'alternate',
+          href: `https://${process.env.DOMAIN}${this.$route.path}`,
+          hreflang: uppercaseCountryInLocale(locale),
+        },
       ],
     };
   },
@@ -92,6 +96,7 @@ export default {
     }
   },
 
+  middleware: 'cdnCacheHeader',
 
   mounted() {
     window.scrollTo(0, 0);

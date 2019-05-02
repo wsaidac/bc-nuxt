@@ -47,7 +47,13 @@
 <script>
 import FormRequestReset from '~/components/form/request-reset';
 import {
-  UiAlert, UiButton, UiCol, UiIcon, UiMessage, UiPanel, UiRow,
+  UiAlert,
+  UiButton,
+  UiCol,
+  UiIcon,
+  UiMessage,
+  UiPanel,
+  UiRow,
 } from '~/components/ui.js';
 
 export default {
@@ -86,6 +92,8 @@ export default {
       this.requested = false;
     },
   },
+
+  middleware: ['usps'],
 };
 </script>
 

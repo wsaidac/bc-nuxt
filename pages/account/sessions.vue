@@ -37,7 +37,11 @@
 import SidebarMain from '~/components/sidebar/main';
 import SessionItem from '~/components/sessions/session-item';
 import {
-  UiCol, UiFormSection, UiButton, UiRow, UiPanel,
+  UiCol,
+  UiFormSection,
+  UiButton,
+  UiRow,
+  UiPanel,
 } from '~/components/ui';
 
 export default {
@@ -58,6 +62,9 @@ export default {
       activeSessions,
     };
   },
+
+  middleware: ['auth', 'usps'],
+
   methods: {
     async refresh() {
       const { activeSessions } = await this.$q('activeSessions');
