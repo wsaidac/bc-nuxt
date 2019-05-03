@@ -44,6 +44,7 @@
     "nuxt-i18n": "^5.8.0",
     "sitemap": "^2.1.0",
     "typeface-nunito-sans": "^0.0.54",
+    "universal-cookie": "^3.1.0",
     "vue": "~2.6.6",
     "vue-moment": "^4.0.0",
     "vue-mq": "^1.0.1",
