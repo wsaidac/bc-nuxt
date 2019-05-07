@@ -1,2 +1,205 @@
 {
+  "account": {
+    "account-confirmed": "Conta confirmada",
+    "account-created": "Parabéns, a sua conta Rapido foi criada com sucesso",
+    "account-email-address": "Endereço de e-mail da conta",
+    "active-now": "Ativa agora",
+    "address-details": "A sua morada",
+    "agree-to-terms": "Ao criar uma conta, concorda com os <a href='/en-us/general-conditions'>Termos de Utilização</a> e com a <a href='/en-us/privacy'>Política de Privacidade da Rapido</a>.\t",
+    "all-questions": "Todas as questões",
+    "birthdate": "Data de nascimento",
+    "change-email": "Alterar e-mail",
+    "change-email-requested": "Enviámos-lhe um e-mail para confirmar a alteração do seu endereço de e-mail",
+    "change-password": "Alterar palavra-passe",
+    "change-password-error": "Não foi possível atualizar a sua palavra-passe",
+    "change-password-submit": "A sua palavra-passe está atualizada",
+    "check-your-email": "Consulte o seu e-mail. Acabámos de lhe enviar as instruções para repor a sua palavra-passe. Se não receber um e-mail nos próximos 30 minutos, tente novamente.",
+    "city": "Cidade",
+    "confirm_email": {
+      "already_confirmed": "A sua conta já está confirmada.",
+      "expired_token": "O seu link de confirmação expirou.",
+      "invalid_token": "O seu link de confirmação é inválido."
+    },
+    "country_select": {
+      "country_names": {
+        "Austria": "Áustria",
+        "Belgium": "Bélgica",
+        "United States": "Estados Unidos"
+      },
+      "description": "Ao selecionar o seu país, garantirá os <strong>produtos e métodos de pagamento adequados para si</strong>. Certifique-se de que o país que selecionou corresponde ao seu e à(s) conta(s) em que está a planear adquirir o produto.",
+      "title": "Selecione o seu país"
+    },
+    "create-new-account": "Criar nova conta",
+    "current-password": "Palavra-passe atual",
+    "description-birthdate": "Introduza a sua data de nascimento",
+    "email-address": "Endereço de e-mail",
+    "email-changed": "Endereço de e-mail alterado",
+    "email-sent-to": "E-mail enviado para: {email}",
+    "faq": {
+      "faq-all": "Todas as perguntas frequentes",
+      "faq-code": "Como utilizar um código",
+      "faq-delivery": "Entrega do código",
+      "faq-other": "Outras questões",
+      "faq-payment": "Como pagar"
+    },
+    "female": "Feminino",
+    "first-name": "Primeiro nome",
+    "footer": {
+      "need-help": "Precisa de ajuda? Consulte a nossa secção de <a>perguntas frequentes</a>.",
+      "safe-methods": "Pagamentos <strong>seguros</strong> com:"
+    },
+    "forgot-password": "Não me lembro da minha palavra-passe",
+    "format": "dd/MM/aaaa",
+    "gender": "Sexo",
+    "help-with-account": "Ajuda com a conta",
+    "house-number": "Número fixo",
+    "i-need-help": "Necessito de ajuda",
+    "i-prefer-not-to-say": "Outro",
+    "invalid": "Não foi possível confirmar",
+    "last-name": "Apelido",
+    "login": {
+      "invalid_credentials": "O endereço de e-mail e/ou palavra-passe que introduziu estão incorretos.",
+      "title": "Iniciar sessão",
+      "unconfirmed_email": "O endereço de e-mail não está confirmado",
+      "unknown_user": "O endereço de e-mail não possui uma conta associada."
+    },
+    "loginError": {
+      "title": "Não foi possível iniciar a sessão"
+    },
+    "logout": "Terminar sessão",
+    "logout-everywhere": "Terminar sessão em todos os dispositivos",
+    "lost-password": "Não se lembra da sua palavra-passe?",
+    "lost-password-help": "Perdi a minha palavra-passe",
+    "male": "Masculino",
+    "my-account": "A minha conta",
+    "name": "Nome",
+    "new-email-address": "Novo endereço de e-mail",
+    "new-password": "Nova palavra-passe",
+    "orders": {
+      "cancelled": "cancelado",
+      "close": "Fechar",
+      "close-details": "Fechar detalhes",
+      "description-inprogress": "Ainda não recebeu a sua encomenda 12 horas depois de ter efetuado o pedido? <b>Entre em <a href='/us/contact'>contacto connosco</a> para o/a ajudarmos!</b>\t",
+      "general-terms-and-conditions": "Termos e condições gerais",
+      "more-details": "Mais detalhes",
+      "order-history": "Histórico de encomendas",
+      "productstatus": "Estado do produto",
+      "purchased-on": "Comprado em",
+      "redeem-url": "Obter URL",
+      "refunded": "reembolsado",
+      "service-costs": "Custos do serviço",
+      "shipped": "expedido",
+      "show": "Mostrar",
+      "status": "Estado",
+      "unpaid": "por pagar",
+      "your-orders": "As suas encomendas",
+      "your-top-up-code": "O seu código digital"
+    },
+    "password": "Palavra-passe",
+    "password-reset-sent": "Nova palavra-passe enviada para o e-mail",
+    "personal-data-submit": "Perfil guardado",
+    "personal-details": "Dados pessoais",
+    "phone-number": "Código do país (EUA: +1)/número de telefone",
+    "pickADay": "Selecionar data de nascimento",
+    "please-enter-password-for-confirmation": "Introduza a sua palavra-passe para confirmação",
+    "prefix": "Prefixo",
+    "quick-signin": "Podemos ajudá-lo a reiniciar a sessão na sua conta num instante.",
+    "repeat-email-address": "perguntas frequentes",
+    "repeat-new-password": "Repetir a nova palavra-passe",
+    "repeat-password": "Repetir palavra-passe",
+    "request_change_email": {
+      "invalid": "Este endereço de e-mail já está a ser utilizado.",
+      "invalid_credentials": "Introduza a palavra-passe correta."
+    },
+    "request_reset_password": {
+      "error_title": "A reposição da palavra-passe falhou",
+      "unknown_user": "Não foi encontrada qualquer conta associada a este endereço de e-mail."
+    },
+    "reset-password": "Repor palavra-passe",
+    "reset_password": {
+      "invalid": {
+        "message": "Utilize um link de reposição válido para alterar a sua palavra-passe.",
+        "retry": "Solicitar um novo link de reposição",
+        "title": "Inválido"
+      },
+      "reset": "Repor palavra-passe",
+      "resetError": {
+        "title": "Não foi possível repor a palavra-passe"
+      },
+      "reset_password": {
+        "invalid_token": "O link para repor a palavra-passe expirou. Preencha o formulário para repor a palavra-passe esquecida."
+      },
+      "submit": {
+        "message": "A sua palavra-passe está agora atualizada e a sua sessão iniciada.",
+        "profile": "Ir até ao perfil",
+        "title": "Palavra-passe alterada"
+      }
+    },
+    "retry-reset": "Utilizei um endereço de e-mail errado. Desejo tentar novamente",
+    "save": "Guardar",
+    "secure-signup": "Criar uma conta Rapido",
+    "sessions-management": "Atividade da conta",
+    "signupError": {
+      "title": "Não foi possível efetuar o registo"
+    },
+    "try-again": "Endereço de e-mail errado? Crie uma nova conta aqui",
+    "validation-send": "Para verificar a sua conta Rapido, utilize o link no e-mail de validação de conta que acabámos de enviar para {email}. Até breve!",
+    "validations": {
+      "maxLength": "Máximo de {min} caracteres",
+      "minLength": "Mínimo de {min} caracteres",
+      "required": "Campo obrigatório",
+      "sameAs": "Deve ser igual",
+      "uniqueness": "account.validations.uniqueness"
+    },
+    "where-youre-logged-in": "Os dispositivos que utilizou para iniciar sessão na sua conta",
+    "your-account-is-confirmed": "A sua conta, com o endereço de e-mail {email}, foi verificada. Pode agora iniciar sessão na sua conta.",
+    "your-email-is-changed": "O seu endereço de e-mail foi atualizado para {email}. Já pode iniciar a sessão na sua conta.",
+    "your-login-details": "Os seus dados de início de sessão"
+  },
+  "country_select": {
+    "button_name": "Confirmar",
+    "country_names": {
+      "Austria": "Áustria",
+      "Belgium": "Bélgica",
+      "United States": "Estados Unidos"
+    },
+    "description": "Ao selecionar o seu país, garantirá os <strong>produtos e métodos de pagamento adequados para si</strong>. Certifique-se de que o país que selecionou corresponde ao seu e à(s) conta(s) em que está a planear adquirir o produto.",
+    "title": "Selecione o seu país"
+  },
+  "error": {
+    "button_name": "Página Inicial Rapido",
+    "description": "Ups! Isto é constrangedor, mas não é possível encontrar esta página neste momento. Pode tentar novamente mais tarde?",
+    "error_text": "Lamentamos, mas a página que pretende visualizar já não existe",
+    "help": "Clique no botão seguinte para regressar à página inicial ou selecione o seu país no menu no topo da página.",
+    "title": "Página não encontrada"
+  },
+  "footer": {
+    "safely": "Segurança"
+  },
+  "general": {
+    "critical_error": "Ocorreu um erro. Recarregue a página para tentar novamente.",
+    "help": "Ajuda",
+    "home-text": "Página Inicial",
+    "label": "Rapido",
+    "loading": "A carregar",
+    "order-safely": "Encomende em segurança"
+  },
+  "home": {
+    "featured-products": "Produtos em destaque"
+  },
+  "internal-links": {
+    "about-us": "Sobre nós",
+    "general-conditions": "Condições",
+    "privacy-policy": "Política de Privacidade"
+  },
+  "payment-methods": {
+    "checkout-options": "Em Rapido.com, poderá finalizar a compra com as seguintes opções de pagamento de confiança. As opções de pagamento serão descritas a seguir.\t",
+    "credit-or-debit-card": "Cartão de débito/crédito",
+    "paypal": "Paypal",
+    "paypal_text_1": "Pode pagar com PayPal em Rapido.com. Após selecionar esta opção de pagamento, inicia a sessão na sua conta PayPal e confirma o pagamento. Em seguida, a transação é processada.\t",
+    "paypal_text_2": "Após receção do pagamento, o código do voucher de carregamento é enviado imediatamente.",
+    "shipping": "Expedição",
+    "visa_and_mastercard_text_1": "Em Rapido.com, pode pagar com cartão de crédito e de débito (Delta e Electron) VISA e Mastecard. Na página de finalização da compra, selecione pagamento através de cartão de crédito. Em seguida, introduza os dados do seu cartão de crédito, incluindo o titular do cartão, o número do cartão, data de validade e o código CVV. Depois, confirme o pagamento.",
+    "visa_and_mastercard_text_2": "Após receção do pagamento, o código de carregamento é enviado imediatamente."
+  }
 }

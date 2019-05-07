@@ -71,8 +71,7 @@ import SeoBlock from '~/components/seo/block';
 import SeoBreadcrumbs from '~/components/seo/breadcrumbs';
 import { UiCol, UiRow } from '~/components/ui';
 
-import { impressionTransformPop } from '~/plugins/gtm.js';
-
+import { impressionTransformPop, productViewTransformPop } from '~/plugins/gtm.js';
 
 export default {
   components: {
@@ -159,6 +158,7 @@ export default {
   mounted() {
     this.$store.commit('shared/setPage', 'category');
     this.$track(impressionTransformPop(this.post));
+    this.$track(productViewTransformPop(this.post));
   },
 };
 </script>

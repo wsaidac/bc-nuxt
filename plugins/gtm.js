@@ -102,6 +102,23 @@ export const impressionTransformPop = (post) => {
   };
 };
 
+export const productViewTransformPop = (post) => {
+  const mappedProducts = post.products.nodes.map((product, i) => {
+    return {
+      ...transformProduct(product),
+      position: i + 1,  // extra
+    };
+  });
+  return {
+    event: 'productView',
+    ecommerce: {
+      detail: {
+        products: mappedProducts,
+      },
+    },
+  };
+};
+
 // 2, Quick buy
 export const impressionTransformQuickbuy = product => {
   return {
@@ -117,6 +134,21 @@ export const impressionTransformQuickbuy = product => {
     },
   };
 };
+
+export const productViewTransformQuickbuy = product => {
+  return {
+    event: 'productView',
+    ecommerce: {
+      detail: {
+        products: [
+          {
+            ...transformProduct(product),
+          },
+        ],
+      },
+    },
+  };
+}
 
 // 3, Measuring Product Clicks
 export const measureProductClick = ({ page, product }) => {
