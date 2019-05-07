@@ -1,6 +1,6 @@
 <template>
   <a
-    v-if="isLoaded && showLogin"
+    v-if="isLoaded"
     class="header-login"
     :href="$contextPath(to)"
     :title="title"
@@ -23,10 +23,6 @@ export default {
     },
     text() {
       return this.currentUser ? this.$t('header.my-account') : this.$t('header.login');
-    },
-    showLogin() {
-      const { locale } = this.$i18n;
-      return locale === 'da-dk' || locale === 'pl-pl';
     },
   },
 };
