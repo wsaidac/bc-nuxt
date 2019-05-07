@@ -26,7 +26,7 @@ import ProductCard from '~/components/product/card';
 import ProductVariants from '~/components/product/variants';
 import SharedLoader from '~/components/shared/loader';
 
-import { impressionTransformQuickbuy } from '~/plugins/gtm';
+import { impressionTransformQuickbuy, productViewTransformQuickbuy } from '~/plugins/gtm';
 
 export default {
   name: 'ProductQuickbuy',
@@ -61,6 +61,7 @@ export default {
 
   mounted() {
     this.$track(impressionTransformQuickbuy(this.product));
+    this.$track(productViewTransformQuickbuy(this.product));
   },
 };
 </script>
