@@ -8,8 +8,10 @@
     "agree-to-terms": "Al crear una cuenta, aceptas las <a href='/en-us/general-conditions'>Condiciones de uso</a> y la <a href='/en-us/privacy'>Política de privacidad</a> de Rapido.\t",
     "all-questions": "Todas las preguntas",
     "birthdate": "Fecha de nacimiento",
+    "cancel": "Cancelar",
     "change-email": "Cambiar correo electrónico",
     "change-email-requested": "Te hemos enviado un correo electrónico para confirmar el cambio de tu dirección de correo electrónico",
+    "change-password": "Cambiar contraseña",
     "change-password-error": "No se ha podido actualizar tu contraseña",
     "change-password-submit": "Tu contraseña está actualizada",
     "check-your-email": "Revisa tu correo electrónico. Acabamos de enviarte instrucciones para restablecer tu contraseña. Si no recibes un correo electrónico en 30 minutos, vuelve a intentarlo.",
@@ -19,7 +21,9 @@
       "expired_token": "Tu enlace de confirmación ha expirado.",
       "invalid_token": "Tu enlace de confirmación no es válido."
     },
+    "continue": "Continuar",
     "country_select": {
+      "button_name": "Seguir comprando",
       "country_names": {
         "Austria": "Austria",
         "Belgium": "Bélgica",
@@ -34,6 +38,7 @@
     "email-address": "Dirección de correo electrónico",
     "email-changed": "Dirección de correo electrónico cambiada",
     "email-sent-to": "Correo electrónico enviado a: {email}",
+    "enter-email-address": "Introduza o seu endereço de e-mail.",
     "faq": {
       "faq-all": "Todas las preguntas frecuentes",
       "faq-code": "Cómo usar un código",
@@ -50,12 +55,14 @@
     "forgot-password": "Ayuda, olvidé mi contraseña",
     "format": "dd/MM/aaaa",
     "gender": "Sexo",
+    "go-to-login": "Ir a formulario de acceso",
     "help-with-account": "Ayuda con la cuenta",
     "house-number": "Número de casa",
     "i-need-help": "Necesito ayuda",
     "i-prefer-not-to-say": "Otro",
     "invalid": "No se ha podido realizar la confirmación",
     "last-name": "Apellido",
+    "login-history": "Historial de acceso a cuenta",
     "login": {
       "invalid_credentials": "La dirección de correo electrónico o la contraseña que has introducido no son válidas.",
       "title": "Iniciar sesión",
@@ -82,14 +89,21 @@
       "general-terms-and-conditions": "Términos y condiciones generales",
       "more-details": "Más información",
       "order-history": "Historial de pedidos",
+      "order-id": "Introduce tu dirección de correo electrónico.",
+      "ordernumber": "Número de pedido",
+      "paid": "pago",
+      "payment-method": "Método de pago",
+      "price": "Precio",
       "productstatus": "Estado del producto",
       "purchased-on": "Comprado el",
       "redeem-url": "Canjear URL",
       "refunded": "reembolsado",
+      "serial-number": "Número de serie",
       "service-costs": "Costos de servicio",
       "shipped": "enviado",
       "show": "Mostrar",
       "status": "Estado",
+      "total": "Total",
       "unpaid": "no pagado",
       "your-orders": "Tus pedidos",
       "your-top-up-code": "Tu código digital"
@@ -101,6 +115,7 @@
     "phone-number": "Código de país (EE. UU.: +1) / Número de teléfono",
     "pickADay": "Seleccionar fecha de nacimiento",
     "please-enter-password-for-confirmation": "Ingresa tu contraseña para confirmar",
+    "postal-code": "C.P.",
     "prefix": "Prefijo",
     "quick-signin": "En un instante podrás volver a ingresar a tu cuenta.",
     "repeat-email-address": "preguntas frecuentes",
@@ -141,6 +156,7 @@
     "signupError": {
       "title": "No se ha podido realizar el registro"
     },
+    "street": "Dirección",
     "try-again": "¿Dirección de correo electrónico incorrecta? Crear una nueva cuenta aquí",
     "validation-send": "Para verificar tu cuenta Rapido, usa el enlace para validación de cuenta que figura en el correo electrónico que acabamos de enviarte a {email}. ¡Hasta pronto!",
     "validations": {
@@ -173,34 +189,57 @@
     "title": "Página no encontrada"
   },
   "footer": {
-    "safely": "De forma segura"
+    "customer-care": "Atención al cliente",
+    "order-with": "pide tu producto con",
+    "privacy-statement": "Declaración de privacidad",
+    "quote": "Rapido.com es parte de CG | Millones de clientes satisfechos |\t",
+    "safely": "De forma segura",
+    "safely-order-with": "Haz tu pedido de forma segura con"
   },
   "general": {
     "critical_error": "Ha habido un problema. Recarga la página e inténtalo de nuevo.",
     "domain": "Rapido.com",
+    "help": "Ayuda",
     "home-text": "Inicio",
+    "label": "Rapido",
     "loading": "Cargando",
-    "order-safely": "Haz tu pedido de forma segura"
+    "look-at-faqs": "Consulta las Preguntas frecuentes",
+    "need-some-help": "¿Necesitas ayuda?",
+    "order-now": "Haz tu pedido ahora",
+    "order-safely": "Haz tu pedido de forma segura",
+    "show-less": "Mostrar menos",
+    "show-more": "Mostrar más"
   },
   "header": {
-    "profile": "perfil"
+    "login": "Iniciar sesión",
+    "menu": "Menú",
+    "my-account": "Mi cuenta"
   },
   "home": {
-    "featured-products": "Productos destacados"
+    "featured-products": "Productos destacados",
+    "lets-speed-it-up": "Hagámoslo más rápido",
+    "see-all-denominations": "Ver todas las denominaciones"
   },
   "internal-links": {
     "about-us": "Acerca de nosotros",
+    "cookies": "Cookies",
     "general-conditions": "Condiciones",
-    "privacy-policy": "Política de privacidad"
+    "payment-methods": "Opciones de pago",
+    "privacy-policy": "Política de privacidad",
+    "terms-of-use": "Términos de uso"
   },
   "payment-methods": {
     "checkout-options": "En Rapido.com puedes pagar con las siguientes opciones de pago seguro. A continuación se describen todas las opciones de pago.\t",
     "credit-or-debit-card": "Tarjeta de crédito/débito",
+    "payment-options": "Opciones de pago",
     "paypal": "Paypal",
     "paypal_text_1": "En Rapido.com puedes pagar con PayPal. Después de seleccionar esta opción de pago, accede a tu cuenta PayPal y confirma el pago. A continuación, se tramitará la transacción.",
     "paypal_text_2": "Al recibir el pago, el código del vale de recarga se envía inmediatamente.",
     "shipping": "Envíos",
     "visa_and_mastercard_text_1": "En Rapido.com puedes pagar con tarjeta de crédito VISA, tarjeta de débito VISA (Delta y Electron) y MasterCard. Al momento de pagar, selecciona el pago con tarjeta de crédito. A continuación, introduce los datos de tu tarjeta de crédito, incluidos el titular de la tarjeta, el número de la tarjeta, la fecha de caducidad y el código CVV. Después, confirma el pago.",
     "visa_and_mastercard_text_2": "Al recibir el pago, el código de recarga se envía inmediatamente."
+  },
+  "usps": {
+    "title": "Ventajas de {dominio}"
   }
 }

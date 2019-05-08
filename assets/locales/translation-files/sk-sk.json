@@ -21,6 +21,7 @@
       "invalid_token": "Prepojenie na potvrdenie nie je platné."
     },
     "country_select": {
+      "button_name": "Pokračovať v nákupe",
       "country_names": {
         "Austria": "Rakúsko",
         "Belgium": "Belgicko",
@@ -35,6 +36,7 @@
     "email-address": "E-mailová adresa",
     "email-changed": "E-mailová adresa sa zmenila",
     "email-sent-to": "E-mail sme odoslali na adresu: {email}",
+    "enter-email-address": "Zadajte e-mailovú adresu.",
     "faq": {
       "faq-all": "Všetky najčastejšie otázky",
       "faq-code": "Ako použiť kód",
@@ -51,6 +53,7 @@
     "forgot-password": "Pomôžte mi, nepamätám si heslo",
     "format": "dd. MM. rrrr",
     "gender": "Pohlavie",
+    "go-to-login": "Prejsť na prihlasovací formulár",
     "help-with-account": "Pomoc s účtom",
     "house-number": "Číslo domu",
     "i-need-help": "Potrebujem pomoc",
@@ -83,10 +86,15 @@
       "general-terms-and-conditions": "Všeobecné podmienky",
       "more-details": "Ďalšie podrobnosti",
       "order-history": "História objednávok",
+      "order-id": "ID objednávky",
+      "paid": "zaplatené",
+      "payment-method": "Možnosť platby",
+      "price": "Cena",
       "productstatus": "Stav produktu",
       "purchased-on": "Dátum nákupu",
       "redeem-url": "URL adresa na uplatnenie",
       "refunded": "vrátené peniaze",
+      "serial-number": "Sériové číslo",
       "service-costs": "Náklady na službu",
       "shipped": "odoslané",
       "show": "Zobraziť",
@@ -142,6 +150,7 @@
     "signupError": {
       "title": "Registrácia sa nepodarila"
     },
+    "street": "Adresa",
     "try-again": "Nesprávna e-mailová adresa? Vytvorte nový účet tu",
     "validation-send": "Ak chcete overiť účet v službe Rapido, použite prepojenie v e-maile na overenie účtu, ktorý sme práve odoslali na adresu {email}. Dovidenia!\t",
     "validations": {
@@ -173,6 +182,8 @@
     "title": "Stránka sa nenašla"
   },
   "footer": {
+    "order-with": "objednávka prostredníctvom",
+    "quote": "Rapido.com je súčasťou skupiny CG | Milióny spokojných zákazníkov |",
     "safely": "Bezpečne"
   },
   "general": {
@@ -182,19 +193,32 @@
     "home-text": "Domov",
     "label": "Rapido",
     "loading": "Načítavanie",
-    "order-safely": "Objednávajte bezpečne"
+    "look-at-faqs": "Prezrite si najčastejšie otázky",
+    "need-some-help": "Potrebujete pomoc?",
+    "order-now": "Objednať teraz",
+    "order-safely": "Objednávajte bezpečne",
+    "show-more": "Zobraziť viac"
+  },
+  "header": {
+    "main-nav": "Hlavná ponuka",
+    "profile": "profil"
   },
   "home": {
-    "featured-products": "Vyberáme z produktov"
+    "featured-products": "Vyberáme z produktov",
+    "lets-speed-it-up": "Urýchlime to",
+    "see-all-denominations": "Zobraziť všetky označenia"
   },
   "internal-links": {
     "about-us": "O nás",
+    "cookies": "Súbory cookie",
     "general-conditions": "Podmienky",
-    "privacy-policy": "Zásady ochrany osobných údajov"
+    "privacy-policy": "Zásady ochrany osobných údajov",
+    "terms-of-use": "Podmienky používania"
   },
   "payment-methods": {
     "checkout-options": "Na stránke Rapido.com môžete platbu uskutočniť pomocou nasledujúcich dôveryhodných možností platby. Opis každej z možností platby uvádzame nižšie.",
     "credit-or-debit-card": "Kreditná/debetná karta",
+    "payment-options": "Možnosti platby",
     "paypal": "PayPal",
     "paypal_text_1": "Na stránkach Rapido.com môžete zaplatiť pomocou služby PayPal. Po výbere tejto možnosti platby sa môžete prihlásiť do svojho účtu v službe PayPal a potvrdiť platbu. Následne sa transakcia spracuje.\t",
     "paypal_text_2": "Po prijatí platby okamžite odošleme kód poukazu na dobíjanie.",

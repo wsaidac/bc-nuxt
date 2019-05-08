@@ -185,6 +185,7 @@
     "button_name": "Rapido-forside",
     "description": "Ups! Det var pinligt. Vi kan ikke finde denne side lige nu. Prøv igen senere.",
     "error_text": "Det virker til, at denne side ikke længere eksisterer.",
+    "help": "Klik på knappen nedenfor for at vende tilbage til forsiden, eller vælg dit land fra den øverste menu.",
     "title": "Siden blev ikke fundet"
   },
   "footer": {
