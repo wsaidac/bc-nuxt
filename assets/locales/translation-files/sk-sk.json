@@ -8,6 +8,7 @@
     "agree-to-terms": "ytvorením účtu vyjadrujete svoj súhlas s <a href='/en-us/general-conditions'>podmienkami používania</a> a <a href='/en-us/privacy'>pravidlami ochrany osobných údajov</a> služby Rapido.",
     "all-questions": "Všetky otázky",
     "birthdate": "Dátum narodenia",
+    "cancel": "Zrušiť",
     "change-email": "Zmeniť e-mail",
     "change-email-requested": "Odoslali sme vám e-mail, aby sme mohli potvrdiť zmenu vašej e-mailovej adresy.",
     "change-password": "Zmeniť heslo",
@@ -20,6 +21,7 @@
       "expired_token": "Platnosť prepojenia na potvrdenie vypršala.",
       "invalid_token": "Prepojenie na potvrdenie nie je platné."
     },
+    "continue": "Pokračovať",
     "country_select": {
       "button_name": "Pokračovať v nákupe",
       "country_names": {
@@ -60,6 +62,7 @@
     "i-prefer-not-to-say": "Iné",
     "invalid": "Potvrdzovanie zlyhalo",
     "last-name": "Priezvisko",
+    "login-history": "História prihlásení do účtu",
     "login": {
       "invalid_credentials": "E-mailová adresa alebo heslo, ktoré ste zadali, nie je správne.",
       "title": "Prihlásenie",
@@ -87,6 +90,7 @@
       "more-details": "Ďalšie podrobnosti",
       "order-history": "História objednávok",
       "order-id": "ID objednávky",
+      "ordernumber": "Číslo objednávky",
       "paid": "zaplatené",
       "payment-method": "Možnosť platby",
       "price": "Cena",
@@ -99,6 +103,7 @@
       "shipped": "odoslané",
       "show": "Zobraziť",
       "status": "Stav",
+      "total": "Celkom",
       "unpaid": "nezaplatené",
       "your-orders": "Vaše objednávky",
       "your-top-up-code": "Váš digitálny kód"
@@ -110,6 +115,7 @@
     "phone-number": "Kód krajiny (Spojené štáty: +1) / Telefónne číslo",
     "pickADay": "Vyberte dátum narodenia",
     "please-enter-password-for-confirmation": "Zadajte heslo na potvrdenie",
+    "postal-code": "PSČ",
     "prefix": "Predvoľba",
     "quick-signin": "Pomôžeme vám, aby ste sa mohli čo najskôr opäť prihlásiť.",
     "repeat-email-address": "najčastejšie otázky",
@@ -182,7 +188,9 @@
     "title": "Stránka sa nenašla"
   },
   "footer": {
+    "customer-care": "Starostlivosť o zákazníka",
     "order-with": "objednávka prostredníctvom",
+    "privacy-statement": "Vyhlásenie o ochrane osobných údajov",
     "quote": "Rapido.com je súčasťou skupiny CG | Milióny spokojných zákazníkov |",
     "safely": "Bezpečne"
   },
@@ -197,9 +205,11 @@
     "need-some-help": "Potrebujete pomoc?",
     "order-now": "Objednať teraz",
     "order-safely": "Objednávajte bezpečne",
+    "show-less": "Zobraziť menej",
     "show-more": "Zobraziť viac"
   },
   "header": {
+    "login": "Prihlásenie",
     "main-nav": "Hlavná ponuka",
     "profile": "profil"
   },
@@ -212,6 +222,7 @@
     "about-us": "O nás",
     "cookies": "Súbory cookie",
     "general-conditions": "Podmienky",
+    "payment-methods": "Možnosti platby",
     "privacy-policy": "Zásady ochrany osobných údajov",
     "terms-of-use": "Podmienky používania"
   },
@@ -225,5 +236,8 @@
     "shipping": "Doručenie",
     "visa_and_mastercard_text_1": "Na stránke Rapido.com môžete platiť prostredníctvom kreditnej karty VISA, debetnej karty VISA (Delta a Electron) a karty MasterCard. Pri platbe vyberte možnosť platby prostredníctvom platobnej karty. Následne zadajte údaje o platobnej karte vrátane mena držiteľa, čísla karty, dátumu vypršania platnosti a bezpečnostného kódu CVV. Potom potvrďte platbu.",
     "visa_and_mastercard_text_2": "Po prijatí platby okamžite odošleme kód na dobíjanie."
+  },
+  "usps": {
+    "title": "Výhody {domain}"
   }
 }

@@ -240,6 +240,6 @@
     "visa_and_mastercard_text_2": "Al recibir el pago, el código de recarga se envía inmediatamente."
   },
   "usps": {
-    "title": "Ventajas de {dominio}"
+    "title": "Ventajas de {domain}"
   }
 }
