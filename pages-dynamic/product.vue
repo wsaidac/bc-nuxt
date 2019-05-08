@@ -88,8 +88,6 @@ import SharedTitle from '~/components/shared/title';
 import ProductVariants from '~/components/product/variants';
 import generateCrumbs from '~/mixins/generateCrumbs';
 
-import { viewTransformDetail } from '~/plugins/gtm';
-
 export default {
   components: {
     HeaderBanner,
@@ -166,7 +164,7 @@ export default {
 
   mounted() {
     this.$store.commit('shared/setPage', 'product');
-    this.$track(viewTransformDetail(this.post));
+    this.$track('viewTransformDetail', { product: this.post });
   },
 };
 </script>
