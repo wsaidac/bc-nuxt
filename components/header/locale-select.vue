@@ -12,15 +12,15 @@
     <ui-select v-model="localeSelected">
       <span
         slot="prefix"
-        :class="`flag-icon flag-icon--medium flag-icon--bordered flag-icon-${selectedCountryFlag}`"
+        :class="`flag-icon flag-icon--medium flag-icon--bordered flag-icon-${getCountryFlag(localeSelected.slice(3))}`"
       />
       <el-option
-        v-for="item in $i18n.locales"
+        v-for="item in selectableLocales"
         :key="item.code"
         :label="item.displayName"
         :value="item.code"
       >
-        <span :class="`flag-icon flag-icon--bordered flag-icon--medium flag-icon-${item.name.toLowerCase()}`" />
+        <span :class="`flag-icon flag-icon--bordered flag-icon--medium flag-icon-${getCountryFlag(item.name)}`" />
         {{ item.displayName }}
       </el-option>
     </ui-select>
@@ -39,6 +39,7 @@
 <script>
 import ElOption from 'element-ui/lib/option.js';
 import { UiSelect, UiDialog, UiButton } from '~/components/ui.js';
+import { getCountryFlag } from '~/mixins';
 
 export default {
   components: {
@@ -47,6 +48,8 @@ export default {
     UiDialog,
     UiButton,
   },
+
+  mixins: [getCountryFlag],
 
   props: {
     showdialog: {
@@ -62,8 +65,8 @@ export default {
   },
 
   computed: {
-    selectedCountryFlag() {
-      return this.localeSelected.slice(3);
+    selectableLocales() {
+      return this.$i18n.locales.filter(locale => locale.selectable);
     },
   },
 

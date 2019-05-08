@@ -45,6 +45,34 @@ module.exports = {
     long: defaultLongDateTime,
     short: defaultShortDateTime,
   },
+  'en-uk': {
+    long: defaultLongDateTime,
+    short: defaultShortDateTime,
+  },
+  'it-it': {
+    long: defaultLongDateTime,
+    short: defaultShortDateTime,
+  },
+  'fi-fi': {
+    long: defaultLongDateTime,
+    short: defaultShortDateTime,
+  },
+  'es-es': {
+    long: defaultLongDateTime,
+    short: defaultShortDateTime,
+  },
+  'pt-pt': {
+    long: defaultLongDateTime,
+    short: defaultShortDateTime,
+  },
+  'sk-sk': {
+    long: defaultLongDateTime,
+    short: defaultShortDateTime,
+  },
+  'en-ie': {
+    long: defaultLongDateTime,
+    short: defaultShortDateTime,
+  },
 };
 
 // see for options http://www.ecma-international.org/ecma-402/2.0/#sec-intl-datetimeformat-constructor

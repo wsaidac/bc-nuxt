@@ -123,4 +123,9 @@ export default {
 .el-popper[x-placement^="bottom"] .popper__arrow {
   display: none;
 }
+
+.el-select-dropdown__wrap {
+  margin-bottom: -15px;
+  padding-bottom: 15px;
+}
 </style>
