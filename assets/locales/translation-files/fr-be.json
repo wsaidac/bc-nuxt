@@ -185,6 +185,7 @@
     "button_name": "La page d’accueil",
     "description": "Oups... cette page est introuvable",
     "error_text": "La page demandée n’a pas été trouvée.",
+    "help": "Merci de cliquer sur le bouton ci-dessous pour retourner à la page à la page d’accueil, ou sélectionnez votre pays dans le menu ci-dessus.",
     "title": "La page demandée n’a pas été trouvée."
   },
   "footer": {
@@ -239,5 +240,8 @@
     "shipping": "Envoi",
     "visa_and_mastercard_text_1": "Sur Rapido.com vous pouvez payer avec une carte de crédit ou débit de Visa ou Mastercard. Au moment de payer vous sélectionnez le mode de paiement creditcard. Ensuite vous introduisez les données de votre carte de crédit / débit, entre autre le titulaire de la carte, son numéro, la date d’expiration et le code CVV. Ensuite vous confirmez le paiement.",
     "visa_and_mastercard_text_2": "Après réception du paiement, le code du crédit d’appel est directement envoyé."
+  },
+  "usps": {
+    "title": "Les avantages de {domain}"
   }
 }
