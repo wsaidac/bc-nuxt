@@ -7,6 +7,13 @@ module.exports = {
       'fr-be',
       'pl-pl',
       'da-dk',
+      'en-uk',
+      'it-it',
+      'fi-fi',
+      'es-es',
+      'pt-pt',
+      'sk-sk',
+      'en-ie',
     ],
   },
 };

@@ -30,7 +30,7 @@
             @click="showDialog = true"
           >
             <span class="header-navbar__country-name">{{ country.name }}</span>
-            <span :class="`flag-icon flag-icon--bordered flag-icon--medium flag-icon-${country.name.toLowerCase()}`" />
+            <span :class="`flag-icon flag-icon--bordered flag-icon--medium flag-icon-${getCountryFlag(country.name)}`" />
             <ui-icon icon="caret-white" />
           </button>
           <div
@@ -68,7 +68,7 @@ import HeaderLinksMobile from './links-mobile';
 import HeaderHamburger from './hamburger';
 import HeaderLocaleSelect from './locale-select';
 import { UiIcon } from '~/components/ui';
-import faqUrl from '~/mixins/faqUrl';
+import { faqUrl, getCountryFlag } from '~/mixins';
 
 export default {
   components: {
@@ -79,7 +79,7 @@ export default {
     HeaderLocaleSelect,
     UiIcon,
   },
-  mixins: [faqUrl],
+  mixins: [faqUrl, getCountryFlag],
   props: {
     items: {
       type: Array,

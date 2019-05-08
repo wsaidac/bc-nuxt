@@ -122,6 +122,7 @@
     "repeat-new-password": "Powtórz nowe hasło",
     "repeat-password": "Powtórz hasło",
     "request_change_email": {
+      "invalid": "Ten adres e-mail jest już używany.",
       "invalid_credentials": "Wprowadź poprawne hasło."
     },
     "request_reset_password": {
@@ -183,11 +184,13 @@
     "button_name": "Strona główna Rapido",
     "description": "Ups! Przykro nam, nie możemy teraz odnaleźć tej strony. Możesz spróbować później?",
     "error_text": "Wygląda na to, że strona, której szukasz, nie istnieje, przepraszamy",
+    "help": "Kliknij przycisk poniżej, aby powrócić do strony głównej, lub wybierz swój kraj z górnego menu.",
     "title": "Nie znaleziono strony"
   },
   "footer": {
     "customer-care": "Obsługa klienta",
     "order-with": "Zamów przez",
+    "privacy-statement": "Oświadczenie o ochronie prywatności",
     "quote": "Rapido.com jest częścią CG | Miliony zadowolonych klientów |",
     "safely": "Bezpiecznie",
     "safely-order-with": "Zamów bezpiecznie z:"
@@ -231,6 +234,7 @@
     "credit-or-debit-card": "Karta kredytowa/debetowa",
     "payment-options": "Metody płatności",
     "paypal": "PayPal",
+    "paypal_text_1": "Na stronie Rapido.com można zapłacić przy użyciu PayPal. Po wybraniu tej metody płatności należy zalogować się na konto PayPal i potwierdzić płatność. Następnie płatność jest przetwarzana.",
     "paypal_text_2": "Kod doładowania jest wysyłany natychmiast po otrzymaniu płatności.",
     "shipping": "Dostawa",
     "visa_and_mastercard_text_1": "Na stronie Rapido.com możesz zapłacić kartą kredytową VISA, kartą debetową VISA (Delta i Electron) oraz kartą MasterCard. Podczas płatności można wybrać płatność kartą kredytową. Następnie należy wpisać dane karty, w tym dane posiadacza karty, numer karty, datę ważności i kod CVV. Następnie należy potwierdzić płatność.",
