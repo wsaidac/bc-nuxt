@@ -1,0 +1,3 @@
+mutation($email: String!) {
+  resendToken(email: $email, tokenType: "UNLOCK" )
+}
