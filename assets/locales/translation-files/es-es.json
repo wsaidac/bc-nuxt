@@ -212,8 +212,10 @@
   },
   "header": {
     "login": "Iniciar sesión",
+    "main-nav": "Menú principal",
     "menu": "Menú",
-    "my-account": "Mi cuenta"
+    "my-account": "Mi cuenta",
+    "profile": "Perfil"
   },
   "home": {
     "featured-products": "Productos destacados",
