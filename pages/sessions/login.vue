@@ -47,18 +47,6 @@
         :md="11"
         :lg="{span: 8, offset: 2}"
       >
-        <a
-          class="cg-login__unlock-link"
-          v-if="loginError == 'account.login.locked'"
-          href='/en-us/sessions/request-unlock'
-        >
-          <ui-button
-            type="primary"
-            justify
-          >
-            Go to unlock page
-          </ui-button>
-        </a>
         <ui-panel :title="$t('account.login.title')">
           <form-login @error="onError" />
         </ui-panel>

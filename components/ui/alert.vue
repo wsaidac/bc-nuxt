@@ -1,10 +1,11 @@
 <template>
   <el-alert
     :title="title"
-    :description="description"
     v-bind="$attrs"
     v-on="$listeners"
-  />
+  >
+    <div v-html="description" />
+  </el-alert>
 </template>
 
 <script>

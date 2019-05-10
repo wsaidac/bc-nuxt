@@ -65,7 +65,7 @@
     "last-name": "Last name",
     "login-history": "Account login history",
     "login": {
-      "locked": "Your account has been locked",
+      "locked": "Your account has been locked. <a href='/en-us/sessions/request-unlock'>More info</a>.",
       "invalid_credentials": "The email address and/or password you entered is incorrect.",
       "title": "Log In",
       "unconfirmed_email": "The email address is not confirmed",
