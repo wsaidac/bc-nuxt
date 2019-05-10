@@ -30,7 +30,7 @@
           >
           <div
             class="product-featured-category__item-title"
-            v-text="product.title"
+            v-html="product.title"
           />
         </nuxt-link>
       </ui-col>
@@ -56,7 +56,7 @@
               >
               <div
                 class="product-featured-category__item-title"
-                v-text="product.title"
+                v-html="product.title"
               />
             </nuxt-link>
           </ui-col>
@@ -73,10 +73,10 @@
 </template>
 
 <script>
-import { UiRow, UiCol, UiTransitionExpand } from "~/components/ui";
+import { UiRow, UiCol, UiTransitionExpand } from '~/components/ui';
 
 export default {
-  name: "ProductFeaturedCategory",
+  name: 'ProductFeaturedCategory',
 
   components: {
     UiRow,

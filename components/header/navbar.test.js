@@ -28,6 +28,12 @@ describe('HeaderNavbar', () => {
             displayName: 'United States',
           };
         },
+        faqUrl() {
+          return 'en-us';
+        },
+        homeLink() {
+          return '/en-us/';
+        },
       },
     });
   });

@@ -26,8 +26,6 @@ import ProductCard from '~/components/product/card';
 import ProductVariants from '~/components/product/variants';
 import SharedLoader from '~/components/shared/loader';
 
-import { impressionTransformQuickbuy } from '~/plugins/gtm';
-
 export default {
   name: 'ProductQuickbuy',
 
@@ -53,13 +51,15 @@ export default {
       const currentUser = this.$store.getters['auth/currentUser'];
       return this.isLoaded && currentUser ? currentUser.quickbuy : undefined;
     },
+    /* eslint-disable */
     product() {
-      return (this.userProduct && this.userProduct.id) || this.defaultProduct;
+      return (this.userProduct && this.userProduct.id) && this.userProduct || this.defaultProduct;
     },
   },
 
   mounted() {
-    this.$track(impressionTransformQuickbuy(this.product));
+    this.$track('impressionTransformQuickbuy', { product: this.product });
+    this.$track('productViewTransformQuickbuy', { product: this.product });
   },
 };
 </script>

@@ -35,6 +35,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import HeaderBanner from '~/components/header/banner';
 import CgUsps from '~/components/usps';
 import ProductPopular from '~/components/product/popular';
@@ -62,9 +63,18 @@ export default {
     },
   },
 
+  head() {
+    const url = `https://${this.domain}/${this.$i18n.locale}/`;
+    return {
+      link: [
+        { rel: 'canonical', href: url },
+      ],
+    };
+  },
+
   computed: {
     ...mapGetters('menus', ['main']),
-
+    ...mapGetters('context', ['domain']),
     ...mapGetters('shared', ['customerService', 'usps']),
   },
 };

@@ -4,31 +4,30 @@
   "atomKeymap.promptV3Features": true,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
   "explorer.confirmDragAndDrop": false,
-  "[javascript]": {
-    "editor.formatOnSave": true
-  },
-  "[vue]": {
-    "editor.formatOnSave": true
-  },
   "eslint.autoFixOnSave": true,
   "eslint.packageManager": "yarn",
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    {
+  "eslint.validate": [{
       "language": "vue",
+      "autoFix": true
+    },
+    {
+      "language": "javascript",
+      "autoFix": true
+    },
+    {
+      "language": "javascriptreact",
       "autoFix": true
     }
   ],
   "eslint.trace.server": "verbose",
-  "stylelint.additionalDocumentSelectors": [
-    "vue"
-  ],
-  "prettier.singleQuote": true,
-  "prettier.trailingComma": "es5",
-  "prettier.eslintIntegration": true,
-  "prettier.stylelintIntegration": true,
-  "vetur.format.defaultFormatter.html": false,
-  "vetur.format.defaultFormatter.js": false,
+  "stylelint.additionalDocumentSelectors": ["vue"],
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "vetur.format.defaultFormatter.options": {
+    "js-beautify-html": {
+      "wrap_attributes": "auto"
+    }
+  },
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
 }

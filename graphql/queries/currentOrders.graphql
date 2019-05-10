@@ -1,0 +1,28 @@
+query {
+  user: currentUser {
+    orders {
+      id
+      created_at
+      pay_method
+      payment_status
+      status
+      price
+      service_fee
+      total_price
+      products {
+        name
+        display_name
+        product_image
+        terms_and_conditions
+        codes {
+          code
+          serial_number
+          image_url
+          redeem_url
+          reference
+          status
+        }
+      }
+    }
+  }
+}

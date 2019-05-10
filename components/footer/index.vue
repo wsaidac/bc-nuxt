@@ -1,15 +1,17 @@
 <template>
   <footer class="rapido-footer">
-    <hr>
-    <div class="container container--mobile-not-padded">
-      <ui-row>
-        <ui-col :sm="12">
-          <footer-payment-methods :payment-methods="paymentMethods" />
-        </ui-col>
-      </ui-row>
+    <div v-if="!onUsers">
+      <hr>
+      <div class="container container--mobile-not-padded">
+        <ui-row>
+          <ui-col>
+            <footer-payment-methods :payment-methods="paymentMethods" />
+          </ui-col>
+        </ui-row>
+      </div>
+      <hr>
     </div>
-    <hr>
-    <footer-links />
+    <footer-links v-if="!onUsers" />
     <footer-copyright />
   </footer>
 </template>
@@ -30,6 +32,13 @@ export default {
     FooterPaymentMethods,
     FooterLinks,
     FooterCopyright,
+  },
+
+  props: {
+    onUsers: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   computed: {

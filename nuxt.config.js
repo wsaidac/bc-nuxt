@@ -1,23 +1,21 @@
-
 const i18nConfig = require('./config/i18nConfig.js');
 
 require('dotenv').config();
-
 
 const label = 'rapido';
 
 const conf = {
   head: {
-    title: 'rapido_web',
+    titleTemplate: '%s - Rapido.com',
     meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [{ async: true, src: '//cg.sb.blueconic.net/frontend/static/javascript/blueconic/blueconic.min.js' }],
+    script: [{ src: '/blueconic.js' }, { src: '//cdn.blueconic.net/cg.js' }],
   },
   css: ['~/assets/stylesheets/application.scss'],
   store: true,
   loading: {
-    color: '#1200ff',
-    height: '3px',
+    color: '#dce6f5',
+    height: '2px',
   },
   build: {
     publicPath: '/rapidoweb/',
@@ -75,28 +73,35 @@ const conf = {
     csp: {
       policies: {
         'script-src': [
-          "'unsafe-eval'",
-          "'unsafe-inline'",
+          '\'unsafe-eval\'',
+          '\'unsafe-inline\'',
           'https://www.googletagmanager.com',
           'https://tagmanager.google.com',
           'https://www.googleadservices.com',
           'https://www.google-analytics.com',
+          'https://bat.bing.com',
+          'https://connect.facebook.net',
+          'https://static.hotjar.com',
+          'https://script.hotjar.com',
+          'https://googleads.g.doubleclick.net',
+          '*.trackedlink.net',
           '*.blueconic.net',
           '*.rapido.com',
           '*.cgaws.cloud',
         ],
-        'style-src': ["'self'", "'unsafe-inline'", 'https://tagmanager.google.com', 'https://fonts.googleapis.com', '*.rapido.com', '*.cgaws.cloud'],
+        'style-src': ['\'self\'', '\'unsafe-inline\'', 'https://tagmanager.google.com', 'https://fonts.googleapis.com', '*.rapido.com', '*.cgaws.cloud'],
         'report-uri': [
-          'https://sentry.io/api/1424268/security/?sentry_key=c82b3b97e8af426da4eb2b24099ca8ff',
+          'https://sentry.io/api/1441242/security/?sentry_key=98825ca3d73c4dd58305cd0e794873c4',
         ],
       },
     },
   },
   router: {
-    middleware: ['headers', 'context'],
+    middleware: ['checkLocale'],
   },
   modules: [
     ['@nuxtjs/style-resources'],
+    'cookie-universal-nuxt',
     ['@nuxtjs/sentry'],
     ['~/modules/iconsWeb'],
     [
@@ -118,6 +123,8 @@ const conf = {
     LABEL: label,
   },
   plugins: [
+    '~/plugins/env.js',
+    '~/plugins/vuelidate.js',
     '~/plugins/vuetouch.js',
     '~/plugins/media-queries.js',
     '~/assets/iconsWeb.js',
@@ -126,6 +133,9 @@ const conf = {
     { src: '~/plugins/async.js', ssr: false },
     '~/plugins/shared.js',
     '~/plugins/i18n.js',
+    '~/plugins/moment.js',
+    '~/plugins/pagination.js',
+    '~/plugins/element-ui.js',
   ],
   sentry: {
     dsn: process.env.SENTRY_DNS,
@@ -142,7 +152,12 @@ const conf = {
 
 if (process.env.PROXY_ACCOUNT) {
   conf.modules.push('@nuxtjs/proxy');
-  conf.proxy = [process.env.PROXY_ACCOUNT, process.env.PROXY_SESSIONS, process.env.PROXY_ASSETS, process.env.PROXY_ORDER];
+  conf.proxy = [
+    process.env.PROXY_ACCOUNT,
+    process.env.PROXY_SESSIONS,
+    process.env.PROXY_ASSETS,
+    process.env.PROXY_ORDER,
+  ];
 }
 
 module.exports = conf;

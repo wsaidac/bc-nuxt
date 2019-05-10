@@ -11,7 +11,12 @@ describe('FooterPaymentMethods', () => {
   ];
 
   beforeEach(() => {
-    $mounted = mount(FooterPaymentMethods, { propsData: { paymentMethods } });
+    $mounted = mount(FooterPaymentMethods, {
+      propsData: { paymentMethods },
+      computed: {
+        paymentMethodsLink: 'payment-methods',
+      },
+    });
   });
 
   it('should mount', () => {

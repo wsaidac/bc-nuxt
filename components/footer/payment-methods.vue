@@ -8,13 +8,13 @@
     </div>
     <ul class="footer-payment-methods__list">
       <li
-        v-for="method in paymentMethods"
-        :key="method.name"
+        v-for="(method, i) in paymentMethods"
+        :key="i"
         class="footer-payment-methods__item"
       >
         <nuxt-link
           :title="`${$t('footer.safely-order-with')} ${method.name}`"
-          :to="$contextPath ('payment-methods')"
+          :to="$contextPath(paymentMethodsLink)"
         >
           <img
             v-if="method.image"
@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import { UiIcon } from '~/components/ui';
 
 export default {
@@ -40,10 +41,17 @@ export default {
 
   props: {
     paymentMethods: {
-      type: Array,
+      type: [Array, Object],
       default() {
         return [];
       },
+    },
+  },
+
+  computed: {
+    ...mapGetters('menus', ['footer']),
+    paymentMethodsLink() {
+      return this.footer.paymentMethods.slug;
     },
   },
 };
@@ -51,11 +59,10 @@ export default {
 
 <style lang="scss">
 .footer-payment-methods {
-  border-right: 1px solid $gray-400;
   flex-flow: row wrap;
   padding: 10px;
 
-  @include flex(flex-end, center);
+  @include flex(center, center);
 
   &__quote {
     @include flex(null, center);
@@ -91,9 +98,18 @@ export default {
   }
 
   @include media-breakpoint-only("xs") {
-    border: 0;
+    p,
+    .ui-icon {
+      font-size: $font-size-h6;
+    }
 
-    @include flex(center, center);
+    &__item {
+      width: 30px;
+    }
+
+    &__quote {
+      margin-bottom: 15px;
+    }
   }
 }
 </style>

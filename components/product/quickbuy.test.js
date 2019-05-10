@@ -5,7 +5,26 @@ describe('ProductQuickbuy', () => {
   let $mounted;
 
   const defaultProduct = {
+    categories: {
+      nodes: [
+        {
+          categoryHeader: {
+            title: 'Title',
+          },
+        },
+      ],
+    },
+    kinds: {
+      nodes: [
+        {
+          name: 'call-credit',
+        },
+      ],
+    },
     id: 1,
+    rapidoProduct: {
+      id: 1,
+    },
     information: {
       issueValue: 5.0,
     },
@@ -22,7 +41,6 @@ describe('ProductQuickbuy', () => {
     },
     slug: '/product123',
     title: 'title',
-    categories: {},
   };
 
   beforeEach(() => {

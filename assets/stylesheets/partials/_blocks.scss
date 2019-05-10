@@ -33,3 +33,13 @@
     }
   }
 }
+
+.cg-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.cg-container {
+  flex: 1;
+}

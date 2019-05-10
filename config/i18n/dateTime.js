@@ -14,9 +14,9 @@ const defaultShortDateTime = {
   minute: '2-digit',
 };
 
-function mergeLong(specificDateTime) {
-  return Object.assign({}, defaultLongDateTime, specificDateTime);
-}
+// function mergeLong(specificDateTime) {
+//   return Object.assign({}, defaultLongDateTime, specificDateTime);
+// }
 
 function mergeShort(specificDateTime) {
   return Object.assign({}, defaultShortDateTime, specificDateTime);
@@ -42,6 +42,34 @@ module.exports = {
     short: defaultShortDateTime,
   },
   'pl-pl': {
+    long: defaultLongDateTime,
+    short: defaultShortDateTime,
+  },
+  'en-uk': {
+    long: defaultLongDateTime,
+    short: defaultShortDateTime,
+  },
+  'it-it': {
+    long: defaultLongDateTime,
+    short: defaultShortDateTime,
+  },
+  'fi-fi': {
+    long: defaultLongDateTime,
+    short: defaultShortDateTime,
+  },
+  'es-es': {
+    long: defaultLongDateTime,
+    short: defaultShortDateTime,
+  },
+  'pt-pt': {
+    long: defaultLongDateTime,
+    short: defaultShortDateTime,
+  },
+  'sk-sk': {
+    long: defaultLongDateTime,
+    short: defaultShortDateTime,
+  },
+  'en-ie': {
     long: defaultLongDateTime,
     short: defaultShortDateTime,
   },

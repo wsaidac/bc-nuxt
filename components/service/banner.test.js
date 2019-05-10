@@ -16,12 +16,20 @@ describe('ServiceBanner', () => {
         retina: 'http://d2ethx2wadout7.cloudfront.net/app/uploads/2018/10/23143118/5CC1pfrnNT15Pcm7nZmScH/customer-care.jpg',
       },
       primaryText: 'Need help',
-      secondaryText: "We're happy to help out",
+      secondaryText: 'We\'re happy to help out',
     },
   };
 
   beforeEach(() => {
-    $mounted = mount(ServiceBanner, { propsData });
+    $mounted = mount(ServiceBanner,
+      {
+        propsData,
+        computed: {
+          faqUrl() {
+            return 'en-us';
+          },
+        },
+      });
   });
 
   it('should mount', () => {

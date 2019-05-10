@@ -7,10 +7,10 @@
         class="product-variants__item"
       >
         <nuxt-link
-          :to="$contextPath(item.slug)"
+          :to="$contextPath(`${category.slug}/${item.slug}`)"
           :title="item.title"
         >
-          <span v-text="item.title" />
+          <span v-html="item.title" />
           <ui-icon icon="chevron-right" />
         </nuxt-link>
       </li>
@@ -32,22 +32,16 @@
 <script>
 import { UiIcon } from '~/components/ui';
 
+import productCategory from '~/mixins/productCategory';
+
 export default {
   components: {
     UiIcon,
   },
 
-  props: {
-    product: {
-      type: Object,
-      required: true,
-    },
-  },
+  mixins: [productCategory],
 
   computed: {
-    category() {
-      return this.product.categories.nodes[0];
-    },
     variants() {
       return this.category.products.nodes.slice(0, 3);
     },

@@ -23,9 +23,8 @@
               <nuxt-link
                 :to="$contextPath(subcategory.url)"
                 :title="subcategory.title"
-              >
-                {{ subcategory.title }}
-              </nuxt-link>
+                v-html="subcategory.title"
+              />
             </li>
           </ul>
         </li>
@@ -89,6 +88,7 @@ export default {
 
     img {
       margin-right: 10px;
+      max-height: 20px;
     }
 
     &:hover {
@@ -132,7 +132,7 @@ export default {
 
   &__sub-item {
     border-top: 1px solid $gray-300;
-    font-size: 12px;
+    font-size: $font-size-base;
 
     &:nth-child(10n + 1) {
       border-top: 0;

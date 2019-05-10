@@ -5,10 +5,9 @@
     itemscope
     itemtype="http://schema.org/Product"
   >
-    <nuxt-link
-      :to="$contextPath(product.slug)"
+    <a
       class="product-card__img-link"
-      @click.native="submitForm"
+      @click="submitForm"
     >
       <picture v-if="image">
         <img
@@ -18,28 +17,8 @@
           :longdesc="image.description"
           itemprop="image"
         >
-        <meta
-          :content="`${product.content.title} USD - TODO`"
-          itemprop="name"
-        >
-        <meta
-          :content="product.content.title"
-          itemprop="description"
-        >
-        <meta
-          class="product-ean-code"
-          itemprop="gtin0"
-        >
-        <meta
-          itemprop="brand"
-          content="brand TODO"
-        >
-        <meta
-          content="category TODO"
-          itemprop="category"
-        >
       </picture>
-    </nuxt-link>
+    </a>
     <div class="product-card__content">
       <div
         class="product-card__title"
@@ -47,24 +26,8 @@
         itemtype="http://schema.org/Offer"
         itemprop="offers"
       >
-        <meta
-          :content="product.information.issueValue"
-          item="price"
-        >
-        <meta
-          content="product.information.currrencie TODO"
-          itemprop="pricecurrency"
-        >
-        <meta
-          itemprop="availability"
-          content="http://schema.org/InStock"
-        >
-        <meta
-          itemprop="itemCondition"
-          content="http://schema.org/NewCondition"
-        >
         <h3 v-text="$n(product.information.issueValue, 'currency')" />
-        <p v-text="product.title" />
+        <p v-html="product.title" />
         <shared-tooltip
           v-if="mode === 'vertical' && hasTooltip"
           :content="product | dig('content.tooltip.content')"
@@ -100,27 +63,25 @@
           >
         </fieldset>
         <ui-button
+          type="primary"
           native-type="button"
           @click="submitForm"
         >
-          {{ cta }}
+          {{ $t("general.order-safely") }}
         </ui-button>
       </form>
     </div>
   </div>
 </template>
 
-
 <script>
+/* eslint-disable */
 import { mapGetters } from "vuex";
 import SharedTooltip from "~/components/shared/tooltip";
 import SharedInstantTooltip from "~/components/shared/instant-tooltip";
 import { UiButton, UiSelect } from "~/components/ui";
 import { get } from "lodash";
-import {
-  measureProductClick,
-  clickTransformProductAddToCart,
-} from "~/plugins/gtm.js";
+import productCategory from '~/mixins/productCategory';
 
 export default {
   name: "ProductCard",
@@ -131,21 +92,17 @@ export default {
     UiButton,
     UiSelect,
   },
-
   filters: {
     dig(product, path) {
       return get(product, path, "");
     },
   },
 
+  mixins: [productCategory],
   props: {
     mode: {
       type: String,
       default: "vertical",
-    },
-    product: {
-      type: Object,
-      required: true,
     },
     hasSelect: {
       type: Boolean,
@@ -179,11 +136,11 @@ export default {
     classes() {
       return ["product-card", `product-card--mode-${this.mode}`];
     },
-    cta() {
-      return this.mode === "horizontal"
-        ? this.$t("general.order-now")
-        : this.$t("general.order-safely");
-    },
+    // cta() {
+    //   return this.mode === "horizontal"
+    //     ? this.$t("general.order-now")
+    //     : this.$t("general.order-safely");
+    // },
     image() {
       return (
         this.product.content.image
@@ -196,17 +153,10 @@ export default {
     productClick() {
       this.$store.commit("product/setAmount", this.value);
       if (this.page === "category") {
-        this.$track(
-          measureProductClick({ page: this.page, product: this.product }),
-        );
+        this.$track('measureProductClick', { page: this.page, product: this.product });
       }
       if (this.page === "product" || this.page === "category") {
-        this.$track(
-          clickTransformProductAddToCart({
-            product: this.product,
-            quantity: this.value,
-          }),
-        );
+        this.$track('clickTransformProductAddToCart', { product: this.product, quantity: this.value });
       }
     },
     submitForm(e) {
@@ -225,17 +175,6 @@ export default {
 
   fieldset {
     display: none;
-  }
-
-  .el-button {
-    background: #ffea6b;
-    border: 2px solid $black;
-    color: $black;
-
-    &:hover {
-      background: $black;
-      color: $white;
-    }
   }
 
   &__title {
@@ -283,6 +222,8 @@ export default {
       .el-input__inner {
         border-radius: 0;
         height: 34px;
+        padding: 5px 25px 5px 5px;
+        text-align: center;
         user-select: none;
       }
 
@@ -323,6 +264,8 @@ export default {
         }
 
         img {
+          display: block;
+          margin: auto;
           padding: 10px;
         }
       }

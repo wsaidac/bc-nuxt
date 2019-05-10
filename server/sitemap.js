@@ -53,7 +53,6 @@ router.get('/', async (req, res) => {
 
     sitemap.toXML((err, xml) => {
       if (err) {
-        console.log(err);
         return res.status(500).end();
       }
       res.header('Content-Type', 'application/xml');

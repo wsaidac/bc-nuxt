@@ -8,18 +8,18 @@
     <div class="header-navbar__top">
       <div class="header-navbar__top-content container">
         <h1 class="header-navbar__brand">
-          <nuxt-link :to="$contextPath('')">
+          <a :href="homeLink">
             <img
               :alt="$t('general.domain')"
               src="~/assets/images/logo-white.svg"
             >
-          </nuxt-link>
+          </a>
         </h1>
         <div class="spacer" />
         <div class="header-navbar__top-right">
           <header-login />
           <a
-            :href="$faqUrl"
+            :href="faqUrl"
             class="header-navbar__help"
             title="help"
           >
@@ -30,10 +30,11 @@
             @click="showDialog = true"
           >
             <span class="header-navbar__country-name">{{ country.name }}</span>
-            <span :class="`flag-icon flag-icon--bordered flag-icon--medium flag-icon-${country.name.toLowerCase()}`" />
+            <span :class="`flag-icon flag-icon--bordered flag-icon--medium flag-icon-${getCountryFlag(country.name)}`" />
             <ui-icon icon="caret-white" />
           </button>
           <div
+            v-if="!onUsers"
             class="header-navbar__menu"
             @click="menuOpen = !menuOpen"
           >
@@ -43,8 +44,12 @@
         </div>
       </div>
     </div>
-    <header-links-desktop :items="items" />
+    <header-links-desktop
+      v-if="!onUsers"
+      :items="items"
+    />
     <header-links-mobile
+      v-if="!onUsers"
       :items="items"
       :menu-open="menuOpen"
       @close-menu="menuOpen = false"
@@ -63,6 +68,7 @@ import HeaderLinksMobile from './links-mobile';
 import HeaderHamburger from './hamburger';
 import HeaderLocaleSelect from './locale-select';
 import { UiIcon } from '~/components/ui';
+import { faqUrl, getCountryFlag } from '~/mixins';
 
 export default {
   components: {
@@ -73,13 +79,17 @@ export default {
     HeaderLocaleSelect,
     UiIcon,
   },
-
+  mixins: [faqUrl, getCountryFlag],
   props: {
     items: {
       type: Array,
       default() {
         return [];
       },
+    },
+    onUsers: {
+      type: Boolean,
+      default: false,
     },
   },
 
@@ -93,10 +103,13 @@ export default {
 
   computed: {
     classes() {
-      return ["header-navbar", { "header-navbar--open": this.menuOpen }];
+      return ['header-navbar', { 'header-navbar--open': this.menuOpen }];
     },
     country() {
       return this.$i18n.locales.find(i => i.code === this.$i18n.locale);
+    },
+    homeLink() {
+      return this.$route.path.slice(0, 7);
     },
   },
 };
@@ -142,7 +155,8 @@ export default {
 
   &__top {
     background: $primary-500;
-    font-size: 1.125em;
+    font-size: 1em;
+    font-weight: 300;
     position: relative;
     z-index: $z-index-header-navbar-top;
 
@@ -171,8 +185,8 @@ export default {
   &__country-select {
     background-color: #1000e3;
     border: 0;
-    color: var(--header-color-base, #000);
-    font-size: $font-size-h5;
+    color: $black;
+    font-size: $font-size-base;
     height: 100%;
     padding: 0 15px;
 
@@ -180,6 +194,7 @@ export default {
 
     .ui-icon-caret-white {
       color: white;
+      margin-left: 5px;
     }
 
     img {
@@ -190,7 +205,7 @@ export default {
 
   &__country-name {
     color: $white;
-    margin-right: 5px;
+    margin-right: 7px;
   }
 
   &__brand {
@@ -247,6 +262,8 @@ export default {
   }
 
   @include media-breakpoint-up("sm") {
+    .header-navbar__overlay-black,
+    .header-navbar__overlay-gray,
     .header-navbar__menu {
       display: none;
     }
@@ -263,11 +280,6 @@ export default {
       padding-right: 0;
     }
 
-    .header-login,
-    .header-navbar__help {
-      display: none;
-    }
-
     &__country-select {
       background: $primary-500;
       border-left: 1px solid #1000e3;
@@ -275,6 +287,21 @@ export default {
       .ui-icon-caret-white {
         display: none;
       }
+    }
+  }
+}
+
+.layout-users {
+  .header-login {
+    display: none;
+  }
+}
+
+@include media-breakpoint-only("xs") {
+  .layout-default {
+    .header-login,
+    .header-navbar__help {
+      display: none;
     }
   }
 }

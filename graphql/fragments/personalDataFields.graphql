@@ -1,0 +1,16 @@
+fragment personalDataFields on PersonalData {
+  lastName
+  firstName
+  birthDate
+  lastNamePrefix
+  birthDate
+  gender
+  phone
+  phonePrefix
+  phoneCountryIso
+  countryIso
+  address
+  houseNumber
+  zipCode
+  city
+}

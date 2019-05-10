@@ -20,10 +20,9 @@ module.exports = function (label) {
     seo: false,
     parsePages: false,
     lazy: true,
-    langDir: './assets/locales/translation-files/',
+    langDir: './assets/locales/assemble-translations/',
     locales: labelLocales(label),
     defaultLocale: defaultLocale(label),
-    vueI18nLoader: true,
     vueI18n: {
       fallbackLocale: defaultLocale(label),
       silentTranslationWarn: true,
@@ -32,12 +31,6 @@ module.exports = function (label) {
       messages: {
         [defaultLocale(label)]: require(defaultLocaleFile(defaultLocale(label))),
       },
-    },
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'country',
-      alwaysRedirect: false,
-      fallbackLocale: defaultLocale(label),
     },
   };
 };

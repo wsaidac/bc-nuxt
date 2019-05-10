@@ -1,0 +1,6 @@
+mutation($userId: ID!, $confirmationToken: String!) {
+  user: confirmEmail(userId: $userId, confirmationToken: $confirmationToken) {
+    id
+    email
+  }
+}
