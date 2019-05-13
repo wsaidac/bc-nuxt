@@ -100,6 +100,7 @@ const conf = {
     middleware: ['checkLocale'],
   },
   modules: [
+    '@nuxtjs/pwa',
     ['@nuxtjs/style-resources'],
     'cookie-universal-nuxt',
     ['@nuxtjs/sentry'],
