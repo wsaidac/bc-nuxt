@@ -15,4 +15,6 @@ log/
 dist
 
 *.snap
+sw.*
+.DS_Store
 *.log

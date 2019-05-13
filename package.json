@@ -1,5 +1,6 @@
 {
-  "name": "rapido_web",
+  "name": "Rapido.com",
+  "description": "Buy your online gift cards at Rapido.com ✓ Prepaid Code sent directly by Email ✓ Choose from Game codes, Entertainment codes, Call Credit and Gift Codes ✓ Safe payment is possible by PayPal or Credit Card",
   "private": true,
   "scripts": {
     "dev": "nodemon app.js",
@@ -24,6 +25,7 @@
     ]
   },
   "dependencies": {
+    "@nuxtjs/pwa": "^3.0.0-beta.14",
     "@nuxtjs/sentry": "^2.3.1",
     "@nuxtjs/style-resources": "^0.1.2",
     "artemis-graphql": "https://github.com/10KB/artemis-graphql#v2.0.3",
