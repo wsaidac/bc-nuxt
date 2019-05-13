@@ -8,8 +8,10 @@
     "agree-to-terms": "Luomalla tilin hyväksyt Rapidon <a href='/en-us/general-conditions'>käyttöehdot</a> ja <a href='/en-us/privacy'>tietosuojakäytännön</a>.\t",
     "all-questions": "Kaikki kysymykset",
     "birthdate": "Syntymäaika",
+    "cancel": "Peruuta",
     "change-email": "Vaihda sähköpostiosoite",
     "change-email-requested": "Olemme lähettäneet sinulle sähköpostiviestin sähköpostiosoitteesi vaihtamisen vahvistamista varten",
+    "change-password": "Vaihda salasana",
     "change-password-error": "Salasanan päivitys epäonnistui",
     "change-password-submit": "Salasana on päivitetty",
     "check-your-email": "Tarkista sähköpostisi. Olemme juuri lähettäneet sinulle ohjeet salasanan nollaamista varten. Jos et saa sähköpostia 30 minuutin kuluessa, yritä uudelleen.",
@@ -19,7 +21,9 @@
       "expired_token": "Vahvistuslinkki on vanhentunut.",
       "invalid_token": "Vahvistuslinkki ei kelpaa."
     },
+    "continue": "Jatka",
     "country_select": {
+      "button_name": "Jatka ostoksia",
       "country_names": {
         "Austria": "Itävalta",
         "Belgium": "Belgia",
@@ -34,6 +38,7 @@
     "email-address": "Sähköpostiosoite",
     "email-changed": "Sähköpostiosoite vaihdettu",
     "email-sent-to": "Sähköposti lähetetty osoitteeseen: {email}",
+    "enter-email-address": "Anna sähköpostiosoitteesi.",
     "faq": {
       "faq-all": "Kaikki usein kysytyt kysymykset",
       "faq-code": "Näin käytät koodia",
@@ -50,12 +55,14 @@
     "forgot-password": "Unohdin salasanani",
     "format": "PP/KK/VVVV",
     "gender": "Sukupuoli",
+    "go-to-login": "Siirry kirjautumislomakkeeseen",
     "help-with-account": "Apua tilin käytössä",
     "house-number": "Talon numero",
     "i-need-help": "Tarvitsen apua",
     "i-prefer-not-to-say": "Muu",
     "invalid": "Vahvistus epäonnistui",
     "last-name": "Sukunimi",
+    "login-history": "Tilin kirjautumishistoria",
     "login": {
       "invalid_credentials": "Antamasi sähköpostiosoite ja/tai salasana ovat virheellisiä.",
       "title": "Kirjaudu sisään",
@@ -82,14 +89,21 @@
       "general-terms-and-conditions": "Yleiset ehdot",
       "more-details": "Lisätietoja",
       "order-history": "Tilaushistoria",
+      "order-id": "Tilaustunnus",
+      "ordernumber": "Tilausnumero",
+      "paid": "maksettu",
+      "payment-method": "Maksutapa",
+      "price": "Hinta",
       "productstatus": "Tuotteen tila",
       "purchased-on": "Ostettu",
       "redeem-url": "Lunastuslinkki",
       "refunded": "hyvitetty",
+      "serial-number": "Sarjanumero",
       "service-costs": "Palvelumaksut",
       "shipped": "toimitettu",
       "show": "Näytä",
       "status": "Tila",
+      "total": "Yhteensä",
       "unpaid": "maksamatta",
       "your-orders": "Tilauksesi",
       "your-top-up-code": "Digitaalinen koodisi"
@@ -101,6 +115,7 @@
     "phone-number": "Maakoodi (Yhdysvallat: +1) / puhelinnumero",
     "pickADay": "Valitse syntymäaika",
     "please-enter-password-for-confirmation": "Vahvista antamalla salasana",
+    "postal-code": "Postinumero",
     "prefix": "Etuliite",
     "quick-signin": "Autamme sinut takaisin tilillesi käden käänteessä.",
     "repeat-email-address": "usein kysytyt kysymykset",
@@ -141,6 +156,7 @@
     "signupError": {
       "title": "Rekisteröinti epäonnistui"
     },
+    "street": "Katuosoite",
     "try-again": "Väärä sähköpostiosoite? Luo uusi tili täällä",
     "validation-send": "Vahvista Rapido-tilisi käyttämällä linkkiä tilin vahvistussähköpostissa, jonka olemme juuri lähettäneet osoitteeseen {email}. Nähdään pian!\t",
     "validations": {
@@ -173,34 +189,59 @@
     "title": "Sivua ei löydy"
   },
   "footer": {
-    "safely": "Turvallisesti"
+    "customer-care": "Asiakaspalvelu",
+    "order-with": "käytä tilaukseen",
+    "privacy-statement": "Tietosuojalausunto",
+    "quote": "Rapido.com on osa CG:tä | Miljoonia tyytyväisiä asiakkaita |",
+    "safely": "Turvallisesti",
+    "safely-order-with": "Tilaa turvallisesti:"
   },
   "general": {
     "critical_error": "Jokin meni pieleen. Yritä uudelleen lataamalla sivu uudelleen.",
+    "domain": "Rapido.com",
     "help": "Ohje",
     "home-text": "Koti",
+    "label": "Rapido",
     "loading": "Ladataan",
-    "order-safely": "Tilaa turvallisesti"
+    "look-at-faqs": "Tutustu usein kysyttyihin kysymyksiin",
+    "need-some-help": "Tarvitsetko apua?",
+    "order-now": "Tilaa nyt",
+    "order-safely": "Tilaa turvallisesti",
+    "show-less": "Näytä vähemmän",
+    "show-more": "Näytä enemmän"
   },
   "header": {
+    "login": "Sisäänkirjautuminen",
+    "main-nav": "Päävalikko",
+    "menu": "Valikko",
+    "my-account": "Oma tili",
     "profile": "profiili"
   },
   "home": {
-    "featured-products": "Esittelyssä olevat tuotteet"
+    "featured-products": "Esittelyssä olevat tuotteet",
+    "lets-speed-it-up": "Hoidetaan se nopeammin",
+    "see-all-denominations": "Katso kaikki arvot"
   },
   "internal-links": {
     "about-us": "Tietoja meistä",
+    "cookies": "Evästeet",
     "general-conditions": "Ehdot",
-    "privacy-policy": "Tietosuojakäytäntö"
+    "payment-methods": "Maksuvaihtoehdot",
+    "privacy-policy": "Tietosuojakäytäntö",
+    "terms-of-use": "Käyttöehdot"
   },
   "payment-methods": {
     "checkout-options": "Rapido.com-sivustolla voit käyttää seuraavia luotettavia maksutapoja. Kukin maksutapa on kuvattu alla.",
     "credit-or-debit-card": "Luotto-/pankkikortti",
+    "payment-options": "Maksuvaihtoehdot",
     "paypal": "PayPal",
     "paypal_text_1": "Voit maksaa Rapido.com-tilauksesi PayPalin kautta. Kun olet valinnut tämän maksutavan, kirjaudut PayPal-tilillesi ja vahvistat maksun. Sen jälkeen maksutapahtuma käsitellään.\t",
     "paypal_text_2": "Kun maksu on vastaanotettu, saldon latauskupongin koodi lähetetään välittömästi.",
     "shipping": "Toimitus",
     "visa_and_mastercard_text_1": "Rapido.com-sivustolla voit maksaa VISA-luottokortilla, VISA-pankkikortilla (Delta ja Electron) sekä MasterCardilla. Se tapahtuu valitsemalla maksuvaiheessa luottokorttimaksu. Sitten annat luottokorttisi tiedot, mukaan lukien kortin haltija, kortin numero, vanhenemispäivä ja CVV-koodi. Sen jälkeen vahvistat maksun.",
     "visa_and_mastercard_text_2": "Kun maksu on vastaanotettu, saldon latauskoodi lähetetään välittömästi."
+  },
+  "usps": {
+    "title": "Sivuston {Domain} edut"
   }
 }
