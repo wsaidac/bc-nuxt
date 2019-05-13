@@ -242,6 +242,6 @@
     "visa_and_mastercard_text_2": "Kun maksu on vastaanotettu, saldon latauskoodi lähetetään välittömästi."
   },
   "usps": {
-    "title": "Sivuston {Domain} edut"
+    "title": "Sivuston {domain} edut"
   }
 }
