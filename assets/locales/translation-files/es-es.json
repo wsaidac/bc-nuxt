@@ -53,7 +53,7 @@
       "safe-methods": "Pago <strong>seguro</strong> con:"
     },
     "forgot-password": "Ayuda, olvidé mi contraseña",
-    "format": "dd/MM/aaaa",
+    "format": "dd/MM/yyyy",
     "gender": "Sexo",
     "go-to-login": "Ir a formulario de acceso",
     "help-with-account": "Ayuda con la cuenta",

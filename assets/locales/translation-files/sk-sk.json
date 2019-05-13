@@ -53,7 +53,7 @@
       "safe-methods": "<strong>Bezpečné</strong> platby so službou:"
     },
     "forgot-password": "Pomôžte mi, nepamätám si heslo",
-    "format": "dd. MM. rrrr",
+    "format": "dd/MM/yyyy",
     "gender": "Pohlavie",
     "go-to-login": "Prejsť na prihlasovací formulár",
     "help-with-account": "Pomoc s účtom",
