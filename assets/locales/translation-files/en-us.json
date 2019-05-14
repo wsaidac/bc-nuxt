@@ -53,7 +53,7 @@
       "safe-methods": "<strong>Safe</strong> payments with:"
     },
     "forgot-password": "Help, I forgot my password",
-    "format": "dd/MM/YYYY",
+    "format": "dd/MM/yyyy",
     "gender": "Gender",
     "go-to-login": "Go to your login form",
     "help-with-account": "Help with account",
