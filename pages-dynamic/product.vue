@@ -116,29 +116,46 @@ export default {
 
   head() {
     const date = new Date();
-    const category = this.post.categories.nodes[0];
-    const { banner, image } = category.categoryHeader;
-    const url = `https://${this.domain}/${this.$i18n.locale}/${category.slug}`;
+    const { image } = this.category.categoryHeader;
+    const url = `https://${this.domain}/${this.$i18n.locale}/${
+      this.category.slug
+    }`;
+    const categoryTags = this.post.categories.nodes.map(category => ({
+      property: 'bc:product:category',
+      content: category.name,
+    }));
+
+    const meta = [
+      { property: 'og:type', content: 'og:product' },
+      { property: 'og:updated_time', content: date.toISOString() },
+      { property: 'bc:pagetype', content: 'PDP' },
+      {
+        property: 'bc:pdp:identifier',
+        content: `${this.post.rapidoProduct.id}${this.$i18n.locale}`,
+      },
+      { property: 'bc:product:code', content: this.post.rapidoProduct.id },
+      { property: 'bc:pdp:slug', content: this.$router.currentRoute.path },
+      { property: 'bc:pdp:title', content: this.post.title },
+      {
+        property: 'bc:pdp:denomination',
+        content: this.$n(this.post.information.issueValue, 'currency'),
+      },
+      { property: 'bc:brand', content: this.brand.name },
+      { property: 'bc:pdp:image', content: image && image.regular },
+      {
+        property: 'bc:pdp:image_banner_desktop',
+        content: this.bannerImage.desktop,
+      },
+      {
+        property: 'bc:pdp:image_banner_mobile',
+        content: this.bannerImage.mobile,
+      },
+      { itemprop: 'availability', content: 'http://schema.org/InStock' },
+    ].concat(categoryTags);
+
     return {
-      meta: [
-        { property: 'og:type', content: 'og:product' },
-        { property: 'og:updated_time', content: date.toISOString() },
-        { property: 'bc:pagetype', content: 'PDP' },
-        { property: 'bc:pdp:identifier', content: `${this.post.rapidoProduct.id}${this.$i18n.locale}` },
-        { property: 'bc:product:code', content: this.post.rapidoProduct.id },
-        { property: 'bc:pdp:slug', content: this.$router.currentRoute.path },
-        { property: 'bc:pdp:title', content: this.post.title },
-        { property: 'bc:pdp:denomination', content: this.$n(this.post.information.issueValue, 'currency') },
-        { property: 'bc:brand', content: category.name },
-        // { property: 'bc:product:category', content: this.post.categories.nodes[0].name },
-        { property: 'bc:pdp:image', content: image && image.regular },
-        { property: 'bc:pdp:image_banner_desktop', content: banner && banner.desktop },
-        { property: 'bc:pdp:image_banner_mobile', content: banner && banner.mobile },
-        { itemprop: 'availability', content: 'http://schema.org/InStock' },
-      ],
-      link: [
-        { rel: 'canonical', href: url },
-      ],
+      meta,
+      link: [{ rel: 'canonical', href: url }],
     };
   },
 
@@ -146,7 +163,13 @@ export default {
     ...mapGetters('shared', ['customerService', 'usps', 'header']),
     ...mapGetters('context', ['domain']),
     category() {
-      return this.post.categories.nodes[0];
+      const categorySlug = this.$route.path.split('/')[2];
+      return this.post.categories.nodes.find(
+        category => category.slug === categorySlug,
+      );
+    },
+    brand() {
+      return (this.post.brands && this.post.brands.nodes[0]) || this.category;
     },
     bannerImage() {
       return (

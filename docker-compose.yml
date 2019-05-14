@@ -11,8 +11,8 @@ services:
       HOST: 0.0.0.0
       PORT: 4000
       NODE_ENV: development
-      API_BROWSER: https://api-hub.eu-west-1.production.cgaws.cloud
-      API_SERVER: https://api-hub.eu-west-1.production.cgaws.cloud
+      API_BROWSER: https://api-hub.eu-west-1.acceptance.cgaws.cloud
+      API_SERVER: https://api-hub.eu-west-1.acceptance.cgaws.cloud
     ports:
       - 4000:4000
     volumes:

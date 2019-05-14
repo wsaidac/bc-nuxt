@@ -91,7 +91,7 @@ module.exports = {
     code: 'en-ie',
     iso: 'en-IE',
     file: 'en-us.js',
-    name: 'IR',
+    name: 'IE',
     displayName: 'Ireland',
     selectable: false,
   },
