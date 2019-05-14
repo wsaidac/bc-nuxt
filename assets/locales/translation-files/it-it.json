@@ -207,8 +207,8 @@
     "need-some-help": "Hai bisogno di aiuto?",
     "order-now": "Ordina ora",
     "order-safely": "Ordina in sicurezza",
-    "show-less": "Mostra di più",
-    "show-more": "Mostra di meno"
+    "show-less": "Mostra di meno ",
+    "show-more": "Mostra di più"
   },
   "header": {
     "login": "Login",
