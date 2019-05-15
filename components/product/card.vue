@@ -75,16 +75,15 @@
 </template>
 
 <script>
-/* eslint-disable */
-import { mapGetters } from "vuex";
-import SharedTooltip from "~/components/shared/tooltip";
-import SharedInstantTooltip from "~/components/shared/instant-tooltip";
-import { UiButton, UiSelect } from "~/components/ui";
-import { get } from "lodash";
-import productCategory from '~/mixins/productCategory';
+import { mapGetters } from 'vuex';
+
+import SharedTooltip from '~/components/shared/tooltip';
+import SharedInstantTooltip from '~/components/shared/instant-tooltip';
+import { UiButton, UiSelect } from '~/components/ui';
+import { dig, productCategory } from '~/mixins';
 
 export default {
-  name: "ProductCard",
+  name: 'ProductCard',
 
   components: {
     SharedTooltip,
@@ -92,17 +91,12 @@ export default {
     UiButton,
     UiSelect,
   },
-  filters: {
-    dig(product, path) {
-      return get(product, path, "");
-    },
-  },
 
-  mixins: [productCategory],
+  mixins: [productCategory, dig],
   props: {
     mode: {
       type: String,
-      default: "vertical",
+      default: 'vertical',
     },
     hasSelect: {
       type: Boolean,
@@ -125,7 +119,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters("shared", ["page"]),
+    ...mapGetters('shared', ['page']),
     hasTooltip() {
       return (
         this.product.content.tooltip
@@ -134,12 +128,12 @@ export default {
       );
     },
     classes() {
-      return ["product-card", `product-card--mode-${this.mode}`];
+      return ['product-card', `product-card--mode-${this.mode}`];
     },
     // cta() {
-    //   return this.mode === "horizontal"
-    //     ? this.$t("general.order-now")
-    //     : this.$t("general.order-safely");
+    //   return this.mode === 'horizontal'
+    //     ? this.$t('general.order-now')
+    //     : this.$t('general.order-safely');
     // },
     image() {
       return (
@@ -151,11 +145,11 @@ export default {
 
   methods: {
     productClick() {
-      this.$store.commit("product/setAmount", this.value);
-      if (this.page === "category") {
+      this.$store.commit('product/setAmount', this.value);
+      if (this.page === 'category') {
         this.$track('measureProductClick', { page: this.page, product: this.product });
       }
-      if (this.page === "product" || this.page === "category") {
+      if (this.page === 'product' || this.page === 'category') {
         this.$track('clickTransformProductAddToCart', { product: this.product, quantity: this.value });
       }
     },

@@ -57,44 +57,49 @@
 
 <script>
 import { mapGetters } from 'vuex';
-/* eslint-disable */
-import { UiCol, UiCollapse, UiCollapseItem, UiRow } from "~/components/ui";
+import { get } from 'lodash';
+
+import {
+  UiCol, UiCollapse, UiCollapseItem, UiRow,
+} from '~/components/ui';
 import faqUrl from '~/mixins/faqUrl';
 
 export default {
-  name: "FooterLinks",
+  name: 'FooterLinks',
 
   components: {
     UiCol,
     UiCollapse,
     UiCollapseItem,
-    UiRow
-  },
-
-  data() {
-    return {}
+    UiRow,
   },
   mixins: [faqUrl],
+
+  data() {
+    return {};
+  },
   computed: {
     ...mapGetters('menus', ['footer']),
     footerLinks() {
       const columns = {};
 
-      columns[this.$t("general.domain")] = [
+      columns[this.$t('general.domain')] = [
         this.transformLink('aboutUs'),
         this.transformLink('paymentMethods'),
       ];
-      columns[this.$t("footer.customer-care")] = [
-        { help: true, displayName: this.$t("general.help"), url: this.faqUrl, title: this.$t("general.help") },
+      columns[this.$t('footer.customer-care')] = [
+        {
+          help: true, displayName: this.$t('general.help'), url: this.faqUrl, title: this.$t('general.help'),
+        },
       ];
-      columns[this.$t("internal-links.terms-of-use")] = [
+      columns[this.$t('internal-links.terms-of-use')] = [
         this.transformLink('privacyPolicy'),
         this.transformLink('generalConditions'),
         this.transformLink('rightOfWithdrawal'),
         this.transformLink('cookieStatement'),
       ];
 
-      Object.keys(columns).forEach(key => {
+      Object.keys(columns).forEach((key) => {
         columns[key] = columns[key].filter(v => v);
       });
 
@@ -110,10 +115,10 @@ export default {
       displayName = displayName[0].toUpperCase() + displayName.slice(1).replace(/-/g, ' ');
       return {
         displayName,
-        title: (link.meta && link.meta.title) || '',
-        url: link.slug
+        title: get(link, 'link.meta.title', ''),
+        url: link.slug,
       };
-    }
+    },
   },
 };
 </script>

@@ -15,21 +15,19 @@
 </template>
 
 <script>
-/* eslint-disable */
-
 export default {
   props: {
     loading: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   computed: {
     classes() {
-      return ["shared-loader", { "shared-loader--blur": this.loading }];
-    }
-  }
+      return ['shared-loader', { 'shared-loader--blur': this.loading }];
+    },
+  },
 };
 </script>
 

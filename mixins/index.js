@@ -6,3 +6,4 @@ export { default as removeContextChangeLoader } from './removeContextChangeLoade
 export { default as getCountryFlag } from './getCountryFlag';
 export { default as togglePassword } from './toggle-password';
 export { default as validate } from './validate';
+export { default as dig } from './dig_filter';
