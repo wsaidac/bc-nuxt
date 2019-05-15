@@ -1,7 +1,7 @@
 <template>
   <a
     :href="faqUrl"
-    :title="customerService.link.title"
+    :title="customerService | dig('link.title')"
     class="service-banner"
   >
     <img
@@ -21,7 +21,7 @@
 
 <script>
 import { UiIcon } from '~/components/ui';
-import faqUrl from '~/mixins/faqUrl';
+import { dig, faqUrl } from '~/mixins';
 
 export default {
   name: 'ServiceBanner',
@@ -29,7 +29,7 @@ export default {
   components: {
     UiIcon,
   },
-  mixins: [faqUrl],
+  mixins: [faqUrl, dig],
   props: {
     customerService: { // image, primaryText, secondaryText, link
       type: Object,
