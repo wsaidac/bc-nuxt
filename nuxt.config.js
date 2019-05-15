@@ -149,6 +149,10 @@ const conf = {
       poll: true,
     },
   },
+
+  manifest: {
+    start_url: '/?utm_source=PWA',
+  },
 };
 
 if (process.env.PROXY_ACCOUNT) {
