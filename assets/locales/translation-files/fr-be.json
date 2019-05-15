@@ -208,10 +208,10 @@
     "order-now": "Commander",
     "order-safely": "Acheter",
     "show-less": "Réduire",
-    "show-more": "Montre plus"
+    "show-more": "Montrer plus"
   },
   "header": {
-    "login": "En cours de chargement",
+    "login": "Se connecter",
     "main-nav": "Menu principal",
     "menu": "Accueil",
     "my-account": "Mon compte",
