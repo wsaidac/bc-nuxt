@@ -120,9 +120,9 @@ export default {
     const url = `https://${this.domain}/${this.$i18n.locale}/${
       this.category.slug
     }`;
-    const categoryTags = this.post.categories.nodes.map(category => ({
-      property: 'bc:product:category',
-      content: category.name,
+    const categoryTags = this.post.kinds.nodes.map(kind => ({
+      property: 'bc:category',
+      content: kind.name,
     }));
 
     const meta = [
@@ -131,9 +131,9 @@ export default {
       { property: 'bc:pagetype', content: 'PDP' },
       {
         property: 'bc:pdp:identifier',
-        content: `${this.post.rapidoProduct.id}${this.$i18n.locale}`,
+        content: `${this.post.identifier}${this.$i18n.locale}`,
       },
-      { property: 'bc:product:code', content: this.post.rapidoProduct.id },
+      { property: 'bc:product:code', content: this.post.identifier },
       { property: 'bc:pdp:slug', content: this.$router.currentRoute.path },
       { property: 'bc:pdp:title', content: this.post.title },
       {
