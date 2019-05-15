@@ -50,7 +50,7 @@
     "first-name": "Prénom",
     "footer": {
       "need-help": "Vous avez une question ? Consultez notre <a>Foire Aux Questions (FAQ)</a>.",
-      "safe-methods": "Paiement <strong>Sécurisé</strong> avec:"
+      "safe-methods": "Paiement <strong>Sécurisé</strong> avec :"
     },
     "forgot-password": "J'ai oublié mon mot de passe",
     "format": "dd/MM/yyyy",
@@ -191,9 +191,9 @@
   "footer": {
     "customer-care": "Service clients",
     "order-with": "Moyen de paiement",
-    "privacy-statement": "Politique de confidentialite",
+    "privacy-statement": "Politique de confidentialité",
     "quote": "Rapido.com",
-    "safely": "sécurisé",
+    "safely": "Sécurisé",
     "safely-order-with": "Réglez en toute sécurité avec :"
   },
   "general": {
@@ -227,7 +227,7 @@
     "cookies": "Cookies",
     "general-conditions": "Conditions",
     "payment-methods": "Modes de paiement",
-    "privacy-policy": "Politique de confidentialite",
+    "privacy-policy": "Politique de confidentialité",
     "terms-of-use": "À propos de Rapido.com"
   },
   "payment-methods": {
