@@ -134,7 +134,7 @@ const impressionTransformQuickbuy = ({
         ...transformProduct(product, store),
         position: 1,
         list: 'Home Page', // extra
-      }, ],
+      },],
     },
   };
 };
@@ -148,7 +148,7 @@ const productViewTransformQuickbuy = ({
       detail: {
         products: [{
           ...transformProduct(product, store),
-        }, ],
+        },],
       },
     },
   };
@@ -169,7 +169,7 @@ const measureProductClick = ({
         products: [{
           ...transformProduct(product, store),
           position: product.position
-        }, ],
+        },],
       },
     },
   };
@@ -201,11 +201,20 @@ const clickTransformProductAddToCart = ({
         products: [{
           ...transformProduct(product, store),
           quantity: quantity
-        }, ],
+        },],
       },
     },
   };
 };
+
+const measureA2H = ({ outcome }) => {
+  return {
+    event: 'Click A2H',
+    PWA: {
+      outcome,
+    },
+  }
+}
 
 const transform = {
   impressionTransformQuickbuy,
@@ -215,6 +224,7 @@ const transform = {
   viewTransformDetail,
   measureProductClick,
   clickTransformProductAddToCart,
+  measureA2H,
 };
 
 function track(store) {
@@ -237,6 +247,13 @@ export default ({
   app.router.afterEach(() => {
     Vue.nextTick(() => {
       page();
+    });
+  });
+
+  // track PWA add to homescreen prompt
+  window.addEventListener('beforeinstallprompt', e => {
+    e.userChoice.then(({ outcome }) => {
+      app.$track('measureA2H', { outcome });
     });
   });
 };
