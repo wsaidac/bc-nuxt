@@ -1,10 +1,7 @@
-/* eslint-disable */
-const getNestedKeySafelyFromObject = (obj, keys) => keys.reduce((nestedObj, key) => (nestedObj && nestedObj[key]) ? nestedObj[key] : null, obj);
-/* eslint-disable */
-const retrieveImageFromMenuItem = (node) => {
-  return getNestedKeySafelyFromObject(node, ['additionalAttributes', 'attachedImage'])
-    || getNestedKeySafelyFromObject(node, ['connectedObject', 'categoryHeader', 'image']);
-};
+
+const getNestedKeySafelyFromObject = (obj, keys) => keys.reduce((nestedObj, key) => (nestedObj && nestedObj[key]) ? nestedObj[key] : null, obj); /* eslint-disable-line */
+const retrieveImageFromMenuItem = node => getNestedKeySafelyFromObject(node, ['additionalAttributes', 'attachedImage'])
+  || getNestedKeySafelyFromObject(node, ['connectedObject', 'categoryHeader', 'image']);
 
 const unwrapNode = node => ({
   title: node.label,
@@ -19,7 +16,7 @@ export default {
   state() {
     return {
       main: {},
-      footer: {}
+      footer: {},
     };
   },
 

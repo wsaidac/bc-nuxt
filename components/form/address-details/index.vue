@@ -46,13 +46,11 @@
 import objectModel from '~/mixins/object-model';
 
 import {
-  /* eslint-disable */
   UiCol,
   UiForm,
   UiFormItem,
   UiInput,
   UiRow,
-  /* eslint-enable */
 } from '~/components/ui.js';
 
 export default {
