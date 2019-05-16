@@ -7,7 +7,10 @@ const label = 'rapido';
 const conf = {
   head: {
     titleTemplate: '%s - Rapido.com',
-    meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [{ src: '/blueconic.js' }, { src: '//cdn.blueconic.net/cg.js' }],
   },
@@ -152,6 +155,11 @@ const conf = {
 
   manifest: {
     start_url: '/?utm_source=PWA',
+  },
+  meta: {
+    ogTitle: false,
+    ogDescription: false,
+    description: false,
   },
 };
 
