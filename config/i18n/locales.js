@@ -45,7 +45,7 @@ module.exports = {
     file: 'en-us.js',
     name: 'UK',
     displayName: 'United Kingdom',
-    selectable: false,
+    selectable: true,
   },
   'it-it': {
     code: 'it-it',
@@ -53,7 +53,7 @@ module.exports = {
     file: 'it-it.js',
     name: 'IT',
     displayName: 'Italia',
-    selectable: false,
+    selectable: true,
   },
   'fi-fi': {
     code: 'fi-fi',
@@ -61,7 +61,7 @@ module.exports = {
     file: 'fi-fi.js',
     name: 'FI',
     displayName: 'Suomi',
-    selectable: false,
+    selectable: true,
   },
   'es-es': {
     code: 'es-es',
@@ -69,7 +69,7 @@ module.exports = {
     file: 'es-es.js',
     name: 'ES',
     displayName: 'España',
-    selectable: false,
+    selectable: true,
   },
   'pt-pt': {
     code: 'pt-pt',
@@ -77,7 +77,7 @@ module.exports = {
     file: 'pt-pt.js',
     name: 'PT',
     displayName: 'Portugal',
-    selectable: false,
+    selectable: true,
   },
   'sk-sk': {
     code: 'sk-sk',
@@ -85,7 +85,7 @@ module.exports = {
     file: 'sk-sk.js',
     name: 'SK',
     displayName: 'Slovensko',
-    selectable: false,
+    selectable: true,
   },
   'en-ie': {
     code: 'en-ie',
@@ -93,6 +93,6 @@ module.exports = {
     file: 'en-us.js',
     name: 'IE',
     displayName: 'Ireland',
-    selectable: false,
+    selectable: true,
   },
 };
