@@ -66,7 +66,7 @@ export default {
       // return { error: `account.${errors[0].message}` };
       return { error: `account.${'unknown_user'}` };
     }
-    return { user: { email: 'hi' } };
+    return { user: { email: user.email } };
   },
 
   middleware: ['usps'],
