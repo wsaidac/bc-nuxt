@@ -1,10 +1,9 @@
 <template>
   <a
-    v-if="isLoaded"
     class="header-login"
     :href="$contextPath(to)"
-    :title="title"
-    v-text="text"
+    :title="$t('header.profile')"
+    v-text="$t('header.my-account')"
   />
 </template>
 
