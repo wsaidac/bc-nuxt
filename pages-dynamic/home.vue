@@ -35,7 +35,8 @@
 </template>
 
 <script>
-/* eslint-disable */
+import { mapGetters } from 'vuex';
+
 import HeaderBanner from '~/components/header/banner';
 import CgUsps from '~/components/usps';
 import ProductPopular from '~/components/product/popular';
@@ -43,7 +44,6 @@ import ProductQuickbuy from '~/components/product/quickbuy';
 import ProductFeatured from '~/components/product/featured';
 import ServiceBanner from '~/components/service/banner';
 import SeoBlock from '~/components/seo/block';
-import { mapGetters } from 'vuex';
 
 export default {
   components: {

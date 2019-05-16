@@ -18,6 +18,8 @@ fragment categoryTermFields on CategoryTerm {
     banner {
       desktop: sharpieUrl(height: 300, width: 1920)
       mobile: sharpieUrl(height: 300, width: 768)
+      altText
+      description
      }
   }
   terms {

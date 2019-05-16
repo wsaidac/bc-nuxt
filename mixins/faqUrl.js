@@ -8,6 +8,9 @@ export default {
         'de-at': 'https://faq.rapido.com/hc/de',
         'pl-pl': 'https://faq.rapido.com/hc/pl',
         'da-dk': 'https://faq.rapido.com/hc/da',
+        'es-es': 'https://faq.rapido.com/hc/es',
+        'it-it': 'https://faq.rapido.com/hc/it',
+        'fi-fi': 'https://faq.rapido.com/hc/fi',
       };
       if (links[locale]) {
         return links[locale];

@@ -2,6 +2,7 @@
 
 fragment productFields on CmsProduct {
   id
+  identifier
   title
   link
   uri
@@ -35,6 +36,11 @@ fragment productFields on CmsProduct {
   categories: categoryTerms {
     nodes {
       ...categoryTermFields
+    }
+  }
+  kinds: kindTerms {
+    nodes {
+      name
     }
   }
   rapidoProduct {

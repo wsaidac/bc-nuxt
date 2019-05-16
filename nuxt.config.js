@@ -100,6 +100,7 @@ const conf = {
     middleware: ['checkLocale'],
   },
   modules: [
+    '@nuxtjs/pwa',
     ['@nuxtjs/style-resources'],
     'cookie-universal-nuxt',
     ['@nuxtjs/sentry'],
@@ -147,6 +148,10 @@ const conf = {
     webpack: {
       poll: true,
     },
+  },
+
+  manifest: {
+    start_url: '/?utm_source=PWA',
   },
 };
 

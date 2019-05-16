@@ -70,12 +70,6 @@ export default {
       default: '',
     },
   },
-
-  computed: {
-    headerImage() {
-      return this.header && (this.header.titlePart1 || this.header.titlePart2);
-    },
-  },
 };
 </script>
 

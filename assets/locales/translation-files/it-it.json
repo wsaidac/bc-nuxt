@@ -53,7 +53,7 @@
       "safe-methods": "Pagamenti <strong>sicuri</strong> con:"
     },
     "forgot-password": "Aiuto! Ho dimenticato la password",
-    "format": "gg/MM/aaaa",
+    "format": " dd/MM/yyyy",
     "gender": "Sesso",
     "go-to-login": "Vai alla pagina del login",
     "help-with-account": "Assistenza con l'account",
@@ -199,7 +199,7 @@
   "general": {
     "critical_error": "Si è verificato un errore. Ricarica la pagina per effettuare un altro tentativo.",
     "domain": "Rapido.com",
-    "help": "Guida",
+    "help": "Aiuto",
     "home-text": "Home",
     "label": "Rapido",
     "loading": "Caricamento in corso",
@@ -207,8 +207,8 @@
     "need-some-help": "Hai bisogno di aiuto?",
     "order-now": "Ordina ora",
     "order-safely": "Ordina in sicurezza",
-    "show-less": "Mostra di più",
-    "show-more": "Mostra di meno"
+    "show-less": "Chiudere",
+    "show-more": "Vedi piú prodotti"
   },
   "header": {
     "login": "Login",
