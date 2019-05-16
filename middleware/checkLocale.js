@@ -1,7 +1,10 @@
 import locales from '~/config/i18n/locales';
 
 export default ({
-  app, req, redirect, route,
+  app,
+  req,
+  redirect,
+  route,
 }) => {
   if (!process.server && route.path.substring(1).startsWith(app.i18n.locale)) return null;
 
@@ -22,7 +25,9 @@ export default ({
       const localeCode = cloudfrontLocale && cloudfrontLocale.code;
 
       if (localeCode) {
-        app.$cookies.set('country', localeCode, { path: '/' });
+        app.$cookies.set('country', localeCode, {
+          path: '/',
+        });
         return redirect(301, `/${localeCode}/`);
       }
     }
@@ -36,6 +41,12 @@ export default ({
     urlPaths.splice(1, 1, currentLocale.toLowerCase());
 
     return redirect(301, urlPaths.join('/'));
+  }
+
+  if (currentLocale) {
+    app.$cookies.set('country', currentLocale, {
+      path: '/',
+    });
   }
 
   return null;
