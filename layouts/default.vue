@@ -1,5 +1,5 @@
 <template>
-  <div class="cg-layout layout-default">
+  <div :class="classes">
     <loader />
     <header-navbar :items="main.categories" />
     <nuxt />
@@ -23,6 +23,19 @@ export default {
 
   computed: {
     ...mapGetters('menus', ['main']),
+    classes() {
+      const { locale } = this.$i18n;
+      const country = locale.split('-')[1];
+      const language = locale.split('-')[0];
+
+      return [
+        'cg-layout',
+        'layout-default',
+        `cg-locale-${locale}`,
+        `cg-country-${country}`,
+        `cg-language-${language}`,
+      ];
+    },
   },
 };
 </script>

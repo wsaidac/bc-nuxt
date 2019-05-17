@@ -6,7 +6,6 @@ const label = 'rapido';
 
 const conf = {
   head: {
-    titleTemplate: '%s - Rapido.com',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -155,11 +154,10 @@ const conf = {
 
   manifest: {
     start_url: '/?utm_source=PWA',
-  },
-  meta: {
-    ogTitle: false,
-    ogDescription: false,
     description: false,
+    ogDescription: false,
+    title: false,
+    ogTitle: false,
   },
 };
 
