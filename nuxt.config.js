@@ -159,7 +159,6 @@ const conf = {
     title: false,
     ogTitle: false,
   },
-
 };
 
 if (process.env.PROXY_ACCOUNT) {
