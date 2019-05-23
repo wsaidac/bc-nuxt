@@ -59,7 +59,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import { groupBy } from 'lodash';
+import { groupBy, uniqBy } from 'lodash';
 import HeaderBanner from '~/components/header/banner';
 import CgUsps from '~/components/usps';
 import CategoryKind from '~/components/category/kind';
@@ -89,10 +89,10 @@ export default {
   head() {
     const url = `https://${this.domain}${this.$route.path}`;
     const { banner, image, title } = this.post.categoryHeader;
-    const categoryTags = this.post.products.nodes.map(product => ({
+    const categoryTags = uniqBy(this.post.products.nodes.map(product => ({
       property: 'bc:category',
       content: product.kinds.nodes[0].name,
-    }));
+    })), 'content');
 
     return {
       meta: [
