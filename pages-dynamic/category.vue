@@ -59,7 +59,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import { groupBy } from 'lodash';
+import { groupBy, uniqBy } from 'lodash';
 import HeaderBanner from '~/components/header/banner';
 import CgUsps from '~/components/usps';
 import CategoryKind from '~/components/category/kind';
@@ -89,10 +89,10 @@ export default {
   head() {
     const url = `https://${this.domain}${this.$route.path}`;
     const { banner, image, title } = this.post.categoryHeader;
-    const categoryTags = this.post.products.nodes.map(product => ({
+    const categoryTags = uniqBy(this.post.products.nodes.map(product => ({
       property: 'bc:category',
       content: product.kinds.nodes[0].name,
-    }));
+    })), 'content');
 
     return {
       meta: [
@@ -103,7 +103,7 @@ export default {
         { property: 'bc:pop:code', content: this.post.id },
         { property: 'bc:pop:slug', content: this.$router.currentRoute.path },
         { property: 'bc:pop:title', content: title },
-        { property: 'bc:brand', content: this.post.name },
+        { property: 'bc:brand', content: this.post.name.replace('&amp;', '&') },
 
         // { property: 'bc:product:category', content: 'Mobile Recharge' },
         { property: 'bc:pop:image', content: image && image.regular },
@@ -111,6 +111,7 @@ export default {
         { property: 'bc:pop:image_banner_mobile', content: banner && banner.mobile },
         { itemprop: 'availability', content: 'http://schema.org/InStock' },
       ].concat(categoryTags),
+      __dangerouslyDisableSanitizers: ['meta'],
       link: [
         { rel: 'canonical', href: url },
       ],
