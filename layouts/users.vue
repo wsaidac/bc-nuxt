@@ -1,5 +1,5 @@
 <template>
-  <div class="cg-layout layout-users">
+  <div :class="classes">
     <loader />
     <header-navbar on-users />
     <cg-usps :usps="usps.items" />
@@ -38,6 +38,19 @@ export default {
 
   computed: {
     ...mapGetters('shared', ['usps']),
+    classes() {
+      const { locale } = this.$i18n;
+      const country = locale.split('-')[1];
+      const language = locale.split('-')[0];
+
+      return [
+        'cg-layout',
+        'layout-users',
+        `cg-locale-${locale}`,
+        `cg-country-${country}`,
+        `cg-language-${language}`,
+      ];
+    },
   },
 };
 </script>

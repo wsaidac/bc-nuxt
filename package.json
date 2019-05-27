@@ -1,6 +1,5 @@
 {
   "name": "Rapido.com",
-  "description": "Buy your online gift cards at Rapido.com ✓ Prepaid Code sent directly by Email ✓ Choose from Game codes, Entertainment codes, Call Credit and Gift Codes ✓ Safe payment is possible by PayPal or Credit Card",
   "private": true,
   "scripts": {
     "dev": "nodemon app.js",

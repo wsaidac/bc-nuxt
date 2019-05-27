@@ -1,16 +1,16 @@
 <template>
   <div class="product-quickbuy">
-    <shared-loader :loading="!isLoaded">
+    <shared-loader :loading="false">
       <h2 class="product-quickbuy__title">{{ $t('home.lets-speed-it-up') }}</h2>
       <ui-row>
         <ui-col :sm="{ span: 12, offset: 2 }">
           <product-card
-            :product="product"
+            :product="defaultProduct"
             mode="horizontal"
           />
         </ui-col>
         <ui-col :sm="8">
-          <product-variants :product="product" />
+          <product-variants :product="defaultProduct" />
         </ui-col>
       </ui-row>
     </shared-loader>
