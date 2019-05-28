@@ -178,8 +178,11 @@
     "request-unlock-help": "Help, I locked my account!",
     "unlock-token-sent": "Check your email. We just sent you instructions for unlocking your account. If you do not receive an email in 30 minutes, please try again.",
     "request_unlock": {
-      "error_title": "Reset password failed",
-      "unknown_user": "No account found for this email address."
+      "unlock": {
+        "invalid_token": "The token send, is not valid",
+        "unknown_user": "No account found for this email address.",
+        "error_title": "Reset password failed"
+      }
     }
   },
   "country_select": {

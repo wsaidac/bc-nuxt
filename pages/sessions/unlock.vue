@@ -63,8 +63,7 @@ export default {
       unlockToken: query.token,
     });
     if (errors.length > 0) {
-      // return { error: `account.${errors[0].message}` };
-      return { error: `account.${'unknown_user'}` };
+      return { error: `account.request_unlock.${errors[0].message}` };
     }
     return { user: { email: user.email } };
   },

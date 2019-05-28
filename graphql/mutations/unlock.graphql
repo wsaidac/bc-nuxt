@@ -1,5 +1,5 @@
 mutation($userId: ID!, $unlockToken: String!) {
-  unlock(userId: $userId, confirmationToken: $unlockToken) {
+  user: unlock(userId: $userId, unlockToken: $unlockToken) {
     id
     email
   }
