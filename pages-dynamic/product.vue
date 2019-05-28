@@ -131,16 +131,16 @@ export default {
       { property: 'bc:pagetype', content: 'PDP' },
       {
         property: 'bc:pdp:identifier',
-        content: `${this.post.identifier}${this.$i18n.locale}`,
+        content: `${this.post.rapidoProduct.id}${this.$i18n.locale}`,
       },
-      { property: 'bc:product:code', content: this.post.identifier },
+      { property: 'bc:product:code', content: this.post.rapidoProduct.id },
       { property: 'bc:pdp:slug', content: this.$router.currentRoute.path },
       { property: 'bc:pdp:title', content: this.post.title },
       {
         property: 'bc:pdp:denomination',
         content: this.$n(this.post.information.issueValue, 'currency'),
       },
-      { property: 'bc:brand', content: this.brand.name },
+      { property: 'bc:brand', content: this.brand.name.replace('&amp;', '&') },
       { property: 'bc:pdp:image', content: image && image.regular },
       {
         property: 'bc:pdp:image_banner_desktop',
@@ -155,6 +155,7 @@ export default {
 
     return {
       meta,
+      __dangerouslyDisableSanitizers: ['meta'],
       link: [{ rel: 'canonical', href: url }],
     };
   },

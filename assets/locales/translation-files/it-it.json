@@ -56,7 +56,7 @@
     "format": " dd/MM/yyyy",
     "gender": "Sesso",
     "go-to-login": "Vai alla pagina del login",
-    "help-with-account": "Assistenza con l'account",
+    "help-with-account": "Richiedi assistenza",
     "house-number": "Numero civico",
     "i-need-help": "Ho bisogno di aiuto",
     "i-prefer-not-to-say": "Altro",
@@ -141,7 +141,7 @@
         "title": "Reset della password fallito"
       },
       "reset_password": {
-        "invalid_token": "Il link per il reset della password è scaduto. Compila il modulo della password dimenticata."
+        "invalid_token": "Per verificare il tuo account di Rapido utilizza il link contenuto nell'e-mail di convalida che ti abbiamo appena inviato all'indirizzo {email}. A presto!"
       },
       "submit": {
         "message": "La password è ora aggiornata e hai effettuato l'accesso.",
@@ -207,7 +207,7 @@
     "need-some-help": "Hai bisogno di aiuto?",
     "order-now": "Ordina ora",
     "order-safely": "Ordina in sicurezza",
-    "show-less": "Chiudere",
+    "show-less": "Chiudi",
     "show-more": "Vedi piú prodotti"
   },
   "header": {
