@@ -53,7 +53,7 @@ module.exports = {
     file: 'it-it.js',
     name: 'IT',
     displayName: 'Italia',
-    selectable: false,
+    selectable: true,
   },
   'fi-fi': {
     code: 'fi-fi',
@@ -61,7 +61,7 @@ module.exports = {
     file: 'fi-fi.js',
     name: 'FI',
     displayName: 'Suomi',
-    selectable: false,
+    selectable: true,
   },
   'es-es': {
     code: 'es-es',
@@ -93,6 +93,6 @@ module.exports = {
     file: 'en-us.js',
     name: 'IE',
     displayName: 'Ireland',
-    selectable: false,
+    selectable: true,
   },
 };
