@@ -140,14 +140,5 @@ export default {
   & > .el-row > .el-col {
     margin-top: 20px;
   }
-
-  &__unlock-link {
-    display: block;
-    margin-bottom: 20px !important;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
 }
 </style>
