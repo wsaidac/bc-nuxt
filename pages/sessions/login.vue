@@ -3,10 +3,18 @@
     <ui-alert
       v-if="loginError"
       :title="$t('account.loginError.title')"
-      :description="$t(loginError)"
       type="error"
       @close="loginError = null"
-    />
+    >
+      <i18n
+        v-if="loginError == 'account.login.locked'"
+        path="account.login.locked"
+        tag="div"
+      >
+        <a :href="`/${locale}/sessions/request-unlock`">{{ $t('account.login.locked-link-text') }}</a>
+      </i18n>
+      <div v-else>{{ $t(loginError) }}</div>
+    </ui-alert>
     <ui-alert
       v-if="signUpError"
       :title="$t('account.signupError.title')"
@@ -102,6 +110,12 @@ export default {
       loginError: null,
       signUpError: null,
     };
+  },
+
+  computed: {
+    locale() {
+      return this.$i18n.locale;
+    },
   },
 
   methods: {

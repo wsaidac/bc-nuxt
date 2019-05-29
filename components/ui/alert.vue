@@ -4,7 +4,11 @@
     v-bind="$attrs"
     v-on="$listeners"
   >
-    <div v-html="description" />
+    <slot v-if="this.$slots.default" />
+    <div
+      v-else
+      v-html="description"
+    />
   </el-alert>
 </template>
 

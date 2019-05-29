@@ -9,6 +9,9 @@
     "agree-to-terms": "By creating an account, you agree with Rapido’s <a href='/en-us/general-conditions'>Terms of Use</a> and <a href='/en-us/privacy'>Privacy Policy</a>.",
     "all-questions": "All questions",
     "birthdate": "Date of birth",
+    "bruteforce": {
+      "banned": "Too many login attempts"
+    },
     "cancel": "Cancel",
     "change-email": "Change email",
     "change-email-requested": "We have sent you an email to confirm the change of your email address",
@@ -65,7 +68,8 @@
     "last-name": "Last name",
     "login-history": "Account login history",
     "login": {
-      "locked": "Your account has been locked. <a href='/en-us/sessions/request-unlock'>More info</a>.",
+      "locked": "Your account has been locked. {0}",
+      "locked-link-text": "More info",
       "invalid_credentials": "The email address and/or password you entered is incorrect.",
       "title": "Log In",
       "unconfirmed_email": "The email address is not confirmed",
