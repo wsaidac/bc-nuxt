@@ -190,10 +190,10 @@
   },
   "footer": {
     "customer-care": "Assistenza clienti",
-    "order-with": "ordina con",
+    "order-with": "con",
     "privacy-statement": "Dichiarazione sulla privacy",
     "quote": "Rapido.com fa parte di CG | Milioni di clienti soddisfatti |",
-    "safely": "In sicurezza",
+    "safely": "Paga in sicurezza",
     "safely-order-with": "Ordina in sicurezza con"
   },
   "general": {
@@ -206,7 +206,7 @@
     "look-at-faqs": "Dai un'occhiata alle FAQ",
     "need-some-help": "Hai bisogno di aiuto?",
     "order-now": "Ordina ora",
-    "order-safely": "Ordina in sicurezza",
+    "order-safely": "Acquista ora",
     "show-less": "Chiudi",
     "show-more": "Vedi piú prodotti"
   },
@@ -219,8 +219,8 @@
   },
   "home": {
     "featured-products": "Prodotti speciali",
-    "lets-speed-it-up": "Velocizziamolo",
-    "see-all-denominations": "Visualizza tutte le denominazioni"
+    "lets-speed-it-up": "Acquista velocemente",
+    "see-all-denominations": "Visualizza tutti i prodotti"
   },
   "internal-links": {
     "about-us": "Chi siamo",
