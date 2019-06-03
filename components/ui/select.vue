@@ -120,7 +120,8 @@ export default {
   width: 47px;
 }
 
-.el-popper[x-placement^="bottom"] .popper__arrow {
+.el-popper[x-placement^="bottom"] .popper__arrow,
+.el-popper[x-placement^="up"] .popper__arrow {
   display: none;
 }
 
