@@ -15,7 +15,7 @@
               :to="$contextPath(link.url)"
               :title="link.title"
             >
-              {{ link.displayName }}
+              {{ link.title }}
             </nuxt-link>
           </li>
         </ul>
@@ -38,14 +38,14 @@
                 v-if="link.help"
                 :href="link.url"
               >
-                {{ link.displayName }}
+                {{ link.title }}
               </a>
               <nuxt-link
                 v-else
                 :to="$contextPath(link.url)"
                 :title="link.title"
               >
-                {{ link.displayName }}
+                {{ link.title }}
               </nuxt-link>
             </li>
           </ul>
@@ -89,7 +89,7 @@ export default {
       ];
       columns[this.$t('footer.customer-care')] = [
         {
-          help: true, displayName: this.$t('general.help'), url: this.faqUrl, title: this.$t('general.help'),
+          help: true, url: this.faqUrl, title: this.$t('general.help'),
         },
       ];
       columns[this.$t('internal-links.terms-of-use')] = [
@@ -111,11 +111,9 @@ export default {
     transformLink(linkName) {
       const link = this.footer[linkName];
       if (!link || !link.slug) return null;
-      let displayName = link.slug;
-      displayName = displayName[0].toUpperCase() + displayName.slice(1).replace(/-/g, ' ');
+
       return {
-        displayName,
-        title: get(link, 'link.meta.title', ''),
+        title: link.href.title || link.href.label,
         url: link.slug,
       };
     },
