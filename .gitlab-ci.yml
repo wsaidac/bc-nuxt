@@ -1,56 +1,18 @@
 include:
-  - https://gitlab.cgaws.cloud/infra/ci/raw/master/capistrano.yml
+  - project: infra/ci
+    file: capistrano.yml
+    ref: feature/capistrano-rollback
 
-variables:
-  ECR_REGISTRY: 031993550471.dkr.ecr.eu-west-1.amazonaws.com
+  - project: infra/ci
+    file: javascript.yml
 
-.yarn-cache:
-  cache:
-    key: yarn
-    paths:
-    - node-modules/
-
-eslint:
-  extends: .yarn-cache
-  stage: test
-  image: node:8-alpine
-  before_script:
-    - apk --no-cache add git
-    - yarn install
-  script:
-    - yarn eslint
-  except:
-    variables:
-      - $ESLINT_DISABLED
-
-stylelint:
-  extends: .yarn-cache
-  stage: test
-  image: node:8-alpine
-  before_script:
-    - apk --no-cache add git
-    - yarn install
-  script:
-    - yarn stylelint
-  except:
-    variables:
-      - $STYLELINT_DISABLED
-
-test-unit:
-  extends: .yarn-cache
-  stage: test
-  image: node:8-alpine
-  before_script:
-    - apk --no-cache add git
-    - yarn install
-  script:
-    - yarn test:unit
-  except:
-    variables:
-      - $TEST_UNIT_DISABLED
+acceptance:
+  environment:
+    name: acceptance
+    url: https://www.rapido.acceptance.cgaws.cloud
 
 production:
-  extends: capistrano
   when: manual
-  only:
-    - master
+  environment:
+    name: production
+    url: https://www.rapido.com/
