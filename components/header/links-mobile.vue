@@ -48,24 +48,24 @@
       </li>
       <li
         v-for="link in links"
-        :key="link.displayName"
+        :key="link.title"
         class="header-links-mobile__main-item"
       >
         <nuxt-link
           v-if="link.title !== 'Help'"
           :to="$contextPath(link.url)"
-          :title="link.displayName"
+          :title="link.title"
           @click.native="$emit('close-menu')"
         >
-          {{ link.displayName }}
+          {{ link.title }}
         </nuxt-link>
 
         <a
           v-if="link.title === 'Help'"
           :href="link.url"
-          :title="link.displayName"
+          :title="link.title"
         >
-          {{ link.displayName }}
+          {{ link.title }}
         </a>
       </li>
     </ul>
@@ -118,7 +118,7 @@ export default {
       return [
         this.transformLink('aboutUs'),
         this.transformLink('paymentMethods'),
-        { displayName: this.$t('general.help'), url: this.faqUrl, title: 'Help' },
+        { title: this.$t('general.help'), url: this.faqUrl },
         this.transformLink('privacyPolicy'),
         this.transformLink('generalConditions'),
         this.transformLink('cookieStatement'),
@@ -133,11 +133,9 @@ export default {
     transformLink(linkName) {
       const link = this.footer[linkName];
       if (!link || !link.slug) return '';
-      let displayName = link.slug;
-      displayName = displayName[0].toUpperCase() + displayName.slice(1).replace(/-/g, ' ');
+
       return {
-        displayName,
-        title: (link.meta && link.meta.title) || '',
+        title: link.href.title,
         url: link.slug,
       };
     },

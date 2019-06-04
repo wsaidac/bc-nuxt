@@ -178,7 +178,7 @@
       "Belgium": "Belgio",
       "United States": "Stati Uniti"
     },
-    "description": "La selezione del tuo Paese ci permetterà di offrirti <strong>prodotti e metodi di pagamento corretti</strong>. Assicurati che il Paese corrisponda alla tua nazione e controlla l'/gli account dal/dai quale/i stai pianificando di utilizzare il prodotto.",
+    "description": "La selezione del tuo Paese ci permetterà di offrirti prodotti e metodi di pagamento corretti. Assicurati che il Paese corrisponda alla tua nazione e controlla l'/gli account dal/dai quale/i stai pianificando di utilizzare il prodotto.",
     "title": "Seleziona il tuo Paese"
   },
   "error": {
@@ -190,23 +190,23 @@
   },
   "footer": {
     "customer-care": "Assistenza clienti",
-    "order-with": "ordina con",
+    "order-with": "con",
     "privacy-statement": "Dichiarazione sulla privacy",
     "quote": "Rapido.com fa parte di CG | Milioni di clienti soddisfatti |",
-    "safely": "In sicurezza",
+    "safely": "Paga in sicurezza",
     "safely-order-with": "Ordina in sicurezza con"
   },
   "general": {
     "critical_error": "Si è verificato un errore. Ricarica la pagina per effettuare un altro tentativo.",
     "domain": "Rapido.com",
-    "help": "Aiuto",
+    "help": "Help",
     "home-text": "Home",
     "label": "Rapido",
     "loading": "Caricamento in corso",
     "look-at-faqs": "Dai un'occhiata alle FAQ",
     "need-some-help": "Hai bisogno di aiuto?",
     "order-now": "Ordina ora",
-    "order-safely": "Ordina in sicurezza",
+    "order-safely": "Acquista ora",
     "show-less": "Chiudi",
     "show-more": "Vedi piú prodotti"
   },
@@ -219,8 +219,8 @@
   },
   "home": {
     "featured-products": "Prodotti speciali",
-    "lets-speed-it-up": "Velocizziamolo",
-    "see-all-denominations": "Visualizza tutte le denominazioni"
+    "lets-speed-it-up": "Acquista velocemente",
+    "see-all-denominations": "Visualizza tutti i prodotti"
   },
   "internal-links": {
     "about-us": "Chi siamo",
