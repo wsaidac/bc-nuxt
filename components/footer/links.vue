@@ -113,7 +113,7 @@ export default {
       if (!link || !link.slug) return null;
 
       return {
-        title: link.href.title || link.href.label,
+        title: link.href.title,
         url: link.slug,
       };
     },
