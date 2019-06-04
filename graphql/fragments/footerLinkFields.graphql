@@ -3,4 +3,8 @@ fragment footerLinkFields on ServicePage {
     meta {
       title
     }
+    href {
+      label
+      title
+    }
 }
