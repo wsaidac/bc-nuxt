@@ -68,7 +68,7 @@
     "last-name": "Last name",
     "login-history": "Account login history",
     "login": {
-      "locked": "Your account has been locked. {0}",
+      "locked": "Your account has been locked. {unlock-request-link}",
       "locked-link-text": "More info",
       "invalid_credentials": "The email address and/or password you entered is incorrect.",
       "title": "Log In",

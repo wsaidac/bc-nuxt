@@ -11,7 +11,10 @@
         path="account.login.locked"
         tag="div"
       >
-        <a :href="`/${locale}/sessions/request-unlock`">{{ $t('account.login.locked-link-text') }}</a>
+        <a
+          :href="`/${locale}/sessions/request-unlock`"
+          place="unlock-request-link"
+        >{{ $t('account.login.locked-link-text') }}</a>
       </i18n>
       <div v-else>{{ $t(loginError) }}</div>
     </ui-alert>
@@ -32,9 +35,7 @@
             path="account.validation-send"
             tag="p"
           >
-            <strong place="email">
-              {{ email }}
-            </strong>
+            <strong place="email">{{ email }}</strong>
           </i18n>
         </ui-message>
         <ui-button
@@ -42,9 +43,7 @@
           justify
           @click="tryAgain"
         >
-          <span>
-            {{ $t('account.try-again') }}
-          </span>
+          <span>{{ $t('account.try-again') }}</span>
           <ui-icon icon="arrow-right-open" />
         </ui-button>
       </ui-col>
