@@ -130,11 +130,6 @@ export default {
     classes() {
       return ['product-card', `product-card--mode-${this.mode}`];
     },
-    // cta() {
-    //   return this.mode === 'horizontal'
-    //     ? this.$t('general.order-now')
-    //     : this.$t('general.order-safely');
-    // },
     image() {
       return (
         this.product.content.image
@@ -147,10 +142,16 @@ export default {
     productClick() {
       this.$store.commit('product/setAmount', this.value);
       if (this.page === 'category') {
-        this.$track('measureProductClick', { page: this.page, product: this.product });
+        this.$track('measureProductClick', {
+          page: this.page,
+          product: this.product,
+        });
       }
       if (this.page === 'product' || this.page === 'category') {
-        this.$track('clickTransformProductAddToCart', { product: this.product, quantity: this.value });
+        this.$track('clickTransformProductAddToCart', {
+          product: this.product,
+          quantity: this.value,
+        });
       }
     },
     submitForm(e) {
