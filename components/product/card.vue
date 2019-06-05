@@ -147,10 +147,16 @@ export default {
     productClick() {
       this.$store.commit('product/setAmount', this.value);
       if (this.page === 'category') {
-        this.$track('measureProductClick', { page: this.page, product: this.product });
+        this.$track('measureProductClick', {
+          page: this.page,
+          product: this.product,
+        });
       }
       if (this.page === 'product' || this.page === 'category') {
-        this.$track('clickTransformProductAddToCart', { product: this.product, quantity: this.value });
+        this.$track('clickTransformProductAddToCart', {
+          product: this.product,
+          quantity: this.value,
+        });
       }
     },
     submitForm(e) {

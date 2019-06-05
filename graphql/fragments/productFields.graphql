@@ -43,6 +43,11 @@ fragment productFields on CmsProduct {
       name
     }
   }
+  brands: brandTerms {
+    nodes {
+      name
+    }
+  }
   rapidoProduct {
     id
   }

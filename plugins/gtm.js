@@ -69,10 +69,17 @@ function getMenuItem(slug, store) {
   });
 }
 
-function transformProduct(product, store) {
+function transformProduct(product, { store, route }) {
+  let slug = null;
+  if (store.getters['shared/page'] === 'category') {
+    const splittedPath = route.path.split('/');
+    slug = splittedPath.slice(-1)[0]
+  } else if (product.categories) {
+    slug = product.categories && product.categories['nodes'][0].slug;
+  }
+
   const kind = product.kinds && product.kinds["nodes"][0].name || null;
-  const brand = product.categories && product.categories["nodes"][0].categoryHeader.title || null;
-  const slug = product.categories && product.categories["nodes"][0]['slug'] || null;
+  const brand = product.brands && product.brands["nodes"][0].name.replace('&amp;', '&') || null;
   const menuItem = getMenuItem(slug, store);
 
   return {
@@ -88,10 +95,10 @@ function transformProduct(product, store) {
 // 1, Measuring Product Impressions
 const impressionTransformPop = ({
   post
-}, store) => {
-  const mappedProducts = post.products.nodes.map((product, i) => {
+}, { store, route }) => {
+  const mappedProducts = post.products.nodes.filter(product => product.rapidoProduct).map((product, i) => {
     return {
-      ...transformProduct(product, store),
+      ...transformProduct(product, { store, route }),
       list: 'Product Overview Page', // extra
       position: i + 1, // extra
     };
@@ -106,10 +113,10 @@ const impressionTransformPop = ({
 
 const productViewTransformPop = ({
   post
-}, store) => {
-  const mappedProducts = post.products.nodes.map((product, i) => {
+}, { store, route }) => {
+  const mappedProducts = post.products.nodes.filter(product => product.rapidoProduct).map((product, i) => {
     return {
-      ...transformProduct(product, store),
+      ...transformProduct(product, { store, route }),
       position: i + 1, // extra
     };
   });
@@ -126,12 +133,12 @@ const productViewTransformPop = ({
 // 2, Quick buy
 const impressionTransformQuickbuy = ({
   product
-}, store) => {
+}, { store, route }) => {
   return {
     event: 'impressions',
     ecommerce: {
       impressions: [{
-        ...transformProduct(product, store),
+        ...transformProduct(product, { store, route }),
         position: 1,
         list: 'Home Page', // extra
       },],
@@ -141,13 +148,13 @@ const impressionTransformQuickbuy = ({
 
 const productViewTransformQuickbuy = ({
   product
-}, store) => {
+}, { store, route }) => {
   return {
     event: 'productView',
     ecommerce: {
       detail: {
         products: [{
-          ...transformProduct(product, store),
+          ...transformProduct(product, { store, route }),
         },],
       },
     },
@@ -158,7 +165,7 @@ const productViewTransformQuickbuy = ({
 const measureProductClick = ({
   page,
   product
-}, store) => {
+}, { store, route }) => {
   return {
     event: 'productClick',
     ecommerce: {
@@ -167,7 +174,7 @@ const measureProductClick = ({
           list: page
         },
         products: [{
-          ...transformProduct(product, store),
+          ...transformProduct(product, { store, route }),
           position: product.position
         },],
       },
@@ -178,12 +185,12 @@ const measureProductClick = ({
 // 4, Measuring Views of Product Details
 const viewTransformDetail = ({
   product
-}, store) => {
+}, { store, route }) => {
   return {
     event: 'productView',
     ecommerce: {
       detail: {
-        products: [transformProduct(product, store)],
+        products: [transformProduct(product, { store, route })],
       },
     },
   };
@@ -193,13 +200,13 @@ const viewTransformDetail = ({
 const clickTransformProductAddToCart = ({
   product,
   quantity
-}, store) => {
+}, { store, route }) => {
   return {
     event: 'addToCart',
     ecommerce: {
       add: {
         products: [{
-          ...transformProduct(product, store),
+          ...transformProduct(product, { store, route }),
           quantity: quantity
         },],
       },
@@ -227,9 +234,9 @@ const transform = {
   measureA2H,
 };
 
-function track(store) {
+function track(store, route) {
   return (type, data) => {
-    const transformedData = transform[type](data, store);
+    const transformedData = transform[type](data, { store, route });
     log(transformedData);
     window.dataLayer.push(transformedData);
     return this;
@@ -238,11 +245,12 @@ function track(store) {
 
 export default ({
   store,
+  route,
   app
 }, inject) => {
   initilialize(store.getters['shared/gtmId']);
 
-  inject('track', track(store));
+  inject('track', track(store, route));
 
   app.router.afterEach(() => {
     Vue.nextTick(() => {
