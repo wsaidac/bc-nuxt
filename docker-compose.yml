@@ -6,7 +6,6 @@ services:
       context: .
       target: dev
     command: /sbin/tini -- yarn dev
-    user: root
     environment:
       HOST: 0.0.0.0
       PORT: 4000

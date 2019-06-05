@@ -112,8 +112,11 @@ export default {
       const link = this.footer[linkName];
       if (!link || !link.slug) return null;
 
+      let displayName = link.slug;
+      displayName = displayName[0].toUpperCase() + displayName.slice(1).replace(/-/g, ' ');
+
       return {
-        title: link.href.title,
+        title: get(link, 'href.title', displayName),
         url: link.slug,
       };
     },

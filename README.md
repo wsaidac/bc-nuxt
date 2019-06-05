@@ -8,40 +8,36 @@
 
 Vue.js web interface based on Nuxt.js for the Rapido frontend.
 
-## Development
-Start developing quickly with Docker Compose:
+## Local Development
+
+Node <= 10 and Yarn need to be installed on your local environment.
 
 ```
-docker-compose build web
-docker-compose run web yarn install
-docker-compose up web
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+source ~/.bashrc
+nvm install 10
+nvm use 10
+brew install yarn
+```
+
+Install the dependencies and start the local environment
+
+```
+yarn install
+yarn dev-debug
 ```
 
 ### Unit testing
 Jest unit tests are integrated for units and components:
 ```
-docker-compose run web yarn test:unit
+yarn test:unit
 ```
 
 ### E2E testing
 End-to-end testing is integrated with Cypress. Docker can be used for headless
 testing:
 ```
-docker-compose run web yarn test:e2e
-```
-
-Interactive testing with live reloading and a development console cannnot be
-run from within a Docker container. Node 8 and Yarn need to be installed on
-your local environment.
-
-To install Cypress in your local environment run:
-```
-yarn install
-```
-
-To start the Cypress development console run:
-```
-yarn cypress
+yarn test:e2e
 ```
 
 ### Linting
@@ -51,8 +47,16 @@ linting in your IDE.
 
 To manually run linting run:
 ```
-docker-compose run web yarn eslint
-docker-compose run web yarn stylelint
+yarn lint
+```
+
+## Development using Docker
+Start developing quickly with Docker Compose:
+
+```
+docker-compose build web
+docker-compose run web yarn install
+docker-compose up web
 ```
 
 ### VSCode

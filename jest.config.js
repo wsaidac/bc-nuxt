@@ -1,13 +1,13 @@
 const path = require('path');
 
 module.exports = {
-  collectCoverage: false,
+  collectCoverage: true,
   collectCoverageFrom: [
     '**/*.{js,vue}',
     '!**/node_modules/**',
     '!**/cypress/**',
   ],
-  coverageReporters: ['text-summary'],
+  coverageReporters: ['text-summary', 'lcov'],
   rootDir: path.resolve(__dirname),
   moduleFileExtensions: [
     'js',
