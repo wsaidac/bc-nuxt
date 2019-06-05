@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import { generateCleanList } from '~/utils';
 
 function log(message) {
   if (process.env.GTM_DEBUG) console.log('[GTM]', message); // eslint-disable-line no-console
@@ -59,16 +60,13 @@ function initilialize(gtmId) {
   injectBaseTag(gtmId);
 }
 
-
 function transformProduct({
   kinds, brands, categories, rapidoProduct, title, information,
 }) {
-  debugger // eslint-disable-line
-
   const productInfo = {
-    brands: brands && brands.nodes.map(obj => obj.name),
-    categories: categories && categories.nodes.map(obj => obj.categoryHeader.title),
-    kinds: kinds && kinds.nodes.map(obj => obj.name),
+    brands: generateCleanList(brands, 'name'),
+    categories: generateCleanList(categories, 'categoryHeader.title'),
+    kinds: generateCleanList(kinds, 'name'),
     id: rapidoProduct.id,
     name: title,
     price: information.issueValue,
