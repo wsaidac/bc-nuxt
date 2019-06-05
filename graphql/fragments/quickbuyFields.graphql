@@ -1,21 +1,11 @@
 #import "../fragments/categoryTermFields.graphql"
 
 fragment quickbuyFields on CmsProduct {
-  id
   title
-  link
-  uri
-  slug
   information {
     issueValue
   }
   content {
-    banner {
-      desktop: sharpieUrl(height: 456, width: 1920)
-      mobile: sharpieUrl(height: 300, width: 768)
-      altText
-      description
-    }
     image {
       regular: sharpieUrl(height: 140, width: 190)
       retina: sharpieUrl(height: 280, width: 380)
@@ -29,7 +19,23 @@ fragment quickbuyFields on CmsProduct {
   }
   categories: categoryTerms {
     nodes {
-      ...categoryTermFields
+      slug
+      categoryHeader {
+        title
+        image {
+          regular: sharpieUrl(height: 185, width: 250)
+          retina: sharpieUrl(height: 370, width: 500)
+          altText
+          description
+        }
+      }
+      products {
+        nodes {
+          title
+          id
+          slug
+        }
+      }
     }
   }
   rapidoProduct {

@@ -54,11 +54,6 @@ query {
           description
         }
       }
-      footer {
-        items {
-          text
-        }
-      }
     }
   }
 }

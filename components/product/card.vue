@@ -130,11 +130,6 @@ export default {
     classes() {
       return ['product-card', `product-card--mode-${this.mode}`];
     },
-    // cta() {
-    //   return this.mode === 'horizontal'
-    //     ? this.$t('general.order-now')
-    //     : this.$t('general.order-safely');
-    // },
     image() {
       return (
         this.product.content.image
