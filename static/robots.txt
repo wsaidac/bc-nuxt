@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /*/order
+Disallow: /*/order/
 
 Sitemap: https://www.rapido.com/en-us/sitemap.xml
 Sitemap: https://www.rapido.com/fr-be/sitemap.xml
