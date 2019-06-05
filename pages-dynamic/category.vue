@@ -49,6 +49,7 @@
         </ui-col>
       </ui-row>
       <service-terms
+        v-if="post.terms && post.terms.text"
         :title="post.terms.title"
         :description="post.terms.text"
       />
