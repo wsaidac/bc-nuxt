@@ -22,7 +22,7 @@ function checkPageType(path) {
   }
 }
 
-function page() {
+function checkPage() {
   const pageType = checkPageType(window.location.pathname);
 
   const data = {
@@ -59,43 +59,35 @@ function initilialize(gtmId) {
   injectBaseTag(gtmId);
 }
 
-/* eslint-disable */
-function getMenuItem(slug, store) {
-  const mainMenu = store.getters['menus/main'];
-  return mainMenu.categories.find(mainMenuItem => {
-    return mainMenuItem.categories.find(
-      item => item.url.replace(/^\/|\/$/g, '') === slug
-    );
-  });
-}
 
-function transformProduct(product, store) {
-  const kind = product.kinds && product.kinds["nodes"][0].name || null;
-  const brand = product.categories && product.categories["nodes"][0].categoryHeader.title || null;
-  const slug = product.categories && product.categories["nodes"][0]['slug'] || null;
-  const menuItem = getMenuItem(slug, store);
+function transformProduct({
+  kinds, brands, categories, rapidoProduct, title, information,
+}) {
+  debugger // eslint-disable-line
 
-  return {
-    brand,
-    category: menuItem.title + '/' + brand,
-    kind,
-    id: product.rapidoProduct.id,
-    name: product.title,
-    price: product.information.issueValue,
-  }
+  const productInfo = {
+    brands: brands && brands.nodes.map(obj => obj.name),
+    categories: categories && categories.nodes.map(obj => obj.categoryHeader.title),
+    kinds: kinds && kinds.nodes.map(obj => obj.name),
+    id: rapidoProduct.id,
+    name: title,
+    price: information.issueValue,
+  };
+
+  Object.keys(productInfo).forEach(key => productInfo[key] === undefined && delete productInfo[key]);
+
+  return productInfo;
 }
 
 // 1, Measuring Product Impressions
 const impressionTransformPop = ({
-  post
+  post,
 }, store) => {
-  const mappedProducts = post.products.nodes.map((product, i) => {
-    return {
-      ...transformProduct(product, store),
-      list: 'Product Overview Page', // extra
-      position: i + 1, // extra
-    };
-  });
+  const mappedProducts = post.products.nodes.map((product, i) => ({
+    ...transformProduct(product, store),
+    list: 'Product Overview Page', // extra
+    position: i + 1, // extra
+  }));
   return {
     event: 'impressions',
     ecommerce: {
@@ -105,14 +97,12 @@ const impressionTransformPop = ({
 };
 
 const productViewTransformPop = ({
-  post
+  post,
 }, store) => {
-  const mappedProducts = post.products.nodes.map((product, i) => {
-    return {
-      ...transformProduct(product, store),
-      position: i + 1, // extra
-    };
-  });
+  const mappedProducts = post.products.nodes.map((product, i) => ({
+    ...transformProduct(product, store),
+    position: i + 1, // extra
+  }));
   return {
     event: 'productView',
     ecommerce: {
@@ -125,96 +115,84 @@ const productViewTransformPop = ({
 
 // 2, Quick buy
 const impressionTransformQuickbuy = ({
-  product
-}, store) => {
-  return {
-    event: 'impressions',
-    ecommerce: {
-      impressions: [{
-        ...transformProduct(product, store),
-        position: 1,
-        list: 'Home Page', // extra
-      },],
-    },
-  };
-};
+  product,
+}, store) => ({
+  event: 'impressions',
+  ecommerce: {
+    impressions: [{
+      ...transformProduct(product, store),
+      position: 1,
+      list: 'Home Page', // extra
+    }],
+  },
+});
 
 const productViewTransformQuickbuy = ({
-  product
-}, store) => {
-  return {
-    event: 'productView',
-    ecommerce: {
-      detail: {
-        products: [{
-          ...transformProduct(product, store),
-        },],
-      },
+  product,
+}, store) => ({
+  event: 'productView',
+  ecommerce: {
+    detail: {
+      products: [{
+        ...transformProduct(product, store),
+      }],
     },
-  };
-}
+  },
+});
 
 // 3, Measuring Product Clicks
 const measureProductClick = ({
   page,
-  product
-}, store) => {
-  return {
-    event: 'productClick',
-    ecommerce: {
-      click: {
-        actionField: {
-          list: page
-        },
-        products: [{
-          ...transformProduct(product, store),
-          position: product.position
-        },],
+  product,
+}, store) => ({
+  event: 'productClick',
+  ecommerce: {
+    click: {
+      actionField: {
+        list: page,
       },
+      products: [{
+        ...transformProduct(product, store),
+        position: product.position,
+      }],
     },
-  };
-};
+  },
+});
 
 // 4, Measuring Views of Product Details
 const viewTransformDetail = ({
-  product
-}, store) => {
-  return {
-    event: 'productView',
-    ecommerce: {
-      detail: {
-        products: [transformProduct(product, store)],
-      },
+  product,
+}, store) => ({
+  event: 'productView',
+  ecommerce: {
+    detail: {
+      products: [transformProduct(product, store)],
     },
-  };
-};
+  },
+});
 
 // 5, 6, Measuring addition to a shopping cart, Product Detail Page (measures adding).
 const clickTransformProductAddToCart = ({
   product,
-  quantity
-}, store) => {
-  return {
-    event: 'addToCart',
-    ecommerce: {
-      add: {
-        products: [{
-          ...transformProduct(product, store),
-          quantity: quantity
-        },],
-      },
+  quantity,
+}, store) => ({
+  event: 'addToCart',
+  ecommerce: {
+    add: {
+      products: [{
+        ...transformProduct(product, store),
+        quantity,
+      }],
     },
-  };
-};
+  },
+});
 
-const measureA2H = ({ outcome }) => {
-  return {
-    event: 'Click A2H',
-    PWA: {
-      outcome,
-    },
-  }
-}
+const measureA2H = ({ outcome }) => ({
+  event: 'Click A2H',
+  PWA: {
+    outcome,
+  },
+});
 
 const transform = {
   impressionTransformQuickbuy,
@@ -234,11 +212,11 @@ function track(store) {
     window.dataLayer.push(transformedData);
     return this;
   };
-};
+}
 
 export default ({
   store,
-  app
+  app,
 }, inject) => {
   initilialize(store.getters['shared/gtmId']);
 
@@ -246,12 +224,12 @@ export default ({
 
   app.router.afterEach(() => {
     Vue.nextTick(() => {
-      page();
+      checkPage();
     });
   });
 
   // track PWA add to homescreen prompt
-  window.addEventListener('beforeinstallprompt', e => {
+  window.addEventListener('beforeinstallprompt', (e) => {
     e.userChoice.then(({ outcome }) => {
       app.$track('measureA2H', { outcome });
     });
