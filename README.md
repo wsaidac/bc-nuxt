@@ -63,3 +63,4 @@ docker-compose up web
 VSCode settings are included to configure recommended IDE plugins and add
 shortcuts for common test and linting tasks. Press Cmd/Ctrl+Alt+T to open
 terminal shortcuts.
+
