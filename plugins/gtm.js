@@ -80,9 +80,9 @@ function transformProduct({
 // 1, Measuring Product Impressions
 const impressionTransformPop = ({
   post,
-}, store) => {
-  const mappedProducts = post.products.nodes.map((product, i) => ({
-    ...transformProduct(product, store),
+}, { store, route }) => {
+  const mappedProducts = post.products.nodes.filter(product => product.rapidoProduct).map((product, i) => ({
+    ...transformProduct(product, { store, route }),
     list: 'Product Overview Page', // extra
     position: i + 1, // extra
   }));
@@ -96,9 +96,9 @@ const impressionTransformPop = ({
 
 const productViewTransformPop = ({
   post,
-}, store) => {
-  const mappedProducts = post.products.nodes.map((product, i) => ({
-    ...transformProduct(product, store),
+}, { store, route }) => {
+  const mappedProducts = post.products.nodes.filter(product => product.rapidoProduct).map((product, i) => ({
+    ...transformProduct(product, { store, route }),
     position: i + 1, // extra
   }));
   return {
@@ -114,11 +114,11 @@ const productViewTransformPop = ({
 // 2, Quick buy
 const impressionTransformQuickbuy = ({
   product,
-}, store) => ({
+}, { store, route }) => ({
   event: 'impressions',
   ecommerce: {
     impressions: [{
-      ...transformProduct(product, store),
+      ...transformProduct(product, { store, route }),
       position: 1,
       list: 'Home Page', // extra
     }],
@@ -127,12 +127,12 @@ const impressionTransformQuickbuy = ({
 
 const productViewTransformQuickbuy = ({
   product,
-}, store) => ({
+}, { store, route }) => ({
   event: 'productView',
   ecommerce: {
     detail: {
       products: [{
-        ...transformProduct(product, store),
+        ...transformProduct(product, { store, route }),
       }],
     },
   },
@@ -142,7 +142,7 @@ const productViewTransformQuickbuy = ({
 const measureProductClick = ({
   page,
   product,
-}, store) => ({
+}, { store, route }) => ({
   event: 'productClick',
   ecommerce: {
     click: {
@@ -150,21 +150,25 @@ const measureProductClick = ({
         list: page,
       },
       products: [{
-        ...transformProduct(product, store),
+        ...transformProduct(product, { store, route }),
         position: product.position,
       }],
     },
+    products: [{
+      ...transformProduct(product, store),
+      position: product.position,
+    }],
   },
 });
 
 // 4, Measuring Views of Product Details
 const viewTransformDetail = ({
   product,
-}, store) => ({
+}, { store, route }) => ({
   event: 'productView',
   ecommerce: {
     detail: {
-      products: [transformProduct(product, store)],
+      products: [transformProduct(product, { store, route })],
     },
   },
 });
@@ -173,12 +177,12 @@ const viewTransformDetail = ({
 const clickTransformProductAddToCart = ({
   product,
   quantity,
-}, store) => ({
+}, { store, route }) => ({
   event: 'addToCart',
   ecommerce: {
     add: {
       products: [{
-        ...transformProduct(product, store),
+        ...transformProduct(product, { store, route }),
         quantity,
       }],
     },
@@ -203,9 +207,9 @@ const transform = {
   measureA2H,
 };
 
-function track(store) {
+function track(store, route) {
   return (type, data) => {
-    const transformedData = transform[type](data, store);
+    const transformedData = transform[type](data, { store, route });
     log(transformedData);
     window.dataLayer.push(transformedData);
     return this;
@@ -214,11 +218,12 @@ function track(store) {
 
 export default ({
   store,
+  route,
   app,
 }, inject) => {
   initilialize(store.getters['shared/gtmId']);
 
-  inject('track', track(store));
+  inject('track', track(store, route));
 
   app.router.afterEach(() => {
     Vue.nextTick(() => {

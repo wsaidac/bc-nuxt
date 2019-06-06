@@ -73,9 +73,11 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+import { get } from 'lodash';
+
 import HeaderLogin from './login';
 import { UiIcon } from '~/components/ui';
-import { mapGetters } from 'vuex';
 import faqUrl from '~/mixins/faqUrl';
 
 export default {
@@ -137,10 +139,9 @@ export default {
       let displayName = link.slug;
       displayName = displayName[0].toUpperCase() + displayName.slice(1).replace(/-/g, ' ');
 
-      const title = link.href && link.href.title;
 
       return {
-        title: title || displayName,
+        title: get(link, 'href.title', displayName),
         url: link.slug,
       };
     },

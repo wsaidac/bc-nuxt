@@ -1,4 +1,4 @@
-#import "../fragments/productFields.graphql"
+#import "./quickbuyFields.graphql"
 
 fragment homeFields on Home {
   title
@@ -16,11 +16,13 @@ fragment homeFields on Home {
       description
     }
   }
+
   quickbuy {
     quickbuyProduct {
-      ...productFields
+      ...quickbuyFields
     }
   }
+
   popularProducts {
     title
     subtitle
