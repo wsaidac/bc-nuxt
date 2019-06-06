@@ -172,6 +172,7 @@
     "your-login-details": "Vaše prihlasovacie údaje"
   },
   "country_select": {
+    "button_name": "Potvrdiť",
     "country_names": {
       "Austria": "Rakúsko",
       "Belgium": "Belgicko",
@@ -212,6 +213,8 @@
   "header": {
     "login": "Prihlásenie",
     "main-nav": "Hlavná ponuka",
+    "menu": "Menu",
+    "my-account": "Môj účet",
     "profile": "profil"
   },
   "home": {
