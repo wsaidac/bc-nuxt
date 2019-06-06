@@ -29,7 +29,7 @@
         "Belgium": "Belgicko",
         "United States": "Spojené štáty americké"
       },
-      "description": "Keď vyberiete krajinu, budeme vám môcť zobrazovať <strong>správne produkty a spôsoby platby</strong>. Uistite sa, že sa zhoduje s vašou krajinou a účtami, na ktoré sa chystáte produkt uplatniť.",
+      "description": "Keď vyberiete krajinu, budeme vám môcť zobrazovať správne produkty a spôsoby platby. Uistite sa, že sa zhoduje s vašou krajinou a účtami, na ktoré sa chystáte produkt uplatniť.",
       "title": "Vyberte krajinu"
     },
     "create-new-account": "Vytvoriť nový účet",
@@ -178,7 +178,7 @@
       "Belgium": "Belgicko",
       "United States": "Spojené štáty americké"
     },
-    "description": "Keď vyberiete krajinu, budeme vám môcť zobrazovať <strong>správne produkty a spôsoby platby</strong>. Uistite sa, že sa zhoduje s vašou krajinou a účtami, na ktoré sa chystáte produkt uplatniť.",
+    "description": "Keď vyberiete krajinu, budeme vám môcť zobrazovať správne produkty a spôsoby platby. Uistite sa, že sa zhoduje s vašou krajinou a účtami, na ktoré sa chystáte produkt uplatniť.",
     "title": "Vyberte krajinu"
   },
   "error": {
