@@ -1,5 +1,3 @@
-#import "../fragments/categoryTermFields.graphql"
-
 fragment quickbuyFields on CmsProduct {
   title
   information {

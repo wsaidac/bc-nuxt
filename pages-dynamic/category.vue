@@ -90,29 +90,48 @@ export default {
   head() {
     const url = `https://${this.domain}${this.$route.path}`;
     const { banner, image, title } = this.post.categoryHeader;
-    const categoryTags = uniqBy(this.post.products.nodes.map(product => ({
-      property: 'bc:category',
-      content: product.kinds.nodes[0].name,
-    })), 'content');
+    const categoryMetas = [];
+    const brandMetas = [];
+
+    this.post.products.nodes.forEach(({ kinds, brands }) => {
+      if (kinds) {
+        categoryMetas.push(
+          ...kinds.nodes.map(
+            kind => ({
+              property: 'bc:category',
+              content: kind.name.replace('&amp;', '&'),
+            }),
+          ),
+        );
+      }
+
+      if (brands) {
+        brandMetas.push(
+          ...brands.nodes.map(
+            brand => ({
+              property: 'bc:brand',
+              content: brand.name.replace('&amp;', '&'),
+            }),
+          ),
+        );
+      }
+    });
 
     return {
       meta: [
-
         { property: 'og:type', content: 'og:product' },
         { property: 'bc:pagetype', content: 'POP' },
         { property: 'bc:pop:identifier', content: `${this.post.id}${this.$i18n.locale}` },
         { property: 'bc:pop:code', content: this.post.id },
         { property: 'bc:pop:slug', content: this.$router.currentRoute.path },
         { property: 'bc:pop:title', content: title },
-        { property: 'bc:brand', content: this.post.name.replace('&amp;', '&') },
-
-        // { property: 'bc:product:category', content: 'Mobile Recharge' },
         { property: 'bc:pop:image', content: image && image.regular },
         { property: 'bc:pop:image_banner_desktop', content: banner && banner.desktop },
         { property: 'bc:pop:image_banner_mobile', content: banner && banner.mobile },
         { itemprop: 'availability', content: 'http://schema.org/InStock' },
-      ].concat(categoryTags),
-      __dangerouslyDisableSanitizers: ['meta'],
+        ...uniqBy(categoryMetas, 'content'),
+        ...uniqBy(brandMetas, 'content'),
+      ],
       link: [
         { rel: 'canonical', href: url },
       ],
