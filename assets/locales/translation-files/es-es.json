@@ -38,7 +38,7 @@
     "email-address": "Dirección de correo electrónico",
     "email-changed": "Dirección de correo electrónico cambiada",
     "email-sent-to": "Correo electrónico enviado a: {email}",
-    "enter-email-address": "Introduza o seu endereço de e-mail.",
+    "enter-email-address": "Escribe tu dirección de correo electrónico.",
     "faq": {
       "faq-all": "Todas las preguntas frecuentes",
       "faq-code": "Cómo usar un código",
@@ -211,7 +211,7 @@
     "show-more": "Mostrar más"
   },
   "header": {
-    "login": "Iniciar sesión",
+    "login": "Inicia sesión",
     "main-nav": "Menú principal",
     "menu": "Menú",
     "my-account": "Mi cuenta",

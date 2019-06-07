@@ -5,7 +5,7 @@
     "account-email-address": "E-mailová adresa účtu",
     "active-now": "Aktívne teraz",
     "address-details": "Vaša adresa",
-    "agree-to-terms": "ytvorením účtu vyjadrujete svoj súhlas s <a href='/en-us/general-conditions'>podmienkami používania</a> a <a href='/en-us/privacy'>pravidlami ochrany osobných údajov</a> služby Rapido.",
+    "agree-to-terms": "Vytvorením účtu vyjadrujete svoj súhlas s <a href='/en-us/general-conditions'>podmienkami používania</a> a <a href='/en-us/privacy'>pravidlami ochrany osobných údajov</a> služby Rapido.",
     "all-questions": "Všetky otázky",
     "birthdate": "Dátum narodenia",
     "cancel": "Zrušiť",
@@ -29,7 +29,7 @@
         "Belgium": "Belgicko",
         "United States": "Spojené štáty americké"
       },
-      "description": "Keď vyberiete krajinu, budeme vám môcť zobrazovať <strong>správne produkty a spôsoby platby</strong>. Uistite sa, že sa zhoduje s vašou krajinou a účtami, na ktoré sa chystáte produkt uplatniť.",
+      "description": "Keď vyberiete krajinu, budeme vám môcť zobrazovať správne produkty a spôsoby platby. Uistite sa, že sa zhoduje s vašou krajinou a účtami, na ktoré sa chystáte produkt uplatniť.",
       "title": "Vyberte krajinu"
     },
     "create-new-account": "Vytvoriť nový účet",
@@ -172,12 +172,13 @@
     "your-login-details": "Vaše prihlasovacie údaje"
   },
   "country_select": {
+    "button_name": "Potvrdiť",
     "country_names": {
       "Austria": "Rakúsko",
       "Belgium": "Belgicko",
       "United States": "Spojené štáty americké"
     },
-    "description": "Keď vyberiete krajinu, budeme vám môcť zobrazovať <strong>správne produkty a spôsoby platby</strong>. Uistite sa, že sa zhoduje s vašou krajinou a účtami, na ktoré sa chystáte produkt uplatniť.",
+    "description": "Keď vyberiete krajinu, budeme vám môcť zobrazovať správne produkty a spôsoby platby. Uistite sa, že sa zhoduje s vašou krajinou a účtami, na ktoré sa chystáte produkt uplatniť.",
     "title": "Vyberte krajinu"
   },
   "error": {
@@ -192,7 +193,8 @@
     "order-with": "objednávka prostredníctvom",
     "privacy-statement": "Vyhlásenie o ochrane osobných údajov",
     "quote": "Rapido.com je súčasťou skupiny CG | Milióny spokojných zákazníkov |",
-    "safely": "Bezpečne"
+    "safely": "Bezpečná",
+    "safely-order-with": "Bezpečná objednávka prostredníctvom"
   },
   "general": {
     "critical_error": "Niečo sa pokazilo. Obnovte stránku a skúste to znova.",
@@ -204,13 +206,15 @@
     "look-at-faqs": "Prezrite si najčastejšie otázky",
     "need-some-help": "Potrebujete pomoc?",
     "order-now": "Objednať teraz",
-    "order-safely": "Objednávajte bezpečne",
+    "order-safely": "objednávka prostredníctvom:",
     "show-less": "Zobraziť menej",
     "show-more": "Zobraziť viac"
   },
   "header": {
     "login": "Prihlásenie",
     "main-nav": "Hlavná ponuka",
+    "menu": "Menu",
+    "my-account": "Môj účet",
     "profile": "profil"
   },
   "home": {
