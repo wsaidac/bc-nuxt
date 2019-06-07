@@ -38,7 +38,7 @@
     "email-address": "Dirección de correo electrónico",
     "email-changed": "Dirección de correo electrónico cambiada",
     "email-sent-to": "Correo electrónico enviado a: {email}",
-    "enter-email-address": "Introduza o seu endereço de e-mail.",
+    "enter-email-address": "Escribe tu dirección de correo electrónico.",
     "faq": {
       "faq-all": "Todas las preguntas frecuentes",
       "faq-code": "Cómo usar un código",
@@ -178,7 +178,7 @@
       "Belgium": "Bélgica",
       "United States": "Estados Unidos"
     },
-    "description": "Al seleccionar tu país, podremos ofrecerte los <strong>productos y métodos de pago apropiados</strong>. Comprueba que se corresponde con tu país y la(s) cuenta(s) en la(s) que quieres canjear el producto.",
+    "description": "Al seleccionar tu país, podremos ofrecerte los productos y métodos de pago apropiados. Comprueba que se corresponde con tu país y la(s) cuenta(s) en la(s) que quieres canjear el producto.",
     "title": "Selecciona tu país"
   },
   "error": {
@@ -211,7 +211,7 @@
     "show-more": "Mostrar más"
   },
   "header": {
-    "login": "Iniciar sesión",
+    "login": "Inicia sesión",
     "main-nav": "Menú principal",
     "menu": "Menú",
     "my-account": "Mi cuenta",

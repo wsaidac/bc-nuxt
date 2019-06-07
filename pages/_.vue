@@ -8,7 +8,7 @@
 
 <script>
 import removeContextChangeLoader from '~/mixins/removeContextChangeLoader';
-import uppercaseCountryInLocale from '~/utils/';
+import { uppercaseCountryInLocale } from '~/utils/';
 
 function slugFromPath(path, locale) {
   if (path === `/${locale}/`) return 'home';

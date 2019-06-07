@@ -74,6 +74,8 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import { uniqBy } from 'lodash';
+
 import HeaderBanner from '~/components/header/banner';
 import CgUsps from '~/components/usps';
 import CategoryAccordion from '~/components/category/accordion';
@@ -120,42 +122,51 @@ export default {
     const url = `https://${this.domain}/${this.$i18n.locale}/${
       this.category.slug
     }`;
-    const categoryTags = this.post.kinds.nodes.map(kind => ({
-      property: 'bc:category',
-      content: kind.name,
-    }));
+    const { kinds, brands } = this.post;
 
-    const meta = [
-      { property: 'og:type', content: 'og:product' },
-      { property: 'og:updated_time', content: date.toISOString() },
-      { property: 'bc:pagetype', content: 'PDP' },
-      {
-        property: 'bc:pdp:identifier',
-        content: `${this.post.rapidoProduct.id}${this.$i18n.locale}`,
-      },
-      { property: 'bc:product:code', content: this.post.rapidoProduct.id },
-      { property: 'bc:pdp:slug', content: this.$router.currentRoute.path },
-      { property: 'bc:pdp:title', content: this.post.title },
-      {
-        property: 'bc:pdp:denomination',
-        content: this.$n(this.post.information.issueValue, 'currency'),
-      },
-      { property: 'bc:brand', content: this.brand.name.replace('&amp;', '&') },
-      { property: 'bc:pdp:image', content: image && image.regular },
-      {
-        property: 'bc:pdp:image_banner_desktop',
-        content: this.bannerImage.desktop,
-      },
-      {
-        property: 'bc:pdp:image_banner_mobile',
-        content: this.bannerImage.mobile,
-      },
-      { itemprop: 'availability', content: 'http://schema.org/InStock' },
-    ].concat(categoryTags);
+    const categoryMetas = kinds && kinds.nodes.map(
+      kind => ({
+        property: 'bc:category',
+        content: kind.name.replace('&amp;', '&'),
+      }),
+    );
+
+    const brandMetas = brands && brands.nodes.map(
+      brand => ({
+        property: 'bc:brand',
+        content: brand.name.replace('&amp;', '&'),
+      }),
+    );
 
     return {
-      meta,
-      __dangerouslyDisableSanitizers: ['meta'],
+      meta: [
+        { property: 'og:type', content: 'og:product' },
+        { property: 'og:updated_time', content: date.toISOString() },
+        { property: 'bc:pagetype', content: 'PDP' },
+        {
+          property: 'bc:pdp:identifier',
+          content: `${this.post.rapidoProduct.id}${this.$i18n.locale}`,
+        },
+        { property: 'bc:product:code', content: this.post.rapidoProduct.id },
+        { property: 'bc:pdp:slug', content: this.$router.currentRoute.path },
+        { property: 'bc:pdp:title', content: this.post.title },
+        {
+          property: 'bc:pdp:denomination',
+          content: this.$n(this.post.information.issueValue, 'currency'),
+        },
+        { property: 'bc:pdp:image', content: image && image.regular },
+        {
+          property: 'bc:pdp:image_banner_desktop',
+          content: this.bannerImage.desktop,
+        },
+        {
+          property: 'bc:pdp:image_banner_mobile',
+          content: this.bannerImage.mobile,
+        },
+        { itemprop: 'availability', content: 'http://schema.org/InStock' },
+        ...uniqBy(categoryMetas, 'content'),
+        ...uniqBy(brandMetas, 'content'),
+      ],
       link: [{ rel: 'canonical', href: url }],
     };
   },

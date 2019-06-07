@@ -69,7 +69,7 @@ module.exports = {
     file: 'es-es.js',
     name: 'ES',
     displayName: 'España',
-    selectable: false,
+    selectable: true,
   },
   'pt-pt': {
     code: 'pt-pt',
