@@ -2,7 +2,6 @@
 #import "../fragments/categoryTermFields.graphql"
 #import "../fragments/productFields.graphql"
 #import "../fragments/servicePageFields.graphql"
-#import "../fragments/brandTermFields.graphql"
 
 query($slug: String!) {
   post: postBySlug(slug: $slug) {
@@ -11,6 +10,5 @@ query($slug: String!) {
     ...categoryTermFields
     ...productFields
     ...servicePageFields
-    ...brandTermFields
   }
 }

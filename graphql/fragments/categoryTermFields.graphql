@@ -68,11 +68,6 @@ fragment categoryTermFields on CategoryTerm {
           name
         }
       }
-      brands: brandTerms {
-        nodes {
-          name
-        }
-      }
       categories: categoryTerms {
         nodes {
           id
