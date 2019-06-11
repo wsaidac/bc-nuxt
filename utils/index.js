@@ -8,7 +8,10 @@ export function uppercaseCountryInLocale(lang) {
 }
 
 export function generateCleanList(obj, value) {
-  return obj && obj.nodes.map(el => get(el, value).replace('&amp;', '&'));
+  return obj && obj.nodes.map((el) => {
+    const result = get(el, value, '');
+    return result === null ? '' : result.replace('&amp;', '&');
+  });
 }
 
 const utils = {
