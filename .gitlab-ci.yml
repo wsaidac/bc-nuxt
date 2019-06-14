@@ -11,6 +11,60 @@ acceptance:
     name: acceptance
     url: https://www.rapido.acceptance.cgaws.cloud
 
+.deploy:
+  image: $ECR_REGISTRY/cfn-deployer:latest
+  stage: deploy
+  cache: {}
+  variables:
+    NODE_ENV: development
+    API_BROWSER: https://api-hub.eu-west-1.production.cgaws.cloud
+    API_SERVER: https://api-hub.eu-west-1.production.cgaws.cloud
+    CLOUDFRONT_ACM_CERTIFICATE_ARN: arn:aws:acm:us-east-1:245616468753:certificate/09c02616-8d90-4044-9da5-87593fdd17c8
+    CLOUDFRONT_WEB_ACL_ID: 864bd4ea-3fb9-418b-9d7a-e13e60698acb
+    HOSTED_ZONE_ID: Z2NYMMNGXW7G5A
+    US_EAST_1_CERTIFICATE_ARN: arn:aws:acm:us-east-1:245616468753:certificate/09c02616-8d90-4044-9da5-87593fdd17c8
+    EU_WEST_1_CERTIFICATE_ARN: arn:aws:acm:eu-west-1:245616468753:certificate/17659dcc-6a28-4793-8a5e-2f6f174e962a
+  before_script:
+    - sls_build
+    - stage=$(echo -n $CI_COMMIT_REF_SLUG | sha1sum | cut -c1-8)
+  script:
+    - sls_deploy creativegroup-acceptance eu-west-1 $stage
+    - sls_deploy creativegroup-acceptance us-east-1 $stage
+
+deploy-acceptance:
+  extends: .deploy
+  environment:
+    name: acceptance
+    url: https://rapido-web.acceptance.cgaws.cloud
+  variables:
+    DOMAIN: rapido-web.acceptance.cgaws.cloud
+  only:
+    - release
+
+deploy-review-app:
+  extends: .deploy
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    url: https://rapido-web-$CI_ENVIRONMENT_SLUG.acceptance.cgaws.cloud
+    on_stop: stop-review-app
+  variables:
+    DOMAIN: rapido-web-$CI_ENVIRONMENT_SLUG.acceptance.cgaws.cloud
+  when: manual
+  only:
+    - branches
+
+stop-review-app:
+  extends: .deploy
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    action: stop
+  variables:
+    DOMAIN: rapido-web-$CI_ENVIRONMENT_SLUG.acceptance.cgaws.cloud
+  script:
+    - sls_remove creativegroup-acceptance eu-west-1 $stage
+    - sls_remove creativegroup-acceptance us-east-1 $stage
+  when: manual
+
 production:
   when: manual
   environment:

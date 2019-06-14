@@ -18,13 +18,6 @@ services:
       - .:/usr/src/app
       - node_modules:/usr/src/app/node_modules
 
-  deploy:
-    image: deploy
-    working_dir: /usr/src/app
-    volumes:
-      - .:/usr/src/app
-      - bundle:/usr/local/bundle
-
 volumes:
   node_modules:
   bundle:

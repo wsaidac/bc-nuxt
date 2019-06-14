@@ -4,7 +4,6 @@ node_modules
 # logs
 npm-debug.log
 yarn-error.log
-package-lock.json
 id_rsa
 log/
 coverage
@@ -14,6 +13,8 @@ coverage
 
 # Nuxt generate
 dist
+
+.serverless
 
 *.snap
 sw.*
