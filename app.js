@@ -3,6 +3,7 @@ const express = require('express');
 const { Nuxt, Builder } = require('nuxt');
 const sitemap = require('./server/sitemap.js');
 const maintenance = require('./server/maintenance.js');
+const redirectPlaygiftcard = require('./server/redirect-playgiftcard.js');
 const config = require('./nuxt.config.js');
 
 const app = express();
@@ -27,6 +28,8 @@ async function start() {
   } else {
     await nuxt.ready();
   }
+
+  app.use(redirectPlaygiftcard);
 
   app.use('/:locale/sitemap.xml', sitemap);
 
