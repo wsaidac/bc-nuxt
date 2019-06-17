@@ -1,0 +1,60 @@
+eu-west-1:
+  Resources:
+    ApiDistribution:
+      Type: AWS::CloudFront::Distribution
+      Properties:
+        DistributionConfig:
+          Comment: ${self:service} (${opt:region})
+          Origins:
+            - Id: ApiGateway
+              DomainName: ${self:custom.dns.regionalDomainName}
+              CustomOriginConfig:
+                HTTPSPort: 443
+                OriginProtocolPolicy: https-only
+                OriginSSLProtocols: [ TLSv1.2 ]
+          Enabled: true
+          HttpVersion: http2
+          Aliases:
+            - ${self:custom.cloudfront.domain}
+          PriceClass: ${self:custom.cloudfront.priceClass}
+          DefaultCacheBehavior:
+            TargetOriginId: ApiGateway
+            AllowedMethods:
+              - DELETE
+              - GET
+              - HEAD
+              - OPTIONS
+              - PATCH
+              - POST
+              - PUT
+            CachedMethods:
+              - HEAD
+              - GET
+              - OPTIONS
+            Compress: true
+            ForwardedValues:
+              QueryString: true
+              Headers: ${self:custom.cloudfront.headers}
+              Cookies:
+                Forward: ${self:custom.cloudfront.cookies}
+            MinTTL: 0
+            DefaultTTL: 0
+            ViewerProtocolPolicy: redirect-to-https
+          ViewerCertificate:
+            AcmCertificateArn: ${self:custom.cloudfront.acmCertificateArn}
+            SslSupportMethod: sni-only
+          WebACLId: ${self:custom.cloudfront.webACLId}
+    ApiGlobalEndpointRecord:
+      DependsOn:
+        - ApiDistribution
+      Type: AWS::Route53::RecordSet
+      Properties:
+        HostedZoneId: ${self:custom.dns.hostedZoneId}
+        Name: ${self:custom.cloudfront.domain}.
+        Type: A
+        AliasTarget:
+          HostedZoneId: Z2FDTNDATAQYW2
+          DNSName:
+            Fn::GetAtt:
+              - ApiDistribution
+              - DomainName

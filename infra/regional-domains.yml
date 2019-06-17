@@ -1,0 +1,44 @@
+Resources:
+  ApiRegionalDomainName:
+    Type: AWS::ApiGateway::DomainName
+    Properties:
+      DomainName: ${self:custom.dns.regionalDomainName}
+      RegionalCertificateArn: ${self:custom.dns.${opt:region}.acmCertificateArn}
+      EndpointConfiguration:
+        Types:
+          - REGIONAL
+  ApiRegionalBasePathMapping:
+    DependsOn:
+      - ApiGatewayDeployment${sls:instanceId}
+      - ApiRegionalDomainName
+    Type: AWS::ApiGateway::BasePathMapping
+    Properties:
+      DomainName:
+        Ref: ApiRegionalDomainName
+      RestApiId:
+        Ref: ApiGatewayRestApi
+      Stage: ${opt:stage, 'dev'}
+  ApiRegionalEndpointRecord:
+    DependsOn:
+      - ApiRegionalDomainName
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: ${self:custom.dns.hostedZoneId}
+      Name:
+        Fn::Join:
+          - ""
+          - - Ref: ApiRegionalDomainName
+            - .
+      Region: ${opt:region}
+      SetIdentifier: ${opt:region}
+      Type: A
+      AliasTarget:
+        HostedZoneId:
+          Fn::GetAtt:
+            - ApiRegionalDomainName
+            - RegionalHostedZoneId
+        DNSName:
+          Fn::GetAtt:
+            - ApiRegionalDomainName
+            - RegionalDomainName
+        EvaluateTargetHealth: true

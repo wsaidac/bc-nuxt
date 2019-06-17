@@ -13,7 +13,8 @@
     "test:unit": "NODE_ENV=test jest --config=jest.config.js",
     "test:e2e": "cypress run",
     "cypress": "cypress open",
-    "dev-debug": "NODE_ENV=development API_BROWSER='https://api-hub.eu-west-1.production.cgaws.cloud' API_SERVER='https://api-hub.eu-west-1.production.cgaws.cloud' node --inspect node_modules/.bin/nuxt --port 4000"
+    "dev-debug": "NODE_ENV=development API_BROWSER='https://api-hub.eu-west-1.production.cgaws.cloud' API_SERVER='https://api-hub.eu-west-1.production.cgaws.cloud' node --inspect node_modules/.bin/nuxt --port 4000",
+    "dev-debug:acc": "NODE_ENV=development API_BROWSER='https://api-hub.eu-west-1.acceptance.cgaws.cloud' API_SERVER='https://api-hub.eu-west-1.acceptance.cgaws.cloud' node --inspect node_modules/.bin/nuxt --port 4000"
   },
   "nodemonConfig": {
     "legacyWatch": true,
@@ -25,14 +26,14 @@
   },
   "dependencies": {
     "@nuxtjs/pwa": "^3.0.0-beta.14",
-    "@nuxtjs/sentry": "^3.0.=0",
+    "@nuxtjs/sentry": "^3.0.0",
     "@nuxtjs/style-resources": "^0.1.2",
     "artemis-graphql": "https://github.com/10KB/artemis-graphql#v2.0.3",
     "axios": "^0.18.0",
     "cookie-universal-nuxt": "^2.0.14",
     "deepmerge": "^3.0.0",
     "dotenv": "^8.0.0",
-    "element-ui": "^2.6.1",
+    "element-ui": "2.7.2",
     "express": "^4.16.4",
     "flag-icon-css": "^3.3.0",
     "hamburgers": "^1.1.3",
@@ -43,6 +44,9 @@
     "normalize-scss": "^7.0.1",
     "nuxt": "^2.7.0",
     "nuxt-i18n": "^5.8.0",
+    "serverless-http": "^2.0.1",
+    "serverless-offline": "^4.10.0",
+    "serverless-plugin-aws-alerts": "^1.2.4",
     "sitemap": "^2.1.0",
     "typeface-nunito-sans": "^0.0.54",
     "universal-cookie": "^3.1.0",
