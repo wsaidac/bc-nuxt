@@ -99,7 +99,7 @@ const conf = {
     },
   },
   router: {
-    middleware: ['checkLocale'],
+    middleware: ['checkLocale', 'strip-trailing-slash'],
   },
   modules: [
     '@nuxtjs/pwa',
