@@ -15,7 +15,7 @@ coverage
 dist
 
 .serverless
-
+package-lock.json
 *.snap
 sw.*
 .DS_Store
