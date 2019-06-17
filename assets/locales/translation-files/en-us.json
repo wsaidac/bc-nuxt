@@ -1,6 +1,7 @@
 {
   "account": {
     "account-confirmed": "Account confirmed",
+    "account-unlocked": "Account unlocked",
     "account-created": "You’ve successfully created a Rapido account",
     "account-email-address": "Account email address",
     "active-now": "Active now",
@@ -8,13 +9,16 @@
     "agree-to-terms": "By creating an account, you agree with Rapido’s <a href='/en-us/general-conditions'>Terms of Use</a> and <a href='/en-us/privacy'>Privacy Policy</a>.",
     "all-questions": "All questions",
     "birthdate": "Date of birth",
+    "bruteforce": {
+      "banned": "Too many login attempts"
+    },
     "cancel": "Cancel",
     "change-email": "Change email",
     "change-email-requested": "We have sent you an email to confirm the change of your email address",
     "change-password": "Change password",
     "change-password-error": "Failed to update your password",
     "change-password-submit": "Your password is updated",
-    "check-your-email": "Check your email. We just sent you instructions for resetting your password. If you do not receive an email in 30 minutes. please try again.",
+    "check-your-email": "Check your email. We just sent you instructions for resetting your password. If you do not receive an email in 30 minutes, please try again.",
     "city": "City",
     "confirm_email": {
       "already_confirmed": "Your account is already confirmed.",
@@ -64,6 +68,8 @@
     "last-name": "Last name",
     "login-history": "Account login history",
     "login": {
+      "locked": "Your account has been locked. {unlock-request-link}",
+      "locked-link-text": "More info",
       "invalid_credentials": "The email address and/or password you entered is incorrect.",
       "title": "Log In",
       "unconfirmed_email": "The email address is not confirmed",
@@ -118,6 +124,7 @@
     "postal-code": "Zip",
     "prefix": "Prefix",
     "quick-signin": "We can get you signed back in to your account in no time.",
+    "quick-unlocking": "You have tried to log in too often with an incorrect password. We have sent you an email to unlock your account. Did you not receive the email? Then request it again below.",
     "repeat-email-address": "Repeat new email address",
     "repeat-new-password": "Repeat New password",
     "repeat-password": "Repeat password",
@@ -128,6 +135,9 @@
     "request_reset_password": {
       "error_title": "Reset password failed",
       "unknown_user": "No account found for this email address."
+    },
+    "resend_unlock_token": {
+      "unknown_user": "This email address does not exist"
     },
     "reset-password": "Reset password",
     "reset_password": {
@@ -168,8 +178,19 @@
     },
     "where-youre-logged-in": "Devices you’ve used to log in to your account",
     "your-account-is-confirmed": "Your account with the email address {email} is verified. You can now log in to your account.",
+    "your-account-is-unlocked": "Your account with the email address {email} is unlocked. You can now log in to your account.",
     "your-email-is-changed": "Your email address has been updated to {email}. You can now login into your account.",
-    "your-login-details": "Your login details"
+    "your-login-details": "Your login details",
+    "account-unlock-sent": "New unlock-token email sent",
+    "request-unlock-help": "Help, I locked my account!",
+    "unlock-token-sent": "Check your email. We just sent you instructions for unlocking your account. If you do not receive an email in 30 minutes, please try again.",
+    "request_unlock": {
+      "error_title": "Reset password failed",
+      "unlock": {
+        "invalid_token": "The token send, is not valid",
+        "unknown_user": "No account found for this email address."
+      }
+    }
   },
   "country_select": {
     "button_name": "Confirm",
