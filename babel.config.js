@@ -13,6 +13,7 @@ module.exports = {
         '@nuxt/babel-preset-app',
       ],
       plugins: [
+        '@babel/plugin-syntax-dynamic-import',
       ],
     },
   },
