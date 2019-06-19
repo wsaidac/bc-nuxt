@@ -1,4 +1,5 @@
 #import "../fragments/brandTermFields.graphql"
+#import "../fragments/kindTermFields.graphql"
 fragment categoryTermFields on CategoryTerm {
   name
   description
@@ -71,7 +72,7 @@ fragment categoryTermFields on CategoryTerm {
       }
       kinds:kindTerms {
         nodes {
-          name
+          ...kindTermFields
         }
       }
       categories: categoryTerms {

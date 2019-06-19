@@ -1,5 +1,6 @@
 #import "../fragments/categoryTermFields.graphql"
 #import "../fragments/brandTermFields.graphql"
+#import "../fragments/kindTermFields.graphql"
 
 fragment productFields on CmsProduct {
   id
@@ -46,7 +47,7 @@ fragment productFields on CmsProduct {
   }
   kinds: kindTerms {
     nodes {
-      name
+      ...kindTermFields
     }
   }
   rapidoProduct {

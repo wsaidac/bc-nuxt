@@ -1,0 +1,6 @@
+fragment kindTermFields on KindTerm {
+  name
+  kindTitle {
+    title
+  }
+}
