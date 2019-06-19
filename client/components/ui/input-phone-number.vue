@@ -21,7 +21,7 @@
 import { find, get } from 'lodash';
 import UiInput from './input';
 import objectModel from '~/mixins/object-model';
-import Countries from '~/resources/countries.json';
+import Countries from '~/assets/countries.json';
 
 const fetchIsoByPhone = phoneCode => get(find(Countries, ['phone', phoneCode]), 'iso');
 

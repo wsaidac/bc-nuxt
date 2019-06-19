@@ -20,7 +20,7 @@ module.exports = function (label) {
     seo: false,
     parsePages: false,
     lazy: true,
-    langDir: './assets/locales/assemble-translations/',
+    langDir: 'assets/locales/assemble-translations/',
     locales: labelLocales(label),
     defaultLocale: defaultLocale(label),
     vueI18n: {
