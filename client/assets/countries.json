@@ -1,0 +1,1281 @@
+[{
+    "name": "Afghanistan",
+    "iso": "AF",
+    "phone": "93"
+  },
+  {
+    "name": "Åland Islands",
+    "iso": "AX",
+    "phone": "358"
+  },
+  {
+    "name": "Albania",
+    "iso": "AL",
+    "phone": "355"
+  },
+  {
+    "name": "Algeria",
+    "iso": "DZ",
+    "phone": "213"
+  },
+  {
+    "name": "American Samoa",
+    "iso": "AS",
+    "phone": "1684"
+  },
+  {
+    "name": "Andorra",
+    "iso": "AD",
+    "phone": "376"
+  },
+  {
+    "name": "Angola",
+    "iso": "AO",
+    "phone": "244"
+  },
+  {
+    "name": "Anguilla",
+    "iso": "AI",
+    "phone": "1264"
+  },
+  {
+    "name": "Antarctica",
+    "iso": "AQ",
+    "phone": "672"
+  },
+  {
+    "name": "Antigua",
+    "iso": "AG",
+    "phone": "1268"
+  },
+  {
+    "name": "Argentina",
+    "iso": "AR",
+    "phone": "54"
+  },
+  {
+    "name": "Armenia",
+    "iso": "AM",
+    "phone": "374"
+  },
+  {
+    "name": "Aruba",
+    "iso": "AW",
+    "phone": "297"
+  },
+  {
+    "name": "Ascension",
+    "iso": "SH",
+    "phone": "247"
+  },
+  {
+    "name": "Australia",
+    "iso": "AU",
+    "phone": "61"
+  },
+  {
+    "name": "Australian External Territories",
+    "iso": "AU",
+    "phone": "672"
+  },
+  {
+    "name": "Austria",
+    "iso": "AT",
+    "phone": "43"
+  },
+  {
+    "name": "Azerbaijan",
+    "iso": "AZ",
+    "phone": "994"
+  },
+  {
+    "name": "Bahamas",
+    "iso": "BS",
+    "phone": "1242"
+  },
+  {
+    "name": "Bahrain",
+    "iso": "BH",
+    "phone": "973"
+  },
+  {
+    "name": "Bangladesh",
+    "iso": "BD",
+    "phone": "880"
+  },
+  {
+    "name": "Barbados",
+    "iso": "BB",
+    "phone": "1246"
+  },
+  {
+    "name": "Barbuda",
+    "iso": "AG",
+    "phone": "1268"
+  },
+  {
+    "name": "Belarus",
+    "iso": "BY",
+    "phone": "375"
+  },
+  {
+    "name": "Belgium",
+    "iso": "BE",
+    "phone": "32"
+  },
+  {
+    "name": "Belize",
+    "iso": "BZ",
+    "phone": "501"
+  },
+  {
+    "name": "Benin",
+    "iso": "BJ",
+    "phone": "229"
+  },
+  {
+    "name": "Bermuda",
+    "iso": "BM",
+    "phone": "1441"
+  },
+  {
+    "name": "Bhutan",
+    "iso": "BT",
+    "phone": "975"
+  },
+  {
+    "name": "Bolivia",
+    "iso": "BO",
+    "phone": "591"
+  },
+  {
+    "name": "Bosnia and Herzegovina",
+    "iso": "BA",
+    "phone": "387"
+  },
+  {
+    "name": "Botswana",
+    "iso": "BW",
+    "phone": "267"
+  },
+  {
+    "name": "Brazil",
+    "iso": "BR",
+    "phone": "55"
+  },
+  {
+    "name": "Bouvet Island",
+    "iso": "BV",
+    "phone": "55"
+  },
+  {
+    "name": "British Indian Ocean Territory",
+    "iso": "IO",
+    "phone": "246"
+  },
+  {
+    "name": "British Virgin Islands",
+    "iso": "VG",
+    "phone": "1284"
+  },
+  {
+    "name": "Brunei",
+    "iso": "BN",
+    "phone": "673"
+  },
+  {
+    "name": "Bulgaria",
+    "iso": "BG",
+    "phone": "359"
+  },
+  {
+    "name": "Burkina Faso",
+    "iso": "BF",
+    "phone": "226"
+  },
+  {
+    "name": "Burundi",
+    "iso": "BI",
+    "phone": "257"
+  },
+  {
+    "name": "Cambodia",
+    "iso": "KH",
+    "phone": "855"
+  },
+  {
+    "name": "Cameroon",
+    "iso": "CM",
+    "phone": "237"
+  },
+  {
+    "name": "Canada",
+    "iso": "CA",
+    "phone": "1"
+  },
+  {
+    "name": "Cape Verde",
+    "iso": "CV",
+    "phone": "238"
+  },
+  {
+    "name": "Cayman Islands",
+    "iso": "KY",
+    "phone": " 345"
+  },
+  {
+    "name": "Central African Republic",
+    "iso": "CF",
+    "phone": "236"
+  },
+  {
+    "name": "Chad",
+    "iso": "TD",
+    "phone": "235"
+  },
+  {
+    "name": "Chile",
+    "iso": "CL",
+    "phone": "56"
+  },
+  {
+    "name": "China",
+    "iso": "CN",
+    "phone": "86"
+  },
+  {
+    "name": "Christmas Island",
+    "iso": "CX",
+    "phone": "61"
+  },
+  {
+    "name": "Cocos-Keeling Islands",
+    "iso": "CC",
+    "phone": "61"
+  },
+  {
+    "name": "Colombia",
+    "iso": "CO",
+    "phone": "57"
+  },
+  {
+    "name": "Comoros",
+    "iso": "KM",
+    "phone": "269"
+  },
+  {
+    "name": "Congo",
+    "iso": "CG",
+    "phone": "242"
+  },
+  {
+    "name": "Congo, Dem. Rep. of (Zaire)",
+    "iso": "CD",
+    "phone": "243"
+  },
+  {
+    "name": "Cook Islands",
+    "iso": "CK",
+    "phone": "682"
+  },
+  {
+    "name": "Costa Rica",
+    "iso": "CR",
+    "phone": "506"
+  },
+  {
+    "name": "Croatia",
+    "iso": "HR",
+    "phone": "385"
+  },
+  {
+    "name": "Cuba",
+    "iso": "CU",
+    "phone": "53"
+  },
+  {
+    "name": "Curacao",
+    "iso": "CW",
+    "phone": "599"
+  },
+  {
+    "name": "Cyprus",
+    "iso": "CY",
+    "phone": "537"
+  },
+  {
+    "name": "Czech Republic",
+    "iso": "CZ",
+    "phone": "420"
+  },
+  {
+    "name": "Denmark",
+    "iso": "DK",
+    "phone": "45"
+  },
+  {
+    "name": "Diego Garcia",
+    "iso": "IO",
+    "phone": "246"
+  },
+  {
+    "name": "Djibouti",
+    "iso": "DJ",
+    "phone": "253"
+  },
+  {
+    "name": "Dominica",
+    "iso": "DM",
+    "phone": "1767"
+  },
+  {
+    "name": "Dominican Republic",
+    "iso": "DO",
+    "phone": "1809"
+  },
+  {
+    "name": "East Timor",
+    "iso": "TL",
+    "phone": "670"
+  },
+  {
+    "name": "Easter Island",
+    "iso": "CL",
+    "phone": "56"
+  },
+  {
+    "name": "Ecuador",
+    "iso": "EC",
+    "phone": "593"
+  },
+  {
+    "name": "Egypt",
+    "iso": "EG",
+    "phone": "20"
+  },
+  {
+    "name": "El Salvador",
+    "iso": "SV",
+    "phone": "503"
+  },
+  {
+    "name": "Equatorial Guinea",
+    "iso": "GQ",
+    "phone": "240"
+  },
+  {
+    "name": "Eritrea",
+    "iso": "ER",
+    "phone": "291"
+  },
+  {
+    "name": "Estonia",
+    "iso": "EE",
+    "phone": "372"
+  },
+  {
+    "name": "Ethiopia",
+    "iso": "ET",
+    "phone": "251"
+  },
+  {
+    "name": "Falkland Islands",
+    "iso": "FK",
+    "phone": "500"
+  },
+  {
+    "name": "Faroe Islands",
+    "iso": "FO",
+    "phone": "298"
+  },
+  {
+    "name": "Fiji",
+    "iso": "FJ",
+    "phone": "679"
+  },
+  {
+    "name": "Finland",
+    "iso": "FI",
+    "phone": "358"
+  },
+  {
+    "name": "France",
+    "iso": "FR",
+    "phone": "33"
+  },
+  {
+    "name": "French Antilles",
+    "iso": "FR",
+    "phone": "596"
+  },
+  {
+    "name": "French Guiana",
+    "iso": "GF",
+    "phone": "594"
+  },
+  {
+    "name": "French Polynesia",
+    "iso": "PF",
+    "phone": "689"
+  },
+  {
+    "name": "French Southern Territories",
+    "iso": "TF",
+    "phone": "689"
+  },
+  {
+    "name": "Gabon",
+    "iso": "GA",
+    "phone": "241"
+  },
+  {
+    "name": "Gambia",
+    "iso": "GM",
+    "phone": "220"
+  },
+  {
+    "name": "Georgia",
+    "iso": "GE",
+    "phone": "995"
+  },
+  {
+    "name": "Germany",
+    "iso": "DE",
+    "phone": "49"
+  },
+  {
+    "name": "Ghana",
+    "iso": "GH",
+    "phone": "233"
+  },
+  {
+    "name": "Gibraltar",
+    "iso": "GI",
+    "phone": "350"
+  },
+  {
+    "name": "Greece",
+    "iso": "GR",
+    "phone": "30"
+  },
+  {
+    "name": "Greenland",
+    "iso": "GL",
+    "phone": "299"
+  },
+  {
+    "name": "Grenada",
+    "iso": "GD",
+    "phone": "1473"
+  },
+  {
+    "name": "Guadeloupe",
+    "iso": "GP",
+    "phone": "590"
+  },
+  {
+    "name": "Guam",
+    "iso": "GU",
+    "phone": "1671"
+  },
+  {
+    "name": "Guatemala",
+    "iso": "GT",
+    "phone": "502"
+  },
+  {
+    "name": "Guinea",
+    "iso": "GN",
+    "phone": "224"
+  },
+  {
+    "name": "Guinea-Bissau",
+    "iso": "GW",
+    "phone": "245"
+  },
+  {
+    "name": "Guyana",
+    "iso": "GY",
+    "phone": "595"
+  },
+  {
+    "name": "Haiti",
+    "iso": "HT",
+    "phone": "509"
+  },
+  {
+    "name": "Heard Island and Mcdonald Islands",
+    "iso": "HM",
+    "phone": "672"
+  },
+  {
+    "name": "Honduras",
+    "iso": "HN",
+    "phone": "504"
+  },
+  {
+    "name": "Hong Kong",
+    "iso": "HK",
+    "phone": "852"
+  },
+  {
+    "name": "Hungary",
+    "iso": "HU",
+    "phone": "36"
+  },
+  {
+    "name": "Iceland",
+    "iso": "IS",
+    "phone": "354"
+  },
+  {
+    "name": "India",
+    "iso": "IN",
+    "phone": "91"
+  },
+  {
+    "name": "Indonesia",
+    "iso": "ID",
+    "phone": "62"
+  },
+  {
+    "name": "Iran",
+    "iso": "IR",
+    "phone": "98"
+  },
+  {
+    "name": "Iraq",
+    "iso": "IQ",
+    "phone": "964"
+  },
+  {
+    "name": "Ireland",
+    "iso": "IE",
+    "phone": "353"
+  },
+  {
+    "name": "Israel",
+    "iso": "IL",
+    "phone": "972"
+  },
+  {
+    "name": "Italy",
+    "iso": "IT",
+    "phone": "39"
+  },
+  {
+    "name": "Ivory Coast",
+    "iso": "CI",
+    "phone": "225"
+  },
+  {
+    "name": "Jamaica",
+    "iso": "JM",
+    "phone": "1876"
+  },
+  {
+    "name": "Japan",
+    "iso": "JP",
+    "phone": "81"
+  },
+  {
+    "name": "Jordan",
+    "iso": "JO",
+    "phone": "962"
+  },
+  {
+    "name": "Kazakhstan",
+    "iso": "KZ",
+    "phone": "77"
+  },
+  {
+    "name": "Kenya",
+    "iso": "KE",
+    "phone": "254"
+  },
+  {
+    "name": "Kiribati",
+    "iso": "KI",
+    "phone": "686"
+  },
+  {
+    "name": "Kuwait",
+    "iso": "KW",
+    "phone": "965"
+  },
+  {
+    "name": "Kyrgyzstan",
+    "iso": "KG",
+    "phone": "996"
+  },
+  {
+    "name": "Laos",
+    "iso": "LA",
+    "phone": "856"
+  },
+  {
+    "name": "Latvia",
+    "iso": "LV",
+    "phone": "371"
+  },
+  {
+    "name": "Lebanon",
+    "iso": "LB",
+    "phone": "961"
+  },
+  {
+    "name": "Lesotho",
+    "iso": "LS",
+    "phone": "266"
+  },
+  {
+    "name": "Liberia",
+    "iso": "LR",
+    "phone": "231"
+  },
+  {
+    "name": "Libya",
+    "iso": "LY",
+    "phone": "218"
+  },
+  {
+    "name": "Liechtenstein",
+    "iso": "LI",
+    "phone": "423"
+  },
+  {
+    "name": "Lithuania",
+    "iso": "LT",
+    "phone": "370"
+  },
+  {
+    "name": "Luxembourg",
+    "iso": "LU",
+    "phone": "352"
+  },
+  {
+    "name": "Macao",
+    "iso": "MO",
+    "phone": "853"
+  },
+  {
+    "name": "Macedonia",
+    "iso": "MK",
+    "phone": "389"
+  },
+  {
+    "name": "Madagascar",
+    "iso": "MG",
+    "phone": "261"
+  },
+  {
+    "name": "Malawi",
+    "iso": "MW",
+    "phone": "265"
+  },
+  {
+    "name": "Malaysia",
+    "iso": "MY",
+    "phone": "60"
+  },
+  {
+    "name": "Maldives",
+    "iso": "MV",
+    "phone": "960"
+  },
+  {
+    "name": "Mali",
+    "iso": "ML",
+    "phone": "223"
+  },
+  {
+    "name": "Malta",
+    "iso": "MT",
+    "phone": "356"
+  },
+  {
+    "name": "Marshall Islands",
+    "iso": "MH",
+    "phone": "692"
+  },
+  {
+    "name": "Martinique",
+    "iso": "MQ",
+    "phone": "596"
+  },
+  {
+    "name": "Mauritania",
+    "iso": "MR",
+    "phone": "222"
+  },
+  {
+    "name": "Mauritius",
+    "iso": "MU",
+    "phone": "230"
+  },
+  {
+    "name": "Mayotte",
+    "iso": "YT",
+    "phone": "262"
+  },
+  {
+    "name": "Mexico",
+    "iso": "MX",
+    "phone": "52"
+  },
+  {
+    "name": "Micronesia",
+    "iso": "FM",
+    "phone": "691"
+  },
+  {
+    "name": "Midway Island",
+    "iso": "UM",
+    "phone": "1808"
+  },
+  {
+    "name": "Moldova",
+    "iso": "MD",
+    "phone": "373"
+  },
+  {
+    "name": "Monaco",
+    "iso": "MC",
+    "phone": "377"
+  },
+  {
+    "name": "Mongolia",
+    "iso": "MN",
+    "phone": "976"
+  },
+  {
+    "name": "Montenegro",
+    "iso": "ME",
+    "phone": "382"
+  },
+  {
+    "name": "Montserrat",
+    "iso": "MS",
+    "phone": "1664"
+  },
+  {
+    "name": "Morocco",
+    "iso": "MA",
+    "phone": "212"
+  },
+  {
+    "name": "Western Sahara",
+    "iso": "EH",
+    "phone": "212"
+  },
+  {
+    "name": "Mozambique",
+    "iso": "MZ",
+    "phone": "258"
+  },
+  {
+    "name": "Myanmar",
+    "iso": "MM",
+    "phone": "95"
+  },
+  {
+    "name": "Namibia",
+    "iso": "NA",
+    "phone": "264"
+  },
+  {
+    "name": "Nauru",
+    "iso": "NR",
+    "phone": "674"
+  },
+  {
+    "name": "Nepal",
+    "iso": "NP",
+    "phone": "977"
+  },
+  {
+    "name": "Netherlands",
+    "iso": "NL",
+    "phone": "31"
+  },
+  {
+    "name": "Netherlands Antilles",
+    "iso": "AN",
+    "phone": "599"
+  },
+  {
+    "name": "Nevis",
+    "iso": "KN",
+    "phone": "1869"
+  },
+  {
+    "name": "New Caledonia",
+    "iso": "NC",
+    "phone": "687"
+  },
+  {
+    "name": "New Zealand",
+    "iso": "NZ",
+    "phone": "64"
+  },
+  {
+    "name": "Pitcairn",
+    "iso": "PN",
+    "phone": "64"
+  },
+  {
+    "name": "Nicaragua",
+    "iso": "NI",
+    "phone": "505"
+  },
+  {
+    "name": "Niger",
+    "iso": "NE",
+    "phone": "227"
+  },
+  {
+    "name": "Nigeria",
+    "iso": "NG",
+    "phone": "234"
+  },
+  {
+    "name": "Niue",
+    "iso": "NU",
+    "phone": "683"
+  },
+  {
+    "name": "Norfolk Island",
+    "iso": "NF",
+    "phone": "672"
+  },
+  {
+    "name": "North Korea",
+    "iso": "KP",
+    "phone": "850"
+  },
+  {
+    "name": "Northern Mariana Islands",
+    "iso": "MP",
+    "phone": "1670"
+  },
+  {
+    "name": "Norway",
+    "iso": "NO",
+    "phone": "47"
+  },
+  {
+    "name": "Oman",
+    "iso": "OM",
+    "phone": "968"
+  },
+  {
+    "name": "Pakistan",
+    "iso": "PK",
+    "phone": "92"
+  },
+  {
+    "name": "Palau",
+    "iso": "PW",
+    "phone": "680"
+  },
+  {
+    "name": "Palestinian Territory",
+    "iso": "PS",
+    "phone": "970"
+  },
+  {
+    "name": "Panama",
+    "iso": "PA",
+    "phone": "507"
+  },
+  {
+    "name": "Papua New Guinea",
+    "iso": "PG",
+    "phone": "675"
+  },
+  {
+    "name": "Paraguay",
+    "iso": "PY",
+    "phone": "595"
+  },
+  {
+    "name": "Peru",
+    "iso": "PE",
+    "phone": "51"
+  },
+  {
+    "name": "Philippines",
+    "iso": "PH",
+    "phone": "63"
+  },
+  {
+    "name": "Poland",
+    "iso": "PL",
+    "phone": "48"
+  },
+  {
+    "name": "Portugal",
+    "iso": "PT",
+    "phone": "351"
+  },
+  {
+    "name": "Puerto Rico",
+    "iso": "PR",
+    "phone": "1787"
+  },
+  {
+    "name": "Qatar",
+    "iso": "QA",
+    "phone": "974"
+  },
+  {
+    "name": "Reunion",
+    "iso": "RE",
+    "phone": "262"
+  },
+  {
+    "name": "Romania",
+    "iso": "RO",
+    "phone": "40"
+  },
+  {
+    "name": "Russia",
+    "iso": "RU",
+    "phone": "7"
+  },
+  {
+    "name": "Rwanda",
+    "iso": "RW",
+    "phone": "250"
+  },
+  {
+    "name": "Saint Helena",
+    "iso": "SH",
+    "phone": "290"
+  },
+  {
+    "name": "Saint Pierre and Miquelon",
+    "iso": "PM",
+    "phone": "508"
+  },
+  {
+    "name": "Samoa",
+    "iso": "WS",
+    "phone": "685"
+  },
+  {
+    "name": "San Marino",
+    "iso": "SM",
+    "phone": "378"
+  },
+  {
+    "name": "Saudi Arabia",
+    "iso": "SA",
+    "phone": "966"
+  },
+  {
+    "name": "Senegal",
+    "iso": "SN",
+    "phone": "221"
+  },
+  {
+    "name": "Serbia",
+    "iso": "RS",
+    "phone": "381"
+  },
+  {
+    "name": "Seychelles",
+    "iso": "SC",
+    "phone": "248"
+  },
+  {
+    "name": "Sierra Leone",
+    "iso": "SL",
+    "phone": "232"
+  },
+  {
+    "name": "Singapore",
+    "iso": "SG",
+    "phone": "65"
+  },
+  {
+    "name": "Slovakia",
+    "iso": "SK",
+    "phone": "421"
+  },
+  {
+    "name": "Slovenia",
+    "iso": "SI",
+    "phone": "386"
+  },
+  {
+    "name": "Solomon Islands",
+    "iso": "SB",
+    "phone": "677"
+  },
+  {
+    "name": "South Africa",
+    "iso": "ZA",
+    "phone": "27"
+  },
+  {
+    "name": "South Georgia and the South Sandwich Islands",
+    "iso": "GS",
+    "phone": "500"
+  },
+  {
+    "name": "South Korea",
+    "iso": "KR",
+    "phone": "82"
+  },
+  {
+    "name": "Spain",
+    "iso": "ES",
+    "phone": "34"
+  },
+  {
+    "name": "Sri Lanka",
+    "iso": "LK",
+    "phone": "94"
+  },
+  {
+    "name": "Sudan",
+    "iso": "SD",
+    "phone": "249"
+  },
+  {
+    "name": "Suriname",
+    "iso": "SR",
+    "phone": "597"
+  },
+  {
+    "name": "Swaziland",
+    "iso": "SZ",
+    "phone": "268"
+  },
+  {
+    "name": "Sweden",
+    "iso": "SE",
+    "phone": "46"
+  },
+  {
+    "name": "Switzerland",
+    "iso": "CH",
+    "phone": "41"
+  },
+  {
+    "name": "Syria",
+    "iso": "SY",
+    "phone": "963"
+  },
+  {
+    "name": "Taiwan",
+    "iso": "TW",
+    "phone": "886"
+  },
+  {
+    "name": "Tajikistan",
+    "iso": "TJ",
+    "phone": "992"
+  },
+  {
+    "name": "United Republic of Tanzania",
+    "iso": "TZ",
+    "phone": "255"
+  },
+  {
+    "name": "Thailand",
+    "iso": "TH",
+    "phone": "66"
+  },
+  {
+    "name": "Timor-Leste",
+    "iso": "TL",
+    "phone": "670"
+  },
+  {
+    "name": "Togo",
+    "iso": "TG",
+    "phone": "228"
+  },
+  {
+    "name": "Tokelau",
+    "iso": "TK",
+    "phone": "690"
+  },
+  {
+    "name": "Tonga",
+    "iso": "TO",
+    "phone": "676"
+  },
+  {
+    "name": "Trinidad and Tobago",
+    "iso": "TT",
+    "phone": "1868"
+  },
+  {
+    "name": "Tunisia",
+    "iso": "TN",
+    "phone": "216"
+  },
+  {
+    "name": "Turkey",
+    "iso": "TR",
+    "phone": "90"
+  },
+  {
+    "name": "Turkmenistan",
+    "iso": "TM",
+    "phone": "993"
+  },
+  {
+    "name": "Turks and Caicos Islands",
+    "iso": "TC",
+    "phone": "1649"
+  },
+  {
+    "name": "Tuvalu",
+    "iso": "TV",
+    "phone": "688"
+  },
+  {
+    "name": "U.S. Virgin Islands",
+    "iso": "VI",
+    "phone": "1340"
+  },
+  {
+    "name": "Uganda",
+    "iso": "UG",
+    "phone": "256"
+  },
+  {
+    "name": "Ukraine",
+    "iso": "UA",
+    "phone": "380"
+  },
+  {
+    "name": "United Arab Emirates",
+    "iso": "AE",
+    "phone": "971"
+  },
+  {
+    "name": "United Kingdom",
+    "iso": "GB",
+    "phone": "44"
+  },
+  {
+    "name": "Guernsey",
+    "iso": "GG",
+    "phone": "44"
+  },
+  {
+    "name": "Jersey",
+    "iso": "JE",
+    "phone": "44"
+  },
+  {
+    "name": "Isle of Man",
+    "iso": "IM",
+    "phone": "44"
+  },
+  {
+    "name": "United States Minor Outlying Islands",
+    "iso": "UM",
+    "phone": "699"
+  },
+  {
+    "name": "United States",
+    "iso": "US",
+    "phone": "1"
+  },
+  {
+    "name": "Saint Kitts",
+    "iso": "KN",
+    "phone": "1"
+  },
+  {
+    "name": "Saint Lucia",
+    "iso": "LC",
+    "phone": "1"
+  },
+  {
+    "name": "Saint Vincent and the Grenadines",
+    "iso": "VC",
+    "phone": "1"
+  },
+  {
+    "name": "Sao Tome and Principe",
+    "iso": "ST",
+    "phone": "239"
+  },
+  {
+    "name": "Somalia",
+    "iso": "SO",
+    "phone": "252"
+  },
+  {
+    "name": "Svalbard and Jan Mayen",
+    "iso": "SJ",
+    "phone": "47"
+  },
+  {
+    "name": "Uruguay",
+    "iso": "UY",
+    "phone": "598"
+  },
+  {
+    "name": "Uzbekistan",
+    "iso": "UZ",
+    "phone": "998"
+  },
+  {
+    "name": "Vanuatu",
+    "iso": "VU",
+    "phone": "678"
+  },
+  {
+    "name": "Vatican",
+    "iso": "VA",
+    "phone": "379"
+  },
+  {
+    "name": "Venezuela",
+    "iso": "VE",
+    "phone": "58"
+  },
+  {
+    "name": "Vietnam",
+    "iso": "VN",
+    "phone": "84"
+  },
+  {
+    "name": "Wake Island",
+    "iso": "UM",
+    "phone": "1808"
+  },
+  {
+    "name": "Wallis and Futuna",
+    "iso": "WF",
+    "phone": "681"
+  },
+  {
+    "name": "Yemen",
+    "iso": "YE",
+    "phone": "967"
+  },
+  {
+    "name": "Zambia",
+    "iso": "ZM",
+    "phone": "260"
+  },
+  {
+    "name": "Zanzibar",
+    "iso": "TZ",
+    "phone": "255"
+  },
+  {
+    "name": "Zimbabwe",
+    "iso": "ZW",
+    "phone": "263"
+  }
+]

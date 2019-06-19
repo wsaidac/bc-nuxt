@@ -1,10 +1,11 @@
-const i18nConfig = require('./config/i18nConfig.js');
+const i18nConfig = require('./client/config/i18nConfig.js');
 
 require('dotenv').config();
 
 const label = 'rapido';
 
 const conf = {
+  srcDir: 'client/',
   head: {
     meta: [
       { charset: 'utf-8' },
@@ -36,6 +37,10 @@ const conf = {
         test: /\.html$/,
         use: ['html-loader'],
       });
+
+      // example alias
+      // const alias = lodash.get(config, 'resolve.alias', {}) || {};
+      // alias['@ui'] = path.join(this.buildContext.options.srcDir, 'components/ui');
     },
     postcss: {
       plugins: {
@@ -61,7 +66,7 @@ const conf = {
     },
   },
   styleResources: {
-    scss: './assets/stylesheets/_shared.scss',
+    scss: '~/assets/stylesheets/_shared.scss',
   },
   render: {
     static: {
@@ -99,7 +104,7 @@ const conf = {
     },
   },
   router: {
-    middleware: ['checkLocale'],
+    middleware: ['checkLocale', 'strip-trailing-slash'],
   },
   modules: [
     '@nuxtjs/pwa',

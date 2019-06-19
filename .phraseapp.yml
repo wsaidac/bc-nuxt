@@ -3,12 +3,12 @@ phraseapp:
   project_id: 0e60214e84f55a0834c0705bf46181b4
   push:
     sources:
-    - file: ./assets/locales/translation-files/<locale_name>.json
+    - file: ./client/assets/locales/translation-files/<locale_name>.json
       params:
         file_format: nested_json
         update_translations: true
   pull:
     targets:
-    - file: ./assets/locales/translation-files/<locale_name>.json
+    - file: ./client/assets/locales/translation-files/<locale_name>.json
       params:
         file_format: nested_json
