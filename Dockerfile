@@ -2,7 +2,7 @@
 # Base container with shared deps
 ###################################################################
 
-FROM node:8-alpine as base
+FROM node:10-alpine as base
 
 ENV APP_HOME=/usr/src/app\
     HOST=0.0.0.0\

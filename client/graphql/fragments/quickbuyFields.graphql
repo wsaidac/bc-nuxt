@@ -1,0 +1,42 @@
+fragment quickbuyFields on CmsProduct {
+  title
+  information {
+    issueValue
+  }
+  content {
+    image {
+      regular: sharpieUrl(height: 140, width: 190)
+      retina: sharpieUrl(height: 280, width: 380)
+      altText
+      description
+    }
+    tooltip {
+      title
+      content
+    }
+  }
+  categories: categoryTerms {
+    nodes {
+      slug
+      categoryHeader {
+        title
+        image {
+          regular: sharpieUrl(height: 185, width: 250)
+          retina: sharpieUrl(height: 370, width: 500)
+          altText
+          description
+        }
+      }
+      products {
+        nodes {
+          title
+          id
+          slug
+        }
+      }
+    }
+  }
+  rapidoProduct {
+    id
+  }
+}

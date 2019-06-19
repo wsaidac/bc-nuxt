@@ -1,18 +1,12 @@
 require('newrelic');
 const express = require('express');
-const {
-  Nuxt,
-  Builder,
-} = require('nuxt');
-
-
-const app = express();
-
+const { Nuxt, Builder } = require('nuxt');
 const sitemap = require('./server/sitemap.js');
-
-// Import and Set Nuxt.js options
+const maintenance = require('./server/maintenance.js');
+const redirectPlaygiftcard = require('./server/redirect-playgiftcard.js');
 const config = require('./nuxt.config.js');
 
+const app = express();
 config.dev = (process.env.NODE_ENV === 'development');
 
 async function start() {
@@ -23,6 +17,10 @@ async function start() {
     host = process.env.HOST || '127.0.0.1', port = process.env.PORT || 3000,
   } = nuxt.options.server;
 
+  if (process.env.MAINTENANCE_MODE) {
+    app.use(maintenance({ whitelist: (process.env.MAINTENANCE_WHITELIST || '').split(',') }));
+  }
+
   // Build only in dev mode
   if (config.dev) {
     const builder = new Builder(nuxt);
@@ -30,6 +28,8 @@ async function start() {
   } else {
     await nuxt.ready();
   }
+
+  app.use(redirectPlaygiftcard);
 
   app.use('/:locale/sitemap.xml', sitemap);
 

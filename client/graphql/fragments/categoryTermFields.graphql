@@ -1,0 +1,98 @@
+#import "../fragments/brandTermFields.graphql"
+#import "../fragments/kindTermFields.graphql"
+fragment categoryTermFields on CategoryTerm {
+  name
+  description
+  slug
+  id
+  meta {
+    title
+    description
+  }
+  categoryHeader {
+    title
+    image {
+      regular: sharpieUrl(height: 185, width: 250)
+      retina: sharpieUrl(height: 370, width: 500)
+      altText
+      description
+    }
+    banner {
+      desktop: sharpieUrl(height: 300, width: 1920)
+      mobile: sharpieUrl(height: 300, width: 768)
+      altText
+      description
+     }
+  }
+  terms {
+    title
+    text
+  }
+  infoBlock {
+    title
+    text
+  }
+  faqQuestions {
+    title
+    questions {
+      question
+      answer
+    }
+  }
+  highlight {
+    title
+    content
+  }
+  products {
+    nodes {
+      title
+      id
+      link
+      uri
+      information {
+        issueValue
+      }
+      content {
+        image {
+          regular: sharpieUrl(height: 159, width: 217)
+          retina: sharpieUrl(height: 318, width: 434)
+          altText
+          description
+        }
+        tooltip {
+          title
+          content
+        }
+      }
+      slug
+      brands:brandTerms {
+        nodes {
+          ...brandTermFields
+        }
+      }
+      kinds:kindTerms {
+        nodes {
+          ...kindTermFields
+        }
+      }
+      categories: categoryTerms {
+        nodes {
+          id
+          categoryHeader {
+            title
+            image {
+              regular: sharpieUrl(height: 159, width: 217)
+              retina: sharpieUrl(height: 318, width: 434)
+              altText
+              description
+            }
+          }
+          slug
+        }
+      }
+      rapidoProduct {
+        id
+      }
+    }
+  }
+}

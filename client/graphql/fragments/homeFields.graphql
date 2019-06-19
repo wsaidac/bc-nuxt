@@ -1,0 +1,55 @@
+#import "./quickbuyFields.graphql"
+
+fragment homeFields on Home {
+  title
+  meta {
+    title
+    description
+  }
+  header {
+    titlePart1
+    titlePart2
+    image {
+      desktop: sharpieUrl(height: 456, width: 1920)
+      mobile: sharpieUrl(height: 300, width: 768)
+      altText
+      description
+    }
+  }
+
+  quickbuy {
+    quickbuyProduct {
+      ...quickbuyFields
+    }
+  }
+
+  popularProducts {
+    title
+    subtitle
+    items {
+      image {
+        regular: sharpieUrl(height: 84, width: 253)
+        retina: sharpieUrl(height: 168, width: 506)
+        altText
+        description
+      }
+      category {
+        id
+        categoryHeader {
+          title
+          image {
+            regular: sharpieUrl(height: 84, width: 253)
+            retina: sharpieUrl(height: 168, width: 506)
+            altText
+            description
+          }
+        }
+        slug
+      }
+    }
+  }
+  seoBlock {
+    title
+    text
+  }
+}

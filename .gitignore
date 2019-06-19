@@ -4,9 +4,10 @@ node_modules
 # logs
 npm-debug.log
 yarn-error.log
-package-lock.json
 id_rsa
 log/
+coverage
+client/coverage
 
 # Nuxt build
 .nuxt
@@ -14,6 +15,8 @@ log/
 # Nuxt generate
 dist
 
+.serverless
+package-lock.json
 *.snap
 sw.*
 .DS_Store

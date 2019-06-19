@@ -1,0 +1,3 @@
+mutation($email: String!, $tokenType: Token!) {
+  resendToken(email: $email, tokenType: $tokenType)
+}

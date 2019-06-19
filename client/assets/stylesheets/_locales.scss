@@ -1,0 +1,10 @@
+// avaliable options: .cg-country-xx, .cg-languge-xx, cg-locale-xx-xx
+// set as classes on layouts: default, users
+
+.cg-country-it {
+  @include media-breakpoint-up('sm') {
+    .header-banner__payoff-text-content p:nth-child(2) {
+      font-size: 2.5vw;
+    }
+  }
+}

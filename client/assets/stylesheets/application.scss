@@ -1,0 +1,18 @@
+// External dependencies
+@import "~normalize-scss";
+
+$flag-icon-css-path: '../../../node_modules/flag-icon-css/flags';
+
+@import '~flag-icon-css/sass/flag-icon';
+
+// Shared variables, mixins and functions
+@import "shared";
+
+// Partials
+@import "partials/nunito-sans-font";
+@import "partials/reboot";
+@import "partials/grid";
+@import "partials/blocks";
+@import "partials/type";
+@import "partials/flag-icon";
+@import "locales";

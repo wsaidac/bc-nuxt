@@ -1,0 +1,6 @@
+mutation($userId: ID!, $unlockToken: String!) {
+  user: unlock(userId: $userId, unlockToken: $unlockToken) {
+    id
+    email
+  }
+}
