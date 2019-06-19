@@ -6,7 +6,7 @@
       :title="`${post.categoryHeader.title}`"
     />
     <cg-usps :usps="usps.items" />
-    <shared-title :title="`${post.categoryHeader.title}`" />
+    <shared-title :title="post.categoryHeader.title" />
     <category-kind
       v-for="(products, kindName) in productsByKind"
       :key="kindName"
