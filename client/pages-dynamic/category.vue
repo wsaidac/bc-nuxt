@@ -6,11 +6,13 @@
       :title="`${post.categoryHeader.title}`"
     />
     <cg-usps :usps="usps.items" />
+    <shared-title :title="`${post.categoryHeader.title}`" />
     <category-kind
-      v-for="(products, kind) in kinds"
-      :key="kind"
-      :title="`${post.categoryHeader.title}`"
+      v-for="(products, kindName) in productsByKind"
+      :key="kindName"
+      :title="`${kindTitle(products)}`"
       :products="products"
+      :mixed-category="mixedCategory"
     />
     <div class="cg-category__info-block container container--mobile-not-padded">
       <ui-row padded>
@@ -60,7 +62,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import { groupBy, uniqBy } from 'lodash';
+import { groupBy, uniqBy, get } from 'lodash';
 import HeaderBanner from '~/components/header/banner';
 import CgUsps from '~/components/usps';
 import CategoryKind from '~/components/category/kind';
@@ -71,6 +73,7 @@ import ServiceTerms from '~/components/service/terms';
 import SeoBlock from '~/components/seo/block';
 import SeoBreadcrumbs from '~/components/seo/breadcrumbs';
 import { UiCol, UiRow } from '~/components/ui';
+import SharedTitle from '~/components/shared/title';
 
 export default {
   components: {
@@ -85,6 +88,7 @@ export default {
     ServiceTerms,
     UiCol,
     UiRow,
+    SharedTitle,
   },
 
   head() {
@@ -157,14 +161,12 @@ export default {
         || this.$store.getters['shared/header'].image
       );
     },
-    /* eslint-disable */
-    kinds() {
-      let count = 0;
-      let kinds = groupBy(this.post.products.nodes, p => p.kinds.nodes[0].name);
-      for (var key in kinds) {
-        kinds[key] = kinds[key].map(node => ({ ...node, position: count++ }));
-      }
-      return kinds;
+    productsByKind() {
+      const validProducts = this.post.products.nodes.filter(product => product.rapidoProduct && product.id);
+      return groupBy(validProducts, product => product.kinds.nodes[0].name);
+    },
+    mixedCategory() {
+      return Object.keys(this.productsByKind).length > 1;
     },
     crumbs() {
       return [
@@ -184,6 +186,12 @@ export default {
     this.$track('impressionTransformPop', { post: this.post });
     this.$track('productViewTransformPop', { post: this.post });
   },
+
+  methods: {
+    kindTitle(products) {
+      return get(products[0], 'kinds.nodes[0].kindTitle.title', '') || '';
+    },
+  },
 };
 </script>
 
@@ -193,7 +201,19 @@ export default {
     margin-bottom: 30px;
   }
 
-  @include media-breakpoint-only("xs") {
+  .category-kind + .category-kind {
+    .block {
+      padding-top: 0;
+    }
+
+    .category-kind__title {
+      border-top: 1px solid $gray-300;
+      margin-top: 0;
+      padding-top: 40px;
+    }
+  }
+
+  @include media-breakpoint-down("sm") {
     &__breadcrumbs {
       display: none !important;
     }
