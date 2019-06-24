@@ -3,9 +3,10 @@ const path = require('path');
 module.exports = {
   collectCoverage: true,
   collectCoverageFrom: [
-    '**/*.{js,vue}',
+    'client/**/*.{js,vue}',
     '!**/node_modules/**',
     '!**/cypress/**',
+    '!client/pages/_.vue',
   ],
   coverageReporters: ['text-summary', 'lcov'],
   rootDir: path.resolve(__dirname),
@@ -23,7 +24,11 @@ module.exports = {
   },
   testPathIgnorePatterns: [
     '<rootDir>/cypress',
+    '/cypress/',
+    '/node_modules/',
+    '/cache/',
   ],
+  testMatch: ['<rootDir>/client/**/*.test.(js|jsx|ts|tsx)'],
   snapshotSerializers: ['<rootDir>/node_modules/jest-serializer-vue'],
   transformIgnorePatterns: ['<rootDir>/node_modules/(?!@babel/runtime/helpers/esm)'],
 };
