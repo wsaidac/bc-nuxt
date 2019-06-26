@@ -1,8 +1,8 @@
 [![Build Status](https://travis-ci.com/cgservices/rapido_web.svg?token=ZgTe7kdhPHKTsscs3BSm&branch=master)](https://travis-ci.com/cgservices/rapido_web)
 
-<a href="https://codeclimate.com/repos/5c9b7f2ce7cd860258004a86/maintainability"><img src="https://api.codeclimate.com/v1/badges/e838b1710746bcd200e2/maintainability" /></a>
+[![Maintainability](https://api.codeclimate.com/v1/badges/351eac69661d387c167e/maintainability)](https://codeclimate.com/repos/5c9b7f4bf784d0257a0047d8/maintainability)
 
-<a href="https://codeclimate.com/repos/5c9b7f2ce7cd860258004a86/test_coverage"><img src="https://api.codeclimate.com/v1/badges/e838b1710746bcd200e2/test_coverage" /></a>
+[![Test Coverage](https://api.codeclimate.com/v1/badges/351eac69661d387c167e/test_coverage)](https://codeclimate.com/repos/5c9b7f4bf784d0257a0047d8/test_coverage)
 
 # Rapido web
 
