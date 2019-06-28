@@ -59,7 +59,28 @@ docker-compose run web yarn install
 docker-compose up web
 ```
 
+
+
+### Storybook
+
+To run the server locally:
+```
+yarn storybook
+```
+
+Deploy to github pages:
+```
+yarn storybook:deploy
+```
+
+More about Storybook/Vue:
+https://www.learnstorybook.com/vue/en/get-started/
+
+
+
 ### VSCode
 VSCode settings are included to configure recommended IDE plugins and add
 shortcuts for common test and linting tasks. Press Cmd/Ctrl+Alt+T to open
 terminal shortcuts.
+
+

@@ -5,7 +5,7 @@
       @click="menuOpen = false"
     />
     <div class="header-navbar__overlay-gray" />
-    <div class="header-navbar__top">
+    <div class="header-navbar__top bg-primary">
       <div class="header-navbar__top-content container">
         <h1 class="header-navbar__brand">
           <a :href="homeLink">
@@ -154,7 +154,6 @@ export default {
   }
 
   &__top {
-    background: $primary-500;
     font-size: 1em;
     font-weight: 300;
     position: relative;

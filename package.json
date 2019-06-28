@@ -15,7 +15,11 @@
     "cypress": "cypress open",
     "cypress:verify": "cypress verify",
     "dev-debug": "NODE_ENV=development API_BROWSER='https://api-hub.eu-west-1.production.cgaws.cloud' API_SERVER='https://api-hub.eu-west-1.production.cgaws.cloud' node --inspect node_modules/.bin/nuxt --port 4000",
-    "dev-debug:acc": "NODE_ENV=development API_BROWSER='https://api-hub.eu-west-1.acceptance.cgaws.cloud' API_SERVER='https://api-hub.eu-west-1.acceptance.cgaws.cloud' node --inspect node_modules/.bin/nuxt --port 4000"
+    "dev-debug:acc": "NODE_ENV=development API_BROWSER='https://api-hub.eu-west-1.acceptance.cgaws.cloud' API_SERVER='https://api-hub.eu-west-1.acceptance.cgaws.cloud' node --inspect node_modules/.bin/nuxt --port 4000",
+    "dev-debug:beltegoed": "LABEL=beltegoed NODE_ENV=development API_BROWSER='https://api-hub.eu-west-1.production.cgaws.cloud' API_SERVER='https://api-hub.eu-west-1.production.cgaws.cloud' node --inspect node_modules/.bin/nuxt --port 4000",
+    "storybook": "start-storybook -p 6060",
+    "storybook:build": "build-storybook -c .storybook -o docs/storybook",
+    "storybook:deploy": "storybook-to-ghpages"
   },
   "nodemonConfig": {
     "legacyWatch": true,
@@ -24,6 +28,9 @@
       "nuxt-config.js",
       "config/i18nConfig.js"
     ]
+  },
+  "engines": {
+    "node": "<= 10"
   },
   "dependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
@@ -47,6 +54,8 @@
     "normalize-scss": "^7.0.1",
     "nuxt": "^2.7.0",
     "nuxt-i18n": "^5.8.0",
+    "postcss-flexbugs-fixes": "^4.1.0",
+    "postcss-nested": "^4.1.2",
     "serverless-http": "^2.0.1",
     "serverless-offline": "^4.10.0",
     "serverless-plugin-aws-alerts": "^1.2.4",
@@ -54,6 +63,7 @@
     "typeface-nunito-sans": "^0.0.54",
     "universal-cookie": "^3.1.0",
     "vue": "~2.6.6",
+    "vue-loader": "^15.7.0",
     "vue-moment": "^4.0.0",
     "vue-mq": "^1.0.1",
     "vue-paginate": "^3.6.0",
@@ -67,9 +77,14 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/runtime-corejs2": "^7.4.3",
     "@nuxtjs/proxy": "^1.3.1",
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-storysource": "^5.1.9",
+    "@storybook/storybook-deployer": "^2.8.1",
+    "@storybook/vue": "^5.1.9",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.8.0",
+    "babel-preset-vue": "^2.0.2",
     "core-js": "2",
     "cypress": "^3.3.1",
     "eslint": "^5.13.0",
@@ -81,18 +96,24 @@
     "eslint-plugin-vue": "^5.2.0",
     "jest": "^24.1.0",
     "jest-serializer-vue": "^2.0.2",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.12.0",
     "nodemon": "^1.18.10",
     "nuxt-sass-resources-loader": "^2.0.5",
+    "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
+    "postcss-mixins": "^6.2.1",
     "sass-loader": "^7.1.0",
     "start-server-and-test": "^1.9.1",
+    "storybook-addon-jsx": "^7.1.2",
+    "storybook-addon-vue-info": "^1.2.1",
+    "storybook-readme": "^5.0.5",
     "stylelint": "^10.0.0",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-order": "^3.0.0",
     "stylelint-processor-html": "^1.0.0",
     "stylelint-scss": "^3.3.0",
     "stylelint-webpack-plugin": "^0.10.5",
+    "tailwindcss": "^1.0.4",
     "vue-jest": "^3.0.0",
     "webfonts-loader": "^4.4.0"
   }
