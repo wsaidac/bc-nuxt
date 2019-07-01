@@ -1,7 +1,3 @@
-#import "../fragments/categoryTermFields.graphql"
-#import "../fragments/brandTermFields.graphql"
-#import "../fragments/kindTermFields.graphql"
-
 fragment productFields on CmsProduct {
   id
   identifier
@@ -37,17 +33,65 @@ fragment productFields on CmsProduct {
   }
   categories: categoryTerms {
     nodes {
-      ...categoryTermFields
+      name
+      description
+      slug
+      id
+      meta {
+        title
+        description
+      }
+      categoryHeader {
+        title
+        image {
+          regular: sharpieUrl(height: 185, width: 250)
+          retina: sharpieUrl(height: 370, width: 500)
+          altText
+          description
+        }
+        banner {
+          desktop: sharpieUrl(height: 300, width: 1920)
+          mobile: sharpieUrl(height: 300, width: 768)
+          altText
+          description
+        }
+      }
+      terms {
+        title
+        text
+      }
+      infoBlock {
+        title
+        text
+      }
+      faqQuestions {
+        title
+        questions {
+          question
+          answer
+        }
+      }
+      highlight {
+        title
+        content
+      }
+      products(first: 3) {
+        nodes {
+          title
+          id
+          slug
+        }
+      }
     }
   }
-  brands: brandTerms {
+  brands:brandTerms {
     nodes {
-      ...brandTermFields
+      name
     }
   }
   kinds: kindTerms {
     nodes {
-      ...kindTermFields
+      name
     }
   }
   rapidoProduct {
