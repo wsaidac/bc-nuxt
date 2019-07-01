@@ -3,7 +3,7 @@ const i18nConfig = require('./client/config/i18nConfig.js');
 
 require('dotenv').config();
 
-const label = 'rapido';
+const label = process.env.LABEL || 'rapido';
 
 const conf = {
   srcDir: 'client/',
@@ -22,7 +22,7 @@ const conf = {
     height: '2px',
   },
   build: {
-    publicPath: '/rapidoweb/',
+    publicPath: `/${label}/`,
 
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
@@ -38,10 +38,6 @@ const conf = {
         test: /\.html$/,
         use: ['html-loader'],
       });
-
-      // example alias
-      // const alias = lodash.get(config, 'resolve.alias', {}) || {};
-      // alias['@ui'] = path.join(this.buildContext.options.srcDir, 'components/ui');
     },
     postcss: {
       plugins: {

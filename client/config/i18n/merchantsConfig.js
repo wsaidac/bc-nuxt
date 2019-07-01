@@ -1,6 +1,6 @@
 module.exports = {
   rapido: {
-    default: 'en-us',
+    defaultLocale: 'en-us',
     locales: [
       'en-us',
       'de-at',
@@ -14,6 +14,12 @@ module.exports = {
       'pt-pt',
       'sk-sk',
       'en-ie',
+    ],
+  },
+  beltegoed: {
+    defaultLocale: 'nl-nl',
+    locales: [
+      'nl-nl',
     ],
   },
 };

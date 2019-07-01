@@ -1,4 +1,4 @@
-import locales from '~/config/i18n/locales';
+import locales from '~/config/i18n/localesConfig';
 
 export default ({
   app,

@@ -1,35 +1,28 @@
 /* eslint-disable */
 const lodash = require('lodash');
-const merchants = require('./i18n/merchants');
-const allLocales = require('./i18n/locales.js');
-
-const localeFormats = {
-  dateTimeFormats: require('./i18n/dateTime.js'),
-  numberFormats: require('./i18n/numberFormats.js'),
-};
-
-const merchantLocales = (label) => merchants[label].locales
-const labelLocales = (label) => merchantLocales(label).map(locale => allLocales[locale]);
-const formatOflabelAndType = (label, dataType) => lodash.pick(localeFormats[dataType], merchantLocales(label));
-const defaultLocale = (label) => merchants[label].default;
-const defaultLocaleFile = (label) => `../assets/locales/translation-files/${label}.json`;
+const merchantsConfig = require('./i18n/merchantsConfig');
+const localesConfig = require('./i18n/localesConfig');
 
 module.exports = function (label) {
+  const { locales, defaultLocale } = merchantsConfig[label];
+  const defaultLocaleFile = `../assets/locales/translation-files/${defaultLocale}.json`;
+  const merchantConfig = lodash.pick(localesConfig, locales);
+
   return {
-    strategy: 'prefix',
+    strategy: 'prefix_and_default',
     seo: false,
     parsePages: false,
     lazy: true,
     langDir: 'assets/locales/assemble-translations/',
-    locales: labelLocales(label),
-    defaultLocale: defaultLocale(label),
+    locales: merchantConfig,
+    defaultLocale,
     vueI18n: {
-      fallbackLocale: defaultLocale(label),
+      fallbackLocale: defaultLocale,
       silentTranslationWarn: true,
-      dateTimeFormats: formatOflabelAndType(label, 'dateTimeFormats'),
-      numberFormats: formatOflabelAndType(label, 'numberFormats'),
+      dateTimeFormats: merchantConfig,
+      numberFormats: merchantConfig,
       messages: {
-        [defaultLocale(label)]: require(defaultLocaleFile(defaultLocale(label))),
+        [defaultLocale]: require(defaultLocaleFile),
       },
     },
   };
