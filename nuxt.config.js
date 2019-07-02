@@ -15,7 +15,7 @@ const conf = {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [{ src: '/blueconic.js' }, { src: '//cdn.blueconic.net/cg.js' }],
   },
-  css: ['~/assets/stylesheets/application.scss', '~/assets/stylesheets/tailwind.css'],
+  css: ['~/assets/stylesheets/tailwind.css', '~/assets/stylesheets/application.scss'],
   store: true,
   loading: {
     color: '#dce6f5',

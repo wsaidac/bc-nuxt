@@ -3,28 +3,37 @@
 // webpack config for tailwind/SASS:
 // https://gist.github.com/ademilter/5f56fe9e56c5eb8725292274c68001c5
 
-import Vue from 'vue'
 
-import { configure, addParameters, addDecorator, setAddon } from '@storybook/vue'
-import { themes } from '@storybook/theming';
-import { setDefaults } from 'storybook-addon-vue-info'
+const Vue = require('vue')
 
-import JSXAddon from 'storybook-addon-jsx';
+const { configure, addParameters, addDecorator, setAddon } = require('@storybook/vue')
+const { themes } = require('@storybook/theming');
 
+const JSXAddon = require('storybook-addon-jsx');
 
 const paddingDecorator = () => ({
   template: '<div style="display: flex; padding: 2rem;"><story/></div>',
 })
 
+
+// hack necessary for storyshots
+// why? https://github.com/storybookjs/storybook/issues/1011
+if (process.env.NODE_ENV !== 'test') {
+  const { setDefaults, withInfo } = require('storybook-addon-vue-info')
+
+  addDecorator(withInfo)
+  setDefaults({
+    header: false
+  })
+
+  require('../client/assets/stylesheets/tailwind.css')
+}
+
+
 addDecorator(paddingDecorator)
 setAddon(JSXAddon)
 
 
-setDefaults({
-  previewStyle: {
-    backgroundColor: 'white'
-  }
-})
 
 // Option defaults.
 addParameters({
@@ -34,7 +43,6 @@ addParameters({
   },
 });
 
-import '../client/assets/stylesheets/tailwind.css'
 
 
 // basically load the stories within client/components folder
