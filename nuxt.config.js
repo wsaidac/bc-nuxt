@@ -1,5 +1,5 @@
 const path = require('path');
-const i18nConfig = require('./client/config/i18nConfig.js');
+const i18nConfig = require('./client/config/i18nConfig');
 
 require('dotenv').config();
 

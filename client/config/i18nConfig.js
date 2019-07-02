@@ -1,4 +1,3 @@
-/* eslint-disable */
 const lodash = require('lodash');
 const merchantsConfig = require('./i18n/merchantsConfig');
 const localesConfig = require('./i18n/localesConfig');
@@ -6,7 +5,7 @@ const localesConfig = require('./i18n/localesConfig');
 module.exports = function (label) {
   const { locales, defaultLocale } = merchantsConfig[label];
   const defaultLocaleFile = `../assets/locales/translation-files/${defaultLocale}.json`;
-  const merchantConfig = lodash.pick(localesConfig, locales);
+  const merchantConfig = Object.values(lodash.pick(localesConfig, locales));
 
   return {
     strategy: 'prefix_and_default',
@@ -22,7 +21,7 @@ module.exports = function (label) {
       dateTimeFormats: merchantConfig,
       numberFormats: merchantConfig,
       messages: {
-        [defaultLocale]: require(defaultLocaleFile),
+        [defaultLocale]: require(defaultLocaleFile), //eslint-disable-line
       },
     },
   };

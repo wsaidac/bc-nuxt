@@ -1,15 +1,21 @@
+import merchantsConfig from '../config/i18n/merchantsConfig';
+
+const label = process.env.LABEL || 'rapido';
+
 export default {
   state() {
     return {
-      label: process.env.LABEL,
+      labelName: label,
+      labelId: merchantsConfig[label].id,
       domain: process.env.DOMAIN,
       cmsContext: '',
     };
   },
   getters: {
-    label: ({ label }) => label,
+    label: ({ labelName }) => labelName,
+    labelId: ({ labelId }) => labelId,
     domain: ({ domain }) => domain,
-    cmsContext: (_, { label }, { i18n }) => `${label}-${i18n.locale}`,
+    cmsContext: ({ labelName }, _, { i18n }) => `${labelName}-${i18n.locale}`,
   },
 
   actions: {
@@ -21,4 +27,5 @@ export default {
       ]);
     },
   },
+
 };
