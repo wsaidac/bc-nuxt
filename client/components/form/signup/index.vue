@@ -47,12 +47,26 @@
         <ui-icon icon="arrow-right" />
       </ui-button>
     </ui-form-item>
-    <small v-html="$t('account.agree-to-terms')" />
+    <i18n
+      path="account.agree-to-terms.main"
+      tag="small"
+    >
+      <a
+        place="terms-of-use-link"
+        :href="termsOfUseUrl"
+      >{{ $t('account.agree-to-terms.terms-of-use-link') }}</a>
+      <a
+        place="privacy-policy-link"
+        :href="privacyPolicyUrl"
+      >{{ $t('account.agree-to-terms.privacy-policy-link') }}</a>
+    </i18n>
   </ui-form>
 </template>
 
 <script>
 import validate from '~/mixins/validate';
+import { privacyPolicyUrl, termsOfUseUrl } from '~/mixins/urls';
+// import termsOfUseUrl from '~/mixins/urls/termsOfUseUrl';
 import togglePassword from '~/mixins/toggle-password';
 import UiInputPassword from '~/components/ui/input-password';
 
@@ -85,7 +99,7 @@ export default {
     UiInputPassword,
   },
 
-  mixins: [validate('user', ['email', 'password', 'passwordConfirmation']), togglePassword],
+  mixins: [validate('user', ['email', 'password', 'passwordConfirmation']), togglePassword, privacyPolicyUrl, termsOfUseUrl],
 
   data() {
     return {
