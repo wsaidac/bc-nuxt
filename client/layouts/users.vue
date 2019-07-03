@@ -17,7 +17,6 @@ import RapidoFooter from '~/components/footer';
 
 export default {
   head() {
-    debugger // eslint-disable-line
     const { locale } = this.$i18n;
     return {
       htmlAttrs: {
