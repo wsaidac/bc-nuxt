@@ -5,7 +5,7 @@ const localesConfig = require('./i18n/localesConfig');
 module.exports = function (label) {
   const { locales, defaultLocale } = merchantsConfig[label];
   const defaultLocaleFile = `../assets/locales/translation-files/${defaultLocale}.json`;
-  const merchantConfig = Object.values(lodash.pick(localesConfig, locales));
+  const merchantConfig = lodash.pick(localesConfig, locales);
 
   return {
     strategy: 'prefix',
@@ -13,7 +13,7 @@ module.exports = function (label) {
     parsePages: false,
     lazy: true,
     langDir: 'assets/locales/assemble-translations/',
-    locales: merchantConfig,
+    locales: Object.values(merchantConfig),
     defaultLocale,
     vueI18n: {
       fallbackLocale: defaultLocale,

@@ -42,134 +42,47 @@ function getDateTimeFormats(locale) {
 
 // see for options http://www.ecma-international.org/ecma-402/2.0/#sec-intl-datetimeformat-constructor
 
-function getCurrency(code) {
+function getCurrency(currency) {
   return {
     currency: {
       style: 'currency',
-      currency: code || 'EUR',
+      currency: currency || 'EUR',
     },
   };
 }
 
+function generateLocaleConfig(locale, name, currency, status) {
+  const lang = locale.split('-')[0];
+  const country = locale.split('-')[1].toUpperCase();
+
+  // if the language is english use the 'en-us' translation file
+  const file = lang === 'en' ? 'en-us' : locale;
+
+  const config = {
+    code: locale,
+    iso: `${lang}-${country}`,
+    file: `${file}.js`,
+    name: country,
+    displayName: name,
+    selectable: status === 'active' || false,
+    ...getCurrency(currency),
+    ...getDateTimeFormats(locale),
+  };
+
+  return config;
+}
+
 module.exports = {
-  'da-dk': {
-    code: 'da-dk',
-    iso: 'da-DK',
-    file: 'da-dk.js',
-    name: 'DK',
-    displayName: 'Danmark',
-    selectable: true,
-    numberFormats: getCurrency('DKK'),
-    dateTimeFormats: getDateTimeFormats(),
-  },
-  'de-at': {
-    code: 'de-at',
-    iso: 'de-AT',
-    file: 'de-at.js',
-    name: 'AT',
-    displayName: 'Österreich',
-    selectable: true,
-    numberFormats: getCurrency('EUR'),
-    dateTimeFormats: getDateTimeFormats('de-at'),
-  },
-  'en-us': {
-    code: 'en-us',
-    iso: 'en-US',
-    file: 'en-us.js',
-    name: 'US',
-    displayName: 'United States',
-    selectable: true,
-    numberFormats: getCurrency('USD'),
-    dateTimeFormats: getDateTimeFormats(),
-  },
-  'fr-be': {
-    code: 'fr-be',
-    iso: 'fr-BE',
-    file: 'fr-be.js',
-    name: 'BE',
-    displayName: 'Belgique',
-    selectable: true,
-    numberFormats: getCurrency('EUR'),
-    dateTimeFormats: getDateTimeFormats(),
-  },
-  'pl-pl': {
-    code: 'pl-pl',
-    iso: 'pl-PL',
-    file: 'pl-pl.js',
-    name: 'PL',
-    displayName: 'Polska',
-    selectable: true,
-    numberFormats: getCurrency('PLN'),
-    dateTimeFormats: getDateTimeFormats(),
-  },
-  'en-uk': {
-    code: 'en-uk',
-    iso: 'en-UK',
-    file: 'en-us.js',
-    name: 'UK',
-    displayName: 'United Kingdom',
-    selectable: false,
-    numberFormats: getCurrency('GBP'),
-    dateTimeFormats: getDateTimeFormats(),
-  },
-  'it-it': {
-    code: 'it-it',
-    iso: 'it-IT',
-    file: 'it-it.js',
-    name: 'IT',
-    displayName: 'Italia',
-    selectable: true,
-    numberFormats: getCurrency('EUR'),
-    dateTimeFormats: getDateTimeFormats(),
-  },
-  'fi-fi': {
-    code: 'fi-fi',
-    iso: 'fi-FI',
-    file: 'fi-fi.js',
-    name: 'FI',
-    displayName: 'Suomi',
-    selectable: true,
-    numberFormats: getCurrency('EUR'),
-    dateTimeFormats: getDateTimeFormats(),
-  },
-  'es-es': {
-    code: 'es-es',
-    iso: 'es-ES',
-    file: 'es-es.js',
-    name: 'ES',
-    displayName: 'España',
-    selectable: true,
-    numberFormats: getCurrency('EUR'),
-    dateTimeFormats: getDateTimeFormats(),
-  },
-  'pt-pt': {
-    code: 'pt-pt',
-    iso: 'pt-PT',
-    file: 'pt-pt.js',
-    name: 'PT',
-    displayName: 'Portugal',
-    selectable: false,
-    numberFormats: getCurrency('EUR'),
-    dateTimeFormats: getDateTimeFormats(),
-  },
-  'sk-sk': {
-    code: 'sk-sk',
-    iso: 'sk-SK',
-    file: 'sk-sk.js',
-    name: 'SK',
-    displayName: 'Slovensko',
-    selectable: false,
-    numberFormats: getCurrency('EUR'),
-    dateTimeFormats: getDateTimeFormats(),
-  },
-  'en-ie': {
-    code: 'en-ie',
-    iso: 'en-IE',
-    file: 'en-us.js',
-    name: 'IE',
-    displayName: 'Ireland',
-    selectable: true,
-    numberFormats: getCurrency('EUR'),
-    dateTimeFormats: getDateTimeFormats(),
-  },
+  'da-dk': generateLocaleConfig('da-dk', 'Danmark', 'DKK', 'active'),
+  'de-at': generateLocaleConfig('de-at', 'Österreich', 'EUR', 'active'),
+  'en-us': generateLocaleConfig('en-us', 'United States', 'USD', 'active'),
+  'fr-be': generateLocaleConfig('fr-be', 'Belgique', 'EUR', 'active'),
+  'pl-pl': generateLocaleConfig('pl-pl', 'Polska', 'PLN', 'active'),
+  'it-it': generateLocaleConfig('it-it', 'Italia', 'EUR', 'active'),
+  'fi-fi': generateLocaleConfig('fi-fi', 'Suomi', 'EUR', 'active'),
+  'es-es': generateLocaleConfig('es-es', 'España', 'EUR', 'active'),
+  'en-ie': generateLocaleConfig('en-ie', 'Ireland', 'EUR', 'active'),
+  'pt-pt': generateLocaleConfig('pt-pt', 'Portugal', 'EUR', 'inactive'),
+  'en-uk': generateLocaleConfig('en-uk', 'United Kingdom', 'GBP', 'inactive'),
+  'sk-sk': generateLocaleConfig('sk-sk', 'Slovensko', 'EUR', 'inactive'),
 };
