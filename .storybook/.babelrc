@@ -1,0 +1,25 @@
+{
+  "presets": [
+    "babel-preset-vue",
+    "@babel/preset-env",
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ],
+        "babel-preset-vue"
+      ],
+      "plugins": [
+        "@babel/plugin-syntax-dynamic-import",
+        "require-context-hook"
+      ]
+    }
+  }
+}

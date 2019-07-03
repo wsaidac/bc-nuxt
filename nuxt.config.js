@@ -1,8 +1,9 @@
-const i18nConfig = require('./client/config/i18nConfig.js');
+const path = require('path');
+const i18nConfig = require('./client/config/i18nConfig');
 
 require('dotenv').config();
 
-const label = 'rapido';
+const label = process.env.LABEL || 'rapido';
 
 const conf = {
   srcDir: 'client/',
@@ -14,7 +15,7 @@ const conf = {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [{ src: '/blueconic.js' }, { src: '//cdn.blueconic.net/cg.js' }],
   },
-  css: ['~/assets/stylesheets/application.scss'],
+  css: ['~/assets/stylesheets/tailwind.css', '~/assets/stylesheets/application.scss'],
   store: true,
   loading: {
     color: '#dce6f5',
@@ -37,16 +38,13 @@ const conf = {
         test: /\.html$/,
         use: ['html-loader'],
       });
-
-      // example alias
-      // const alias = lodash.get(config, 'resolve.alias', {}) || {};
-      // alias['@ui'] = path.join(this.buildContext.options.srcDir, 'components/ui');
     },
     postcss: {
       plugins: {
         'postcss-import': {},
         'postcss-url': {},
         'postcss-preset-env': {},
+        'tailwindcss': path.resolve(__dirname, './tailwind.config.js'),
       },
     },
     extractCSS: process.env.NODE_ENV !== 'development',
@@ -125,9 +123,8 @@ const conf = {
   env: {
     API_BROWSER: process.env.API_BROWSER,
     API_SERVER: process.env.API_SERVER,
-    GTM_ID: process.env.GTM_ID_RAPIDO,
+    GTM_ID: process.env.GTM_ID,
     GTM_DEBUG: process.env.NODE_ENV === 'development',
-    DOMAIN: 'www.rapido.com',
     LABEL: label,
   },
   plugins: [

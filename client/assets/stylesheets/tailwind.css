@@ -1,0 +1,9 @@
+/* stylelint-disable */
+
+/* Preflight: it injects global styles for html tags */
+/* more: https://tailwindcss.com/docs/preflight/ */
+/* @tailwind base; */
+
+@tailwind components;
+
+@tailwind utilities;

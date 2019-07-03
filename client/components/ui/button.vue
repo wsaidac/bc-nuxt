@@ -147,3 +147,7 @@ $--button-font-weight: 700;
   }
 }
 </style>
+
+<docs>
+We also can add .md documentation for storybook inside the tag `<docs></docs>`
+</docs>

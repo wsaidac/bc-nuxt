@@ -23,3 +23,19 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('checkLinkNavigation', ($el) => {
+  // wrap the DOM element
+  cy.wrap($el)
+    .should('have.attr', 'href')
+    .then(href => {
+      cy.wrap($el)
+        .click() // click the link element
+
+      cy.location()
+        .should((loc) => {
+          // expect than after click over $el the navigator pathname should be equal to 'href' assigned to $el
+          expect(loc.pathname).to.eq(href)
+        })
+    })
+})

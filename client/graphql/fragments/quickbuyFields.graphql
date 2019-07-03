@@ -27,7 +27,7 @@ fragment quickbuyFields on CmsProduct {
           description
         }
       }
-      products {
+      products(first: 3) {
         nodes {
           title
           id
