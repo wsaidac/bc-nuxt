@@ -22,7 +22,7 @@ const conf = {
     height: '2px',
   },
   build: {
-    publicPath: `/${label}/`,
+    publicPath: '/rapido_web/',
 
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
@@ -125,7 +125,6 @@ const conf = {
     API_SERVER: process.env.API_SERVER,
     GTM_ID: process.env.GTM_ID_RAPIDO,
     GTM_DEBUG: process.env.NODE_ENV === 'development',
-    DOMAIN: process.env.DOMAIN || 'www.rapido.com',
     LABEL: label,
   },
   plugins: [

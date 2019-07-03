@@ -7,7 +7,7 @@ export default {
     return {
       labelName: label,
       labelId: merchantsConfig[label].id,
-      domain: process.env.DOMAIN,
+      domain: '',
       cmsContext: '',
     };
   },
@@ -25,6 +25,12 @@ export default {
         dispatch('menus/fetchHeaderMenu', { app, error }, { root: true }),
         dispatch('menus/fetchFooterMenu', { app, error }, { root: true }),
       ]);
+    },
+  },
+
+  mutations: {
+    setDomain(state, domain) {
+      state.domain = domain;
     },
   },
 

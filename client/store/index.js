@@ -18,10 +18,14 @@ export default {
   },
 
   actions: {
-    nuxtServerInit({ dispatch }, { app, error, query }) {
+    nuxtServerInit({ dispatch, commit }, {
+      app, error, query, req,
+    }) {
       if (query.aid) {
         app.$cookies.set('aid', query.aid, { path: '/' });
       }
+
+      commit('context/setDomain', req.headers.host);
 
       return dispatch('context/changeContext', { app, error });
     },
