@@ -22,7 +22,7 @@ const conf = {
     height: '2px',
   },
   build: {
-    publicPath: '/rapido_web/',
+    publicPath: '/rapidoweb/',
 
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {

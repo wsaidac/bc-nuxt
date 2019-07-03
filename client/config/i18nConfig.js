@@ -8,7 +8,7 @@ module.exports = function (label) {
   const merchantConfig = Object.values(lodash.pick(localesConfig, locales));
 
   return {
-    strategy: 'prefix_and_default',
+    strategy: 'prefix',
     seo: false,
     parsePages: false,
     lazy: true,
