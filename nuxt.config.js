@@ -123,7 +123,7 @@ const conf = {
   env: {
     API_BROWSER: process.env.API_BROWSER,
     API_SERVER: process.env.API_SERVER,
-    GTM_ID: process.env.GTM_ID_RAPIDO,
+    GTM_ID: process.env.GTM_ID,
     GTM_DEBUG: process.env.NODE_ENV === 'development',
     LABEL: label,
   },
