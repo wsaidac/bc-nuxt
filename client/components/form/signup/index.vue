@@ -48,25 +48,25 @@
       </ui-button>
     </ui-form-item>
     <i18n
-      path="account.agree-to-terms.main"
+      path="account.agree-to-terms"
       tag="small"
     >
       <a
         place="terms-of-use-link"
-        :href="termsOfUseUrl"
-      >{{ $t('account.agree-to-terms.terms-of-use-link') }}</a>
+        :href="generalConditions.href"
+      >{{ generalConditions.meta.title }}</a>
       <a
         place="privacy-policy-link"
-        :href="privacyPolicyUrl"
-      >{{ $t('account.agree-to-terms.privacy-policy-link') }}</a>
+        :href="privacyPolicy.href"
+      >{{ privacyPolicy.meta.title }}</a>
     </i18n>
   </ui-form>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 import validate from '~/mixins/validate';
-import { privacyPolicyUrl, termsOfUseUrl } from '~/mixins/urls';
-// import termsOfUseUrl from '~/mixins/urls/termsOfUseUrl';
 import togglePassword from '~/mixins/toggle-password';
 import UiInputPassword from '~/components/ui/input-password';
 
@@ -99,7 +99,7 @@ export default {
     UiInputPassword,
   },
 
-  mixins: [validate('user', ['email', 'password', 'passwordConfirmation']), togglePassword, privacyPolicyUrl, termsOfUseUrl],
+  mixins: [validate('user', ['email', 'password', 'passwordConfirmation']), togglePassword],
 
   data() {
     return {
@@ -109,6 +109,16 @@ export default {
         passwordConfirmation: '',
       },
     };
+  },
+
+  computed: {
+    ...mapGetters('menus', ['footer']),
+    generalConditions() {
+      return this.footer.generalConditions;
+    },
+    privacyPolicy() {
+      return this.footer.privacyPolicy;
+    },
   },
 
   methods: {
