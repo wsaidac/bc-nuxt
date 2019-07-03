@@ -24,7 +24,7 @@ export default {
       },
       title: this.$t('account.my-account'),
       link: [
-        { rel: 'alternate', href: `https://${process.env.DOMAIN}${this.$route.path}`, hreflang: locale },
+        { rel: 'alternate', href: `https://${this.domain}${this.$route.path}`, hreflang: locale },
       ],
     };
   },
@@ -38,6 +38,7 @@ export default {
 
   computed: {
     ...mapGetters('shared', ['usps']),
+    ...mapGetters('context', ['domain']),
     classes() {
       const { locale } = this.$i18n;
       const country = locale.split('-')[1];
