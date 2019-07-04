@@ -1,9 +1,9 @@
 const path = require('path');
-const i18nConfig = require('./client/config/i18nConfig.js');
+const i18nConfig = require('./client/config/i18nConfig');
 
 require('dotenv').config();
 
-const label = 'rapido';
+const label = process.env.LABEL || 'rapido';
 
 const conf = {
   srcDir: 'client/',
@@ -38,10 +38,6 @@ const conf = {
         test: /\.html$/,
         use: ['html-loader'],
       });
-
-      // example alias
-      // const alias = lodash.get(config, 'resolve.alias', {}) || {};
-      // alias['@ui'] = path.join(this.buildContext.options.srcDir, 'components/ui');
     },
     postcss: {
       plugins: {
@@ -127,9 +123,8 @@ const conf = {
   env: {
     API_BROWSER: process.env.API_BROWSER,
     API_SERVER: process.env.API_SERVER,
-    GTM_ID: process.env.GTM_ID_RAPIDO,
+    GTM_ID: process.env.GTM_ID,
     GTM_DEBUG: process.env.NODE_ENV === 'development',
-    DOMAIN: 'www.rapido.com',
     LABEL: label,
   },
   plugins: [

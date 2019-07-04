@@ -1,5 +1,3 @@
-import locales from '~/config/i18n/locales';
-
 export default ({
   app,
   req,
@@ -20,7 +18,7 @@ export default ({
 
     const cloudfrontViewerCountry = req.headers['cloudfront-viewer-country'];
     if (cloudfrontViewerCountry) {
-      const cloudfrontLocale = Object.values(locales)
+      const cloudfrontLocale = app.i18n.locales
         .find(locale => locale.name.toLowerCase() === cloudfrontViewerCountry.toLowerCase());
       const localeCode = cloudfrontLocale && cloudfrontLocale.code;
 

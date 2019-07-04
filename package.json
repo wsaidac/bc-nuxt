@@ -1,5 +1,5 @@
 {
-  "name": "Rapido.com",
+  "name": "rapido",
   "private": true,
   "scripts": {
     "dev": "nodemon app.js",

@@ -44,9 +44,9 @@ const createSitemap = (schema, domain, locale, servicePages, categoryTerms) => s
 });
 
 router.get('/', async (req, res) => {
-  const domain = 'rapido';
+  const label = process.env.LABEL || 'rapido';
   const { locale } = req.params;
-  const context = `${domain}-${locale}`;
+  const context = `${label}-${locale}`;
   request(context).then((result) => {
     const { servicePages, categoryTerms } = result.data.data;
     const sitemap = createSitemap('https://', req.headers.host, locale, servicePages, categoryTerms);
