@@ -52,13 +52,12 @@
       tag="small"
     >
       <a
-        place="terms-of-use-link"
-        :href="generalConditions.href"
-      >{{ generalConditions.meta.title }}</a>
-      <a
-        place="privacy-policy-link"
-        :href="privacyPolicy.href"
-      >{{ privacyPolicy.meta.title }}</a>
+        v-for="(link, i) in ['generalConditions', 'privacyPolicy']"
+        :key="i"
+        :place="`${link}-link`"
+        :href="footer[link].slug"
+        :title="footer[link].href.title"
+      >{{ footer[link].href.title }}</a>
     </i18n>
   </ui-form>
 </template>
@@ -113,12 +112,6 @@ export default {
 
   computed: {
     ...mapGetters('menus', ['footer']),
-    generalConditions() {
-      return this.footer.generalConditions;
-    },
-    privacyPolicy() {
-      return this.footer.privacyPolicy;
-    },
   },
 
   methods: {

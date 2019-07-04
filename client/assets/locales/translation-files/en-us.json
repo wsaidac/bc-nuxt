@@ -7,7 +7,7 @@
     "account-unlocked": "Account unlocked",
     "active-now": "Active now",
     "address-details": "Your address",
-    "agree-to-terms": "By creating an account, you agree with Rapido’s {terms-of-use-link} and {privacy-policy-link}.",
+    "agree-to-terms": "By creating an account, you agree with Rapido’s {generalConditions-link} and {privacyPolicy-link}.",
     "all-questions": "All questions",
     "birthdate": "Date of birth",
     "bruteforce": {

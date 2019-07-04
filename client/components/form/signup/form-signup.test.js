@@ -7,19 +7,19 @@ describe('FormSignup', () => {
   beforeEach(() => {
     $mounted = mount(FormSignup, {
       computed: {
-        generalConditions() {
+        footer() {
           return {
-            href: '/',
-            meta: {
-              title: 'title',
+            generalConditions: {
+              slug: '/',
+              href: {
+                title: 'title',
+              },
             },
-          };
-        },
-        privacyPolicy() {
-          return {
-            href: '/',
-            meta: {
-              title: 'title',
+            privacyPolicy: {
+              slug: '/',
+              href: {
+                title: 'title',
+              },
             },
           };
         },
