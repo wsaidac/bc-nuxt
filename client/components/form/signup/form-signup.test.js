@@ -5,7 +5,26 @@ describe('FormSignup', () => {
   let $mounted;
 
   beforeEach(() => {
-    $mounted = mount(FormSignup);
+    $mounted = mount(FormSignup, {
+      computed: {
+        generalConditions() {
+          return {
+            href: '/',
+            meta: {
+              title: 'title',
+            },
+          };
+        },
+        privacyPolicy() {
+          return {
+            href: '/',
+            meta: {
+              title: 'title',
+            },
+          };
+        },
+      },
+    });
   });
 
   it('should mount a form', () => {
