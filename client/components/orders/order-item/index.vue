@@ -62,21 +62,7 @@
               placement="top-start"
               trigger="hover"
             >
-              <i18n
-                path="account.orders.description-inprogress.main"
-                tag="p"
-              >
-                <i18n
-                  place="need-help"
-                  path="account.orders.description-inprogress.need-help"
-                  tag="b"
-                >
-                  <a
-                    place="contact-link"
-                    href="/us/contact"
-                  >{{ $t('account.orders.description-inprogress.link-title') }}</a>
-                </i18n>
-              </i18n>
+              <p v-html="$t('account.orders.description-inprogress', { 'contact-link': contactLink })" />
               <ui-icon
                 slot="reference"
                 class="input-help"
@@ -160,6 +146,9 @@ export default {
   },
 
   computed: {
+    contactLink() {
+      return `/${this.$i18n.locale}/contact`;
+    },
     product() {
       return this.order.products[0];
     },
