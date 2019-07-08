@@ -62,7 +62,7 @@ const defaultOptions = {
     $t: key => key,
     $contextPath: key => key,
     localePath: key => key,
-    $mutate: key => key,
+    $mutation: key => key,
   },
   stubs: {
     NuxtLink: TestUtils.RouterLinkStub,

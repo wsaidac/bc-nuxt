@@ -92,8 +92,6 @@ export default {
       this.requested = false;
     },
   },
-
-  middleware: ['usps'],
 };
 </script>
 

@@ -27,6 +27,7 @@ e2e-tests:
   image: cypress/base:10
   before_script:
     - yarn install --silent
+    - yarn build
     - yarn cypress:verify
   script:
     - echo "Testing application code with e2e tests"

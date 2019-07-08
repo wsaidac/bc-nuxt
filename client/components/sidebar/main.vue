@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     async logout() {
-      await this.$m('logout', { action: 'CURRENT' });
+      await this.$mutation('logout', { action: 'CURRENT' });
       window.location.reload();
     },
   },

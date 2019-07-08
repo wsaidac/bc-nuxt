@@ -3246,25 +3246,6 @@ arrify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
 
-"artemis-graphql@https://github.com/10KB/artemis-graphql#v2.0.3":
-  version "1.0.0"
-  resolved "https://github.com/10KB/artemis-graphql#f97b0a605e01ea301047c44786f816ba272f3cdf"
-  dependencies:
-    apollo-cache-inmemory "^1.1.12"
-    apollo-client "^2.2.8"
-    apollo-fetch "^0.7.0"
-    apollo-link "^1.2.2"
-    apollo-link-batch-http "^1.2.2"
-    apollo-link-context "^1.0.8"
-    apollo-link-http "^1.5.4"
-    apollo-link-schema "^1.1.0"
-    apollo-utilities "1.0.0"
-    graphql "^0.13.2"
-    graphql-tag "^2.9.1"
-    graphql-tools "^3.0.0"
-    lodash "^4.17.10"
-    node-fetch "^2.1.2"
-
 asap@~2.0.3:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
@@ -10628,9 +10609,10 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
-nuxt-i18n@^5.8.0:
+nuxt-i18n@5.8.5:
   version "5.8.5"
   resolved "https://registry.yarnpkg.com/nuxt-i18n/-/nuxt-i18n-5.8.5.tgz#9ae047113aae927565bda816594d04b8e8b106d7"
+  integrity sha512-kvykf57EctValhPcvOBTLgVUlegDVqjlBhmSF1F1JQGDNT8FQK/u9cohnk2FQ/nBKLaFJbz1KUGNKXL/QvejVg==
   dependencies:
     "@kazupon/vue-i18n-loader" "^0.3.0"
     acorn "^6.1.1"

@@ -101,7 +101,7 @@ export default {
     async register() {
       this.$v.$touch();
       if (!this.$v.$invalid) {
-        const { user } = await this.$m('register', this.user);
+        const { user } = await this.$mutation('register', this.user);
         if (this.$graphQLErrors.length > 0) {
           this.$graphQLErrors = monkeyPatchPaths(this.$graphQLErrors);
           this.$emit('error', this.$graphQLErrors[0].message);

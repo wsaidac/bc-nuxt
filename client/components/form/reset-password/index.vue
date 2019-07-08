@@ -85,7 +85,7 @@ export default {
   methods: {
     async resetPassword() {
       const { resetPasswordToken, userId } = this;
-      const { data, errors } = await this.$mutate('resetPassword', { resetPasswordToken, userId, ...this.user });
+      const { data, errors } = await this.$mutation('resetPassword', { resetPasswordToken, userId, ...this.user });
       if (errors.length > 0) {
         this.$emit('error', `account.${errors[0].message}`);
       } else {

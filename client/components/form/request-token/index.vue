@@ -61,7 +61,7 @@ export default {
     async request() {
       this.$v.$touch();
       if (!this.$v.$invalid) {
-        const { errors } = await this.$mutate('resendToken', { ...this.user, tokenType: 'UNLOCK' });
+        const { errors } = await this.$mutation('resendToken', { ...this.user, tokenType: 'UNLOCK' });
         if (errors.length > 0) {
           this.$emit('error', `account.${errors[0].message}`);
         } else {

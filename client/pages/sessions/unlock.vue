@@ -58,7 +58,7 @@ export default {
   },
 
   async asyncData({ app, query }) {
-    const { data: { user }, errors } = await app.$mutate('unlock', {
+    const { data: { user }, errors } = await app.$mutation('unlock', {
       userId: query.user_id,
       unlockToken: query.token,
     });
@@ -67,7 +67,5 @@ export default {
     }
     return { user: { email: user.email } };
   },
-
-  middleware: ['usps'],
 };
 </script>
