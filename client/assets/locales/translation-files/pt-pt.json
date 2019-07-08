@@ -2,19 +2,19 @@
   "account": {
     "account-confirmed": "Conta confirmada",
     "account-created": "Parabéns, a sua conta Rapido foi criada com sucesso",
-    "account-email-address": "Endereço de e-mail da conta",
+    "account-email-address": "Endereço de email da conta",
     "active-now": "Ativa agora",
     "address-details": "A sua morada",
     "agree-to-terms": "Ao criar uma conta, concorda com os <a href='/en-us/general-conditions'>Termos de Utilização</a> e com a <a href='/en-us/privacy'>Política de Privacidade da Rapido</a>.\t",
     "all-questions": "Todas as questões",
     "birthdate": "Data de nascimento",
     "cancel": "Cancelar",
-    "change-email": "Alterar e-mail",
-    "change-email-requested": "Enviámos-lhe um e-mail para confirmar a alteração do seu endereço de e-mail",
+    "change-email": "Alterar email",
+    "change-email-requested": "Enviámos-lhe um e-mail para confirmar a alteração do seu endereço de email",
     "change-password": "Alterar palavra-passe",
     "change-password-error": "Não foi possível atualizar a sua palavra-passe",
     "change-password-submit": "A sua palavra-passe está atualizada",
-    "check-your-email": "Consulte o seu e-mail. Acabámos de lhe enviar as instruções para repor a sua palavra-passe. Se não receber um e-mail nos próximos 30 minutos, tente novamente.",
+    "check-your-email": "Consulte o seu email. Acabámos de lhe enviar as instruções para repor a sua palavra-passe. Se não receber um email nos próximos 30 minutos, tente novamente.",
     "city": "Cidade",
     "confirm_email": {
       "already_confirmed": "A sua conta já está confirmada.",
@@ -35,10 +35,10 @@
     "create-new-account": "Criar nova conta",
     "current-password": "Palavra-passe atual",
     "description-birthdate": "Introduza a sua data de nascimento",
-    "email-address": "Endereço de e-mail",
-    "email-changed": "Endereço de e-mail alterado",
-    "email-sent-to": "E-mail enviado para: {email}",
-    "enter-email-address": "Introduza o seu endereço de e-mail.",
+    "email-address": "Endereço de email",
+    "email-changed": "Endereço de email alterado",
+    "email-sent-to": "Email enviado para: {email}",
+    "enter-email-address": "Introduza o seu endereço de email.",
     "faq": {
       "faq-all": "Todas as perguntas frequentes",
       "faq-code": "Como utilizar um código",
@@ -64,10 +64,10 @@
     "last-name": "Apelido",
     "login-history": "Histórico de inícios de sessão da conta",
     "login": {
-      "invalid_credentials": "O endereço de e-mail e/ou palavra-passe que introduziu estão incorretos.",
+      "invalid_credentials": "O endereço de email e/ou palavra-passe que introduziu estão incorretos.",
       "title": "Iniciar sessão",
-      "unconfirmed_email": "O endereço de e-mail não está confirmado",
-      "unknown_user": "O endereço de e-mail não possui uma conta associada."
+      "unconfirmed_email": "O endereço de email não está confirmado",
+      "unknown_user": "O endereço de email não possui uma conta associada."
     },
     "loginError": {
       "title": "Não foi possível iniciar a sessão"
@@ -79,7 +79,7 @@
     "male": "Masculino",
     "my-account": "A minha conta",
     "name": "Nome",
-    "new-email-address": "Novo endereço de e-mail",
+    "new-email-address": "Novo endereço de email",
     "new-password": "Nova palavra-passe",
     "orders": {
       "cancelled": "cancelado",
@@ -109,7 +109,7 @@
       "your-top-up-code": "O seu código digital"
     },
     "password": "Palavra-passe",
-    "password-reset-sent": "Nova palavra-passe enviada para o e-mail",
+    "password-reset-sent": "Nova palavra-passe enviada para o email",
     "personal-data-submit": "Perfil guardado",
     "personal-details": "Dados pessoais",
     "phone-number": "Código do país (EUA: +1)/número de telefone",
@@ -122,12 +122,12 @@
     "repeat-new-password": "Repetir a nova palavra-passe",
     "repeat-password": "Repetir palavra-passe",
     "request_change_email": {
-      "invalid": "Este endereço de e-mail já está a ser utilizado.",
+      "invalid": "Este endereço de email já está a ser utilizado.",
       "invalid_credentials": "Introduza a palavra-passe correta."
     },
     "request_reset_password": {
       "error_title": "A reposição da palavra-passe falhou",
-      "unknown_user": "Não foi encontrada qualquer conta associada a este endereço de e-mail."
+      "unknown_user": "Não foi encontrada qualquer conta associada a este endereço de email."
     },
     "reset-password": "Repor palavra-passe",
     "reset_password": {
@@ -149,7 +149,7 @@
         "title": "Palavra-passe alterada"
       }
     },
-    "retry-reset": "Utilizei um endereço de e-mail errado. Desejo tentar novamente",
+    "retry-reset": "Utilizei um endereço de email errado. Desejo tentar novamente",
     "save": "Guardar",
     "secure-signup": "Criar uma conta Rapido",
     "sessions-management": "Atividade da conta",
@@ -157,8 +157,8 @@
       "title": "Não foi possível efetuar o registo"
     },
     "street": "Morada",
-    "try-again": "Endereço de e-mail errado? Crie uma nova conta aqui",
-    "validation-send": "Para verificar a sua conta Rapido, utilize o link no e-mail de validação de conta que acabámos de enviar para {email}. Até breve!",
+    "try-again": "Endereço de email errado? Crie uma nova conta aqui",
+    "validation-send": "Para verificar a sua conta Rapido, utilize o link no email de validação de conta que acabámos de enviar para {email}. Até breve!",
     "validations": {
       "maxLength": "Máximo de {min} caracteres",
       "minLength": "Mínimo de {min} caracteres",
@@ -167,8 +167,8 @@
       "uniqueness": "account.validations.uniqueness"
     },
     "where-youre-logged-in": "Os dispositivos que utilizou para iniciar sessão na sua conta",
-    "your-account-is-confirmed": "A sua conta, com o endereço de e-mail {email}, foi verificada. Pode agora iniciar sessão na sua conta.",
-    "your-email-is-changed": "O seu endereço de e-mail foi atualizado para {email}. Já pode iniciar a sessão na sua conta.",
+    "your-account-is-confirmed": "A sua conta, com o endereço de email {email}, foi verificada. Pode agora iniciar sessão na sua conta.",
+    "your-email-is-changed": "O seu endereço de email foi atualizado para {email}. Já pode iniciar a sessão na sua conta.",
     "your-login-details": "Os seus dados de início de sessão"
   },
   "country_select": {
@@ -220,7 +220,7 @@
   "home": {
     "featured-products": "Produtos em destaque",
     "lets-speed-it-up": "Vamos tornar as coisas mais rápidas",
-    "see-all-denominations": "Ver todas as denominações"
+    "see-all-denominations": "ver todas as opções"
   },
   "internal-links": {
     "about-us": "Sobre nós",

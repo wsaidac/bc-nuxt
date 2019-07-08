@@ -75,7 +75,7 @@
     "logout": "Odhlásenie",
     "logout-everywhere": "Odhlásiť sa zo všetkých zariadení",
     "lost-password": "Zabudli ste heslo?",
-    "lost-password-help": "Pomoc, stratilo sa mi heslo",
+    "lost-password-help": "Pomoc, zabudol/-a som heslo",
     "male": "Muž",
     "my-account": "Môj účet",
     "name": "Meno",
@@ -220,7 +220,7 @@
   "home": {
     "featured-products": "Vyberáme z produktov",
     "lets-speed-it-up": "Urýchlime to",
-    "see-all-denominations": "Zobraziť všetky označenia"
+    "see-all-denominations": "Zobraziť všetky druhy"
   },
   "internal-links": {
     "about-us": "O nás",
