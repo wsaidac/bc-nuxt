@@ -87,10 +87,6 @@ function monkeyPatchPaths(errors) {
   });
 }
 
-function capitalize(linkSlug) {
-  return linkSlug[0].toUpperCase() + linkSlug.slice(1).replace(/-/g, ' ');
-}
-
 export default {
   name: 'FormSignup',
 
@@ -127,11 +123,9 @@ export default {
       const link = this.footer[linkName];
       if (!link || !link.slug) return null;
 
-      const displayName = capitalize(link.slug);
-
       return {
         linkName,
-        title: get(link, 'href.title', displayName),
+        title: get(link, 'href.title', linkName),
         url: `/${this.$i18n.locale}/${link.slug}`,
       };
     },
