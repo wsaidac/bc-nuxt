@@ -62,7 +62,21 @@
               placement="top-start"
               trigger="hover"
             >
-              <p v-html="$t('account.orders.description-inprogress')" />
+              <i18n
+                path="account.orders.description-inprogress.main"
+                tag="p"
+              >
+                <i18n
+                  place="need-help"
+                  path="account.orders.description-inprogress.need-help"
+                  tag="b"
+                >
+                  <a
+                    place="contact-link"
+                    href="/us/contact"
+                  >{{ $t('account.orders.description-inprogress.link-title') }}</a>
+                </i18n>
+              </i18n>
               <ui-icon
                 slot="reference"
                 class="input-help"

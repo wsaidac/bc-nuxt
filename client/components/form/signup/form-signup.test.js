@@ -10,15 +10,15 @@ describe('FormSignup', () => {
         footer() {
           return {
             generalConditions: {
-              slug: '/',
+              slug: '/conditions',
               href: {
-                title: 'title',
+                title: 'generalConditions-title',
               },
             },
             privacyPolicy: {
               slug: '/',
               href: {
-                title: 'title',
+                title: 'privacyPolicy-title',
               },
             },
           };
@@ -47,5 +47,9 @@ describe('FormSignup', () => {
     $mounted.find('input[type=email]').setValue('foo@cg.nl');
     $mounted.find('button[type=submit]').trigger('click');
     expect($mounted.emitted().submit);
+  });
+
+  it('should render a link to the Conditions', () => {
+    expect($mounted.find('a[title=generalConditions-title]').attributes('href')).toEqual('/conditions');
   });
 });

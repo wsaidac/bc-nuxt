@@ -88,7 +88,11 @@
       "cancelled": "cancelled",
       "close": "Close",
       "close-details": "Close details",
-      "description-inprogress": "Is your order still not delivered after 12 hours? <b>Please <a href='/us/contact'>contact us</a> and we'll help you out!</b>",
+      "description-inprogress": {
+        "main": "Is your order still not delivered after 12 hours? {need-help}",
+        "need-help": "Please {contact-link} and we'll help you out!",
+        "link-title": "contact us"
+      },
       "general-terms-and-conditions": "General Terms and conditions",
       "more-details": "More details",
       "order-history": "Order history",

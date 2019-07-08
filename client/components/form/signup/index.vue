@@ -52,18 +52,19 @@
       tag="small"
     >
       <a
-        v-for="(link, i) in ['generalConditions', 'privacyPolicy']"
+        v-for="(link, i) in links"
         :key="i"
-        :place="`${link}-link`"
-        :href="footer[link].slug"
-        :title="footer[link].href.title"
-      >{{ footer[link].href.title }}</a>
+        :place="`${link.linkName}-link`"
+        :href="link.url"
+        :title="link.title"
+      >{{ link.title }}</a>
     </i18n>
   </ui-form>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
+import { get } from 'lodash';
 
 import validate from '~/mixins/validate';
 import togglePassword from '~/mixins/toggle-password';
@@ -84,6 +85,10 @@ function monkeyPatchPaths(errors) {
     }
     return error;
   });
+}
+
+function capitalize(linkSlug) {
+  return linkSlug[0].toUpperCase() + linkSlug.slice(1).replace(/-/g, ' ');
 }
 
 export default {
@@ -112,9 +117,24 @@ export default {
 
   computed: {
     ...mapGetters('menus', ['footer']),
+    links() {
+      return ['generalConditions', 'privacyPolicy'].map(this.transformLink);
+    },
   },
 
   methods: {
+    transformLink(linkName) {
+      const link = this.footer[linkName];
+      if (!link || !link.slug) return null;
+
+      const displayName = capitalize(link.slug);
+
+      return {
+        linkName,
+        title: get(link, 'href.title', displayName),
+        url: `/${this.$i18n.locale}/${link.slug}`,
+      };
+    },
     async register() {
       this.$v.$touch();
       if (!this.$v.$invalid) {
