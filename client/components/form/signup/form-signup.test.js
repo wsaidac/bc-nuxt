@@ -6,12 +6,6 @@ describe('FormSignup', () => {
 
   beforeEach(() => {
     $mounted = mount(FormSignup, {
-      $i18n: {
-        locale: 'en-us',
-      },
-      i18n: {
-        locale: 'en-us',
-      },
       computed: {
         links() {
           return [];
