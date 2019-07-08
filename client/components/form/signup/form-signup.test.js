@@ -6,22 +6,15 @@ describe('FormSignup', () => {
 
   beforeEach(() => {
     $mounted = mount(FormSignup, {
+      $i18n: {
+        locale: 'en-us',
+      },
+      i18n: {
+        locale: 'en-us',
+      },
       computed: {
-        footer() {
-          return {
-            generalConditions: {
-              slug: '/conditions',
-              href: {
-                title: 'generalConditions-title',
-              },
-            },
-            privacyPolicy: {
-              slug: '/',
-              href: {
-                title: 'privacyPolicy-title',
-              },
-            },
-          };
+        links() {
+          return [];
         },
       },
     });
@@ -47,9 +40,5 @@ describe('FormSignup', () => {
     $mounted.find('input[type=email]').setValue('foo@cg.nl');
     $mounted.find('button[type=submit]').trigger('click');
     expect($mounted.emitted().submit);
-  });
-
-  it('should render a link to the Conditions', () => {
-    expect($mounted.find('a[title=generalConditions-title]').attributes('href')).toEqual('/conditions');
   });
 });
