@@ -11,6 +11,9 @@ export default {
         'es-es': 'https://faq.rapido.com/hc/es',
         'it-it': 'https://faq.rapido.com/hc/it',
         'fi-fi': 'https://faq.rapido.com/hc/fi',
+        'pt-pt': 'https://faq.rapido.com/hc/pt',
+        'sk-sk': 'https://faq.rapido.com/hc/sk',
+        'sv-se': 'https://faq.rapido.com/hc/se',
       };
       if (links[locale]) {
         return links[locale];
