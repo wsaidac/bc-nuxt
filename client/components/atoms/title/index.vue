@@ -11,6 +11,7 @@ export default {
     color: VueTypes.oneOf(availableColors).def('primary'),
     light: Boolean,
     underline: Boolean,
+    spacingClasses: VueTypes.string.def(''),
   },
   data() {
     return {
@@ -23,11 +24,11 @@ export default {
     buildFontSizeClassName() {
       const { type } = this;
       const fontSize = {
-        h1: 'text-3xl md:text-4xl lg:text-5xl',
-        h2: 'text-2xl lg:text-4xl',
-        h3: 'text-xl lg:text-2xl',
-        h4: 'text-lg',
-        h5: 'text-base',
+        h1: 'text-3xl lg:text-6xl',
+        h2: 'text-2xl lg:text-5xl',
+        h3: 'text-3lg lg:text-4xl',
+        h4: 'text-base lg:text-lg leading-tight',
+        h5: 'text-xs leading-relaxed',
       };
       return fontSize[type] || fontSize.h1;
     },
@@ -49,17 +50,18 @@ export default {
   },
   render(createElement) {
     const {
-      $slots, color, fontSizeClassName, fontWeightClassName, underlineClassName,
+      $slots, color, fontSizeClassName, fontWeightClassName, underlineClassName, spacingClasses,
     } = this;
 
     const colorClassname = `text-${color}`;
     const attributes = {
       class: [
-        'font-gm leading-none',
+        'leading-none m-0',
         colorClassname,
         fontSizeClassName,
         fontWeightClassName,
         underlineClassName,
+        spacingClasses,
       ],
     };
     const tagName = this.type;

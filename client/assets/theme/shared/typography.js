@@ -1,5 +1,6 @@
 module.exports = {
   fontFamily: {
+    body: ['Nunito Sans', 'sans-serif'],
     hlv: ['Helvetica', 'sans-serif'],
     gm: ['Gotham Rounded Medium', 'sans-serif'],
     gl: ['Gotham Rounded Light', 'sans-serif'],
@@ -12,12 +13,15 @@ module.exports = {
     'sm': '0.9375rem',
     'base': '1rem',
     'lg': '1.125rem',
-    'xl': '1.25rem',
-    '2xl': '1.5rem',
-    '3xl': '2rem',
-    '4xl': '2.25rem',
-    '5xl': '2.5rem',
-    '6xl': '5.125rem',
+    '2lg': '1.25rem',
+    '3lg': '1.375rem',
+    'xl': '1.5rem',
+    '2xl': '1.75rem',
+    '3xl': '1.875',
+    '4xl': '2rem',
+    '5xl': '2.25rem',
+    '6xl': '2.5rem',
+    '7xl': '5.125rem',
   },
   fontWeight: {
     hairline: '100',
@@ -35,7 +39,7 @@ module.exports = {
     tight: '1.25',
     snug: '1.375',
     normal: '1.5',
-    relaxed: '1.625',
+    relaxed: '1.7',
     loose: '2',
   },
   letterSpacing: {

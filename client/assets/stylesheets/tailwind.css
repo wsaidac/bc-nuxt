@@ -4,6 +4,28 @@
 /* more: https://tailwindcss.com/docs/preflight/ */
 /* @tailwind base; */
 
+html {
+  @apply font-body;
+}
+
+button:focus {
+  outline: 0;
+}
+
 @tailwind components;
 
+/* Extended components
+  @TODO: find a better way for define the extended components
+*/
+
+.btn {
+  @apply py-2 px-10 rounded-full font-semibold text-center border-0 text-base cursor-pointer leading-normal;
+}
+
 @tailwind utilities;
+
+@variants hover, focus, active {
+  .scale-96 {
+    transform: scale(0.96);
+  }
+}

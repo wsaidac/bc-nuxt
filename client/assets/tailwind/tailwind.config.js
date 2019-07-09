@@ -1,6 +1,10 @@
 const tailwindTheme = require('../theme');
-const { extendBordersPlugin } = require('./plugins');
-const { createVariant } = require('./utils');
+const {
+  extendBordersPlugin,
+} = require('./plugins');
+const {
+  createVariant,
+} = require('./utils');
 // variants
 
 module.exports = {
@@ -18,8 +22,8 @@ module.exports = {
     borderCollapse: ['responsive'],
     borderColor: ['responsive', 'hover', 'focus'],
     borderRadius: ['responsive'],
-    borderStyle: ['responsive'],
-    borderWidth: ['responsive'],
+    borderStyle: ['responsive', 'active'],
+    borderWidth: ['responsive', 'active'],
     cursor: ['responsive', 'disabled', 'hover'],
     display: ['responsive'],
     flexDirection: ['responsive'],
