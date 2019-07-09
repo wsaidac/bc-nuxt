@@ -1,0 +1,268 @@
+{
+  "account": {
+    "account-confirmed": "Konto bekräftat",
+    "account-created": "Du har skapat ett Rapido konto",
+    "account-email-address": "E-postadress för konto",
+    "account-unlock-sent": "Ny upplås-token e-post skickad",
+    "account-unlocked": "Upplåst konto",
+    "active-now": "Aktiv nu",
+    "address-details": "Din adress",
+    "agree-to-terms": "Genom att skapa ett konto godkänner du Rapidos användar <a href='/en-us/general-conditions'>villkor</a> och <a href='/en-us/privacy'>sekretesspolicy</a> .",
+    "all-questions": "Alla frågor",
+    "birthdate": "Födelsedatum",
+    "bruteforce": {
+      "banned": "För många inloggningsförsök"
+    },
+    "cancel": "Avbryt",
+    "change-email": "Ändra e-post",
+    "change-email-requested": "Vi har skickat dig ett mail för att bekräfta ändringen av din e-postadress",
+    "change-password": "Ändra lösenord",
+    "change-password-error": "Det gick inte att uppdatera ditt lösenord",
+    "change-password-submit": "Ditt lösenord är uppdaterat",
+    "check-your-email": "Kolla din e-post. Vi skickade just instruktioner för att återställa ditt lösenord. Om du inte får ett e-postmeddelande inom 30 minuter, försök igen.",
+    "city": "Stad",
+    "confirm_email": {
+      "already_confirmed": "Ditt konto är redan bekräftat.",
+      "expired_token": "Din bekräftelse länk har gått ut.",
+      "invalid_token": "Din bekräftelselänk är ogiltig."
+    },
+    "continue": "Fortsätt",
+    "country_select": {
+      "button_name": "Fortsätt shopping",
+      "country_names": {
+        "Austria": "Österrike",
+        "Belgium": "Belgien",
+        "United States": "Förenta Staterna"
+      },
+      "description": "Ditt val av land kommer att säkerställa att vi erbjuder <strong>rätt produkter och betalningsmetoder</strong>. Se till att det motsvarar ditt land och det konto som du planerar att lösa in produkten på.",
+      "title": "Välj ditt land"
+    },
+    "create-new-account": "Skapa ett nytt konto",
+    "current-password": "Aktuellt lösenord",
+    "description-birthdate": "Ange ditt födelsedatum",
+    "email-address": "E-postadress",
+    "email-changed": "E-postadress ändrad",
+    "email-sent-to": "E-post skickad till: {email}",
+    "enter-email-address": "Ange din e-postadress.",
+    "faq": {
+      "faq-all": "Alla vanliga frågor",
+      "faq-code": "Hur man använder en kod",
+      "faq-delivery": "Leverans av kod",
+      "faq-other": "Övriga frågor",
+      "faq-payment": "Hur man betalar"
+    },
+    "female": "Kvinna",
+    "first-name": "Förnamn",
+    "footer": {
+      "need-help": "Behöver du hjälp? Kolla in våra <a>vanliga frågor</a>.",
+      "safe-methods": "<strong>Säkra</strong> betalningar med:"
+    },
+    "forgot-password": "Hjälp, jag har glömt mitt lösenord",
+    "format": "DD/mm/åååå",
+    "gender": "Kön",
+    "go-to-login": "Gå till ditt inloggningsformulär",
+    "help-with-account": "Hjälp med konto",
+    "house-number": "Hus nummer",
+    "i-need-help": "Jag behöver hjälp.",
+    "i-prefer-not-to-say": "Andra",
+    "invalid": "Bekräftelse misslyckades",
+    "last-name": "Efternamn",
+    "login-history": "Inloggningshistorik för konto",
+    "login": {
+      "invalid_credentials": "E-postadressen och/eller lösenordet du angav är felaktig.",
+      "locked": "Ditt konto har låsts. {unlock-request-link}",
+      "locked-link-text": "Mer info",
+      "title": "Logga in",
+      "unconfirmed_email": "E-postadressen är inte bekräftad",
+      "unknown_user": "E-postadressen har inget konto."
+    },
+    "loginError": {
+      "title": "Inloggning misslyckades"
+    },
+    "logout": "Logga ut",
+    "logout-everywhere": "Logga ut på alla enheter",
+    "lost-password": "Glömt ditt lösenord?",
+    "lost-password-help": "Hjälp, jag har förlorat mitt lösenord",
+    "male": "Manlig",
+    "my-account": "Mitt konto",
+    "name": "Namn",
+    "new-email-address": "Ny e-postadress",
+    "new-password": "Nytt lösenord",
+    "orders": {
+      "cancelled": "annulleras",
+      "close": "Nära",
+      "close-details": "Närmare detaljer",
+      "description-inprogress": "Levereras din beställning fortfarande inte efter 12 timmar? <b><a href='/us/contact'>Kontakta oss</a> så hjälper vi dig! </b>",
+      "general-terms-and-conditions": "Allmänna villkor",
+      "more-details": "Mer detaljer",
+      "order-history": "Orderhistorik",
+      "order-id": "Beställnings-ID",
+      "ordernumber": "Ordernummer",
+      "paid": "betalt",
+      "payment-method": "Betalning",
+      "price": "Pris",
+      "productstatus": "Produktstatus",
+      "purchased-on": "Köpt på",
+      "redeem-url": "Lös in URL",
+      "refunded": "återbetalas",
+      "serial-number": "Serienummer",
+      "service-costs": "Tjänster",
+      "shipped": "skeppas",
+      "show": "Visa",
+      "status": "Status",
+      "total": "Totalt",
+      "unpaid": "obetalda",
+      "your-orders": "Dina order",
+      "your-top-up-code": "Din digitala kod"
+    },
+    "password": "Lösenord",
+    "password-reset-sent": "E-post för nytt lösenord skickat",
+    "personal-data-submit": "Profil sparad",
+    "personal-details": "Personliga detaljer",
+    "phone-number": "Landskod (USA: + 1) / Telefonnummer",
+    "pickADay": "Välj födelsedatum",
+    "please-enter-password-for-confirmation": "Ange ditt lösenord för bekräftelse",
+    "postal-code": "Zip",
+    "prefix": "Prefix",
+    "quick-signin": "Vi kan få dig inloggad på ditt konto igen på nolltid.",
+    "quick-unlocking": "Du har försökt logga in för ofta med ett felaktigt lösenord. Vi har skickat ett e-postmeddelande för att låsa upp ditt konto. Fick du inte mejlet? Begär sedan det igen nedan.",
+    "repeat-email-address": "Upprepa ny e-postadress",
+    "repeat-new-password": "Upprepa nytt lösenord",
+    "repeat-password": "Upprepa lösenord",
+    "request-unlock-help": "Hjälp, jag låste mitt konto!",
+    "request_change_email": {
+      "invalid": "Den här e-postadressen används redan.",
+      "invalid_credentials": "Ange ditt korrekta lösenord."
+    },
+    "request_reset_password": {
+      "error_title": "Återställ lösenord misslyckades",
+      "unknown_user": "Inget konto hittades för denna e-postadress."
+    },
+    "request_unlock": {
+      "error_title": "Återställ lösenord misslyckades",
+      "unlock": {
+        "invalid_token": "Token skicka, är inte giltig",
+        "unknown_user": "Inget konto hittades för denna e-postadress."
+      }
+    },
+    "resend_unlock_token": {
+      "unknown_user": "Den här e-postadressen finns inte"
+    },
+    "reset-password": "Återställ lösenord",
+    "reset_password": {
+      "invalid": {
+        "message": "Använd en giltig återställningslänk för att ändra ditt lösenord.",
+        "retry": "Begär en ny återställningslänk",
+        "title": "Ogiltigt"
+      },
+      "reset": "Återställ lösenord",
+      "resetError": {
+        "title": "Lösenord misslyckades"
+      },
+      "reset_password": {
+        "invalid_token": "Länken för återställning av lösenord har löpt ut. Fyll i formuläret för glömt lösenord."
+      },
+      "submit": {
+        "message": "Ditt lösenord är nu uppdaterat och du är inloggad.",
+        "profile": "Gå till profil",
+        "title": "Lösenord ändrat"
+      }
+    },
+    "retry-reset": "Jag har använt fel e-postadress. Jag vill försöka igen",
+    "save": "Rädda",
+    "secure-signup": "Skapa Rapido konto",
+    "sessions-management": "Kontoaktivitet",
+    "signupError": {
+      "title": "Registrering misslyckades"
+    },
+    "street": "Gatuadress",
+    "try-again": "Fel e-postadress? Skapa ett nytt konto här",
+    "unlock-token-sent": "Kolla din e-post. Vi skickade precis instruktioner för att låsa upp ditt konto. Om du inte får ett e-postmeddelande inom 30 minuter, försök igen.",
+    "validation-send": "För att verifiera ditt Rapido konto, vänligen använd länken i e-postmeddelandet för kontovalidering som vi just har skickat till {email}. Vi ses snart!",
+    "validations": {
+      "maxLength": "Maximalt antal {min} tecken",
+      "minLength": "Minsta {min} tecken",
+      "required": "Obligatoriskt fält",
+      "sameAs": "Måste vara lika",
+      "uniqueness": "Har redan tagits"
+    },
+    "where-youre-logged-in": "Enheter som du har använt för att logga in på ditt konto",
+    "your-account-is-confirmed": "Ditt konto med e-postadressen {email} är verifierat. Du kan nu logga in på ditt konto.",
+    "your-account-is-unlocked": "Ditt konto med e-postadressen {email} är olåst. Du kan nu logga in på ditt konto.",
+    "your-email-is-changed": "Din e-postadress har uppdaterats till {email}. Du kan nu logga in på ditt konto.",
+    "your-login-details": "Dina inloggningsuppgifter"
+  },
+  "country_select": {
+    "button_name": "Bekräfta",
+    "country_names": {
+      "Austria": "Österrike",
+      "Belgium": "Belgien",
+      "United States": "Förenta Staterna"
+    },
+    "description": "Ditt val av land kommer att säkerställa att vi erbjuder rätt produkter och betalningsmetoder. Se till att det motsvarar ditt land och det konto som du planerar att lösa in produkten på.",
+    "title": "Välj ditt land"
+  },
+  "error": {
+    "button_name": "Rapido Hemsida",
+    "description": "Oj! Det här är pinsamt, vi kan inte hitta den här sidan just nu. Kan du försöka igen senare?",
+    "error_text": "Det ser ut som om sidan du vill se inte längre existerar, ledsen",
+    "help": "Klicka på knappen nedan för att gå tillbaka till hemsidan eller välj ditt land i toppmenyn.",
+    "title": "Sidan hittades inte"
+  },
+  "footer": {
+    "customer-care": "Kundvård",
+    "order-with": "ordning med",
+    "privacy-statement": "Sekretesspolicy",
+    "quote": "Rapido.com är en del av CG | Miljontals nöjda kunder |",
+    "safely": "Säkert",
+    "safely-order-with": "Beställ säkert med"
+  },
+  "general": {
+    "critical_error": "Något gick fel. Ladda om sidan för att försöka igen.",
+    "domain": "Rapido.com",
+    "help": "Hjälp",
+    "home-text": "Hem",
+    "label": "Rapido",
+    "loading": "Laddar",
+    "look-at-faqs": "Ta en titt på FAQ: s",
+    "need-some-help": "Behöver du hjälp?",
+    "order-now": "Beställ nu",
+    "order-safely": "Beställ säkert",
+    "show-less": "Visa mindre",
+    "show-more": "Visa mer"
+  },
+  "header": {
+    "login": "Logga in",
+    "main-nav": "Huvudmenyn",
+    "menu": "Menyn",
+    "my-account": "Mitt konto",
+    "profile": "Profil"
+  },
+  "home": {
+    "featured-products": "Utvalda produkter",
+    "lets-speed-it-up": "Snabba upp",
+    "see-all-denominations": "Se alla valörer"
+  },
+  "internal-links": {
+    "about-us": "Om oss",
+    "cookies": "Kakor",
+    "general-conditions": "Villkor",
+    "payment-methods": "Betalningsalternativ",
+    "privacy-policy": "Integritetspolicy",
+    "terms-of-use": "Användningsvillkor"
+  },
+  "payment-methods": {
+    "checkout-options": "På Rapido.com kan du checka ut med följande betrodda betalningsalternativ. Varje betalningsalternativ beskrivs nedan.",
+    "credit-or-debit-card": "Kreditkort",
+    "payment-options": "Betalningsalternativ",
+    "paypal": "Paypal",
+    "paypal_text_1": "Du kan betala med PayPal på Rapido.com. När du har valt det här betalningsalternativet loggar du in på ditt PayPal-konto och bekräftar betalningen. Därefter bearbetas transaktionen.",
+    "paypal_text_2": "Vid mottagandet av betalning skickas kupongkoden omedelbart.",
+    "shipping": "Frakt",
+    "visa_and_mastercard_text_1": "På Rapido.com kan du betala via VISA kreditkort, VISA betalkort (Delta och Electron) och MasterCard. Vid kassan väljer du betalning med kreditkort. Sedan anger du dina kreditkortsuppgifter, inklusive kortinnehavaren, kortnummer, utgångsdatum och CVV-kod. Bekräfta betalningen.",
+    "visa_and_mastercard_text_2": "Vid mottagandet av betalning skickas pålägg koden omedelbart."
+  },
+  "usps": {
+    "title": "Fördelar med {domain}"
+  }
+}
