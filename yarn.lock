@@ -2080,6 +2080,13 @@
     react-inspector "^3.0.2"
     uuid "^3.3.2"
 
+"@storybook/addon-console@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-console/-/addon-console-1.1.0.tgz#ef063fa122a7aa03ac54067a1d6a72d717b41c73"
+  integrity sha512-G36/KB0uN5OB30W/QQU/NIbQ2EA4ZjJGORvYNx83bojRN2cKF0NFae5hEwlAAhKZK31qe3g3bsymWvc7+WBCpA==
+  dependencies:
+    global "^4.3.2"
+
 "@storybook/addon-knobs@^5.1.9":
   version "5.1.9"
   resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-5.1.9.tgz#74db07fd644b41e63274f8754fbfb18f43d4cf01"
@@ -15621,6 +15628,13 @@ vue-template-compiler@^2.0.0, vue-template-compiler@^2.5.16, vue-template-compil
 vue-template-es2015-compiler@^1.6.0, vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
+
+vue-types@^1.5.3:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/vue-types/-/vue-types-1.5.3.tgz#b51fd276dac93d56bb2903b11743fb0027ff6345"
+  integrity sha512-VHeAqjIAC5+RtQEzOVLAIKhCngXKFXcggAQJIO74VTCBqbviCHUQHkx0ZxiUAWBeoCMVT4U+SKplvEX8ENkkGg==
+  dependencies:
+    lodash "^4.17.10"
 
 vue2-touch-events@^1.1.1:
   version "1.1.2"

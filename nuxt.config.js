@@ -52,7 +52,7 @@ const conf = {
         'postcss-import': {},
         'postcss-url': {},
         'postcss-preset-env': {},
-        'tailwindcss': path.resolve(__dirname, './tailwind.config.js'),
+        'tailwindcss': path.resolve(__dirname, './client/assets/tailwind/tailwind.config.js'),
       },
     },
     extractCSS: process.env.NODE_ENV !== 'development',
