@@ -1,6 +1,6 @@
 <template>
   <div class="product-popular">
-    <h2
+    <h1
       class="product-popular__title"
       v-text="popularProducts.title"
     />
