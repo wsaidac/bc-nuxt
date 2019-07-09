@@ -1,7 +1,7 @@
 <template>
-  <a
+  <nuxt-link
     class="header-login"
-    :href="$contextPath(to)"
+    :to="$contextPath(to)"
     :title="$t('header.profile')"
     v-text="$t('header.my-account')"
   />

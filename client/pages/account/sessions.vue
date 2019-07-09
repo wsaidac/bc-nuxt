@@ -57,21 +57,21 @@ export default {
     UiPanel,
   },
   async asyncData({ app }) {
-    const { activeSessions } = await app.$q('activeSessions');
+    const { data: { activeSessions } } = await app.$query('activeSessions');
     return {
       activeSessions,
     };
   },
 
-  middleware: ['auth', 'usps'],
+  middleware: ['auth'],
 
   methods: {
     async refresh() {
-      const { activeSessions } = await this.$q('activeSessions');
+      const { activeSessions } = await this.$query('activeSessions');
       this.activeSessions = activeSessions;
     },
     async logoutAll() {
-      await this.$mutate('logout', { action: 'ALL' });
+      await this.$mutation('logout', { action: 'ALL' });
       window.location.reload();
     },
   },

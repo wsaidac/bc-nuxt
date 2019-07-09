@@ -94,8 +94,6 @@ export default {
     };
   },
 
-  middleware: ['usps'],
-
   methods: {
     onError(error) {
       this.resetError = error;

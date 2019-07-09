@@ -1,11 +1,12 @@
 
 const path = require('path');
+const rootPath = path.resolve(__dirname, '..')
 const clientPath = path.resolve(__dirname, '../client')
 
 module.exports = async ({ config, mode }) => {
   config.module.rules.push(
     {
-      test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+      test: /\.(png|jpe?g|gif)(\?.*)?$/,
       loader: 'url-loader',
     },
   )
@@ -103,6 +104,7 @@ module.exports = async ({ config, mode }) => {
 
   config.resolve.alias['@'] = clientPath
   config.resolve.alias['~'] = clientPath
+  config.resolve.alias['~~'] = rootPath
 
 
 

@@ -78,7 +78,7 @@ export default {
     async login() {
       this.$v.$touch();
       if (!this.$v.$invalid) {
-        const { data, errors } = await this.$mutate('login', this.user);
+        const { data, errors } = await this.$mutation('login', this.user);
         if (errors.length > 0) {
           this.$emit('error', `account.${errors[0].message}`);
         } else {

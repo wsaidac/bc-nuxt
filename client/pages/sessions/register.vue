@@ -96,8 +96,6 @@ export default {
       this.signedUp = false;
     },
   },
-
-  middleware: ['usps'],
 };
 </script>
 

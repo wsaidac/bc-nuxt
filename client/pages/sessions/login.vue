@@ -11,10 +11,12 @@
         path="account.login.locked"
         tag="div"
       >
-        <a
-          :href="`/${locale}/sessions/request-unlock`"
+        <nuxt-link
+          :to="`/${locale}/sessions/request-unlock`"
           place="unlock-request-link"
-        >{{ $t('account.login.locked-link-text') }}</a>
+        >
+          {{ $t('account.login.locked-link-text') }}
+        </nuxt-link>
       </i18n>
       <div v-else>{{ $t(loginError) }}</div>
     </ui-alert>
@@ -143,8 +145,6 @@ export default {
       this.signedUp = false;
     },
   },
-
-  middleware: ['usps'],
 };
 </script>
 

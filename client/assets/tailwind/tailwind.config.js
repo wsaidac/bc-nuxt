@@ -1,10 +1,7 @@
-const tailwindTheme = require('./client/assets/theme');
-
-const createVariant = variantLabel => ({ addVariant, e }) => {
-  addVariant(variantLabel, ({ modifySelectors, separator }) => {
-    modifySelectors(({ className }) => `.${e(`${variantLabel}${separator}${className}`)}:${variantLabel}`);
-  });
-};
+const tailwindTheme = require('../theme');
+const { extendBordersPlugin } = require('./plugins');
+const { createVariant } = require('./utils');
+// variants
 
 module.exports = {
   prefix: '',
@@ -81,5 +78,6 @@ module.exports = {
   plugins: [
     createVariant('disabled'),
     createVariant('placeholder'),
+    extendBordersPlugin,
   ],
 };

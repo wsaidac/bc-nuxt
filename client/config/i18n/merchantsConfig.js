@@ -15,6 +15,7 @@ module.exports = {
       'pt-pt',
       'sk-sk',
       'en-ie',
+      'sl-si',
     ],
   },
   beltegoed: {

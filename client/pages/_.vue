@@ -69,9 +69,8 @@ export default {
 
   async asyncData({ app, route }) {
     const slug = slugFromPath(route.path, app.i18n.locale);
-
     try {
-      const { post } = await app.$q('post', { slug });
+      const { data: { post } } = await app.$query('post', { slug });
       if (post === null) {
         return {
           layout: 'Error',
@@ -83,10 +82,10 @@ export default {
         };
       }
 
-      /* prettier-ignore */
       post.__typename = post.__typename === 'CmsProduct' ? 'Product' : post.__typename;
       return { layout: post.__typename, post };
     } catch (event) {
+      console.log(event);
       return {
         layout: 'Error',
         post: {

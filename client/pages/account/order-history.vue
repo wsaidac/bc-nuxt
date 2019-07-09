@@ -42,12 +42,10 @@ export default {
     };
   },
 
-  middleware: ['auth', 'usps'],
+  middleware: ['auth'],
 
   async asyncData({ app }) {
-    const {
-      user: { orders },
-    } = await app.$q('currentOrders');
+    const { data: { user: { orders } } } = await app.$query('currentOrders');
     return { orders };
   },
 };

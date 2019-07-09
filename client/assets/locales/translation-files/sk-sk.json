@@ -75,7 +75,7 @@
     "logout": "Odhlásenie",
     "logout-everywhere": "Odhlásiť sa zo všetkých zariadení",
     "lost-password": "Zabudli ste heslo?",
-    "lost-password-help": "Pomoc, stratilo sa mi heslo",
+    "lost-password-help": "Pomoc, zabudol/-a som heslo",
     "male": "Muž",
     "my-account": "Môj účet",
     "name": "Meno",
@@ -199,7 +199,7 @@
   "general": {
     "critical_error": "Niečo sa pokazilo. Obnovte stránku a skúste to znova.",
     "domain": "Rapido.com",
-    "help": "Rapido",
+    "help": "Pomoc",
     "home-text": "Domov",
     "label": "Rapido",
     "loading": "Načítavanie",
@@ -220,7 +220,7 @@
   "home": {
     "featured-products": "Vyberáme z produktov",
     "lets-speed-it-up": "Urýchlime to",
-    "see-all-denominations": "Zobraziť všetky označenia"
+    "see-all-denominations": "Zobraziť všetky druhy"
   },
   "internal-links": {
     "about-us": "O nás",

@@ -35,6 +35,14 @@ const conf = {
       }
 
       config.module.rules.push({
+        test: /\.(graphql|gql)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'graphql-tag/loader',
+        },
+      });
+
+      config.module.rules.push({
         test: /\.html$/,
         use: ['html-loader'],
       });
@@ -44,7 +52,7 @@ const conf = {
         'postcss-import': {},
         'postcss-url': {},
         'postcss-preset-env': {},
-        'tailwindcss': path.resolve(__dirname, './tailwind.config.js'),
+        'tailwindcss': path.resolve(__dirname, './client/assets/tailwind/tailwind.config.js'),
       },
     },
     extractCSS: process.env.NODE_ENV !== 'development',
@@ -110,14 +118,6 @@ const conf = {
     'cookie-universal-nuxt',
     ['@nuxtjs/sentry'],
     ['~/modules/iconsWeb'],
-    [
-      'artemis-graphql',
-      {
-        browserUri: 'env://API_BROWSER',
-        serverUri: 'env://API_SERVER',
-        extendedHeaders: 'extendedGraphqlHeaders',
-      },
-    ],
     ['nuxt-i18n', i18nConfig(label)],
   ],
   env: {
@@ -128,6 +128,7 @@ const conf = {
     LABEL: label,
   },
   plugins: [
+    '~/plugins/artemis.js',
     '~/plugins/env.js',
     '~/plugins/vuelidate.js',
     '~/plugins/vuetouch.js',

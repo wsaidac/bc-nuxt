@@ -62,7 +62,7 @@ export default {
     const {
       data: { user },
       errors,
-    } = await app.$mutate('confirmEmail', {
+    } = await app.$mutation('confirmEmail', {
       userId: query.user_id,
       confirmationToken: query.token,
     });
@@ -71,7 +71,5 @@ export default {
     }
     return { user };
   },
-
-  middleware: ['usps'],
 };
 </script>

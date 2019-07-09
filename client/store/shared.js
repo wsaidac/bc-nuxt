@@ -28,8 +28,7 @@ export default {
   actions: {
     async fetchShared({ commit }, { app, error }) {
       try {
-        const { post } = await app.$q('shared');
-
+        const { data: { post } } = await app.$query('shared');
         if (!post) {
           error({ statusCode: 404, message: app.i18n.t('general.critical_error') });
         } else {
@@ -39,9 +38,8 @@ export default {
           commit('setCustomerService', post.customerService);
           commit('setInstantDelivery', post.instantDelivery);
           commit('setPaymentMethods', post.paymentMethods);
+          commit('setUsps', post.usps);
         }
-
-        commit('setUsps', post.usps);
       } catch ({ statusCode, message }) {
         error({ statusCode, message });
       }

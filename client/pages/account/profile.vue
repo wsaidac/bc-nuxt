@@ -160,16 +160,14 @@ export default {
   },
 
   async asyncData({ app }) {
-    const {
-      currentUser: { user },
-    } = await app.$q('currentPersonalData');
+    const { data: { currentUser: { user } } } = await app.$query('currentPersonalData');
     return {
       personalDetails: pickPersonalDetails(user),
       addressDetails: pickAddressDetails(user),
     };
   },
 
-  middleware: ['auth', 'usps'],
+  middleware: ['auth'],
 
   methods: {
     showMessage(message) {
@@ -187,7 +185,7 @@ export default {
     },
 
     async saveDetails() {
-      const { errors } = await this.$mutate('createPersonalData', {
+      const { errors } = await this.$mutation('createPersonalData', {
         personalData: this.personalData,
       });
       if (errors.length > 0) {

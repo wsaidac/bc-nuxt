@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     async logout(sessionId) {
-      await this.$mutate('logout', { sessionId, action: 'SINGLE' });
+      await this.$mutation('logout', { sessionId, action: 'SINGLE' });
       this.$emit('logout');
     },
   },

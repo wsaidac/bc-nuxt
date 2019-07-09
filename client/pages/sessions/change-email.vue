@@ -53,13 +53,11 @@ export default {
     const {
       data: { user },
       errors,
-    } = await app.$mutate('changeEmail', { userId: query.user_id, confirmationToken: query.token });
+    } = await app.$mutation('changeEmail', { userId: query.user_id, confirmationToken: query.token });
     if (errors.length > 0) {
       return { error: errors[0].message };
     }
     return { user, error: null };
   },
-
-  middleware: ['usps'],
 };
 </script>

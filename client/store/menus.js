@@ -28,7 +28,7 @@ export default {
   actions: {
     async fetchHeaderMenu({ commit }, { app, error }) {
       try {
-        const { menus } = await app.$q('menus', { slug: 'main' });
+        const { data: { menus } } = await app.$query('menus', { slug: 'main' });
 
         if (!menus) {
           error({ statusCode: 404, message: app.i18n.t('general.critical_error') });
@@ -42,12 +42,12 @@ export default {
 
     async fetchFooterMenu({ commit }, { app, error }) {
       try {
-        const footerMenu = await app.$q('footer');
+        const { data } = await app.$query('footer');
 
-        if (!footerMenu) {
+        if (!data) {
           error({ statusCode: 404, message: app.i18n.t('general.critical_error') });
         } else {
-          commit('setFooter', footerMenu);
+          commit('setFooter', data);
         }
       } catch ({ statusCode, message }) {
         error({ statusCode, message });

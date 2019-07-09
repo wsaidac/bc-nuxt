@@ -5,7 +5,13 @@ describe('FormSignup', () => {
   let $mounted;
 
   beforeEach(() => {
-    $mounted = mount(FormSignup);
+    $mounted = mount(FormSignup, {
+      computed: {
+        links() {
+          return [];
+        },
+      },
+    });
   });
 
   it('should mount a form', () => {

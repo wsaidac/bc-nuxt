@@ -85,4 +85,5 @@ module.exports = {
   'pt-pt': generateLocaleConfig('pt-pt', 'Portugal', 'EUR', 'inactive'),
   'en-uk': generateLocaleConfig('en-uk', 'United Kingdom', 'GBP', 'inactive'),
   'sk-sk': generateLocaleConfig('sk-sk', 'Slovensko', 'EUR', 'inactive'),
+  'sl-si': generateLocaleConfig('sl-si', 'Slovenija', 'EUR', 'inactive'),
 };
