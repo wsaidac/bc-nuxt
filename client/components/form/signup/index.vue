@@ -47,11 +47,25 @@
         <ui-icon icon="arrow-right" />
       </ui-button>
     </ui-form-item>
-    <small v-html="$t('account.agree-to-terms')" />
+    <i18n
+      path="account.agree-to-terms"
+      tag="small"
+    >
+      <a
+        v-for="(link, i) in links"
+        :key="i"
+        :place="`${link.linkName}-link`"
+        :href="link.url"
+        :title="link.title"
+      >{{ link.title }}</a>
+    </i18n>
   </ui-form>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+import { get } from 'lodash';
+
 import validate from '~/mixins/validate';
 import togglePassword from '~/mixins/toggle-password';
 import UiInputPassword from '~/components/ui/input-password';
@@ -97,7 +111,24 @@ export default {
     };
   },
 
+  computed: {
+    ...mapGetters('menus', ['footer']),
+    links() {
+      return ['generalConditions', 'privacyPolicy'].map(this.transformLink);
+    },
+  },
+
   methods: {
+    transformLink(linkName) {
+      const link = this.footer[linkName];
+      if (!link || !link.slug) return null;
+
+      return {
+        linkName,
+        title: get(link, 'href.title', linkName),
+        url: `/${this.$i18n.locale}/${link.slug}`,
+      };
+    },
     async register() {
       this.$v.$touch();
       if (!this.$v.$invalid) {

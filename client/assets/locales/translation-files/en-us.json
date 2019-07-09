@@ -7,7 +7,7 @@
     "account-unlocked": "Account unlocked",
     "active-now": "Active now",
     "address-details": "Your address",
-    "agree-to-terms": "By creating an account, you agree with Rapido’s <a href='/en-us/general-conditions'>Terms of Use</a> and <a href='/en-us/privacy'>Privacy Policy</a>.",
+    "agree-to-terms": "By creating an account, you agree with Rapido’s {generalConditions-link} and {privacyPolicy-link}.",
     "all-questions": "All questions",
     "birthdate": "Date of birth",
     "bruteforce": {
@@ -53,10 +53,6 @@
     },
     "female": "Female",
     "first-name": "First name",
-    "footer": {
-      "need-help": "Do you need help? Check out our <a>frequently asked questions</a>.",
-      "safe-methods": "<strong>Safe</strong> payments with:"
-    },
     "forgot-password": "Help, I forgot my password",
     "format": "dd/MM/yyyy",
     "gender": "Gender",
@@ -92,7 +88,7 @@
       "cancelled": "cancelled",
       "close": "Close",
       "close-details": "Close details",
-      "description-inprogress": "Is your order still not delivered after 12 hours? <b>Please <a href='/us/contact'>contact us</a> and we'll help you out!</b>",
+      "description-inprogress": "Is your order still not delivered after 12 hours? <b>Please <a href='{contact-link}'>contact us</a> and we'll help you out!</b>",
       "general-terms-and-conditions": "General Terms and conditions",
       "more-details": "More details",
       "order-history": "Order history",

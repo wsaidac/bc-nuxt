@@ -6,6 +6,11 @@ describe('order-item', () => {
 
   beforeEach(() => {
     $mounted = mount(OrderItem, {
+      computed: {
+        contactLink() {
+          return '';
+        },
+      },
       propsData: {
         order: {
           id: '123456',
