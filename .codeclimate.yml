@@ -1,0 +1,12 @@
+exclude_patterns:
+- ".storybook"
+- "coverage"
+- "infra"
+- "static"
+- "client/assets"
+- "client/config"
+- "client/pages"
+- "client/pages-dynamic"
+- "client/test"
+
+
