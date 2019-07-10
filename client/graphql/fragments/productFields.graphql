@@ -75,7 +75,7 @@ fragment productFields on CmsProduct {
         title
         content
       }
-      products(first: 3) {
+      products(first: 4) {
         nodes {
           title
           id
