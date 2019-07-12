@@ -4,7 +4,7 @@ exclude_patterns:
 - "infra"
 - "static"
 - "client/assets"
-- "config"
+- "buildConfig"
 - "client/pages"
 - "client/pages-dynamic"
 - "client/test"
