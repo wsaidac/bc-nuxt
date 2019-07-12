@@ -80,6 +80,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+import { pick } from 'lodash';
 import SidebarMain from '~/components/sidebar/main';
 import FormChangeEmail from '~/components/form/change-email';
 import FormChangePassword from '~/components/form/change-password';
@@ -96,9 +98,6 @@ import {
   UiPanel,
   UiRow,
 } from '~/components/ui';
-
-import { mapGetters } from 'vuex';
-import { pick } from 'lodash';
 
 function pickPersonalDetails(user) {
   return pick(user.currentPersonalData, [

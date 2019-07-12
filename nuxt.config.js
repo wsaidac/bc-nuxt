@@ -97,7 +97,6 @@ const conf = {
     middleware: ['checkLocale', 'strip-trailing-slash'],
   },
   modules: [
-    '@nuxtjs/pwa',
     ['@nuxtjs/style-resources'],
     'cookie-universal-nuxt',
     ['@nuxtjs/sentry'],
@@ -137,14 +136,6 @@ const conf = {
     webpack: {
       poll: true,
     },
-  },
-
-  manifest: {
-    start_url: '/?utm_source=PWA',
-    description: false,
-    ogDescription: false,
-    title: false,
-    ogTitle: false,
   },
 };
 

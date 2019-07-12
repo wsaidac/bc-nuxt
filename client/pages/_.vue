@@ -85,7 +85,6 @@ export default {
       post.__typename = post.__typename === 'CmsProduct' ? 'Product' : post.__typename;
       return { layout: post.__typename, post };
     } catch (event) {
-      console.log(event);
       return {
         layout: 'Error',
         post: {
