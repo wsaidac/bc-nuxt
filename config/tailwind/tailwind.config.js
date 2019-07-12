@@ -1,4 +1,4 @@
-const tailwindTheme = require('../theme');
+const tailwindTheme = require('./theme');
 const {
   extendBordersPlugin,
 } = require('./plugins');

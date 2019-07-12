@@ -1,5 +1,6 @@
 const path = require('path');
-const i18nConfig = require('./client/config/i18nConfig');
+const i18nConfig = require('./config/i18n');
+const cspPolicies = require('./config/csp-policies');
 
 require('dotenv').config();
 
@@ -52,7 +53,7 @@ const conf = {
         'postcss-import': {},
         'postcss-url': {},
         'postcss-preset-env': {},
-        'tailwindcss': path.resolve(__dirname, './client/assets/tailwind/tailwind.config.js'),
+        'tailwindcss': path.resolve(__dirname, './config/tailwind/tailwind.config.js'),
       },
     },
     extractCSS: process.env.NODE_ENV !== 'development',
@@ -85,27 +86,10 @@ const conf = {
     },
     csp: {
       policies: {
-        'script-src': [
-          '\'unsafe-eval\'',
-          '\'unsafe-inline\'',
-          'https://www.googletagmanager.com',
-          'https://tagmanager.google.com',
-          'https://www.googleadservices.com',
-          'https://www.google-analytics.com',
-          'https://bat.bing.com',
-          'https://connect.facebook.net',
-          'https://static.hotjar.com',
-          'https://script.hotjar.com',
-          'https://googleads.g.doubleclick.net',
-          '*.trackedlink.net',
-          '*.blueconic.net',
-          '*.rapido.com',
-          '*.cgaws.cloud',
-        ],
-        'style-src': ['\'self\'', '\'unsafe-inline\'', 'https://tagmanager.google.com', 'https://fonts.googleapis.com', '*.rapido.com', '*.cgaws.cloud'],
-        'report-uri': [
-          'https://sentry.io/api/1441242/security/?sentry_key=98825ca3d73c4dd58305cd0e794873c4',
-        ],
+        'script-src': cspPolicies.scripts,
+        'style-src': cspPolicies.styles,
+        'frame-src': cspPolicies.iframes,
+        'report-uri': cspPolicies.reports,
       },
     },
   },
