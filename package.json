@@ -17,7 +17,7 @@
     "dev-debug": "NODE_ENV=development API_BROWSER='https://api-hub.eu-west-1.production.cgaws.cloud' API_SERVER='https://api-hub.eu-west-1.production.cgaws.cloud' node --inspect node_modules/.bin/nuxt --port 4000",
     "dev-debug:acc": "NODE_ENV=development API_BROWSER='https://api-hub.eu-west-1.acceptance.cgaws.cloud' API_SERVER='https://api-hub.eu-west-1.acceptance.cgaws.cloud' node --inspect node_modules/.bin/nuxt --port 4000",
     "dev-debug:beltegoed": "LABEL=beltegoed NODE_ENV=development API_BROWSER='https://api-hub.eu-west-1.production.cgaws.cloud' API_SERVER='https://api-hub.eu-west-1.production.cgaws.cloud' node --inspect node_modules/.bin/nuxt --port 4000",
-    "storybook": "start-storybook -p 6060",
+    "storybook": "LABEL=beltegoed start-storybook -p 6060",
     "storybook:build": "build-storybook -c .storybook -o docs/storybook",
     "storybook:deploy": "storybook-to-ghpages",
     "storybook:snapshots": "NODE_ENV=test jest --config=.storybook/jest.config.js --maxWorkers=2",
@@ -36,7 +36,6 @@
   },
   "dependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@nuxtjs/pwa": "^3.0.0-beta.14",
     "@nuxtjs/sentry": "^3.0.0",
     "@nuxtjs/style-resources": "^0.1.2",
     "@vue/test-utils": "^1.0.0-beta.29",

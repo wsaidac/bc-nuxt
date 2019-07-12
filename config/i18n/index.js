@@ -1,10 +1,10 @@
 const lodash = require('lodash');
-const merchantsConfig = require('./i18n/merchantsConfig');
-const localesConfig = require('./i18n/localesConfig');
+const merchantsConfig = require('./merchantsConfig');
+const localesConfig = require('./localesConfig');
 
 module.exports = function (label) {
   const { locales, defaultLocale } = merchantsConfig[label];
-  const defaultLocaleFile = `../assets/locales/translation-files/${defaultLocale}.json`;
+  const defaultLocaleFile = `../../client/assets/locales/translation-files/${defaultLocale}.json`;
   const merchantConfig = lodash.pick(localesConfig, locales);
 
   return {

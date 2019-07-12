@@ -1,4 +1,4 @@
-import merchantsConfig from '../config/i18n/merchantsConfig';
+import merchantsConfig from '~~/config/i18n/merchantsConfig';
 
 const label = process.env.LABEL || 'rapido';
 

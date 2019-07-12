@@ -35,8 +35,8 @@
 </template>
 
 <script>
-import { UiCol, UiRow } from '~/components/ui';
 import { get } from 'lodash';
+import { UiCol, UiRow } from '~/components/ui';
 
 export default {
   name: 'ProductPopular',
