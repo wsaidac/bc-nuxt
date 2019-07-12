@@ -8,5 +8,8 @@ exclude_patterns:
 - "client/pages"
 - "client/pages-dynamic"
 - "client/test"
+- "client/components/atoms"
+- "client/components/molecules"
+- "client/components/organisms"
 
 
