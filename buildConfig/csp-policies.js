@@ -30,6 +30,6 @@ const reports = [
   'https://sentry.io/api/1441242/security/?sentry_key=98825ca3d73c4dd58305cd0e794873c4',
 ];
 
-export {
+module.exports = {
   scripts, styles, iframes, reports,
 };
