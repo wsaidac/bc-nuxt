@@ -1,6 +1,6 @@
 const path = require('path');
-const i18nConfig = require('./buildConfig/i18n');
-const cspPolicies = require('./buildConfig/csp-policies');
+const i18nConfig = require('./config/i18n');
+const cspPolicies = require('./config/csp-policies');
 
 require('dotenv').config();
 
@@ -53,7 +53,7 @@ const conf = {
         'postcss-import': {},
         'postcss-url': {},
         'postcss-preset-env': {},
-        'tailwindcss': path.resolve(__dirname, './buildConfig/tailwind/tailwind.config.js'),
+        'tailwindcss': path.resolve(__dirname, './config/tailwind/tailwind.config.js'),
       },
     },
     extractCSS: process.env.NODE_ENV !== 'development',

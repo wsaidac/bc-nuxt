@@ -4,12 +4,10 @@ exclude_patterns:
 - "infra/"
 - "static/"
 - "client/assets/"
-- "buildConfig/"
+- "config/"
 - "client/pages/"
 - "client/pages-dynamic/"
 - "client/test/"
 - "client/components/atoms/"
 - "client/components/molecules/"
 - "client/components/organisms/"
-
-
