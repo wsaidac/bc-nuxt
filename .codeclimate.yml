@@ -1,0 +1,13 @@
+exclude_patterns:
+- ".storybook/"
+- "coverage/"
+- "infra/"
+- "static/"
+- "client/assets/"
+- "config/"
+- "client/pages/"
+- "client/pages-dynamic/"
+- "client/test/"
+- "client/components/atoms/"
+- "client/components/molecules/"
+- "client/components/organisms/"

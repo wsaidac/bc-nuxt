@@ -1,14 +1,17 @@
 const shared = require('./shared');
 
-const colors = {
+const baseColors = {
   primary: '#173962',
   secondary: {
     default: '#438FDF',
     light: '#7FBAF9',
     lighter: '#C6E2FF',
   },
-  tertiary: '#1FD2AF',
-  success: '#70D7A6',
+  tertiary: {
+    default: '#1FD2AF',
+    dark: '#1db99b',
+  },
+  positive: '#70D7A6',
   warning: '#FFE47E',
   gray: {
     black: '#838383',
@@ -23,11 +26,19 @@ const colors = {
   black: '#1F1F1E',
   white: '#FFFFFF',
 };
+
+const colorCustomDefinitions = {
+  'cta': baseColors.tertiary.default,
+  'cta-hover': baseColors.tertiary.dark,
+  'link': baseColors.secondary.default,
+  'accent': baseColors.secondary.light,
+};
+
 const theme = {
   ...shared,
   colors: {
-
-    ...colors,
+    ...baseColors,
+    ...colorCustomDefinitions,
   },
 };
 

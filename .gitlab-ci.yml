@@ -36,6 +36,11 @@ e2e-tests:
     variables:
       - $CYPRESS_DISABLED
       - $CI_COMMIT_MESSAGE =~ /\[skip tests\]/
+  only:
+    - master
+    - release
+    - merge requests
+    - tags
 
 acceptance:
   environment:

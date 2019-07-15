@@ -6,10 +6,27 @@
 
 const Vue = require('vue')
 
-const { configure, addParameters, addDecorator, setAddon } = require('@storybook/vue')
-const { themes } = require('@storybook/theming');
+const {
+  configure,
+  addParameters,
+  addDecorator,
+  setAddon
+} = require('@storybook/vue')
+const {
+  themes
+} = require('@storybook/theming');
 
 const JSXAddon = require('storybook-addon-jsx');
+
+
+/**
+ *  config for webfonts-loader
+ * https://www.npmjs.com/package/webfonts-loader
+ */
+// require('../client/assets/iconsWeb.js')
+require('./iconsWeb.js')
+
+
 
 const paddingDecorator = () => ({
   template: '<div style="display: flex; padding: 2rem;"><story/></div>',
@@ -19,7 +36,10 @@ const paddingDecorator = () => ({
 // hack necessary for storyshots
 // why? https://github.com/storybookjs/storybook/issues/1011
 if (process.env.NODE_ENV !== 'test') {
-  const { setDefaults, withInfo } = require('storybook-addon-vue-info')
+  const {
+    setDefaults,
+    withInfo
+  } = require('storybook-addon-vue-info')
 
   addDecorator(withInfo)
   setDefaults({

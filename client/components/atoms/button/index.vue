@@ -19,26 +19,31 @@ export default {
     justify: Boolean,
     type: VueTypes.oneOf(['primary', 'secondary']).def('primary'),
     disable: Boolean,
+    my: VueTypes.number.def(0),
   },
 
   computed: {
     classes() {
-      const base = 'py-2 px-10 rounded-full font-semibold text-center border-0 text-base cursor-pointer';
+      const base = 'btn';
       const justify = 'w-full';
-      const disable = 'bg-gray-dark cursor-not-allowed text-white';
-      // const hover = ''
-      // const active = ''
+      const disable = 'opacity-20 cursor-not-allowed';
+      const active = !this.disable ? 'active:scale-96 active:border-solid' : '';
 
       const type = this.getTypeClasses();
+      const margin = `my-${this.my}`;
 
       return [
         base,
         type,
+        active,
         {
           [justify]: this.justify,
         },
         {
           [disable]: this.disable,
+        },
+        {
+          [margin]: this.my,
         },
       ];
     },
@@ -47,11 +52,17 @@ export default {
   methods: {
     getTypeClasses() {
       const typeClasses = {
-        primary: 'bg-tertiary text-white',
-        secondary: 'border border-tertiary text-tertiary',
+        primary: 'bg-cta text-white',
+        secondary: 'border border-cta text-cta',
       };
 
-      return !this.disable && typeClasses[this.type];
+      const hoverClasses = {
+        primary: 'hover:bg-cta-hover',
+        secondary: 'hover:border-cta-hover hover:text-cta-hover',
+      };
+
+
+      return [this.disable ? '' : hoverClasses[this.type], typeClasses[this.type]];
     },
   },
 };

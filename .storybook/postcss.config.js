@@ -20,7 +20,7 @@ module.exports = {
     /*
       Tailwind configuration
     */
-    tailwindcss('./client/assets/tailwind/tailwind.config.js'),
+    tailwindcss('./config/tailwind/tailwind.config.js'),
 
     /*
       PostCSS plugin to parse CSS and add vendor prefixes to CSS rules using values from Can I Use.
