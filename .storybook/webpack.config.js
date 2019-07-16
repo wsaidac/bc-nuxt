@@ -1,61 +1,35 @@
-
 const path = require('path');
 const rootPath = path.resolve(__dirname, '..')
 const clientPath = path.resolve(__dirname, '../client')
 
-module.exports = async ({ config, mode }) => {
-  config.module.rules.push(
-    {
-      test: /\.(png|jpe?g|gif)(\?.*)?$/,
-      loader: 'url-loader',
-    },
-  )
+module.exports = async ({
+  config,
+  mode
+}) => {
+  config.module.rules.push({
+    test: /\.(png|jpe?g|gif)(\?.*)?$/,
+    loader: 'url-loader',
+  }, )
 
 
-  config.module.rules.push(
-    {
-      test: /\.scss$/,
-      loaders: [
+  config.module.rules.push({
+    test: /\.scss$/,
+    loaders: [
 
-        'vue-style-loader',
-        'css-loader',
-        // 'style-loader',
-        {
-          loader: 'sass-loader',
-          options: {
-            data: `
-              @import "~/assets/stylesheets/application.scss";
+      'vue-style-loader',
+      'css-loader',
+      // 'style-loader',
+      {
+        loader: 'sass-loader',
+        options: {
+          data: `
               @import "~/assets/stylesheets/_shared.scss";
               @import "~/assets/stylesheets/_locales.scss";
               @import "~/assets/stylesheets/shared/_colors.scss";
             `
-          }
-        },
-        // Loader for webpack to process CSS with PostCSS
-        {
-          loader: 'postcss-loader',
-          options: {
-            /*
-              Enable Source Maps
-             */
-            sourceMap: true,
-            /*
-              Set postcss.config.js config path && ctx
-             */
-            config: {
-              path: './.storybook/postcss.config.js',
-            },
-          },
-        },
-      ],
-      include: clientPath//path.resolve(__dirname, '../'),
-    });
-
-  // was necessary create another rule just for css files imported in config file
-  config.module.rules.push({
-
-    test: /\.css$/,
-    loaders: [
+        }
+      },
+      // Loader for webpack to process CSS with PostCSS
       {
         loader: 'postcss-loader',
         options: {
@@ -71,7 +45,29 @@ module.exports = async ({ config, mode }) => {
           },
         },
       },
-    ]
+    ],
+    include: clientPath //path.resolve(__dirname, '../'),
+  });
+
+  // was necessary create another rule just for css files imported in config file
+  config.module.rules.push({
+
+    test: /\.css$/,
+    loaders: [{
+      loader: 'postcss-loader',
+      options: {
+        /*
+          Enable Source Maps
+         */
+        sourceMap: true,
+        /*
+          Set postcss.config.js config path && ctx
+         */
+        config: {
+          path: './.storybook/postcss.config.js',
+        },
+      },
+    }, ]
   })
 
   // for info addon
