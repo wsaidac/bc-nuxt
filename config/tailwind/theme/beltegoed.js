@@ -25,6 +25,7 @@ const baseColors = {
   },
   black: '#1F1F1E',
   white: '#FFFFFF',
+  transparent: 'transparent',
 };
 
 const colorCustomDefinitions = {

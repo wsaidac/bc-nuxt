@@ -96,7 +96,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .input {
   @apply w-full p-4 leading-normal rounded text-lg ;
 

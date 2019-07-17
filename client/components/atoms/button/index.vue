@@ -67,3 +67,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.btn {
+  @apply py-2 px-10 rounded-full font-semibold text-center border-0 text-base cursor-pointer leading-normal;
+}
+</style>

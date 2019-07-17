@@ -125,6 +125,7 @@ const conf = {
     '~/plugins/moment.js',
     '~/plugins/pagination.js',
     '~/plugins/element-ui.js',
+    '~/plugins/click-outside-directive.js',
   ],
   sentry: {
     dsn: process.env.SENTRY_DNS,

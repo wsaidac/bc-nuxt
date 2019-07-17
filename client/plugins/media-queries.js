@@ -10,4 +10,6 @@ Vue.use(VueMq, {
     md: breakpoints.MD,
     lg: breakpoints.LG,
   },
+  // default for SSR
+  defaultBreakpoint: 'sm',
 });

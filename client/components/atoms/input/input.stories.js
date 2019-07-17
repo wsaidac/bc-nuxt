@@ -1,61 +1,62 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import Vue from 'vue';
-/* eslint-disable */
 import {
-  storiesOf
+  storiesOf,
 } from '@storybook/vue';
-import Input from './index.vue';
-import {
-  info
-} from '~~/.storybook/utils'
 
 import {
   withKnobs,
   text,
   boolean,
-  select
+  select,
 } from '@storybook/addon-knobs';
+import Input from './index.vue';
+import {
+  info,
+} from '~~/.storybook/utils';
+
 
 // definition
-Vue.component('ui-input', Input)
+Vue.component('ui-input', Input);
 
 
 // stories
 storiesOf('Input', module)
   .add('default', () => ({
     components: {
-      Input
+      Input,
     },
     props: {
-      'hasError': {
+      hasError: {
         default: boolean('hasError', false),
       },
     },
     data() {
       return {
         value: '',
-      }
+      };
     },
     template: `<ui-input label="Username" v-model="value" />`,
   }), info)
   .add(':hasError', () => ({
     template: `<ui-input hasError label="Username" v-model="value" />`,
     components: {
-      Input
+      Input,
     },
     data() {
       return {
         value: '',
-      }
-    }
+      };
+    },
   }), info)
   .add('succeeded', () => ({
     template: `<ui-input label="Username" v-model="value" />`,
     components: {
-      Input
+      Input,
     },
     data() {
       return {
         value: 'Jhon Doe',
-      }
-    }
-  }), info)
+      };
+    },
+  }), info);

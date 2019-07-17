@@ -18,6 +18,9 @@ const {
 
 const JSXAddon = require('storybook-addon-jsx');
 
+require('vue2-animate/dist/vue2-animate.min.css')
+
+
 
 /**
  *  config for webfonts-loader

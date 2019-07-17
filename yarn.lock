@@ -15158,6 +15158,13 @@ table@^5.2.3:
     slice-ansi "^2.1.0"
     string-width "^3.0.0"
 
+tailwindcss-transitions@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/tailwindcss-transitions/-/tailwindcss-transitions-2.0.1.tgz#cded7017ce461e70ed63fe1af6e1f9870cab94a0"
+  integrity sha512-WQSW0eqVb/isP1uys2gQQE4jywjCMh73z+90tsQ3ckXDYy6jS5Jpub6uNSLPRrKZFbyLBSEg/gxU3uCH6ulB+Q==
+  dependencies:
+    lodash "^4.17.11"
+
 tailwindcss@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.0.5.tgz#5145fd61f251be06a77748819e12fb126914095d"
@@ -16145,6 +16152,11 @@ vue-class-component@^6.1.0:
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-6.3.2.tgz#e6037e84d1df2af3bde4f455e50ca1b9eec02be6"
   integrity sha512-cH208IoM+jgZyEf/g7mnFyofwPDJTM/QvBNhYMjqGB8fCsRyTf68rH2ISw/G20tJv+5mIThQ3upKwoL4jLTr1A==
 
+vue-click-outside@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/vue-click-outside/-/vue-click-outside-1.0.7.tgz#cdd2b1605e3c4944784e1794eae4a12a0f700bd6"
+  integrity sha1-zdKxYF48SUR4TheU6uShKg9wC9Y=
+
 vue-docgen-api@^3.11.4:
   version "3.15.4"
   resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-3.15.4.tgz#da186a05f34c930bfdfb0485ebcfcd30303ca4fc"
@@ -16305,6 +16317,11 @@ vue-types@1.5.3:
   integrity sha512-VHeAqjIAC5+RtQEzOVLAIKhCngXKFXcggAQJIO74VTCBqbviCHUQHkx0ZxiUAWBeoCMVT4U+SKplvEX8ENkkGg==
   dependencies:
     lodash "^4.17.10"
+
+vue2-animate@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/vue2-animate/-/vue2-animate-2.1.0.tgz#93eee5f381d8d6493bae0507bcad6b615fdacb7f"
+  integrity sha512-OEuwx9Y2dmx3+hQ/K7zLc514v4xhc8tGDQl/ZTJh06r+/EG/oYQkhy2Fo4OOhDwiRJYFuTfkFhGlDtTnT4XGsw==
 
 vue2-touch-events@^1.1.1:
   version "1.1.2"

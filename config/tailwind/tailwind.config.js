@@ -1,6 +1,9 @@
+const transitionsPlugin = require('tailwindcss-transitions');
 const tailwindTheme = require('./theme');
+
 const {
   extendBordersPlugin,
+  rotateTransformPlugin,
 } = require('./plugins');
 const {
   createVariant,
@@ -83,5 +86,7 @@ module.exports = {
     createVariant('disabled'),
     createVariant('placeholder'),
     extendBordersPlugin,
+    rotateTransformPlugin,
+    transitionsPlugin(),
   ],
 };
