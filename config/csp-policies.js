@@ -25,7 +25,7 @@ const scripts = [
 ];
 
 const styles = ['\'self\'', '\'unsafe-inline\'', '*.rapido.com', '*.cgaws.cloud', ...marketingURIS];
-const iframes = ['\'self\'', 'https://optimize.google.com', 'https://vars.hotjar.com'];
+const iframes = ['\'self\'', 'https://optimize.google.com', 'https://vars.hotjar.com', 'https://www.facebook.com', 'https://www.googletagmanager.com'];
 const reports = [
   'https://sentry.io/api/1441242/security/?sentry_key=98825ca3d73c4dd58305cd0e794873c4',
 ];
