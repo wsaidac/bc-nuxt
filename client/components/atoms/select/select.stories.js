@@ -3,21 +3,21 @@ import Vue from 'vue';
 import ClickOutside from 'vue-click-outside';
 import VueMq from 'vue-mq';
 
-import { breakpoints } from '~/constants';
-
 import { storiesOf } from '@storybook/vue';
 import { withInfo } from 'storybook-addon-vue-info';
-import { info } from '~~/.storybook/utils';
-
 import {
   withKnobs,
   text,
   number,
 } from '@storybook/addon-knobs';
-
 import {
   action,
 } from '@storybook/addon-actions';
+
+
+import { info } from '~~/.storybook/utils';
+import { breakpoints } from '~/constants';
+
 import Select from './index.vue';
 
 
@@ -39,7 +39,7 @@ Vue.use(VueMq, {
 Vue.component('ui-select', Select);
 
 // stories
-storiesOf('Select', module)
+storiesOf('Atoms/Select', module)
   .addDecorator(withKnobs)
   .add('default', () => ({
     components: {
@@ -63,7 +63,8 @@ storiesOf('Select', module)
     methods: {
       action: action('selected'),
     },
-  }), {
+  }),
+  {
     info: {
       summary: 'Check  the `select` event behavior in `actions` tab',
     },

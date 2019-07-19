@@ -27,7 +27,7 @@ export default {
       const base = 'btn';
       const justify = 'w-full';
       const disable = 'opacity-20 cursor-not-allowed';
-      const active = !this.disable ? 'active:scale-96 active:border-solid' : '';
+      const active = !this.disable ? 'cursor-pointer active:scale-96 active:border-solid' : '';
 
       const type = this.getTypeClasses();
       const margin = `my-${this.my}`;
@@ -52,7 +52,7 @@ export default {
   methods: {
     getTypeClasses() {
       const typeClasses = {
-        primary: 'bg-cta text-white',
+        primary: 'border-0 bg-cta text-white',
         secondary: 'border border-cta text-cta',
       };
 
@@ -70,6 +70,6 @@ export default {
 
 <style scoped>
 .btn {
-  @apply py-2 px-10 rounded-full font-semibold text-center border-0 text-base cursor-pointer leading-normal;
+  @apply py-2 px-10 rounded-full font-semibold text-center  text-base leading-normal;
 }
 </style>

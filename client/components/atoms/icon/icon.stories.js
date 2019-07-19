@@ -13,7 +13,7 @@ Vue.component('ui-icon', Icon)
 
 
 // stories
-storiesOf('Icon', module)
+storiesOf('Atoms/Icon', module)
   .add('default', () => ({
     template: `
       <div style="display: flex; flex-direction: row; font-size: 2rem;">

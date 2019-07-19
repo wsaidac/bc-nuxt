@@ -23,7 +23,7 @@ const typeOptions = {
   Secondary: 'secondary'
 }
 
-storiesOf('Button', module)
+storiesOf('Atoms/Button', module)
   .addDecorator(withKnobs)
   .add('Default', () => ({
     components: {
@@ -53,8 +53,8 @@ storiesOf('Button', module)
       </my-button>
     `,
   }), {
-    info: {}
-  })
+      info: {}
+    })
   .add(':type=primary', () => `<my-button >Button</my-button>`, {
     info: {}
   })
@@ -74,8 +74,8 @@ storiesOf('Button', module)
     </div>
 
   `, {
-    info: {}
-  })
+      info: {}
+    })
   .add(':loading', () => `<my-button loading>Button loading</my-button>`, {
     info: {}
   })
@@ -85,5 +85,5 @@ storiesOf('Button', module)
       action: action('clicked')
     },
   }), {
-    info: {}
-  })
+      info: {}
+    })

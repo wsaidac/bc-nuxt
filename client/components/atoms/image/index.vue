@@ -5,7 +5,10 @@
     :alt="alt"
     class="h-auto w-full"
   >
-  <picture v-else>
+  <picture
+    v-else
+    class="w-full"
+  >
     <source
       :media="`(min-width:${breakpoints.LG}px)`"
       :srcset="`${src.regular}, ${src.retina || src.regular} 2x`"
@@ -21,6 +24,7 @@
     <img
       :src="src.regular"
       :alt="alt"
+      class="w-full object-cover h-auto"
     >
   </picture>
 </template>

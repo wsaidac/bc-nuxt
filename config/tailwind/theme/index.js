@@ -1,4 +1,4 @@
-const label = process.env.LABEL || 'rapido';
+const label = process.env.LABEL || 'beltegoed';
 
 /* eslint-disable */
 const theme = require(`./${label}`);

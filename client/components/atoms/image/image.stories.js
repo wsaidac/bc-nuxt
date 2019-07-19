@@ -26,38 +26,36 @@ Vue.use(VueMq, {
   defaultBreakpoint: 'sm',
 });
 
-const containerDecorator = () => ({
-  template: '<div style="position: relative; display: flex; width: 1000px; border: 3px solid #333;"><story/></div>',
-})
-
 
 // stories
-storiesOf('Image', module)
-  .addDecorator(containerDecorator)
+storiesOf('Atoms/Image', module)
   .add('default', () => ({
     template: `
-      <ui-image
-        src="https://cdn.bulbagarden.net/upload/thumb/0/0d/025Pikachu.png/1200px-025Pikachu.png"
-        alt="alt text"
-        class="h-auto w-full"
-      />`,
+      <div style="position: relative; display: flex; width: 1000px; border: 3px solid #333;">
+        <ui-image
+          src="https://cdn.bulbagarden.net/upload/thumb/0/0d/025Pikachu.png/1200px-025Pikachu.png"
+          alt="alt text"
+          class="h-auto w-full"
+        />
+      </div>`,
     components: {
       Image
     },
   }), info)
   .add('responsive', () => ({
-      components: {
-        Image
-      },
-      render: h => {
-        return <Image src = {
-          {
-            regular: 'https://media.contentapi.ea.com/content/dam/ea/fifa/fifa-20/global-assets/common/featuredimage.png.adapt.crop191x100.1200w.png',
-            retina: 'https://www.esports.com/upload/articles/4327/fifa20_bg.jpg',
-            tablet: 'https://i2.offnews.bg/events/2019/06/08/704973/phpa62tyq_800x*.jpg',
-          }
+    components: {
+      Image
+    },
+    render: h => {
+      return <Image src={
+        {
+          regular: 'https://media.contentapi.ea.com/content/dam/ea/fifa/fifa-20/global-assets/common/featuredimage.png.adapt.crop191x100.1200w.png',
+          retina: 'https://www.esports.com/upload/articles/4327/fifa20_bg.jpg',
+          tablet: 'https://i2.offnews.bg/events/2019/06/08/704973/phpa62tyq_800x*.jpg',
         }
-        />}
-      }), info)
+      }
+      />
+    }
+  }), info)
 
     //https://www.esports.com/upload/articles/4327/fifa20_bg.jpg

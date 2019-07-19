@@ -21,7 +21,7 @@ Vue.component('ui-input', Input);
 
 
 // stories
-storiesOf('Input', module)
+storiesOf('Atoms/Input', module)
   .add('default', () => ({
     components: {
       Input,
