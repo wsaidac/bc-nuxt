@@ -34,6 +34,7 @@ const colorCustomDefinitions = {
   'link': baseColors.secondary.default,
   'accent': baseColors.secondary.light,
   'success': baseColors.tertiary.default,
+  'highlight': baseColors.secondary.default,
 };
 
 const theme = {

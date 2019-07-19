@@ -2,17 +2,19 @@
   <div :class="boxClasses">
     <input
       :id="id"
+      ref="input"
       :value="value"
       v-bind="$attrs"
       :v-on="$listeners"
       :class="inputClasses"
-      type="text"
       :placeholder="label"
+      type="text"
       @change="onChange"
     >
     <label
       :class="labelClasses"
       for="id"
+      @click="onClickLabel"
     >
       {{ label }}
     </label>
@@ -92,20 +94,23 @@ export default {
     onInput(event) {
       this.$emit('input', event.target.value);
     },
+    onClickLabel() {
+      this.$refs.input.focus();
+    },
   },
 };
 </script>
 
 <style>
 .input {
-  @apply w-full p-4 leading-normal rounded text-lg ;
+  @apply w-full p-4 leading-normal rounded text-lg;
 
   &-box {
     @apply relative border max-w-xl w-full rounded mb-4 appearance-none;
   }
 
   &-label {
-    @apply absolute text-lg p-4 top-0 left-0 leading-normal;
+    @apply absolute text-lg p-4 top-0 left-0 leading-normal cursor-text;
   }
 }
 

@@ -59,5 +59,5 @@ storiesOf('Atoms/Icon', module)
       Icon
     },
   }), info)
-  .add(':size=3xl', () => `<ui-icon icon='plus' fontSize='3xl'/>`)
-  .add(':color=link', () => `<ui-icon icon='plus' color='link' fontSize='3xl'/>`)
+  .add(':size=7xl', () => `<ui-icon icon='plus' fontSize='7xl'/>`)
+  .add(':color=success', () => `<ui-icon icon='plus' color='success' fontSize='7xl'/>`)
