@@ -1,8 +1,6 @@
 import Vue from 'vue';
 import VueMq from 'vue-mq';
-import {
-  breakpoints
-} from '~/constants';
+import { breakpoints } from '~/constants';
 
 Vue.use(VueMq, {
   breakpoints: {
