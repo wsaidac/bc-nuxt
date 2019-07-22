@@ -1,6 +1,6 @@
-import SharedInstantTooltip from './instant-tooltip.vue';
 import { mount, createLocalVue } from '@vue/test-utils';
 import Vuex from 'vuex';
+import SharedInstantTooltip from './instant-tooltip.vue';
 import Shared from '~/store/shared';
 
 const localVue = createLocalVue();

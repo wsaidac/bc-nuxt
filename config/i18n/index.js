@@ -1,11 +1,11 @@
-const lodash = require('lodash');
+const { pick, sortBy } = require('lodash');
 const merchantsConfig = require('./merchantsConfig');
 const localesConfig = require('./localesConfig');
 
 module.exports = function (label) {
   const { locales, defaultLocale } = merchantsConfig[label];
   const defaultLocaleFile = `../../client/assets/locales/translation-files/${defaultLocale}.json`;
-  const merchantConfig = lodash.pick(localesConfig, locales);
+  const merchantConfig = sortBy(pick(localesConfig, locales), 'displayName');
 
   return {
     strategy: 'prefix',
