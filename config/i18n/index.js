@@ -6,7 +6,7 @@ module.exports = function (label) {
   const { locales, defaultLocale } = merchantsConfig[label];
   const defaultLocaleFile = `../../client/assets/locales/translation-files/${defaultLocale}.json`;
   const merchantConfig = sortBy(pick(localesConfig, locales), 'displayName');
-  debugger // eslint-disable-line
+
   return {
     strategy: 'prefix',
     seo: false,

@@ -7,8 +7,8 @@
         type="h3"
         underline
       >
-Colors
-</ui-title>
+        Colors
+      </ui-title>
       <ul class="flex flex-wrap mt-6">
         <li
           v-for="(value, name) in colors"
@@ -30,8 +30,8 @@ Colors
         type="h3"
         underline
       >
-Spacing
-</ui-title>
+        Spacing
+      </ui-title>
       <ul class="flex flex-wrap mt-6 items-center">
         <li
           v-for="(value, name) in theme.spacing"
@@ -50,8 +50,8 @@ Spacing
         type="h3"
         underline
       >
-Border radius
-</ui-title>
+        Border radius
+      </ui-title>
       <ul class="flex flex-wrap mt-6 items-center">
         <li
           v-for="(value, name) in theme.borderRadius"
@@ -68,8 +68,8 @@ Border radius
         type="h3"
         underline
       >
-Box shadow
-</ui-title>
+        Box shadow
+      </ui-title>
       <ul class="flex flex-wrap mt-6 items-center">
         <li
           v-for="(value, name) in theme.boxShadow"
@@ -86,8 +86,8 @@ Box shadow
         type="h3"
         underline
       >
-Font size
-</ui-title>
+        Font size
+      </ui-title>
       <ul class="flex flex-wrap mt-6 items-center">
         <li
           v-for="(value, name) in theme.fontSize"
@@ -103,8 +103,8 @@ Font size
         type="h3"
         underline
       >
-Line Height
-</ui-title>
+        Line Height
+      </ui-title>
       <ul class="flex flex-wrap mt-6 items-center">
         <li
           v-for="(value, name) in theme.lineHeight"
