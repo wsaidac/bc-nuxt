@@ -16,7 +16,7 @@ const conf = {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [{ src: '/blueconic.js' }, { src: '//cdn.blueconic.net/cg.js' }],
   },
-  css: ['~/assets/stylesheets/tailwind.css', '~/assets/stylesheets/application.scss'],
+  css: ['~/assets/stylesheets/application.scss'],
   store: true,
   loading: {
     color: '#dce6f5',
@@ -53,7 +53,7 @@ const conf = {
         'postcss-import': {},
         'postcss-url': {},
         'postcss-preset-env': {},
-        'tailwindcss': path.resolve(__dirname, './config/tailwind/tailwind.config.js'),
+        // 'tailwindcss': path.resolve(__dirname, './config/tailwind/tailwind.config.js'),
       },
     },
     extractCSS: process.env.NODE_ENV !== 'development',
@@ -125,6 +125,7 @@ const conf = {
     '~/plugins/moment.js',
     '~/plugins/pagination.js',
     '~/plugins/element-ui.js',
+    '~/plugins/click-outside-directive.js',
   ],
   sentry: {
     dsn: process.env.SENTRY_DNS,

@@ -29,7 +29,7 @@ Vue.component('nuxt-link', {
 Vue.component('ui-link', Link)
 
 // stories
-storiesOf('Link', module)
+storiesOf('Atoms/Link', module)
   .add('default', () => ({
     template: `<ui-link>click here</ui-link>`,
     components: {

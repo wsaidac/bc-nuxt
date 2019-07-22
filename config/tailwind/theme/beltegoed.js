@@ -25,6 +25,7 @@ const baseColors = {
   },
   black: '#1F1F1E',
   white: '#FFFFFF',
+  transparent: 'transparent',
 };
 
 const colorCustomDefinitions = {
@@ -32,6 +33,8 @@ const colorCustomDefinitions = {
   'cta-hover': baseColors.tertiary.dark,
   'link': baseColors.secondary.default,
   'accent': baseColors.secondary.light,
+  'success': baseColors.tertiary.default,
+  'highlight': baseColors.secondary.default,
 };
 
 const theme = {

@@ -17,7 +17,7 @@ const flattenObject = (obj, prefix = '') => {
   return Object.keys(obj).reduce((acc, k) => {
     const pre = prefix.length ? `${prefix}-` : '';
     if (typeof obj[k] === 'object') {
-      Object.assign(acc, flattenObject(obj[k], pre + k));
+      return Object.assign(acc, flattenObject(obj[k], pre + k));
     }
     acc[pre + k] = obj[k];
     return acc;

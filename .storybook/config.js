@@ -16,7 +16,12 @@ const {
   themes
 } = require('@storybook/theming');
 
+const theme = require('./theme')
+console.log("TCL: theme", theme)
+
 const JSXAddon = require('storybook-addon-jsx');
+
+require('vue2-animate/dist/vue2-animate.min.css')
 
 
 /**
@@ -59,7 +64,7 @@ setAddon(JSXAddon)
 addParameters({
   options: {
     name: 'Rapido Storybook',
-    // theme: themes.dark
+    theme: theme,
     /**
      * regex for finding the hierarchy separator
      * @example:
@@ -79,6 +84,9 @@ addParameters({
      */
     hierarchyRootSeparator: /\|/,
   },
+  backgrounds: [
+    { name: 'base', value: '#FFF', default: true },
+  ],
 });
 
 

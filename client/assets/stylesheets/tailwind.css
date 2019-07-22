@@ -2,29 +2,32 @@
 
 /* Preflight: it injects global styles for html tags */
 /* more: https://tailwindcss.com/docs/preflight/ */
-/* @tailwind base; */
+@tailwind base;
 
 html {
   @apply font-body;
 }
 
+input:focus,
+select:focus,
 button:focus {
   outline: 0;
 }
-
-@tailwind components;
 
 /* Extended components
   @TODO: find a better way for define the extended components
 */
 
-.btn {
-  @apply py-2 px-10 rounded-full font-semibold text-center border-0 text-base cursor-pointer leading-normal;
-}
 
+
+@tailwind components;
 @tailwind utilities;
 
-@variants hover, focus, active {
+
+
+@variants hover,
+focus,
+active {
   .scale-96 {
     transform: scale(0.96);
   }

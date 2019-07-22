@@ -1,6 +1,9 @@
+const transitionsPlugin = require('tailwindcss-transitions');
 const tailwindTheme = require('./theme');
+
 const {
   extendBordersPlugin,
+  rotateTransformPlugin,
 } = require('./plugins');
 const {
   createVariant,
@@ -20,7 +23,7 @@ module.exports = {
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     borderCollapse: ['responsive'],
-    borderColor: ['responsive', 'hover', 'focus'],
+    borderColor: ['responsive', 'hover', 'focus', 'active', 'focus-within'],
     borderRadius: ['responsive'],
     borderStyle: ['responsive', 'active'],
     borderWidth: ['responsive', 'active'],
@@ -83,5 +86,7 @@ module.exports = {
     createVariant('disabled'),
     createVariant('placeholder'),
     extendBordersPlugin,
+    rotateTransformPlugin,
+    transitionsPlugin(),
   ],
 };

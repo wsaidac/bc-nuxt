@@ -8,7 +8,7 @@ import { info } from '~~/.storybook/utils'
 Vue.component('ui-divider', Divider)
 
 // stories
-storiesOf('Divider', module)
+storiesOf('Atoms/Divider', module)
   .add('default', () => ({
     template: `<ui-divider />`,
     components: { Divider },

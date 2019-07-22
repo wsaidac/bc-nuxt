@@ -29,14 +29,14 @@ export default {
 
   props: {
     icon: VueTypes.oneOf(iconTypes),
-    color: VueTypes.string,
+    color: VueTypes.string.def('link'),
     fontSize: VueTypes.string.def('base'),
   },
 
   computed: {
     classes() {
       return [
-        'ui-icon',
+        'ui-icon leading-normal',
         { [`ui-icon-${this.icon}`]: this.icon },
         { [`text-${this.color}`]: this.color },
         { [`text-${this.fontSize}`]: this.fontSize },

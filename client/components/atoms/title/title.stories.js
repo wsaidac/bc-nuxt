@@ -58,7 +58,7 @@ const getTemplate = (typeNumber = 'h5', extraProp = '') => `
 `
 
 // stories
-storiesOf('Title', module)
+storiesOf('Atoms/Title', module)
   .addDecorator(withKnobs)
   .add('Default', () => ({
     components: { Title },
