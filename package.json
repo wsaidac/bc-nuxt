@@ -74,7 +74,6 @@
     "serverless-plugin-aws-alerts": "^1.2.4",
     "sitemap": "^2.1.0",
     "tailwindcss-transitions": "^2.0.1",
-    "typeface-nunito-sans": "^0.0.54",
     "universal-cookie": "^3.1.0",
     "vue": "~2.6.6",
     "vue-click-outside": "^1.0.7",
