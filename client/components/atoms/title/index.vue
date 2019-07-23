@@ -24,7 +24,7 @@ export default {
     buildFontSizeClassName() {
       const { type } = this;
       const fontSize = {
-        h1: 'text-3xl lg:text-6xl',
+        h1: 'text-3xl lg:text-6xl font-bold',
         h2: 'text-2xl lg:text-5xl',
         h3: 'text-3lg lg:text-4xl',
         h4: 'text-base lg:text-lg leading-tight',

@@ -36,7 +36,7 @@ export default {
   computed: {
     classes() {
       return [
-        'ui-icon leading-normal',
+        'ui-icon',
         { [`ui-icon-${this.icon}`]: this.icon },
         { [`text-${this.color}`]: this.color },
         { [`text-${this.fontSize}`]: this.fontSize },

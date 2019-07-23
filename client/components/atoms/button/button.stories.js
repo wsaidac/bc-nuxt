@@ -43,6 +43,9 @@ storiesOf('Atoms/Button', module)
         default: select('Type', typeOptions, 'primary')
       }
     },
+    methods: {
+      action: action('clicked')
+    },
     template: `
       <my-button
         :disable="disable"
