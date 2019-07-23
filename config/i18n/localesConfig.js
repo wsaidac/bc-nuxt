@@ -61,7 +61,7 @@ function generateLocaleConfig(locale, name, currency, status) {
   const config = {
     code: locale,
     iso: `${lang}-${country}`,
-    file: `${file}.js`,
+    file: `${file}.json`,
     name: country,
     displayName: name,
     selectable: status === 'active' || false,
