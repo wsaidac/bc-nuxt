@@ -3,7 +3,9 @@
     <ui-title
       type="h3"
       underline
-    >Colors</ui-title>
+    >
+      Colors
+    </ui-title>
     <ul class="flex flex-wrap mt-6">
       <li
         v-for="(value, name) in colors"

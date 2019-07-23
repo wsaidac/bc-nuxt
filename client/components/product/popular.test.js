@@ -1,7 +1,7 @@
-import { mount } from '~/test/utils/with-context';
 // import NuxtLink from '../../.nuxt/components/nuxt-link';
 import { RouterLinkStub } from '@vue/test-utils';
 import { merge } from 'lodash';
+import { mount } from '~/test/utils/with-context';
 
 import ProductPopular from './popular.vue';
 

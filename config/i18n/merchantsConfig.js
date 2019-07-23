@@ -8,7 +8,7 @@ module.exports = {
       'fr-be',
       'pl-pl',
       'da-dk',
-      'en-uk',
+      'en-gb',
       'it-it',
       'fi-fi',
       'es-es',
