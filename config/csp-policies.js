@@ -12,13 +12,13 @@ const marketingURIS = [
   'https://googleads.g.doubleclick.net',
   'https://optimize.google.com',
   '*.trackedlink.net',
+  '*.blueconic.net',
 ];
 
 const scripts = [
   '\'unsafe-eval\'',
   '\'unsafe-inline\'',
   '*.trackedlink.net',
-  '*.blueconic.net',
   '*.rapido.com',
   '*.cgaws.cloud',
   ...marketingURIS,
