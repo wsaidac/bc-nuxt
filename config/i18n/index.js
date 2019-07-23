@@ -13,7 +13,7 @@ module.exports = function (label) {
     seo: false,
     parsePages: false,
     lazy: true,
-    langDir: 'assets/locales/assemble-translations/',
+    langDir: 'assets/locales/translation-files/',
     locales: Object.values(sortedLocales),
     defaultLocale,
     vueI18n: {
