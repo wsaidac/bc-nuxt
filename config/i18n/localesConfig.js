@@ -51,17 +51,37 @@ function getCurrency(currency) {
   };
 }
 
+function getLocaleFileName(lang, locale) {
+  switch (lang) {
+    case 'en':
+      return 'en-us';
+
+    case 'de':
+      return 'de-at';
+
+    case 'es':
+      return 'es-es';
+
+    case 'fr':
+      return 'fr-be';
+
+    case 'no':
+      return 'nb-no';
+
+    default:
+      return locale;
+  }
+}
+
 function generateLocaleConfig(locale, name, currency, status) {
   const lang = locale.split('-')[0];
   const country = locale.split('-')[1].toUpperCase();
-
-  // if the language is english use the 'en-us' translation file
-  const file = lang === 'en' ? 'en-us' : locale;
+  const fileName = getLocaleFileName(lang, locale);
 
   const config = {
     code: locale,
     iso: `${lang}-${country}`,
-    file: `${file}.json`,
+    file: `${fileName}.json`,
     name: country,
     displayName: name,
     selectable: status === 'active' || false,
@@ -76,7 +96,7 @@ module.exports = {
   'da-dk': generateLocaleConfig('da-dk', 'Danmark', 'DKK', 'active'),
   'de-at': generateLocaleConfig('de-at', 'Österreich', 'EUR', 'active'),
   'en-us': generateLocaleConfig('en-us', 'United States', 'USD', 'active'),
-  'fr-be': generateLocaleConfig('fr-be', 'Belgique', 'EUR', 'active'),
+  'fr-be': generateLocaleConfig('fr-be', 'Belgique (Français)', 'EUR', 'active'),
   'pl-pl': generateLocaleConfig('pl-pl', 'Polska', 'PLN', 'active'),
   'it-it': generateLocaleConfig('it-it', 'Italia', 'EUR', 'active'),
   'fi-fi': generateLocaleConfig('fi-fi', 'Suomi', 'EUR', 'active'),
@@ -85,5 +105,10 @@ module.exports = {
   'pt-pt': generateLocaleConfig('pt-pt', 'Portugal', 'EUR', 'active'),
   'sk-sk': generateLocaleConfig('sk-sk', 'Slovensko', 'EUR', 'active'),
   'en-gb': generateLocaleConfig('en-gb', 'United Kingdom', 'GBP', 'inactive'),
-  'sl-si': generateLocaleConfig('sl-si', 'Slovenija', 'EUR', 'inactive'),
+  'es-us': generateLocaleConfig('es-us', 'United States (Spanish)', 'USD', 'inactive'),
+  'de-ch': generateLocaleConfig('de-ch', 'Schweiz', 'CHF', 'inactive'),
+  'fr-ch': generateLocaleConfig('fr-ch', 'Suisse', 'CHF', 'inactive'),
+  'nl-be': generateLocaleConfig('nl-be', 'België (Nederlands)', 'EUR', 'inactive'),
+  'no-no': generateLocaleConfig('no-no', 'Norge', 'NOK', 'inactive'),
+  'sv-se': generateLocaleConfig('sv-se', 'Sverige', 'SEK', 'inactive'),
 };
