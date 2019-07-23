@@ -1,0 +1,43 @@
+<template>
+  <div class="-ml-4 md:ml-0">
+    <ui-card
+      space="wide"
+      class="max-w-xs lg:max-w-xl"
+    >
+      <div class="pb-4 lg:pb-0">
+        <ui-title>{{ title }}</ui-title>
+      </div>
+      <ui-divider
+        type="small"
+        class="hidden lg:block"
+      />
+      <p class="hidden lg:block pb-4">{{ description }}</p>
+      <ui-button @click.prevent="$emit('banner-card:click')">{{ buttonText }}</ui-button>
+    </ui-card>
+  </div>
+</template>
+
+<script>
+import VueTypes from 'vue-types';
+
+import {
+  UiButton,
+  UiCard,
+  UiDivider,
+  UiTitle,
+} from '~/components/atoms';
+
+export default {
+  components: {
+    UiButton,
+    UiCard,
+    UiDivider,
+    UiTitle,
+  },
+  props: {
+    title: VueTypes.string.def(''),
+    description: VueTypes.string.def(''),
+    buttonText: VueTypes.string.def(''),
+  },
+};
+</script>

@@ -17,7 +17,6 @@ const {
 } = require('@storybook/theming');
 
 const theme = require('./theme')
-console.log("TCL: theme", theme)
 
 const JSXAddon = require('storybook-addon-jsx');
 
@@ -34,7 +33,7 @@ require('./iconsWeb.js')
 
 
 const paddingDecorator = () => ({
-  template: '<div style="display: flex; padding: 2rem;"><story/></div>',
+  template: '<div class="container p-4"><story/></div>',
 })
 
 

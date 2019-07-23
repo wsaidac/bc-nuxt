@@ -13,7 +13,7 @@ storiesOf('Atoms/Divider', module)
     template: `<ui-divider />`,
     components: { Divider },
   }), info)
-  .add(':small', () => `
+  .add(':type=small', () => `
     <card p='4'>
       <ui-title>Lebara mobile</ui-title>
       <ui-divider type="small"/>

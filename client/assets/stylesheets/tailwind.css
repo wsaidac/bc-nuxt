@@ -8,6 +8,18 @@ html {
   @apply font-body;
 }
 
+
+
+p {
+  @apply text-base leading-normal text-primary font-normal;
+}
+
+@screen lg {
+  p {
+    @apply text-lg;
+  }
+}
+
 input:focus,
 select:focus,
 button:focus {

@@ -13,7 +13,21 @@ const conf = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      {
+        rel: 'dns-prefetch',
+        href: '//fonts.googleapis.com',
+      },
+      {
+        rel: 'preconnect',
+
+        href: 'https://fonts.gstatic.com/',
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,800&display=swap&subset=latin-ext',
+      },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [{ src: '/blueconic.js' }, { src: '//cdn.blueconic.net/cg.js' }],
   },
   css: ['~/assets/stylesheets/application.scss'],

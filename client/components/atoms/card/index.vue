@@ -1,26 +1,24 @@
 <template>
   <div :class="classes">
-    <ui-icon icon="arrow-right-open" />
     <slot />
   </div>
 </template>
 
 <script>
-
-import UiIcon from '~/components/ui/icon';
+import VueTypes from 'vue-types';
 
 export default {
-  components: {
-    UiIcon,
-  },
   props: {
     highlighted: Boolean,
+    space: VueTypes.oneOf(['wide', 'normal']).def('normal'),
+
   },
   computed: {
     classes() {
-      const base = 'relative rounded-lg border border-gray border-solid p-4';
+      const base = 'relative rounded-lg border border-gray border-solid';
       const hightlight = this.highlighted ? 'border-t-4 rounded-t-none border-t-highlight' : '';
-      return [base, hightlight];
+      const padding = this.space === 'wide' ? 'p-6' : 'p-4';
+      return [base, hightlight, padding];
     },
   },
 };

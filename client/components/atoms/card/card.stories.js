@@ -9,7 +9,7 @@ Vue.component('card', Card)
 
 
 // stories
-storiesOf('Card', module)
+storiesOf('Atoms/Card', module)
   .add('default', () => ({
     template: `<card><div style="margin: 100px">content inside a card</div></card>`,
     components: { Card },
