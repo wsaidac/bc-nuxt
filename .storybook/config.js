@@ -85,6 +85,7 @@ addParameters({
   },
   backgrounds: [
     { name: 'base', value: '#FFF', default: true },
+    { name: 'black', value: '#333' },
   ],
 });
 

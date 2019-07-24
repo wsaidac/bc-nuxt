@@ -54,7 +54,6 @@ export default {
       DimensionsType,
     ]),
     alt: VueTypes.string.def(''),
-    mode: VueTypes.string.def(''),
   },
   computed: {
     isResponsive() {

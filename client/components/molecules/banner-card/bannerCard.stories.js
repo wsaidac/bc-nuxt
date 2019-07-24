@@ -15,7 +15,7 @@ Vue.component('banner-card', BannerCard);
 const desc = 'Geef games, apps en abonnementen cadeau met de Google Play gift code.';
 const title = 'Much more play, all on your Phone';
 // stories
-storiesOf('Molecule/Banner Card', module)
+storiesOf('Molecules/Banner Card', module)
   .add('default', () => ({
     components: {
       BannerCard,

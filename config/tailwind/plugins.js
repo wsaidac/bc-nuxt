@@ -64,7 +64,7 @@ const rotateTransformPlugin = ({
     },
   ], []);
 
-  addUtilities(rotateUtilities);
+  addUtilities(rotateUtilities, ['responsive', 'hover']);
 };
 
 
