@@ -11,6 +11,7 @@ const marketingURIS = [
   'https://script.hotjar.com',
   'https://googleads.g.doubleclick.net',
   'https://optimize.google.com',
+  'https://fonts.googleapis.com',
   '*.trackedlink.net',
   '*.blueconic.net',
 ];
