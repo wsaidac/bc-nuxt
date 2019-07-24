@@ -54,7 +54,7 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 
-addDecorator(paddingDecorator)
+// addDecorator(paddingDecorator)
 setAddon(JSXAddon)
 
 
