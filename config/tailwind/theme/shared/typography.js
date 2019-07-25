@@ -8,6 +8,7 @@ module.exports = {
     gbk: ['Gotham Rounded Book', 'sans-serif'],
   },
   fontSize: {
+    '2xs': '0.5rem',
     'xxs': '0.8125rem',
     'xs': '0.875rem',
     'sm': '0.9375rem',

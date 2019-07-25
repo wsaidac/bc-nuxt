@@ -1,2 +1,268 @@
 {
+  "account": {
+    "account-confirmed": "Konto er bekreftet",
+    "account-created": "Du har opprettet en Rapido-konto",
+    "account-email-address": "Kontoens e-postadresse",
+    "account-unlock-sent": "Ny e-post for å låse opp kontoen er sendt",
+    "account-unlocked": "Konto låst opp",
+    "active-now": "Aktiv nå",
+    "address-details": "Din adresse",
+    "agree-to-terms": "Ved å opprette en konto, sier du deg enig i Rapidos  {generalConditions-link} og {privacyPolicy-link}.",
+    "all-questions": "Alle spørsmål",
+    "birthdate": "Fødselsdato",
+    "bruteforce": {
+      "banned": "For mange påloggingsforsøk"
+    },
+    "cancel": "Avbryt",
+    "change-email": "Endre e-post",
+    "change-email-requested": "Vi har sendt deg en e-post for å bekrefte endringen av e-postadressen din",
+    "change-password": "Endre passord",
+    "change-password-error": "Kunne ikke oppdatere passordet ditt",
+    "change-password-submit": "Passordet ditt er oppdatert",
+    "check-your-email": "Sjekk e-posten din. Vi har akkurat sendt deg instruksjoner om hvordan du skal nullstille passordet ditt. Hvis du ikke har mottat en e-post i løpet av 30 minutter, vennligst prøv igjen.",
+    "city": "By",
+    "confirm_email": {
+      "already_confirmed": "Kontoen din er allerede bekreftet.",
+      "expired_token": "Din bekreftelslink er utløpt.",
+      "invalid_token": "Din bekreftelseslink er ugyldig."
+    },
+    "continue": "Fortsett",
+    "country_select": {
+      "button_name": "Fortsett handlingen",
+      "country_names": {
+        "Austria": "Østerrike",
+        "Belgium": "Belgia",
+        "United States": "USA"
+      },
+      "description": "Ditt utvalg av land sikrer at vi kan tilby <strong> riktige produkter og betalingsmetoder </strong>. Vennligst sørg for å det er i overenstemmelse med ditt land og dine kontoer der du vil innløse produktet.",
+      "title": "Velg landet ditt"
+    },
+    "create-new-account": "Opprett en ny konto",
+    "current-password": "Nåværende passord",
+    "description-birthdate": "Vennligst skriv inn fødselsdatoen din",
+    "email-address": "E-postadresse",
+    "email-changed": "E-postadressen ble endret",
+    "email-sent-to": "E-post sendt til: {email}",
+    "enter-email-address": "Skriv e-postadressen din.",
+    "faq": {
+      "faq-all": "Alle ofte spurte spørsmål",
+      "faq-code": "Hvordan bruker man en kode",
+      "faq-delivery": "Levering av kode",
+      "faq-other": "Andre spørsmål",
+      "faq-payment": "Hvordan betaler man"
+    },
+    "female": "Kvinne",
+    "first-name": "Fornavn",
+    "footer": {
+      "need-help": "Trenger du hjelp? Se våre <a>ofte stilte spørsmål</a>.",
+      "safe-methods": "<strong>Sikre</strong> betalinger med:"
+    },
+    "forgot-password": "Hjelp, jeg har glemt mitt passord",
+    "format": "dd/MM/åååå",
+    "gender": "Kjønn",
+    "go-to-login": "Gå til ditt påloggingsskjema",
+    "help-with-account": "Hjelp med konto",
+    "house-number": "Husnummer",
+    "i-need-help": "Jeg trenger hjelp",
+    "i-prefer-not-to-say": "annet",
+    "invalid": "Bekreftelse ble ikke fullført",
+    "last-name": "Etternavn",
+    "login-history": "Påloggingshistoriskk for konto",
+    "login": {
+      "invalid_credentials": "E-posten eller passordet du har skrevet inn er feil.",
+      "locked": "Kontoen din er låst {unlock-request-link}",
+      "locked-link-text": "Mer informasjon",
+      "title": "Logg på",
+      "unconfirmed_email": "E-postadressen er ikke bekreftet",
+      "unknown_user": "E-postadressen har ikke en konto"
+    },
+    "loginError": {
+      "title": "Kunne ikke logge på"
+    },
+    "logout": "Logg av",
+    "logout-everywhere": "Logg av alle enheter",
+    "lost-password": "Har du glemt passordet ditt?",
+    "lost-password-help": "Hjelp, jeg har glem passordet mitt",
+    "male": "Mann",
+    "my-account": "Min konto",
+    "name": "Navn",
+    "new-email-address": "Ny e-postadresse",
+    "new-password": "Nytt passord",
+    "orders": {
+      "cancelled": "Avbestilt",
+      "close": "Lukk",
+      "close-details": "Lukk detaljer",
+      "description-inprogress": "Er ordren din fortsatt ikke levert etter 12 timer? <b>Vennligst <a href='{contact-link}'>ta kontakt med oss</a> og så hjelper vi deg</b></b>",
+      "general-terms-and-conditions": "Generelle vilkår",
+      "more-details": "Flere detaljer",
+      "order-history": "Ordrehistorikk",
+      "order-id": "Ordre-ID",
+      "ordernumber": "Ordrenummer",
+      "paid": "betalt",
+      "payment-method": "betalingsmetode",
+      "price": "Pris",
+      "productstatus": "Produktstatus",
+      "purchased-on": "Kjøpt den",
+      "redeem-url": "Innløs URL",
+      "refunded": "Tilbakebetalt",
+      "serial-number": "Serienummer",
+      "service-costs": "Tjenestekostnader",
+      "shipped": "Sendt",
+      "show": "Vis",
+      "status": "Status",
+      "total": "Total",
+      "unpaid": "Ikke",
+      "your-orders": "Dine ordre",
+      "your-top-up-code": "Din digitale kode"
+    },
+    "password": "Passord",
+    "password-reset-sent": "Ny e-post med passord er sendt",
+    "personal-data-submit": "Profilen er lagret",
+    "personal-details": "Personlige detaljer",
+    "phone-number": "Landskode (USA: +1) / Telefonnummer",
+    "pickADay": "Velg fødselsdato",
+    "please-enter-password-for-confirmation": "Vennligst skriv inn passordet ditt for bekreftelse",
+    "postal-code": "Postkode",
+    "prefix": "Landskode",
+    "quick-signin": "Vi kan få deg inn på kontoen på ingen tid.",
+    "quick-unlocking": "Du har prøvd å logge på for mange ganger med et feil passord. Vi har sendt deg en e-post for å låse opp kontoen din. Fikk du ikke e-posten? Send en ny forespørsel nedenunder.",
+    "repeat-email-address": "Gjenta ny e-postadresse",
+    "repeat-new-password": "Gjenta nytt passord",
+    "repeat-password": "Gjenta passord",
+    "request-unlock-help": "Hjelp, jeg har låst min konto!",
+    "request_change_email": {
+      "invalid": "Denne e-postadressen er allerede i bruk",
+      "invalid_credentials": "Vennligst skriv inn ditt korrekte passord."
+    },
+    "request_reset_password": {
+      "error_title": "Kunne ikke nullstille passordet",
+      "unknown_user": "Det ble ikke funnet en konto for denne e-postadressen"
+    },
+    "request_unlock": {
+      "error_title": "Kunne ikke nullstille passordet",
+      "unlock": {
+        "invalid_token": "Token som er sendt er ikke gyldig",
+        "unknown_user": "Det ble ikke funnet en konto for denne e-postadressen."
+      }
+    },
+    "resend_unlock_token": {
+      "unknown_user": "Denne e-postadressen finnes ikke"
+    },
+    "reset-password": "Nullstill passord",
+    "reset_password": {
+      "invalid": {
+        "message": "Vennligst bruk en gyldig nullstillingslink for å endre passordet ditt.",
+        "retry": "Send en forespørsel om en ny nullstillingslink",
+        "title": "Ugyldig"
+      },
+      "reset": "Nullstill passord",
+      "resetError": {
+        "title": "Nullstilling av passordet feilet"
+      },
+      "reset_password": {
+        "invalid_token": "Nullstillingslinken for passord er utløpt. Vennligst fyll ut skjemaet for glemt passord."
+      },
+      "submit": {
+        "message": "Passordet ditt er nå oppdatert og du er logget på.",
+        "profile": "Gå til profilen",
+        "title": "Passordet ble endret"
+      }
+    },
+    "retry-reset": "Jeg har brukt en feil e-postadresse. Jeg vil gjerne prøve igjen",
+    "save": "Lagre",
+    "secure-signup": "Opprett Rapido-konto",
+    "sessions-management": "Kontoaktivitet",
+    "signupError": {
+      "title": "Registrasjonen feilet"
+    },
+    "street": "Veiadresse",
+    "try-again": "Feil e-postadresse? Opprett en ny konto her",
+    "unlock-token-sent": "Sjekk innboksen. Vi har akkurat sendt deg instruksjoner for å låse opp kontoen din. Hvis du ikke mottok en e-post i løpet av 30 minutter, vennligst prøv igjen.",
+    "validation-send": "For å godkjenne din Rapido-konto, vennligst bruk linken i kontogodkjennelses-eposten vi har sendt til {email}. Vi sees snart",
+    "validations": {
+      "maxLength": "Maksimum {min}  tegn",
+      "minLength": "Minimum {min}  tegn",
+      "required": "Obligatorisk felt",
+      "sameAs": "Må være det samme som",
+      "uniqueness": "Er allerede valgt"
+    },
+    "where-youre-logged-in": "Enheter som du bruker til å logge inn på kontoen din",
+    "your-account-is-confirmed": "Din kontor med e-postadresse {email} er godkjent. Du kan nå logge på kontoen din.",
+    "your-account-is-unlocked": "Kontoen din med e-postadresse {email} er låst opp. Du kan nå logge på kontoen din.",
+    "your-email-is-changed": "Din e-postadresse har blitt oppdatert til {email}. Du kan nå logge på din nye konto",
+    "your-login-details": "Dine påloggingsdetaljer"
+  },
+  "country_select": {
+    "button_name": "Bekreft",
+    "country_names": {
+      "Austria": "Østerrike",
+      "Belgium": "Belgia",
+      "United States": "USA"
+    },
+    "description": "Ditt utvalg i land sikrer at vi kan tilby de riktige produktene og betalingsmetodene. Vennligst sørg for å det er i overenstemmelse med ditt land og dine kontoer der du vil innløse produktet.",
+    "title": "Velg landet ditt"
+  },
+  "error": {
+    "button_name": "Rapido hjemmeside",
+    "description": "Oops! Dette er pinlig. Vi kan ikke finne denne siden for øyeblikket. Kan du vennligst prøve igjen litt senere?",
+    "error_text": "Det ser ut som om siden du gjerne ville se, ikke finnes mer. Unnskyld.",
+    "help": "Vennligst klikk på knappen nedenunder for å gå tilbake til hjemmesiden eller velg ditt land fra menyen på toppen.",
+    "title": "Siden ble ikke funnet"
+  },
+  "footer": {
+    "customer-care": "Kundeservice",
+    "order-with": "ordre med",
+    "privacy-statement": "Privatlivsuttalelse",
+    "quote": "Rapido.com er en del av CG| Millions of satisfied customers |",
+    "safely": "Sikkert",
+    "safely-order-with": "bestilt sikkert med:"
+  },
+  "general": {
+    "critical_error": "Et eller annet gikk galt. Last inn siden på nytt for å prøve igjen.",
+    "domain": "Rapido.com",
+    "help": "Hjelp",
+    "home-text": "Hjem",
+    "label": "Rapido",
+    "loading": "Laster inn",
+    "look-at-faqs": "Ta en kikk på FAQ",
+    "need-some-help": "Trenger du hjelp?",
+    "order-now": "Bestill nå",
+    "order-safely": "Bestill på en trygg måte",
+    "show-less": "Vis mindre",
+    "show-more": "Vis mer"
+  },
+  "header": {
+    "login": "Pålogging",
+    "main-nav": "Hovedmeny",
+    "menu": "Meny",
+    "my-account": "Min konto",
+    "profile": "profil"
+  },
+  "home": {
+    "featured-products": "Framhevede produkter",
+    "lets-speed-it-up": "La oss gjøre det litt kjappere",
+    "see-all-denominations": "Se alle interesser"
+  },
+  "internal-links": {
+    "about-us": "Om oss",
+    "cookies": "Informasjonskapsler",
+    "general-conditions": "Vilkår",
+    "payment-methods": "Betalingsmuligheter",
+    "privacy-policy": "Retningslinjer for privatliv",
+    "terms-of-use": "Vilkår"
+  },
+  "payment-methods": {
+    "checkout-options": "På Rapido.com, kan du sjekke ut med de følgende betalingsmåter. Hver betalingsmåte beskrives nedenunder.",
+    "credit-or-debit-card": "Kreditt/debitkort",
+    "payment-options": "Betalingsmuligheter",
+    "paypal": "Paypal",
+    "paypal_text_1": "Du kan betale med PayPal på Rapido.com Hvis du har valgt denne betalingsmuligheten, kan du logge på din PayPal-konto og bekrete betalingen. Neste, transaksjonen gjennomføres.",
+    "paypal_text_2": "Når betalingskvittering er mottatt, sendes oppfyllingskoden med det samme.",
+    "shipping": "Frakt",
+    "visa_and_mastercard_text_1": "På Rapido.com, kan du betale med et VISA kredittkort, VISA debetkort (Delta og Electron) og MasterCard. Ved sjekkut, kan du velge betaling med kredittkort. Så skal du taste inn dine kredittkortdetaljer inklusive navnet på kortinnehaver, kortnummeret, utløpsdato og CVV-kode. Så skal du bekrefte betalingen.",
+    "visa_and_mastercard_text_2": "Ved mottak av betalingskvittering, sendes tanki-oppkoden med det samme."
+  },
+  "usps": {
+    "title": "Fordeler for {domain}"
+  }
 }

@@ -54,7 +54,7 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 
-addDecorator(paddingDecorator)
+// addDecorator(paddingDecorator)
 setAddon(JSXAddon)
 
 
@@ -85,6 +85,7 @@ addParameters({
   },
   backgrounds: [
     { name: 'base', value: '#FFF', default: true },
+    { name: 'black', value: '#333' },
   ],
 });
 
