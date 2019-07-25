@@ -9,7 +9,7 @@ module.exports = async ({
   config.module.rules.push({
     test: /\.(png|jpe?g|gif)(\?.*)?$/,
     loader: 'url-loader',
-  }, )
+  })
 
 
   config.module.rules.push({
@@ -23,6 +23,7 @@ module.exports = async ({
         loader: 'sass-loader',
         options: {
           data: `
+              @import "~~/node_modules/flag-icon-css/sass/flag-icon.scss;"
               @import "~/assets/stylesheets/_shared.scss";
               @import "~/assets/stylesheets/_locales.scss";
               @import "~/assets/stylesheets/shared/_colors.scss";
@@ -67,7 +68,7 @@ module.exports = async ({
           path: './.storybook/postcss.config.js',
         },
       },
-    }, ]
+    },]
   })
 
   // for info addon

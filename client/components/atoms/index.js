@@ -6,3 +6,6 @@ export { default as UiImage } from './image';
 export { default as Usps } from './usps';
 export { default as UiCard } from './card';
 export { default as UiButton } from './button';
+export { default as UiImage } from './image';
+export { default as UiLink } from './image';
+export { default as Flag } from './flag';

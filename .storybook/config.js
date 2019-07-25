@@ -51,10 +51,11 @@ if (process.env.NODE_ENV !== 'test') {
   })
 
   require('../client/assets/stylesheets/tailwind.css')
+  require('../node_modules/flag-icon-css/css/flag-icon.min.css')
 }
 
 
-// addDecorator(paddingDecorator)
+addDecorator(paddingDecorator)
 setAddon(JSXAddon)
 
 

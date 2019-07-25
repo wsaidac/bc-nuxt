@@ -65,7 +65,7 @@ storiesOf('Atoms/Button', module)
     info: {}
   })
   .add(':disable', () => `
-    <div style='display:flex; flex-direction: column;'>
+    <div>
       <h4 style="color: #777">Primary:</h4>
       <my-button disable my='3'>
         disable Primary button
