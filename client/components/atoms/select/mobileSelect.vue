@@ -56,7 +56,7 @@ export default {
     };
   },
   methods: {
-    onChange(option, event) {
+    onChange(option) {
       // event.stopPropagation();
       this.selected = option;
 

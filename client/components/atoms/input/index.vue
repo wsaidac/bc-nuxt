@@ -61,7 +61,8 @@ export default {
     },
     boxClasses() {
       const base = 'input-box label-floating';
-      const border = this.hasError ? 'border-error' : 'border-gray focus-within:border-secondary hover:border-gray-dark';
+      const border = this.hasError
+        ? 'border-error' : 'border-gray focus-within:border-secondary hover:border-gray-dark';
 
       return [base, border];
     },

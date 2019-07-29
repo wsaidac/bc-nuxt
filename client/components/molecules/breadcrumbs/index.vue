@@ -34,7 +34,6 @@
 </template>
 
 <script>
-import VueTypes from 'vue-types';
 import {
   get, compact, startCase, range,
 } from 'lodash';

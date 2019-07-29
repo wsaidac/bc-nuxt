@@ -4,7 +4,6 @@ import ClickOutside from 'vue-click-outside';
 import VueMq from 'vue-mq';
 
 import { storiesOf } from '@storybook/vue';
-import { withInfo } from 'storybook-addon-vue-info';
 import {
   withKnobs,
   text,
