@@ -1,4 +1,3 @@
-const path = require('path');
 const i18nConfig = require('./config/i18n');
 const cspPolicies = require('./config/csp-policies');
 
