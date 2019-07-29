@@ -2,7 +2,6 @@
 import Vue from 'vue';
 import { storiesOf } from '@storybook/vue';
 import UspsList from './index.vue';
-import { info } from '~~/.storybook/utils';
 
 // definition
 Vue.component('usps-list', UspsList);

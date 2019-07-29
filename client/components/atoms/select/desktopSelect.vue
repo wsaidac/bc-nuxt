@@ -43,7 +43,6 @@
 
 <script>
 import VueTypes from 'vue-types';
-import { get } from 'lodash';
 
 import UiIcon from '~/components/atoms/icon';
 
