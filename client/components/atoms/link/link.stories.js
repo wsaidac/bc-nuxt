@@ -8,22 +8,7 @@ import {
   info
 } from '~~/.storybook/utils'
 
-import {
-  action
-} from '@storybook/addon-actions'
 
-
-
-// it is just for use nuxt-link into storybook
-Vue.component('nuxt-link', {
-  props: ['to'],
-  methods: {
-    log() {
-      action('link target')(this.to)
-    },
-  },
-  template: `<a href="#" @click.prevent="log()"><slot>NuxtLink</slot></a>`,
-})
 
 // definition
 Vue.component('ui-link', Link)

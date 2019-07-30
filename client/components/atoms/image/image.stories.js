@@ -7,25 +7,9 @@ import Image from './index.vue';
 import {
   info
 } from '~~/.storybook/utils'
-import VueMq from 'vue-mq';
-import {
-  breakpoints
-} from '~/constants';
-
 
 // definition
 Vue.component('ui-image', Image)
-
-Vue.use(VueMq, {
-  breakpoints: {
-    sm: breakpoints.SM,
-    md: breakpoints.MD,
-    lg: breakpoints.LG,
-  },
-  // default for SSR
-  defaultBreakpoint: 'sm',
-});
-
 
 // stories
 storiesOf('Atoms/Image', module)

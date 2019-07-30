@@ -4,23 +4,24 @@
 // https://gist.github.com/ademilter/5f56fe9e56c5eb8725292274c68001c5
 
 
-const Vue = require('vue')
+import Vue from 'vue';
+import Vuex from 'vuex';
+import VueMq from 'vue-mq';
 
-const {
+// storybook tools
+import {
   configure,
   addParameters,
   addDecorator,
   setAddon
-} = require('@storybook/vue')
-const {
-  themes
-} = require('@storybook/theming');
+} from '@storybook/vue'
+import JSXAddon from 'storybook-addon-jsx';
+import { action } from '@storybook/addon-actions';
 
-const theme = require('./theme')
-
-const JSXAddon = require('storybook-addon-jsx');
-
-require('vue2-animate/dist/vue2-animate.min.css')
+// storybook theme
+import theme from './theme';
+// animate css file
+import 'vue2-animate/dist/vue2-animate.min.css';
 
 
 /**
@@ -28,9 +29,8 @@ require('vue2-animate/dist/vue2-animate.min.css')
  * https://www.npmjs.com/package/webfonts-loader
  */
 // require('../client/assets/iconsWeb.js')
-require('./iconsWeb.js')
-
-
+import './iconsWeb.js'
+import { breakpoints } from '~/constants';
 
 const paddingDecorator = () => ({
   template: '<div class="container p-4 flex"><story/></div>',
@@ -54,34 +54,14 @@ if (process.env.NODE_ENV !== 'test') {
   require('../node_modules/flag-icon-css/css/flag-icon.min.css')
 }
 
-
 addDecorator(paddingDecorator)
 setAddon(JSXAddon)
-
-
 
 // Option defaults.
 addParameters({
   options: {
     name: 'Rapido Storybook',
-    theme: theme,
-    /**
-     * regex for finding the hierarchy separator
-     * @example:
-     *   null - turn off hierarchy
-     *   /\// - split by `/`
-     *   /\./ - split by `.`
-     *   /\/|\./ - split by `/` or `.`
-     * @type {Regex}
-     */
-    hierarchySeparator: /\/|\./,
-    /**
-     * regex for finding the hierarchy root separator
-     * @example:
-     *   null - turn off multiple hierarchy roots
-     *   /\|/ - split by `|`
-     * @type {Regex}
-     */
+    theme,
     hierarchyRootSeparator: /\|/,
   },
   backgrounds: [
@@ -91,6 +71,31 @@ addParameters({
 });
 
 
+// Set the global media queries
+Vue.use(VueMq, {
+  breakpoints: {
+    sm: breakpoints.SM,
+    md: breakpoints.MD,
+    lg: breakpoints.LG,
+  },
+  // default for SSR
+  defaultBreakpoint: 'sm',
+});
+
+// it is just for use nuxt-link into storybook
+Vue.component('nuxt-link', {
+  props: ['to'],
+  methods: {
+    log() {
+      action('link target')(this.to)
+    },
+  },
+  template: `<a href="#" @click.prevent="log()"><slot>NuxtLink</slot></a>`,
+})
+
+
+// set vuex
+Vue.use(Vuex)
 
 // basically load the stories within client/components folder
 function loadStories() {
