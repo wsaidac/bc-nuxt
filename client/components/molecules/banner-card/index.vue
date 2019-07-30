@@ -27,6 +27,7 @@ import {
   UiTitle,
 } from '~/components/atoms';
 
+
 export default {
   components: {
     UiButton,

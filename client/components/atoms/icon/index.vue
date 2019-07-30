@@ -23,6 +23,7 @@ import SvgIcon from './svg-icon';
 const fontIconTypes = [
   'breadcrumb',
   'check',
+  'close',
   'down',
   'entertainment',
   'giftcards',
@@ -43,7 +44,7 @@ export default {
   props: {
     icon: VueTypes.string.def(''),
     color: VueTypes.string.def('link'),
-    size: VueTypes.string.def('base'),
+    fontSize: VueTypes.string.def('base'),
     reverse: Boolean,
   },
 
