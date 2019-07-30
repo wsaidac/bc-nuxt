@@ -107,14 +107,6 @@ export default {
   data() {
     return {
       value: 1,
-      options: [
-        { id: 0, label: 1, value: 1 },
-        { id: 1, label: 2, value: 2 },
-        { id: 2, label: 3, value: 3 },
-        { id: 3, label: 4, value: 4 },
-        { id: 4, label: 5, value: 5 },
-        { id: 5, label: 10, value: 10 },
-      ],
     };
   },
 
@@ -129,6 +121,23 @@ export default {
     },
     classes() {
       return ['product-card', `product-card--mode-${this.mode}`];
+    },
+    options() {
+      const defaultAmounts = [
+        { id: 0, label: 1, value: 1 },
+        { id: 1, label: 2, value: 2 },
+        { id: 2, label: 3, value: 3 },
+        { id: 3, label: 4, value: 4 },
+        { id: 4, label: 5, value: 5 },
+        { id: 5, label: 10, value: 10 },
+      ];
+
+      // todo: remove this check and get the max amount from  CMS
+      if (this.product.brands.nodes[0].name === 'iTunes') {
+        defaultAmounts.pop();
+      }
+
+      return defaultAmounts;
     },
     image() {
       return (

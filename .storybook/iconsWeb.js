@@ -2,7 +2,7 @@ module.exports = {
   classPrefix: 'ui-icon-',
   baseSelector: '.ui-icon',
   embed: true,
-  files: ['../client/assets/images/icons/redesign/*.svg'],
+  files: ['../client/assets/images/icons/redesign/font/*.svg'],
   fixedWidth: true,
   fontName: 'UiIcons',
   types: ['woff2'],

@@ -33,7 +33,7 @@ require('./iconsWeb.js')
 
 
 const paddingDecorator = () => ({
-  template: '<div class="container p-4"><story/></div>',
+  template: '<div class="container p-4 flex"><story/></div>',
 })
 
 
