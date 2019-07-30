@@ -3,7 +3,7 @@
     v-if="!isResponsive"
     :src="src"
     :alt="alt"
-    class="h-auto w-full"
+    class="h-auto w-full object-fill"
   >
   <picture
     v-else

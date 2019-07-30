@@ -1,22 +1,31 @@
 <template>
-  <i
-    :class="classes"
-    v-on="$listeners"
-  >
-    <slot />
-  </i>
+  <font-icon
+    v-if="isFontType"
+    :icon="icon"
+    v-bind="$attrs"
+    :color="color"
+    :font-size="fontSize"
+  />
+  <svg-icon
+    v-else
+    :icon="icon"
+    v-bind="$attrs"
+    :color="color"
+    :font-size="fontSize"
+  />
 </template>
 
 <script>
 import VueTypes from 'vue-types';
+import FontIcon from './font-icon';
+import SvgIcon from './svg-icon';
 
-const iconTypes = [
+const fontIconTypes = [
   'breadcrumb',
   'check',
   'down',
   'entertainment',
   'giftcards',
-  'hole',
   'min',
   'mobile-recharge',
   'plus',
@@ -26,23 +35,21 @@ const iconTypes = [
 
 export default {
   name: 'UiIcon',
+  components: {
+    FontIcon,
+    SvgIcon,
+  },
 
   props: {
-    icon: VueTypes.oneOf(iconTypes),
+    icon: VueTypes.string.def(''),
     color: VueTypes.string.def('link'),
     size: VueTypes.string.def('base'),
     reverse: Boolean,
   },
 
   computed: {
-    classes() {
-      return [
-        'ui-icon',
-        { [`ui-icon-${this.icon}`]: this.icon },
-        { [`text-${this.color}`]: this.color },
-        { [`text-${this.size}`]: this.size },
-        { 'rotate-180': this.reverse },
-      ];
+    isFontType() {
+      return fontIconTypes.includes(this.icon);
     },
   },
 };

@@ -11,7 +11,6 @@ module.exports = async ({
     loader: 'url-loader',
   })
 
-
   config.module.rules.push({
     test: /\.scss$/,
     loaders: [
