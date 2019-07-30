@@ -3,7 +3,7 @@
     v-if="!isResponsive"
     :src="src"
     :alt="alt"
-    class="h-auto w-full object-fill"
+    class="h-full w-auto object-cover"
   >
   <picture
     v-else
@@ -23,8 +23,8 @@
     >
     <img
       :src="src.regular"
-      :alt="alt"
-      class="w-full object-cover h-auto"
+      :alt="alt || src && src.alt"
+      class="h-full object-cover w-full"
     >
   </picture>
 </template>

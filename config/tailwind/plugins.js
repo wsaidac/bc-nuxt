@@ -67,8 +67,23 @@ const rotateTransformPlugin = ({
   addUtilities(rotateUtilities, ['responsive', 'hover']);
 };
 
+const gradientBackgroundPlugin = ({
+  addUtilities,
+  config,
+  e,
+}) => {
+  const gradientUtilities = _.map(config('theme.gradients.linear'), (value, key) => ({
+    [`.${e(`bg-gradient-${key}`)}`]: {
+      background: `linear-gradient(${value})`,
+    },
+  }));
+
+  addUtilities(gradientUtilities);
+};
+
 
 module.exports = {
   extendBordersPlugin,
   rotateTransformPlugin,
+  gradientBackgroundPlugin,
 };

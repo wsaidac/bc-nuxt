@@ -12,6 +12,8 @@ module.exports = {
     10: '2.5rem',
     12: '3rem',
     16: '4rem',
+    40: '10rem',
+    48: '12rem',
   },
   screens: {
     sm: '640px',
