@@ -16,6 +16,7 @@ module.exports = {
     '18': '7rem',
     '40': '10rem',
     '48': '12rem',
+    '54': '15rem',
   },
   screens: {
     sm: '640px',
