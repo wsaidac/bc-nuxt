@@ -24,7 +24,6 @@ query {
         link {
           url
           title
-          target
         }
         image {
           regular: sharpieUrl(height: 130, width: 130)
