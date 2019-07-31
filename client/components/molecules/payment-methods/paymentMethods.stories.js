@@ -8,14 +8,6 @@ import fakeI18nPlugin from '~~/.storybook/fakeI18nPlugin';
 // definition
 Vue.component('payment-methods', PaymentMethods);
 
-Vue.use(fakeI18nPlugin, {
-  translations: {
-    footer: {
-      'safely-order-with': 'Safely order with',
-    },
-  },
-});
-
 // stories
 storiesOf('Molecules/Payment Methods', module)
   .add('default', () => ({

@@ -3,7 +3,10 @@
     <ui-title :type="type === 'secondary' ? 'h2' : 'h1'">
       <slot />
     </ui-title>
-    <ui-divider type="small" />
+    <ui-divider
+      type="small"
+      class="mt-4 mb-6"
+    />
   </div>
 </template>
 

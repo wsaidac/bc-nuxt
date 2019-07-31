@@ -30,16 +30,16 @@ storiesOf('Atoms/Image', module)
     components: {
       Image
     },
-    render: h => {
-      return <Image src={
-        {
+    data() {
+      return {
+        image: {
           regular: 'https://media.contentapi.ea.com/content/dam/ea/fifa/fifa-20/global-assets/common/featuredimage.png.adapt.crop191x100.1200w.png',
           retina: 'https://www.esports.com/upload/articles/4327/fifa20_bg.jpg',
           tablet: 'https://i2.offnews.bg/events/2019/06/08/704973/phpa62tyq_800x*.jpg',
         }
       }
-      />
-    }
+    },
+    template: `<ui-image :src="image" />`
   }), info)
 
     //https://www.esports.com/upload/articles/4327/fifa20_bg.jpg

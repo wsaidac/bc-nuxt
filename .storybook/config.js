@@ -23,6 +23,7 @@ import theme from './theme';
 // animate css file
 import 'vue2-animate/dist/vue2-animate.min.css';
 
+import fakeI18nPlugin from '~~/.storybook/fakeI18nPlugin';
 
 /**
  *  config for webfonts-loader
@@ -33,7 +34,7 @@ import './iconsWeb.js'
 import { breakpoints } from '~/constants';
 
 const paddingDecorator = () => ({
-  template: '<div class="container p-4 flex"><story/></div>',
+  template: '<div class="container p-2 lg:p-4 my-0 mx-auto flex"><story/></div>',
 })
 
 
@@ -70,6 +71,9 @@ addParameters({
   ],
 });
 
+
+// i18n
+Vue.use(fakeI18nPlugin);
 
 // Set the global media queries
 Vue.use(VueMq, {

@@ -27,10 +27,10 @@ export default {
     UiImage,
   },
   props: {
-    src: VueTypes.oneOf([String, Object]).def(''),
+    src: VueTypes.oneOfType([String, Object]).def(''),
     alt: VueTypes.string.def(''),
     brand: VueTypes.shape({
-      src: VueTypes.oneOf([String, Object]).def(''),
+      src: VueTypes.oneOfType([String, Object]).def(''),
       alt: VueTypes.string.def(''),
     }).def(''),
     gradient: Boolean,
