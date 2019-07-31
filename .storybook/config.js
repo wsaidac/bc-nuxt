@@ -21,7 +21,7 @@ import { action } from '@storybook/addon-actions';
 // storybook theme
 import theme from './theme';
 // animate css file
-import 'vue2-animate/dist/vue2-animate.min.css';
+import 'vue2-animate/dist/vue2-animate.css';
 
 import fakeI18nPlugin from '~~/.storybook/fakeI18nPlugin';
 

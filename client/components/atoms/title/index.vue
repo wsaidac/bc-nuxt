@@ -38,6 +38,11 @@ export default {
       if (type !== 'h4' && type !== 'h5') {
         return '';
       }
+
+      if (type === 'h4') {
+        return light ? 'font-light' : 'font-bold';
+      }
+
       return light ? 'font-light' : 'font-medium';
     },
     buildUnderlineClassName() {
@@ -45,6 +50,7 @@ export default {
       if (type !== 'h4' && type !== 'h5') {
         return '';
       }
+
       return underline ? 'underline' : '';
     },
   },
