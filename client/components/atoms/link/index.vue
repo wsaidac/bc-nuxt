@@ -4,6 +4,7 @@
     :class="[classes]"
     :rel="rel"
     :target="target"
+    v-on="$listeners"
   >
     <slot />
   </nuxt-link>

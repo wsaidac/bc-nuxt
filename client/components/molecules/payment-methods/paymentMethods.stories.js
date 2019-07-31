@@ -3,7 +3,6 @@ import Vue from 'vue';
 import { storiesOf } from '@storybook/vue';
 import PaymentMethods from './index.vue';
 
-import fakeI18nPlugin from '~~/.storybook/fakeI18nPlugin';
 
 // definition
 Vue.component('payment-methods', PaymentMethods);
