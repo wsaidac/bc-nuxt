@@ -4,6 +4,8 @@ const tailwindTheme = require('./theme');
 const {
   extendBordersPlugin,
   rotateTransformPlugin,
+  gradientBackgroundPlugin,
+  ellipsisPlugin,
 } = require('./plugins');
 const {
   createVariant,
@@ -88,5 +90,7 @@ module.exports = {
     extendBordersPlugin,
     rotateTransformPlugin,
     transitionsPlugin(),
+    gradientBackgroundPlugin,
+    ellipsisPlugin,
   ],
 };

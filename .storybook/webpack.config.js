@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack')
 const rootPath = path.resolve(__dirname, '..')
 const clientPath = path.resolve(__dirname, '../client')
 
@@ -95,6 +96,12 @@ module.exports = async ({
     loaders: [require.resolve('@storybook/addon-storysource/loader')],
     enforce: 'pre',
   });
+
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      'process.env.LABEL': JSON.stringify(process.env.LABEL),
+    })
+  );
 
   // config.plugins.push(new VueLoaderPlugin())
 

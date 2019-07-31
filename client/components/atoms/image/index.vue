@@ -2,8 +2,8 @@
   <img
     v-if="!isResponsive"
     :src="src"
-    :alt="alt"
-    class="h-auto w-full object-fill"
+    :alt="imageAlt"
+    :class="classes"
   >
   <picture
     v-else
@@ -23,24 +23,25 @@
     >
     <img
       :src="src.regular"
-      :alt="alt"
-      class="w-full object-cover h-auto"
+      :alt="imageAlt"
+      :class="['object-cover', classes]"
     >
   </picture>
 </template>
 
 <script>
 import VueTypes from 'vue-types';
-import { isObjectLike } from 'lodash';
+import { isObjectLike, get } from 'lodash';
 
 import { breakpoints } from '~/constants';
 
-const DimensionsType = {
+const DimensionsType = VueTypes.shape({
   regular: String,
   smartphone: String,
   retina: String,
   tablet: String,
-};
+  alt: String,
+});
 
 export default {
   name: 'UiImage',
@@ -54,6 +55,8 @@ export default {
       DimensionsType,
     ]),
     alt: VueTypes.string.def(''),
+    height: VueTypes.string.def('auto'),
+    width: VueTypes.string.def('full'),
   },
   computed: {
     isResponsive() {
@@ -61,6 +64,12 @@ export default {
     },
     breakpoints() {
       return breakpoints;
+    },
+    classes() {
+      return `object-cover h-${this.height} w-${this.width}`;
+    },
+    imageAlt() {
+      return get(this, 'src.alt', false) || this.alt;
     },
   },
 };

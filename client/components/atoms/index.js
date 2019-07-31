@@ -7,3 +7,4 @@ export { default as Usps } from './usps';
 export { default as UiCard } from './card';
 export { default as UiButton } from './button';
 export { default as Flag } from './flag';
+export { default as Tag } from './tag';

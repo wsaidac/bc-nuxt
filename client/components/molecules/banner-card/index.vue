@@ -9,7 +9,7 @@
       </div>
       <ui-divider
         type="small"
-        class="hidden lg:block"
+        class="hidden lg:block mt-4 mb-6"
       />
       <p class="hidden lg:block pb-4">{{ description }}</p>
       <ui-button @click.prevent="$emit('banner-card:click')">{{ buttonText }}</ui-button>
@@ -26,6 +26,7 @@ import {
   UiDivider,
   UiTitle,
 } from '~/components/atoms';
+
 
 export default {
   components: {

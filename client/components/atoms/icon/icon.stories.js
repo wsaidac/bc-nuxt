@@ -12,48 +12,58 @@ import {
 Vue.component('ui-icon', Icon)
 
 
+const fontIconTypes = [
+  'breadcrumb',
+  'check',
+  'down',
+  'entertainment',
+  'giftcards',
+  'min',
+  'mobile-recharge',
+  'plus',
+  'popular',
+  'prepaid-cards',
+];
+
 // stories
 storiesOf('Atoms/Icon', module)
   .add('default', () => ({
+    data() {
+      return {
+        fontIconTypes: [
+          'breadcrumb',
+          'check',
+          'down',
+          'entertainment',
+          'giftcards',
+          'min',
+          'mobile-recharge',
+          'plus',
+          'popular',
+          'prepaid-cards',
+        ]
+      }
+    },
     template: `
-      <div style="display: flex; flex-direction: row; font-size: 2rem;">
-        <div style="margin: 1rem;">
-          <ui-icon icon='breadcrumb'/>
+    <container>
+      <ui-title>Font</ui-title>
+      <row wrap>
+        <div
+          v-for="icon in fontIconTypes"
+          class="m-4"
+        >
+          <ui-icon :icon='icon' font-size="3xl"/>
+          <p>{{ icon }}</p>
         </div>
-        <div style="margin: 1rem;">
-          <ui-icon icon='check'/>
-        </div>
-        <div style="margin: 1rem;">
-          <ui-icon icon='close'/>
-        </div>
-        <div style="margin: 1rem;">
-          <ui-icon icon='down'/>
-        </div>
-        <div style="margin: 1rem;">
-          <ui-icon icon='entertainment'/>
-        </div>
-        <div style="margin: 1rem;">
-          <ui-icon icon='giftcards'/>
-        </div>
-        <div style="margin: 1rem;">
+      </row>
+      <ui-title>SVG</ui-title>
+      <row wrap>
+        <div class="m-4">
           <ui-icon icon='hole'/>
+          <p>hole</p>
         </div>
-        <div style="margin: 1rem;">
-          <ui-icon icon='min'/>
-        </div>
-        <div style="margin: 1rem;">
-          <ui-icon icon='mobile-recharge'/>
-        </div>
-        <div style="margin: 1rem;">
-          <ui-icon icon='plus'/>
-        </div>
-        <div style="margin: 1rem;">
-          <ui-icon icon='popular'/>
-        </div>
-        <div style="margin: 1rem;">
-          <ui-icon icon='prepaid-cards'/>
-        </div>
-      <div>
+      </row>
+      </container>
     `,
     components: {
       Icon

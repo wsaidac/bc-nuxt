@@ -8,18 +8,6 @@ import CategoryCard from './index.vue';
 import { info } from '~~/.storybook/utils';
 
 
-// it is just for use nuxt-link into storybook
-Vue.component('nuxt-link', {
-  props: ['to'],
-  methods: {
-    log() {
-      action('link target')(this.to);
-    },
-  },
-  template: `<a href="#" @click.prevent="log()"><slot>NuxtLink</slot></a>`,
-});
-
-
 // definition
 Vue.component('category-card', CategoryCard);
 
@@ -40,48 +28,11 @@ storiesOf('Molecules/Catgory Card', CategoryCard)
     template: `
       <container>
         <row>
-
-          <column class="w-1/6">
-            <category-card
-              :image="image"
-              title='Netflix'
-              linkTo='#'
-              linkTitle='Netfix'
-            />
-          </column>
-          <column class="w-1/6">
-            <category-card
-              :image="image"
-              title='Netflix'
-              linkTo='#'
-              linkTitle='Netfix'
-            />
-          </column>
-          <column class="w-1/6">
-            <category-card
-              :image="image"
-              title='Netflix'
-              linkTo='#'
-              linkTitle='Netfix'
-            />
-          </column>
-          <column class="w-1/6">
-            <category-card
-              :image="image"
-              title='Netflix'
-              linkTo='#'
-              linkTitle='Netfix'
-            />
-          </column>
-          <column class="w-1/6">
-            <category-card
-              :image="image"
-              title='Netflix'
-              linkTo='#'
-              linkTitle='Netfix'
-            />
-          </column>
-          <column class="w-1/6">
+          <column
+            v-for="n in 6"
+            :key="n"
+            class="w-1/6"
+          >
             <category-card
               :image="image"
               title='Netflix'
