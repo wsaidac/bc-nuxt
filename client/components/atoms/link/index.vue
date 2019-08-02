@@ -23,7 +23,7 @@ export default {
     invert: Boolean,
     rel: VueTypes.string.def(''),
     url: VueTypes.string.def('#'),
-    sm: Boolean,
+    size: VueTypes.string.def(''),
     bold: Boolean,
   },
 
@@ -33,7 +33,7 @@ export default {
       const color = this.invert ? 'text-white' : 'text-link';
       const underline = this.disable ? '' : 'hover:underline';
       const disable = this.disable ? 'opacity-20 cursor-not-allowed' : '';
-      const font = this.sm ? 'text-base' : 'text-base lg:text-lg';
+      const font = this.size || 'text-base';
       const weight = this.bold ? 'font-bold' : '';
 
       return [base, font, weight, color, underline, disable, this.displayMode];

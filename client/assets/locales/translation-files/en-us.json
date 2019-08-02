@@ -188,6 +188,9 @@
     "your-email-is-changed": "Your email address has been updated to {email}. You can now login into your account.",
     "your-login-details": "Your login details"
   },
+  "brand_box": {
+    "link_name": "View all {brandName} products"
+  },
   "country_select": {
     "button_name": "Confirm",
     "country_names": {

@@ -1,9 +1,9 @@
 <template>
-  <p class="text-xs lg:text-length lg:pr-6">
+  <p class="text-base lg:text-length lg:pr-6">
     <ui-icon
       icon="check"
       color="success"
-      size="xs"
+      size="base"
     />
     <span v-html="text" />
   </p>
