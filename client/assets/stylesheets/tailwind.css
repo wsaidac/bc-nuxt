@@ -46,7 +46,21 @@ active {
 }
 
 .html-injected {
+  @apply relative w-full;
+
   & > ul {
     @apply list-disc ml-4;
+  }
+
+  & a {
+    @apply text-link;
+  }
+
+  & b {
+    @apply block;
+  }
+
+  & hr {
+    @apply h-px w-full bg-gray m-0 border-0 my-4;
   }
 }
