@@ -44,12 +44,12 @@ const DimensionsType = VueTypes.shape({
 });
 
 export default {
-  name: 'UiImage',
+  name: 'Image',
   props: {
     src: VueTypes.oneOfType([
       String,
       DimensionsType,
-    ]),
+    ]).def('https://via.placeholder.com/300'),
     ratio: VueTypes.oneOfType([
       String,
       DimensionsType,

@@ -1,7 +1,7 @@
 <template>
   <section class="w-full relative">
     <ui-title>Styleguide</ui-title>
-    <ui-divider />
+    <divider />
     <article class="w-full">
       <ui-title
         type="h3"
@@ -130,13 +130,13 @@
  */
 import theme from '~~/config/tailwind/theme';
 import { flattenObject } from '~~/config/tailwind/utils';
-import { UiTitle, UiDivider } from '~/components/atoms';
+import { UiTitle, Divider } from '~/components/atoms';
 
 
 export default {
   components: {
     UiTitle,
-    UiDivider,
+    Divider,
   },
   data() {
     return {

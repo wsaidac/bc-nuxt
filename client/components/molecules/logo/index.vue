@@ -30,9 +30,13 @@ export default {
   methods: {
     getSrc() {
       const label = this.$store.getters['context/label'];
-      /* eslint-disable import/no-dynamic-require */
-      // eslint-disable-next-line global-require
-      return require(`~/assets/images/logo/${label}.svg`);
+      try {
+        /* eslint-disable import/no-dynamic-require */
+        // eslint-disable-next-line global-require
+        return require(`~/assets/images/logo/${label}.svg`);
+      } catch (error) {
+        return 'https://via.placeholder.com/128x30';
+      }
     },
   },
 };

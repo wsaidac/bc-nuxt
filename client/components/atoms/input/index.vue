@@ -18,7 +18,7 @@
     >
       {{ label }}
     </label>
-    <ui-icon
+    <icon
       v-if="showSufix"
       :icon="sufixIcon"
       class="absolute right-0 top-0 p-4"
@@ -32,11 +32,11 @@
 import { uniqueId } from 'lodash';
 import VueTypes from 'vue-types';
 
-import UiIcon from '~/components/atoms/icon';
+import Icon from '~/components/atoms/icon';
 
 export default {
   components: {
-    UiIcon,
+    Icon,
   },
   inheritAttrs: false,
   props: {

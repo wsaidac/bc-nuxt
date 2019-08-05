@@ -9,7 +9,7 @@ import {
 } from '~~/.storybook/utils'
 
 // definition
-Vue.component('ui-icon', Icon)
+Vue.component('icon', Icon)
 
 
 const fontIconTypes = [
@@ -52,14 +52,14 @@ storiesOf('Atoms/Icon', module)
           v-for="icon in fontIconTypes"
           class="m-4"
         >
-          <ui-icon :icon='icon' font-size="3xl"/>
+          <icon :icon='icon' font-size="3xl"/>
           <p>{{ icon }}</p>
         </div>
       </row>
       <ui-title>SVG</ui-title>
       <row wrap>
         <div class="m-4">
-          <ui-icon icon='hole'/>
+          <icon icon='hole'/>
           <p>hole</p>
         </div>
       </row>
@@ -69,5 +69,5 @@ storiesOf('Atoms/Icon', module)
       Icon
     },
   }), info)
-  .add(':size=7xl', () => `<ui-icon icon='plus' fontSize='7xl'/>`)
-  .add(':color=success', () => `<ui-icon icon='plus' color='success' fontSize='7xl'/>`)
+  .add(':size=7xl', () => `<icon icon='plus' fontSize='7xl'/>`)
+  .add(':color=success', () => `<icon icon='plus' color='success' fontSize='7xl'/>`)
