@@ -14,12 +14,13 @@ const marketingURIS = [
   'https://fonts.googleapis.com',
   '*.trackedlink.net',
   '*.blueconic.net',
+  '*.visualwebsiteoptimizer.com',
+  'https://dev.visualwebsiteoptimizer.com',
 ];
 
 const scripts = [
   '\'unsafe-eval\'',
   '\'unsafe-inline\'',
-  '*.trackedlink.net',
   '*.rapido.com',
   '*.cgaws.cloud',
   ...marketingURIS,
