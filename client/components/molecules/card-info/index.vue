@@ -1,19 +1,19 @@
 <template>
-  <ui-card space="none">
+  <card space="none">
     <ui-title
       type="h4"
       class="m-4"
     >
       {{ title }}
     </ui-title>
-    <ui-divider />
+    <divider />
     <div class="m-4">
       <p :class="['mb-4', {'truncate-5-lines md:truncate-3-lines': !showAll }]">{{ content }}</p>
       <ui-link @click.native="showAll = !showAll">
         {{ $t(`general.show-${showAll ? 'less' : 'more'}`) }}
       </ui-link>
     </div>
-  </ui-card>
+  </card>
 </template>
 
 <script>
@@ -21,15 +21,15 @@
 import VueTypes from 'vue-types';
 
 import {
-  UiTitle, UiDivider, UiCard, UiLink,
+  UiTitle, Divider, Card, UiLink,
 } from '~/components/atoms';
 
 export default {
   components: {
     UiTitle,
-    UiCard,
+    Card,
     UiLink,
-    UiDivider,
+    Divider,
   },
   props: {
     content: VueTypes.string.def(''),

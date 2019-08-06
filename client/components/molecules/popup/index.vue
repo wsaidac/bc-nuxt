@@ -1,11 +1,11 @@
 <template>
-  <ui-card
+  <card
     space="none"
     class="max-w-xl"
   >
     <div class="flex p-4 mb:items-center justify-between">
       <ui-title type="h4">
-        <ui-icon
+        <icon
           v-if="type === 'warning'"
           icon="warning"
           color="error"
@@ -14,14 +14,14 @@
         />
         {{ title }}
       </ui-title>
-      <ui-icon
+      <icon
         icon="close"
         color="primary"
         class="cursor-pointer"
         @click="$emit('popup__close:click')"
       />
     </div>
-    <ui-divider />
+    <divider />
     <div class="p-4">
       <p class="pb-6">{{ description }}</p>
       <div class="flex flex-wrap flex-col-reverse md:flex-row">
@@ -42,30 +42,30 @@
         </ui-button>
       </div>
     </div>
-  </ui-card>
+  </card>
 </template>
 
 <script>
 import VueTypes from 'vue-types';
 
 import {
-  UiCard, UiDivider, UiTitle, UiIcon, UiButton,
+  Card, Divider, UiTitle, Icon, UiButton,
 } from '~/components/atoms';
 
 export default {
   components: {
-    UiCard,
-    UiDivider,
+    Card,
+    Divider,
     UiTitle,
     UiButton,
-    UiIcon,
+    Icon,
   },
   props: {
     title: VueTypes.string.def(''),
     description: VueTypes.string.def(''),
     mainButtonText: VueTypes.string.def(''),
     secondaryButtonText: VueTypes.string.def(''),
-    type: VueTypes.oneOf(['warning'])
+    type: VueTypes.oneOf(['warning']),
   },
 };
 

@@ -1,5 +1,5 @@
 <template>
-  <ui-card
+  <card
     space="none"
     class="relative flex flex-wrap"
   >
@@ -20,19 +20,19 @@
       <p class="mb-4">{{ product.description }}</p>
       <ui-button @click="$emit('feature-card:click')">{{ product.buttonText }}</ui-button>
     </div>
-  </ui-card>
+  </card>
 </template>
 
 <script>
 import VueTypes from 'vue-types';
 
 import {
-  UiCard, UiButton, UiImage, UiTitle,
+  Card, UiButton, UiImage, UiTitle,
 } from '~/components/atoms';
 
 export default {
   components: {
-    UiCard,
+    Card,
     UiButton,
     UiImage,
     UiTitle,

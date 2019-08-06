@@ -1,6 +1,6 @@
 <template>
   <p class="text-base lg:text-length lg:pr-6">
-    <ui-icon
+    <icon
       icon="check"
       color="success"
       size="base"
@@ -10,7 +10,12 @@
 </template>
 
 <script>
+import Icon from '~/components/atoms/icon';
+
 export default {
+  components: {
+    Icon,
+  },
   props: {
     text: {
       type: String,

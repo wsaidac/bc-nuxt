@@ -1,5 +1,5 @@
 <template>
-  <ui-card
+  <card
     class="flex-col flex justify-between"
     space="none"
   >
@@ -11,14 +11,14 @@
         class="mx-auto"
       />
     </ui-link>
-    <ui-divider />
+    <divider />
     <ui-link
       :url="brand.slug"
       class="m-4"
     >
       {{ $t('brand_box.link_name', { brandName: brand.name }) }}
     </ui-link>
-  </ui-card>
+  </card>
 </template>
 <script>
 import VueTypes from 'vue-types';
@@ -26,16 +26,16 @@ import VueTypes from 'vue-types';
 import {
   UiImage,
   UiLink,
-  UiCard,
-  UiDivider,
+  Card,
+  Divider,
 } from '~/components/atoms';
 
 export default {
   components: {
     UiImage,
     UiLink,
-    UiCard,
-    UiDivider,
+    Card,
+    Divider,
   },
   props: {
     brand: VueTypes.shape({

@@ -3,9 +3,9 @@
     :to="linkTo"
     :title="linkTitle"
   >
-    <ui-card class="hover:border-gray-dark">
+    <card class="hover:border-gray-dark">
       <div class="flex flex-col items-center">
-        <ui-icon
+        <icon
           icon="hole"
           color="gray-light"
           size="ls"
@@ -18,7 +18,7 @@
           <ui-title type="h4">{{ title }}</ui-title>
         </div>
       </div>
-    </ui-card>
+    </card>
   </nuxt-link>
 </template>
 
@@ -26,13 +26,13 @@
 <script>
 import VueTypes from 'vue-types';
 import {
-  UiCard, UiIcon, UiImage, UiTitle,
+  Card, Icon, UiImage, UiTitle,
 } from '~/components/atoms';
 
 export default {
   components: {
-    UiCard,
-    UiIcon,
+    Card,
+    Icon,
     UiImage,
     UiTitle,
   },

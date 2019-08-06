@@ -1,5 +1,5 @@
 <template>
-  <ui-card
+  <card
     space="none"
     class="mb-5 flex-auto flex flex-col"
   >
@@ -12,7 +12,7 @@
       />
       <tag v-if="product.isPopular" />
     </div>
-    <ui-divider />
+    <divider />
     <div class="flex-1">
       <ui-title
         class="m-4"
@@ -28,7 +28,7 @@
       />
     </div>
 
-    <ui-divider />
+    <divider />
     <div class="m-4">
       <div class="flex justify-between items-center mb-4">
         <ui-title
@@ -50,26 +50,26 @@
         {{ product.buttonText }}
       </ui-button>
     </div>
-    <ui-divider v-if="product.usps" />
+    <divider v-if="product.usps" />
     <usps
       v-if="product.usps"
       :text="product.usps"
       class="m-4"
     />
-  </ui-card>
+  </card>
 </template>
 
 <script>
 
 import VueTypes from 'vue-types';
 import {
-  UiCard, UiDivider, UiImage, UiButton, UiTitle, Usps, Tag,
+  Card, Divider, UiImage, UiButton, UiTitle, Usps, Tag,
 } from '~/components/atoms';
 
 export default {
   components: {
-    UiCard,
-    UiDivider,
+    Card,
+    Divider,
     UiImage,
     UiButton,
     UiTitle,

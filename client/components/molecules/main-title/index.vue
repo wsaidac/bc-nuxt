@@ -3,7 +3,7 @@
     <ui-title :type="type === 'secondary' ? 'h2' : 'h1'">
       <slot />
     </ui-title>
-    <ui-divider
+    <divider
       type="small"
       class="mt-4 mb-6"
     />
@@ -13,12 +13,12 @@
 <script>
 
 import VueTypes from 'vue-types';
-import { UiTitle, UiDivider } from '~/components/atoms';
+import { UiTitle, Divider } from '~/components/atoms';
 
 export default {
   components: {
     UiTitle,
-    UiDivider,
+    Divider,
   },
   props: {
     type: VueTypes.oneOf(['primary', 'secondary']).def('primary'),

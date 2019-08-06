@@ -5,17 +5,11 @@
 @tailwind base;
 
 html {
-  @apply font-body;
-}
-
-
-
-p {
-  @apply text-base leading-normal text-primary font-normal;
+  @apply font-body text-base leading-normal text-primary font-normal;
 }
 
 @screen lg {
-  p {
+  html {
     @apply text-lg;
   }
 }

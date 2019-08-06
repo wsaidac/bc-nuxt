@@ -16,7 +16,7 @@
         />
         <p class="text-gray-black capitalize pl-4">{{ country.displayName }}</p>
       </div>
-      <ui-icon
+      <icon
         v-if="country.selected"
         icon="check"
         color="success"
@@ -29,13 +29,13 @@
 
 import VueTypes from 'vue-types';
 import { values, pick } from 'lodash';
-import { Flag, UiIcon } from '~/components/atoms';
+import { Flag, Icon } from '~/components/atoms';
 import locales from '~~/config/i18n/localesConfig';
 
 export default {
   components: {
     Flag,
-    UiIcon,
+    Icon,
   },
   props: {
     localeSelected: VueTypes.string.def(''),

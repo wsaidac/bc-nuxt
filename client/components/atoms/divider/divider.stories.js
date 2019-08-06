@@ -5,17 +5,17 @@ import Divider from './index.vue';
 import { info } from '~~/.storybook/utils'
 
 // definition
-Vue.component('ui-divider', Divider)
+Vue.component('divider', Divider)
 
 // stories
 storiesOf('Atoms/Divider', module)
   .add('default', () => ({
-    template: `<ui-divider />`,
+    template: `<divider />`,
     components: { Divider },
   }), info)
   .add(':type=small', () => `
     <card p='4'>
       <ui-title>Lebara mobile</ui-title>
-      <ui-divider type="small"/>
+      <divider type="small"/>
     </card>
   `, info)
