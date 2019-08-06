@@ -7,7 +7,7 @@ include:
     file: javascript.yml
 
 e2e-tests:
-  stage: pre_deploy
+  stage: pre-deploy
   before_script:
     - apk add --update curl && rm -rf /var/cache/apk/*
   script:
