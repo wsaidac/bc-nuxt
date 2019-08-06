@@ -7,11 +7,11 @@ include:
     file: javascript.yml
 
 e2e-tests:
-  stage: test
+  stage: downstream_e2e_tests
   before_script:
     - apk add --update curl && rm -rf /var/cache/apk/*
   script:
-    - "curl -X POST -F token=$CI_JOB_TOKEN -F ref=rapidoe2e-acc https://gitlab.cgaws.cloud/api/v4/projects/29/trigger/pipeline"
+    - "curl -X POST -F token=${CI_JOB_TOKEN} -F ref=rapidoe2e-acc https://gitlab.cgaws.cloud/api/v4/projects/29/trigger/pipeline"
   only:
     - release
     - feature/Trigger_E2E_Tests
