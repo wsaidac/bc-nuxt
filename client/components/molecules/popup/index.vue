@@ -65,7 +65,7 @@ export default {
     description: VueTypes.string.def(''),
     mainButtonText: VueTypes.string.def(''),
     secondaryButtonText: VueTypes.string.def(''),
-    type: VueTypes.oneOf(['warning'])
+    type: VueTypes.oneOf(['warning']),
   },
 };
 

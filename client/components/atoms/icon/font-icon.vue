@@ -1,6 +1,7 @@
 <template>
   <i
     :class="classes"
+    v-bind="$attrs"
     v-on="$listeners"
   >
     <slot />

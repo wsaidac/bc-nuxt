@@ -35,7 +35,8 @@ export default {
         // eslint-disable-next-line global-require
         return require(`~/assets/images/logo/${label}.svg`);
       } catch (error) {
-        return 'https://via.placeholder.com/128x30';
+        // eslint-disable-next-line global-require
+        return require('~/assets/images/logo/logo-white.svg');
       }
     },
   },
