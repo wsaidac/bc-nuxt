@@ -106,6 +106,7 @@ const conf = {
         'script-src': cspPolicies.scripts,
         'style-src': cspPolicies.styles,
         'frame-src': cspPolicies.iframes,
+        'worker-src': cspPolicies.workers,
         'report-uri': cspPolicies.reports,
       },
     },

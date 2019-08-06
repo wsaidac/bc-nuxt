@@ -26,6 +26,13 @@ const scripts = [
   ...marketingURIS,
 ];
 
+const workers = [
+  '\'unsafe-eval\'',
+  '\'unsafe-inline\'',
+  '*.rapido.com',
+  ...marketingURIS,
+];
+
 const styles = ['\'self\'', '\'unsafe-inline\'', '*.rapido.com', '*.cgaws.cloud', ...marketingURIS];
 const iframes = ['\'self\'', 'https://optimize.google.com', 'https://vars.hotjar.com', 'https://www.facebook.com', 'https://www.googletagmanager.com'];
 const reports = [
@@ -33,5 +40,5 @@ const reports = [
 ];
 
 module.exports = {
-  scripts, styles, iframes, reports,
+  scripts, styles, iframes, reports, workers,
 };
