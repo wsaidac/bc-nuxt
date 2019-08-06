@@ -15,6 +15,7 @@ const marketingURIS = [
   '*.trackedlink.net',
   '*.blueconic.net',
   '*.visualwebsiteoptimizer.com',
+  'https://dev.visualwebsiteoptimizer.com',
 ];
 
 const scripts = [
