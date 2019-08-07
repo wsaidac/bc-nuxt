@@ -1,11 +1,11 @@
 const transitionsPlugin = require('tailwindcss-transitions');
+const truncatePlugin = require('tailwindcss-truncate-multiline');
 const tailwindTheme = require('./theme');
 
 const {
   extendBordersPlugin,
   rotateTransformPlugin,
   gradientBackgroundPlugin,
-  ellipsisPlugin,
 } = require('./plugins');
 const {
   createVariant,
@@ -91,6 +91,6 @@ module.exports = {
     rotateTransformPlugin,
     transitionsPlugin(),
     gradientBackgroundPlugin,
-    ellipsisPlugin,
+    truncatePlugin(['responsive']),
   ],
 };

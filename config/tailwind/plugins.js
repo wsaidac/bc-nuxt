@@ -83,34 +83,8 @@ const gradientBackgroundPlugin = ({
 };
 
 
-/**
- *  plugin uses to build `truncate-key-lines` classes based on `ellipsis`
- * example:
- * theme.ellipsis.lines = { 3: '3' }
- * result:
- * .truncate-3-lines {
- *    'overflow': 'hidden',
- *    'display': '-webkit-box',
- *    '-webkit-line-clamp': 3,
- *    '-webkit-box-orient': 'vertical',
- * }
- */
-const ellipsisPlugin = ({ addUtilities, config, e }) => {
-  const ellipsisUtilities = _.map(config('theme.ellipsis.lines'), (value, key) => ({
-    [`.${e(`truncate-${key}-lines`)}`]: {
-      'overflow': 'hidden',
-      'display': '-webkit-box',
-      '-webkit-line-clamp': value,
-      '-webkit-box-orient': 'vertical',
-    },
-  }));
-
-  addUtilities(ellipsisUtilities, ['responsive']);
-};
-
 module.exports = {
   extendBordersPlugin,
   rotateTransformPlugin,
   gradientBackgroundPlugin,
-  ellipsisPlugin,
 };

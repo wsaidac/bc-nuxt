@@ -14,14 +14,22 @@ const marketingURIS = [
   'https://fonts.googleapis.com',
   '*.trackedlink.net',
   '*.blueconic.net',
+  '*.visualwebsiteoptimizer.com',
+  'https://dev.visualwebsiteoptimizer.com',
 ];
 
 const scripts = [
   '\'unsafe-eval\'',
   '\'unsafe-inline\'',
-  '*.trackedlink.net',
   '*.rapido.com',
   '*.cgaws.cloud',
+  ...marketingURIS,
+];
+
+const workers = [
+  '\'unsafe-eval\'',
+  '\'unsafe-inline\'',
+  '*.rapido.com',
   ...marketingURIS,
 ];
 
@@ -32,5 +40,5 @@ const reports = [
 ];
 
 module.exports = {
-  scripts, styles, iframes, reports,
+  scripts, styles, iframes, reports, workers,
 };

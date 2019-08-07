@@ -6,7 +6,7 @@
       :class="['items-center', isSecondLast(index) ? 'flex' : 'hidden md:flex']"
     >
       <span :class="['flex px-2', index ? 'md:flex' : 'md:hidden', isSecondLast(index) ? 'rotate-180 md:rotate-0' : '' ] ">
-        <ui-icon
+        <icon
           icon="breadcrumb"
           size="2xs"
           :color="invertColor ? 'white' : 'link'"
@@ -38,11 +38,11 @@ import {
   get, compact, startCase, range,
 } from 'lodash';
 
-import { UiIcon, UiLink } from '~/components/atoms';
+import { Icon, UiLink } from '~/components/atoms';
 
 export default {
   components: {
-    UiIcon,
+    Icon,
     UiLink,
   },
   props: {

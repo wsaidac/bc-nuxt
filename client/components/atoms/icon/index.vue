@@ -2,16 +2,18 @@
   <font-icon
     v-if="isFontType"
     :icon="icon"
-    v-bind="$attrs"
     :color="color"
     :font-size="fontSize"
+    v-bind="$attrs"
+    v-on="$listeners"
   />
   <svg-icon
     v-else
     :icon="icon"
-    v-bind="$attrs"
     :color="color"
     :font-size="fontSize"
+    v-bind="$attrs"
+    v-on="$listeners"
   />
 </template>
 
@@ -32,6 +34,7 @@ const fontIconTypes = [
   'plus',
   'popular',
   'prepaid-cards',
+  'warning',
 ];
 
 export default {

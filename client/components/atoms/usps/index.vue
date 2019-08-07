@@ -1,16 +1,21 @@
 <template>
-  <p class="text-xs lg:text-length lg:pr-6">
-    <ui-icon
+  <p class="text-base lg:text-length lg:pr-6">
+    <icon
       icon="check"
       color="success"
-      size="xs"
+      size="base"
     />
     <span v-html="text" />
   </p>
 </template>
 
 <script>
+import Icon from '~/components/atoms/icon';
+
 export default {
+  components: {
+    Icon,
+  },
   props: {
     text: {
       type: String,

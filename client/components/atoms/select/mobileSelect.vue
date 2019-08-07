@@ -19,7 +19,7 @@
         {{ option.label }}
       </option>
     </select>
-    <ui-icon
+    <icon
       icon="down"
       :class="['transition-all transition-200 absolute right-0 top-0 p-4', iconClasses]"
       :color="hasError ? 'error' : 'link'"
@@ -31,11 +31,11 @@
 <script>
 import VueTypes from 'vue-types';
 
-import UiIcon from '~/components/atoms/icon';
+import Icon from '~/components/atoms/icon';
 
 export default {
   components: {
-    UiIcon,
+    Icon,
   },
   props: {
     hasError: Boolean,

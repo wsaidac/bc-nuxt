@@ -21,7 +21,7 @@ export default {
   },
   computed: {
     classes() {
-      const base = 'relative rounded-lg border border-gray border-solid overflow-hidden';
+      const base = 'flex-1 mb-5 relative rounded-lg border border-gray border-solid overflow-hidden';
       const hightlight = this.highlighted ? 'border-t-4 rounded-t-none border-t-highlight' : '';
       const padding = `p-${spaceDimensions[this.space]}`;
       return [base, hightlight, padding];

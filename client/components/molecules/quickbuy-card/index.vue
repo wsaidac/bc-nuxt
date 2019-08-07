@@ -1,5 +1,5 @@
 <template>
-  <ui-card
+  <card
     space="none"
     class="mb-4"
   >
@@ -18,7 +18,7 @@
         {{ buttonText }}
       </ui-button>
     </div>
-  </ui-card>
+  </card>
 </template>
 
 
@@ -27,14 +27,14 @@ import VueTypes from 'vue-types';
 import { get } from 'lodash';
 
 import {
-  UiCard, UiTitle, UiButton,
+  Card, UiTitle, UiButton,
 } from '~/components/atoms';
 
 import { BannerImage } from '~/components/molecules';
 
 export default {
   components: {
-    UiCard,
+    Card,
     UiTitle,
     UiButton,
     BannerImage,

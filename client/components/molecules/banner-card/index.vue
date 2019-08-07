@@ -1,19 +1,19 @@
 <template>
   <div class="-ml-4 md:ml-0">
-    <ui-card
+    <card
       space="wide"
       class="max-w-xs lg:max-w-xl"
     >
       <div class="pb-4 lg:pb-0">
         <ui-title>{{ title }}</ui-title>
       </div>
-      <ui-divider
+      <divider
         type="small"
         class="hidden lg:block mt-4 mb-6"
       />
       <p class="hidden lg:block pb-4">{{ description }}</p>
       <ui-button @click.prevent="$emit('banner-card:click')">{{ buttonText }}</ui-button>
-    </ui-card>
+    </card>
   </div>
 </template>
 
@@ -22,8 +22,8 @@ import VueTypes from 'vue-types';
 
 import {
   UiButton,
-  UiCard,
-  UiDivider,
+  Card,
+  Divider,
   UiTitle,
 } from '~/components/atoms';
 
@@ -31,8 +31,8 @@ import {
 export default {
   components: {
     UiButton,
-    UiCard,
-    UiDivider,
+    Card,
+    Divider,
     UiTitle,
   },
   props: {

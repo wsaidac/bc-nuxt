@@ -15181,6 +15181,11 @@ tailwindcss-transitions@^2.0.1:
   dependencies:
     lodash "^4.17.11"
 
+tailwindcss-truncate-multiline@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/tailwindcss-truncate-multiline/-/tailwindcss-truncate-multiline-1.0.2.tgz#d96bbc668d4e7d292dc6c175fb03355b6a2118ae"
+  integrity sha512-Rzi1dnO8zbvRZixRbJuSJFxW2ZEOnXzoM4VzrdD9ucE1+AWMqsCgK0ddZpF69WgQPqTiBRNxI6xWfowfIqAZiA==
+
 tailwindcss@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.0.5.tgz#5145fd61f251be06a77748819e12fb126914095d"

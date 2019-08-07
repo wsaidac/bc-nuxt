@@ -1,21 +1,21 @@
 <template>
-  <ui-card>
+  <card>
     <div
       v-if="description"
       class="html-injected"
       v-html="description"
     />
-  </ui-card>
+  </card>
 </template>
 
 <script>
 
 import VueTypes from 'vue-types';
-import { UiCard } from '~/components/atoms';
+import { Card } from '~/components/atoms';
 
 export default {
   components: {
-    UiCard,
+    Card,
   },
   props: {
     title: VueTypes.string.def(''),

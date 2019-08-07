@@ -86,9 +86,6 @@ function createClient({ store, env }) {
         errors: [],
       };
     } catch (errors) {
-      if (process.env.NODE_ENV !== 'production') {
-        console.error(errors); // eslint-disable-line
-      }
       return ({
         data: {},
         errors: errors.graphQLErrors,

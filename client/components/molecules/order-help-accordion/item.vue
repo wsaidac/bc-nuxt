@@ -1,5 +1,5 @@
 <template>
-  <ui-card
+  <card
     space="none"
     class="hover:border-gray-dark"
   >
@@ -8,7 +8,7 @@
       @click="onToggleAnswer"
     >
       <ui-title type="h4">{{ question }}</ui-title>
-      <ui-icon
+      <icon
         :icon="icon"
         :class="[
           'transition-all transition-200 -rotate-90',
@@ -19,30 +19,30 @@
     </div>
     <smooth-wrapper>
       <div v-if="showAnswer">
-        <ui-divider />
+        <divider />
         <p
           class="p-4 html-injected"
           v-html="answer"
         />
       </div>
     </smooth-wrapper>
-  </ui-card>
+  </card>
 </template>
 
 <script>
 
 import VueTypes from 'vue-types';
 import {
-  UiCard, UiTitle, UiDivider, UiIcon,
+  Card, UiTitle, Divider, Icon,
 } from '~/components/atoms';
 import SmoothWrapper from '~/components/utils/smooth-wrapper';
 
 export default {
   components: {
-    UiCard,
+    Card,
     UiTitle,
-    UiDivider,
-    UiIcon,
+    Divider,
+    Icon,
     SmoothWrapper,
   },
   props: {

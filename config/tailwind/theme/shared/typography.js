@@ -52,7 +52,7 @@ module.exports = {
     wider: '0.05em',
     widest: '0.1em',
   },
-  ellipsis: {
+  truncate: {
     lines: {
       3: '3',
       5: '5',
