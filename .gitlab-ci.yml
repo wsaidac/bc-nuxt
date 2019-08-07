@@ -46,16 +46,6 @@ downstream-e2e-acc:
   only:
     - release
 
-downstream-e2e-prod:
-  stage: pre-deploy
-  before_script:
-    - apk add --update curl && rm -rf /var/cache/apk/*
-  script:
-    - "curl -X POST -F token=52e4da106aff13980fca72c839c825 -F ref=rapidoe2e https://gitlab.cgaws.cloud/api/v4/projects/29/trigger/pipeline"
-  only:
-    - master
-    - tags
-
 acceptance:
   environment:
     name: acceptance
@@ -120,3 +110,13 @@ production:
   environment:
     name: production
     url: https://www.rapido.com/
+
+downstream-e2e-prod:
+  stage: post-deploy
+  before_script:
+    - apk add --update curl && rm -rf /var/cache/apk/*
+  script:
+    - "curl -X POST -F token=52e4da106aff13980fca72c839c825 -F ref=rapidoe2e https://gitlab.cgaws.cloud/api/v4/projects/29/trigger/pipeline"
+  only:
+    - master
+    - tags
