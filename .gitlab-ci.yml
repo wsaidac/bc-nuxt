@@ -35,7 +35,7 @@ e2e-tests:
       - $CYPRESS_DISABLED
       - $CI_COMMIT_MESSAGE =~ /\[skip tests\]/
   only:
-    - merge requests
+    - merge_requests
 
 downstream-e2e-acc:
   stage: pre-deploy
