@@ -1,11 +1,18 @@
 <template>
   <transition name="fade">
     <div
+      role="alertdialog"
+      aria-modal="true"
+      aria-labelledby="fixed-notification-title"
+      aria-describedby="fixed-notification-content"
       style="animation-duration: 0.3s"
       class="fixed bottom-0 left-0 w-screen z-10 border-t-gray border-t"
     >
       <div class="container flex justify-between mx-auto p-4 pt-6">
-        <ui-title type="h4">
+        <ui-title
+          id="fixed-notification-title"
+          type="h4"
+        >
           <icon
             v-if="type === 'warning'"
             color="error"
@@ -25,12 +32,13 @@
       <divider />
       <div class="container mx-auto p-4 pb-6">
         <div
+          id="fixed-notification-content"
           class="html-injected pb-4"
           v-html="content"
         />
         <ui-link
           :url="url"
-          underline
+          data-test="fixed-notification-link"
         >
           {{ linkText }}
         </ui-link>

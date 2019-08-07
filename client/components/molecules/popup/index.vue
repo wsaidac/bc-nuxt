@@ -2,9 +2,15 @@
   <card
     space="none"
     class="max-w-xl"
+    role="alertdialog"
+    aria-modal="true"
+    aria-labelledby="popup-title"
   >
     <div class="flex p-4 mb:items-center justify-between">
-      <ui-title type="h4">
+      <ui-title
+        id="popup-title"
+        type="h4"
+      >
         <icon
           v-if="type === 'warning'"
           icon="warning"
@@ -17,25 +23,36 @@
       <icon
         icon="close"
         color="primary"
-        class="cursor-pointer"
+        class="cursor-pointer focus:outline-none"
+        role="button"
+        data-test="popup-close-button"
+        :aria-label="$t('general.close')"
         @click="$emit('popup__close:click')"
       />
     </div>
     <divider />
     <div class="p-4">
-      <p class="pb-6">{{ description }}</p>
+      <p
+        id="popup-desc"
+        class="pb-6"
+      >
+        {{ description }}
+      </p>
       <div class="flex flex-wrap flex-col-reverse md:flex-row">
         <ui-button
           v-if="secondaryButtonText"
           justify
           type="secondary"
           class="md:mr-4 mt-4 md:mt-0"
+          data-test="popup-secondary-button"
+          :aria-label="secondaryButtonText"
           @click="$emit('popup__secondary-button:click')"
         >
           {{ secondaryButtonText }}
         </ui-button>
         <ui-button
           justify
+          data-test="popup-primary-button"
           @click="$emit('popup__main-button:click')"
         >
           {{ mainButtonText }}

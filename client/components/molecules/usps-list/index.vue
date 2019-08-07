@@ -11,6 +11,7 @@
         (index === defaultUsps) ? '' : 'hidden md:block'
       ]"
       :text="item"
+      tabindex="0"
     />
   </div>
 </template>

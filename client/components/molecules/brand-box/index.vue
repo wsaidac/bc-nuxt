@@ -3,7 +3,10 @@
     class="flex-col flex justify-between"
     space="none"
   >
-    <ui-link class="w-full flex-1 flex items-center">
+    <ui-link
+      class="w-full flex-1 flex items-center"
+      :aria-label="$t('brand_box.link_name', { brandName: brand.name })"
+    >
       <ui-image
         :src="brand.logoSrc"
         :alt="brand.name"
@@ -15,6 +18,7 @@
     <ui-link
       :url="brand.slug"
       class="m-4"
+      data-test="brand-box-link"
     >
       {{ $t('brand_box.link_name', { brandName: brand.name }) }}
     </ui-link>

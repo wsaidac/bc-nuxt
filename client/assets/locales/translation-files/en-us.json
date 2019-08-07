@@ -228,7 +228,8 @@
     "order-now": "Order now",
     "order-safely": "Order safely",
     "show-less": "Show less",
-    "show-more": "Show more"
+    "show-more": "Show more",
+    "close": "Close"
   },
   "header": {
     "login": "Login",

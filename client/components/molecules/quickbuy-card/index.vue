@@ -2,8 +2,11 @@
   <card
     space="none"
     class="mb-4"
+    tabindex="0"
+    :aria-label="title"
   >
     <banner-image
+      aria-hidden="true"
       :src="image"
       :alt="alt"
       :brand="brand"
@@ -14,6 +17,7 @@
       <ui-button
         justify
         class="mt-4"
+        data-test="quick-buy-button"
       >
         {{ buttonText }}
       </ui-button>

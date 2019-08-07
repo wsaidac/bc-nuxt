@@ -18,6 +18,7 @@
         :title="crumb.title"
         :url="crumb.url"
         :invert="invertColor"
+        :data-test="`breadcrumb-${index}`"
         sm
         bold
       >

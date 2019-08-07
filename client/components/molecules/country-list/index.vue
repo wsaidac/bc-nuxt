@@ -3,8 +3,12 @@
     <li
       v-for="country in list"
       :key="country.code"
+      :aria-labelledby="`country-list-text-${country.name}`"
+      tabindex="0"
+      :data-test="`country-list-text-${country.name}`"
+      role="button"
       :class="[
-        'flex px-6 py-4 border border-solid border-gray justify-between items-center mb-2 cursor-pointer hover:bg-gray-light',
+        'flex px-6 py-4 border border-solid border-gray justify-between items-center mb-2 cursor-pointer hover:bg-gray-light focus:outline-none',
         { 'bg-gray-light': country.selected }
       ]"
       @click="onClickLocale(country.code)"
@@ -14,7 +18,12 @@
           :country="country.name"
           squared
         />
-        <p class="text-gray-black capitalize pl-4">{{ country.displayName }}</p>
+        <p
+          :id="`country-list-text-${country.name}`"
+          class="text-gray-black capitalize pl-4"
+        >
+          {{ country.displayName }}
+        </p>
       </div>
       <icon
         v-if="country.selected"

@@ -2,6 +2,7 @@
   <card
     space="none"
     class="mb-5 flex-auto flex flex-col"
+    :aria-labelledby="`product-card-title-${id}`"
   >
     <div class="flex w-full items-center justify-between px-4">
       <ui-image
@@ -15,6 +16,7 @@
     <divider />
     <div class="flex-1">
       <ui-title
+        :id="`product-card-title-${id}`"
         class="m-4"
         type="h4"
         bold

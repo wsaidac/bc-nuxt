@@ -9,7 +9,10 @@
     <divider />
     <div class="m-4">
       <p :class="['mb-4', {'truncate-5-lines md:truncate-3-lines': !showAll }]">{{ content }}</p>
-      <ui-link @click.native="showAll = !showAll">
+      <ui-link
+        data-test="card-info-link"
+        @click.native="showAll = !showAll"
+      >
         {{ $t(`general.show-${showAll ? 'less' : 'more'}`) }}
       </ui-link>
     </div>
