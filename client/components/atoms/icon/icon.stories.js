@@ -8,60 +8,41 @@ import {
   info
 } from '~~/.storybook/utils'
 
+import { fontIconTypes } from './types'
+
 // definition
 Vue.component('icon', Icon)
 
 
-const fontIconTypes = [
-  'breadcrumb',
-  'check',
-  'down',
-  'entertainment',
-  'giftcards',
-  'min',
-  'mobile-recharge',
-  'plus',
-  'popular',
-  'prepaid-cards',
-];
 
 // stories
 storiesOf('Atoms/Icon', module)
   .add('default', () => ({
     data() {
       return {
-        fontIconTypes: [
-          'breadcrumb',
-          'check',
-          'down',
-          'entertainment',
-          'giftcards',
-          'min',
-          'mobile-recharge',
-          'plus',
-          'popular',
-          'prepaid-cards',
-        ]
+        fontIconTypes: fontIconTypes
       }
     },
     template: `
     <container>
-      <ui-title>Font</ui-title>
-      <row wrap>
-        <div
+      <ui-title class="mb-6">Font</ui-title>
+      <row wrap class="mb-8">
+        <column
           v-for="icon in fontIconTypes"
-          class="m-4"
+          class="rounded border border-gray p-4 w-1/4 md:w-1/6 lg:w-1/12 m-2 flex-col items-center justify-center "
         >
           <icon :icon='icon' font-size="3xl"/>
-          <p>{{ icon }}</p>
-        </div>
+          <p class="text-xs lg:text-sm">{{ icon }}</p>
+        </column>
       </row>
       <ui-title>SVG</ui-title>
       <row wrap>
-        <div class="m-4">
+        <column
+          class="rounded border border-gray p-4 w-1/4 md:w-1/6 lg:w-1/12 m-2 flex-col items-center justify-center"
+        >
           <icon icon='hole'/>
           <p>hole</p>
-        </div>
+        </columnclass="m-4>
       </row>
       </container>
     `,

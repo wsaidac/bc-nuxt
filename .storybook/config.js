@@ -34,7 +34,7 @@ import './iconsWeb.js'
 import { breakpoints } from '~/constants';
 
 const paddingDecorator = () => ({
-  template: '<div class="container p-2 lg:p-4 my-0 mx-auto flex"><story/></div>',
+  template: '<div class="container md:p-2 lg:p-4 my-0 mx-auto flex"><story/></div>',
 })
 
 
