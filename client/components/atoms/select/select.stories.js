@@ -1,7 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import Vue from 'vue';
-import ClickOutside from 'vue-click-outside';
-import VueMq from 'vue-mq';
 
 import { storiesOf } from '@storybook/vue';
 import {
@@ -15,24 +13,8 @@ import {
 
 
 import { info } from '~~/.storybook/utils';
-import { breakpoints } from '~/constants';
 
 import Select from './index.vue';
-
-
-Vue.directive('click-outside', ClickOutside);
-
-
-Vue.use(VueMq, {
-  breakpoints: {
-    sm: breakpoints.SM,
-    md: breakpoints.MD,
-    lg: breakpoints.LG,
-  },
-  // default for SSR
-  defaultBreakpoint: 'sm',
-});
-
 
 // definition
 Vue.component('ui-select', Select);
@@ -63,11 +45,11 @@ storiesOf('Atoms/Select', module)
       action: action('selected'),
     },
   }),
-  {
-    info: {
-      summary: 'Check  the `select` event behavior in `actions` tab',
-    },
-  })
+    {
+      info: {
+        summary: 'Check  the `select` event behavior in `actions` tab',
+      },
+    })
   .add(':hasError', () => ({
     components: {
       Select,

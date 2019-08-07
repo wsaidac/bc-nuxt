@@ -7,6 +7,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import VueMq from 'vue-mq';
+import ClickOutside from 'vue-click-outside';
 
 // storybook tools
 import {
@@ -71,6 +72,8 @@ addParameters({
   ],
 });
 
+
+Vue.directive('click-outside', ClickOutside);
 
 // i18n
 Vue.use(fakeI18nPlugin);
