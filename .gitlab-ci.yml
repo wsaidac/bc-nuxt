@@ -71,6 +71,7 @@ deploy-acceptance:
     DOMAIN: rapido-web.acceptance.cgaws.cloud
   only:
     - release
+  when: manual
 
 downstream-e2e-acc:
   stage: post-deploy
@@ -106,7 +107,6 @@ stop-review-app:
   when: manual
 
 production:
-  when: manual
   environment:
     name: production
     url: https://www.rapido.com/
