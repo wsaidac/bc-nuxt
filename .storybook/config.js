@@ -8,6 +8,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import VueMq from 'vue-mq';
 import ClickOutside from 'vue-click-outside';
+import ScrollTo from 'vue-scrollto'
 
 // storybook tools
 import {
@@ -77,6 +78,7 @@ Vue.directive('click-outside', ClickOutside);
 
 // i18n
 Vue.use(fakeI18nPlugin);
+Vue.use(ScrollTo)
 
 // Set the global media queries
 Vue.use(VueMq, {

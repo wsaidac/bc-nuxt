@@ -189,7 +189,8 @@
     "your-login-details": "Your login details"
   },
   "brand_box": {
-    "link_name": "View all {brandName} products"
+    "link_name": "View all {brandName} products",
+    "fast_to": "fast to:"
   },
   "country_select": {
     "button_name": "Confirm",
