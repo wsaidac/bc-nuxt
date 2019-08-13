@@ -37,15 +37,6 @@ e2e-tests:
   only:
     - merge_requests
 
-downstream-e2e-acc:
-  stage: pre-deploy
-  before_script:
-    - apk add --update curl && rm -rf /var/cache/apk/*
-  script:
-    - "curl -X POST -F token=52e4da106aff13980fca72c839c825 -F ref=rapidoe2e-acc https://gitlab.cgaws.cloud/api/v4/projects/29/trigger/pipeline"
-  only:
-    - release
-
 acceptance:
   environment:
     name: acceptance
@@ -78,6 +69,15 @@ deploy-acceptance:
     url: https://rapido-web.acceptance.cgaws.cloud
   variables:
     DOMAIN: rapido-web.acceptance.cgaws.cloud
+  only:
+    - release
+
+downstream-e2e-acc:
+  stage: post-deploy
+  before_script:
+    - apk add --update curl && rm -rf /var/cache/apk/*
+  script:
+    - "curl -X POST -F token=52e4da106aff13980fca72c839c825 -F ref=rapidoe2e-acc https://gitlab.cgaws.cloud/api/v4/projects/29/trigger/pipeline"
   only:
     - release
 
