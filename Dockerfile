@@ -5,10 +5,10 @@
 FROM node:10-alpine as base
 
 ENV APP_HOME=/usr/src/app\
-    HOST=0.0.0.0\
-    PORT=4000
-RUN apk add --update --quiet git curl &&\
-    mkdir -p /usr/src/app
+  HOST=0.0.0.0\
+  PORT=4000
+RUN apk add --update --quiet git curl make 'python>2.7' g++ &&\
+  mkdir -p /usr/src/app
 
 WORKDIR $APP_HOME
 
@@ -27,7 +27,7 @@ FROM base as prod
 
 COPY package.json yarn.lock $APP_HOME/
 RUN yarn global add pm2 --silent &&\
-    yarn install --silent
+  yarn install --silent
 COPY . $APP_HOME
 RUN yarn build
 EXPOSE 4000
