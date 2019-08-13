@@ -21,21 +21,7 @@
 import VueTypes from 'vue-types';
 import FontIcon from './font-icon';
 import SvgIcon from './svg-icon';
-
-const fontIconTypes = [
-  'breadcrumb',
-  'check',
-  'close',
-  'down',
-  'entertainment',
-  'giftcards',
-  'min',
-  'mobile-recharge',
-  'plus',
-  'popular',
-  'prepaid-cards',
-  'warning',
-];
+import { fontIconTypes } from './types';
 
 export default {
   name: 'UiIcon',

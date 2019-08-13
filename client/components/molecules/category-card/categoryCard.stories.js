@@ -27,13 +27,14 @@ storiesOf('Molecules/Catgory Card', CategoryCard)
     },
     template: `
       <container>
-        <row>
+        <row wrap>
           <column
             v-for="n in 6"
             :key="n"
-            class="w-1/6"
+            class="w-1/2 md:w-1/4 lg:w-1/6"
           >
             <category-card
+              :id="n"
               :image="image"
               title='Netflix'
               linkTo='#'

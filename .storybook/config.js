@@ -7,6 +7,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import VueMq from 'vue-mq';
+import ClickOutside from 'vue-click-outside';
+import ScrollTo from 'vue-scrollto'
 
 // storybook tools
 import {
@@ -34,7 +36,7 @@ import './iconsWeb.js'
 import { breakpoints } from '~/constants';
 
 const paddingDecorator = () => ({
-  template: '<div class="container p-2 lg:p-4 my-0 mx-auto flex"><story/></div>',
+  template: '<div class="container md:p-2 lg:p-4 my-0 mx-auto flex"><story/></div>',
 })
 
 
@@ -72,8 +74,11 @@ addParameters({
 });
 
 
+Vue.directive('click-outside', ClickOutside);
+
 // i18n
 Vue.use(fakeI18nPlugin);
+Vue.use(ScrollTo)
 
 // Set the global media queries
 Vue.use(VueMq, {

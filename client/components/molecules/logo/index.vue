@@ -1,9 +1,13 @@
 <template>
   <h1>
-    <ui-link :url="homeLink">
+    <ui-link
+      :url="homeLink"
+      :aria-label="label"
+    >
       <ui-image
         :src="getSrc()"
         :alt="alt"
+        aria-hidden="true"
       />
     </ui-link>
   </h1>
@@ -26,14 +30,16 @@ export default {
     alt() {
       return this.$store.getters['context/domain'];
     },
+    label() {
+      return this.$store.getters['context/label'] || '';
+    },
   },
   methods: {
     getSrc() {
-      const label = this.$store.getters['context/label'];
       try {
         /* eslint-disable import/no-dynamic-require */
         // eslint-disable-next-line global-require
-        return require(`~/assets/images/logo/${label}.svg`);
+        return require(`~/assets/images/logo/${this.label}.svg`);
       } catch (error) {
         // eslint-disable-next-line global-require
         return require('~/assets/images/logo/logo-white.svg');

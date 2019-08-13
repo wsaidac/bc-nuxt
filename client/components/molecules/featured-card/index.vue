@@ -8,6 +8,7 @@
         :src="product.image"
         height="48"
         class="lg:h-54"
+        aria-hidden="true"
       />
     </div>
     <div class="w-full md:w-7/12 p-6">
@@ -18,7 +19,12 @@
         {{ product.title }}
       </ui-title>
       <p class="mb-4">{{ product.description }}</p>
-      <ui-button @click="$emit('feature-card:click')">{{ product.buttonText }}</ui-button>
+      <ui-button
+        data-test="featured-card-button"
+        @click="$emit('feature-card:click')"
+      >
+        {{ product.buttonText }}
+      </ui-button>
     </div>
   </card>
 </template>

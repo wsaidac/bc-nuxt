@@ -8,20 +8,23 @@
 <script>
 import VueTypes from 'vue-types';
 
-const iconTypes = [
-  'hole',
-];
+import { svgTypes } from './types';
+
 
 export default {
   props: {
-    icon: VueTypes.oneOf(iconTypes),
+    icon: VueTypes.oneOf(svgTypes),
   },
   methods: {
     getIcon() {
-      /* eslint-disable global-require */
-      // eslint-disable-next-line import/no-dynamic-require
-      const icon = require(`~/assets/images/icons/redesign/svg/${this.icon}.svg`);
-      return icon;
+      try {
+        /* eslint-disable global-require */
+        // eslint-disable-next-line import/no-dynamic-require
+        const icon = require(`~/assets/images/icons/redesign/svg/${this.icon}.svg`);
+        return icon;
+      } catch (e) {
+        return '';
+      }
     },
   },
 };

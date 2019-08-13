@@ -19,7 +19,7 @@ storiesOf('Molecules/Fixed Notification', module)
     },
     template: `
       <div>
-        <fix-banner
+        <fixed-notification
           v-if="show"
           title="Cookiemelding"
           content="Beltegoed.nl maakt gebruik van cookies (en daarmee vergelijkbare technieken) om onze site persoonlijker te maken en je te voorzien van relevante advertenties. Als je verdergaat op onze website gaan we ervan uit dat je dat goedvindt. Meer weten? Bekijk onze cookiepagina."
@@ -39,7 +39,7 @@ storiesOf('Molecules/Fixed Notification', module)
     },
     template: `
       <div>
-        <fix-banner
+        <fixed-notification
           v-if="show"
           title="Cookiemelding"
           content="Beltegoed.nl maakt gebruik van cookies (en daarmee vergelijkbare technieken) om onze site persoonlijker te maken en je te voorzien van relevante advertenties. Als je verdergaat op onze website gaan we ervan uit dat je dat goedvindt. Meer weten? Bekijk onze cookiepagina."

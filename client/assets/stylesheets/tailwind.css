@@ -16,7 +16,8 @@ html {
 
 input:focus,
 select:focus,
-button:focus {
+button:focus,
+:focus {
   outline: 0;
 }
 

@@ -44,7 +44,7 @@ const DimensionsType = VueTypes.shape({
 });
 
 export default {
-  name: 'Image',
+  name: 'UiImage',
   props: {
     src: VueTypes.oneOfType([
       String,
