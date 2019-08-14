@@ -1,3 +1,5 @@
+import { get } from 'lodash';
+
 export default {
   state() {
     return {
@@ -23,6 +25,7 @@ export default {
     gtmId: ({ gtmId }) => gtmId,
     page: ({ page }) => page,
     homeTitle: ({ title }) => title,
+    faqUrl: ({ customerService }) => get(customerService, 'link.url', 'https://faq.rapido.com/hc/en-us'),
   },
 
   actions: {

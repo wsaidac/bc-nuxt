@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="list.length"
-    class="flex flex-col md:flex-row relative justify-center w-full"
+    class="flex flex-col md:flex-row relative w-full"
   >
     <usps
       v-for="(item, index) in list"
@@ -10,7 +10,7 @@
         'text-center md:text-length md:pr-4 lg:pr-6',
         (index === defaultUsps) ? '' : 'hidden md:block'
       ]"
-      :text="item"
+      :text="item.text"
       tabindex="0"
     />
   </div>
@@ -27,7 +27,7 @@ export default {
     Usps,
   },
   props: {
-    list: VueTypes.arrayOf(String).def([]),
+    list: VueTypes.arrayOf(Object).def([]),
     defaultUsps: VueTypes.number.def(0),
   },
 };
