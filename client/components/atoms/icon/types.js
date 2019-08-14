@@ -7,6 +7,7 @@ export const fontIconTypes = [
   'giftcards',
   'gamecards',
   'homepage',
+  'hamburger',
   'min',
   'mobile-recharge',
   'plus',

@@ -212,10 +212,13 @@
   "footer": {
     "customer-care": "Customer Care",
     "order-with": "order with",
+    "part_of": "Part of",
     "privacy-statement": "Privacy statement",
     "quote": "Rapido.com is part of CG | Millions of satisfied customers",
     "safely": "Safely",
-    "safely-order-with": "Order Safely with:"
+    "safely-order-with": "Order Safely with:",
+    "service-help": "Service and Help",
+    "categories": "Categories"
   },
   "general": {
     "critical_error": "Something went wrong. Reload the page to try again.",

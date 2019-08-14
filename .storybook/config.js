@@ -35,10 +35,6 @@ import fakeI18nPlugin from '~~/.storybook/fakeI18nPlugin';
 import './iconsWeb.js'
 import { breakpoints } from '~/constants';
 
-const paddingDecorator = () => ({
-  template: '<div class="container md:p-2 lg:p-4 my-0 mx-auto flex"><story/></div>',
-})
-
 
 // hack necessary for storyshots
 // why? https://github.com/storybookjs/storybook/issues/1011
@@ -57,7 +53,6 @@ if (process.env.NODE_ENV !== 'test') {
   require('../node_modules/flag-icon-css/css/flag-icon.min.css')
 }
 
-addDecorator(paddingDecorator)
 setAddon(JSXAddon)
 
 // Option defaults.
@@ -70,6 +65,7 @@ addParameters({
   backgrounds: [
     { name: 'base', value: '#FFF', default: true },
     { name: 'black', value: '#333' },
+    { name: 'main', value: '#f3f3f3' }
   ],
 });
 
@@ -101,7 +97,6 @@ Vue.component('nuxt-link', {
   },
   template: `<a href="#" @click.prevent="log()"><slot>NuxtLink</slot></a>`,
 })
-
 
 // set vuex
 Vue.use(Vuex)

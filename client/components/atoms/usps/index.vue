@@ -1,11 +1,14 @@
 <template>
-  <p class="text-base lg:text-length lg:pr-6">
+  <p class="text-xs font-light lg:pr-6 flex items-center">
     <icon
       icon="check"
       color="success"
       size="base"
     />
-    <span v-html="text" />
+    <span
+      class="pl-1"
+      v-html="text"
+    />
   </p>
 </template>
 

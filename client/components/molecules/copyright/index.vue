@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex justify-center items-center">
-    <p class="text-xs text-gray-black mr-2">{{ $t('footer.quote') }}</p>
+    <p class="text-xs text-gray-black mr-2">{{ $t('footer.part_of') }}</p>
     <a
       aria-label="creative group"
       href="https://cg.nl"

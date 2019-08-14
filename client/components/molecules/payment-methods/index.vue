@@ -1,12 +1,12 @@
 <template>
   <ul
     v-if="list.length"
-    class="flex"
+    class="flex py-4 items-center justify-center lg:justify-end"
   >
     <li
       v-for="method in list"
       :key="method.name"
-      class="pr-4"
+      class="pr-4 last:pr-0"
     >
       <ui-link
         :to="link"
@@ -15,6 +15,8 @@
         <ui-image
           :src="method.image"
           :alt="method.name"
+          height="10"
+          width="10"
         />
       </ui-link>
     </li>
