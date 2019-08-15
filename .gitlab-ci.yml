@@ -6,6 +6,37 @@ include:
   - project: infra/ci
     file: javascript.yml
 
+e2e-tests:
+  variables:
+  # to cache both npm modules and Cypress binary we use environment variables
+  # to point at the folders we can list as paths in "cache" job settings
+    YARN_CACHE_FOLDER: "$CI_PROJECT_DIR/.yarn"
+    CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/.cache/Cypress"
+    NODE_ENV: development
+    API_BROWSER: https://api-hub.eu-west-1.production.cgaws.cloud
+    API_SERVER: https://api-hub.eu-west-1.production.cgaws.cloud
+    PORT: 4000
+  # cache using branch name
+  cache:
+    paths:
+      - .yarn
+      - .cache/Cypress
+      - node_modules
+  stage: test
+  image: cypress/base:10
+  before_script:
+    - yarn install --silent
+    - yarn cypress:verify
+  script:
+    - echo "Testing application code with e2e tests"
+    - yarn test:e2e
+  except:
+    variables:
+      - $CYPRESS_DISABLED
+      - $CI_COMMIT_MESSAGE =~ /\[skip tests\]/
+  only:
+    - merge_requests
+
 acceptance:
   environment:
     name: acceptance
@@ -40,6 +71,16 @@ deploy-acceptance:
     DOMAIN: rapido-web.acceptance.cgaws.cloud
   only:
     - release
+  when: manual
+
+downstream-e2e-acc:
+  stage: post-deploy
+  before_script:
+    - apk add --update curl && rm -rf /var/cache/apk/*
+  script:
+    - "curl -X POST -F token=52e4da106aff13980fca72c839c825 -F ref=rapidoe2e-acc https://gitlab.cgaws.cloud/api/v4/projects/29/trigger/pipeline"
+  only:
+    - release
 
 deploy-review-app:
   extends: .deploy
@@ -66,7 +107,16 @@ stop-review-app:
   when: manual
 
 production:
-  when: manual
   environment:
     name: production
     url: https://www.rapido.com/
+
+downstream-e2e-prod:
+  stage: post-deploy
+  before_script:
+    - apk add --update curl && rm -rf /var/cache/apk/*
+  script:
+    - "curl -X POST -F token=52e4da106aff13980fca72c839c825 -F ref=rapidoe2e https://gitlab.cgaws.cloud/api/v4/projects/29/trigger/pipeline"
+  only:
+    - master
+    - tags

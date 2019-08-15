@@ -1,8 +1,9 @@
-const i18nConfig = require('./client/config/i18nConfig.js');
+const i18nConfig = require('./config/i18n');
+const cspPolicies = require('./config/csp-policies');
 
 require('dotenv').config();
 
-const label = 'rapido';
+const label = process.env.LABEL || 'rapido';
 
 const conf = {
   srcDir: 'client/',
@@ -10,9 +11,28 @@ const conf = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'google-site-verification', content: 'ucjZbRW69cw2QRUWZRRKisI5gkTFEeLjanWmv3U9HW0' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [{ src: '/blueconic.js' }, { src: '//cdn.blueconic.net/cg.js' }],
+    link: [
+      {
+        rel: 'dns-prefetch',
+        href: '//fonts.googleapis.com',
+      },
+      {
+        rel: 'preconnect',
+
+        href: 'https://fonts.gstatic.com/',
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,800&display=swap&subset=latin-ext',
+      },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      { src: '/blueconic.js' },
+      { src: '//cdn.blueconic.net/cg.js' },
+      { src: '/vwo.js' },
+    ],
   },
   css: ['~/assets/stylesheets/application.scss'],
   store: true,
@@ -34,19 +54,24 @@ const conf = {
       }
 
       config.module.rules.push({
+        test: /\.(graphql|gql)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'graphql-tag/loader',
+        },
+      });
+
+      config.module.rules.push({
         test: /\.html$/,
         use: ['html-loader'],
       });
-
-      // example alias
-      // const alias = lodash.get(config, 'resolve.alias', {}) || {};
-      // alias['@ui'] = path.join(this.buildContext.options.srcDir, 'components/ui');
     },
     postcss: {
       plugins: {
         'postcss-import': {},
         'postcss-url': {},
         'postcss-preset-env': {},
+        // 'tailwindcss': path.resolve(__dirname, './config/tailwind/tailwind.config.js'),
       },
     },
     extractCSS: process.env.NODE_ENV !== 'development',
@@ -79,27 +104,11 @@ const conf = {
     },
     csp: {
       policies: {
-        'script-src': [
-          '\'unsafe-eval\'',
-          '\'unsafe-inline\'',
-          'https://www.googletagmanager.com',
-          'https://tagmanager.google.com',
-          'https://www.googleadservices.com',
-          'https://www.google-analytics.com',
-          'https://bat.bing.com',
-          'https://connect.facebook.net',
-          'https://static.hotjar.com',
-          'https://script.hotjar.com',
-          'https://googleads.g.doubleclick.net',
-          '*.trackedlink.net',
-          '*.blueconic.net',
-          '*.rapido.com',
-          '*.cgaws.cloud',
-        ],
-        'style-src': ['\'self\'', '\'unsafe-inline\'', 'https://tagmanager.google.com', 'https://fonts.googleapis.com', '*.rapido.com', '*.cgaws.cloud'],
-        'report-uri': [
-          'https://sentry.io/api/1441242/security/?sentry_key=98825ca3d73c4dd58305cd0e794873c4',
-        ],
+        'script-src': cspPolicies.scripts,
+        'style-src': cspPolicies.styles,
+        'frame-src': cspPolicies.iframes,
+        'worker-src': cspPolicies.workers,
+        'report-uri': cspPolicies.reports,
       },
     },
   },
@@ -107,30 +116,21 @@ const conf = {
     middleware: ['checkLocale', 'strip-trailing-slash'],
   },
   modules: [
-    '@nuxtjs/pwa',
     ['@nuxtjs/style-resources'],
     'cookie-universal-nuxt',
     ['@nuxtjs/sentry'],
     ['~/modules/iconsWeb'],
-    [
-      'artemis-graphql',
-      {
-        browserUri: 'env://API_BROWSER',
-        serverUri: 'env://API_SERVER',
-        extendedHeaders: 'extendedGraphqlHeaders',
-      },
-    ],
     ['nuxt-i18n', i18nConfig(label)],
   ],
   env: {
     API_BROWSER: process.env.API_BROWSER,
     API_SERVER: process.env.API_SERVER,
-    GTM_ID: process.env.GTM_ID_RAPIDO,
+    GTM_ID: process.env.GTM_ID,
     GTM_DEBUG: process.env.NODE_ENV === 'development',
-    DOMAIN: 'www.rapido.com',
     LABEL: label,
   },
   plugins: [
+    '~/plugins/artemis.js',
     '~/plugins/env.js',
     '~/plugins/vuelidate.js',
     '~/plugins/vuetouch.js',
@@ -144,6 +144,7 @@ const conf = {
     '~/plugins/moment.js',
     '~/plugins/pagination.js',
     '~/plugins/element-ui.js',
+    '~/plugins/click-outside-directive.js',
   ],
   sentry: {
     dsn: process.env.SENTRY_DNS,
@@ -155,14 +156,6 @@ const conf = {
     webpack: {
       poll: true,
     },
-  },
-
-  manifest: {
-    start_url: '/?utm_source=PWA',
-    description: false,
-    ogDescription: false,
-    title: false,
-    ogTitle: false,
   },
 };
 

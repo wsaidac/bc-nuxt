@@ -1,3 +1,5 @@
+import { get } from 'lodash';
+
 export default {
   state() {
     return {
@@ -23,13 +25,13 @@ export default {
     gtmId: ({ gtmId }) => gtmId,
     page: ({ page }) => page,
     homeTitle: ({ title }) => title,
+    faqUrl: ({ customerService }) => get(customerService, 'link.url', 'https://faq.rapido.com/hc/en-us'),
   },
 
   actions: {
     async fetchShared({ commit }, { app, error }) {
       try {
-        const { post } = await app.$q('shared');
-
+        const { data: { post } } = await app.$query('shared');
         if (!post) {
           error({ statusCode: 404, message: app.i18n.t('general.critical_error') });
         } else {
@@ -39,9 +41,8 @@ export default {
           commit('setCustomerService', post.customerService);
           commit('setInstantDelivery', post.instantDelivery);
           commit('setPaymentMethods', post.paymentMethods);
+          commit('setUsps', post.usps);
         }
-
-        commit('setUsps', post.usps);
       } catch ({ statusCode, message }) {
         error({ statusCode, message });
       }

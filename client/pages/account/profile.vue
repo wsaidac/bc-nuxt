@@ -80,6 +80,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+import { pick } from 'lodash';
 import SidebarMain from '~/components/sidebar/main';
 import FormChangeEmail from '~/components/form/change-email';
 import FormChangePassword from '~/components/form/change-password';
@@ -96,9 +98,6 @@ import {
   UiPanel,
   UiRow,
 } from '~/components/ui';
-
-import { mapGetters } from 'vuex';
-import { pick } from 'lodash';
 
 function pickPersonalDetails(user) {
   return pick(user.currentPersonalData, [
@@ -160,16 +159,14 @@ export default {
   },
 
   async asyncData({ app }) {
-    const {
-      currentUser: { user },
-    } = await app.$q('currentPersonalData');
+    const { data: { currentUser: { user } } } = await app.$query('currentPersonalData');
     return {
       personalDetails: pickPersonalDetails(user),
       addressDetails: pickAddressDetails(user),
     };
   },
 
-  middleware: ['auth', 'usps'],
+  middleware: ['auth'],
 
   methods: {
     showMessage(message) {
@@ -187,7 +184,7 @@ export default {
     },
 
     async saveDetails() {
-      const { errors } = await this.$mutate('createPersonalData', {
+      const { errors } = await this.$mutation('createPersonalData', {
         personalData: this.personalData,
       });
       if (errors.length > 0) {

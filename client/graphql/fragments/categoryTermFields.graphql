@@ -1,5 +1,3 @@
-#import "../fragments/brandTermFields.graphql"
-#import "../fragments/kindTermFields.graphql"
 fragment categoryTermFields on CategoryTerm {
   name
   description
@@ -67,12 +65,15 @@ fragment categoryTermFields on CategoryTerm {
       slug
       brands:brandTerms {
         nodes {
-          ...brandTermFields
+          name
         }
       }
       kinds:kindTerms {
         nodes {
-          ...kindTermFields
+          name
+          kindTitle {
+            title
+          }
         }
       }
       categories: categoryTerms {

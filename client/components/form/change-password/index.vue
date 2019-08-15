@@ -85,7 +85,7 @@ export default {
 
   methods: {
     async changePassword() {
-      const { errors } = await this.$mutate('changePassword', this.user);
+      const { errors } = await this.$mutation('changePassword', this.user);
       if (errors.length > 0) {
         this.$emit('error', `account.${errors[0].message}`);
       } else {

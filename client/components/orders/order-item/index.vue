@@ -62,7 +62,7 @@
               placement="top-start"
               trigger="hover"
             >
-              <p v-html="$t('account.orders.description-inprogress')" />
+              <p v-html="$t('account.orders.description-inprogress', { 'contact-link': contactLink })" />
               <ui-icon
                 slot="reference"
                 class="input-help"
@@ -146,6 +146,9 @@ export default {
   },
 
   computed: {
+    contactLink() {
+      return `/${this.$i18n.locale}/contact`;
+    },
     product() {
       return this.order.products[0];
     },

@@ -1,3 +1,0 @@
-fragment brandTermFields on BrandTerm {
-  name
-}

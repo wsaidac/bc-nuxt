@@ -11,3 +11,12 @@ Sitemap: https://www.rapido.com/da-dk/sitemap.xml
 Sitemap: https://www.rapido.com/it-it/sitemap.xml
 Sitemap: https://www.rapido.com/fi-fi/sitemap.xml
 Sitemap: https://www.rapido.com/en-ie/sitemap.xml
+Sitemap: https://www.rapido.com/sl-si/sitemap.xml
+Sitemap: https://www.rapido.com/pt-pt/sitemap.xml
+Sitemap: https://www.rapido.com/en-gb/sitemap.xml
+Sitemap: https://www.rapido.com/es-us/sitemap.xml
+Sitemap: https://www.rapido.com/de-ch/sitemap.xml
+Sitemap: https://www.rapido.com/fr-ch/sitemap.xml
+Sitemap: https://www.rapido.com/nl-be/sitemap.xml
+Sitemap: https://www.rapido.com/sv-se/sitemap.xml
+Sitemap: https://www.rapido.com/no-no/sitemap.xml

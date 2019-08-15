@@ -1,21 +1,10 @@
+import { get } from 'lodash';
+
 export default {
   computed: {
     faqUrl() {
-      const { locale } = this.$store.state.i18n;
-      const links = {
-        'en-us': 'https://faq.rapido.com/hc/en-us',
-        'fr-be': 'https://faq.rapido.com/hc/fr',
-        'de-at': 'https://faq.rapido.com/hc/de',
-        'pl-pl': 'https://faq.rapido.com/hc/pl',
-        'da-dk': 'https://faq.rapido.com/hc/da',
-        'es-es': 'https://faq.rapido.com/hc/es',
-        'it-it': 'https://faq.rapido.com/hc/it',
-        'fi-fi': 'https://faq.rapido.com/hc/fi',
-      };
-      if (links[locale]) {
-        return links[locale];
-      }
-      return links['en-us'];
+      const { link } = this.$store.getters['shared/customerService'];
+      return get(link, 'url', 'https://faq.rapido.com/hc/en-us');
     },
   },
 };

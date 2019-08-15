@@ -1,0 +1,31 @@
+# dependencies
+node_modules
+
+# logs
+npm-debug.log
+yarn-error.log
+id_rsa
+log/
+coverage
+client/coverage
+
+# Nuxt build
+.nuxt
+
+# Nuxt generate
+dist
+
+.serverless
+package-lock.json
+*.snap
+sw.*
+.DS_Store
+*.log
+
+
+
+cache
+cypress/**/*
+.npm
+.nuxt
+infra

@@ -1,6 +1,6 @@
 <template>
   <div class="product-popular">
-    <h2
+    <h1
       class="product-popular__title"
       v-text="popularProducts.title"
     />
@@ -35,8 +35,8 @@
 </template>
 
 <script>
-import { UiCol, UiRow } from '~/components/ui';
 import { get } from 'lodash';
+import { UiCol, UiRow } from '~/components/ui';
 
 export default {
   name: 'ProductPopular',

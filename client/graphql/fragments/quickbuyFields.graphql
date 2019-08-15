@@ -1,4 +1,5 @@
 fragment quickbuyFields on CmsProduct {
+  id
   title
   information {
     issueValue
@@ -27,7 +28,7 @@ fragment quickbuyFields on CmsProduct {
           description
         }
       }
-      products {
+      products(first: 4) {
         nodes {
           title
           id

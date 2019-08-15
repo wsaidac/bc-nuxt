@@ -1,6 +1,6 @@
-import Footer from './index.vue';
 import { shallowMount, createLocalVue } from '@vue/test-utils';
 import Vuex from 'vuex';
+import Footer from './index.vue';
 import Shared from '~/store/shared';
 
 const localVue = createLocalVue();

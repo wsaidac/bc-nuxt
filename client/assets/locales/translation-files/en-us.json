@@ -53,10 +53,6 @@
     },
     "female": "Female",
     "first-name": "First name",
-    "footer": {
-      "need-help": "Do you need help? Check out our <a>frequently asked questions</a>.",
-      "safe-methods": "<strong>Safe</strong> payments with:"
-    },
     "forgot-password": "Help, I forgot my password",
     "format": "dd/MM/yyyy",
     "gender": "Gender",
@@ -237,7 +233,8 @@
     "order-now": "Order now",
     "order-safely": "Order safely",
     "show-less": "Show less",
-    "show-more": "Show more"
+    "show-more": "Show more",
+    "close": "Close"
   },
   "header": {
     "login": "Login",

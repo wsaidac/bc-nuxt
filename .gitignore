@@ -21,3 +21,9 @@ package-lock.json
 sw.*
 .DS_Store
 *.log
+
+# Cypress
+cypress/integration/examples
+cypress/videos
+cypress/**/**/example.*
+.env

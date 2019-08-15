@@ -1,10 +1,13 @@
 import Vue from 'vue';
 import VueMq from 'vue-mq';
+import { breakpoints } from '~/constants';
 
 Vue.use(VueMq, {
   breakpoints: {
-    sm: 768,
-    md: 992,
-    lg: 1260,
+    sm: breakpoints.SM,
+    md: breakpoints.MD,
+    lg: breakpoints.LG,
   },
+  // default for SSR
+  defaultBreakpoint: 'sm',
 });

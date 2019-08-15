@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import removeContextChangeLoader from '~/mixins/removeContextChangeLoader';
 import { uppercaseCountryInLocale } from '~/utils/';
 
@@ -49,7 +50,7 @@ export default {
       link: [
         {
           rel: 'alternate',
-          href: `https://${process.env.DOMAIN}${this.$route.path}`,
+          href: `https://${this.domain}${this.$route.path}`,
           hreflang: uppercaseCountryInLocale(locale),
         },
       ],
@@ -59,6 +60,7 @@ export default {
   mixins: [removeContextChangeLoader],
 
   computed: {
+    ...mapGetters('context', ['domain']),
     category() {
       if (this.post.__typename !== 'Product') return null;
       return this.post.categories && this.post.categories.nodes[0];
@@ -67,9 +69,8 @@ export default {
 
   async asyncData({ app, route }) {
     const slug = slugFromPath(route.path, app.i18n.locale);
-
     try {
-      const { post } = await app.$q('post', { slug });
+      const { data: { post } } = await app.$query('post', { slug });
       if (post === null) {
         return {
           layout: 'Error',
@@ -81,7 +82,6 @@ export default {
         };
       }
 
-      /* prettier-ignore */
       post.__typename = post.__typename === 'CmsProduct' ? 'Product' : post.__typename;
       return { layout: post.__typename, post };
     } catch (event) {

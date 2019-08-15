@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import UiIcon from '~/components/ui/icon';
 import ElDialog from 'element-ui/lib/dialog.js';
+import UiIcon from '~/components/ui/icon';
 
 export default {
   components: {

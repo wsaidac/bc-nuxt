@@ -8,12 +8,12 @@
     <div class="header-navbar__top">
       <div class="header-navbar__top-content container">
         <h1 class="header-navbar__brand">
-          <a :href="homeLink">
+          <nuxt-link :to="homeLink">
             <img
               :alt="$t('general.domain')"
               src="~/assets/images/logo-white.svg"
             >
-          </a>
+          </nuxt-link>
         </h1>
         <div class="spacer" />
         <div class="header-navbar__top-right">
