@@ -30,6 +30,8 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import { get } from 'lodash';
+
 import { UiIcon } from '~/components/ui';
 
 export default {
@@ -51,7 +53,7 @@ export default {
   computed: {
     ...mapGetters('menus', ['footer']),
     paymentMethodsLink() {
-      return this.footer.paymentMethods.slug;
+      return get(this, 'footer.paymentMethods.slug', '');
     },
   },
 };
