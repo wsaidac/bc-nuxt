@@ -1,5 +1,5 @@
 <template>
-  <ul class="flex">
+  <ul class="flex py-4">
     <li
       v-for="(crumb, index) in crumbs"
       :key="crumb.url"
@@ -8,7 +8,7 @@
       <span :class="['flex px-2', index ? 'md:flex' : 'md:hidden', isSecondLast(index) ? 'rotate-180 md:rotate-0' : '' ] ">
         <icon
           icon="breadcrumb"
-          size="2xs"
+          font-size="2xs"
           :color="invertColor ? 'white' : 'link'"
         />
       </span>
@@ -20,7 +20,6 @@
         :invert="invertColor"
         :data-test="`breadcrumb-${index}`"
         sm
-        bold
       >
         {{ crumb.label }}
       </ui-link>

@@ -7,24 +7,25 @@
   >
   <picture
     v-else
-    class="w-full"
+    :class="classes"
   >
     <source
       :media="`(min-width:${breakpoints.LG}px)`"
-      :srcset="`${src.regular}, ${src.retina || src.regular} 2x`"
+      :srcset="`${regular}, ${src.retina || regular} 2x`"
     >
     <source
-      :media="`(min-width:${breakpoints.MD}px)`"
-      :srcset="src.tablet || src.regular"
+      :media="`(max-width:${breakpoints.MD}px)`"
+      :srcset="tablet"
     >
     <source
-      :media="`(min-width:${breakpoints.SM}px)`"
-      :srcset="src.smartphone || src.tablet || src.regular"
+      :media="`(maX-width:${breakpoints.SM}px)`"
+      :srcset="smartphone"
     >
     <img
-      :src="src.regular"
+      :src="regular"
       :alt="imageAlt"
-      :class="['object-cover', classes]"
+      v-bind="$attrs"
+      :class="[classes]"
     >
   </picture>
 </template>
@@ -40,6 +41,7 @@ const DimensionsType = VueTypes.shape({
   smartphone: String,
   retina: String,
   tablet: String,
+  desktop: String,
   alt: String,
 });
 
@@ -49,7 +51,7 @@ export default {
     src: VueTypes.oneOfType([
       String,
       DimensionsType,
-    ]).def('https://via.placeholder.com/300'),
+    ]).def(''),
     ratio: VueTypes.oneOfType([
       String,
       DimensionsType,
@@ -71,6 +73,19 @@ export default {
     imageAlt() {
       return get(this, 'src.alt', false) || this.alt;
     },
+    regular() {
+      if (!this.isResponsive) return this.src;
+      return this.src.regular || this.src.desktop;
+    },
+    tablet() {
+      const { mobile, tablet } = this.src;
+      return tablet || mobile || this.regular;
+    },
+    smartphone() {
+      return this.src.smartphone || this.tablet;
+    },
+
+
   },
 };
 </script>

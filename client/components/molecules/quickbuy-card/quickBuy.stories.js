@@ -25,7 +25,7 @@ storiesOf('Molecules/QuickBuy Card', module)
           alt: 'Fifa 2019',
         },
         brand: {
-          src: 'https://cdn.zeplin.io/5d23163f91be672e1f32200e/assets/3404DAE0-2E76-4D77-90D0-40E88D782648.svg',
+          regular: 'https://cdn.zeplin.io/5d23163f91be672e1f32200e/assets/3404DAE0-2E76-4D77-90D0-40E88D782648.svg',
         },
       };
     },
