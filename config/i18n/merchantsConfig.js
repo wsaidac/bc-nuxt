@@ -11,7 +11,7 @@ module.exports = {
       'fr-ch',
       'fr-be',
       'nl-be',
-      'pl-pl',
+      // 'pl-pl',
       'da-dk',
       'it-it',
       'fi-fi',
