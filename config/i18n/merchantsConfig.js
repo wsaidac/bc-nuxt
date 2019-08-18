@@ -12,7 +12,7 @@ module.exports = {
       'fr-be',
       'nl-be',
       // 'pl-pl',
-      'da-dk',
+      // 'da-dk',
       'it-it',
       'fi-fi',
       'es-es',

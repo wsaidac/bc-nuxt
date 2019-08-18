@@ -93,7 +93,7 @@ function generateLocaleConfig(locale, name, currency, status) {
 }
 
 module.exports = {
-  'da-dk': generateLocaleConfig('da-dk', 'Danmark', 'DKK', 'active'),
+  // 'da-dk': generateLocaleConfig('da-dk', 'Danmark', 'DKK', 'active'),
   'de-at': generateLocaleConfig('de-at', 'Österreich', 'EUR', 'active'),
   'en-us': generateLocaleConfig('en-us', 'United States', 'USD', 'active'),
   'fr-be': generateLocaleConfig('fr-be', 'Belgique (Français)', 'EUR', 'active'),
