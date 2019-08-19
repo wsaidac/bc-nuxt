@@ -1,7 +1,7 @@
 module.exports = {
   rapido: {
     id: 11,
-    defaultLocale: 'en-ie',
+    defaultLocale: 'en-us',
     locales: [
       'en-us',
       'en-gb',
