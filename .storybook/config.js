@@ -26,6 +26,7 @@ import theme from './theme';
 import 'vue2-animate/dist/vue2-animate.css';
 
 import fakeI18nPlugin from '~~/.storybook/fakeI18nPlugin';
+import routerPlugin from '~~/.storybook/fakeRouterPlugin';
 
 /**
  *  config for webfonts-loader
@@ -74,6 +75,7 @@ Vue.directive('click-outside', ClickOutside);
 
 // i18n
 Vue.use(fakeI18nPlugin);
+Vue.use(routerPlugin);
 Vue.use(ScrollTo)
 
 // Set the global media queries

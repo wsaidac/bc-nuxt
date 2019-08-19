@@ -25,7 +25,7 @@ storiesOf('Molecules/Banner Image', module)
           alt: 'Fifa 2019',
         },
         brand: {
-          src: 'https://cdn.zeplin.io/5d23163f91be672e1f32200e/assets/3404DAE0-2E76-4D77-90D0-40E88D782648.svg',
+          regular: 'https://cdn.zeplin.io/5d23163f91be672e1f32200e/assets/3404DAE0-2E76-4D77-90D0-40E88D782648.svg',
           alt: 'Xbox',
         },
       };
@@ -43,6 +43,35 @@ storiesOf('Molecules/Banner Image', module)
         </column>
       </row>
     </container>
+    `,
+    methods: {
+      action: action('on button click'),
+    },
+
+  }), info)
+  .add('full', () => ({
+    components: {
+      BannerImage,
+    },
+    data() {
+      return {
+        image: {
+          regular: 'https://static.rapido.com/cms/sites/10/2019/05/09114132/1yI3Jb4Q0dbAXnWN5HB4ti/Netflix_Desktop.jpg',
+          alt: 'Netflix',
+        },
+        brand: {
+          src: 'https://cdn.zeplin.io/5d23163f91be672e1f32200e/assets/AA30DFF1-CBE3-4D1E-8822-B4804E329FC0.svg',
+          alt: 'Netflix',
+        },
+      };
+    },
+    template: `
+          <banner-image
+            alt="Fifa 19 points"
+            :src="image"
+            :brand="brand"
+            with-breadcrumbs
+          />
     `,
     methods: {
       action: action('on button click'),

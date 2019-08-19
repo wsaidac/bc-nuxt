@@ -189,8 +189,8 @@
     "your-login-details": "Your login details"
   },
   "brand_box": {
-    "link_name": "View all {brandName} products",
-    "fast_to": "fast to:"
+    "fast_to": "fast to:",
+    "link_name": "View all {brandName} products"
   },
   "country_select": {
     "button_name": "Confirm",
@@ -210,6 +210,7 @@
     "title": "Page not found"
   },
   "footer": {
+    "categories": "Categories",
     "customer-care": "Customer Care",
     "order-with": "order with",
     "part_of": "Part of",
@@ -217,10 +218,10 @@
     "quote": "Rapido.com is part of CG | Millions of satisfied customers",
     "safely": "Safely",
     "safely-order-with": "Order Safely with:",
-    "service-help": "Service and Help",
-    "categories": "Categories"
+    "service-help": "Service and Help"
   },
   "general": {
+    "close": "Close",
     "critical_error": "Something went wrong. Reload the page to try again.",
     "domain": "Rapido.com",
     "help": "Help",
