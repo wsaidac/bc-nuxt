@@ -4,7 +4,7 @@ const localesConfig = require('./localesConfig');
 
 module.exports = function (label) {
   const { locales, defaultLocale } = merchantsConfig[label];
-  const defaultLocaleFile = `../../client/assets/locales/translation-files/en-us.json`;
+  const defaultLocaleFile = `../../client/assets/locales/translation-files/${defaultLocale}.json`;
   const merchantConfig = pick(localesConfig, locales);
   const sortedLocales = sortBy(merchantConfig, 'displayName');
 

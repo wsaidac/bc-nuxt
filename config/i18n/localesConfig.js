@@ -93,18 +93,18 @@ function generateLocaleConfig(locale, name, currency, status) {
 }
 
 module.exports = {
-  // 'da-dk': generateLocaleConfig('da-dk', 'Danmark', 'DKK', 'active'),
+  'da-dk': generateLocaleConfig('da-dk', 'Danmark', 'DKK', 'active'),
   'de-at': generateLocaleConfig('de-at', 'Österreich', 'EUR', 'active'),
-  // 'en-us': generateLocaleConfig('en-us', 'United States', 'USD', 'active'),
+  'en-us': generateLocaleConfig('en-us', 'United States', 'USD', 'active'),
   'fr-be': generateLocaleConfig('fr-be', 'Belgique (Français)', 'EUR', 'active'),
-  // 'pl-pl': generateLocaleConfig('pl-pl', 'Polska', 'PLN', 'active'),
+  'pl-pl': generateLocaleConfig('pl-pl', 'Polska', 'PLN', 'active'),
   'it-it': generateLocaleConfig('it-it', 'Italia', 'EUR', 'active'),
   'fi-fi': generateLocaleConfig('fi-fi', 'Suomi', 'EUR', 'active'),
   'es-es': generateLocaleConfig('es-es', 'España', 'EUR', 'active'),
   'en-ie': generateLocaleConfig('en-ie', 'Ireland', 'EUR', 'active'),
   'pt-pt': generateLocaleConfig('pt-pt', 'Portugal', 'EUR', 'active'),
   'sk-sk': generateLocaleConfig('sk-sk', 'Slovensko', 'EUR', 'active'),
-  // 'en-gb': generateLocaleConfig('en-gb', 'Great Britain', 'GBP', 'active'),
+  'en-gb': generateLocaleConfig('en-gb', 'Great Britain', 'GBP', 'active'),
   'es-us': generateLocaleConfig('es-us', 'United States (Spanish)', 'USD', 'inactive'),
   'de-ch': generateLocaleConfig('de-ch', 'Schweiz', 'CHF', 'inactive'),
   'fr-ch': generateLocaleConfig('fr-ch', 'Suisse', 'CHF', 'inactive'),
