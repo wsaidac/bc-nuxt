@@ -11,7 +11,7 @@ const conf = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'google-site-verification', content: 'ucjZbRW69cw2QRUWZRRKisI5gkTFEeLjanWmv3U9HW0' },
+      { name: 'google-site-verification', content: 'QE0K3CMCBw6wZF_p7UnOAj_KKcIhfXgpkubjiJQM_KM' },
     ],
     link: [
       {
