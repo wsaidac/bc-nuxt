@@ -15,27 +15,27 @@ Vue.component('menu-accordion', MenuAccordion)
 
 const items = [
   {
-    label: 'Mobile Recharge',
+    title: 'Mobile Recharge',
     slug: 'recharge',
     icon: 'mobile-recharge',
   },
   {
-    label: 'Prepaid credit cards',
+    title: 'Prepaid credit cards',
     slug: 'prepaid',
     icon: 'prepaid-cards'
   },
   {
-    label: 'Entertainment',
+    title: 'Entertainment',
     slug: 'entertainment',
     icon: 'entertainment',
   },
   {
-    label: "Game cards",
+    title: "Game cards",
     slug: 'gamecards',
     icon: 'gamecards',
   },
   {
-    label: "Gift cards",
+    title: "Gift cards",
     slug: 'gift-cards',
     icon: 'giftcards',
   }
@@ -47,7 +47,7 @@ storiesOf('Atoms/Menu Accordion Item', module)
     template: `
       <menu-accordion-item
         icon="entertainment"
-        label="Mobile Recharge"
+        title="Mobile Recharge"
         slug="recharge"
         @menu-accordion-item:click="action"
       />`,
@@ -68,10 +68,11 @@ storiesOf('Molecules/Menu Accordion', module)
     template: `
       <menu-accordion
         :list="list"
+        @menu-accordion__item:click="action"
       />`,
     components: { Item },
     methods: {
-      action: action('menu_accordion-item')
+      action: action('menu_accordion__item')
     }
   }), info)
   .add('without icons', () => ({

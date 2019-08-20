@@ -1,6 +1,7 @@
 module.exports = {
   transitionProperty: {
     all: 'all',
+    transform: 'transform',
   },
   transitionDuration: {
     200: '200ms',

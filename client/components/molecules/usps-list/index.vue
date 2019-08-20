@@ -8,7 +8,7 @@
       :key="index"
       :class="[
         'text-center md:text-length md:pr-4 lg:pr-6',
-        (index === defaultUsps) ? '' : 'hidden md:block'
+        (index === defaultUsps) ? '' : 'hidden md:flex'
       ]"
       :text="item.text"
       tabindex="0"

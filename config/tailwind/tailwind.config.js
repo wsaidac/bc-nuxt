@@ -1,5 +1,7 @@
 const transitionsPlugin = require('tailwindcss-transitions');
+const transformPlugin = require('tailwindcss-transforms');
 const truncatePlugin = require('tailwindcss-truncate-multiline');
+
 const tailwindTheme = require('./theme');
 
 const {
@@ -82,6 +84,17 @@ module.exports = {
     wordBreak: ['responsive'],
     width: ['responsive'],
     zIndex: ['responsive'],
+    transform: ['responsive'],
+    transformOrigin: ['responsive'],
+    translate: ['responsive'],
+    scale: ['responsive', 'active'],
+    rotate: ['responsive'],
+    skew: ['responsive'],
+    perspective: ['responsive'],
+    perspectiveOrigin: ['responsive'],
+    transformStyle: ['responsive'],
+    backfaceVisibility: ['responsive'],
+    transformBox: ['responsive'],
   },
   corePlugins: {},
   plugins: [
@@ -92,5 +105,6 @@ module.exports = {
     transitionsPlugin(),
     gradientBackgroundPlugin,
     truncatePlugin(['responsive']),
+    transformPlugin(),
   ],
 };

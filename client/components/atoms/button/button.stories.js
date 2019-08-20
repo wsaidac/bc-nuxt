@@ -16,7 +16,7 @@ import {
   action
 } from '@storybook/addon-actions';
 
-Vue.component('my-button', UIButton)
+Vue.component('ui-button', UIButton)
 
 const typeOptions = {
   Primary: 'primary',
@@ -47,43 +47,43 @@ storiesOf('Atoms/Button', module)
       action: action('clicked')
     },
     template: `
-      <my-button
+      <ui-button
         :disable="disable"
         :justify="justify"
         :type="type"
       >
         {{ text }}
-      </my-button>
+      </ui-button>
     `,
   }), {
       info: {}
     })
-  .add(':type=primary', () => `<my-button >Button</my-button>`, {
+  .add(':type=primary', () => `<ui-button >Button</ui-button>`, {
     info: {}
   })
-  .add(':type=secondary', () => `<my-button type='secondary'>Button</my-button>`, {
+  .add(':type=secondary', () => `<ui-button type='secondary'>Button</ui-button>`, {
     info: {}
   })
   .add(':disable', () => `
     <div>
       <h4 style="color: #777">Primary:</h4>
-      <my-button disable my='3'>
+      <ui-button disable my='3'>
         disable Primary button
-      </my-button>
+      </ui-button>
       <h4 style="color: #777">Secondary</h4>
-      <my-button disable type='secondary' my='3'>
+      <ui-button disable type='secondary' my='3'>
         disable Primary button
-      </my-button>
+      </ui-button>
     </div>
 
   `, {
       info: {}
     })
-  .add(':loading', () => `<my-button loading>Button loading</my-button>`, {
+  .add(':loading', () => `<ui-button loading>Button loading</ui-button>`, {
     info: {}
   })
   .add(':justify', () => ({
-    template: `<my-button @click='action' justify type='primary'>another test</my-button>`,
+    template: `<ui-button @click='action' justify type='primary'>another test</ui-button>`,
     methods: {
       action: action('clicked')
     },
