@@ -13,3 +13,4 @@ export { default as Breadcrumbs } from './breadcrumbs';
 export { default as ProductCardCta } from './product-card-cta';
 export { default as ProductCard } from './product-card';
 export { default as MenuAccordion } from './menu-accordion';
+export { default as OrderHelpAccordion } from './order-help-accordion';
