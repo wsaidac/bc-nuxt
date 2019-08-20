@@ -29,29 +29,12 @@
         v-html="product.content"
       />
     </div>
-
     <divider />
-    <div class="m-4">
-      <div class="flex justify-between items-center mb-4">
-        <ui-title
-          type="h2"
-          class="font-extrabold"
-        >
-          {{ product.value }}
-        </ui-title>
-        <p class="text-gray-black text-right leading-none font-light text-xs lg:text-lg">
-          {{ `+ ${product.serviceFee}` }}
-          <br>
-          {{ `servicekosten` }}
-        </p>
-      </div>
-      <ui-button
-        justify
-        @click.prevent="$emit('product-card:click', product.id)"
-      >
-        {{ product.buttonText }}
-      </ui-button>
-    </div>
+    <product-card-cta
+      :value="product.value"
+      :service-fee="product.serviceFee"
+      @product-card-cta:click="$emit('product-card:click', product.id)"
+    />
     <divider v-if="product.usps" />
     <usps
       v-if="product.usps"
@@ -65,18 +48,19 @@
 
 import VueTypes from 'vue-types';
 import {
-  Card, Divider, UiImage, UiButton, UiTitle, Usps, Tag,
+  Card, Divider, UiImage, UiTitle, Usps, Tag,
 } from '~/components/atoms';
+import { ProductCardCta } from '~/components/molecules';
 
 export default {
   components: {
     Card,
     Divider,
     UiImage,
-    UiButton,
     UiTitle,
     Usps,
     Tag,
+    ProductCardCta,
   },
   props: {
     product: VueTypes.shape({

@@ -2,7 +2,6 @@ import { get } from 'lodash'
 
 import translations from '~/assets/locales/translation-files/en-us.json'
 
-// const config = require('../config/i18n')
 
 export default {
   install(Vue, options = {}) {
@@ -18,5 +17,6 @@ export default {
       ],
     };
     Vue.prototype.$t = path => get(translations, path, 'wrong $t key');
+    Vue.prototype.$n = value => `$${value}`
   },
 };

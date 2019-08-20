@@ -25,7 +25,7 @@ export default {
   computed: {
     classes() {
       const base = 'btn';
-      const justify = 'flex-1';
+      const justify = 'w-full';
       const disable = 'opacity-20 cursor-not-allowed';
       const active = !this.disable ? 'cursor-pointer active:scale-96 active:border-solid' : '';
 

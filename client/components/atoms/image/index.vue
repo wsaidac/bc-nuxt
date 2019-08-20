@@ -68,7 +68,7 @@ export default {
       return breakpoints;
     },
     classes() {
-      return `object-cover h-${this.height} w-${this.width}`;
+      return `object-cover object-center h-${this.height} w-${this.width}`;
     },
     imageAlt() {
       return get(this, 'src.alt', false) || this.alt;

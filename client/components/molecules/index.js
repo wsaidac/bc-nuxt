@@ -9,5 +9,7 @@ export { default as LegalLinks } from './legal-links';
 export { default as HeaderLinks } from './header-links';
 export { default as Locale } from './locale';
 export { default as UspsList } from './usps-list';
-export { default as MenuAccordion } from './menu-accordion';
 export { default as Breadcrumbs } from './breadcrumbs';
+export { default as ProductCardCta } from './product-card-cta';
+export { default as ProductCard } from './product-card';
+export { default as MenuAccordion } from './menu-accordion';
