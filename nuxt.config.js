@@ -32,6 +32,7 @@ const conf = {
       { src: '/blueconic.js' },
       { src: '//cdn.blueconic.net/cg.js' },
       { src: '/vwo.js' },
+      { src: '/riskified.js' },
     ],
   },
   css: ['~/assets/stylesheets/application.scss'],
@@ -117,6 +118,7 @@ const conf = {
   },
   modules: [
     ['@nuxtjs/style-resources'],
+    'nuxt-session',
     'cookie-universal-nuxt',
     ['@nuxtjs/sentry'],
     ['~/modules/iconsWeb'],

@@ -16,6 +16,7 @@ const marketingURIS = [
   '*.blueconic.net',
   '*.visualwebsiteoptimizer.com',
   'https://dev.visualwebsiteoptimizer.com',
+  '*.riskified.com',
 ];
 
 const scripts = [
