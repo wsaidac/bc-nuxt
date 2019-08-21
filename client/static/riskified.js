@@ -16,7 +16,6 @@
       return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
     };
 
-    debugger // eslint-disable-line
     var store_domain = 'https://www.rapido.com';
     var session_id = getCookie('RiskifiedSessionId') || generateRandomString();
 
