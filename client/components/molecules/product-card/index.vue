@@ -9,7 +9,7 @@
         :src="product.image"
         :alt="altText"
         height="12"
-        width="auto"
+        width="28"
       />
       <tag v-if="product.isPopular" />
     </div>

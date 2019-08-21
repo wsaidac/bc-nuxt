@@ -6,10 +6,10 @@
           <column class="w-1/2 md:w-2/3 lg:w-2/12">
             <logo />
           </column>
-          <column class="hidden lg:flex w-8/12">
+          <column class="hidden lg:flex lg:w-9/12">
             <header-links :items="categoryLinks" />
           </column>
-          <column class="w-1/2 md:w-1/3 lg:w-2/12 justify-end items-end">
+          <column class="w-1/2 md:w-1/3 lg:w-1/12 justify-end items-end">
             <div class="flex items-center">
               <locale
                 :country="country"
