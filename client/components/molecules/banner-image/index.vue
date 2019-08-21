@@ -3,6 +3,7 @@
     <ui-image
       :src="src"
       :alt="alt"
+      height="full"
     />
     <div
       v-if="withBreadcrumbs"
@@ -49,14 +50,22 @@ export default {
       alt: VueTypes.string.def(''),
     }).def(''),
     withBreadcrumbs: Boolean,
-    height: VueTypes.oneOf([String, Number]).def(''),
+    type: VueTypes.oneOf(['header', 'card']).def('header'),
+    height: VueTypes.string.def(''),
     full: Boolean,
   },
   computed: {
+    heightClass() {
+      if (this.type === 'header') {
+        return 'h-banner-sm lg:h-banner';
+      }
+
+      return this.height ? `h-${this.height}` : '';
+    },
     classes() {
       return [
         'w-full gradient relative overflow-hidden',
-        { [`h-${this.height}`]: this.height },
+        this.heightClass,
       ];
     },
   },

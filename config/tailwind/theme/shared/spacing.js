@@ -57,10 +57,12 @@ module.exports = {
     'screen': '100vw',
   }),
   height: theme => ({
-    auto: 'auto',
+    'auto': 'auto',
     ...theme('spacing'),
-    full: '100%',
-    screen: '100vh',
+    'banner-sm': '19rem',
+    'banner': '20rem',
+    'full': '100%',
+    'screen': '100vh',
   }),
   minWidth: {
     0: '0',
