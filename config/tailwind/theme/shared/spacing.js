@@ -18,6 +18,7 @@ module.exports = {
     '48': '12rem',
     '54': '15rem',
   },
+  inset: theme => theme('spacing'),
   screens: {
     sm: '640px',
     md: '768px',
@@ -27,6 +28,7 @@ module.exports = {
   width: theme => ({
     'auto': 'auto',
     ...theme('spacing'),
+    '40': '40rem',
     '1/2': '50%',
     '1/3': '33.33333%',
     '2/3': '66.66667%',
