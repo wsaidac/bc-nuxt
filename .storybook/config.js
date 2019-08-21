@@ -64,9 +64,9 @@ addParameters({
     hierarchyRootSeparator: /\|/,
   },
   backgrounds: [
-    { name: 'base', value: '#FFF', default: true },
+    { name: 'base', value: '#FFF' },
     { name: 'black', value: '#333' },
-    { name: 'main', value: '#f3f3f3' }
+    { name: 'main', value: '#f3f3f3', default: true }
   ],
 });
 

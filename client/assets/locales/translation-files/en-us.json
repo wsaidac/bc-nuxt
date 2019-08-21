@@ -234,14 +234,18 @@
     "order-safely": "Order safely",
     "show-less": "Show less",
     "show-more": "Show more",
-    "close": "Close"
+    "select": "Select {label}",
+    "go-to": "Go to {label}"
   },
   "header": {
     "login": "Login",
     "main-nav": "Main Menu",
     "menu": "Menu",
     "my-account": "My Account",
-    "profile": "profile"
+    "profile": "profile",
+    "mobile_menu": {
+      "button_overview": "To overview"
+    }
   },
   "home": {
     "featured-products": "Featured products",

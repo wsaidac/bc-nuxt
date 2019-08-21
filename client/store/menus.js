@@ -1,6 +1,6 @@
 
 import {
-  get, startCase, map, isEmpty, reduce, compact,
+  get, startCase, map, isEmpty, reduce, compact, kebabCase,
 } from 'lodash';
 
 
@@ -9,6 +9,7 @@ const retrieveImageFromMenuItem = node => getNestedKeySafelyFromObject(node, ['a
   || getNestedKeySafelyFromObject(node, ['connectedObject', 'categoryHeader', 'image']);
 
 const unwrapNode = node => ({
+  slug: kebabCase(node.label),
   title: node.label,
   url: `/${getNestedKeySafelyFromObject(node, ['connectedObject', 'slug'])}`,
   image: retrieveImageFromMenuItem(node),
@@ -60,9 +61,12 @@ const LEGAL_LINKS_TYPES = ['cookieStatement', 'generalConditions', 'privacyPolic
  * Method to get formatted category links
  * @param {Object} main
  * @return {Array} [..., { title, url }]
+ * @TODO: include new icons in cms
  */
-const getCategoryLinks = (main = {}) => map(main.categories, ({ title, url }) => ({
-  title, url,
+const getCategoryLinks = (main = {}) => map(main.categories, ({
+  title, url, categories, slug,
+}) => ({
+  title, url, categories, icon: 'giftcards', slug,
 }));
 
 /**

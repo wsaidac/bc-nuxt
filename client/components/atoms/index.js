@@ -9,3 +9,4 @@ export { default as UiButton } from './button';
 export { default as Flag } from './flag';
 export { default as Tag } from './tag';
 export { default as Collapsable } from './collapsable';
+export { default as ButtonIcon } from './button-icon';

@@ -7,7 +7,7 @@
       >
         <column class="w-full md:w-1/3">
           <footer-links
-            :title="t$('footer.service-help')"
+            :title="$t('footer.service-help')"
             :links="serviceLinks"
           />
         </column>
