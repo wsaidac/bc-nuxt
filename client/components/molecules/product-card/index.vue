@@ -1,7 +1,7 @@
 <template>
   <card
     space="none"
-    class="mb-5 flex-auto flex flex-col"
+    class="mb-5 flex-auto flex flex-col bg-white"
     :aria-labelledby="`product-card-title-${id}`"
   >
     <div class="flex w-full items-center justify-between px-4">
@@ -9,7 +9,7 @@
         :src="product.image"
         :alt="altText"
         height="12"
-        width="18"
+        width="auto"
       />
       <tag v-if="product.isPopular" />
     </div>

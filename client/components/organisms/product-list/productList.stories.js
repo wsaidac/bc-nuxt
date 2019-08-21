@@ -1,21 +1,17 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import Vue from 'vue';
 import { get } from 'lodash';
+/* eslint-disable */
 import { storiesOf } from '@storybook/vue';
-import {
-  action,
-} from '@storybook/addon-actions';
-import ProductDetails from './index.vue';
-import { info } from '~~/.storybook/utils';
-
+import ProductList from './index.vue';
+import { info } from '~~/.storybook/utils'
 import store from '~~/.storybook/store';
-import productMock from '~~/.storybook/mocks/product-post.prop.json';
+import categoryMock from '~~/.storybook/mocks/category-post.prop.json';
 import mock from '~~/.storybook/mocks/homepage.state.json';
 
 const uspsMock = get(mock, 'shared.usps', {});
 
-// definition
-Vue.component('product-details', ProductDetails);
+const productsMock = categoryMock.products;
+
 
 
 const fakeContent = '<ul><li>This content description is fake</li><li>Onbeperkt bellen en SMSen naar Lebara nummers</li> <li>500 MB data 4G</li></ul>';
@@ -39,36 +35,32 @@ const getProductImage = (post = {}) => {
 const getProductFromPost = (post = {}) => ({
   value: get(post, 'information.issueValue', ''),
   title: post.title,
-  rapidoId: get(this, 'product.rapidoProduct.id'),
+  rapidoId: get(post, 'rapidoProduct.id'),
   banner: getProductBanner(post),
   image: getProductImage(post),
   serviceFee: '???', // missing-field
   description: fakeContent, // missing-field
 });
 
+
+const products = productsMock.nodes.map(product => getProductFromPost(product))
+
+
 store.commit('shared/setUsps', uspsMock);
 
 
+// definition
+Vue.component('product-list', ProductList)
+
+
 // stories
-storiesOf('Organisms/Product Details', module)
+storiesOf('Organisms/Product List', module)
   .add('default', () => ({
-    components: {
-      ProductDetails,
-    },
     data() {
       return {
-        product: getProductFromPost(productMock),
-      };
+        products: products,
+      }
     },
-    template: `
-      <product-details
-        :product="product"
-        @product-card:click="action"
-      />
-    `,
-    methods: {
-      action: action('product-card:click'),
-    },
-    store,
-
-  }), info);
+    template: `<product-list title="Spotify Gift Cards" :products="products"/>`,
+    components: { ProductList },
+  }), info)

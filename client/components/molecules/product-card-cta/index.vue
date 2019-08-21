@@ -25,12 +25,11 @@
       {{ $t('general.order-safely') }}
     </ui-button>
   </div>
-
 </template>
 
 <script>
-import VueTypes from 'vue-types'
-import { UiTitle, UiButton } from '~/components/atoms'
+import VueTypes from 'vue-types';
+import { UiTitle, UiButton } from '~/components/atoms';
 
 export default {
   components: {
@@ -39,8 +38,8 @@ export default {
   },
   props: {
     value: VueTypes.string.def(''),
-    serviceFee: VueTypes.string.def('')
-  }
-}
+    serviceFee: VueTypes.string.def(''),
+  },
+};
 
 </script>
