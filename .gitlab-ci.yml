@@ -71,6 +71,7 @@ deploy-acceptance:
     DOMAIN: rapido-web.acceptance.cgaws.cloud
   only:
     - release
+  when: manual
 
 downstream-e2e-acc:
   stage: post-deploy
