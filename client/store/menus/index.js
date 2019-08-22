@@ -68,7 +68,11 @@ const LEGAL_LINKS_TYPES = ['cookieStatement', 'generalConditions', 'privacyPolic
 const getCategoryLinks = (main = {}) => map(main.categories, ({
   title, url, categories, slug,
 }) => ({
-  title, url, categories, icon: 'giftcards', slug,
+  title,
+  url,
+  categories,
+  icon: 'giftcards',
+  slug,
 }));
 
 /**
