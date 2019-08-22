@@ -93,7 +93,6 @@ export default {
 
   &__title,
   &__subtitle {
-    line-height: 1em;
     text-align: center;
   }
 
