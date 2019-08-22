@@ -38,7 +38,7 @@ export default {
     },
     content: {
       type: String,
-      required: true,
+      default: '',
     },
     popperClass: {
       type: String,
