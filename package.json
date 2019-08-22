@@ -66,7 +66,7 @@
     "newrelic": "^5.7.0",
     "node-fetch": "^2.1.2",
     "normalize-scss": "^7.0.1",
-    "nuxt": "^2.7.0",
+    "nuxt": "~2.8.0",
     "nuxt-i18n": "5.8.5",
     "nuxt-session": "^1.0.3",
     "postcss-flexbugs-fixes": "^4.1.0",
