@@ -1,0 +1,1376 @@
+{
+  "menus": {
+    "nodes": [
+      {
+        "menuItems": {
+          "nodes": [
+            {
+              "label": "Mobile recharge",
+              "url": "https://www.rapido.com/en-us/mobile-recharge",
+              "additionalAttributes": {
+                "attachedImage": {
+                  "regular": "https://static.rapido.com/cms/sites/3/2019/03/26093649/icon-phone.png",
+                  "retina": "https://static.rapido.com/cms/sites/3/2019/03/26093649/icon-phone.png",
+                  "altText": "",
+                  "description": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "AdditionalAttributes"
+              },
+              "childItems": {
+                "nodes": [
+                  {
+                    "label": "Access Wireless",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/access-wireless-refill/",
+                    "connectedObject": {
+                      "name": "Access Wireless",
+                      "slug": "access-wireless-refill",
+                      "categoryHeader": {
+                        "title": "Access Wireless Refill",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095457/2lgMWo1ir9QvW4WRmD7H8B/AccessWirelessLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095457/4d6c5JWccZMw7uv7K3Mi2A/AccessWirelessLogo.png",
+                          "altText": "Access Wireless Refill",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Airvoice",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/airvoice-wireless-refill/",
+                    "connectedObject": {
+                      "name": "Airvoice",
+                      "slug": "airvoice-wireless-refill",
+                      "categoryHeader": {
+                        "title": "Airvoice Wireless Refill",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095841/2lgMWo1ir9QvW4WRmD7H8B/AirvoiceLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095841/4d6c5JWccZMw7uv7K3Mi2A/AirvoiceLogo.png",
+                          "altText": "Airvoice Wireless Refill",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "AT&amp;T",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/at-t-refill/",
+                    "connectedObject": {
+                      "name": "AT&amp;T",
+                      "slug": "at-t-refill",
+                      "categoryHeader": {
+                        "title": "AT&T Prepaid Refill ",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/04/10111938/2lgMWo1ir9QvW4WRmD7H8B/ATandTLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/04/10111938/4d6c5JWccZMw7uv7K3Mi2A/ATandTLogo.png",
+                          "altText": "",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Cintex Wireless",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/cintex-wireless-refill/",
+                    "connectedObject": {
+                      "name": "Cintex Wireless",
+                      "slug": "cintex-wireless-refill",
+                      "categoryHeader": {
+                        "title": "Cintex Wireless Refill",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095843/2lgMWo1ir9QvW4WRmD7H8B/CintexWirelessLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095843/4d6c5JWccZMw7uv7K3Mi2A/CintexWirelessLogo.png",
+                          "altText": "Cintex Wireless Refill",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Ecomobile",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/ecomobile-refill/",
+                    "connectedObject": {
+                      "name": "Ecomobile",
+                      "slug": "ecomobile-refill",
+                      "categoryHeader": {
+                        "title": "ECO Mobile Refill",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095845/2lgMWo1ir9QvW4WRmD7H8B/EcoMobileLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095845/4d6c5JWccZMw7uv7K3Mi2A/EcoMobileLogo.png",
+                          "altText": "ECO Mobile Refill",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Good2Go Mobile",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/good2go-mobile-refill/",
+                    "connectedObject": {
+                      "name": "Good2Go mobile",
+                      "slug": "good2go-mobile-refill",
+                      "categoryHeader": {
+                        "title": "Good2GO Mobile Refill",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095846/2lgMWo1ir9QvW4WRmD7H8B/Good2GoMobileLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095846/4d6c5JWccZMw7uv7K3Mi2A/Good2GoMobileLogo.png",
+                          "altText": "Good2GO Mobile Refill",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "H2O",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/h2o-wireless-refill/",
+                    "connectedObject": {
+                      "name": "H2O",
+                      "slug": "h2o-wireless-refill",
+                      "categoryHeader": {
+                        "title": "H2O Wireless Refill",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/04/16081408/2lgMWo1ir9QvW4WRmD7H8B/h2o_logo.jpg",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/04/16081408/4d6c5JWccZMw7uv7K3Mi2A/h2o_logo.jpg",
+                          "altText": "H2O Wireless Refill",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Life Wireless",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/life-wireless-refill/",
+                    "connectedObject": {
+                      "name": "Life wireless",
+                      "slug": "life-wireless-refill",
+                      "categoryHeader": {
+                        "title": "Life Wireless Refill",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095848/2lgMWo1ir9QvW4WRmD7H8B/LifeWirelessLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095848/4d6c5JWccZMw7uv7K3Mi2A/LifeWirelessLogo.png",
+                          "altText": "Life Wireless Refill",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "MyPhone2GO",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/myphone2go-refill/",
+                    "connectedObject": {
+                      "name": "MyPhone2GO",
+                      "slug": "myphone2go-refill",
+                      "categoryHeader": {
+                        "title": "MyPhone2GO Refill",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095849/2lgMWo1ir9QvW4WRmD7H8B/MyPhone2GoLogo.jpg",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095849/4d6c5JWccZMw7uv7K3Mi2A/MyPhone2GoLogo.jpg",
+                          "altText": "MyPhone2GO Refill",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Net10",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/net10-refill/",
+                    "connectedObject": {
+                      "name": "Net10",
+                      "slug": "net10-refill",
+                      "categoryHeader": {
+                        "title": "Net10 Refill",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095850/2lgMWo1ir9QvW4WRmD7H8B/Net10Logo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095850/4d6c5JWccZMw7uv7K3Mi2A/Net10Logo.png",
+                          "altText": "Net10 Refill",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Page Plus",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/page-plus-refill/",
+                    "connectedObject": {
+                      "name": "Page plus",
+                      "slug": "page-plus-refill",
+                      "categoryHeader": {
+                        "title": "Page Plus Refill",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095852/2lgMWo1ir9QvW4WRmD7H8B/PagePlusLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095852/4d6c5JWccZMw7uv7K3Mi2A/PagePlusLogo.png",
+                          "altText": "Page Plus Refill",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Real Mobile",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/real-mobile-refill/",
+                    "connectedObject": {
+                      "name": "Real Mobile",
+                      "slug": "real-mobile-refill",
+                      "categoryHeader": {
+                        "title": "REAL Mobile Refill",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095853/2lgMWo1ir9QvW4WRmD7H8B/RealMobileLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095853/4d6c5JWccZMw7uv7K3Mi2A/RealMobileLogo.png",
+                          "altText": "REAL Mobile Refill",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Red Pocket",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/red-pocket-refill/",
+                    "connectedObject": {
+                      "name": "Red pocket",
+                      "slug": "red-pocket-refill",
+                      "categoryHeader": {
+                        "title": "Red Pocket Refill",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095854/2lgMWo1ir9QvW4WRmD7H8B/RedPocketLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095854/4d6c5JWccZMw7uv7K3Mi2A/RedPocketLogo.png",
+                          "altText": "Red Pocket Refill",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "SafeLink Wireless",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/safelink-wireless-refill/",
+                    "connectedObject": {
+                      "name": "SafeLink Wireless",
+                      "slug": "safelink-wireless-refill",
+                      "categoryHeader": {
+                        "title": "Safelink Wireless Data Bundles",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095855/2lgMWo1ir9QvW4WRmD7H8B/SafeLinkWireless.jpg",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095855/4d6c5JWccZMw7uv7K3Mi2A/SafeLinkWireless.jpg",
+                          "altText": "SafeLink Wireless Data Bundles",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Simple Mobile",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/simple-mobile-reup/",
+                    "connectedObject": {
+                      "name": "Simple mobile",
+                      "slug": "simple-mobile-reup",
+                      "categoryHeader": {
+                        "title": "Simple Mobile ReUp",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095855/2lgMWo1ir9QvW4WRmD7H8B/SimpleMobileLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095855/4d6c5JWccZMw7uv7K3Mi2A/SimpleMobileLogo.png",
+                          "altText": "Simple Mobile ReUp",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "T-Mobile",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/t-mobile-refill/",
+                    "connectedObject": {
+                      "name": "T-Mobile",
+                      "slug": "t-mobile-refill",
+                      "categoryHeader": {
+                        "title": "T-Mobile Refill",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095858/2lgMWo1ir9QvW4WRmD7H8B/TMobileLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095858/4d6c5JWccZMw7uv7K3Mi2A/TMobileLogo.png",
+                          "altText": "T-Mobile Refill",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Telcel America",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/telcel-america-refill/",
+                    "connectedObject": {
+                      "name": "Telcel America",
+                      "slug": "telcel-america-refill",
+                      "categoryHeader": {
+                        "title": "Telcel America Data Bundles",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095857/2lgMWo1ir9QvW4WRmD7H8B/TelcelAmericaLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095857/4d6c5JWccZMw7uv7K3Mi2A/TelcelAmericaLogo.png",
+                          "altText": "Telcel America Refill",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Total Wireless",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/total-wireless-refill/",
+                    "connectedObject": {
+                      "name": "Total Wireless",
+                      "slug": "total-wireless-refill",
+                      "categoryHeader": {
+                        "title": "Total Wireless Refill",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095858/2lgMWo1ir9QvW4WRmD7H8B/TotalWirelessLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095858/4d6c5JWccZMw7uv7K3Mi2A/TotalWirelessLogo.png",
+                          "altText": "Total Wireless Refill",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Tracfone",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/tracfone-refill/",
+                    "connectedObject": {
+                      "name": "Tracfone",
+                      "slug": "tracfone-refill",
+                      "categoryHeader": {
+                        "title": "TracFone Refill - Pay As You Go Plans",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095859/2lgMWo1ir9QvW4WRmD7H8B/TracfoneLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095859/4d6c5JWccZMw7uv7K3Mi2A/TracfoneLogo.png",
+                          "altText": "TracFone Minutes Refill",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Verizon",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/verizon-prepaid-refill/",
+                    "connectedObject": {
+                      "name": "verizon",
+                      "slug": "verizon-prepaid-refill",
+                      "categoryHeader": {
+                        "title": "Verizon Prepaid Cards",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095900/2lgMWo1ir9QvW4WRmD7H8B/VerizonLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095900/4d6c5JWccZMw7uv7K3Mi2A/VerizonLogo.png",
+                          "altText": "Verizon Prepaid Cards",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  }
+                ],
+                "__typename": "MenuItemToMenuItemConnection"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "label": "Entertainment Gift Cards",
+              "url": "https://www.rapido.com/en-us/entertainment-gift-cards",
+              "additionalAttributes": {
+                "attachedImage": {
+                  "regular": "https://static.rapido.com/cms/sites/3/2019/03/26093648/icon-entertainment.png",
+                  "retina": "https://static.rapido.com/cms/sites/3/2019/03/26093648/icon-entertainment.png",
+                  "altText": "",
+                  "description": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "AdditionalAttributes"
+              },
+              "childItems": {
+                "nodes": [
+                  {
+                    "label": "Google Play",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/google-play-gift-card/",
+                    "connectedObject": {
+                      "name": "Google Play",
+                      "slug": "google-play-gift-card",
+                      "categoryHeader": {
+                        "title": "Google Play Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095847/2lgMWo1ir9QvW4WRmD7H8B/GooglePlayLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095847/4d6c5JWccZMw7uv7K3Mi2A/GooglePlayLogo.png",
+                          "altText": "Google Play Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Spotify",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/spotify-gift-card/",
+                    "connectedObject": {
+                      "name": "Spotify",
+                      "slug": "spotify-gift-card",
+                      "categoryHeader": {
+                        "title": "Spotify Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095856/2lgMWo1ir9QvW4WRmD7H8B/SpotifyLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095856/4d6c5JWccZMw7uv7K3Mi2A/SpotifyLogo.png",
+                          "altText": "Spotify Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  }
+                ],
+                "__typename": "MenuItemToMenuItemConnection"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "label": "Game Gift Cards",
+              "url": "https://www.rapido.com/en-us/game-gift-cards",
+              "additionalAttributes": {
+                "attachedImage": {
+                  "regular": "https://static.rapido.com/cms/sites/3/2019/03/26093648/icon-gaming.png",
+                  "retina": "https://static.rapido.com/cms/sites/3/2019/03/26093648/icon-gaming.png",
+                  "altText": "",
+                  "description": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "AdditionalAttributes"
+              },
+              "childItems": {
+                "nodes": [
+                  {
+                    "label": "Gamestop",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/gamestop-gift-card/",
+                    "connectedObject": {
+                      "name": "Gamestop",
+                      "slug": "gamestop-gift-card",
+                      "categoryHeader": {
+                        "title": "GameStop Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095846/2lgMWo1ir9QvW4WRmD7H8B/GamestopLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095846/4d6c5JWccZMw7uv7K3Mi2A/GamestopLogo.png",
+                          "altText": "GameStop Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Nintendo eShop",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/nintendo-eshop-card/",
+                    "connectedObject": {
+                      "name": "Nintendo eShop",
+                      "slug": "nintendo-eshop-card",
+                      "categoryHeader": {
+                        "title": "Nintendo eShop Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095850/2lgMWo1ir9QvW4WRmD7H8B/NintendoEshopLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095850/4d6c5JWccZMw7uv7K3Mi2A/NintendoEshopLogo.png",
+                          "altText": "Nintendo eShop Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "PlayStation Network",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/psn-code/",
+                    "connectedObject": {
+                      "name": "PSN",
+                      "slug": "psn-code",
+                      "categoryHeader": {
+                        "title": "PSN Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095853/2lgMWo1ir9QvW4WRmD7H8B/PlaystationLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095853/4d6c5JWccZMw7uv7K3Mi2A/PlaystationLogo.png",
+                          "altText": "PSN Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Xbox Gift Card",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/xbox-gift-card/",
+                    "connectedObject": {
+                      "name": "Xbox",
+                      "slug": "xbox-gift-card",
+                      "categoryHeader": {
+                        "title": "Xbox Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095900/2lgMWo1ir9QvW4WRmD7H8B/XBoxLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095900/4d6c5JWccZMw7uv7K3Mi2A/XBoxLogo.png",
+                          "altText": "Xbox Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "FIFA Points",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/fifa-points/",
+                    "connectedObject": {
+                      "name": "FIFA Points",
+                      "slug": "fifa-points",
+                      "categoryHeader": {
+                        "title": "FIFA Points for PSN & Xbox",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095846/2lgMWo1ir9QvW4WRmD7H8B/FIFALogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095846/4d6c5JWccZMw7uv7K3Mi2A/FIFALogo.png",
+                          "altText": "FIFA Points - Xbox and PlayStation",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "RuneScape",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/runescape-membership-card/",
+                    "connectedObject": {
+                      "name": "Runescape",
+                      "slug": "runescape-membership-card",
+                      "categoryHeader": {
+                        "title": "Runescape Membership Card ",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095854/2lgMWo1ir9QvW4WRmD7H8B/RunescapeLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095854/4d6c5JWccZMw7uv7K3Mi2A/RunescapeLogo.png",
+                          "altText": "Runescape Membership Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  }
+                ],
+                "__typename": "MenuItemToMenuItemConnection"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "label": "Gift Cards",
+              "url": "https://www.rapido.com/en-us/gift-cards",
+              "additionalAttributes": {
+                "attachedImage": {
+                  "regular": "https://static.rapido.com/cms/sites/3/2019/03/26093648/icon-giftcard.png",
+                  "retina": "https://static.rapido.com/cms/sites/3/2019/03/26093648/icon-giftcard.png",
+                  "altText": "",
+                  "description": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "AdditionalAttributes"
+              },
+              "childItems": {
+                "nodes": [
+                  {
+                    "label": "Adidas",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/adidas-gift-card/",
+                    "connectedObject": {
+                      "name": "Adidas",
+                      "slug": "adidas-gift-card",
+                      "categoryHeader": {
+                        "title": "Adidas Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095840/2lgMWo1ir9QvW4WRmD7H8B/AdidasLogo.jpg",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095840/4d6c5JWccZMw7uv7K3Mi2A/AdidasLogo.jpg",
+                          "altText": "Adidas Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "American Eagle",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/american-eagle-gift-card/",
+                    "connectedObject": {
+                      "name": "American Eagle",
+                      "slug": "american-eagle-gift-card",
+                      "categoryHeader": {
+                        "title": "American Eagle Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095841/2lgMWo1ir9QvW4WRmD7H8B/AmericanEagleLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095841/4d6c5JWccZMw7uv7K3Mi2A/AmericanEagleLogo.png",
+                          "altText": "American Eagle Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Barnes &amp; Noble",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/barnes-and-noble-gift-card/",
+                    "connectedObject": {
+                      "name": "Barnes &amp; Noble",
+                      "slug": "barnes-and-noble-gift-card",
+                      "categoryHeader": {
+                        "title": "Barnes and Noble Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095842/2lgMWo1ir9QvW4WRmD7H8B/BarnesAndNobleLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095842/4d6c5JWccZMw7uv7K3Mi2A/BarnesAndNobleLogo.png",
+                          "altText": "Barnes and Noble Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Bath &amp; Body Works",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/bath-and-body-works-gift-card/",
+                    "connectedObject": {
+                      "name": "Bath &amp; Body Works",
+                      "slug": "bath-and-body-works-gift-card",
+                      "categoryHeader": {
+                        "title": "Bath and Body Works Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095842/2lgMWo1ir9QvW4WRmD7H8B/BathAndBodyWorksLogo.jpg",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095842/4d6c5JWccZMw7uv7K3Mi2A/BathAndBodyWorksLogo.jpg",
+                          "altText": "Bath and Body Works Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Bed Bath &amp; Beyond",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/bed-bath-and-beyond-gift-card/",
+                    "connectedObject": {
+                      "name": "Bed Bath &amp; Beyond®",
+                      "slug": "bed-bath-and-beyond-gift-card",
+                      "categoryHeader": {
+                        "title": "Bed Bath and Beyond Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28102843/2lgMWo1ir9QvW4WRmD7H8B/BedBathAndBeyondLogo.jpg",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28102843/4d6c5JWccZMw7uv7K3Mi2A/BedBathAndBeyondLogo.jpg",
+                          "altText": "Bed Bath and Beyond Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Delta Airlines",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/delta-gift-card/",
+                    "connectedObject": {
+                      "name": "Delta Airlines",
+                      "slug": "delta-gift-card",
+                      "categoryHeader": {
+                        "title": "Delta Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095844/2lgMWo1ir9QvW4WRmD7H8B/DeltaLogo.jpg",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095844/4d6c5JWccZMw7uv7K3Mi2A/DeltaLogo.jpg",
+                          "altText": "Delta Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Domino's",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/dominos-gift-card/",
+                    "connectedObject": {
+                      "name": "Domino's",
+                      "slug": "dominos-gift-card",
+                      "categoryHeader": {
+                        "title": "Domino's Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095844/2lgMWo1ir9QvW4WRmD7H8B/DominosLogo.jpg",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095844/4d6c5JWccZMw7uv7K3Mi2A/DominosLogo.jpg",
+                          "altText": "Dominos Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Dunkin' Donuts",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/dunkin-donuts-gift-card/",
+                    "connectedObject": {
+                      "name": "Dunkin' Donuts",
+                      "slug": "dunkin-donuts-gift-card",
+                      "categoryHeader": {
+                        "title": "Dunkin' Donuts Gift Cards",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095845/2lgMWo1ir9QvW4WRmD7H8B/DunkinDonutsLogo.jpg",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095845/4d6c5JWccZMw7uv7K3Mi2A/DunkinDonutsLogo.jpg",
+                          "altText": "Dunkin Donuts Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "eBay",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/ebay-gift-card/",
+                    "connectedObject": {
+                      "name": "eBay",
+                      "slug": "ebay-gift-card",
+                      "categoryHeader": {
+                        "title": "eBay Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095845/2lgMWo1ir9QvW4WRmD7H8B/eBayLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095845/4d6c5JWccZMw7uv7K3Mi2A/eBayLogo.png",
+                          "altText": "eBay Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Express",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/express-gift-card/",
+                    "connectedObject": {
+                      "name": "Express",
+                      "slug": "express-gift-card",
+                      "categoryHeader": {
+                        "title": "Express Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095845/2lgMWo1ir9QvW4WRmD7H8B/ExpressLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095845/4d6c5JWccZMw7uv7K3Mi2A/ExpressLogo.png",
+                          "altText": "Express Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Groupon",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/groupon-gift-card/",
+                    "connectedObject": {
+                      "name": "Groupon",
+                      "slug": "groupon-gift-card",
+                      "categoryHeader": {
+                        "title": "Groupon Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095847/2lgMWo1ir9QvW4WRmD7H8B/GrouponLogo.jpg",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095847/4d6c5JWccZMw7uv7K3Mi2A/GrouponLogo.jpg",
+                          "altText": "Groupon Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Hotels.com",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/hotels-com-gift-card/",
+                    "connectedObject": {
+                      "name": "Hotels.com",
+                      "slug": "hotels-com-gift-card",
+                      "categoryHeader": {
+                        "title": "Hotels.com Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095847/2lgMWo1ir9QvW4WRmD7H8B/HotelsLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095847/4d6c5JWccZMw7uv7K3Mi2A/HotelsLogo.png",
+                          "altText": "Hotels.com Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Kohls",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/kohls-gift-card/",
+                    "connectedObject": {
+                      "name": "Kohls",
+                      "slug": "kohls-gift-card",
+                      "categoryHeader": {
+                        "title": "Kohl's Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095848/2lgMWo1ir9QvW4WRmD7H8B/KohlsLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095848/4d6c5JWccZMw7uv7K3Mi2A/KohlsLogo.png",
+                          "altText": "Kohl's Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Lowes",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/lowes-gift-card/",
+                    "connectedObject": {
+                      "name": "Lowes",
+                      "slug": "lowes-gift-card",
+                      "categoryHeader": {
+                        "title": "Lowe's Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095848/2lgMWo1ir9QvW4WRmD7H8B/LowesLogo.jpg",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095848/4d6c5JWccZMw7uv7K3Mi2A/LowesLogo.jpg",
+                          "altText": "Lowe's Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Macy's",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/macys-gift-card/",
+                    "connectedObject": {
+                      "name": "Macy's",
+                      "slug": "macys-gift-card",
+                      "categoryHeader": {
+                        "title": "Macy's Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095849/2lgMWo1ir9QvW4WRmD7H8B/MacysLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095849/4d6c5JWccZMw7uv7K3Mi2A/MacysLogo.png",
+                          "altText": "Macy's Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Marshalls",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/marshalls-gift-card/",
+                    "connectedObject": {
+                      "name": "Marshalls",
+                      "slug": "marshalls-gift-card",
+                      "categoryHeader": {
+                        "title": "Marshalls",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095849/2lgMWo1ir9QvW4WRmD7H8B/MarshallsLogo.jpg",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095849/4d6c5JWccZMw7uv7K3Mi2A/MarshallsLogo.jpg",
+                          "altText": "Marshalls Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Nike",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/nike-gift-card/",
+                    "connectedObject": {
+                      "name": "Nike",
+                      "slug": "nike-gift-card",
+                      "categoryHeader": {
+                        "title": "Nike Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095850/2lgMWo1ir9QvW4WRmD7H8B/NikeLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095850/4d6c5JWccZMw7uv7K3Mi2A/NikeLogo.png",
+                          "altText": "Nike Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Nordstrom",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/nordstrom-gift-card/",
+                    "connectedObject": {
+                      "name": "Nordstrom",
+                      "slug": "nordstrom-gift-card",
+                      "categoryHeader": {
+                        "title": "Nordstrom Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095850/2lgMWo1ir9QvW4WRmD7H8B/NordstromLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095850/4d6c5JWccZMw7uv7K3Mi2A/NordstromLogo.png",
+                          "altText": "Nordstrom Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Nordstrom Rack",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/nordstrom-rack-gift-card/",
+                    "connectedObject": {
+                      "name": "Nordstrom Rack",
+                      "slug": "nordstrom-rack-gift-card",
+                      "categoryHeader": {
+                        "title": "Nordstrom Rack Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095851/2lgMWo1ir9QvW4WRmD7H8B/NordstromRackLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095851/4d6c5JWccZMw7uv7K3Mi2A/NordstromRackLogo.png",
+                          "altText": "Nordstrom Rack Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Old Navy",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/old-navy-gift-card/",
+                    "connectedObject": {
+                      "name": "Old Navy",
+                      "slug": "old-navy-gift-card",
+                      "categoryHeader": {
+                        "title": "Old Navy Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095851/2lgMWo1ir9QvW4WRmD7H8B/OldNavyLogo.jpg",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095851/4d6c5JWccZMw7uv7K3Mi2A/OldNavyLogo.jpg",
+                          "altText": "Old Navy Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Panera Bread",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/panera-gift-card/",
+                    "connectedObject": {
+                      "name": "Panera Bread",
+                      "slug": "panera-gift-card",
+                      "categoryHeader": {
+                        "title": "Panera Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095852/2lgMWo1ir9QvW4WRmD7H8B/PaneraLogo.jpg",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095852/4d6c5JWccZMw7uv7K3Mi2A/PaneraLogo.jpg",
+                          "altText": "Panera Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Petco",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/petco-gift-card/",
+                    "connectedObject": {
+                      "name": "Petco",
+                      "slug": "petco-gift-card",
+                      "categoryHeader": {
+                        "title": "Petco Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095852/2lgMWo1ir9QvW4WRmD7H8B/PetcoLogo.jpg",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095852/4d6c5JWccZMw7uv7K3Mi2A/PetcoLogo.jpg",
+                          "altText": "Petco Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Redbox",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/redbox-gift-card/",
+                    "connectedObject": {
+                      "name": "Redbox",
+                      "slug": "redbox-gift-card",
+                      "categoryHeader": {
+                        "title": "Redbox Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095853/2lgMWo1ir9QvW4WRmD7H8B/RedboxLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095853/4d6c5JWccZMw7uv7K3Mi2A/RedboxLogo.png",
+                          "altText": "Redbox Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "REI",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/rei-gift-card/",
+                    "connectedObject": {
+                      "name": "REI",
+                      "slug": "rei-gift-card",
+                      "categoryHeader": {
+                        "title": "REI Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095854/2lgMWo1ir9QvW4WRmD7H8B/REILogo.jpg",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095854/4d6c5JWccZMw7uv7K3Mi2A/REILogo.jpg",
+                          "altText": "REI Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Sephora",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/sephora-gift-card/",
+                    "connectedObject": {
+                      "name": "Sephora",
+                      "slug": "sephora-gift-card",
+                      "categoryHeader": {
+                        "title": "Sephora Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/04/09102313/2lgMWo1ir9QvW4WRmD7H8B/Sephora.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/04/09102313/4d6c5JWccZMw7uv7K3Mi2A/Sephora.png",
+                          "altText": "",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Southwest Airlines",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/southwest-gift-card/",
+                    "connectedObject": {
+                      "name": "Southwest Airlines",
+                      "slug": "southwest-gift-card",
+                      "categoryHeader": {
+                        "title": "Southwest Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095856/2lgMWo1ir9QvW4WRmD7H8B/SouthwestAirlinesLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095856/4d6c5JWccZMw7uv7K3Mi2A/SouthwestAirlinesLogo.png",
+                          "altText": "Southwest Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Starbucks",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/starbucks-gift-card/",
+                    "connectedObject": {
+                      "name": "Starbucks",
+                      "slug": "starbucks-gift-card",
+                      "categoryHeader": {
+                        "title": "Starbucks Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095856/2lgMWo1ir9QvW4WRmD7H8B/StarbucksCardLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095856/4d6c5JWccZMw7uv7K3Mi2A/StarbucksCardLogo.png",
+                          "altText": "Starbucks Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "StubHub",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/stubhub-gift-card/",
+                    "connectedObject": {
+                      "name": "StubHub",
+                      "slug": "stubhub-gift-card",
+                      "categoryHeader": {
+                        "title": "StubHub Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095857/2lgMWo1ir9QvW4WRmD7H8B/StubHubLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095857/4d6c5JWccZMw7uv7K3Mi2A/StubHubLogo.png",
+                          "altText": "StubHub Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Target",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/target-gift-card/",
+                    "connectedObject": {
+                      "name": "Target",
+                      "slug": "target-gift-card",
+                      "categoryHeader": {
+                        "title": "Target Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095857/2lgMWo1ir9QvW4WRmD7H8B/TargetLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095857/4d6c5JWccZMw7uv7K3Mi2A/TargetLogo.png",
+                          "altText": "Target Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "TJX",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/tj-maxx-gift-card/",
+                    "connectedObject": {
+                      "name": "TJX",
+                      "slug": "tj-maxx-gift-card",
+                      "categoryHeader": {
+                        "title": "TJ Maxx Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095858/2lgMWo1ir9QvW4WRmD7H8B/TJMaxxLogo.jpg",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095858/4d6c5JWccZMw7uv7K3Mi2A/TJMaxxLogo.jpg",
+                          "altText": "TJ Maxx Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Ulta",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/ulta-gift-card/",
+                    "connectedObject": {
+                      "name": "Ulta",
+                      "slug": "ulta-gift-card",
+                      "categoryHeader": {
+                        "title": "Ulta Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095859/2lgMWo1ir9QvW4WRmD7H8B/UltaBeautyLogo.png",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095859/4d6c5JWccZMw7uv7K3Mi2A/UltaBeautyLogo.png",
+                          "altText": "Ulta Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Under Armour",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/under-armour-gift-card/",
+                    "connectedObject": {
+                      "name": "Under Armour",
+                      "slug": "under-armour-gift-card",
+                      "categoryHeader": {
+                        "title": "Under Armour Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095859/2lgMWo1ir9QvW4WRmD7H8B/UnderArmourLogo.jpg",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095859/4d6c5JWccZMw7uv7K3Mi2A/UnderArmourLogo.jpg",
+                          "altText": "Under Armour Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  },
+                  {
+                    "label": "Zappos.com",
+                    "url": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog/cg_category/zappos-gift-card/",
+                    "connectedObject": {
+                      "name": "Zappos.com",
+                      "slug": "zappos-gift-card",
+                      "categoryHeader": {
+                        "title": "Zappos Gift Card",
+                        "image": {
+                          "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095900/2lgMWo1ir9QvW4WRmD7H8B/ZapposLogo.jpg",
+                          "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095900/4d6c5JWccZMw7uv7K3Mi2A/ZapposLogo.jpg",
+                          "altText": "Zappos Gift Card",
+                          "description": null,
+                          "__typename": "MediaItem"
+                        },
+                        "__typename": "CategoryHeader"
+                      },
+                      "__typename": "CategoryTerm"
+                    },
+                    "__typename": "MenuItem"
+                  }
+                ],
+                "__typename": "MenuItemToMenuItemConnection"
+              },
+              "__typename": "MenuItem"
+            }
+          ],
+          "__typename": "MenuToMenuItemConnection"
+        },
+        "__typename": "Menu"
+      }
+    ],
+    "__typename": "RootQueryToMenuConnection"
+  }
+}

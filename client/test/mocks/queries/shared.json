@@ -1,0 +1,141 @@
+{
+  "post": {
+    "customerService": {
+      "primaryText": "Need more help?",
+      "secondaryText": "We're happy to help out",
+      "link": {
+        "url": "https://faq.rapido.com/hc/en-us",
+        "title": "FAQ",
+        "__typename": "Link"
+      },
+      "image": {
+        "regular": "https://static.rapido.com/cms/sites/3/2019/03/26125025/5aINOIYWeN36s9ygiM0qHc/customer-care-icon-new.jpg",
+        "retina": "https://static.rapido.com/cms/sites/3/2019/03/26125025/5CC1pfrnNT15Pcm7nZmScH/customer-care-icon-new.jpg",
+        "altText": "",
+        "description": null,
+        "__typename": "MediaItem"
+      },
+      "__typename": "CustomerService"
+    },
+    "footer": "__vue_devtool_undefined__",
+    "header": {
+      "titlePart1": "Get all your codes quick,",
+      "titlePart2": "safe and simple!",
+      "image": {
+        "desktop": "https://static.rapido.com/cms/sites/3/2019/03/20112740/4RTYLIy8NpwbkXk6rLJfn4/rapido-main-header.jpg",
+        "mobile": "https://static.rapido.com/cms/sites/3/2019/03/20112740/1yI3Jb4Q0db1YWsjLIsjza/rapido-main-header.jpg",
+        "altText": "alt-text-en-us-header",
+        "description": null,
+        "__typename": "MediaItem"
+      },
+      "__typename": "Header"
+    },
+    "instantDelivery": {
+      "title": "Instant delivery",
+      "tooltip": "You'll receive the code by email, so you can use the credit right away. In most cases the code will be displayed instantly on your screen as well.",
+      "__typename": "InstantDelivery"
+    },
+    "paymentMethods": [
+      {
+        "name": "American Express",
+        "image": {
+          "regular": "https://static.rapido.com/cms/sites/3/2019/03/26100323/7FUuxSdyoIrLuNzNATz7CO/american-express.png",
+          "retina": "https://static.rapido.com/cms/sites/3/2019/03/26100323/Ia8FjnT1WjObEO6tGuR4d/american-express.png",
+          "altText": "",
+          "description": null,
+          "__typename": "MediaItem"
+        },
+        "__typename": "PaymentMethodItem"
+      },
+      {
+        "name": "Visa",
+        "image": {
+          "regular": "https://static.rapido.com/cms/sites/3/2019/03/26100325/7FUuxSdyoIrLuNzNATz7CO/visa.png",
+          "retina": "https://static.rapido.com/cms/sites/3/2019/03/26100325/Ia8FjnT1WjObEO6tGuR4d/visa.png",
+          "altText": "",
+          "description": null,
+          "__typename": "MediaItem"
+        },
+        "__typename": "PaymentMethodItem"
+      },
+      {
+        "name": "Mastercard",
+        "image": {
+          "regular": "https://static.rapido.com/cms/sites/3/2019/03/26100324/7FUuxSdyoIrLuNzNATz7CO/mastercard.png",
+          "retina": "https://static.rapido.com/cms/sites/3/2019/03/26100324/Ia8FjnT1WjObEO6tGuR4d/mastercard.png",
+          "altText": "",
+          "description": null,
+          "__typename": "MediaItem"
+        },
+        "__typename": "PaymentMethodItem"
+      },
+      {
+        "name": "Maestro",
+        "image": {
+          "regular": "https://static.rapido.com/cms/sites/3/2019/03/26100324/7FUuxSdyoIrLuNzNATz7CO/maestro.png",
+          "retina": "https://static.rapido.com/cms/sites/3/2019/03/26100324/Ia8FjnT1WjObEO6tGuR4d/maestro.png",
+          "altText": "",
+          "description": null,
+          "__typename": "MediaItem"
+        },
+        "__typename": "PaymentMethodItem"
+      },
+      {
+        "name": "PayPal",
+        "image": {
+          "regular": "https://static.rapido.com/cms/sites/3/2019/03/26100324/7FUuxSdyoIrLuNzNATz7CO/pay-pal.png",
+          "retina": "https://static.rapido.com/cms/sites/3/2019/03/26100324/Ia8FjnT1WjObEO6tGuR4d/pay-pal.png",
+          "altText": "",
+          "description": null,
+          "__typename": "MediaItem"
+        },
+        "__typename": "PaymentMethodItem"
+      }
+    ],
+    "usps": {
+      "items": [
+        {
+          "text": "Order in minutes",
+          "description": "Simply choose the product and amount you need",
+          "image": {
+            "regular": "https://static.rapido.com/cms/sites/3/2019/03/26100854/6BU5uiSvdjfinakRrqqScW/usp-icon-fast.png",
+            "retina": "https://static.rapido.com/cms/sites/3/2019/03/26100854/8E565AiMyacQtosTWQ51J/usp-icon-fast.png",
+            "altText": "",
+            "description": null,
+            "__typename": "MediaItem"
+          },
+          "__typename": "UspItems"
+        },
+        {
+          "text": "Pay safely and securely",
+          "description": "Safe payment options, like Visa and PayPal",
+          "image": {
+            "regular": "https://static.rapido.com/cms/sites/3/2019/03/26100855/6BU5uiSvdjfinakRrqqScW/usp-icon-secure.png",
+            "retina": "https://static.rapido.com/cms/sites/3/2019/03/26100855/8E565AiMyacQtosTWQ51J/usp-icon-secure.png",
+            "altText": "",
+            "description": null,
+            "__typename": "MediaItem"
+          },
+          "__typename": "UspItems"
+        },
+        {
+          "text": "Get your code instantly",
+          "description": "Receive the email with your code instantly",
+          "image": {
+            "regular": "https://static.rapido.com/cms/sites/3/2019/03/26100853/6BU5uiSvdjfinakRrqqScW/usp-icon-email.png",
+            "retina": "https://static.rapido.com/cms/sites/3/2019/03/26100853/8E565AiMyacQtosTWQ51J/usp-icon-email.png",
+            "altText": "",
+            "description": null,
+            "__typename": "MediaItem"
+          },
+          "__typename": "UspItems"
+        }
+      ],
+      "__typename": "Usps"
+    },
+    "gtmId": "__vue_devtool_undefined__",
+    "homeTitle": "",
+    "page": "",
+    "title": "Home"
+  }
+}
