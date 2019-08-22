@@ -10684,7 +10684,7 @@ nuxt-session@^1.0.3:
   resolved "https://registry.yarnpkg.com/nuxt-session/-/nuxt-session-1.0.3.tgz#1d63ea0d922b1e968516699617727a99f0802a21"
   integrity sha512-rIB3pjleaRxmPKDw0gDu83nMCe9VjL2UqjQDwDcyS5dMSsdhXhtyNdG1TnrMBQMB+QPbWJcAkwdp/mQJif8Arg==
 
-nuxt@^2.7.0:
+nuxt@~2.8.0:
   version "2.8.1"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-2.8.1.tgz#10a307e51973fa7b55abfeb41b84c76cbdd6f2f6"
   integrity sha512-y0XsKvusxmtWVsBB4kt+yA7+KoALPnUvkfLBxSy2kV2S1AudGNYAJK0IdUAP4xKd0QJSc9IzSDVat8UZi4FEQA==
