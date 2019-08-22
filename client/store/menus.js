@@ -1,10 +1,6 @@
 
 import {
-<<<<<<< HEAD
   get, startCase, map, isEmpty, reduce, compact, kebabCase, omitBy,
-=======
-  get, startCase, map, isEmpty, reduce, compact, kebabCase,
->>>>>>> master
 } from 'lodash';
 
 const HOME_BRANDS_BY_CATEGORY_LIMIT = 6;
