@@ -1,0 +1,426 @@
+{
+  "__typename": "CategoryTerm",
+  "name": "Google Play",
+  "description": null,
+  "slug": "google-play-gift-card",
+  "id": "Y2dfY2F0ZWdvcnk6MTIx",
+  "meta": {
+    "title": "Google Play Gift Card | Buy a redeem code from $10 | Rapido.com",
+    "description": "Google Play Gift Card ✓ Choose from $10 to $100 ✓ E-gift code delivered by Email ✓ Payment by Paypal or credit card",
+    "__typename": "MetaCategory"
+  },
+  "categoryHeader": {
+    "title": "Google Play Gift Card",
+    "image": {
+      "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095847/4M9aG9zJxzGtcVlvoOQb4z/GooglePlayLogo.png",
+      "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095847/5LCd9gz7t0SSf3Pi8NcOJ3/GooglePlayLogo.png",
+      "altText": "Google Play Gift Card",
+      "description": null,
+      "__typename": "MediaItem"
+    },
+    "banner": {
+      "desktop": "https://static.rapido.com/cms/sites/3/2019/03/28095938/1yI3Jb4Q0dbAXnWN5HB4ti/GooglePlayGiftCard.jpg",
+      "mobile": "https://static.rapido.com/cms/sites/3/2019/03/28095938/1yI3Jb4Q0db1YWsjLIsjza/GooglePlayGiftCard.jpg",
+      "altText": "Google Play Gift Card",
+      "description": null,
+      "__typename": "MediaItem"
+    },
+    "__typename": "CategoryHeader"
+  },
+  "terms": {
+    "title": "Terms & Conditions",
+    "text": "See play.google.com/us-card-terms for full terms. Must be 13+ years of age, US resident. Requires Google Payments account and internet access to redeem. Usable for purchases of eligible items on Google Play only. Not usable for hardware and certain subscriptions. Other limits may apply. No fees or expiration dates. Except as required by law, card is not redeemable for cash or other cards, not reloadable or refundable, cannot be combined with other non-Google Play balances in your Google Payment account, resold, exchanged or transferred for value. User responsible for loss of card. For assistance or to view your Google Play card balance, visit support.google.com/googleplay/go/cardhelp. To speak to customer care call us at 1-855-466-4438. Issued by Google Payment Corp.",
+    "__typename": "Terms"
+  },
+  "infoBlock": {
+    "title": "Google Play Gift Code",
+    "text": "Power up in over 1M Android apps and games on Google Play, the world's largest mobile gaming platform. Use a Google Play gift code to go further in your favorite games like Clash Royale or Pokemon Go or redeem your code for the latest apps, movies, music, books, and more. There’s no credit card required, and balances never expire. Treat yourself or give the gift of Play today.",
+    "__typename": "InfoBlock"
+  },
+  "faqQuestions": {
+    "title": null,
+    "questions": [
+      {
+        "question": "What can I use my Google Play Code for?",
+        "answer": "Power up in over 1M Android apps and games on Google Play, the world's largest mobile gaming platform. Use a Google Play Gift Code to go further in your favorite games like Pokemon Go or Clash Royale or redeem your code for the latest apps, movies, music, books and more. There’s no credit card required. Treat yourself or give the gift of Play today.",
+        "__typename": "ProductFaqQuestion"
+      },
+      {
+        "question": "What kind of account do I need to redeem my Google Play Code?",
+        "answer": "To redeem your Google Play Gift Code, you need a U.S. account.",
+        "__typename": "ProductFaqQuestion"
+      },
+      {
+        "question": "How can I redeem my Google Play Gift Code?",
+        "answer": "To redeem in the Play Store:\r\n<ol class=\"bb-list\">\r\n \t<li>On your Android phone or tablet, open the Play Store app. Tap the menu icon and select Redeem. On your laptop, go to the <a class=\"bb-url\" href=\"https://play.google.com/redeem\" target=\"_blank\" rel=\"noopener\">redeem page</a></li>\r\n \t<li>Enter gift code</li>\r\n \t<li>Start shopping! Your gift code value will be added to your Google Play balance.</li>\r\n</ol>\r\nDon't share your code with anyone you don't know.",
+        "__typename": "ProductFaqQuestion"
+      },
+      {
+        "question": "How long is my Google Code valid for?",
+        "answer": "Balances never expire.",
+        "__typename": "ProductFaqQuestion"
+      },
+      {
+        "question": "How can I check my current Google Play credit balance?",
+        "answer": "<ol class=\"bb-list\">\r\n \t<li>Open the Google Play Store app on your Android phone or tablet</li>\r\n \t<li>Tap Menu Menu ☰ &gt; Account</li>\r\n \t<li>Under \"Payment options,\" see your balance.</li>\r\n</ol>",
+        "__typename": "ProductFaqQuestion"
+      },
+      {
+        "question": "Terms & Conditions",
+        "answer": "See <a class=\"bb-url\" href=\"https://play.google.com/us-card-terms\" target=\"_blank\" rel=\"noopener\">Google Play</a> for privacy policy and full terms. Gift Card is issued by Google Commerce Limited. Valid for US residents age 13+. Requires Google Payments account and internet access. Can only be used for purchases of Google Play credits. Usable for eligible items on Google Play only. Not usable for hardware and certain subscriptions. Other Limits may apply. No fees or expiration apply to card. Unless required by law, card is not redeemable for cash or other cards; not reloadable; cannot be combined with other non-Google Play balances in your Google Payments account, resold, exchanged or transferred for value. User responsible for loss of card. For help or to view Google Play card balance, visit <a class=\"bb-url\" href=\"https://support.google.com/googleplay/go/cardhelp\" target=\"_blank\" rel=\"noopener\">Google Play Help</a>.",
+        "__typename": "ProductFaqQuestion"
+      }
+    ],
+    "__typename": "FaqQuestions"
+  },
+  "highlight": {
+    "title": null,
+    "content": null,
+    "__typename": "Highlight"
+  },
+  "products": {
+    "nodes": [
+      {
+        "title": "Google Play Gift Card $10 USD",
+        "id": "Y2dfcHJvZHVjdDoyMDM=",
+        "link": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog///google-play-10-0/",
+        "uri": "google-play-10-0",
+        "information": {
+          "issueValue": "10.0",
+          "__typename": "Information"
+        },
+        "content": {
+          "image": null,
+          "tooltip": {
+            "title": "Google Play Gift Card $10",
+            "content": null,
+            "__typename": "Tooltip"
+          },
+          "__typename": "Content"
+        },
+        "slug": "10-usd",
+        "brands": {
+          "nodes": [
+            {
+              "name": "Google",
+              "__typename": "BrandTerm"
+            }
+          ],
+          "__typename": "ProductToBrandTermConnection"
+        },
+        "kinds": {
+          "nodes": [
+            {
+              "name": "entertainment",
+              "kindTitle": {
+                "title": null,
+                "__typename": "KindTitle"
+              },
+              "__typename": "KindTerm"
+            }
+          ],
+          "__typename": "ProductToKindTermConnection"
+        },
+        "categories": {
+          "nodes": [
+            {
+              "id": "Y2dfY2F0ZWdvcnk6MTIx",
+              "categoryHeader": {
+                "title": "Google Play Gift Card",
+                "image": {
+                  "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095847/6w4LjL2dAIVTRd8EW2BPRG/GooglePlayLogo.png",
+                  "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095847/1KVlh22U6h0EKc2JfF0dzD/GooglePlayLogo.png",
+                  "altText": "Google Play Gift Card",
+                  "description": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "CategoryHeader"
+              },
+              "slug": "google-play-gift-card",
+              "__typename": "CategoryTerm"
+            }
+          ],
+          "__typename": "ProductToCategoryTermConnection"
+        },
+        "rapidoProduct": {
+          "id": "2554",
+          "__typename": "Product"
+        },
+        "__typename": "CmsProduct"
+      },
+      {
+        "title": "Google Play Gift Card $15 USD",
+        "id": "Y2dfcHJvZHVjdDoyMzc=",
+        "link": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog///google-play-15-0/",
+        "uri": "google-play-15-0",
+        "information": {
+          "issueValue": "15.0",
+          "__typename": "Information"
+        },
+        "content": {
+          "image": null,
+          "tooltip": {
+            "title": "Google Play Gift Card $15",
+            "content": null,
+            "__typename": "Tooltip"
+          },
+          "__typename": "Content"
+        },
+        "slug": "15-usd",
+        "brands": {
+          "nodes": [
+            {
+              "name": "Google",
+              "__typename": "BrandTerm"
+            }
+          ],
+          "__typename": "ProductToBrandTermConnection"
+        },
+        "kinds": {
+          "nodes": [
+            {
+              "name": "entertainment",
+              "kindTitle": {
+                "title": null,
+                "__typename": "KindTitle"
+              },
+              "__typename": "KindTerm"
+            }
+          ],
+          "__typename": "ProductToKindTermConnection"
+        },
+        "categories": {
+          "nodes": [
+            {
+              "id": "Y2dfY2F0ZWdvcnk6MTIx",
+              "categoryHeader": {
+                "title": "Google Play Gift Card",
+                "image": {
+                  "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095847/6w4LjL2dAIVTRd8EW2BPRG/GooglePlayLogo.png",
+                  "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095847/1KVlh22U6h0EKc2JfF0dzD/GooglePlayLogo.png",
+                  "altText": "Google Play Gift Card",
+                  "description": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "CategoryHeader"
+              },
+              "slug": "google-play-gift-card",
+              "__typename": "CategoryTerm"
+            }
+          ],
+          "__typename": "ProductToCategoryTermConnection"
+        },
+        "rapidoProduct": {
+          "id": "2755",
+          "__typename": "Product"
+        },
+        "__typename": "CmsProduct"
+      },
+      {
+        "title": "Google Play Gift Card $25 USD",
+        "id": "Y2dfcHJvZHVjdDoyMDU=",
+        "link": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog///google-play-25-0/",
+        "uri": "google-play-25-0",
+        "information": {
+          "issueValue": "25.0",
+          "__typename": "Information"
+        },
+        "content": {
+          "image": null,
+          "tooltip": {
+            "title": "Google Play Gift Card $25",
+            "content": null,
+            "__typename": "Tooltip"
+          },
+          "__typename": "Content"
+        },
+        "slug": "25-usd",
+        "brands": {
+          "nodes": [
+            {
+              "name": "Google",
+              "__typename": "BrandTerm"
+            }
+          ],
+          "__typename": "ProductToBrandTermConnection"
+        },
+        "kinds": {
+          "nodes": [
+            {
+              "name": "entertainment",
+              "kindTitle": {
+                "title": null,
+                "__typename": "KindTitle"
+              },
+              "__typename": "KindTerm"
+            }
+          ],
+          "__typename": "ProductToKindTermConnection"
+        },
+        "categories": {
+          "nodes": [
+            {
+              "id": "Y2dfY2F0ZWdvcnk6MTIx",
+              "categoryHeader": {
+                "title": "Google Play Gift Card",
+                "image": {
+                  "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095847/6w4LjL2dAIVTRd8EW2BPRG/GooglePlayLogo.png",
+                  "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095847/1KVlh22U6h0EKc2JfF0dzD/GooglePlayLogo.png",
+                  "altText": "Google Play Gift Card",
+                  "description": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "CategoryHeader"
+              },
+              "slug": "google-play-gift-card",
+              "__typename": "CategoryTerm"
+            }
+          ],
+          "__typename": "ProductToCategoryTermConnection"
+        },
+        "rapidoProduct": {
+          "id": "2566",
+          "__typename": "Product"
+        },
+        "__typename": "CmsProduct"
+      },
+      {
+        "title": "Google Play Gift Card $50 USD",
+        "id": "Y2dfcHJvZHVjdDoyMjg=",
+        "link": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog///google-play-50-0/",
+        "uri": "google-play-50-0",
+        "information": {
+          "issueValue": "50.0",
+          "__typename": "Information"
+        },
+        "content": {
+          "image": null,
+          "tooltip": {
+            "title": "Google Play Gift Card $50",
+            "content": null,
+            "__typename": "Tooltip"
+          },
+          "__typename": "Content"
+        },
+        "slug": "50-usd",
+        "brands": {
+          "nodes": [
+            {
+              "name": "Google",
+              "__typename": "BrandTerm"
+            }
+          ],
+          "__typename": "ProductToBrandTermConnection"
+        },
+        "kinds": {
+          "nodes": [
+            {
+              "name": "entertainment",
+              "kindTitle": {
+                "title": null,
+                "__typename": "KindTitle"
+              },
+              "__typename": "KindTerm"
+            }
+          ],
+          "__typename": "ProductToKindTermConnection"
+        },
+        "categories": {
+          "nodes": [
+            {
+              "id": "Y2dfY2F0ZWdvcnk6MTIx",
+              "categoryHeader": {
+                "title": "Google Play Gift Card",
+                "image": {
+                  "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095847/6w4LjL2dAIVTRd8EW2BPRG/GooglePlayLogo.png",
+                  "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095847/1KVlh22U6h0EKc2JfF0dzD/GooglePlayLogo.png",
+                  "altText": "Google Play Gift Card",
+                  "description": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "CategoryHeader"
+              },
+              "slug": "google-play-gift-card",
+              "__typename": "CategoryTerm"
+            }
+          ],
+          "__typename": "ProductToCategoryTermConnection"
+        },
+        "rapidoProduct": {
+          "id": "2701",
+          "__typename": "Product"
+        },
+        "__typename": "CmsProduct"
+      },
+      {
+        "title": "Google Play Gift Card $100 USD",
+        "id": "Y2dfcHJvZHVjdDoyMDQ=",
+        "link": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog///google-play-100-0/",
+        "uri": "google-play-100-0",
+        "information": {
+          "issueValue": "100.0",
+          "__typename": "Information"
+        },
+        "content": {
+          "image": null,
+          "tooltip": {
+            "title": "Google Play Gift Card $100",
+            "content": null,
+            "__typename": "Tooltip"
+          },
+          "__typename": "Content"
+        },
+        "slug": "100-usd",
+        "brands": {
+          "nodes": [
+            {
+              "name": "Google",
+              "__typename": "BrandTerm"
+            }
+          ],
+          "__typename": "ProductToBrandTermConnection"
+        },
+        "kinds": {
+          "nodes": [
+            {
+              "name": "entertainment",
+              "kindTitle": {
+                "title": null,
+                "__typename": "KindTitle"
+              },
+              "__typename": "KindTerm"
+            }
+          ],
+          "__typename": "ProductToKindTermConnection"
+        },
+        "categories": {
+          "nodes": [
+            {
+              "id": "Y2dfY2F0ZWdvcnk6MTIx",
+              "categoryHeader": {
+                "title": "Google Play Gift Card",
+                "image": {
+                  "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095847/6w4LjL2dAIVTRd8EW2BPRG/GooglePlayLogo.png",
+                  "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095847/1KVlh22U6h0EKc2JfF0dzD/GooglePlayLogo.png",
+                  "altText": "Google Play Gift Card",
+                  "description": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "CategoryHeader"
+              },
+              "slug": "google-play-gift-card",
+              "__typename": "CategoryTerm"
+            }
+          ],
+          "__typename": "ProductToCategoryTermConnection"
+        },
+        "rapidoProduct": {
+          "id": "2560",
+          "__typename": "Product"
+        },
+        "__typename": "CmsProduct"
+      }
+    ],
+    "__typename": "CategoryTermToProductConnection"
+  }
+}
