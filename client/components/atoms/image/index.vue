@@ -36,26 +36,13 @@ import { isObjectLike, get } from 'lodash';
 
 import { breakpoints } from '~/constants';
 
-const DimensionsType = VueTypes.shape({
-  regular: String,
-  smartphone: String,
-  retina: String,
-  tablet: String,
-  desktop: String,
-  alt: String,
-});
-
 export default {
   name: 'UiImage',
   props: {
     src: VueTypes.oneOfType([
       String,
-      DimensionsType,
+      Object,
     ]).def(''),
-    ratio: VueTypes.oneOfType([
-      String,
-      DimensionsType,
-    ]),
     alt: VueTypes.string.def(''),
     height: VueTypes.string.def('auto'),
     width: VueTypes.string.def('full'),

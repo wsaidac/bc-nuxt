@@ -1,11 +1,12 @@
 <template>
   <nuxt-link
-    :to="linkTo"
-    :title="linkTitle"
+    class="active:bounce"
+    :to="category.url"
+    :title="category.title"
     role="button"
     tabindex="0"
-    :aria-label="$t('brand_box.link_name', { brandName: title })"
-    :data-test="`category-title-${id}`"
+    :aria-label="$t('brand_box.link_name', { brandName: category.title })"
+    :data-test="`category-title-${category.slug}`"
   >
     <card class="hover:border-gray-dark">
       <div class="flex flex-col items-center">
@@ -13,19 +14,22 @@
           icon="hole"
           color="gray-light"
           size="ls"
+          class="mb-1"
         />
         <ui-image
           aria-hidden="true"
+          width="auto"
           tabindex="-1"
-          :src="image"
-          :alt="image.alt"
+          height="18"
+          :src="category.image"
         />
-        <div class="h-10 flex items-center">
+        <div class="h-10 flex items-center mt-1">
           <ui-title
             aria-hidden="true"
             type="h4"
+            class="w-full text-center"
           >
-            {{ title }}
+            <span v-html="category.title" />
           </ui-title>
         </div>
       </div>
@@ -49,11 +53,13 @@ export default {
     UiTitle,
   },
   props: {
-    id: VueTypes.oneOfType([String, Number]).def(''),
-    linkTo: VueTypes.string.def('#'),
-    linkTitle: VueTypes.string.def(''),
-    image: VueTypes.oneOfType([String, Object]),
-    title: VueTypes.string.def(''),
+    category: VueTypes.shape({
+      slug: VueTypes.string.def(''),
+      url: VueTypes.string.def('#'),
+      linkTitle: VueTypes.string.def(''),
+      image: VueTypes.oneOfType([String, Object]),
+      title: VueTypes.string.def(''),
+    }),
   },
 };
 

@@ -1,0 +1,341 @@
+{
+  "__typename": "Home",
+  "title": "Home",
+  "meta": {
+    "title": "Rapido.com: Buy your favorite Gift Cards online | Fast Email Delivery",
+    "description": "Buy your online gift cards at Rapido.com ✓ Prepaid Code sent directly by Email ✓ Choose from Game codes, Entertainment codes, Call Credit and Gift Codes ✓ Safe payment is possible by PayPal or Credit Card",
+    "__typename": "MetaHome"
+  },
+  "header": {
+    "titlePart1": "Get all your codes quick,",
+    "titlePart2": "safe and simple!",
+    "image": {
+      "desktop": "https://static.rapido.com/cms/sites/3/2019/03/20112740/4RTYLIy8NpwbkXk6rLJfn4/rapido-main-header.jpg",
+      "mobile": "https://static.rapido.com/cms/sites/3/2019/03/20112740/1yI3Jb4Q0db1YWsjLIsjza/rapido-main-header.jpg",
+      "altText": "alt-text-en-us-header",
+      "description": null,
+      "__typename": "MediaItem"
+    },
+    "__typename": "Header"
+  },
+  "quickbuy": {
+    "quickbuyProduct": {
+      "id": "Y2dfcHJvZHVjdDoyNg==",
+      "title": "AT&T Refill $10 USD",
+      "information": {
+        "issueValue": "10.0",
+        "__typename": "Information"
+      },
+      "content": {
+        "image": null,
+        "tooltip": {
+          "title": "AT&T Refill $10",
+          "content": "This card adds $10 to your plan. The amount of texts, minutes, and data you get depends on the costs of your standard plan and may vary. Service: 30 days.",
+          "__typename": "Tooltip"
+        },
+        "__typename": "Content"
+      },
+      "categories": {
+        "nodes": [
+          {
+            "slug": "at-t-refill",
+            "categoryHeader": {
+              "title": "AT&T Prepaid Refill ",
+              "image": {
+                "regular": "https://static.rapido.com/cms/sites/3/2019/04/10111938/4M9aG9zJxzGtcVlvoOQb4z/ATandTLogo.png",
+                "retina": "https://static.rapido.com/cms/sites/3/2019/04/10111938/5LCd9gz7t0SSf3Pi8NcOJ3/ATandTLogo.png",
+                "altText": null,
+                "description": null,
+                "__typename": "MediaItem"
+              },
+              "__typename": "CategoryHeader"
+            },
+            "products": {
+              "nodes": [
+                {
+                  "title": "AT&T Refill $10 USD",
+                  "id": "Y2dfcHJvZHVjdDoyNg==",
+                  "slug": "10-usd",
+                  "__typename": "CmsProduct"
+                },
+                {
+                  "title": "AT&T Refill $15 USD",
+                  "id": "Y2dfcHJvZHVjdDoyNw==",
+                  "slug": "15-usd",
+                  "__typename": "CmsProduct"
+                },
+                {
+                  "title": "AT&T Refill $25 USD",
+                  "id": "Y2dfcHJvZHVjdDoyOA==",
+                  "slug": "25-usd",
+                  "__typename": "CmsProduct"
+                },
+                {
+                  "title": "AT&T Refill $50 USD",
+                  "id": "Y2dfcHJvZHVjdDozMQ==",
+                  "slug": "50-usd",
+                  "__typename": "CmsProduct"
+                }
+              ],
+              "__typename": "CategoryTermToProductConnection"
+            },
+            "__typename": "CategoryTerm"
+          }
+        ],
+        "__typename": "ProductToCategoryTermConnection"
+      },
+      "rapidoProduct": {
+        "id": "1516",
+        "__typename": "Product"
+      },
+      "__typename": "CmsProduct"
+    },
+    "__typename": "CmsQuickbuy"
+  },
+  "popularProducts": {
+    "title": "Gift Cards Email Delivery",
+    "subtitle": "We move as fast as you: buy a gift card at Rapido.com for yourself or someone else",
+    "items": [
+      {
+        "image": {
+          "regular": "https://static.rapido.com/cms/sites/3/2019/03/26131215/1EPClSqCSzjVtsytQbeJNV/verizon.png",
+          "retina": "https://static.rapido.com/cms/sites/3/2019/03/26131215/2MR113SrSRTxSE55wIu2r4/verizon.png",
+          "altText": "",
+          "description": null,
+          "__typename": "MediaItem"
+        },
+        "category": {
+          "id": "Y2dfY2F0ZWdvcnk6ODI=",
+          "categoryHeader": {
+            "title": "Verizon Prepaid Cards",
+            "image": {
+              "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095900/1EPClSqCSzjVtsytQbeJNV/VerizonLogo.png",
+              "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095900/2MR113SrSRTxSE55wIu2r4/VerizonLogo.png",
+              "altText": "Verizon Prepaid Cards",
+              "description": null,
+              "__typename": "MediaItem"
+            },
+            "__typename": "CategoryHeader"
+          },
+          "slug": "verizon-prepaid-refill",
+          "__typename": "CategoryTerm"
+        },
+        "__typename": "PopularProduct"
+      },
+      {
+        "image": {
+          "regular": "https://static.rapido.com/cms/sites/3/2019/03/26131212/1EPClSqCSzjVtsytQbeJNV/atandt.png",
+          "retina": "https://static.rapido.com/cms/sites/3/2019/03/26131212/2MR113SrSRTxSE55wIu2r4/atandt.png",
+          "altText": "AT&T prepaid refill",
+          "description": null,
+          "__typename": "MediaItem"
+        },
+        "category": {
+          "id": "Y2dfY2F0ZWdvcnk6ODM=",
+          "categoryHeader": {
+            "title": "AT&T Prepaid Refill ",
+            "image": {
+              "regular": "https://static.rapido.com/cms/sites/3/2019/04/10111938/1EPClSqCSzjVtsytQbeJNV/ATandTLogo.png",
+              "retina": "https://static.rapido.com/cms/sites/3/2019/04/10111938/2MR113SrSRTxSE55wIu2r4/ATandTLogo.png",
+              "altText": "",
+              "description": null,
+              "__typename": "MediaItem"
+            },
+            "__typename": "CategoryHeader"
+          },
+          "slug": "at-t-refill",
+          "__typename": "CategoryTerm"
+        },
+        "__typename": "PopularProduct"
+      },
+      {
+        "image": {
+          "regular": "https://static.rapido.com/cms/sites/3/2019/03/26131214/1EPClSqCSzjVtsytQbeJNV/t-mobile-popular.png",
+          "retina": "https://static.rapido.com/cms/sites/3/2019/03/26131214/2MR113SrSRTxSE55wIu2r4/t-mobile-popular.png",
+          "altText": "",
+          "description": null,
+          "__typename": "MediaItem"
+        },
+        "category": {
+          "id": "Y2dfY2F0ZWdvcnk6ODg=",
+          "categoryHeader": {
+            "title": "T-Mobile Refill",
+            "image": {
+              "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095858/1EPClSqCSzjVtsytQbeJNV/TMobileLogo.png",
+              "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095858/2MR113SrSRTxSE55wIu2r4/TMobileLogo.png",
+              "altText": "T-Mobile Refill",
+              "description": null,
+              "__typename": "MediaItem"
+            },
+            "__typename": "CategoryHeader"
+          },
+          "slug": "t-mobile-refill",
+          "__typename": "CategoryTerm"
+        },
+        "__typename": "PopularProduct"
+      },
+      {
+        "image": {
+          "regular": "https://static.rapido.com/cms/sites/3/2019/03/26131213/1EPClSqCSzjVtsytQbeJNV/google-play.png",
+          "retina": "https://static.rapido.com/cms/sites/3/2019/03/26131213/2MR113SrSRTxSE55wIu2r4/google-play.png",
+          "altText": "",
+          "description": null,
+          "__typename": "MediaItem"
+        },
+        "category": {
+          "id": "Y2dfY2F0ZWdvcnk6MTIx",
+          "categoryHeader": {
+            "title": "Google Play Gift Card",
+            "image": {
+              "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095847/1EPClSqCSzjVtsytQbeJNV/GooglePlayLogo.png",
+              "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095847/2MR113SrSRTxSE55wIu2r4/GooglePlayLogo.png",
+              "altText": "Google Play Gift Card",
+              "description": null,
+              "__typename": "MediaItem"
+            },
+            "__typename": "CategoryHeader"
+          },
+          "slug": "google-play-gift-card",
+          "__typename": "CategoryTerm"
+        },
+        "__typename": "PopularProduct"
+      },
+      {
+        "image": {
+          "regular": "https://static.rapido.com/cms/sites/3/2019/03/26131214/1EPClSqCSzjVtsytQbeJNV/spotify-gift-card.png",
+          "retina": "https://static.rapido.com/cms/sites/3/2019/03/26131214/2MR113SrSRTxSE55wIu2r4/spotify-gift-card.png",
+          "altText": "",
+          "description": null,
+          "__typename": "MediaItem"
+        },
+        "category": {
+          "id": "Y2dfY2F0ZWdvcnk6MTA1",
+          "categoryHeader": {
+            "title": "Spotify Gift Card",
+            "image": {
+              "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095856/1EPClSqCSzjVtsytQbeJNV/SpotifyLogo.png",
+              "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095856/2MR113SrSRTxSE55wIu2r4/SpotifyLogo.png",
+              "altText": "Spotify Gift Card",
+              "description": null,
+              "__typename": "MediaItem"
+            },
+            "__typename": "CategoryHeader"
+          },
+          "slug": "spotify-gift-card",
+          "__typename": "CategoryTerm"
+        },
+        "__typename": "PopularProduct"
+      },
+      {
+        "image": {
+          "regular": "https://static.rapido.com/cms/sites/3/2019/03/26131213/1EPClSqCSzjVtsytQbeJNV/playstation-gift-card.png",
+          "retina": "https://static.rapido.com/cms/sites/3/2019/03/26131213/2MR113SrSRTxSE55wIu2r4/playstation-gift-card.png",
+          "altText": "",
+          "description": null,
+          "__typename": "MediaItem"
+        },
+        "category": {
+          "id": "Y2dfY2F0ZWdvcnk6MTIy",
+          "categoryHeader": {
+            "title": "PSN Card",
+            "image": {
+              "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095853/1EPClSqCSzjVtsytQbeJNV/PlaystationLogo.png",
+              "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095853/2MR113SrSRTxSE55wIu2r4/PlaystationLogo.png",
+              "altText": "PSN Card",
+              "description": null,
+              "__typename": "MediaItem"
+            },
+            "__typename": "CategoryHeader"
+          },
+          "slug": "psn-code",
+          "__typename": "CategoryTerm"
+        },
+        "__typename": "PopularProduct"
+      },
+      {
+        "image": {
+          "regular": "https://static.rapido.com/cms/sites/3/2019/03/26131215/1EPClSqCSzjVtsytQbeJNV/xbox-gift-card.png",
+          "retina": "https://static.rapido.com/cms/sites/3/2019/03/26131215/2MR113SrSRTxSE55wIu2r4/xbox-gift-card.png",
+          "altText": "",
+          "description": null,
+          "__typename": "MediaItem"
+        },
+        "category": {
+          "id": "Y2dfY2F0ZWdvcnk6MTA2",
+          "categoryHeader": {
+            "title": "Xbox Gift Card",
+            "image": {
+              "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095900/1EPClSqCSzjVtsytQbeJNV/XBoxLogo.png",
+              "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095900/2MR113SrSRTxSE55wIu2r4/XBoxLogo.png",
+              "altText": "Xbox Gift Card",
+              "description": null,
+              "__typename": "MediaItem"
+            },
+            "__typename": "CategoryHeader"
+          },
+          "slug": "xbox-gift-card",
+          "__typename": "CategoryTerm"
+        },
+        "__typename": "PopularProduct"
+      },
+      {
+        "image": {
+          "regular": "https://static.rapido.com/cms/sites/3/2019/03/09101909/1EPClSqCSzjVtsytQbeJNV/ebay1.jpg",
+          "retina": "https://static.rapido.com/cms/sites/3/2019/03/09101909/2MR113SrSRTxSE55wIu2r4/ebay1.jpg",
+          "altText": "",
+          "description": null,
+          "__typename": "MediaItem"
+        },
+        "category": {
+          "id": "Y2dfY2F0ZWdvcnk6MTI3",
+          "categoryHeader": {
+            "title": "eBay Gift Card",
+            "image": {
+              "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095845/1EPClSqCSzjVtsytQbeJNV/eBayLogo.png",
+              "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095845/2MR113SrSRTxSE55wIu2r4/eBayLogo.png",
+              "altText": "eBay Gift Card",
+              "description": null,
+              "__typename": "MediaItem"
+            },
+            "__typename": "CategoryHeader"
+          },
+          "slug": "ebay-gift-card",
+          "__typename": "CategoryTerm"
+        },
+        "__typename": "PopularProduct"
+      },
+      {
+        "image": {
+          "regular": "https://static.rapido.com/cms/sites/3/2019/03/09101835/1EPClSqCSzjVtsytQbeJNV/sephora.jpg",
+          "retina": "https://static.rapido.com/cms/sites/3/2019/03/09101835/2MR113SrSRTxSE55wIu2r4/sephora.jpg",
+          "altText": "",
+          "description": null,
+          "__typename": "MediaItem"
+        },
+        "category": {
+          "id": "Y2dfY2F0ZWdvcnk6MTE3",
+          "categoryHeader": {
+            "title": "Sephora Gift Card",
+            "image": {
+              "regular": "https://static.rapido.com/cms/sites/3/2019/04/09102313/1EPClSqCSzjVtsytQbeJNV/Sephora.png",
+              "retina": "https://static.rapido.com/cms/sites/3/2019/04/09102313/2MR113SrSRTxSE55wIu2r4/Sephora.png",
+              "altText": "",
+              "description": null,
+              "__typename": "MediaItem"
+            },
+            "__typename": "CategoryHeader"
+          },
+          "slug": "sephora-gift-card",
+          "__typename": "CategoryTerm"
+        },
+        "__typename": "PopularProduct"
+      }
+    ],
+    "__typename": "PopularProducts"
+  },
+  "seoBlock": {
+    "title": "Enjoy a continuous service with Rapido.com",
+    "text": "Looking for online gift cards, a mobile recharge or a quick and easy way to enjoy your favorite entertainment? Rapido is an online store, with a broad selection of e-vouchers. Use Rapido to buy gift cards online and receive your unique code within 30 seconds. That’s right — 30 seconds. At Rapido, we value rapid delivery but most importantly the safety of your purchase. Forget crowded lines in the supermarket and unreliable websites — go online and enjoy your e-voucher in 30 seconds.",
+    "__typename": "SeoBlock"
+  }
+}

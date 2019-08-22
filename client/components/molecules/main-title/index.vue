@@ -1,5 +1,5 @@
 <template>
-  <div class="pb-4 lg:pb-0">
+  <div class="pb-4 md:pb-0">
     <ui-title :type="type === 'secondary' ? 'h2' : 'h1'">
       <slot />
     </ui-title>

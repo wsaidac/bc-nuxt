@@ -10,6 +10,7 @@
       :src="image"
       :alt="alt"
       :brand="brand"
+      type="card"
       height="48"
     />
     <div class="p-4">

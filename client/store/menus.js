@@ -1,20 +1,22 @@
 
 import {
-  get, startCase, map, isEmpty, reduce, compact, kebabCase,
+  get, startCase, map, isEmpty, reduce, compact, kebabCase, omitBy,
 } from 'lodash';
+
+const HOME_BRANDS_BY_CATEGORY_LIMIT = 6;
 
 
 const getNestedKeySafelyFromObject = (obj, keys) => keys.reduce((nestedObj, key) => (nestedObj && nestedObj[key]) ? nestedObj[key] : null, obj); /* eslint-disable-line */
 const retrieveImageFromMenuItem = node => getNestedKeySafelyFromObject(node, ['additionalAttributes', 'attachedImage'])
   || getNestedKeySafelyFromObject(node, ['connectedObject', 'categoryHeader', 'image']);
 
-const unwrapNode = node => ({
+const unwrapNode = node => omitBy(({
   slug: kebabCase(node.label),
   title: node.label,
   url: `/${getNestedKeySafelyFromObject(node, ['connectedObject', 'slug'])}`,
   image: retrieveImageFromMenuItem(node),
   categories: get(node, 'childItems.nodes', []).map(unwrapNode),
-});
+}), isEmpty);
 
 const unwrap = menu => ({ categories: get(menu, 'menuItems.nodes', []).map(unwrapNode) });
 
@@ -88,6 +90,18 @@ const getServiceLinks = (footerLinks = {}) => compact(
   ),
 );
 
+/**
+ * Method to get categories formatted specially for pages.
+ * @param {Array} categoryList
+ * @return {Array} [..., { title, slug, image, link, categories: (max-size: HOME_BRANDS_BY_CATEGORY_LIMIT)}]
+ */
+const getPageCategories = (categoryList = []) => categoryList
+  .map(({ categories = [], ...rest }) => ({
+    ...rest,
+    showMore: categories.length > HOME_BRANDS_BY_CATEGORY_LIMIT,
+    brands: categories.slice(0, HOME_BRANDS_BY_CATEGORY_LIMIT),
+  }));
+
 export default {
   state() {
     return {
@@ -99,6 +113,7 @@ export default {
   getters: {
     main: ({ main }) => main,
     footer: ({ footer }) => footer,
+    pageCategories: ({ main }) => getPageCategories(main.categories),
     categoryLinks: ({ main }) => getCategoryLinks(main),
     footerLinks: ({ footer }) => getFooterLinks(footer),
     legalLinks: (_, getters) => getLegalLinks(getters.footerLinks),

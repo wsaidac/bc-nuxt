@@ -25,7 +25,7 @@
         <icon
           icon="close"
           color="primary"
-          class="cursor-pointer active:scale-96"
+          class="cursor-pointer active:bounce"
           @click="$emit('fix-banner__close:click')"
         />
       </div>
