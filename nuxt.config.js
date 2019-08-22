@@ -11,7 +11,7 @@ const conf = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'google-site-verification', content: 'ucjZbRW69cw2QRUWZRRKisI5gkTFEeLjanWmv3U9HW0' },
+      { name: 'google-site-verification', content: 'QE0K3CMCBw6wZF_p7UnOAj_KKcIhfXgpkubjiJQM_KM' },
     ],
     link: [
       {
@@ -32,6 +32,7 @@ const conf = {
       { src: '/blueconic.js' },
       { src: '//cdn.blueconic.net/cg.js' },
       { src: '/vwo.js' },
+      { src: '/riskified.js' },
     ],
   },
   css: ['~/assets/stylesheets/application.scss'],
@@ -117,6 +118,7 @@ const conf = {
   },
   modules: [
     ['@nuxtjs/style-resources'],
+    'nuxt-session',
     'cookie-universal-nuxt',
     ['@nuxtjs/sentry'],
     ['~/modules/iconsWeb'],

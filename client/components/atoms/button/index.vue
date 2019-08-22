@@ -27,7 +27,7 @@ export default {
       const base = 'btn';
       const justify = 'w-full';
       const disable = 'opacity-20 cursor-not-allowed';
-      const active = !this.disable ? 'cursor-pointer active:scale-96 active:border-solid' : '';
+      const active = !this.disable ? 'cursor-pointer active:bounce active:border-solid' : '';
 
       const type = this.getTypeClasses();
       const margin = `my-${this.my}`;

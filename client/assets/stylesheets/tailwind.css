@@ -5,7 +5,7 @@
 @tailwind base;
 
 html {
-  @apply font-body text-base leading-normal text-primary font-normal;
+  @apply font-body text-base leading-normal text-primary font-normal antialiased;
 }
 
 @screen lg {
@@ -35,7 +35,7 @@ button:focus,
 @variants hover,
 focus,
 active {
-  .scale-96 {
+  .bounce {
     transform: scale(0.96);
   }
 }

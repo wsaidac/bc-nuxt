@@ -19,10 +19,16 @@ storiesOf('Molecules/Catgory Card', CategoryCard)
     },
     data() {
       return {
-        image: {
-          regular: 'https://cdn.zeplin.io/5d23163f91be672e1f32200e/assets/AA30DFF1-CBE3-4D1E-8822-B4804E329FC0.svg',
-          alt: 'Netflix',
+        category: {
+          image: {
+            regular: 'https://cdn.zeplin.io/5d23163f91be672e1f32200e/assets/AA30DFF1-CBE3-4D1E-8822-B4804E329FC0.svg',
+            alt: 'Netflix',
+          },
+          title: 'Netflix',
+          slug: 'netflix',
+          url: '/netflix',
         },
+
       };
     },
     template: `
@@ -34,11 +40,7 @@ storiesOf('Molecules/Catgory Card', CategoryCard)
             class="w-1/2 md:w-1/4 lg:w-1/6"
           >
             <category-card
-              :id="n"
-              :image="image"
-              title='Netflix'
-              linkTo='#'
-              linkTitle='Netfix'
+              :category="category"
             />
           </column>
         </row>

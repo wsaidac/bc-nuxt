@@ -1,6 +1,6 @@
 <template>
   <button
-    class="active:scale-96 flex"
+    class="active:bounce flex"
     v-bind="$attrs"
     v-on="$listeners"
   >
