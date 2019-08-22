@@ -27,7 +27,6 @@
     var x = document.getElementsByTagName('script')[0];
     x.parentNode.insertBefore(s, x);
   }
-  if (process.env.NODE_ENV !== 'production') return;
 
   if (window.attachEvent) window.attachEvent('onload', riskifiedBeaconLoad)
   else window.addEventListener('load', riskifiedBeaconLoad, false);
