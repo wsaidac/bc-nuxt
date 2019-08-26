@@ -1,3 +1,5 @@
+import uuid from 'uuid/v4';
+
 export default {
   state() {
     return {};
@@ -28,7 +30,7 @@ export default {
 
       // set RiskifiedSessionId cookie if it does not exist
       if (!app.$cookies.get('RiskifiedSessionId')) {
-        app.$cookies.set('RiskifiedSessionId', req.sessionID, { path: '/' });
+        app.$cookies.set('RiskifiedSessionId', uuid(), { path: '/' });
       }
 
       commit('context/setDomain', req.headers.host);

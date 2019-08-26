@@ -120,7 +120,6 @@ const conf = {
   },
   modules: [
     ['@nuxtjs/style-resources'],
-    'nuxt-session',
     'cookie-universal-nuxt',
     ['@nuxtjs/sentry'],
     ['~/modules/iconsWeb'],

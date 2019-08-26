@@ -12,12 +12,8 @@
       return d[0]
     };
 
-    function generateRandomString() {
-      return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-    };
-
     var store_domain = 'https://www.rapido.com';
-    var session_id = getCookie('RiskifiedSessionId') || generateRandomString();
+    var session_id = getCookie('RiskifiedSessionId');
 
     var url = ('https:' == document.location.protocol ? 'https://' : 'http://') + "beacon.riskified.com?shop=" + store_domain + "&sid=" + session_id;
     var s = document.createElement('script');
