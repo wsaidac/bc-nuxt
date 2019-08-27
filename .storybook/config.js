@@ -27,6 +27,7 @@ import 'vue2-animate/dist/vue2-animate.css';
 
 import fakeI18nPlugin from '~~/.storybook/fakeI18nPlugin';
 import routerPlugin from '~~/.storybook/fakeRouterPlugin';
+import trustpilotPlugin from 'vue-trustpilot'
 
 /**
  *  config for webfonts-loader
@@ -102,6 +103,17 @@ Vue.component('nuxt-link', {
 
 // set vuex
 Vue.use(Vuex)
+
+Vue.use(trustpilotPlugin, {
+  widgets: {
+    footer: {
+      templateId: '53aa8912dec7e10d38f59f36',
+      businessunitId: '4de14b4700006400050fc804',
+      reviewUrl: 'https://nl.trustpilot.com/review/beltegoed.nl',
+      locale: 'nl-NL',
+    }
+  }
+})
 
 // basically load the stories within client/components folder
 function loadStories() {
