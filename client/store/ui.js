@@ -7,7 +7,6 @@ export default {
 
   getters: {
     overlayState: state => state.showOverlay,
-    hasContextChanged: state => state.contextChanged,
   },
 
   mutations: {
