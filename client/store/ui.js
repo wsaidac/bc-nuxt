@@ -1,17 +1,31 @@
 export default {
   state() {
     return {
-      showOverlay: false,
+      overlay: {
+        visibility: 'hidden',
+        name: '',
+      },
     };
   },
 
   getters: {
-    overlayState: state => state.showOverlay,
+    overlayVisibility: state => state.overlay.visibility,
+    overlayName: state => state.overlay.name,
+  },
+
+  actions: {
+    toggleOverlay({ commit }, { visibility, name }) {
+      commit('setOverlayVisibility', visibility);
+      commit('setOverlayName', name);
+    },
   },
 
   mutations: {
-    toggleOverlay(state, bool) {
-      state.showOverlay = bool;
+    setOverlayVisibility(state, visibility) {
+      state.overlay.visibility = visibility;
+    },
+    setOverlayName(state, name) {
+      state.overlay.name = name;
     },
   },
 };

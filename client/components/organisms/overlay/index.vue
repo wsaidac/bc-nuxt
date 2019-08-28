@@ -1,7 +1,12 @@
 <template>
-  <portal to="overlay">
-    <div class="fixed z-50 bg-overlay w-screen h-screen p-4 flex justify-center items-center">
+  <portal :to="overlayName">
+    <div
+      class="fixed inset-0 z-50 bg-overlay p-4 flex justify-center items-center"
+      v-bind="$attrs"
+      v-on="$listeners"
+    >
       <section
+        v-click-outside="onOverlayClose"
         role="dialog"
         :aria-labelledby="title"
         :aria-describedby="desc"
@@ -22,18 +27,22 @@
 
 <script>
 import VueTypes from 'vue-types';
+import { mapGetters } from 'vuex';
 
 import { ButtonIcon } from '~/components/atoms';
 
 export default {
-  components: [ButtonIcon],
+  components: { ButtonIcon },
   props: {
     title: VueTypes.string.def(''),
     desc: VueTypes.string.def(''),
   },
+  computed: {
+    ...mapGetters('ui', ['overlayName']),
+  },
   methods: {
     onOverlayClose() {
-      debugger // eslint-disable-line
+      this.$store.dispatch('ui/toggleOverlay', { visibility: 'hidden', name: '' });
     },
   },
 };
