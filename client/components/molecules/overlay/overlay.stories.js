@@ -11,7 +11,7 @@ Vue.component('overlay', Overlay);
 Vue.component('ui-button', UiButton);
 
 // stories
-storiesOf('Organisms/Overlay', module)
+storiesOf('Molecules/Overlay', module)
   .add('default', () => ({
     data() {
       return {

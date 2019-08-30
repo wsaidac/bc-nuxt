@@ -1,5 +1,5 @@
 <template>
-  <portal :to="overlayName">
+  <portal :to="name">
     <div
       class="fixed inset-0 z-50 bg-overlay p-4 flex justify-center items-center"
       v-bind="$attrs"
@@ -10,13 +10,13 @@
         role="dialog"
         :aria-labelledby="title"
         :aria-describedby="desc"
-        class="relative bg-white rounded-lg w-full md:w-40 lg:w-40 xl:w-40 lg:w-40 p-5"
+        class="relative max-h-full overflow-scroll bg-white rounded-lg w-full md:w-40 lg:w-40 xl:w-40 lg:w-40 p-5"
       >
         <button-icon
           color="black"
           icon="close"
           font-size="xs"
-          class="absolute top-3 right-3"
+          class="absolute top-4 right-4"
           @click="onOverlayClose"
         />
         <slot />
@@ -27,7 +27,6 @@
 
 <script>
 import VueTypes from 'vue-types';
-import { mapGetters } from 'vuex';
 
 import { ButtonIcon } from '~/components/atoms';
 
@@ -36,9 +35,7 @@ export default {
   props: {
     title: VueTypes.string.def(''),
     desc: VueTypes.string.def(''),
-  },
-  computed: {
-    ...mapGetters('ui', ['overlayName']),
+    name: VueTypes.string.def('Overlay'),
   },
   methods: {
     onOverlayClose() {
