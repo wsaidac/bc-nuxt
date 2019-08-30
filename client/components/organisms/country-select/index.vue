@@ -4,7 +4,10 @@
     :title="$t('country_select.title')"
     :desc="$t('country_select.description')"
   >
-    blaaaa
+    <main-title type="primary">
+      {{ $t('country_select.title') }}
+    </main-title>
+    <p class="mb-6">{{ $t('country_select.description') }}</p>
     <country-list
       :locale-selected="localeSelected"
       @country-list:click="onChangeLocale"
@@ -15,10 +18,10 @@
 <script>
 import { mapGetters } from 'vuex';
 
-import { Overlay, CountryList } from '~/components/molecules';
+import { Overlay, CountryList, MainTitle } from '~/components/molecules';
 
 export default {
-  components: { Overlay, CountryList },
+  components: { Overlay, CountryList, MainTitle },
   data() {
     return {
       localeSelected: this.$i18n.locale,
