@@ -1,5 +1,8 @@
 <template>
-  <ul v-if="list.length">
+  <ul
+    v-if="list.length"
+    class="flex flex-wrap justify-around"
+  >
     <li
       v-for="country in list"
       :key="country.code"
@@ -8,7 +11,7 @@
       :data-test="`country-list-text-${country.name}`"
       role="button"
       :class="[
-        'flex px-6 py-4 border border-solid border-gray justify-between items-center mb-2 cursor-pointer hover:bg-gray-light focus:outline-none',
+        'flex w-5/12 px-6 py-4 border border-solid border-gray justify-between items-center mb-2 cursor-pointer hover:bg-gray-light focus:outline-none',
         { 'bg-gray-light': country.selected }
       ]"
       @click="onClickLocale(country.code)"
@@ -39,6 +42,7 @@
 import VueTypes from 'vue-types';
 import { pick } from 'lodash';
 import { Flag, Icon } from '~/components/atoms';
+import { Row, Column } from '~/components/grid';
 
 export default {
   components: {
