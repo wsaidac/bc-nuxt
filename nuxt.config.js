@@ -5,13 +5,20 @@ require('dotenv').config();
 
 const label = process.env.LABEL || 'rapido';
 
+const marketingScripts = [
+  { src: '/blueconic.js' },
+  { src: '//cdn.blueconic.net/cg.js' },
+  { src: '/vwo.js' },
+  { src: '/riskified.js' },
+];
+
 const conf = {
   srcDir: 'client/',
   head: {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'google-site-verification', content: 'ucjZbRW69cw2QRUWZRRKisI5gkTFEeLjanWmv3U9HW0' },
+      { name: 'google-site-verification', content: 'QE0K3CMCBw6wZF_p7UnOAj_KKcIhfXgpkubjiJQM_KM' },
     ],
     link: [
       {
@@ -28,11 +35,7 @@ const conf = {
         href: 'https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,800&display=swap&subset=latin-ext',
       },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [
-      { src: '/blueconic.js' },
-      { src: '//cdn.blueconic.net/cg.js' },
-      { src: '/vwo.js' },
-    ],
+    script: process.env.NODE_ENV === 'production' ? marketingScripts : [],
   },
   css: ['~/assets/stylesheets/application.scss'],
   store: true,

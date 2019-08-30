@@ -235,7 +235,8 @@
     "show-less": "Show less",
     "show-more": "Show more",
     "select": "Select {label}",
-    "go-to": "Go to {label}"
+    "go-to": "Go to {label}",
+    "view_all": "View all"
   },
   "header": {
     "login": "Login",

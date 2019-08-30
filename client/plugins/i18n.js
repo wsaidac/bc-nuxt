@@ -14,11 +14,13 @@ export default function ({ app, error }) {
 
     setElementUiLocale(newLocale);
 
-    // Declare BlueConic Variables
-    const { hostname } = window.location;
-    bcChannelIdentifier = newLocale + '.' + hostname; /* eslint-disable-line */
-    // Send pageview event to Blueconic
-    const bcEvent = new Event('pageReadyEvent');
-    window.dispatchEvent(bcEvent);
+    if (window.bcChannelIdentifier) {
+      // Declare BlueConic Variables
+      const { hostname } = window.location;
+      window.bcChannelIdentifier = newLocale + '.' + hostname; /* eslint-disable-line */
+      // Send pageview event to Blueconic
+      const bcEvent = new Event('pageReadyEvent');
+      window.dispatchEvent(bcEvent);
+    }
   };
 }

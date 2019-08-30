@@ -1,3 +1,5 @@
+import uuid from 'uuid/v4';
+
 export default {
   state() {
     return {};
@@ -21,8 +23,14 @@ export default {
     nuxtServerInit({ dispatch, commit }, {
       app, error, query, req,
     }) {
+      // set tracking cookie
       if (query.aid) {
         app.$cookies.set('aid', query.aid, { path: '/' });
+      }
+
+      // set RiskifiedSessionId cookie if it does not exist
+      if (!app.$cookies.get('RiskifiedSessionId')) {
+        app.$cookies.set('RiskifiedSessionId', uuid(), { path: '/' });
       }
 
       commit('context/setDomain', req.headers.host);

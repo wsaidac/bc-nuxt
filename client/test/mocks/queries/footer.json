@@ -1,0 +1,68 @@
+{
+  "aboutUs": {
+    "slug": "about-us",
+    "meta": {
+      "title": "About us | Rapido.com - United States",
+      "__typename": "MetaServicePage"
+    },
+    "href": {
+      "label": "About us",
+      "title": "About us",
+      "__typename": "Href"
+    },
+    "__typename": "ServicePage"
+  },
+  "paymentMethods": {
+    "slug": "payment-methods",
+    "meta": {
+      "title": "Payment options | Rapido.com - United States",
+      "__typename": "MetaServicePage"
+    },
+    "href": {
+      "label": "Payment options",
+      "title": "Payment options",
+      "__typename": "Href"
+    },
+    "__typename": "ServicePage"
+  },
+  "rightOfWithdrawal": null,
+  "generalConditions": {
+    "slug": "general-conditions",
+    "meta": {
+      "title": "General conditions | Rapido.com - United States",
+      "__typename": "MetaServicePage"
+    },
+    "href": {
+      "label": "Conditions",
+      "title": "Conditions",
+      "__typename": "Href"
+    },
+    "__typename": "ServicePage"
+  },
+  "cookieStatement": {
+    "slug": "cookies",
+    "meta": {
+      "title": "Cookie statement | Rapido.com - United States",
+      "__typename": "MetaServicePage"
+    },
+    "href": {
+      "label": "Cookie Statement",
+      "title": "Cookie Statement",
+      "__typename": "Href"
+    },
+    "__typename": "ServicePage"
+  },
+  "privacyPolicy": {
+    "slug": "privacy",
+    "meta": {
+      "title": "Privacy policy | Rapido.com - United States",
+      "__typename": "MetaServicePage"
+    },
+    "href": {
+      "label": "Privacy Policy",
+      "title": "Privacy Policy",
+      "__typename": "Href"
+    },
+    "__typename": "ServicePage"
+  }
+}

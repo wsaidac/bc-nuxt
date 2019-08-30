@@ -9,7 +9,7 @@ import ProductDetails from './index.vue';
 import { info } from '~~/.storybook/utils';
 
 import store from '~~/.storybook/store';
-import productMock from '~~/.storybook/mocks/post.prop.json';
+import productMock from '~~/.storybook/mocks/product-post.prop.json';
 import mock from '~~/.storybook/mocks/homepage.state.json';
 
 const uspsMock = get(mock, 'shared.usps', {});

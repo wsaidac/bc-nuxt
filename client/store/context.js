@@ -1,4 +1,5 @@
 import merchantsConfig from '~~/config/i18n/merchantsConfig';
+import configLabel from '~~/config/label'
 
 const label = process.env.LABEL || 'rapido';
 
@@ -9,6 +10,7 @@ export default {
       labelId: merchantsConfig[label].id,
       domain: '',
       cmsContext: '',
+      trustpilot: configLabel.trustpilot,
     };
   },
   getters: {
@@ -16,6 +18,7 @@ export default {
     labelId: ({ labelId }) => labelId,
     domain: ({ domain }) => domain,
     cmsContext: ({ labelName }, _, { i18n }) => `${labelName}-${i18n.locale}`,
+    trustpilot: ({ trustpilot }) => trustpilot,
   },
 
   actions: {

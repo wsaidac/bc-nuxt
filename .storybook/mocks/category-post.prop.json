@@ -1,0 +1,285 @@
+{
+  "__typename": "CategoryTerm",
+  "name": "Spotify",
+  "description": null,
+  "slug": "spotify-gift-card",
+  "id": "Y2dfY2F0ZWdvcnk6MTA1",
+  "meta": {
+    "title": "Spotify Gift Card | Buy Spotify Premium Code from $10 | Rapido.com",
+    "description": "Spotify Gift Card ✓ Choose from $10 to $60 ✓ Receive your E-gift code by Email ✓ Payment by Paypal or credit card",
+    "__typename": "MetaCategory"
+  },
+  "categoryHeader": {
+    "title": "Spotify Gift Card",
+    "image": {
+      "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095856/4M9aG9zJxzGtcVlvoOQb4z/SpotifyLogo.png",
+      "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095856/5LCd9gz7t0SSf3Pi8NcOJ3/SpotifyLogo.png",
+      "altText": "Spotify Gift Card",
+      "description": null,
+      "__typename": "MediaItem"
+    },
+    "banner": {
+      "desktop": "https://static.rapido.com/cms/sites/3/2019/03/28095955/1yI3Jb4Q0dbAXnWN5HB4ti/SpotifyGiftCard.jpg",
+      "mobile": "https://static.rapido.com/cms/sites/3/2019/03/28095955/1yI3Jb4Q0db1YWsjLIsjza/SpotifyGiftCard.jpg",
+      "altText": "Spotify Gift Card",
+      "description": null,
+      "__typename": "MediaItem"
+    },
+    "__typename": "CategoryHeader"
+  },
+  "terms": {
+    "title": "Terms & Conditions",
+    "text": "Redeemable only for full price standalone Premium subscription months via spotify.com and cannot be redeemed for discounted or group subscriptions. Not refundable or redeemable for cash except as required by law. Cannot be resold and is not valid and will not be honored, and Spotify will not be liable, if obtained from unauthorized sellers or resellers, including through Internet auction sites. To be eligible to redeem this card, you must have or register for a Spotify account and you must be 13+ and reside in the country of purchase. Single-use; the full face-value for an individual account is deducted at redemption and no incremental redemption is permitted. Spotify is not responsible for any loss or damage resulting from lost, stolen, or unauthorized use. For complete terms (including arbitration agreement and class action waiver), visit www.spotify.com/gift-card.This card is issued by and represents an obligation solely of Spotify USA Inc. or its assigns.",
+    "__typename": "Terms"
+  },
+  "infoBlock": {
+    "title": "Redeem your Spotify Premium Code",
+    "text": "With Spotify, it’s easy to find the right music for every moment – on your phone, your computer, your tablet and more. There are millions of tracks on Spotify. So whether you’re working out, partying or relaxing, the right music is always at your fingertips. Choose what you want to listen to, or let Spotify surprise you. You can also browse through the music collections of friends, artists and celebrities, or create a radio station and just sit back. Soundtrack your life with Spotify. Surprise you.",
+    "__typename": "InfoBlock"
+  },
+  "faqQuestions": {
+    "title": null,
+    "questions": [
+      {
+        "question": "What can I use my Spotify Premium Gift Card for?",
+        "answer": "You can use your Spotify Gift Card to purchase a Spotify subscription.",
+        "__typename": "ProductFaqQuestion"
+      },
+      {
+        "question": "What kind of account do I need to redeem my Spotify Card?",
+        "answer": "You need a U.S. Spotify account to redeem your Spotify Gift Card.",
+        "__typename": "ProductFaqQuestion"
+      },
+      {
+        "question": "How can I redeem my Spotify Gift Card?",
+        "answer": "To redeem, enter the PIN at the <a class=\"bb-url\" href=\"https://spotify.com/redeem/\" target=\"_blank\" rel=\"noopener\">redeem page</a>.",
+        "__typename": "ProductFaqQuestion"
+      },
+      {
+        "question": "How long is my Spotify Premium Code valid for?",
+        "answer": "Your Spotify Gift Card is valid for 12 months.",
+        "__typename": "ProductFaqQuestion"
+      },
+      {
+        "question": "How can I check my current Spotify credit balance?",
+        "answer": "You can check your current Spotify subscription status by following a few simple steps:\r\n<ol class=\"bb-list\">\r\n \t<li>Go to your <a class=\"bb-url\" href=\"https://www.spotify.com/login/\" target=\"_blank\" rel=\"noopener\">Spotify account page</a></li>\r\n \t<li>Select Subscription in the menu on the left</li>\r\n \t<li>Your subscription status will now be displayed</li>\r\n</ol>",
+        "__typename": "ProductFaqQuestion"
+      }
+    ],
+    "__typename": "FaqQuestions"
+  },
+  "highlight": {
+    "title": null,
+    "content": null,
+    "__typename": "Highlight"
+  },
+  "products": {
+    "nodes": [
+      {
+        "title": "Spotify Gift Card $10 USD (1 Month)",
+        "id": "Y2dfcHJvZHVjdDoxODI=",
+        "link": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog///spotify-10-0/",
+        "uri": "spotify-10-0",
+        "information": {
+          "issueValue": "10.0",
+          "__typename": "Information"
+        },
+        "content": {
+          "image": null,
+          "tooltip": {
+            "title": "Spotify Gift Card $10",
+            "content": "Buy your Spotify 10 USD Gift Card at Rapido.com. Your Spotify Gift Card will be sent to you by email.",
+            "__typename": "Tooltip"
+          },
+          "__typename": "Content"
+        },
+        "slug": "10-usd",
+        "brands": {
+          "nodes": [
+            {
+              "name": "Spotify",
+              "__typename": "BrandTerm"
+            }
+          ],
+          "__typename": "ProductToBrandTermConnection"
+        },
+        "kinds": {
+          "nodes": [
+            {
+              "name": "entertainment",
+              "kindTitle": {
+                "title": null,
+                "__typename": "KindTitle"
+              },
+              "__typename": "KindTerm"
+            }
+          ],
+          "__typename": "ProductToKindTermConnection"
+        },
+        "categories": {
+          "nodes": [
+            {
+              "id": "Y2dfY2F0ZWdvcnk6MTA1",
+              "categoryHeader": {
+                "title": "Spotify Gift Card",
+                "image": {
+                  "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095856/6w4LjL2dAIVTRd8EW2BPRG/SpotifyLogo.png",
+                  "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095856/1KVlh22U6h0EKc2JfF0dzD/SpotifyLogo.png",
+                  "altText": "Spotify Gift Card",
+                  "description": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "CategoryHeader"
+              },
+              "slug": "spotify-gift-card",
+              "__typename": "CategoryTerm"
+            }
+          ],
+          "__typename": "ProductToCategoryTermConnection"
+        },
+        "rapidoProduct": {
+          "id": "2428",
+          "__typename": "Product"
+        },
+        "__typename": "CmsProduct"
+      },
+      {
+        "title": "Spotify Gift Card $30 USD (3 Months)",
+        "id": "Y2dfcHJvZHVjdDoxNzg=",
+        "link": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog///spotify-30-0/",
+        "uri": "spotify-30-0",
+        "information": {
+          "issueValue": "30.0",
+          "__typename": "Information"
+        },
+        "content": {
+          "image": null,
+          "tooltip": {
+            "title": "Spotify Gift Card $30",
+            "content": "Buy your Spotify 30 USD Gift Card at Rapido.com. Your Spotify Gift Card will be sent to you by email.",
+            "__typename": "Tooltip"
+          },
+          "__typename": "Content"
+        },
+        "slug": "30-usd",
+        "brands": {
+          "nodes": [
+            {
+              "name": "Spotify",
+              "__typename": "BrandTerm"
+            }
+          ],
+          "__typename": "ProductToBrandTermConnection"
+        },
+        "kinds": {
+          "nodes": [
+            {
+              "name": "entertainment",
+              "kindTitle": {
+                "title": null,
+                "__typename": "KindTitle"
+              },
+              "__typename": "KindTerm"
+            }
+          ],
+          "__typename": "ProductToKindTermConnection"
+        },
+        "categories": {
+          "nodes": [
+            {
+              "id": "Y2dfY2F0ZWdvcnk6MTA1",
+              "categoryHeader": {
+                "title": "Spotify Gift Card",
+                "image": {
+                  "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095856/6w4LjL2dAIVTRd8EW2BPRG/SpotifyLogo.png",
+                  "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095856/1KVlh22U6h0EKc2JfF0dzD/SpotifyLogo.png",
+                  "altText": "Spotify Gift Card",
+                  "description": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "CategoryHeader"
+              },
+              "slug": "spotify-gift-card",
+              "__typename": "CategoryTerm"
+            }
+          ],
+          "__typename": "ProductToCategoryTermConnection"
+        },
+        "rapidoProduct": {
+          "id": "2404",
+          "__typename": "Product"
+        },
+        "__typename": "CmsProduct"
+      },
+      {
+        "title": "Spotify Gift Card $60 USD (6 Months)",
+        "id": "Y2dfcHJvZHVjdDoxODA=",
+        "link": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog///spotify-60-0/",
+        "uri": "spotify-60-0",
+        "information": {
+          "issueValue": "60.0",
+          "__typename": "Information"
+        },
+        "content": {
+          "image": null,
+          "tooltip": {
+            "title": "Spotify Gift Card $60",
+            "content": "Buy your Spotify 60 USD Gift Card at Rapido.com. Your Spotify Gift Card will be sent to you by email.",
+            "__typename": "Tooltip"
+          },
+          "__typename": "Content"
+        },
+        "slug": "60-usd",
+        "brands": {
+          "nodes": [
+            {
+              "name": "Spotify",
+              "__typename": "BrandTerm"
+            }
+          ],
+          "__typename": "ProductToBrandTermConnection"
+        },
+        "kinds": {
+          "nodes": [
+            {
+              "name": "entertainment",
+              "kindTitle": {
+                "title": null,
+                "__typename": "KindTitle"
+              },
+              "__typename": "KindTerm"
+            }
+          ],
+          "__typename": "ProductToKindTermConnection"
+        },
+        "categories": {
+          "nodes": [
+            {
+              "id": "Y2dfY2F0ZWdvcnk6MTA1",
+              "categoryHeader": {
+                "title": "Spotify Gift Card",
+                "image": {
+                  "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095856/6w4LjL2dAIVTRd8EW2BPRG/SpotifyLogo.png",
+                  "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095856/1KVlh22U6h0EKc2JfF0dzD/SpotifyLogo.png",
+                  "altText": "Spotify Gift Card",
+                  "description": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "CategoryHeader"
+              },
+              "slug": "spotify-gift-card",
+              "__typename": "CategoryTerm"
+            }
+          ],
+          "__typename": "ProductToCategoryTermConnection"
+        },
+        "rapidoProduct": {
+          "id": "2416",
+          "__typename": "Product"
+        },
+        "__typename": "CmsProduct"
+      }
+    ],
+    "__typename": "CategoryTermToProductConnection"
+  }
+}
