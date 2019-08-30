@@ -37,9 +37,8 @@
 <script>
 
 import VueTypes from 'vue-types';
-import { values, pick } from 'lodash';
+import { pick } from 'lodash';
 import { Flag, Icon } from '~/components/atoms';
-import locales from '~~/config/i18n/localesConfig';
 
 export default {
   components: {
@@ -51,10 +50,12 @@ export default {
   },
   computed: {
     list() {
-      return values(locales).map(locale => ({
-        ...pick(locale, ['code', 'name', 'displayName']),
-        selected: locale.code === this.localeSelected,
-      }));
+      return this.$i18n.locales
+        .filter(locale => locale.selectable)
+        .map(locale => ({
+          ...pick(locale, ['code', 'name', 'displayName']),
+          selected: locale.code === this.localeSelected,
+        }));
     },
   },
   methods: {
