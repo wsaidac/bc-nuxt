@@ -10,7 +10,7 @@
       tabindex="0"
       :data-test="`country-list-text-${country.name}`"
       role="button"
-      class="w-1/2 mb-3 odd:pr-4"
+      class="w-full lg:w-1/2 mb-3 lg:odd:pr-4"
       @click="onClickLocale(country.code)"
     >
       <div
@@ -44,7 +44,7 @@
 <script>
 
 import VueTypes from 'vue-types';
-import { pick } from 'lodash';
+import { pick, orderBy } from 'lodash';
 import { Flag, Icon } from '~/components/atoms';
 
 export default {
@@ -62,12 +62,15 @@ export default {
   },
   computed: {
     list() {
-      return this.$i18n.locales
+      const localesList = this.$i18n.locales
         .filter(locale => locale.selectable)
         .map(locale => ({
           ...pick(locale, ['code', 'name', 'displayName']),
           selected: locale.code === this.localeSelected,
         }));
+
+
+      return orderBy(localesList, ['selected', 'displayName'], ['desc', 'asc']);
     },
   },
   methods: {
