@@ -18,6 +18,7 @@ module.exports = {
     'max-len': [1, 120, 2, {
       ignoreComments: true,
       ignoreUrls: true,
+      ignoreStrings: true,
     }],
     'quote-props': [1, 'consistent-as-needed'],
     radix: 0,
