@@ -60,7 +60,7 @@ module.exports = {
     opacity: ['responsive'],
     outline: ['responsive', 'focus'],
     overflow: ['responsive'],
-    padding: ['responsive', 'last', 'first'],
+    padding: ['responsive', 'last', 'first', 'odd'],
     pointerEvents: ['responsive'],
     position: ['responsive'],
     inset: ['responsive'],

@@ -19,7 +19,7 @@ storiesOf('Molecules/Country List', module)
       CountryList,
     },
     data: () => ({
-      localeSelected: 'it-it',
+      localeSelected: 'en-us',
     }),
     template: `
       <div style="margin: 0 auto; max-width: 400px">
