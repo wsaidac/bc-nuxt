@@ -32,6 +32,7 @@ export default {
   text-align: center;
 
   img {
+    margin: 0 auto;
     margin-bottom: 10px;
     max-height: 65px;
     max-width: 190px;
