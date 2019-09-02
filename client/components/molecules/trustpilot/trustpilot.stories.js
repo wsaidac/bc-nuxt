@@ -1,5 +1,5 @@
-import Vue from 'vue';
 /* eslint-disable */
+import Vue from 'vue';
 import { storiesOf } from '@storybook/vue';
 import { info } from '~~/.storybook/utils'
 import store from '~~/.storybook/store';

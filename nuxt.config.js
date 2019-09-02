@@ -124,6 +124,7 @@ const conf = {
     ['@nuxtjs/sentry'],
     ['~/modules/iconsWeb'],
     ['nuxt-i18n', i18nConfig(label)],
+    'portal-vue/nuxt',
   ],
   env: {
     API_BROWSER: process.env.API_BROWSER,

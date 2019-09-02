@@ -15,7 +15,7 @@ Vue.component('category-list', CategoryList)
 store.commit('menus/setMain', mainMock.data.menus.nodes[0])
 
 // stories
-storiesOf('Organisms/CategoryList', module)
+storiesOf('Organisms/Category List', module)
   .add('default', () => ({
     template: `<category-list />`,
     components: { CategoryList },

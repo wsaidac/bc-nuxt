@@ -4,6 +4,12 @@
     <header-navbar :items="main.categories" />
     <nuxt />
     <rapido-footer />
+    <no-ssr>
+      <portal-target
+        transition="fade"
+        name="overlay"
+      />
+    </no-ssr>
   </div>
 </template>
 
