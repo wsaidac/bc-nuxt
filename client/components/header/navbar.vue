@@ -15,46 +15,49 @@
             >
           </nuxt-link>
         </h1>
-        <div class="spacer" />
-        <div class="header-navbar__top-right">
-          <header-login />
-          <a
-            :href="faqUrl"
-            class="header-navbar__help"
-            title="help"
-          >
-            {{ $t('general.help') }}
-          </a>
-          <button
-            class="header-navbar__country-select"
-            @click="showDialog = true"
-          >
-            <span class="header-navbar__country-name">{{ country.name }}</span>
-            <span :class="`flag-icon flag-icon--bordered flag-icon--medium flag-icon-${getCountryFlag(country.name)}`" />
-            <ui-icon icon="caret-white" />
-          </button>
-          <div
-            v-if="!onUsers"
-            class="header-navbar__menu"
-            @click="menuOpen = !menuOpen"
-          >
-            <span class="header-navbar__menu-text">Menu</span>
-            <header-hamburger :active="menuOpen" />
+        <fragment v-if="!nonContent">
+          <div class="spacer" />
+          <div class="header-navbar__top-right">
+            <header-login />
+            <a
+              :href="faqUrl"
+              class="header-navbar__help"
+              title="help"
+            >
+              {{ $t('general.help') }}
+            </a>
+            <button
+              class="header-navbar__country-select"
+              @click="showDialog = true"
+            >
+              <span class="header-navbar__country-name">{{ country.name }}</span>
+              <span :class="`flag-icon flag-icon--bordered flag-icon--medium flag-icon-${getCountryFlag(country.name)}`" />
+              <ui-icon icon="caret-white" />
+            </button>
+            <div
+              v-if="!onUsers"
+              class="header-navbar__menu"
+              @click="menuOpen = !menuOpen"
+            >
+              <span class="header-navbar__menu-text">Menu</span>
+              <header-hamburger :active="menuOpen" />
+            </div>
           </div>
-        </div>
+        </fragment>
       </div>
     </div>
     <header-links-desktop
-      v-if="!onUsers"
+      v-if="!onUsers && !nonContent"
       :items="items"
     />
     <header-links-mobile
-      v-if="!onUsers"
+      v-if="!onUsers && !nonContent"
       :items="items"
       :menu-open="menuOpen"
       @close-menu="menuOpen = false"
     />
     <header-locale-select
+      v-if="!nonContent"
       :showdialog="showDialog"
       @hideDialog="showDialog = false"
     />
@@ -62,6 +65,8 @@
 </template>
 
 <script>
+import VueTypes from 'vue-types';
+
 import HeaderLogin from './login';
 import HeaderLinksDesktop from './links-desktop';
 import HeaderLinksMobile from './links-mobile';
@@ -81,18 +86,13 @@ export default {
   },
   mixins: [faqUrl, getCountryFlag],
   props: {
-    items: {
-      type: Array,
-      default() {
-        return [];
-      },
-    },
+    items: VueTypes.array.def([]),
     onUsers: {
       type: Boolean,
       default: false,
     },
+    nonContent: Boolean,
   },
-
   data() {
     return {
       menuOpen: false,
