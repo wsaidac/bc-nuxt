@@ -272,6 +272,13 @@
     "visa_and_mastercard_text_1": "On Rapido.com, you can pay via VISA credit card, VISA debit card (Delta and Electron) and MasterCard. At the checkout, you select payment by credit card. Then you enter your credit card details, including the card holder, the card number, expiration date and CVV code. Then confirm payment.",
     "visa_and_mastercard_text_2": "Upon receipt of payment, the top up code is sent immediately."
   },
+  "restricted_country": {
+    "title": "Only Available in the US",
+    "description": "You are trying to visit our US shop. Unfortunately this shop is only available if you're in the US.",
+    "country_list": {
+      "title": "Available countries"
+    }
+  },
   "usps": {
     "title": "Benefits of {domain}"
   }
