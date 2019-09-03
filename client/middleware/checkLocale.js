@@ -4,8 +4,18 @@ const EN_US_LOCALE = 'en-us';
 const COUNTRY_RESTRICTED = 'country-restricted';
 const COUNTRY_RESTRICTED_PATH = `/${COUNTRY_RESTRICTED}`;
 
-const routeDiDNotChange = ({ app, route }) => route.path.substring(1).startsWith(app.i18n.locale);
+/**
+ * Method to validate if the new request has change the locale route
+ * @param {Object} context.app
+ * @param {Object} context.route
+ */
+const localeDiDNotChange = ({ app, route }) => route.path.substring(1).startsWith(app.i18n.locale);
 
+/**
+ * Method to set 'country' cookie in Nuxt server context
+ * @param {Object} app Nuxt app context
+ * @param {String} countryCode  example: `pt-pt`
+ */
 const setCountryCookie = (app, countryCode) => {
   app.$cookies.set('country', countryCode, {
     path: '/',
@@ -13,6 +23,13 @@ const setCountryCookie = (app, countryCode) => {
   });
 };
 
+/**
+ * Method to validate if the viewer country exists in the country shops list
+ * if it exists return it locale. Example: `pt-pt`
+ * @param {Object} app Nuxt app context
+ * @param {String} cloudfrontViewerCountry cloudfrount header with viewer country info
+ * @return {String|Null} locale if exists in the country shops lists, else it returns null
+ */
 const getCloudfrontCountryInLocales = (app, cloudfrontViewerCountry) => {
   const locales = get(app, 'i18n.locales', []);
 
@@ -22,6 +39,10 @@ const getCloudfrontCountryInLocales = (app, cloudfrontViewerCountry) => {
   return cloudfrontLocale ? cloudfrontLocale.code.toLowerCase() : null;
 };
 
+/**
+ * Method to resolves redirect if the viewer doesn't have a cookie assigned and the current locale is restricted
+ * @param {Object} context Nuxt request context
+ */
 const redirectIfHasNotCountryCookie = ({ app, req, redirect }) => {
   const cloudfrontViewerCountry = req ? req.headers['cloudfront-viewer-country'] : null; // format: /pt-pt/
 
@@ -38,6 +59,10 @@ const redirectIfHasNotCountryCookie = ({ app, req, redirect }) => {
   return redirect(301, `/${locale}/`);
 };
 
+/**
+ * Method to resolves router redirection if the current route doesn't have a locale
+ * @param {Object} context Nuxt Request context
+ */
 const redirectIfPathDoesNotHaveLocale = (context) => {
   const { app, redirect } = context;
   // check if already exists a cookie with the visitor country
@@ -50,6 +75,10 @@ const redirectIfPathDoesNotHaveLocale = (context) => {
 };
 
 
+/**
+ * Method to resolves router redirection if the current locale is restricted for outsiders. For now just `en-us`
+ * @param {Object} context Nuxt Request context
+ */
 const redirectIfLocaleIsRestricted = (context) => {
   const { app, redirect } = context;
   // check if already exists a cookie with the visitor country
@@ -71,7 +100,7 @@ export default (context = {}) => {
     route,
   } = context;
   // if the locale hasn't change
-  if (!process.server && routeDiDNotChange(context)) return null;
+  if (!process.server && localeDiDNotChange(context)) return null;
 
   const urlPaths = route.path.split('/').filter(Boolean); // ['locale', 'category']
   const basePath = urlPaths[0];
