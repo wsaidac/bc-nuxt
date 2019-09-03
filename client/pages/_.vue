@@ -20,7 +20,8 @@ export default {
   components: {
     Home: () => import('~/pages-dynamic/home'),
     CategoryTerm: () => import('~/pages-dynamic/category'),
-    Product: () => import('~/pages-dynamic/product'),
+    BrandTerm: () => import('~/pages-dynamic/category'),
+    CmsProduct: () => import('~/pages-dynamic/product'),
     Error: () => import('~/pages-dynamic/error'),
     ServicePage: () => import('~/pages-dynamic/service-page'),
   },
@@ -82,7 +83,6 @@ export default {
         };
       }
 
-      post.__typename = post.__typename === 'CmsProduct' ? 'Product' : post.__typename;
       return { layout: post.__typename, post };
     } catch (event) {
       return {

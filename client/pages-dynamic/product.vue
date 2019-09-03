@@ -2,7 +2,7 @@
   <div class="cg-product">
     <header-banner
       :image="bannerImage"
-      :header="category.categoryHeader"
+      :header="brand.categoryHeader"
       :title="post.title"
     />
     <cg-usps :usps="usps.items" />
@@ -28,8 +28,8 @@
             :xs="24"
           >
             <category-highlights
-              :title="category.highlight.title"
-              :description="category.highlight.content"
+              :title="brand.highlight.title"
+              :description="brand.highlight.content"
             >
               <p v-text="post.content.subtext" />
             </category-highlights>
@@ -44,17 +44,17 @@
         <ui-col :sm="12">
           <category-accordion
             :usps="usps.items"
-            :slides="category.faqQuestions.questions"
+            :slides="brand.faqQuestions.questions"
           />
         </ui-col>
         <ui-col :sm="12">
           <div
-            v-if="category.infoBlock.title || category.infoBlock.text"
+            v-if="brand.infoBlock.title || brand.infoBlock.text"
             class="block block--blue block--padded"
           >
             <seo-block
-              :title="category.infoBlock.title"
-              :description="category.infoBlock.text"
+              :title="brand.infoBlock.title"
+              :description="brand.infoBlock.text"
             />
           </div>
         </ui-col>
@@ -64,8 +64,8 @@
     <div class="container">
       <service-button />
       <service-terms
-        :title="category.terms.title"
-        :description="category.terms.text"
+        :title="brand.terms.title"
+        :description="brand.terms.text"
       />
       <seo-breadcrumbs :crumbs="crumbs" />
     </div>
@@ -118,10 +118,8 @@ export default {
 
   head() {
     const date = new Date();
-    const { image } = this.category.categoryHeader;
-    const url = `https://${this.domain}/${this.$i18n.locale}/${
-      this.category.slug
-    }`;
+    const { image } = this.brand.categoryHeader;
+    const url = `https://${this.domain}/${this.$i18n.locale}/${this.brand.slug}`;
     const { kinds, brands } = this.post;
 
     const categoryMetas = kinds && kinds.nodes.map(
@@ -174,25 +172,18 @@ export default {
   computed: {
     ...mapGetters('shared', ['customerService', 'usps', 'header']),
     ...mapGetters('context', ['domain']),
-    category() {
-      const categorySlug = this.$route.path.split('/')[2];
-      return this.post.categories.nodes.find(
-        category => category.slug === categorySlug,
-      );
-    },
     brand() {
-      return (this.post.brands && this.post.brands.nodes[0]) || this.category;
+      return this.post.brands.nodes[0];
+    },
+    category() {
+      return this.post.categories.nodes[0];
     },
     bannerImage() {
-      return (
-        this.post.content.banner
-        || this.category.categoryHeader.banner
-        || this.header.image
-      );
+      return this.post.content.banner || this.brand.categoryHeader.banner;
     },
     crumbs() {
       return this.generateCrumbs(this.post.title, [
-        { url: this.category.slug, label: this.category.name },
+        { url: this.brand.slug, label: this.brand.name },
       ]);
     },
   },

@@ -5,7 +5,10 @@ const gradients = {
   },
 };
 const textColor = theme => theme('colors');
-const backgroundColor = theme => theme('colors');
+const backgroundColor = theme => ({
+  ...theme('colors'),
+  overlay: 'rgba(0, 0, 0, 0.6)',
+});
 
 const borderColor = theme => ({
   ...theme('colors'),

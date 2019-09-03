@@ -209,7 +209,7 @@ export default {
   }
 
   &__brand {
-    margin: 2px 0 0 33.5px;
+    margin: 4px 0 0 33.5px;
     width: 131.49px;
   }
 

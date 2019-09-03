@@ -10,7 +10,7 @@ describe('ProductPopular', () => {
 
   const products = [
     {
-      category: {
+      brand: {
         id: 1,
         slug: '/verizon/10-usd',
         categoryHeader: {
@@ -27,7 +27,7 @@ describe('ProductPopular', () => {
       },
     },
     {
-      category: {
+      brand: {
         id: 2,
         slug: '/verizon/10-usd',
         categoryHeader: {
@@ -41,7 +41,7 @@ describe('ProductPopular', () => {
       image: {},
     },
     {
-      category: {
+      brand: {
         id: 3,
         slug: '/verizon/10-usd',
         categoryHeader: {
@@ -59,6 +59,9 @@ describe('ProductPopular', () => {
   const localMount = (extraData = []) => {
     const newProducts = merge(products, extraData);
     $mounted = mount(ProductPopular, {
+      stubs: {
+        NuxtLink: RouterLinkStub,
+      },
       propsData: { popularProducts: { items: newProducts } },
     });
   };
@@ -85,7 +88,7 @@ describe('ProductPopular', () => {
   it('should iterate through multiple products when images are missing', () => {
     localMount([
       {
-        category: {
+        brand: {
           id: 1,
           slug: '/verizon/10-usd',
           categoryHeader: {
@@ -94,7 +97,7 @@ describe('ProductPopular', () => {
         },
       },
       {
-        category: {
+        brand: {
           id: 2,
           slug: '/verizon/10-usd',
           categoryHeader: {
@@ -109,14 +112,14 @@ describe('ProductPopular', () => {
   it('should iterate through multiple products when images ánd title are missing', () => {
     localMount([
       {
-        category: {
+        brand: {
           id: 1,
           slug: '/verizon/10-usd',
           categoryHeader: null,
         },
       },
       {
-        category: {
+        brand: {
           id: 2,
           slug: '/verizon/10-usd',
           categoryHeader: null,

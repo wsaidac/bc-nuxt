@@ -7,7 +7,7 @@
         class="product-variants__item"
       >
         <nuxt-link
-          :to="$contextPath(`${category.slug}/${item.slug}`)"
+          :to="$contextPath(`${product.brands.nodes[0].slug}/${item.slug}`)"
           :title="item.title"
         >
           <span v-html="item.title" />
@@ -20,8 +20,8 @@
       class="text-right"
     >
       <nuxt-link
-        :to="$contextPath(category.slug)"
-        :title="category.name"
+        :to="$contextPath(brand.slug)"
+        :title="brand.name"
       >
         {{ $t('home.see-all-denominations') }}
       </nuxt-link>
@@ -32,18 +32,18 @@
 <script>
 import { UiIcon } from '~/components/ui';
 
-import productCategory from '~/mixins/productCategory';
+import { productBrand } from '~/mixins';
 
 export default {
   components: {
     UiIcon,
   },
 
-  mixins: [productCategory],
+  mixins: [productBrand],
 
   computed: {
     variants() {
-      return this.category.products.nodes.filter(node => node.id !== this.product.id).slice(0, 3);
+      return this.brand.products.nodes.filter(node => node.id !== this.product.id).slice(0, 3);
     },
   },
 };

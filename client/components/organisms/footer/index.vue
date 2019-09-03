@@ -17,8 +17,15 @@
             :links="categoryLinks"
           />
         </column>
-        <column class="w-full md:w-1/3">
-          <div class="w-full h-full bg-success p-8">trustpilot widget</div>
+        <column class="w-full md:w-1/3 py-4 md:py-0">
+          <vue-trustpilot
+            identifier="footer"
+            data-style-height="130px"
+            data-style-width="100%"
+            data-theme="light"
+            data-stars="1,2,3,4,5"
+            data-schema-type="Organization"
+          />
         </column>
       </row>
     </container>

@@ -120,10 +120,12 @@ const conf = {
   },
   modules: [
     ['@nuxtjs/style-resources'],
+    // '@nuxtjs/tailwindcss',
     'cookie-universal-nuxt',
     ['@nuxtjs/sentry'],
     ['~/modules/iconsWeb'],
     ['nuxt-i18n', i18nConfig(label)],
+    'portal-vue/nuxt',
   ],
   env: {
     API_BROWSER: process.env.API_BROWSER,
@@ -149,6 +151,10 @@ const conf = {
     '~/plugins/element-ui.js',
     '~/plugins/click-outside-directive.js',
   ],
+  // tailwindcss: {
+  //   configPath: '~~/config/tailwind/tailwind.config.js',
+  //   cssPath: '~/assets/stylesheets/tailwind.css',
+  // },
   sentry: {
     dsn: process.env.SENTRY_DNS,
     config: {

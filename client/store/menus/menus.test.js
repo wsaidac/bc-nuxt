@@ -40,8 +40,8 @@ describe('store: menus', () => {
     mutations.setMain(state, menusMock.menus.nodes[0]);
 
     const categoryLinks = getters.categoryLinks(state);
-    const toCompare = categoryLinks.map(({ categories, ...rest }) => rest)
-    const expected = expectedGetters.categoryLinks.map(({ categories, ...rest }) => rest)
+    const toCompare = categoryLinks.map(({ categories, ...rest }) => rest);
+    const expected = expectedGetters.categoryLinks.map(({ categories, ...rest }) => rest);
     expect(toCompare).toEqual(expected);
   });
 

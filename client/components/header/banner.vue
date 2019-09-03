@@ -53,10 +53,6 @@ export default {
   name: 'HeaderBanner',
 
   props: {
-    post: {
-      type: Object,
-      default: () => { },
-    },
     image: {
       type: Object,
       default: () => { },

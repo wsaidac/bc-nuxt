@@ -2,33 +2,21 @@
 
 query {
   aboutUs: postByIdentifier(identifier: "about_us", type:  "cg_service_page") {
-    ... on ServicePage {
-      ...footerLinkFields
-    }
+    ...footerLinkFields
   }
   paymentMethods: postByIdentifier(identifier: "payment_methods", type:  "cg_service_page") {
-    ... on ServicePage {
-      ...footerLinkFields
-    }
+    ...footerLinkFields
   }
   rightOfWithdrawal: postByIdentifier(identifier: "right_of_withdrawal", type:  "cg_service_page") {
-    ... on ServicePage {
-      ...footerLinkFields
-    }
+    ...footerLinkFields
   }
   generalConditions: postByIdentifier(identifier: "general_conditions", type:  "cg_service_page") {
-    ... on ServicePage {
-      ...footerLinkFields
-    }
+    ...footerLinkFields
   }
   cookieStatement: postByIdentifier(identifier: "cookie_statement", type:  "cg_service_page") {
-    ... on ServicePage {
-      ...footerLinkFields
-    }
+    ...footerLinkFields
   }
   privacyPolicy: postByIdentifier(identifier: "privacy_policy", type:  "cg_service_page") {
-    ... on ServicePage {
-      ...footerLinkFields
-    }
+    ...footerLinkFields
   }
 }

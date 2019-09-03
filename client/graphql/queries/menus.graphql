@@ -18,6 +18,19 @@ query($slug: String) {
               label
               url
               connectedObject {
+                ... on BrandTerm {
+                  name
+                  slug
+                  categoryHeader {
+                    title
+                    image {
+                      regular: sharpieUrl(height: 86, width: 116)
+                      retina: sharpieUrl(height: 172, width: 232)
+                      altText
+                      description
+                    }
+                  }
+                }
                 ... on CategoryTerm {
                   name
                   slug
@@ -25,7 +38,7 @@ query($slug: String) {
                     title
                     image {
                       regular: sharpieUrl(height: 86, width: 116)
-        							retina: sharpieUrl(height: 172, width: 232)
+                      retina: sharpieUrl(height: 172, width: 232)
                       altText
                       description
                     }
