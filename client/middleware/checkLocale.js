@@ -50,7 +50,6 @@ export default ({
       }
     }
 
-    // return redirect(301, `/${app.i18n.defaultLocale}/`);
     return redirect(301, COUNTRY_RESTRICTED_PATH);
   }
 
