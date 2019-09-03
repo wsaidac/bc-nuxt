@@ -1,4 +1,4 @@
-fragment categoryTermFields on CategoryTerm {
+fragment brandTermFields on BrandTerm {
   name
   description
   slug

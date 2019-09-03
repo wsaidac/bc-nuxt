@@ -80,7 +80,7 @@ import { mapGetters } from 'vuex';
 import SharedTooltip from '~/components/shared/tooltip';
 import SharedInstantTooltip from '~/components/shared/instant-tooltip';
 import { UiButton, UiSelect } from '~/components/ui';
-import { dig, productCategory } from '~/mixins';
+import { dig, productBrand } from '~/mixins';
 
 export default {
   name: 'ProductCard',
@@ -92,7 +92,7 @@ export default {
     UiSelect,
   },
 
-  mixins: [productCategory, dig],
+  mixins: [productBrand, dig],
   props: {
     mode: {
       type: String,
@@ -142,7 +142,7 @@ export default {
     image() {
       return (
         this.product.content.image
-        || this.product.categories.nodes[0].categoryHeader.image
+        || this.product.brands.nodes[0].categoryHeader.image
       );
     },
   },

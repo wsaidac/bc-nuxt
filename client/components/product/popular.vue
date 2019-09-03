@@ -58,22 +58,22 @@ export default {
   computed: {
     decoratedProducts() {
       if (!this.popularProducts.items) return [];
-      return this.popularProducts.items.map(({ image, category }) => ({
-        ...category,
-        title: get(category, 'categoryHeader.title'),
+      return this.popularProducts.items.map(({ image, brand }) => ({
+        ...brand,
+        title: get(brand, 'categoryHeader.title'),
         image: {
           regular:
             get(image, 'regular')
-            || get(category, 'categoryHeader.image.regular'),
+            || get(brand, 'categoryHeader.image.regular'),
           retina:
             get(image, 'retina')
-            || get(category, 'categoryHeader.image.retina'),
+            || get(brand, 'categoryHeader.image.retina'),
           altText:
             get(image, 'altText')
-            || get(category, 'categoryHeader.image.altText'),
+            || get(brand, 'categoryHeader.image.altText'),
           description:
             get(image, 'description')
-            || get(category, 'categoryHeader.image.description'),
+            || get(brand, 'categoryHeader.image.description'),
         },
       }));
     },

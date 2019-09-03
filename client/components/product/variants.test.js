@@ -22,7 +22,7 @@ describe('ProductVariants', () => {
     },
     slug: '/product123',
     title: 'title',
-    categories: {
+    brands: {
       nodes: [
         {
           products: {

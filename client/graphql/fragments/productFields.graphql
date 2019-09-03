@@ -31,7 +31,7 @@ fragment productFields on CmsProduct {
     }
     subtext
   }
-  categories: categoryTerms {
+  brands: brandTerms {
     nodes {
       name
       description
@@ -82,11 +82,6 @@ fragment productFields on CmsProduct {
           slug
         }
       }
-    }
-  }
-  brands:brandTerms {
-    nodes {
-      name
     }
   }
   kinds: kindTerms {
