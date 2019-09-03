@@ -2,6 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /*/order
 Disallow: /*/order/
+Disallow: /*/cg_test
 
 Sitemap: https://www.rapido.com/en-us/sitemap.xml
 Sitemap: https://www.rapido.com/fr-be/sitemap.xml
