@@ -14,6 +14,7 @@
           media="(max-width: 767px)"
         >
         <img
+          alt="rapido.com"
           class="absolute w-full h-banner lg:h-banner-lg top-0 left-0 object-center object-cover"
           src="~/assets/images/country-restricted/regular-bg.png"
         >
