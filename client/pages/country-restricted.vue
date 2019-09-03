@@ -4,10 +4,21 @@
       class="w-full relative h-banner lg:h-banner-lg py-4"
       role="banner"
     >
-      <img
-        class="absolute w-full h-banner lg:h-banner-lg top-0 left-0 object-right object-cover"
-        src="~/assets/images/country-restriction-bg.png"
-      >
+      <picture>
+        <source
+          srcset="~/assets/images/country-restricted/regular-bg.png"
+          media="(min-width: 768px)"
+        >
+        <source
+          srcset="~/assets/images/country-restricted/mobile-bg.png"
+          media="(max-width: 767px)"
+        >
+        <img
+          class="absolute w-full h-banner lg:h-banner-lg top-0 left-0 object-center object-cover"
+          src="~/assets/images/country-restricted/regular-bg.png"
+        >
+      </picture>
+
       <div class="lg:hidden block absolute w-full bottom-0 left-0 bg-gradient-bright-shadow-bottom bg-gradient-shadow-top h-full" />
       <div class="container z-10 relative h-full flex items-end  lg:items-center">
         <div class="w-full md:w-1/2 lg:w-1/3">
