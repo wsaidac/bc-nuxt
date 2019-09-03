@@ -23,13 +23,13 @@
       <div class="lg:hidden block absolute w-full bottom-0 left-0 bg-gradient-bright-shadow-bottom bg-gradient-shadow-top h-full" />
       <div class="container z-10 relative h-full flex items-end  lg:items-center">
         <div class="w-full md:w-1/2 lg:w-1/3">
-          <h1 class="mb-6">{{ $t('restricted_country.title') }}</h1>
-          <h6 class="font-normal"> {{ $t('restricted_country.description') }} </h6>
+          <h1 class="mb-6">{{ $t('pages.restricted_country.title') }}</h1>
+          <h6 class="font-normal"> {{ $t('pages.restricted_country.description') }} </h6>
         </div>
       </div>
     </div>
     <article class="cg-container container container-margin">
-      <h2>{{ $t('restricted_country.country_list.title') }}</h2>
+      <h2>{{ $t('pages.restricted_country.country_list.title') }}</h2>
       <country-list
         :restricted-country="localeSelected"
         :column-sizes="columnSizes"
