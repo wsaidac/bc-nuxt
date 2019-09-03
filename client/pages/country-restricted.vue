@@ -29,7 +29,8 @@
       </div>
     </div>
     <article class="cg-container container container-margin">
-      <h2>{{ $t('pages.restricted_country.country_list.title') }}</h2>
+      <h2 class="my-4">{{ $t('pages.restricted_country.country_list.title') }}</h2>
+      <p class="my-4">{{ $t('pages.restricted_country.country_list.desc') }}</p>
       <country-list
         :restricted-country="localeSelected"
         :column-sizes="columnSizes"
@@ -62,9 +63,8 @@ export default {
     };
   },
   head() {
-    const url = `https://${this.domain}${this.$route.path}`;
     return {
-      link: [{ rel: 'canonical', href: url }],
+      title: 'Rapido.com - Choose Country',
     };
   },
   computed: {
