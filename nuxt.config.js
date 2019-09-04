@@ -120,7 +120,7 @@ const conf = {
   },
   modules: [
     ['@nuxtjs/style-resources'],
-    '@nuxtjs/tailwindcss',
+    // '@nuxtjs/tailwindcss',
     'cookie-universal-nuxt',
     ['@nuxtjs/sentry'],
     ['~/modules/iconsWeb'],
@@ -152,10 +152,10 @@ const conf = {
     '~/plugins/click-outside-directive.js',
     '~/plugins/fragment.js',
   ],
-  tailwindcss: {
-    configPath: '~~/config/tailwind/tailwind.config.js',
-    cssPath: '~/assets/stylesheets/tailwind.css',
-  },
+  // tailwindcss: {
+  //   configPath: '~~/config/tailwind/tailwind.config.js',
+  //   cssPath: '~/assets/stylesheets/tailwind.css',
+  // },
   sentry: {
     dsn: process.env.SENTRY_DNS,
     config: {

@@ -3,7 +3,7 @@
     <header-banner
       :image="bannerImage"
       :header="post.categoryHeader"
-      :title="`${post.categoryHeader.title}`"
+      :title="post.categoryHeader.title"
     />
     <cg-usps :usps="usps.items" />
     <shared-title :title="post.categoryHeader.title" />

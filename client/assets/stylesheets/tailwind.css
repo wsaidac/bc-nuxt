@@ -53,9 +53,6 @@ active {
     @apply list-disc ml-4;
   }
 
-  & a {
-    @apply text-link;
-  }
 
   & b {
     @apply block;
