@@ -33,7 +33,7 @@ fragment homeFields on Home {
         altText
         description
       }
-      category {
+      brand {
         id
         categoryHeader {
           title

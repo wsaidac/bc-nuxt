@@ -16,7 +16,7 @@ fragment quickbuyFields on CmsProduct {
       content
     }
   }
-  categories: categoryTerms {
+  brands: brandTerms {
     nodes {
       slug
       categoryHeader {

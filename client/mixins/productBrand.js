@@ -6,8 +6,8 @@ export default {
     },
   },
   computed: {
-    category() {
-      return this.product.categories.nodes[0];
+    brand() {
+      return this.product.brands.nodes[0];
     },
   },
 };
