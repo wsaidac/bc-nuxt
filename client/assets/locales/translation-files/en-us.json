@@ -263,8 +263,8 @@
   },
   "pages": {
     "restricted_country": {
-      "title": "Only Available in the US",
-      "description": "You are trying to visit our US shop. Unfortunately this shop is only available if you're in the US.",
+      "title": "Rapido.com is not available in your country",
+      "description": "You are trying to visit our shop. Unfortunately this shop is only available in the coutries listed below.",
       "country_list": {
         "title": "Select your country",
         "desc": "Your country selection will ensure that we offer the correct products and payment methods. Please ensure that it corresponds to your country and the account(s) on which you are planning to redeem the product."

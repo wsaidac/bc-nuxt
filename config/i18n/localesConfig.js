@@ -73,7 +73,7 @@ function getLocaleFileName(lang, locale) {
   }
 }
 
-function generateLocaleConfig(locale, name, currency, status) {
+function generateLocaleConfig(locale, name, currency, status, restricted) {
   const lang = locale.split('-')[0];
   const country = locale.split('-')[1].toUpperCase();
   const fileName = getLocaleFileName(lang, locale);
@@ -85,6 +85,7 @@ function generateLocaleConfig(locale, name, currency, status) {
     name: country,
     displayName: name,
     selectable: status === 'active' || false,
+    restricted: !!restricted,
     ...getCurrency(currency),
     ...getDateTimeFormats(locale),
   };
@@ -95,7 +96,7 @@ function generateLocaleConfig(locale, name, currency, status) {
 module.exports = {
   'da-dk': generateLocaleConfig('da-dk', 'Danmark', 'DKK', 'active'),
   'de-at': generateLocaleConfig('de-at', 'Österreich', 'EUR', 'active'),
-  'en-us': generateLocaleConfig('en-us', 'United States', 'USD', 'active'),
+  'en-us': generateLocaleConfig('en-us', 'United States', 'USD', 'active', true),
   'fr-be': generateLocaleConfig('fr-be', 'Belgique (Français)', 'EUR', 'active'),
   'pl-pl': generateLocaleConfig('pl-pl', 'Polska', 'PLN', 'active'),
   'it-it': generateLocaleConfig('it-it', 'Italia', 'EUR', 'active'),
