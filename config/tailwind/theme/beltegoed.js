@@ -1,7 +1,7 @@
-const shared = require('./shared');
+
+const createCustomTheme = require('./theme-factory');
 
 const baseColors = {
-  primary: '#173962',
   secondary: {
     default: '#438FDF',
     light: '#7FBAF9',
@@ -11,21 +11,6 @@ const baseColors = {
     default: '#1FD2AF',
     dark: '#1db99b',
   },
-  positive: '#70D7A6',
-  warning: '#FFE47E',
-  gray: {
-    black: '#838383',
-    dark: '#BEBEBE',
-    default: '#E8E8E8',
-    light: '#F3F3F3',
-  },
-  error: {
-    default: '#FF6158',
-    light: '#FFDADA',
-  },
-  black: '#1F1F1E',
-  white: '#FFFFFF',
-  transparent: 'transparent',
 };
 
 const colorCustomDefinitions = {
@@ -37,12 +22,13 @@ const colorCustomDefinitions = {
   'highlight': baseColors.secondary.default,
 };
 
+
 const theme = {
-  ...shared,
+  name: 'Beltegoed',
   colors: {
     ...baseColors,
     ...colorCustomDefinitions,
   },
 };
 
-module.exports = theme;
+module.exports = createCustomTheme(theme);
