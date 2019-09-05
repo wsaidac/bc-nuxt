@@ -2,7 +2,9 @@
 
 /* Preflight: it injects global styles for html tags */
 /* more: https://tailwindcss.com/docs/preflight/ */
-@tailwind base;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 html {
   @apply font-body text-base leading-normal text-primary font-normal antialiased;
@@ -24,13 +26,6 @@ button:focus,
 /* Extended components
   @TODO: find a better way for define the extended components
 */
-
-
-
-@tailwind components;
-@tailwind utilities;
-
-
 
 @variants hover,
 focus,
