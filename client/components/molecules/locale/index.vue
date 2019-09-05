@@ -12,7 +12,7 @@
     >
       <flag
         :country="country.name"
-        class="mr-1"
+        class="mr-1 leading-normal"
       />
       {{ country.name }}
     </p>

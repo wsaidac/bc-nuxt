@@ -64,6 +64,7 @@ module.exports = {
     ...theme('spacing'),
     'banner-sm': '19rem',
     'banner': '20rem',
+    'banner-lg': '398px',
     'full': '100%',
     'screen': '100vh',
   }),

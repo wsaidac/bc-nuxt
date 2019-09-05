@@ -16,6 +16,9 @@ module.exports = function (label) {
     langDir: 'assets/locales/translation-files/',
     locales: Object.values(sortedLocales),
     defaultLocale,
+    pages: {
+      'country-restricted': false,
+    },
     vueI18n: {
       fallbackLocale: defaultLocale,
       silentTranslationWarn: true,

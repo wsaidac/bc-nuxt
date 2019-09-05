@@ -1,6 +1,6 @@
 <template>
   <footer class="rapido-footer">
-    <div v-if="!onUsers">
+    <div v-if="showExtraContent">
       <hr>
       <div class="container container--mobile-not-padded">
         <ui-row>
@@ -11,7 +11,7 @@
       </div>
       <hr>
     </div>
-    <footer-links v-if="!onUsers" />
+    <footer-links v-if="showExtraContent" />
     <footer-copyright />
   </footer>
 </template>
@@ -39,10 +39,14 @@ export default {
       type: Boolean,
       default: false,
     },
+    nonContent: Boolean,
   },
 
   computed: {
     ...mapGetters('shared', ['paymentMethods']),
+    showExtraContent() {
+      return !this.nonContent && !this.onUsers;
+    },
   },
 };
 </script>
