@@ -71,35 +71,46 @@ export default {
   async asyncData({ app, route }) {
     const slug = slugFromPath(route.path, app.i18n.locale);
     try {
-      const { data: { post } } = await app.$query('post', { slug });
-      if (post === null) {
-        return {
-          layout: 'Error',
-          post: {
-            title: `${app.i18n.t('error.title')} - ${app.i18n.t(
-              'general.domain',
-            )}`,
-          },
-        };
+      const { data: { post }, errors } = await app.$query('post', { slug });
+
+      if (!post) {
+        return this.handleError(errors);
       }
 
       return { layout: post.__typename, post };
-    } catch (event) {
-      return {
-        layout: 'Error',
-        post: {
-          title: `${app.i18n.t('error.title')} - ${app.i18n.t(
-            'general.domain',
-          )}`,
-        },
-      };
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      return this.handleError(error);
     }
   },
-
-  middleware: 'cdnCacheHeader',
 
   mounted() {
     window.scrollTo(0, 0);
   },
+
+  methods: {
+    handleError(error) {
+      const prod = process.env.NODE_ENV === 'production';
+      if (!prod) {
+        // eslint-disable-next-line no-console
+        console.warn('[Sync error]:', error);
+      }
+
+      if (prod && this.$sentry) {
+        this.$sentry.captureException(error);
+      }
+
+      return {
+        layout: 'Error',
+        post: {
+          title: `${this.$t('error.title')} - ${this.$t(
+            'general.domain',
+          )}`,
+        },
+      };
+    },
+  },
+
+  middleware: 'cdnCacheHeader',
 };
 </script>

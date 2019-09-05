@@ -1,4 +1,3 @@
-const path = require('path');
 const i18nConfig = require('./config/i18n');
 const cspPolicies = require('./config/csp-policies');
 
@@ -38,10 +37,7 @@ const conf = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: process.env.NODE_ENV === 'production' ? marketingScripts : [],
   },
-  css: [
-    '~/assets/stylesheets/tailwind.css',
-    '~/assets/stylesheets/application.scss',
-  ],
+  css: ['~/assets/stylesheets/application.scss'],
   store: true,
   loading: {
     color: '#dce6f5',
@@ -49,7 +45,6 @@ const conf = {
   },
   build: {
     publicPath: '/rapidoweb/',
-    extractCSS: true,
 
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
@@ -78,16 +73,11 @@ const conf = {
       plugins: {
         'postcss-import': {},
         'postcss-url': {},
-        'postcss-preset-env': {
-          stage: 1, // enable all (experimental) polyfills
-          autoprefixer: {
-            cascade: false,
-            grid: false,
-          },
-          tailwindcss: path.resolve(__dirname, './config/tailwind/tailwind.config.js'),
-        },
+        'postcss-preset-env': {},
+        // 'tailwindcss': path.resolve(__dirname, './config/tailwind/tailwind.config.js'),
       },
     },
+    extractCSS: process.env.NODE_ENV !== 'development',
     babel: {
       presets({ isServer }) {
         return [
@@ -130,6 +120,7 @@ const conf = {
   },
   modules: [
     ['@nuxtjs/style-resources'],
+    // '@nuxtjs/tailwindcss',
     'cookie-universal-nuxt',
     ['@nuxtjs/sentry'],
     ['~/modules/iconsWeb'],
@@ -161,6 +152,10 @@ const conf = {
     '~/plugins/click-outside-directive.js',
     '~/plugins/fragment.js',
   ],
+  // tailwindcss: {
+  //   configPath: '~~/config/tailwind/tailwind.config.js',
+  //   cssPath: '~/assets/stylesheets/tailwind.css',
+  // },
   sentry: {
     dsn: process.env.SENTRY_DNS,
     config: {

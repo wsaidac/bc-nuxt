@@ -86,6 +86,7 @@ function createClient({ store, env }) {
         errors: [],
       };
     } catch (errors) {
+      console.warn('[Artemis]:', errors);
       return ({
         data: {},
         errors: errors.graphQLErrors,
