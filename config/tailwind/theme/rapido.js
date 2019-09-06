@@ -1,13 +1,31 @@
-const shared = require('./shared');
+const createCustomTheme = require('./theme-factory');
 
-const theme = {
-  ...shared,
-  colors: {
-    ...shared.colors,
-    primary: {
-      default: '#1000e3',
-    },
+const baseColors = {
+  secondary: {
+    default: '#1db99b',
+    light: '#1fd2af',
+  },
+  tertiary: {
+    default: '#336bff',
+    dark: '#2958d5',
   },
 };
 
-module.exports = theme;
+const colorCustomDefinitions = {
+  'cta': baseColors.tertiary.default,
+  'cta-hover': baseColors.tertiary.dark,
+  'link': baseColors.secondary.default,
+  'accent': baseColors.secondary.light,
+  'success': baseColors.tertiary.default,
+  'highlight': baseColors.secondary.default,
+};
+
+const theme = {
+  name: 'rapido',
+  colors: {
+    ...baseColors,
+    ...colorCustomDefinitions,
+  },
+};
+
+module.exports = createCustomTheme(theme);

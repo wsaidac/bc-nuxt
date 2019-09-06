@@ -9,22 +9,6 @@ html {
   box-sizing: inherit;
 }
 
-//TODO: override base tailwindcss that screws up the current UI
-blockquote,
-dl,
-dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-figure,
-p,
-pre {
-  margin: inherit;
-}
-
 html,
 body {
   background: $body-bg;

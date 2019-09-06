@@ -1,7 +1,7 @@
 <template>
   <ul
     v-if="list.length"
-    class="flex flex-wrap -mx-1"
+    class="country-list"
   >
     <li
       v-for="country in list"
@@ -11,10 +11,12 @@
       :data-test="`country-list-text-${country.name}`"
       role="button"
       class="country-list__item"
-      :class="['pb-4 px-2', columnClasses]"
       @click="onClickLocale(country.code)"
     >
-      <div :class="[listItemClasses, { 'bg-gray-light': country.selected }]">
+      <div
+        class="box"
+        :class="[{ 'bg-gray-light': country.selected }]"
+      >
         <flag
           :country="country.name"
           squared
@@ -63,11 +65,6 @@ export default {
     }).def(COLUMN_SIZE),
     restrictedCountry: VueTypes.string.def(null),
   },
-  data() {
-    return {
-      listItemClasses: 'flex px-6 py-3 border border-solid border-gray justify-between items-center cursor-pointer hover:bg-gray-light focus:outline-none',
-    };
-  },
   computed: {
     list() {
       const localesList = this.$i18n.locales
@@ -93,3 +90,68 @@ export default {
 
 };
 </script>
+
+<style lang="scss" scoped>
+$color-gray: #e8e8e8;
+$color-gray-light: #f3f3f3;
+$color-gray-black: #838383;
+
+.country-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 -4px;
+  padding: 0;
+
+  &__item {
+    font-size: 1rem;
+    padding: 0 0.5rem 1rem 0.5rem;
+    width: 50%;
+
+    .box {
+      align-items: center;
+      background: white;
+      border: 1px solid $color-gray;
+      cursor: pointer;
+      display: flex;
+      padding: 0.75rem 1.5rem;
+
+      &:hover {
+        background: $color-gray-light;
+      }
+
+      &:focus {
+        outline: 0;
+      }
+
+      .flag {
+        flex-grow: 0;
+      }
+
+      p {
+        color: $color-gray-black;
+        flex-grow: 1;
+        overflow: hidden;
+        padding-left: 1rem;
+        text-overflow: ellipsis;
+        text-transform: capitalize;
+        white-space: nowrap;
+      }
+    }
+
+    @include media-breakpoint-up("md") {
+      font-size: 1.125rem;
+      width: 33%;
+    }
+  }
+}
+
+li:focus,
+button:focus {
+  outline: 0;
+}
+
+.bg-gray-light {
+  background: $color-gray-light;
+}
+</style>

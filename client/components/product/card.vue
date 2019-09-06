@@ -77,6 +77,7 @@
 <script>
 import { mapGetters } from 'vuex';
 
+import { get } from 'lodash';
 import SharedTooltip from '~/components/shared/tooltip';
 import SharedInstantTooltip from '~/components/shared/instant-tooltip';
 import { UiButton, UiSelect } from '~/components/ui';
@@ -123,7 +124,7 @@ export default {
       return ['product-card', `product-card--mode-${this.mode}`];
     },
     options() {
-      const defaultAmounts = [
+      let defaultAmounts = [
         { id: 0, label: 1, value: 1 },
         { id: 1, label: 2, value: 2 },
         { id: 2, label: 3, value: 3 },
@@ -132,9 +133,8 @@ export default {
         { id: 5, label: 10, value: 10 },
       ];
 
-      // todo: remove this check and get the max amount from  CMS
-      if (this.product.brands.nodes[0].name === 'iTunes') {
-        defaultAmounts.pop();
+      if (get(this, 'product.information.maxQuantity')) {
+        defaultAmounts = defaultAmounts.filter(amount => amount.value <= this.product.information.maxQuantity);
       }
 
       return defaultAmounts;

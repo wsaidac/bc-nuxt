@@ -150,6 +150,7 @@ const conf = {
     '~/plugins/pagination.js',
     '~/plugins/element-ui.js',
     '~/plugins/click-outside-directive.js',
+    '~/plugins/fragment.js',
   ],
   // tailwindcss: {
   //   configPath: '~~/config/tailwind/tailwind.config.js',

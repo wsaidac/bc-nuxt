@@ -86,6 +86,10 @@ function createClient({ store, env }) {
         errors: [],
       };
     } catch (errors) {
+      if (process.env.NODE_ENV !== 'production') {
+        // eslint-disable-next-line no-console
+        console.warn('[Artemis]:', errors);
+      }
       return ({
         data: {},
         errors: errors.graphQLErrors,

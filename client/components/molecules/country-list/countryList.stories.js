@@ -22,9 +22,9 @@ storiesOf('Molecules/Country List', module)
       localeSelected: 'en-us',
     }),
     template: `
-      <div style="margin: 0 auto; max-width: 400px">
+      <container>
         <country-list :localeSelected="localeSelected" @country-list:click="changeLocale" />
-      </div>
+      </container>
     `,
     methods: {
       changeLocale(code) {

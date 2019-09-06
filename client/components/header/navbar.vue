@@ -16,10 +16,14 @@
           </nuxt-link>
         </h1>
         <div class="spacer" />
-        <div class="header-navbar__top-right">
+        <div
+          v-if="!nonContent"
+          class="header-navbar__top-right"
+        >
           <header-login />
           <a
-            :href="faqUrl"
+            :href="
+              faqUrl"
             class="header-navbar__help"
             title="help"
           >
@@ -45,16 +49,17 @@
       </div>
     </div>
     <header-links-desktop
-      v-if="!onUsers"
+      v-if="!onUsers && !nonContent"
       :items="items"
     />
     <header-links-mobile
-      v-if="!onUsers"
+      v-if="!onUsers && !nonContent"
       :items="items"
       :menu-open="menuOpen"
       @close-menu="menuOpen = false"
     />
     <header-locale-select
+      v-if="!nonContent"
       :showdialog="showDialog"
       @hideDialog="showDialog = false"
     />
@@ -62,6 +67,8 @@
 </template>
 
 <script>
+import VueTypes from 'vue-types';
+
 import HeaderLogin from './login';
 import HeaderLinksDesktop from './links-desktop';
 import HeaderLinksMobile from './links-mobile';
@@ -81,18 +88,13 @@ export default {
   },
   mixins: [faqUrl, getCountryFlag],
   props: {
-    items: {
-      type: Array,
-      default() {
-        return [];
-      },
-    },
+    items: VueTypes.array.def([]),
     onUsers: {
       type: Boolean,
       default: false,
     },
+    nonContent: Boolean,
   },
-
   data() {
     return {
       menuOpen: false,

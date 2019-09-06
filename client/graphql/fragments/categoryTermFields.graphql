@@ -50,6 +50,7 @@ fragment categoryTermFields on CategoryTerm {
       slug
       information {
         issueValue
+        maxQuantity
       }
       content {
         image {

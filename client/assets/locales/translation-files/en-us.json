@@ -261,6 +261,16 @@
     "privacy-policy": "Privacy Policy",
     "terms-of-use": "Terms of Use"
   },
+  "pages": {
+    "restricted_country": {
+      "title": "Rapido.com is not available in your country",
+      "description": "You are trying to visit our shop. Unfortunately this shop is only available in the coutries listed below.",
+      "country_list": {
+        "title": "Select your country",
+        "desc": "Your country selection will ensure that we offer the correct products and payment methods. Please ensure that it corresponds to your country and the account(s) on which you are planning to redeem the product."
+      }
+    }
+  },
   "payment-methods": {
     "checkout-options": "On Rapido.com, you can checkout with the following trusted payment options. Each payment option will be described below.",
     "credit-or-debit-card": "Credit / Debit card",
