@@ -40,12 +40,12 @@ export default {
   },
   props: {
     header: VueTypes.shape({
-      image: VueTypes.oneOf([Object, String]).def(''),
+      image: VueTypes.oneOfType([Object, String]).def(''),
       titlePart1: VueTypes.string.def(''),
       titlePart2: VueTypes.string.def(''),
       description: VueTypes.string.def(''),
       buttonText: VueTypes.string.def(''),
-    }),
+    }).loose.def({}),
   },
   methods: {
     onBannerCardClick() {

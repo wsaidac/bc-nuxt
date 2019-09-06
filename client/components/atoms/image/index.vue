@@ -46,6 +46,8 @@ export default {
     alt: VueTypes.string.def(''),
     height: VueTypes.string.def('auto'),
     width: VueTypes.string.def('full'),
+    contain: Boolean,
+    position: VueTypes.oneOf(['left', 'right', 'center']).def('center'),
   },
   computed: {
     isResponsive() {
@@ -55,7 +57,7 @@ export default {
       return breakpoints;
     },
     classes() {
-      return `object-cover object-center h-${this.height} w-${this.width}`;
+      return `object-${this.contain ? 'contain' : 'cover'} object-${this.position} h-${this.height} w-${this.width}`;
     },
     imageAlt() {
       return get(this, 'src.alt', false) || this.alt;

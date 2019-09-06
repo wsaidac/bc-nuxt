@@ -27,12 +27,7 @@ export default {
     UiLink,
   },
   props: {
-    items: VueTypes.arrayOf(
-      VueTypes.shape({
-        url: VueTypes.string.def('#'),
-        title: String,
-      }),
-    ).def([]),
+    items: VueTypes.arrayOf(Object).def([]),
   },
 };
 
