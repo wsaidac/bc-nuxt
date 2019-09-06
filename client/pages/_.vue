@@ -9,9 +9,8 @@
 <script>
 import { mapGetters } from 'vuex';
 import removeContextChangeLoader from '~/mixins/removeContextChangeLoader';
-import utils from '~/utils';
+import { uppercaseCountryInLocale, renderErrorPage } from '~/utils';
 
-const { uppercaseCountryInLocale, renderErrorPage } = utils;
 function slugFromPath(path, locale) {
   if (path === `/${locale}/`) return 'home';
   return path.replace(`${locale}/`, '');
