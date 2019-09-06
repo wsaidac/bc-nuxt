@@ -3,7 +3,7 @@ const cspPolicies = require('./config/csp-policies');
 
 require('dotenv').config();
 
-const label = process.env.LABEL || 'beltegoed';
+const label = process.env.LABEL || 'rapido';
 
 const marketingScripts = [
   { src: '/blueconic.js' },
