@@ -23,10 +23,15 @@ storiesOf('Molecules/Info Card', module)
     components: {
       InfoCard,
     },
+    data() {
+      return {
+        info: {
+          text: desc,
+          title,
+        }
+      }
+    },
     template: `
-      <info-card
-        title="${title}"
-        content="${desc}"
-      />
+      <info-card :info="info" />
     `,
   }), info);

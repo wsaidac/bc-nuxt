@@ -4,7 +4,7 @@
     tabindex="0"
     class="cursor-pointer inline-block"
     :aria-label="$t('country_select.title')"
-    @click="$emit('locale:click')"
+    @click.stop="$emit('locale:click')"
   >
     <p
       aria-hidden="true"

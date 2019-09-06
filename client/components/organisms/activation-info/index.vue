@@ -2,14 +2,12 @@
   <fragment>
     <row>
       <column class="w-full">
-        <main-title type="secondary">
-          {{ $t('account.faq.faq-all') }}
-        </main-title>
+        <main-title type="secondary">{{ $t("components.activation_info.title") }}</main-title>
       </column>
     </row>
     <row>
       <column class="w-full">
-        <order-help-accordion :questions="questions" />
+        <info-card :info="info" />
       </column>
     </row>
   </fragment>
@@ -17,18 +15,20 @@
 
 <script>
 import VueTypes from 'vue-types';
-import { MainTitle, OrderHelpAccordion } from '~/components/molecules';
+
 import { Row, Column } from '~/components/grid';
+import { MainTitle, InfoCard } from '~/components/molecules';
+
 
 export default {
   components: {
-    MainTitle,
-    OrderHelpAccordion,
     Row,
     Column,
+    MainTitle,
+    InfoCard,
   },
   props: {
-    questions: VueTypes.array.def([]),
+    info: VueTypes.object.def({}),
   },
 };
 

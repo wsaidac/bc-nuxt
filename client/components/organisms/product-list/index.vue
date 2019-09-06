@@ -1,8 +1,8 @@
 <template>
-  <container>
+  <fragment>
     <row>
       <column class="w-full">
-        <main-title>{{ title }}</main-title>
+        <main-title type="secondary">{{ title }}</main-title>
       </column>
     </row>
     <row wrap>
@@ -17,7 +17,7 @@
         />
       </column>
     </row>
-  </container>
+  </fragment>
 </template>
 
 <script>

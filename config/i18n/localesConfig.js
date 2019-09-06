@@ -65,8 +65,8 @@ function getLocaleFileName(lang, locale) {
     case 'fr':
       return 'fr-be';
 
-    case 'no':
-      return 'nb-no';
+    case 'nl':
+      return 'be-nl';
 
     default:
       return locale;

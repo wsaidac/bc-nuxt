@@ -1,4 +1,7 @@
 {
+  "activation_info": {
+    "title": "Activation of your code"
+  },
   "account": {
     "account-confirmed": "Account confirmed",
     "account-created": "You’ve successfully created a Rapido account",
@@ -191,6 +194,14 @@
   "brand_box": {
     "fast_to": "fast to:",
     "link_name": "View all {brandName} products"
+  },
+  "components": {
+    "activation_info": {
+      "title": "Activation of your code"
+    },
+    "review_list": {
+      "title": "Reviews"
+    }
   },
   "country_select": {
     "button_name": "Confirm",

@@ -47,11 +47,7 @@ storiesOf('Organisms/Category Banner', module)
       };
     },
     template: `
-      <category-banner
-        :title="header.title"
-        :banner="header.banner"
-        :logo="header.image"
-      />`,
+      <category-banner :categoryHeader="header" />`,
     components: { CategoryBanner },
     store,
   }), info)

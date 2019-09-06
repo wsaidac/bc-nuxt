@@ -25,7 +25,8 @@ export default {
   },
   computed: {
     homeLink() {
-      return get(this, '$route.path', '').match(/\/(.*?)\//g);
+      const matches = get(this, '$route.path', '').match(/\/(.*?)\//g);
+      return matches.length && matches[0]
     },
     alt() {
       return this.$store.getters['context/domain'];
