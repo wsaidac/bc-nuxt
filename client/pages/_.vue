@@ -9,7 +9,7 @@
 <script>
 import { mapGetters } from 'vuex';
 import removeContextChangeLoader from '~/mixins/removeContextChangeLoader';
-import { uppercaseCountryInLocale } from '~/utils/';
+import { uppercaseCountryInLocale, renderErrorPage } from '~/utils/';
 
 function slugFromPath(path, locale) {
   if (path === `/${locale}/`) return 'home';
@@ -74,43 +74,20 @@ export default {
       const { data: { post }, errors } = await app.$query('post', { slug });
 
       if (!post) {
-        return this.handleError(errors);
+        return renderErrorPage(errors, app);
       }
 
+      // return null;
       return { layout: post.__typename, post };
     } catch (error) {
       // eslint-disable-next-line no-console
-      return this.handleError(error);
+      return renderErrorPage(error, app);
     }
   },
 
   mounted() {
     window.scrollTo(0, 0);
   },
-
-  methods: {
-    handleError(error) {
-      const prod = process.env.NODE_ENV === 'production';
-      if (!prod) {
-        // eslint-disable-next-line no-console
-        console.warn('[Sync error]:', error);
-      }
-
-      if (prod && this.$sentry) {
-        this.$sentry.captureException(error);
-      }
-
-      return {
-        layout: 'Error',
-        post: {
-          title: `${this.$t('error.title')} - ${this.$t(
-            'general.domain',
-          )}`,
-        },
-      };
-    },
-  },
-
   middleware: 'cdnCacheHeader',
 };
 </script>
