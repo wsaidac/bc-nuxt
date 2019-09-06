@@ -45,4 +45,4 @@ const label = process.env.LABEL || 'beltegoed';
 
 const labelConfig = config[label] || config.default;
 
-module.exports = labelConfig;
+export default labelConfig;
