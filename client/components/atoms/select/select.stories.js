@@ -35,11 +35,17 @@ storiesOf('Atoms/Select', module)
       },
     },
     template: `
-      <ui-select
-        :options="[{ id: 1, value: 'value1', label: 'label 1' }, { id: 2, value: 'value2', label: 'label 2' }]"
-        placeholder="Select your bank"
-        @select="action"
-      />
+      <container class="py-8">
+        <row>
+          <column class="w-full md:w-1/2">
+            <ui-select
+              :options="[{ id: 1, value: 'value1', label: 'label 1' }, { id: 2, value: 'value2', label: 'label 2' }]"
+              placeholder="Select your bank"
+              @select="action"
+            />
+          </column>
+        </row>
+      </container>
     `,
     methods: {
       action: action('selected'),
@@ -55,9 +61,16 @@ storiesOf('Atoms/Select', module)
       Select,
     },
     template: `
-    <ui-select
-      hasError
-      :options="[{ id: 1, value: 'value1', label: 'label 1' }, { id: 2, value: 'value2', label: 'label 2' }]"
-      placeholder="Select your bank"
-    />`,
+      <container class="py-8">
+        <row>
+          <column class="w-full md:w-1/2">
+            <ui-select
+              hasError
+              :options="[{ id: 1, value: 'value1', label: 'label 1' }, { id: 2, value: 'value2', label: 'label 2' }]"
+              placeholder="Select your bank"
+            />
+          </column>
+        </row>
+      </container>
+    `,
   }), info);

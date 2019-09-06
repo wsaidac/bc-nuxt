@@ -16,9 +16,17 @@ Vue.component('flag', Flag);
 storiesOf('Atoms/Flag', module)
   .add('default', () => ({
     template: `
-      <div style="display: flex; flex-direction: row; font-size: 2rem;">
-        <flag country="co" />
-      <div>
+      <container class="py-8">
+        <h2 class="mb-6">Countries by ISO 3166 code</h2>
+        <div style="display: flex; flex-direction: row; font-size: 2rem;">
+          <flag country="co" class="mr-4" />
+          <flag country="us" class="mr-4"/>
+          <flag country="ai" class="mr-4"/>
+          <flag country="br" class="mr-4"/>
+          <flag country="de" class="mr-4"/>
+          <flag country="fr" class="mr-4"/>
+        </div>
+      </container>
     `,
     components: {
       Flag,
