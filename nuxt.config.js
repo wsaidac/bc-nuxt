@@ -35,7 +35,7 @@ const conf = {
         href: 'https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,800&display=swap&subset=latin-ext',
       },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: process.env.NODE_ENV === 'production' ? marketingScripts : [],
+    script: process.env.NODE_ENV === 'production' ? marketingScripts : [{ src: '/phraseapp-editor.js' }],
   },
   css: ['~/assets/stylesheets/application.scss'],
   store: true,
@@ -133,6 +133,7 @@ const conf = {
     GTM_ID: process.env.GTM_ID,
     GTM_DEBUG: process.env.NODE_ENV === 'development',
     LABEL: label,
+    ENABLE_PHRASEAPP_EDITOR: process.env.ENABLE_PHRASEAPP_EDITOR,
   },
   plugins: [
     '~/plugins/artemis.js',

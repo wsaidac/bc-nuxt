@@ -24,6 +24,7 @@ const scripts = [
   '\'unsafe-inline\'',
   '*.rapido.com',
   '*.cgaws.cloud',
+  '*.phrase.com',
   ...marketingURIS,
 ];
 

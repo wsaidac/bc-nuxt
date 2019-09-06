@@ -7,6 +7,11 @@ async function setElementUiLocale(locale) {
 }
 
 export default function ({ app, error }) {
+  if (process.env.ENABLE_PHRASEAPP_EDITOR) {
+    app.i18n.t = function (keyName) {
+      return `{{__phrase_${keyName}__}}`;
+    };
+  }
   // onLanguageSwitched called right after a new locale has been set
   app.i18n.onLanguageSwitched = (_, newLocale) => {
     app.store.commit('async/setContextChange', true);
