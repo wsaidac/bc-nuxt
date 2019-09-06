@@ -15,35 +15,37 @@
             >
           </nuxt-link>
         </h1>
-        <fragment v-if="!nonContent">
-          <div class="spacer" />
-          <div class="header-navbar__top-right">
-            <header-login />
-            <a
-              :href="faqUrl"
-              class="header-navbar__help"
-              title="help"
-            >
-              {{ $t('general.help') }}
-            </a>
-            <button
-              class="header-navbar__country-select"
-              @click="showDialog = true"
-            >
-              <span class="header-navbar__country-name">{{ country.name }}</span>
-              <span :class="`flag-icon flag-icon--bordered flag-icon--medium flag-icon-${getCountryFlag(country.name)}`" />
-              <ui-icon icon="caret-white" />
-            </button>
-            <div
-              v-if="!onUsers"
-              class="header-navbar__menu"
-              @click="menuOpen = !menuOpen"
-            >
-              <span class="header-navbar__menu-text">Menu</span>
-              <header-hamburger :active="menuOpen" />
-            </div>
+        <div class="spacer" />
+        <div
+          v-if="!nonContent"
+          class="header-navbar__top-right"
+        >
+          <header-login />
+          <a
+            :href="
+              faqUrl"
+            class="header-navbar__help"
+            title="help"
+          >
+            {{ $t('general.help') }}
+          </a>
+          <button
+            class="header-navbar__country-select"
+            @click="showDialog = true"
+          >
+            <span class="header-navbar__country-name">{{ country.name }}</span>
+            <span :class="`flag-icon flag-icon--bordered flag-icon--medium flag-icon-${getCountryFlag(country.name)}`" />
+            <ui-icon icon="caret-white" />
+          </button>
+          <div
+            v-if="!onUsers"
+            class="header-navbar__menu"
+            @click="menuOpen = !menuOpen"
+          >
+            <span class="header-navbar__menu-text">Menu</span>
+            <header-hamburger :active="menuOpen" />
           </div>
-        </fragment>
+        </div>
       </div>
     </div>
     <header-links-desktop
