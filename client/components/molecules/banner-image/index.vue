@@ -45,10 +45,7 @@ export default {
   props: {
     src: VueTypes.oneOfType([String, Object]).def(''),
     alt: VueTypes.string.def(''),
-    brand: VueTypes.shape({
-      src: VueTypes.oneOfType([String, Object]).def(''),
-      alt: VueTypes.string.def(''),
-    }).def(''),
+    brand: VueTypes.object.def({}),
     withBreadcrumbs: Boolean,
     type: VueTypes.oneOf(['header', 'card']).def('header'),
     height: VueTypes.string.def(''),

@@ -2,7 +2,7 @@
   <card
     space="none"
     class="mb-5 flex-auto flex flex-col bg-white"
-    :aria-labelledby="`product-card-title-${id}`"
+    :aria-labelledby="`product-card-title-${product.id}`"
   >
     <div class="flex w-full items-center justify-between px-4">
       <ui-image
@@ -10,13 +10,15 @@
         :alt="altText"
         height="12"
         width="28"
+        contain
+        position="left"
       />
       <tag v-if="product.isPopular" />
     </div>
     <divider />
     <div class="flex-1">
       <ui-title
-        :id="`product-card-title-${id}`"
+        :id="`product-card-title-${product.id}`"
         class="m-4"
         type="h4"
         bold
@@ -74,7 +76,7 @@ export default {
       serviceFee: VueTypes.string.def(''),
       buttonText: VueTypes.string.def(''),
       isPopular: Boolean,
-    }).def({}),
+    }).def({}).loose,
   },
   computed: {
     altText() {

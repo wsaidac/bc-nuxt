@@ -59,12 +59,12 @@ export default {
   props: {
     category: VueTypes.shape({
       brands: VueTypes.array.def([]),
-      title: VueTypes.string.def(''),
       slug: VueTypes.string.def(''),
+      title: VueTypes.string.def(''),
       url: VueTypes.string.def(''),
       image: VueTypes.object.def({}),
       showMore: Boolean,
-    }),
+    }).def({}),
   },
 
 };

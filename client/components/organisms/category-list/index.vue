@@ -1,11 +1,11 @@
 <template>
-  <container>
+  <fragment>
     <brand-list
       v-for="category in pageCategories"
       :key="category.slug"
       :category="category"
     />
-  </container>
+  </fragment>
 </template>
 
 <script>

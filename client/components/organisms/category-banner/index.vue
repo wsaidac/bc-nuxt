@@ -2,7 +2,7 @@
   <div>
     <banner-image
       :src="image"
-      :brand="logo"
+      :brand="categoryHeader.image"
       with-breadcrumbs
       full
     />
@@ -10,12 +10,19 @@
       <container>
         <row>
           <column class="w-full">
-            <main-title>{{ title }}</main-title>
+            <main-title>{{ categoryHeader.title }}</main-title>
           </column>
         </row>
         <row>
           <column class="w-full md:w-1/3">
-            <div class="bg-success p-4">TrustPilot widget</div>
+            <vue-trustpilot
+              identifier="categoryHeader"
+              data-style-height="30px"
+              data-style-width="178px"
+              data-theme="light"
+              data-sku="5051644003570,5051644003587,1013"
+              data-name="Spotify"
+            />
           </column>
         </row>
       </container>
@@ -24,6 +31,7 @@
 </template>
 
 <script>
+
 import { mapGetters } from 'vuex';
 import VueTypes from 'vue-types';
 import { isEmpty, get } from 'lodash';
@@ -40,14 +48,19 @@ export default {
     Column,
   },
   props: {
-    title: VueTypes.string.def(''),
-    banner: VueTypes.object.def({}),
-    logo: VueTypes.object.def({}),
+    categoryHeader: VueTypes.shape({
+      title: VueTypes.string.def(''),
+      banner: VueTypes.object.def({}),
+      image: VueTypes.object.def({}),
+    }).loose.def({}),
   },
   computed: {
     ...mapGetters('shared', ['header']),
     image() {
-      return !isEmpty(this.banner) ? this.banner : get(this.header, 'image', {});
+      const { banner } = this.categoryHeader;
+
+      // if the category doesn't have a banner image, it will use the general rapido banner
+      return !isEmpty(banner) ? banner : get(this, 'header.image', {});
     },
   },
 };
