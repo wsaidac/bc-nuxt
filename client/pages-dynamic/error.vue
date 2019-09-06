@@ -2,12 +2,12 @@
   <div class="cg-error block block--blue">
     <div class="container">
       <h3 class="cg-error--title">{{ $t('error.description') }}</h3>
-      <nuxt-link
-        :to="$contextPath('')"
+      <a
+        href="/"
         class="button button--primary button--med"
       >
         {{ $t('error.button_name') }}
-      </nuxt-link>
+      </a>
     </div>
   </div>
 </template>
