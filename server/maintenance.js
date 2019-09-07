@@ -7,7 +7,7 @@ function getIp(req) {
   return req.connection.remoteAddress;
 }
 
-module.exports = options => (req, res, next) => {
+module.exports = (options) => (req, res, next) => {
   if (options.whitelist && options.whitelist.includes(getIp(req))) {
     next();
   } else {
