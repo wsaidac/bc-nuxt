@@ -7,7 +7,7 @@ export default function ({ app }) {
     Vue.prototype.$t = key => `{{__phrase_${key}__}}`;
 
     window.PHRASEAPP_CONFIG = {
-      projectId: '0e60214e84f55a0834c0705bf46181b4'
+      projectId: process.env.PHRASEAPP_PROJECT_ID
     };
     (function () {
       var phraseapp = document.createElement('script'); phraseapp.type = 'text/javascript'; phraseapp.async = true;

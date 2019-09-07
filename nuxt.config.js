@@ -134,6 +134,7 @@ const conf = {
     GTM_DEBUG: process.env.NODE_ENV === 'development',
     LABEL: label,
     PHRASEAPP_EDITOR: process.env.PHRASEAPP_EDITOR,
+    PHRASEAPP_PROJECT_ID: process.env.PHRASEAPP_PROJECT_ID,
   },
   plugins: [
     '~/plugins/artemis.js',
