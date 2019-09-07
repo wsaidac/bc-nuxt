@@ -5,10 +5,26 @@
 
 
 import Vue from 'vue';
+
+// Vue plugins
 import Vuex from 'vuex';
 import VueMq from 'vue-mq';
 import ClickOutside from 'vue-click-outside';
 import ScrollTo from 'vue-scrollto'
+import Fragment from 'vue-fragment'
+import TrustpilotPlugin from 'vue-trustpilot'
+
+
+// vue fallback plugins for storybook
+import fakeI18nPlugin from '~~/.storybook/vue-plugins/fakeI18n';
+import routerPlugin from '~~/.storybook/vue-plugins/fakeRouter';
+import nuxtLinkPlugin from '~~/.storybook/vue-plugins/fakeNuxtLink';
+
+
+// storybook config utils
+import configLabel from '~~/config/label';
+import settings from '~~/.storybook/settings'
+
 import PortalVue from 'portal-vue'
 
 // storybook tools
@@ -18,17 +34,16 @@ import {
   addDecorator,
   setAddon
 } from '@storybook/vue'
-import JSXAddon from 'storybook-addon-jsx';
-import { action } from '@storybook/addon-actions';
 
-// storybook theme
-import theme from './theme';
+
+// decorators
+import JSXAddon from 'storybook-addon-jsx';
+import TrustpilotDecorator from '~~/.storybook/decorators/trustpilot'
+
 // animate css file
 import 'vue2-animate/dist/vue2-animate.css';
 
-import fakeI18nPlugin from '~~/.storybook/fakeI18nPlugin';
-import routerPlugin from '~~/.storybook/fakeRouterPlugin';
-import trustpilotPlugin from 'vue-trustpilot'
+
 
 /**
  *  config for webfonts-loader
@@ -57,32 +72,26 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 setAddon(JSXAddon)
+addDecorator(TrustpilotDecorator)
 
-// Option defaults.
-addParameters({
-  options: {
-    name: 'Rapido Storybook',
-    theme,
-    hierarchyRootSeparator: /\|/,
-  },
-  backgrounds: [
-    { name: 'base', value: '#FFF' },
-    { name: 'black', value: '#333' },
-    { name: 'main', value: '#f3f3f3', default: true }
-  ],
-});
+// Default settings.
+addParameters(settings);
 
 
+/**
+ * Vue plugins and directives
+ */
 Vue.directive('click-outside', ClickOutside);
-
 // load the portal
 Vue.use(PortalVue);
-
 // i18n
 Vue.use(fakeI18nPlugin);
+// router
 Vue.use(routerPlugin);
+// nuxt-link
+Vue.use(nuxtLinkPlugin)
 Vue.use(ScrollTo)
-
+Vue.use(Fragment.Plugin)
 // Set the global media queries
 Vue.use(VueMq, {
   breakpoints: {
@@ -93,31 +102,11 @@ Vue.use(VueMq, {
   // default for SSR
   defaultBreakpoint: 'sm',
 });
-
-// it is just for use nuxt-link into storybook
-Vue.component('nuxt-link', {
-  props: ['to'],
-  methods: {
-    log() {
-      action('link target')(this.to)
-    },
-  },
-  template: `<a href="#" @click.prevent="log()"><slot>NuxtLink</slot></a>`,
-})
-
 // set vuex
 Vue.use(Vuex)
+Vue.use(TrustpilotPlugin, configLabel.trustpilot)
 
-Vue.use(trustpilotPlugin, {
-  widgets: {
-    footer: {
-      templateId: '53aa8912dec7e10d38f59f36',
-      businessunitId: '4de14b4700006400050fc804',
-      reviewUrl: 'https://nl.trustpilot.com/review/beltegoed.nl',
-      locale: 'nl-NL',
-    }
-  }
-})
+
 
 // basically load the stories within client/components folder
 function loadStories() {

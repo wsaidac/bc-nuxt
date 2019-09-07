@@ -3,7 +3,7 @@
     <container without-insets>
       <row
         wrap
-        class="lg:py-8"
+        class="md:py-6 lg:py-8"
       >
         <column class="w-full md:w-1/3">
           <footer-links
@@ -38,10 +38,10 @@
         <column class="hidden lg:flex lg:w-2/12">
           <logo />
         </column>
-        <column class="w-full lg:w-6/12">
+        <column class="w-full md:w-6/12">
           <legal-links :links="legalLinks" />
         </column>
-        <column class="w-full lg:w-4/12">
+        <column class="w-full md:w-6/12 lg:w-4/12">
           <payment-methods :list="paymentMethods" />
         </column>
       </row>

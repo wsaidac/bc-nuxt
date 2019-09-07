@@ -1,5 +1,5 @@
 <template>
-  <container>
+  <fragment>
     <row>
       <column class="w-full">
         <main-title type="secondary">
@@ -12,19 +12,18 @@
         <order-help-accordion :questions="questions" />
       </column>
     </row>
-  </container>
+  </fragment>
 </template>
 
 <script>
 import VueTypes from 'vue-types';
 import { MainTitle, OrderHelpAccordion } from '~/components/molecules';
-import { Container, Row, Column } from '~/components/grid';
+import { Row, Column } from '~/components/grid';
 
 export default {
   components: {
     MainTitle,
     OrderHelpAccordion,
-    Container,
     Row,
     Column,
   },

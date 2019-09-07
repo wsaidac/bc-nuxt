@@ -4,11 +4,11 @@
       type="h4"
       class="m-4"
     >
-      {{ title }}
+      {{ info.title }}
     </ui-title>
     <divider />
     <div class="m-4">
-      <p :class="['mb-4', {'truncate-5-lines md:truncate-3-lines': !showAll }]">{{ content }}</p>
+      <p :class="['mb-4', {'truncate-5-lines md:truncate-3-lines': !showAll }]">{{ info.text }}</p>
       <ui-link
         data-test="card-info-link"
         @click.native="showAll = !showAll"
@@ -35,8 +35,10 @@ export default {
     Divider,
   },
   props: {
-    content: VueTypes.string.def(''),
-    title: VueTypes.string.def(''),
+    info: VueTypes.shape({
+      text: VueTypes.string.def(''),
+      title: VueTypes.string.def(''),
+    }).def({}).loose,
   },
   data() {
     return {

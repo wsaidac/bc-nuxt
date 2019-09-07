@@ -3,12 +3,12 @@
     <div class="container">
       <h3 class="cg-error__desc">{{ $t('error.description') }}</h3>
       <p class="cg-error__help">{{ $t('error.help') }}</p>
-      <nuxt-link
-        :to="`/${$i18n.locale}/`"
+      <a
+        href="/"
         class="button button--primary button--med"
       >
         {{ $t('error.button_name') }}
-      </nuxt-link>
+      </a>
     </div>
   </div>
 </template>

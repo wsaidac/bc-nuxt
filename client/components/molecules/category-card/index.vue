@@ -21,6 +21,7 @@
           width="auto"
           tabindex="-1"
           height="18"
+          contain
           :src="category.image"
         />
         <div class="h-10 flex items-center mt-1">

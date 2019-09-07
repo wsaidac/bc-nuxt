@@ -1,5 +1,5 @@
 <template>
-  <ul class="flex py-4 justify-center md:justify-start border-gray border lg:border-0">
+  <ul class="flex py-4 justify-center md:justify-start border-gray border md:border-0">
     <li
       v-for="(link, index) in links"
       :key="index"

@@ -19,10 +19,7 @@ const isUserCountrySupported = (app, userCountry) => {
   return locales.find(locale => locale.name.toLowerCase() === userCountry.toLowerCase());
 };
 
-const isUserOnRestrictedCountry = (pathLocale, userCountry, restrictedCountry) => {
-  const pathCountry = pathLocale.split('-')[1].toUpperCase();
-  return userCountry !== restrictedCountry && pathCountry === restrictedCountry;
-};
+const isUserOnRestrictedCountry = (pathCountry, userCountry, restrictedCountry) => userCountry !== restrictedCountry && pathCountry === restrictedCountry;
 
 export default (context = {}) => {
   const {
@@ -42,6 +39,7 @@ export default (context = {}) => {
   const LOCALE_COOKIE = app.$cookies.get('country');
   const urlPaths = route.path.split('/');
   const currentLocale = urlPaths[1];
+  const PATH_COUNTRY = currentLocale.split('-')[1] ? currentLocale.split('-')[1].toUpperCase() : null;
 
   if (!currentLocale && USER_COUNTRY !== RESTRICTED_COUNTRY && !isUserCountrySupported(app, USER_COUNTRY)) {
     return redirect(301, COUNTRY_RESTRICTED_PATH);
@@ -58,7 +56,7 @@ export default (context = {}) => {
     return redirect(301, `/${supportedLocale}`);
   }
 
-  if (isUserOnRestrictedCountry(currentLocale, USER_COUNTRY, RESTRICTED_COUNTRY)) {
+  if (isUserOnRestrictedCountry(PATH_COUNTRY, USER_COUNTRY, RESTRICTED_COUNTRY)) {
     return redirect(301, COUNTRY_RESTRICTED_PATH);
   }
 

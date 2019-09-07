@@ -2,9 +2,9 @@
 
 /* Preflight: it injects global styles for html tags */
 /* more: https://tailwindcss.com/docs/preflight/ */
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html {
   @apply font-body text-base leading-normal text-primary font-normal antialiased;
