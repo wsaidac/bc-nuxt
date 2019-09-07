@@ -35,7 +35,7 @@ const conf = {
         href: 'https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,800&display=swap&subset=latin-ext',
       },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: process.env.NODE_ENV === 'production' ? marketingScripts : [{ src: '/phraseapp-editor.js' }],
+    script: process.env.NODE_ENV === 'production' ? marketingScripts : [],
   },
   css: ['~/assets/stylesheets/application.scss'],
   store: true,
@@ -152,6 +152,7 @@ const conf = {
     '~/plugins/element-ui.js',
     '~/plugins/click-outside-directive.js',
     '~/plugins/fragment.js',
+    { src: '~/plugins/phraseapp.js', ssr: false },
   ],
   // tailwindcss: {
   //   configPath: '~~/config/tailwind/tailwind.config.js',
