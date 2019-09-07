@@ -46,7 +46,7 @@ export default {
 
   methods: {
     classes(title, index) {
-      const amount = this.items.find(e => e.title === title).categories.length;
+      const amount = this.items.find((e) => e.title === title).categories.length;
       if (index > 2 && amount > 10) {
         return ['header-links-desktop__main-item', 'header-links-desktop__main-item--shifted'];
       }

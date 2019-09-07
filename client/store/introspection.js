@@ -6,7 +6,7 @@ export default {
   },
 
   getters: {
-    models: state => state.models,
+    models: (state) => state.models,
   },
 
   mutations: {

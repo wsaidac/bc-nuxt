@@ -6,18 +6,18 @@ export default {
     };
   },
   getters: {
-    context: state => state.context,
-    currentUser: state => state.currentUser,
-    token: state => state.token,
+    context: (state) => state.context,
+    currentUser: (state) => state.currentUser,
+    token: (state) => state.token,
   },
 
   mutations: {
     setCurrentUser(state, {
       token, user, orders, quickbuy,
     }) {
-      const extensibleUser = Object.assign({}, user);
-      extensibleUser.orders = Object.assign({}, orders);
-      extensibleUser.quickbuy = Object.assign({}, quickbuy);
+      const extensibleUser = { ...user };
+      extensibleUser.orders = { ...orders };
+      extensibleUser.quickbuy = { ...quickbuy };
       state.token = token;
       state.currentUser = extensibleUser;
     },

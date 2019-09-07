@@ -68,9 +68,9 @@ export default {
   computed: {
     list() {
       const localesList = this.$i18n.locales
-        .filter(locale => locale.selectable)
-        .filter(locale => locale.code !== this.restrictedCountry)
-        .map(locale => ({
+        .filter((locale) => locale.selectable)
+        .filter((locale) => locale.code !== this.restrictedCountry)
+        .map((locale) => ({
           ...pick(locale, ['code', 'name', 'displayName']),
           selected: locale.code === this.localeSelected,
         }));
