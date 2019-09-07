@@ -17,6 +17,7 @@ const marketingURIS = [
   '*.visualwebsiteoptimizer.com',
   'https://dev.visualwebsiteoptimizer.com',
   '*.riskified.com',
+  '*.phrase.com',
 ];
 
 const scripts = [
@@ -24,7 +25,6 @@ const scripts = [
   '\'unsafe-inline\'',
   '*.rapido.com',
   '*.cgaws.cloud',
-  '*.phrase.com',
   ...marketingURIS,
 ];
 
