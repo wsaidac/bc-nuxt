@@ -17,7 +17,7 @@
     "dev-debug": "NODE_ENV=development API_BROWSER='https://api-hub.eu-west-1.production.cgaws.cloud' API_SERVER='https://api-hub.eu-west-1.production.cgaws.cloud' node --inspect node_modules/.bin/nuxt --port 4000",
     "dev-debug:acc": "NODE_ENV=development API_BROWSER='https://api-hub.eu-west-1.acceptance.cgaws.cloud' API_SERVER='https://api-hub.eu-west-1.acceptance.cgaws.cloud' node --inspect node_modules/.bin/nuxt --port 4000",
     "dev-debug:beltegoed": "LABEL=beltegoed NODE_ENV=development API_BROWSER='https://api-hub.eu-west-1.production.cgaws.cloud' API_SERVER='https://api-hub.eu-west-1.production.cgaws.cloud' node --inspect node_modules/.bin/nuxt --port 4000",
-    "dev-debug:phraseapp": "ENABLE_PHRASEAPP_EDITOR=true NODE_ENV=development API_BROWSER='https://api-hub.eu-west-1.production.cgaws.cloud' API_SERVER='https://api-hub.eu-west-1.production.cgaws.cloud' node --inspect node_modules/.bin/nuxt --port 4000",
+    "dev-debug:phraseapp": "PHRASEAPP_EDITOR=true NODE_ENV=development API_BROWSER='https://api-hub.eu-west-1.production.cgaws.cloud' API_SERVER='https://api-hub.eu-west-1.production.cgaws.cloud' node --inspect node_modules/.bin/nuxt --port 4000",
     "storybook": "LABEL=beltegoed start-storybook -p 6060",
     "storybook:build": "LABEL=beltegoed build-storybook -c .storybook -o docs/storybook",
     "storybook:deploy": "storybook-to-ghpages",

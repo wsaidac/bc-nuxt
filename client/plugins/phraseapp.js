@@ -2,7 +2,7 @@
 import Vue from 'vue';
 
 export default function ({ app }) {
-  if (process.env.ENABLE_PHRASEAPP_EDITOR) {
+  if (process.env.PHRASEAPP_EDITOR) {
     app.i18n.t = key => `{{__phrase_${key}__}}`;
     Vue.prototype.$t = key => `{{__phrase_${key}__}}`;
 
