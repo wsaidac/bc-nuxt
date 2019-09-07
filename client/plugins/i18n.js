@@ -8,7 +8,7 @@ async function setElementUiLocale(locale) {
 }
 
 export default function ({ app, error }) {
-  if (process.env.PHRASEAPP_EDITOR) {
+  if (process.env.PHRASEAPP_EDITOR === 'enabled') {
     app.i18n.t = key => `{{__phrase_${key}__}}`;
     Vue.prototype.$t = key => `{{__phrase_${key}__}}`;
   }

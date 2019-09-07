@@ -80,7 +80,7 @@ deploy-phraseapp-editor:
     url: https://rapido-web.acceptance.cgaws.cloud
   variables:
     DOMAIN: rapido-web.acceptance.cgaws.cloud
-    PHRASEAPP_EDITOR: true
+    PHRASEAPP_EDITOR: enabled
   only:
     - release
   when: manual
