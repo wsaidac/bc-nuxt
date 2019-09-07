@@ -73,6 +73,18 @@ deploy-acceptance:
     - release
   when: manual
 
+deploy-phraseapp-editor:
+  extends: .deploy
+  environment:
+    name: acceptance
+    url: https://rapido-web.acceptance.cgaws.cloud
+  variables:
+    DOMAIN: rapido-web.acceptance.cgaws.cloud
+    PHRASEAPP_EDITOR: true
+  only:
+    - release
+  when: manual
+
 downstream-e2e-acc:
   stage: post-deploy
   before_script:
