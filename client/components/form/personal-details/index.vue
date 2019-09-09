@@ -111,7 +111,7 @@ export default {
       },
 
       set(phoneNumber) {
-        this.$emit('input', Object.assign({}, this.value, phoneNumber));
+        this.$emit('input', { ...this.value, ...phoneNumber });
       },
     },
   },

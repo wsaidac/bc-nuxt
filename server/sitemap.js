@@ -19,7 +19,7 @@ const query = `{
   }
 }`;
 
-const request = context => axios({
+const request = (context) => axios({
   url: process.env.API_SERVER,
   method: 'post',
   headers: { 'X-Cms-Context': context },
@@ -27,7 +27,7 @@ const request = context => axios({
 });
 
 function transformPages(pages) {
-  return pages.map(page => ({
+  return pages.map((page) => ({
     url: page.slug,
     priority: 0.8,
   }));

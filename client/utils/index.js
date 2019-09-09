@@ -14,7 +14,7 @@ export function generateCleanList(obj, value) {
   });
 }
 
-function renderErrorPage(error, app) {
+export function renderErrorPage(error, app) {
   const prod = process.env.NODE_ENV === 'production';
   if (!prod) {
     // eslint-disable-next-line no-console

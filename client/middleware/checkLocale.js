@@ -10,13 +10,13 @@ const setCountryCookie = (app, countryCode) => {
 const isLocaleSupported = (app, curentLocale) => {
   const { locales } = app.i18n;
 
-  return Boolean(locales.find(locale => locale.code.toLowerCase() === curentLocale.toLowerCase()));
+  return Boolean(locales.find((locale) => locale.code.toLowerCase() === curentLocale.toLowerCase()));
 };
 
 
 const isUserCountrySupported = (app, userCountry) => {
   const { locales } = app.i18n;
-  return locales.find(locale => locale.name.toLowerCase() === userCountry.toLowerCase());
+  return locales.find((locale) => locale.name.toLowerCase() === userCountry.toLowerCase());
 };
 
 const isUserOnRestrictedCountry = (pathCountry, userCountry, restrictedCountry) => userCountry !== restrictedCountry && pathCountry === restrictedCountry;
@@ -32,7 +32,7 @@ export default (context = {}) => {
   const localeDiDNotChange = route.path.substring(1).startsWith(app.i18n.locale);
   if (!process.server && localeDiDNotChange) return null;
 
-  const RESTRICTED_COUNTRY = app.i18n.locales.find(locale => locale.restricted).name; // format: DE;
+  const RESTRICTED_COUNTRY = app.i18n.locales.find((locale) => locale.restricted).name; // format: DE;
   const USER_COUNTRY = get(req, 'headers["cloudfront-viewer-country"]', ''); // format: US
   const COUNTRY_RESTRICTED = 'country-restricted';
   const COUNTRY_RESTRICTED_PATH = `/${COUNTRY_RESTRICTED}`;
@@ -46,7 +46,7 @@ export default (context = {}) => {
   }
 
   if (!currentLocale && isUserCountrySupported(app, USER_COUNTRY)) {
-    const supportedLocale = app.i18n.locales.find(locale => locale.name === USER_COUNTRY).code;
+    const supportedLocale = app.i18n.locales.find((locale) => locale.name === USER_COUNTRY).code;
 
     if (LOCALE_COOKIE) {
       return redirect(301, `/${LOCALE_COOKIE}`);
