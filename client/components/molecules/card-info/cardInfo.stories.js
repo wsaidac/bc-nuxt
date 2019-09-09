@@ -28,10 +28,16 @@ storiesOf('Molecules/Info Card', module)
         info: {
           text: desc,
           title,
-        }
-      }
+        },
+      };
     },
     template: `
-      <info-card :info="info" />
+    <container class="py-6">
+      <row>
+        <column>
+          <info-card :info="info" />
+        </column>
+      </row>
+    </container>
     `,
   }), info);

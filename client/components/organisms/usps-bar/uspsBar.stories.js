@@ -21,7 +21,11 @@ store.commit('shared/setUsps', uspsMock)
 // stories
 storiesOf('Organisms/Usps Bar', module)
   .add('default', () => ({
-    template: `<usps-bar />`,
+    template: `
+      <container class="py-6">
+        <usps-bar />
+      </container>
+    `,
     components: { UspsBar },
     store,
   }), info)

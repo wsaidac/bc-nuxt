@@ -65,7 +65,7 @@ export default {
   },
   data() {
     return {
-      listItemClasses: 'flex px-6 py-3 border border-solid border-gray justify-between items-center cursor-pointer hover:bg-gray-light focus:outline-none',
+      listItemClasses: 'flex px-6 py-3 bg-white border border-solid border-gray justify-between items-center cursor-pointer hover:bg-gray-light focus:outline-none',
     };
   },
   computed: {

@@ -41,9 +41,8 @@
       <div class="flex flex-wrap flex-col-reverse md:flex-row">
         <ui-button
           v-if="secondaryButtonText"
-          justify
           type="secondary"
-          class="md:mr-4 mt-4 md:mt-0"
+          class="md:mr-4 mt-4 md:mt-0 flex-1"
           data-test="popup-secondary-button"
           :aria-label="secondaryButtonText"
           @click="$emit('popup__secondary-button:click')"
@@ -51,8 +50,8 @@
           {{ secondaryButtonText }}
         </ui-button>
         <ui-button
-          justify
           data-test="popup-primary-button"
+          class="flex-1"
           @click="$emit('popup__main-button:click')"
         >
           {{ mainButtonText }}

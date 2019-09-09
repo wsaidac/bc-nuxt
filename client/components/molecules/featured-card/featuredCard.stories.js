@@ -31,10 +31,12 @@ storiesOf('Molecules/Featured Card', module)
       };
     },
     template: `
-      <featured-card
-        :product="product"
-        @featured-card:click="action"
-      />
+      <container class="py-6">
+        <featured-card
+          :product="product"
+          @featured-card:click="action"
+        />
+      </container>
     `,
     methods: {
       action: action('featured-card:click'),

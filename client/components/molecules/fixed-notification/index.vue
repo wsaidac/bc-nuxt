@@ -6,7 +6,7 @@
       aria-labelledby="fixed-notification-title"
       aria-describedby="fixed-notification-content"
       style="animation-duration: 0.3s"
-      class="fixed bottom-0 left-0 w-screen z-10 border-t-gray border-t"
+      class="fixed bg-white bottom-0 left-0 w-screen z-10 border-t-gray border-t"
     >
       <div class="container flex justify-between mx-auto p-4 pt-6">
         <ui-title

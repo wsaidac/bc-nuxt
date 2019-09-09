@@ -51,11 +51,11 @@ storiesOf('Atoms/Select', module)
       action: action('selected'),
     },
   }),
-  {
-    info: {
-      summary: 'Check  the `select` event behavior in `actions` tab',
-    },
-  })
+    {
+      info: {
+        summary: 'Check  the `select` event behavior in `actions` tab',
+      },
+    })
   .add(':hasError', () => ({
     components: {
       Select,
