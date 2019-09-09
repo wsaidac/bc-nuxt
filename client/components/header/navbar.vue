@@ -111,7 +111,14 @@ export default {
       return this.$i18n.locales.find(i => i.code === this.$i18n.locale);
     },
     homeLink() {
-      return this.$route.path.slice(0, 7);
+      const path = this.$route.path.slice(1, 6);
+      const locale = this.$i18n.locales.find(i => i.code === path);
+
+      if (locale) {
+        return `/${locale.code}/`;
+      }
+
+      return `/${this.$i18n.locale}/`;
     },
   },
 };
