@@ -112,7 +112,7 @@ export default {
     },
     homeLink() {
       const path = this.$route.path.slice(1, 6);
-      const locale = this.$i18n.locales.find(i => i.code === path);
+      const locale = this.$i18n.locales.find((i) => i.code === path);
 
       if (locale) {
         return `/${locale.code}/`;
