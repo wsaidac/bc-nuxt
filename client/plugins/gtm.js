@@ -6,7 +6,7 @@ function log(message) {
 }
 
 function checkPageType(path) {
-  const pathArr = path.split('/').filter(el => el);
+  const pathArr = path.split('/').filter((el) => el);
 
   switch (pathArr.length) {
     case 1:
@@ -72,7 +72,7 @@ function transformProduct({
     price: information.issueValue,
   };
 
-  Object.keys(productInfo).forEach(key => productInfo[key] === undefined && delete productInfo[key]);
+  Object.keys(productInfo).forEach((key) => productInfo[key] === undefined && delete productInfo[key]);
 
   return productInfo;
 }
@@ -81,7 +81,7 @@ function transformProduct({
 const impressionTransformPop = ({
   post,
 }, { store, route }) => {
-  const mappedProducts = post.products.nodes.filter(product => product.rapidoProduct).map((product, i) => ({
+  const mappedProducts = post.products.nodes.filter((product) => product.rapidoProduct).map((product, i) => ({
     ...transformProduct(product, { store, route }),
     list: 'Product Overview Page', // extra
     position: i + 1, // extra
@@ -97,7 +97,7 @@ const impressionTransformPop = ({
 const productViewTransformPop = ({
   post,
 }, { store, route }) => {
-  const mappedProducts = post.products.nodes.filter(product => product.rapidoProduct).map((product, i) => ({
+  const mappedProducts = post.products.nodes.filter((product) => product.rapidoProduct).map((product, i) => ({
     ...transformProduct(product, { store, route }),
     position: i + 1, // extra
   }));

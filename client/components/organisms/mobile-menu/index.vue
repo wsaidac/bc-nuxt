@@ -88,7 +88,7 @@ export default {
       this.translateClass = 'translate-x-none';
     },
     onSubMenuSelected(slug) {
-      const category = this.categoryLinks.find(c => c.slug === slug);
+      const category = this.categoryLinks.find((c) => c.slug === slug);
       const subCategories = get(category, 'categories', []);
 
       this.showSubMenu = Boolean(subCategories.length);

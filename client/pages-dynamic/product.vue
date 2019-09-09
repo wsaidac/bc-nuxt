@@ -123,14 +123,14 @@ export default {
     const { kinds, brands } = this.post;
 
     const categoryMetas = kinds && kinds.nodes.map(
-      kind => ({
+      (kind) => ({
         property: 'bc:category',
         content: kind.name.replace('&amp;', '&'),
       }),
     );
 
     const brandMetas = brands && brands.nodes.map(
-      brand => ({
+      (brand) => ({
         property: 'bc:brand',
         content: brand.name.replace('&amp;', '&'),
       }),

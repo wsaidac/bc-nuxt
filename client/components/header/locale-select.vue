@@ -66,7 +66,7 @@ export default {
 
   computed: {
     selectableLocales() {
-      return this.$i18n.locales.filter(locale => locale.selectable);
+      return this.$i18n.locales.filter((locale) => locale.selectable);
     },
   },
 

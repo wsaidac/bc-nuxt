@@ -124,7 +124,7 @@ export default {
         this.transformLink('privacyPolicy'),
         this.transformLink('generalConditions'),
         this.transformLink('cookieStatement'),
-      ].filter(link => link);
+      ].filter((link) => link);
     },
   },
 
