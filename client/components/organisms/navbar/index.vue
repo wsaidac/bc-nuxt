@@ -97,7 +97,7 @@ export default {
     ...mapGetters('shared', ['usps', 'faqUrl']),
     ...mapGetters('ui', ['overlayVisibility', 'overlayName']),
     country() {
-      return this.$i18n.locales.find(i => i.code === this.$i18n.locale);
+      return this.$i18n.locales.find((i) => i.code === this.$i18n.locale);
     },
     isCountrySelectVisible() {
       return this.overlayName === this.portalName && this.overlayVisibility === 'visible';

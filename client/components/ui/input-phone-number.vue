@@ -23,7 +23,7 @@ import UiInput from './input';
 import objectModel from '~/mixins/object-model';
 import Countries from '~/assets/countries.json';
 
-const fetchIsoByPhone = phoneCode => get(find(Countries, ['phone', phoneCode]), 'iso');
+const fetchIsoByPhone = (phoneCode) => get(find(Countries, ['phone', phoneCode]), 'iso');
 
 export default {
   name: 'UiInputPhoneNumber',
@@ -48,10 +48,11 @@ export default {
         const flag = (fetchIsoByPhone(val) || 'NL').toLowerCase();
         this.$emit(
           'input',
-          Object.assign({}, this.value, {
+          {
+            ...this.value,
             phonePrefix: val,
             phoneCountryIso: flag,
-          }),
+          },
         );
       },
     },

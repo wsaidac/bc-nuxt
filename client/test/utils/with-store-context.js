@@ -16,7 +16,7 @@ const getMockResponse = (key = '') => {
 };
 
 const app = {
-  $query: key => new Promise(resolve => resolve(getMockResponse(key))),
+  $query: (key) => new Promise((resolve) => resolve(getMockResponse(key))),
   i18n: {
     t: noop,
   },

@@ -24,36 +24,36 @@ const makeFetch = async (uri, options) => {
   return response;
 };
 
-const buildHttpLink = uri => createHttpLink({
+const buildHttpLink = (uri) => createHttpLink({
   uri,
   fetch: makeFetch,
 });
 
-const buildBatchLink = uri => new BatchHttpLink({
+const buildBatchLink = (uri) => new BatchHttpLink({
   uri,
   fetch: makeFetch,
   batchInterval: 10,
 });
 
-const selectSingleLink = env => ApolloLink.split(
+const selectSingleLink = (env) => ApolloLink.split(
   () => process.server,
   buildHttpLink(env.API_SERVER),
   buildHttpLink(env.API_BROWSER),
 );
 
-const selectBatchLink = env => ApolloLink.split(
+const selectBatchLink = (env) => ApolloLink.split(
   () => process.server,
   buildBatchLink(env.API_SERVER),
   buildBatchLink(env.API_BROWSER),
 );
 
-const batchOrSingleLink = env => ApolloLink.split(
-  operation => operation.getContext().batch,
+const batchOrSingleLink = (env) => ApolloLink.split(
+  (operation) => operation.getContext().batch,
   selectBatchLink(env),
   selectSingleLink(env),
 );
 
-const setHeadersLink = store => setContext((_, {
+const setHeadersLink = (store) => setContext((_, {
   headers,
 }) => {
   const extendedHeaders = store.getters[extendedHeadersStoreLocation];
@@ -102,7 +102,7 @@ function createClient({ store, env }) {
 
     this.$graphQLErrors = results.errors;
 
-    const rootError = results.errors.find(error => error.path === undefined);
+    const rootError = results.errors.find((error) => error.path === undefined);
     this.$graphQLError = rootError && rootError.message;
 
     if (results.errors && this.$v) {

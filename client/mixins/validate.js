@@ -43,7 +43,7 @@ export default (field, attributes) => ({
       const v = this.$v[field][attr];
 
       const graphQLErrors = this.$graphQLErrors
-        && this.$graphQLErrors.find(error => error.path
+        && this.$graphQLErrors.find((error) => error.path
           && error.path[0] === field && error.path[1] === attr);
 
       if (!this.$v.$anyDirty && graphQLErrors) {

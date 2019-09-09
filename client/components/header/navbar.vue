@@ -108,7 +108,7 @@ export default {
       return ['header-navbar', { 'header-navbar--open': this.menuOpen }];
     },
     country() {
-      return this.$i18n.locales.find(i => i.code === this.$i18n.locale);
+      return this.$i18n.locales.find((i) => i.code === this.$i18n.locale);
     },
     homeLink() {
       return this.$route.path.slice(0, 7);

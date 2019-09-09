@@ -19,14 +19,14 @@ module.exports = {
     '48': '12rem',
     '54': '15rem',
   },
-  inset: theme => theme('spacing'),
+  inset: (theme) => theme('spacing'),
   screens: {
     sm: '640px',
     md: '768px',
     lg: '1024px',
     xl: '1280px',
   },
-  width: theme => ({
+  width: (theme) => ({
     'auto': 'auto',
     ...theme('spacing'),
     '40': '40rem',
@@ -59,7 +59,7 @@ module.exports = {
     'full': '100%',
     'screen': '100vw',
   }),
-  height: theme => ({
+  height: (theme) => ({
     'auto': 'auto',
     ...theme('spacing'),
     'banner-sm': '19rem',
@@ -81,7 +81,7 @@ module.exports = {
     full: '100%',
     screen: '100vh',
   },
-  padding: theme => theme('spacing'),
+  padding: (theme) => theme('spacing'),
   margin: (theme, { negative }) => ({
     auto: 'auto',
     ...theme('spacing'),

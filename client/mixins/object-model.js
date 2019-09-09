@@ -4,12 +4,12 @@ function objectAttributeModel(key) {
       return this.value[key];
     },
     set(val) {
-      this.$emit('input', Object.assign({}, this.value, { [key]: val }));
+      this.$emit('input', { ...this.value, [key]: val });
     },
   };
 }
 
-export default props => ({
+export default (props) => ({
   props: {
     value: {
       type: Object,
