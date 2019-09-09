@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import localeConfig from 'element-ui/lib/locale';
 
 async function setElementUiLocale(locale) {
@@ -8,10 +7,6 @@ async function setElementUiLocale(locale) {
 }
 
 export default function ({ app, error }) {
-  if (process.env.PHRASEAPP_EDITOR === 'enabled') {
-    app.i18n.t = key => `{{__phrase_${key}__}}`;
-    Vue.prototype.$t = key => `{{__phrase_${key}__}}`;
-  }
   // onLanguageSwitched called right after a new locale has been set
   app.i18n.onLanguageSwitched = (_, newLocale) => {
     app.store.commit('async/setContextChange', true);
