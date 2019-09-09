@@ -7,8 +7,8 @@ export default {
   },
 
   getters: {
-    isLoaded: (state) => state.loaded,
-    hasContextChanged: (state) => state.contextChanged,
+    isLoaded: state => state.loaded,
+    hasContextChanged: state => state.contextChanged,
   },
 
   mutations: {
