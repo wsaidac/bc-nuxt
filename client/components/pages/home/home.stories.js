@@ -57,7 +57,7 @@ const post = {
 
 
 // stories
-storiesOf('Templates/Home', module)
+storiesOf('Pages/Home', module)
   .add('default', () => ({
     data() {
       return {

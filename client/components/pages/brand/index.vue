@@ -22,8 +22,8 @@ import { get } from 'lodash';
 
 // this one is temporal
 import { getProductFromPost } from './utils';
+import Layout from '~/components/layouts/default';
 
-import Layout from '../home/layout';
 import {
   CategoryBanner, FaqList, ProductList, UspsBar, ReviewList, ActivationInfo,
 } from '~/components/organisms';
