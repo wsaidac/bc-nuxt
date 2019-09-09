@@ -70,6 +70,6 @@ export default {
 
 <style scoped>
 .btn {
-  @apply py-2 px-10 rounded-full font-semibold text-center  text-base leading-normal;
+  @apply py-1 px-10 rounded-full font-semibold text-center  text-base leading-normal;
 }
 </style>

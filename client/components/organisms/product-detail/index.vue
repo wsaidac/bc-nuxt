@@ -17,15 +17,23 @@
         <column class="w-full lg:w-4/12">
           <div class="mt-5 flex-auto flex flex-col">
             <main-title>{{ product.title }}</main-title>
-            <div class="bg-success p-2">trustpilot widget</div>
+            <vue-trustpilot
+              identifier="categoryHeader"
+              data-style-height="30px"
+              data-style-width="165px"
+              data-theme="light"
+              data-sku="5051644003570,5051644003587,1013"
+              data-name="Spotify"
+            />
             <divider />
             <p
               v-if="product.description"
-              class="html-injected p-4 flex-1"
+              class="html-injected p-4 pl-0 flex-1"
               v-html="product.description"
             />
             <divider />
             <product-card-cta
+              class="ml-0"
               :value="product.value"
               :service-fee="product.serviceFee"
               @product-card-cta:click="$emit('product-card:click', product.rapidoId)"
@@ -33,7 +41,7 @@
           </div>
         </column>
         <column class="w-full lg:w-8/12 relative">
-          <picture class="overflow-hidden rounded h-full border border-gray">
+          <picture class="overflow-hidden rounded-lg h-full border border-gray">
             <ui-image
               class=" blur"
               height="full"
@@ -51,11 +59,11 @@
         </column>
       </row>
       <row>
-        <column class="w-full lg:w-3/12">
+        <column class="w-full lg:w-4/12">
           <divider />
           <usps
             :text="uspsItem"
-            class="m-4"
+            class="m-4 ml-0"
           />
         </column>
       </row>

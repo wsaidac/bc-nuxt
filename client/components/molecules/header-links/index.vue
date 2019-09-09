@@ -4,7 +4,7 @@
       <li
         v-for="(category, index) in items"
         :key="index"
-        class="mr-6"
+        class="mr-6 text-base font-semibold"
       >
         <ui-link
           color="primary"
