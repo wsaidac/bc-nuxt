@@ -10,7 +10,6 @@ module.exports = function (label) {
 
   return {
     strategy: 'prefix',
-    seo: false,
     parsePages: false,
     lazy: true,
     langDir: 'assets/locales/translation-files/',
@@ -27,6 +26,16 @@ module.exports = function (label) {
       messages: {
         [defaultLocale]: require(defaultLocaleFile), //eslint-disable-line
       },
+    },
+    vuex: {
+      mutations: {
+        setLocale: 'SET_LOCALE_MUTATION',
+        setMessages: 'SET_MESSAGE_MUTATION',
+        setRouteParams: 'SET_ROUTE_PARAMS_MUTATION'
+      },
+      syncLocale: true,
+      syncMessages: true,
+      syncRouteParams: true
     },
   };
 };

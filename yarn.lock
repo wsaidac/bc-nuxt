@@ -16144,10 +16144,10 @@ vue-trustpilot@^0.1.1:
   dependencies:
     lodash "^4.17.15"
 
-vue-types@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/vue-types/-/vue-types-1.6.0.tgz#d803cd9755f4991717de9f8d222d654e9ce06da7"
-  integrity sha512-G8j5tAgD+yGbq42+T33jfYO+bSEI6qIrIkx1NFLwE8GAE23kEeuXMVEhX8cuSA0O+YR+WRb3+RQEMcz5HUgITQ==
+vue-types@1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/vue-types/-/vue-types-1.5.0.tgz#ed7988896bdb4fb1fe47df293d289e5c36d7d418"
+  integrity sha512-sXtq47f+KOlknfJC5k+m+BsMB8vYeBWTO0fkRt/GDYONlnRSnI2Uz4WnLhpLWUKdckgeHqGnyS68JAAn7LQFPg==
   dependencies:
     is-plain-object "3.0.0"
 
