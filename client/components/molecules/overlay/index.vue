@@ -1,8 +1,5 @@
 <template>
-  <portal
-    :to="name"
-    transition="fade"
-  >
+  <portal :to="name">
     <transition name="fade">
       <div
         class="fixed inset-0 z-50 bg-overlay p-4 flex justify-center items-center"
@@ -49,15 +46,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>
