@@ -16149,7 +16149,7 @@ vue-types@1.5.0:
   resolved "https://registry.yarnpkg.com/vue-types/-/vue-types-1.5.0.tgz#ed7988896bdb4fb1fe47df293d289e5c36d7d418"
   integrity sha512-sXtq47f+KOlknfJC5k+m+BsMB8vYeBWTO0fkRt/GDYONlnRSnI2Uz4WnLhpLWUKdckgeHqGnyS68JAAn7LQFPg==
   dependencies:
-    lodash "^4.17.10"
+    is-plain-object "3.0.0"
 
 vue2-animate@^2.1.0:
   version "2.1.2"
