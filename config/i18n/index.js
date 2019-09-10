@@ -32,11 +32,11 @@ module.exports = function (label) {
       mutations: {
         setLocale: 'SET_LOCALE_MUTATION',
         setMessages: 'SET_MESSAGE_MUTATION',
-        setRouteParams: 'SET_ROUTE_PARAMS_MUTATION'
+        setRouteParams: 'SET_ROUTE_PARAMS_MUTATION',
       },
       syncLocale: true,
       syncMessages: true,
-      syncRouteParams: true
+      syncRouteParams: true,
     },
   };
 };
