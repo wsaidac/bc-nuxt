@@ -56,13 +56,13 @@ store.commit('introspection/setModel', {
 // Mock i18n helper and stub NuxtLink component
 const defaultOptions = {
   mocks: {
-    $d: key => key,
-    $n: key => key,
-    $track: key => key,
-    $t: key => key,
-    $contextPath: key => key,
-    localePath: key => key,
-    $mutation: key => key,
+    $d: (key) => key,
+    $n: (key) => key,
+    $track: (key) => key,
+    $t: (key) => key,
+    $contextPath: (key) => key,
+    localePath: (key) => key,
+    $mutation: (key) => key,
   },
   stubs: {
     NuxtLink: TestUtils.RouterLinkStub,
@@ -72,7 +72,7 @@ const defaultOptions = {
 };
 
 // Wrap vue-test-utils methods with default mounting options
-const wrap = method => (component, options) => TestUtils[method](component, merge({}, defaultOptions, options));
+const wrap = (method) => (component, options) => TestUtils[method](component, merge({}, defaultOptions, options));
 
 export const mount = wrap('mount');
 export const shallowMount = wrap('shallowMount');

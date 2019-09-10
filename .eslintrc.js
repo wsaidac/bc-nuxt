@@ -15,7 +15,7 @@ module.exports = {
   ],
   plugins: ['vue', 'cypress'],
   rules: {
-    'max-len': [1, 120, 2, {
+    'max-len': [1, 140, 2, {
       ignoreComments: true,
       ignoreUrls: true,
       ignoreStrings: true,
@@ -39,5 +39,6 @@ module.exports = {
     'quotes': [2, 'single', {
       'allowTemplateLiterals': true
     }],
+    'vue/require-default-prop': 0,
   }
 };

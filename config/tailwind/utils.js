@@ -25,13 +25,13 @@ const flattenObject = (obj, prefix = '') => {
 };
 
 /** it replace the '-default' to key sting */
-const formattedKey = key => key.replace(/-default/g, '');
+const formattedKey = (key) => key.replace(/-default/g, '');
 
 /**
  * Factory method for tailwind variants
  * @param {String} variantLabel
  */
-const createVariant = variantLabel => ({ addVariant, e }) => {
+const createVariant = (variantLabel) => ({ addVariant, e }) => {
   addVariant(variantLabel, ({ modifySelectors, separator }) => {
     modifySelectors(({ className }) => `.${e(`${variantLabel}${separator}${className}`)}:${variantLabel}`);
   });

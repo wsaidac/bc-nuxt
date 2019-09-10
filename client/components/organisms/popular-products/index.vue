@@ -21,7 +21,7 @@ export default {
     brands() {
       const { items } = this.products;
       // @TODO: It process should have done in API Hub
-      return items.map(item => ({
+      return items.map((item) => ({
         image: get(item, 'image') || get(item, 'category.categoryHeader.image', ''),
         title: get(item, 'category.categoryHeader.title', ''),
       }));

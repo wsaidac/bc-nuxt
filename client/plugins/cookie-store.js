@@ -12,9 +12,9 @@ export default ({ store, req }) => {
     paths: ['auth.token', 'product.amount'],
 
     storage: {
-      getItem: key => cookies.get(key),
+      getItem: (key) => cookies.get(key),
       setItem: (key, value) => cookies.set(key, value, { path: '/' }),
-      removeItem: key => cookies.remove(key),
+      removeItem: (key) => cookies.remove(key),
     },
   })(store);
 

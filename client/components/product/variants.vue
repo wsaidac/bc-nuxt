@@ -43,7 +43,7 @@ export default {
 
   computed: {
     variants() {
-      return this.brand.products.nodes.filter(node => node.id !== this.product.id).slice(0, 3);
+      return this.brand.products.nodes.filter((node) => node.id !== this.product.id).slice(0, 3);
     },
   },
 };

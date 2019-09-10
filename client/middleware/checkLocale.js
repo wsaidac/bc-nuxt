@@ -10,13 +10,13 @@ const setCountryCookie = (app, countryCode) => {
 const isLocaleSupported = (app, curentLocale) => {
   const { locales } = app.i18n;
 
-  return Boolean(locales.find(locale => locale.code.toLowerCase() === curentLocale.toLowerCase()));
+  return Boolean(locales.find((locale) => locale.code.toLowerCase() === curentLocale.toLowerCase()));
 };
 
 
 const isUserCountrySupported = (app, userCountry) => {
   const { locales } = app.i18n;
-  return locales.find(locale => locale.name.toLowerCase() === userCountry.toLowerCase());
+  return locales.find((locale) => locale.name.toLowerCase() === userCountry.toLowerCase());
 };
 
 const isUserOnRestrictedCountry = (pathCountry, userCountry, restrictedCountry) => userCountry !== restrictedCountry && pathCountry === restrictedCountry;
@@ -47,7 +47,7 @@ export default (context = {}) => {
   }
 
   if (!currentLocale && isUserCountrySupported(app, USER_COUNTRY)) {
-    const supportedLocale = app.i18n.locales.find(locale => locale.name === USER_COUNTRY).code;
+    const supportedLocale = app.i18n.locales.find((locale) => locale.name === USER_COUNTRY).code;
 
     if (LOCALE_COOKIE) {
       return redirect(301, `/${LOCALE_COOKIE}`);

@@ -7,10 +7,10 @@ const HOME_BRANDS_BY_CATEGORY_LIMIT = 6;
 
 
 const getNestedKeySafelyFromObject = (obj, keys) => keys.reduce((nestedObj, key) => (nestedObj && nestedObj[key]) ? nestedObj[key] : null, obj); /* eslint-disable-line */
-const retrieveImageFromMenuItem = node => getNestedKeySafelyFromObject(node, ['additionalAttributes', 'attachedImage'])
+const retrieveImageFromMenuItem = (node) => getNestedKeySafelyFromObject(node, ['additionalAttributes', 'attachedImage'])
   || getNestedKeySafelyFromObject(node, ['connectedObject', 'categoryHeader', 'image']);
 
-const unwrapNode = node => omitBy(({
+const unwrapNode = (node) => omitBy(({
   slug: kebabCase(node.label),
   title: node.label,
   url: `/${getNestedKeySafelyFromObject(node, ['connectedObject', 'slug'])}`,
@@ -18,7 +18,7 @@ const unwrapNode = node => omitBy(({
   categories: get(node, 'childItems.nodes', []).map(unwrapNode),
 }), isEmpty);
 
-const unwrap = menu => ({ categories: get(menu, 'menuItems.nodes', []).map(unwrapNode) });
+const unwrap = (menu) => ({ categories: get(menu, 'menuItems.nodes', []).map(unwrapNode) });
 
 
 /**
@@ -80,7 +80,7 @@ const getCategoryLinks = (main = {}) => map(main.categories, ({
  * @param {Object} footerLinks
  * @return {Array} [..., { title, url }]
  */
-const getLegalLinks = (footerLinks = {}) => compact(LEGAL_LINKS_TYPES.map(link => footerLinks[link]));
+const getLegalLinks = (footerLinks = {}) => compact(LEGAL_LINKS_TYPES.map((link) => footerLinks[link]));
 
 /**
  * Method to get formatted service footer links

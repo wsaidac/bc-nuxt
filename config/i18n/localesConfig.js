@@ -19,7 +19,7 @@ const defaultShortDateTime = {
 // }
 
 function mergeShort(specificDateTime) {
-  return Object.assign({}, defaultShortDateTime, specificDateTime);
+  return { ...defaultShortDateTime, ...specificDateTime };
 }
 
 function getDateTimeFormats(locale) {
