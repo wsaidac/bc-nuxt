@@ -37,10 +37,10 @@
       :service-fee="product.serviceFee"
       @product-card-cta:click="$emit('product-card:click', product.id)"
     />
-    <divider v-if="product.usps" />
+    <divider v-if="usps" />
     <usps
-      v-if="product.usps"
-      :text="product.usps"
+      v-if="usps"
+      :text="usps"
       class="m-4"
     />
   </card>
@@ -70,13 +70,12 @@ export default {
       title: VueTypes.string.def(''),
       content: VueTypes.string.def(''),
       image: VueTypes.oneOfType([String, Object]).def(''),
-      alt: VueTypes.string.def(''),
       value: VueTypes.string.def(''),
-      usps: VueTypes.string.def(''),
       serviceFee: VueTypes.string.def(''),
       buttonText: VueTypes.string.def(''),
       isPopular: Boolean,
     }).def({}).loose,
+    usps: VueTypes.string.def(''),
   },
   computed: {
     altText() {

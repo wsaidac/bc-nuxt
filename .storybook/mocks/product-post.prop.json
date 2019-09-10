@@ -1,55 +1,69 @@
 {
-  "__typename": "Product",
-  "id": "Y2dfcHJvZHVjdDoyMTQ=",
-  "identifier": "62095",
-  "title": "Nintendo eShop card $10 USD",
-  "link": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-en-us/blog///nintendo-10-0/",
-  "uri": "nintendo-10-0",
-  "slug": "10-usd",
+  "__typename": "CmsProduct",
+  "id": "Y2dfcHJvZHVjdDo0Mw==",
+  "identifier": "56139",
+  "title": "Nintendo eShop Card 15 EUR",
+  "link": "https://rapido-cms.eu-west-1.production.cgaws.cloud/rapido-de-at/blog///nintendo-egift-at-15-0/",
+  "uri": "nintendo-egift-at-15-0",
+  "slug": "15-eur",
   "meta": {
-    "title": "Buy your Nintendo eShop card $10 USD online",
-    "description": "Nintendo eShop Card $10 USD ✓ E-gift code delivered by Email ✓ Secure payment by Paypal or credit/debit card",
-    "__typename": "MetaProduct"
+    "title": "Nintendo eShop Card 15 Euro online kaufen | Rapido.com",
+    "description": "Nintendo eShop Card 15€ ✓ Prepaid-Guthaben per E-Mail verschickt ✓ Sicher bezahlen mit PayPal, Sofort und EPS",
+    "__typename": "Meta"
   },
   "information": {
-    "issueValue": "10.0",
+    "issueValue": "15.0",
+    "maxQuantity": "10",
+    "serviceFeeValue": null,
     "__typename": "Information"
   },
   "content": {
-    "banner": null,
-    "image": null,
+    "banner": {
+      "desktop": "https://static.rapido.com/cms/sites/2/2019/03/28115842/4RTYLIy8NpwbkXk6rLJfn4/Nintendo_Desktop.jpg",
+      "mobile": "https://static.rapido.com/cms/sites/2/2019/03/28115842/1yI3Jb4Q0db1YWsjLIsjza/Nintendo_Desktop.jpg",
+      "altText": "Nintendo eShop Card",
+      "description": null,
+      "__typename": "MediaItem"
+    },
+    "image": {
+      "regular": "https://static.rapido.com/cms/sites/2/2019/03/28115807/6w4LjL2dAIVTRd8EW2BPRG/Nintendo_eshop1.png",
+      "retina": "https://static.rapido.com/cms/sites/2/2019/03/28115807/1KVlh22U6h0EKc2JfF0dzD/Nintendo_eshop1.png",
+      "altText": "Nintendo eShop Card 15 Euro",
+      "description": null,
+      "__typename": "MediaItem"
+    },
     "tooltip": {
-      "title": "Nintendo eShop Card $10",
+      "title": null,
       "content": null,
       "__typename": "Tooltip"
     },
     "subtext": null,
     "__typename": "Content"
   },
-  "categories": {
+  "brands": {
     "nodes": [
       {
         "name": "Nintendo eShop",
         "description": null,
         "slug": "nintendo-eshop-card",
-        "id": "Y2dfY2F0ZWdvcnk6MTI0",
+        "id": "Y2dfYnJhbmQ6MTIy",
         "meta": {
-          "title": "Nintendo eShop Card | Buy your eShop code from $10 | Rapido.com",
-          "description": "Nintendo eShop Card ✓ Choose from $10 to $50 ✓ Receive your gift code by Email ✓ Payment by Paypal or credit card",
-          "__typename": "MetaCategory"
+          "title": "Nintendo eShop Card online kaufen ab 15 Euro | Rapido.com",
+          "description": "Nintendo eShop Card ✓ Prepaid-Guthaben per E-Mail verschickt ✓ Sicher bezahlen mit PayPal, Sofort und EPS",
+          "__typename": "Meta"
         },
         "categoryHeader": {
           "title": "Nintendo eShop Card",
           "image": {
-            "regular": "https://static.rapido.com/cms/sites/3/2019/03/28095850/4M9aG9zJxzGtcVlvoOQb4z/NintendoEshopLogo.png",
-            "retina": "https://static.rapido.com/cms/sites/3/2019/03/28095850/5LCd9gz7t0SSf3Pi8NcOJ3/NintendoEshopLogo.png",
+            "regular": "https://static.rapido.com/cms/sites/2/2019/03/26103047/4M9aG9zJxzGtcVlvoOQb4z/Nintendo_eshop.png",
+            "retina": "https://static.rapido.com/cms/sites/2/2019/03/26103047/5LCd9gz7t0SSf3Pi8NcOJ3/Nintendo_eshop.png",
             "altText": "Nintendo eShop Card",
             "description": null,
             "__typename": "MediaItem"
           },
           "banner": {
-            "desktop": "https://static.rapido.com/cms/sites/3/2019/03/28095945/1yI3Jb4Q0dbAXnWN5HB4ti/NintendoEshop.jpg",
-            "mobile": "https://static.rapido.com/cms/sites/3/2019/03/28095945/1yI3Jb4Q0db1YWsjLIsjza/NintendoEshop.jpg",
+            "desktop": "https://static.rapido.com/cms/sites/2/2019/03/28115842/1yI3Jb4Q0dbAXnWN5HB4ti/Nintendo_Desktop.jpg",
+            "mobile": "https://static.rapido.com/cms/sites/2/2019/03/28115842/1yI3Jb4Q0db1YWsjLIsjza/Nintendo_Desktop.jpg",
             "altText": "Nintendo eShop Card",
             "description": null,
             "__typename": "MediaItem"
@@ -57,83 +71,102 @@
           "__typename": "CategoryHeader"
         },
         "terms": {
-          "title": "Terms & Conditions",
-          "text": "Nintendo Prepaid Card\r\n\r\n• Redeem balance ONLY through the Nintendo eShop and other Nintendo shopping services, including Nintendo systems that offer access to the Nintendo eShop, to download content such as games and other features, or to purchase items (subject to availability).\r\n\r\n• Valid for use in the United States only.\r\n\r\n• Use of this card requires broadband Internet access, and acceptance of a User Agreement, and Privacy Policy. Please review the User Agreement at support.nintendo.com before purchasing.\r\n\r\n• Compatible accessories and software may be required to use certain downloaded content, and are sold separately.\r\n\r\n• When you enter the card’s activation code on the Nintendo eShop or other Nintendo shopping service, the card balance will be associated with your Nintendo eShop account and will be non-transferable. There will be no remaining balance on the card.\r\n\r\n• The card balance may only be used on a single Nintendo eShop account.\r\n\r\n• There is a maximum unused account balance that may be stored on a single Nintendo eShop account, and the card may, as a result, be temporarily unredeemable.\r\n\r\n• Card balances do not expire, and there are no fees associated with the card. This card is non-reloadable.\r\n\r\n• Card balances cannot be redeemed for cash or for third-party stored value, and are non-refundable unless required by law.\r\n\r\n• Card balances will not be replaced by Nintendo or your retailer if the card is lost or stolen. Do not buy this card if the silver area has been scratched off.\r\n\r\n• Please visit support.nintendo.com for more information.\r\n\r\nSystem Requirements:\r\n\r\nSupported Platforms: Nintendo Switch, Nintendo 3DS, Nintendo Wii U\r\n\r\n*Nintendo is not a sponsor of the rewards or otherwise affiliated with this company. The logos and other identifying marks attached are trademarks of and owned by each represented company and/or its affiliates. Please visit each company's website for additional terms and conditions.",
+          "title": "Allgemeine Geschäftsbedingungen",
+          "text": "Mit der Nutzung dieses Dienstes stimmen Sie den Nutzungsbedingungen von Nintendo zu. Die vollständigen Allgemeinen Geschäftsbedingungen finden Sie auf Nintendo.com.",
           "__typename": "Terms"
         },
         "infoBlock": {
-          "title": "Redeem a Nintendo eShop Card",
-          "text": "Get the games you want, when you want them with a Nintendo eShop Card! Choose from over 1,000 games to download directly to your system.\r\n\r\nGamers of any age will love a Nintendo Yoshi eGift, whether they want to play the namesake action/puzzle game or any of the other more than 1,000 options available via Nintendo eShop. You can choose to help Mario beat back the invasion of Goombas, Bloopers and Boo Buddies in Yoshi™ or choose other games, such as The Legend of Zelda: Ocarina of Time, or Shovel Knight. With Nintendo eShop your friends and family can download directly to Wii U and Nintendo 3DS systems, including games, movies, your favorite shows and other entertainment when you give Nintendo Yoshi eGifts.",
+          "title": "Nintendo eShop Guthaben aufladen",
+          "text": "Sie sind absoluter Spiele-Fan und wollen Zugriff auf alle Nintendo-Klassiker und die neuesten Spiele-Blockbuster? Und das am besten sofort? Dann sind Sie bei uns genau richtig! Auf Rapido.com können Sie Ihre Nintendo eShop Card online kaufen und ersparen sich damit jegliche Wartezeit. Indem Sie Ihr Nintendo Guthaben online kaufen, erhalten Sie innerhalb nur weniger Sekunden einen Gutscheincode per E-Mail, mit dem Sie die Downloadversion Ihrer Nintendo Games direkt im eShop erwerben können. Also: Nintendo eShop Card kaufen, Nintendo e-Shop mit Hilfe Ihrer Konsole öffnen, aus dem breiten Spiele-Angebot wählen und direkt loslegen! Spiele kaufen ging noch nie schneller.",
           "__typename": "InfoBlock"
         },
         "faqQuestions": {
           "title": null,
           "questions": [
             {
-              "question": "What can I use my Nintendo eShop code for?",
-              "answer": "The Nintendo eShop Card can be used to add funds to your Nintendo account. Use these funds in the Nintendo eShop and on the Wii Shop Channel to buy games, exclusive downloadable content, 3D classics and much more.",
+              "question": "Wofür kann ich mein Nintendo eShop Card Guthaben nutzen?",
+              "answer": "Mit der Nintendo eShop Card können Sie im Nintendo eShop aus einer großen Auswahl an Spieleklassikern sowie den neuesten Spiele-Innovationen wählen. Mit der Nintendo eShop Card können Sie nicht nur die Downloadversion aller Nintendo Games kaufen, sondern auch Software erwerben, die Sie nicht im üblichen Handel erwerben können.",
               "__typename": "ProductFaqQuestion"
             },
             {
-              "question": "What kind of account do I need to redeem my Nintendo eShop card?",
-              "answer": "Since the Nintendo eShop Gift Cards are only compatible for the Nintendo eShop country or region where they were intended to be sold, you will need a U.S. Nintendo account to redeem your eShop Card.",
+              "question": "Was für einen Account benötige ich, um mein Nintendo eShop Guthaben nutzen zu können?",
+              "answer": "Um Ihr Nintendo eShop Guthaben einlösen zu können, benötigen Sie einen eShop Account. Den eShop können Sie dann über die folgenden Konsolen aufrufen, um Ihr Guthaben einzulösen:\r\n\r\n•Nintendo Switch\r\nsowie eine europäische Version von:\r\n•Nintendo 3DS\r\n•Nintendo 3DS XL\r\n•Nintendo 2DS\r\n•New Nintendo 2DS XL\r\n•New Nintendo 3DS\r\n•New Nintendo 3DS XL\r\n\r\nBitte beachten Sie außerdem, dass Sie zum Einlösen Ihres Nintendo eShop Guthabens eine drahtlose Internetverbindung benötigen. Des weiteren müssen Sie die Netzwerk bezogenen Bedingungen und die Datenschutzrichtlinie akzeptieren. Sie werden möglicherweise auch dazu aufgefordert, eine Nintendo Network ID oder einen Nintendo-Account zu erstellen oder zu verknüpfen.",
               "__typename": "ProductFaqQuestion"
             },
             {
-              "question": "How can I redeem my Nintendo eShop gift card?",
-              "answer": "1. Click the Redemption URL provided above to view your eShop Card details.\r\n2. Nintendo eShop Cards are redeemable only through the Nintendo eShop on the Wii U or Nintendo 3DS family of systems.\r\n3. Card balances can be shared across Wii U and Nintendo 3DS family of systems, but may only be used on a single Nintendo eShop account.",
+              "question": "Wie kann ich mein Nintendo eShop Card Guthaben einlösen?",
+              "answer": "Zum Einlösen Ihres Guthabens, können Sie sich ganz einfach über Ihre Konsole in den Nintendo eShop einloggen. Wählen Sie dann die Option CODE EINLÖSEN bzw. GUTHABEN HINZUFÜGEN und befolgen Sie die Anweisungen auf dem Bildschirm.",
               "__typename": "ProductFaqQuestion"
             },
             {
-              "question": "How long is my Nintendo eShop gift card valid for?",
-              "answer": "Your Nintendo eShop Card does not expire, so take your time spending the credit!",
-              "__typename": "ProductFaqQuestion"
-            },
-            {
-              "question": "For which Nintendo consoles can I buy games?",
-              "answer": "With your Nintendo eShop Card, you can buy games for your Nintendo Switch, Wii U, and the Nintendo 3DS family of systems, including the Nintendo 2DS.",
+              "question": "Wie lange bleibt mein Nintendo eShop Card Guthaben gültig?",
+              "answer": "Die Gültigkeit Ihres Nintendo eShop Card Guthabens verfällt nicht. Bitte beachten Sie jedoch, dass die Nintendo eShop Card nur in Euro-Ländern wie Deutschland, Österreich, Belgien, Spanien und den Niederlanden genutzt werden kann.",
               "__typename": "ProductFaqQuestion"
             }
           ],
           "__typename": "FaqQuestions"
         },
         "highlight": {
-          "title": "Nintendo eShop Cards",
-          "content": "<p class=\"p1\"><b>What am I buying?\r\n</b>You can use these Nintendo eShop Cards to pay in the online Nintendo eShop. The Nintendo eShop offers games, DLC, shows and a lot more.</p>\r\n<p class=\"p1\"><b>What am I buying?</b>\r\nOn this page, you can choose the amount you want to put into your online gaming account/wallet.</p>\r\n<p class=\"p1\"><b>After I buy\r\n</b>After you have selected the amount and placed an order, you will receive a code along with clear instructions (also by email) on how to use your Nintendo eShop Card.</p>\r\n<p class=\"p1\"><b>For who is it?\r\n</b>These Nintendo eShop Cards are mostly used by people who want to use a different option of paying for their online gaming content. People also buy Nintendo eShop Cards as a gift for someone else.</p>",
+          "title": "Nintendo eShop Card kaufen",
+          "content": "<p class=\"p1\"><b>Was genau kann ich hier kaufen?\r\n</b>Sie können hier einen Guthabencode für Ihre Nintendo eShop Card kaufen. Dieses Guthaben können Sie in den folgenden Nintendo Shops einlösen:</p>\r\n<p class=\"p1\"></p>\r\n\r\n<ul>\r\n \t<li class=\"p1\">Nintendo eShop für Nintendo Switch</li>\r\n</ul>\r\n&nbsp;\r\n<p class=\"p1\"></p>\r\n\r\n<ul>\r\n \t<li class=\"p1\">Nintendo eShop für Nintendo 3DS</li>\r\n</ul>\r\n&nbsp;\r\n<p class=\"p1\"><b>Was muss ich auf dieser Seite tun?</b>\r\nAuf dieser Seite können Sie auswählen, ob Sie eShop Guthaben im Wert von 15€, 25€ oder 50€ kaufen möchten.</p>\r\n<p class=\"p1\"><b>Ich habe bezahlt. Und jetzt?\r\n</b>Sobald Sie den gewünschten Betrag gewählt und Ihre Bestellung bestätigt haben, erhalten Sie eine E-Mail mit Ihrem Aufladecode und genauen Anweisungen zum Einlösen Ihres Nintendo eShop Guthaben.</p>\r\n<p class=\"p1\"><b>Für wen ist diese Seite geeignet?\r\n</b>Diese Seite ist für all diejenigen geeignet, die im Besitz einer der oben genannten Konsolen sind und die Spaß und Spiele lieben!</p>",
           "__typename": "Highlight"
         },
         "products": {
           "nodes": [
             {
-              "title": "Nintendo eShop card $10 USD",
-              "id": "Y2dfcHJvZHVjdDoyMTQ=",
-              "slug": "10-usd",
+              "title": "Nintendo eShop Card 15 EUR",
+              "id": "Y2dfcHJvZHVjdDo0Mw==",
+              "slug": "15-eur",
+              "information": {
+                "issueValue": "15.0",
+                "serviceFeeValue": null,
+                "__typename": "Information"
+              },
+              "content": {
+                "image": {
+                  "regular": "https://static.rapido.com/cms/sites/2/2019/03/28115807/6w4LjL2dAIVTRd8EW2BPRG/Nintendo_eshop1.png",
+                  "retina": "https://static.rapido.com/cms/sites/2/2019/03/28115807/1KVlh22U6h0EKc2JfF0dzD/Nintendo_eshop1.png",
+                  "altText": "Nintendo eShop Card 15 Euro",
+                  "description": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Content"
+              },
               "__typename": "CmsProduct"
             },
             {
-              "title": "Nintendo eShop card $20 USD",
-              "id": "Y2dfcHJvZHVjdDoyMDk=",
-              "slug": "20-usd",
+              "title": "Nintendo eShop Card 25 EUR",
+              "id": "Y2dfcHJvZHVjdDo4NA==",
+              "slug": "25-eur",
+              "information": {
+                "issueValue": "25.0",
+                "serviceFeeValue": null,
+                "__typename": "Information"
+              },
+              "content": {
+                "image": null,
+                "__typename": "Content"
+              },
               "__typename": "CmsProduct"
             },
             {
-              "title": "Nintendo eShop card $50 USD",
-              "id": "Y2dfcHJvZHVjdDoyNDM=",
-              "slug": "50-usd",
+              "title": "Nintendo eShop Card 50 EUR",
+              "id": "Y2dfcHJvZHVjdDo3OQ==",
+              "slug": "50-eur",
+              "information": {
+                "issueValue": "50.0",
+                "serviceFeeValue": null,
+                "__typename": "Information"
+              },
+              "content": {
+                "image": null,
+                "__typename": "Content"
+              },
               "__typename": "CmsProduct"
             }
           ],
-          "__typename": "CategoryTermToProductConnection"
+          "__typename": "BrandTermToProductConnection"
         },
-        "__typename": "CategoryTerm"
-      }
-    ],
-    "__typename": "ProductToCategoryTermConnection"
-  },
-  "brands": {
-    "nodes": [
-      {
-        "name": "Nintendo",
         "__typename": "BrandTerm"
       }
     ],
@@ -149,7 +182,7 @@
     "__typename": "ProductToKindTermConnection"
   },
   "rapidoProduct": {
-    "id": "2620",
+    "id": "30378",
     "__typename": "Product"
   }
 }

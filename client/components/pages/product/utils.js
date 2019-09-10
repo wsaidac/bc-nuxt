@@ -1,7 +1,6 @@
 
-import { get } from 'lodash'
+import { get } from 'lodash';
 
-const fakeContent = '<ul><li>This content description is fake</li><li>Onbeperkt bellen en SMSen naar Lebara nummers</li> <li>500 MB data 4G</li></ul>';
 
 const getProductBanner = (post = {}) => {
   const { content: { banner, image }, categories = {} } = post;
@@ -20,12 +19,42 @@ const getProductImage = (post = {}) => {
  * the idea is only pass the necessary fields to the component
  */
 export const getProductFromPost = (post = {}) => ({
+  id: post.id,
+  slug: post.slug,
   value: get(post, 'information.issueValue', ''),
   title: post.title,
   rapidoId: get(post, 'rapidoProduct.id'),
   banner: getProductBanner(post),
   image: getProductImage(post),
-  serviceFee: '1,00 $', // missing-field
-  description: fakeContent, // missing-field
+  serviceFee: get(post, 'information.serviceFeeValue', ''), // missing-field
+  description: 'missing content', // get(post, 'brands.nodes[0].highlight.content', ''), // missing-field
 });
 
+export const formatProduct = (product = {}, image) => ({
+  id: product.id,
+  value: get(product, 'information.issueValue', ''),
+  title: product.title,
+  slug: product.slug,
+  image: product.content.image || image,
+  serviceFee: get(product, 'information.serviceFeeValue', ''), // missing-field
+  content: 'missing content', // get(post, 'brands.nodes[0].highlight.content', ''), // missing-field
+});
+
+
+export const getProductListFromPost = (post) => {
+  const { image } = post.content;
+  return get(post, 'brands.nodes[0].products.nodes', []).map((p) => formatProduct(p, image));
+};
+
+export const getBrandInfo = (post) => {
+  const brand = get(post, 'brands.nodes[0]', {});
+
+  const logoSrc = brand.categoryHeader.image;
+
+  return {
+    id: brand.id,
+    slug: brand.slug,
+    name: brand.name,
+    logoSrc,
+  };
+};
