@@ -1,3 +1,5 @@
+// Probably this file will be removed. Ignore it for now.
+// @TODO: figure it out where run this data parsering
 
 import { get } from 'lodash';
 
@@ -44,17 +46,4 @@ export const formatProduct = (product = {}, image) => ({
 export const getProductListFromPost = (post) => {
   const { image } = post.content;
   return get(post, 'brands.nodes[0].products.nodes', []).map((p) => formatProduct(p, image));
-};
-
-export const getBrandInfo = (post) => {
-  const brand = get(post, 'brands.nodes[0]', {});
-
-  const logoSrc = brand.categoryHeader.image;
-
-  return {
-    id: brand.id,
-    slug: brand.slug,
-    name: brand.name,
-    logoSrc,
-  };
 };

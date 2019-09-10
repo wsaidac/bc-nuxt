@@ -49,6 +49,7 @@ export default {
       return getProductFromPost(this.post);
     },
     relatedProducts() {
+      // @TODO: figure it out where run this data parsering
       const products = getProductListFromPost(this.post).filter((p) => p.id !== this.product.id);
       return products;
     },
