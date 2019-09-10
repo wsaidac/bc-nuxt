@@ -133,6 +133,8 @@ const conf = {
     GTM_ID: process.env.GTM_ID,
     GTM_DEBUG: process.env.NODE_ENV === 'development',
     LABEL: label,
+    PHRASEAPP_EDITOR: process.env.PHRASEAPP_EDITOR,
+    PHRASEAPP_PROJECT_ID: process.env.PHRASEAPP_PROJECT_ID,
   },
   plugins: [
     '~/plugins/artemis.js',
@@ -151,6 +153,7 @@ const conf = {
     '~/plugins/element-ui.js',
     '~/plugins/click-outside-directive.js',
     '~/plugins/fragment.js',
+    { src: '~/plugins/phraseapp.js', ssr: false },
   ],
   // tailwindcss: {
   //   configPath: '~~/config/tailwind/tailwind.config.js',

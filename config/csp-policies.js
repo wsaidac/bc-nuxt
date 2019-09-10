@@ -17,8 +17,10 @@ const marketingURIS = [
   '*.visualwebsiteoptimizer.com',
   'https://dev.visualwebsiteoptimizer.com',
   '*.riskified.com',
+  'https://phrase.com',
+  'https://phraseapp.com',
+  'https://app.phrase.com',
 ];
-
 const scripts = [
   '\'unsafe-eval\'',
   '\'unsafe-inline\'',
