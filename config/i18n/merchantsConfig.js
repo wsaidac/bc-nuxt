@@ -25,9 +25,9 @@ module.exports = {
   },
   beltegoed: {
     id: 1,
-    defaultLocale: 'en-us',
+    defaultLocale: 'de-at',
     locales: [
-      'en-gb',
+      'de-at',
     ],
   },
 };
