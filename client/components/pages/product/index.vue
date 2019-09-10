@@ -11,18 +11,23 @@
         :brand-info="brandInfo"
       />
       <usps-bar />
+      <seo-block :info="brand.highlight" />
+      <activation-info :info="brand.infoBlock" />
+      <faq-list :questions="brand.faqQuestions.questions" />
     </template>
   </layout>
 </template>
 
 <script>
 import VueTypes from 'vue-types';
+import { get } from 'lodash';
+
 import Layout from '~/components/layouts/default';
 import {
-  ProductDetail, ProductList, UspsBar,
+  ProductDetail, ProductList, UspsBar, ActivationInfo, FaqList, SeoBlock,
 } from '~/components/organisms';
 import { Row, Column } from '~/components/grid';
-import { getProductFromPost, getProductListFromPost, getBrandInfo } from './utils';
+import { getProductFromPost, getProductListFromPost } from './utils';
 
 
 export default {
@@ -31,6 +36,9 @@ export default {
     ProductDetail,
     ProductList,
     UspsBar,
+    ActivationInfo,
+    FaqList,
+    SeoBlock,
   },
   props: {
     post: VueTypes.object,
@@ -44,8 +52,19 @@ export default {
       const products = getProductListFromPost(this.post).filter((p) => p.id !== this.product.id);
       return products;
     },
+    brand() {
+      return get(this, 'post.brands.nodes[0]', {});
+    },
     brandInfo() {
-      return getBrandInfo(this.post);
+      const {
+        id, name, slug, categoryHeader,
+      } = this.brand;
+      return {
+        id,
+        slug,
+        name,
+        logoSrc: categoryHeader.image,
+      };
     },
   },
 };
