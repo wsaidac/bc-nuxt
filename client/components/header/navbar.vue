@@ -8,12 +8,24 @@
     <div class="header-navbar__top">
       <div class="header-navbar__top-content container">
         <h1 class="header-navbar__brand">
-          <nuxt-link :to="homeLink">
+          <nuxt-link
+            v-if="!nonContent"
+            :to="homeLink"
+          >
             <img
               :alt="$t('general.domain')"
               src="~/assets/images/logo-white.svg"
             >
           </nuxt-link>
+          <a
+            v-else
+            href="/"
+          >
+            <img
+              :alt="$t('general.domain')"
+              src="~/assets/images/logo-white.svg"
+            >
+          </a>
         </h1>
         <div class="spacer" />
         <div

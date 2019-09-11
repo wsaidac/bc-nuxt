@@ -32,7 +32,7 @@ export default (context = {}) => {
   const localeDiDNotChange = route.path.substring(1).startsWith(app.i18n.locale);
   if (!process.server && localeDiDNotChange) return null;
 
-  const RESTRICTED_LOCALE = app.i18n.locales.find(locale => locale.restricted);
+  const RESTRICTED_LOCALE = app.i18n.locales.find((locale) => locale.restricted);
   const RESTRICTED_COUNTRY = get(RESTRICTED_LOCALE, 'name', ''); // format: DE;
   const USER_COUNTRY = get(req, 'headers["cloudfront-viewer-country"]', ''); // format: US
   const COUNTRY_RESTRICTED = 'country-restricted';

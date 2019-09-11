@@ -29,14 +29,9 @@ module.exports = function (label) {
       },
     },
     vuex: {
-      mutations: {
-        setLocale: 'SET_LOCALE_MUTATION',
-        setMessages: 'SET_MESSAGE_MUTATION',
-        setRouteParams: 'SET_ROUTE_PARAMS_MUTATION'
-      },
       syncLocale: true,
       syncMessages: true,
-      syncRouteParams: true
+      syncRouteParams: true,
     },
   };
 };
