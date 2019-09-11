@@ -23,10 +23,21 @@ storiesOf('Molecules/Info Card', module)
     components: {
       InfoCard,
     },
+    data() {
+      return {
+        info: {
+          text: desc,
+          title,
+        },
+      };
+    },
     template: `
-      <info-card
-        title="${title}"
-        content="${desc}"
-      />
+    <container class="py-6">
+      <row>
+        <column>
+          <info-card :info="info" />
+        </column>
+      </row>
+    </container>
     `,
   }), info);

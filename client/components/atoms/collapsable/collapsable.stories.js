@@ -12,16 +12,23 @@ Vue.component('collapsable', Collapsable)
 storiesOf('Atoms/Collapsable', module)
   .add('default', () => ({
     template: `
-      <card space="none">
-        <collapsable>
-          <template v-slot:header>
-            <ui-title type="h4">Awesome title</ui-title>
-          </template>
-          <template v-slot:content>
-            <p>content inside the <b>collapsable</b></p>
-          </template>
-        </collapsable>
-      </card>
+      <container class="py-8">
+        <row>
+          <column class="w-full md:w-1/2">
+            <card space="none">
+              <collapsable>
+                <template v-slot:header>
+                  <ui-title type="h4">Awesome title</ui-title>
+                </template>
+                <template v-slot:content>
+                  <p>content inside the <b>collapsable</b></p>
+                </template>
+              </collapsable>
+            </card>
+          </column>
+        </row>
+      </container>
+
     `,
     components: { Collapsable },
   }), info)

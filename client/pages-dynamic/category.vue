@@ -101,7 +101,7 @@ export default {
       if (kinds) {
         categoryMetas.push(
           ...kinds.nodes.map(
-            kind => ({
+            (kind) => ({
               property: 'bc:category',
               content: kind.name.replace('&amp;', '&'),
             }),
@@ -112,7 +112,7 @@ export default {
       if (brands) {
         brandMetas.push(
           ...brands.nodes.map(
-            brand => ({
+            (brand) => ({
               property: 'bc:brand',
               content: brand.name.replace('&amp;', '&'),
             }),
@@ -162,8 +162,8 @@ export default {
       );
     },
     productsByKind() {
-      const validProducts = this.post.products.nodes.filter(product => product.rapidoProduct && product.id);
-      return groupBy(validProducts, product => product.kinds.nodes[0].name);
+      const validProducts = this.post.products.nodes.filter((product) => product.rapidoProduct && product.id);
+      return groupBy(validProducts, (product) => product.kinds.nodes[0].name);
     },
     mixedCategory() {
       return Object.keys(this.productsByKind).length > 1;

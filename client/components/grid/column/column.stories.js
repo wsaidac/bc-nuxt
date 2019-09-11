@@ -15,43 +15,24 @@ storiesOf('Grid/Column', module)
     template: `
       <container class="bg-gray-light rounded border-solid border-gray border mt-8">
           <row>
-            <column class="w-1/12">${content}</column>
-            <column class="w-1/12">${content}</column>
-            <column class="w-1/12">${content}</column>
-            <column class="w-1/12">${content}</column>
-            <column class="w-1/12">${content}</column>
-            <column class="w-1/12">${content}</column>
-            <column class="w-1/12">${content}</column>
-            <column class="w-1/12">${content}</column>
-            <column class="w-1/12">${content}</column>
-            <column class="w-1/12">${content}</column>
-            <column class="w-1/12">${content}</column>
-            <column class="w-1/12">${content}</column>
-          </row>
-          <row>
-            <column class="w-1/4">
-              ${content}
-            </column>
-            <column class="w-1/4">
-              ${content}
-            </column>
-            <column class="w-1/4">
-              ${content}
-            </column>
-            <column class="w-1/4">
-              ${content}
+            <column v-for="i in 12" :key="i" class="w-1/12">
+              <div class="w-full p-6 bg-link mb-4">Col {{ i }}/12 </div>
             </column>
           </row>
           <row>
-            <column class="w-1/2">
-              ${content}
-            </column>
-            <column class="w-1/2">
-              ${content}
+            <column v-for="i in 4" class="w-1/4">
+              <div class="w-full p-6 bg-link mb-4">Col {{ i }}/4 </div>
             </column>
           </row>
           <row>
-            <column>${content}</column>
+            <column v-for="i in 2" class="w-1/2">
+              <div class="w-full p-6 bg-link mb-4">Col {{ i }}/2 </div>
+            </column>
+          </row>
+          <row>
+            <column class="w-full">
+              <div class="w-full p-6 bg-link mb-4">Col full </div>
+            </column>
           </row>
       </container>`,
     components: { Column },

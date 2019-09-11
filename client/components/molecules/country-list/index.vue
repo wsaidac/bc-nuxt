@@ -65,15 +65,15 @@ export default {
   },
   data() {
     return {
-      listItemClasses: 'flex px-6 py-3 border border-solid border-gray justify-between items-center cursor-pointer hover:bg-gray-light focus:outline-none',
+      listItemClasses: 'flex px-6 py-3 bg-white border border-solid border-gray justify-between items-center cursor-pointer hover:bg-gray-light focus:outline-none',
     };
   },
   computed: {
     list() {
       const localesList = this.$i18n.locales
-        .filter(locale => locale.selectable)
-        .filter(locale => locale.code !== this.restrictedCountry)
-        .map(locale => ({
+        .filter((locale) => locale.selectable)
+        .filter((locale) => locale.code !== this.restrictedCountry)
+        .map((locale) => ({
           ...pick(locale, ['code', 'name', 'displayName']),
           selected: locale.code === this.localeSelected,
         }));

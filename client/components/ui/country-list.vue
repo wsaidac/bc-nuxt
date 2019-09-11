@@ -18,9 +18,8 @@
         :class="[{ 'bg-gray-light': country.selected }]"
       >
         <flag
-          :country="country.name"
-          squared
-          class="flex-grow-0"
+          :country="getCountryFlag(country.name)"
+          class="flex-grow-0 flag-icon--bordered"
         />
         <p
           :id="`country-list-text-${country.name}`"
@@ -44,6 +43,7 @@
 import VueTypes from 'vue-types';
 import { pick, orderBy } from 'lodash';
 import { Flag, Icon } from '~/components/atoms';
+import { getCountryFlag } from '~/mixins';
 
 const COLUMN_SIZE = {
   sm: 'full',
@@ -56,6 +56,7 @@ export default {
     Flag,
     Icon,
   },
+  mixins: [getCountryFlag],
   props: {
     localeSelected: VueTypes.string.def(''),
     columnSizes: VueTypes.shape({
@@ -68,9 +69,9 @@ export default {
   computed: {
     list() {
       const localesList = this.$i18n.locales
-        .filter(locale => locale.selectable)
-        .filter(locale => locale.code !== this.restrictedCountry)
-        .map(locale => ({
+        .filter((locale) => locale.selectable)
+        .filter((locale) => locale.code !== this.restrictedCountry)
+        .map((locale) => ({
           ...pick(locale, ['code', 'name', 'displayName']),
           selected: locale.code === this.localeSelected,
         }));

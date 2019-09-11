@@ -2,9 +2,9 @@
 
 /* Preflight: it injects global styles for html tags */
 /* more: https://tailwindcss.com/docs/preflight/ */
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html {
   @apply font-body text-base leading-normal text-primary font-normal antialiased;
@@ -33,6 +33,16 @@ active {
   .bounce {
     transform: scale(0.96);
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 
 .blur {

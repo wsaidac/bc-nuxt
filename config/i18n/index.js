@@ -10,7 +10,7 @@ module.exports = function (label) {
 
   return {
     strategy: 'prefix',
-    seo: false,
+    seo: true,
     parsePages: false,
     lazy: true,
     langDir: 'assets/locales/translation-files/',
@@ -27,6 +27,11 @@ module.exports = function (label) {
       messages: {
         [defaultLocale]: require(defaultLocaleFile), //eslint-disable-line
       },
+    },
+    vuex: {
+      syncLocale: true,
+      syncMessages: true,
+      syncRouteParams: true,
     },
   };
 };

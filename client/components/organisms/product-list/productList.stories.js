@@ -61,6 +61,10 @@ storiesOf('Organisms/Product List', module)
         products: products,
       }
     },
-    template: `<product-list title="Spotify Gift Cards" :products="products"/>`,
+    template: `
+      <container class="py-6">
+        <product-list title="Spotify Gift Cards" :products="products" />
+      </container>
+    `,
     components: { ProductList },
   }), info)

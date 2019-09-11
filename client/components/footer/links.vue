@@ -100,7 +100,7 @@ export default {
       ];
 
       Object.keys(columns).forEach((key) => {
-        columns[key] = columns[key].filter(v => v);
+        columns[key] = columns[key].filter((v) => v);
       });
 
       return columns;

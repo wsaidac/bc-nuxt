@@ -5,13 +5,13 @@ const gradients = {
     'bright-shadow-bottom': 'rgba(255,255,255,0.00) 0%, rgba(255,248,234,0.90) 78%',
   },
 };
-const textColor = theme => theme('colors');
-const backgroundColor = theme => ({
+const textColor = (theme) => theme('colors');
+const backgroundColor = (theme) => ({
   ...theme('colors'),
   overlay: 'rgba(0, 0, 0, 0.6)',
 });
 
-const borderColor = theme => ({
+const borderColor = (theme) => ({
   ...theme('colors'),
   default: theme('colors.gray.300', 'currentColor'),
 });

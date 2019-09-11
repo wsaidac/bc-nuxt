@@ -1,3 +1,4 @@
+
 export { default as MainTitle } from './main-title';
 export { default as BannerImage } from './banner-image';
 export { default as BannerCard } from './banner-card';
@@ -15,5 +16,7 @@ export { default as ProductCard } from './product-card';
 export { default as MenuAccordion } from './menu-accordion';
 export { default as OrderHelpAccordion } from './order-help-accordion';
 export { default as CategoryCard } from './category-card';
+export { default as QuickbuyCard } from './quickbuy-card';
+export { default as InfoCard } from './card-info';
 export { default as Overlay } from './overlay';
 export { default as CountryList } from './country-list';

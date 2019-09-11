@@ -120,11 +120,11 @@ export default {
       return ['header-navbar', { 'header-navbar--open': this.menuOpen }];
     },
     country() {
-      return this.$i18n.locales.find(i => i.code === this.$i18n.locale);
+      return this.$i18n.locales.find((i) => i.code === this.$i18n.locale);
     },
     homeLink() {
       const path = this.$route.path.slice(1, 6);
-      const locale = this.$i18n.locales.find(i => i.code === path);
+      const locale = this.$i18n.locales.find((i) => i.code === path);
 
       if (locale) {
         return `/${locale.code}/`;

@@ -3,6 +3,9 @@ import Vue from 'vue';
 import { storiesOf } from '@storybook/vue';
 import Locale from './index.vue';
 import { info } from '~~/.storybook/utils'
+import {
+  action
+} from '@storybook/addon-actions'
 
 // definition
 Vue.component('locale', Locale)
@@ -16,6 +19,9 @@ storiesOf('Molecules/Locale', module)
         country: { name: 'US' }
       }
     },
-    template: `<locale :country="country"/>`,
+    template: `<locale :country="country" @locale:click="action"/>`,
     components: { Locale },
+    methods: {
+      action: action('locale:click')
+    }
   }), info)

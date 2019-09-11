@@ -16,15 +16,18 @@ Vue.component('popup', Popup)
 storiesOf('Molecules/Popup', module)
   .add('default', () => ({
     template: `
-      <popup
-        title="This product is not usable in your country"
-        description="The product you selected can not be used in Germany. It’s possible to buy the same product in our German store. Do you want to be redirected to Guthaben.de?"
-        mainButtonText="Go to German store"
-        secondaryButtonText="No, stay here"
-        @popup__close:click="close"
-        @popup__main-button:click="primaryButton"
-        @popup__secondary-button:click="secondaryButton"
-      />
+      <container class="py-6">
+        <popup
+          title="This product is not usable in your country"
+          description="The product you selected can not be used in Germany. It’s possible to buy the same product in our German store. Do you want to be redirected to Guthaben.de?"
+          mainButtonText="Go to German store"
+          secondaryButtonText="No, stay here"
+          @popup__close:click="close"
+          @popup__main-button:click="primaryButton"
+          @popup__secondary-button:click="secondaryButton"
+        />
+      </container>
+
     `,
     components: { Popup },
     methods: {

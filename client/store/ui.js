@@ -9,8 +9,8 @@ export default {
   },
 
   getters: {
-    overlayVisibility: state => state.overlay.visibility,
-    overlayName: state => state.overlay.name,
+    overlayVisibility: (state) => state.overlay.visibility,
+    overlayName: (state) => state.overlay.name,
   },
 
   actions: {

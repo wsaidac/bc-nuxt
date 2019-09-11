@@ -9,5 +9,5 @@ Vue.component('story-info', Info)
 
 
 // stories
-storiesOf('Info', module)
-  .add('default', () => `<story-info />`)
+storiesOf('Styleguide', module)
+  .add('default', () => `<container><story-info /></container>`)

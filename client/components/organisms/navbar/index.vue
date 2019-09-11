@@ -19,7 +19,7 @@
                 color="primary"
                 class="lg:hidden ml-4 border-l border-gray pl-4 cursor-pointer"
                 icon="hamburger"
-                @click.prevent="onToggleMenu"
+                @click.prevent="onShowMobileMenu"
               />
             </div>
           </column>
@@ -47,17 +47,27 @@
         </row>
       </container>
     </div>
+    <mobile-menu
+      :state="mobileMenuState"
+      @menu__close:click="onHideMobileMenu"
+    />
+    <country-select v-if="isCountrySelectVisible" />
+    <portal-target :name="overlayName" />
   </header>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
+import { portals } from '~/constants/';
 
 import { UiLink, Icon } from '~/components/atoms';
 import { Row, Column, Container } from '~/components/grid';
 import {
   Logo, HeaderLinks, Locale, UspsList,
 } from '~/components/molecules';
+import { MobileMenu } from '~/components/organisms';
+
+const CountrySelect = () => import('~/components/organisms/country-select');
 
 export default {
   components: {
@@ -70,21 +80,40 @@ export default {
     UspsList,
     UiLink,
     Icon,
+    MobileMenu,
+    CountrySelect,
+  },
+  data() {
+    return {
+      mobileMenuState: 'hidden',
+      portalName: portals.PORTAL_NAME_COUNTRY_SELECT,
+    };
   },
   computed: {
     ...mapGetters('menus', ['categoryLinks']),
     ...mapGetters('shared', ['usps', 'faqUrl']),
+    ...mapGetters('ui', ['overlayVisibility', 'overlayName']),
     country() {
-      return this.$i18n.locales.find(i => i.code === this.$i18n.locale);
+      return this.$i18n.locales.find((i) => i.code === this.$i18n.locale);
+    },
+    isCountrySelectVisible() {
+      return this.overlayName === this.portalName && this.overlayVisibility === 'visible';
     },
   },
-  method: {
+  methods: {
     onToggleCountryList() {
-      // TODO: show contry list
+      this.showCountrySelect();
     },
-    onToggleMenu() { },
+    onShowMobileMenu() {
+      this.mobileMenuState = 'visible';
+    },
+    onHideMobileMenu() {
+      this.mobileMenuState = 'hidden';
+    },
+    showCountrySelect() {
+      this.$store.dispatch('ui/toggleOverlay', { name: this.portalName, visibility: 'visible' });
+    },
   },
-
 };
 
 </script>

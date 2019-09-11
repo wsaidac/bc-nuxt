@@ -134,7 +134,7 @@ export default {
       ];
 
       if (get(this, 'product.information.maxQuantity')) {
-        defaultAmounts = defaultAmounts.filter(amount => amount.value <= this.product.information.maxQuantity);
+        defaultAmounts = defaultAmounts.filter((amount) => amount.value <= this.product.information.maxQuantity);
       }
 
       return defaultAmounts;
