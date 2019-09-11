@@ -282,6 +282,13 @@
       "product_list": {
         "title": "Other {brandName} bundles"
       }
+    },
+    "checkout": {
+      "email_box": {
+        "title": "1. Email address",
+        "description": "Your codes will be delivered directly to your email address",
+        "input_label": "Email adress"
+      }
     }
   },
   "payment-methods": {

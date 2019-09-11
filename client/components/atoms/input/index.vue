@@ -9,7 +9,7 @@
       :class="inputClasses"
       :placeholder="label"
       type="text"
-      @change="onChange"
+      @input="$emit('input', $event.target.value)"
     >
     <label
       :class="labelClasses"
@@ -78,6 +78,7 @@ export default {
       if (this.hideSufix) return false;
       if (this.hasError) return true;
 
+      console.log('is dirty', this.isDirty);
       return this.isDirty || this.value.length;
     },
     sufixColor() {
@@ -92,9 +93,6 @@ export default {
     },
   },
   methods: {
-    onInput(event) {
-      this.$emit('input', event.target.value);
-    },
     onClickLabel() {
       this.$refs.input.focus();
     },
@@ -102,7 +100,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .input {
   @apply w-full p-4 leading-normal rounded text-lg;
 
