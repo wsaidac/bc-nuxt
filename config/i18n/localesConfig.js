@@ -75,7 +75,12 @@ function getLocaleFileName(lang, locale) {
 
 function generateLocaleConfig(locale, name, currency, status, restricted) {
   const lang = locale.split('-')[0];
-  const country = locale.split('-')[1].toUpperCase();
+  let country = locale.split('-')[1].toUpperCase();
+
+  // TODO: remove this crap after Brexit!
+  if (country === 'GB') {
+    country = 'UK';
+  }
   const fileName = getLocaleFileName(lang, locale);
 
   const config = {
@@ -105,7 +110,7 @@ module.exports = {
   'en-ie': generateLocaleConfig('en-ie', 'Ireland', 'EUR', 'active'),
   'pt-pt': generateLocaleConfig('pt-pt', 'Portugal', 'EUR', 'active'),
   'sk-sk': generateLocaleConfig('sk-sk', 'Slovensko', 'EUR', 'active'),
-  'en-gb': generateLocaleConfig('en-gb', 'Great Britain', 'GBP', 'active'),
+  'en-gb': generateLocaleConfig('en-gb', 'United Kingdom', 'GBP', 'active'),
   'es-us': generateLocaleConfig('es-us', 'United States (Spanish)', 'USD', 'inactive'),
   'de-ch': generateLocaleConfig('de-ch', 'Schweiz', 'CHF', 'inactive'),
   'fr-ch': generateLocaleConfig('fr-ch', 'Suisse', 'CHF', 'inactive'),
