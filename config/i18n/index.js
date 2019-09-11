@@ -10,7 +10,7 @@ module.exports = function (label) {
 
   return {
     strategy: 'prefix',
-    seo: true,
+    seo: false,
     parsePages: false,
     lazy: true,
     langDir: 'assets/locales/translation-files/',
