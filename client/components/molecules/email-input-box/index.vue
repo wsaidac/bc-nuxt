@@ -4,9 +4,11 @@
     <p class="py-4">{{ $t("pages.checkout.email_box.description") }}</p>
     <ui-input
       v-model="$v.email.$model"
-      :has-error="error"
+      :has-error="$v.email.$error"
+      :is-focused="isFocused"
       :is-dirty="$v.email.$dirty"
       :label="$t('pages.checkout.email_box.input_label')"
+      autocomplete="off"
       @blur="onInputBlur"
       @focus="onInputFocus"
     />
@@ -28,16 +30,15 @@ export default {
   data() {
     return {
       email: '',
-      error: false,
+      isFocused: true,
     };
   },
   methods: {
     onInputBlur() {
-      console.log('blur');
-      this.error = this.$v.email.$error;
+      this.isFocused = false;
     },
     onInputFocus() {
-      this.error = false;
+      this.isFocused = true;
       this.$v.email.$reset();
     },
   },

@@ -9,6 +9,8 @@
       :class="inputClasses"
       :placeholder="label"
       type="text"
+      @focus="$emit('focus')"
+      @blur="$emit('blur')"
       @input="$emit('input', $event.target.value)"
     >
     <label
@@ -43,6 +45,7 @@ export default {
     hasError: Boolean,
     hideSufix: Boolean,
     isDirty: Boolean,
+    isFocused: Boolean,
     isLoading: Boolean,
     label: VueTypes.string.def(''),
     value: VueTypes.oneOfType([String, Number]).def(''),
@@ -53,39 +56,40 @@ export default {
     };
   },
   computed: {
+    showError() {
+      return !this.isFocused && this.hasError;
+    },
     labelClasses() {
       const base = 'input-label';
-      const text = this.hasError ? 'text-error' : 'text-primary';
+      const text = this.showError ? 'text-error' : 'text-primary';
 
       return [base, text];
     },
     boxClasses() {
       const base = 'input-box label-floating';
-      const border = this.hasError
+      const border = this.showError
         ? 'border-error' : 'border-gray focus-within:border-secondary hover:border-gray-dark';
 
       return [base, border];
     },
     inputClasses() {
       const base = 'input';
-      const text = this.hasError ? 'text-error placeholder:text-error' : 'text-primary placeholder:text-primary';
-      const bg = this.hasError ? 'bg-error-light' : '';
+      const text = this.showError ? 'text-error placeholder:text-error' : 'text-primary placeholder:text-primary';
+      const bg = this.showError ? 'bg-error-light' : '';
 
       return [base, text, bg];
     },
     showSufix() {
-      // @tTODO: figure it out how to do it better
       if (this.hideSufix) return false;
-      if (this.hasError) return true;
+      if (this.showError) return true;
 
-      console.log('is dirty', this.isDirty);
-      return this.isDirty || this.value.length;
+      return this.isDirty && !this.hasError;
     },
     sufixColor() {
-      return this.hasError ? 'error' : 'success';
+      return this.showError ? 'error' : 'success';
     },
     sufixIcon() {
-      if (this.hasError) {
+      if (this.showError) {
         return 'close';
       }
 

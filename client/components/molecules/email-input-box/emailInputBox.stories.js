@@ -5,17 +5,17 @@ import InputBox from './index.vue';
 import { info } from '~~/.storybook/utils'
 
 // definition
-Vue.component('input-box', InputBox)
+Vue.component('email-input-box', InputBox)
 
 
 // stories
-storiesOf('Molecules/InputBox', module)
+storiesOf('Molecules/Email Input Box', module)
   .add('default', () => ({
     template: `
       <container class="py-6">
         <row>
           <column class="w-full lg:w-7/12">
-            <input-box />
+            <email-input-box />
           </column>
         </row>
       </container>
