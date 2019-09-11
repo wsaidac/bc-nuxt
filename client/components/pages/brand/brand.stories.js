@@ -36,7 +36,7 @@ const post = categoryMock;
 
 
 // stories
-storiesOf('Templates/Brand', module)
+storiesOf('Pages/Brand', module)
   .add('default', () => ({
     data() {
       return {

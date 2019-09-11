@@ -13,4 +13,12 @@ const exampleText = 'Get your code <b>instantly</b> and <b>easy</b>';
 
 // stories
 storiesOf('Atoms/Usps', module)
-  .add('default', () => `<usps text="${exampleText}" />`, info);
+  .add('default', () => `
+    <container class="py-8">
+      <row>
+        <column>
+          <usps text="${exampleText}" />
+        </column>
+      </row>
+    </container>
+  `, info);

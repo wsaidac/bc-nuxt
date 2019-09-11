@@ -1,7 +1,8 @@
 <template>
   <div
     v-click-outside="onClickOutside"
-    class="focus:outline-none"
+    class="focus:outline-none bg-white"
+    role="listbox"
     @click="onClick"
   >
     <div :class="selectClasses">
@@ -28,7 +29,7 @@
           v-for="option in options"
           :key="option.id"
           class="p-4 border-b border-gray hover:bg-gray-light cursor-pointer focus:outline-none"
-          role="button"
+          role="option"
           aria-labelledby="dropdown-label"
           tabindex="0"
           @click="onClickItem(option, $event)"

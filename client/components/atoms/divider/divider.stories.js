@@ -10,12 +10,31 @@ Vue.component('divider', Divider)
 // stories
 storiesOf('Atoms/Divider', module)
   .add('default', () => ({
-    template: `<divider />`,
+    template: `
+      <container class="py-8">
+        <row>
+          <column class="w-full md:w-1/3">
+            <card space="none">
+              <p class="p-6">space</p>
+              <divider />
+              <p class="p-6">space</p>
+            </card>
+          </column>
+        </row>
+      </container>
+    <divider />`,
     components: { Divider },
   }), info)
   .add(':type=small', () => `
-    <card p='4'>
-      <ui-title>Lebara mobile</ui-title>
-      <divider type="small"/>
-    </card>
+    <container class="py-6">
+      <row>
+        <column class="w-full md:w-1/3">
+          <card p='4'>
+            <ui-title>Lebara mobile</ui-title>
+            <divider type="small"/>
+          </card>
+        </column>
+      </row>
+    </container>
+
   `, info)

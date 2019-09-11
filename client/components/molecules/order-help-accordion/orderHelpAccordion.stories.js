@@ -31,7 +31,11 @@ storiesOf('Molecules/Order Help Accordion', module)
         ],
       };
     },
-    template: `<order-help-accordion :questions="questions" />`,
+    template: `
+    <container class="py-8">
+      <order-help-accordion :questions="questions" />
+    </container>
+    `,
   }), info);
 
 Vue.component('order-help-item', OrderHelpItem);
@@ -44,5 +48,9 @@ storiesOf('Molecules/Order Help Item', module)
         answer: 'You can use your Sephora eGift Card to purchase beauty products at Sephora.com, in the Sephora Mobile App, at U.S. &amp; Canada Sephora Stores and Sephora inside JCPenny Stores. Use your gift card in store as well as online. Please note that you can\'t use your gift card to buy other gift cards.',
       };
     },
-    template: `<order-help-item :question="question" :answer="answer" />`,
+    template: `
+      <container class="py-6">
+        <order-help-item :question="question" :answer="answer" />
+      </container>
+    `,
   }));

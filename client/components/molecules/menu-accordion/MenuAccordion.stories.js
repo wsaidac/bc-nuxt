@@ -55,7 +55,10 @@ storiesOf('Atoms/Menu Accordion Item', module)
     methods: {
       action: action('menu_accordion-item')
     }
-  }), info)
+  }), {
+      info: {},
+      viewport: { defaultViewport: 'iphone6' },
+    })
 
 // stories
 storiesOf('Molecules/Menu Accordion', module)
@@ -74,7 +77,10 @@ storiesOf('Molecules/Menu Accordion', module)
     methods: {
       action: action('menu_accordion__item')
     }
-  }), info)
+  }), {
+      info: {},
+      viewport: { defaultViewport: 'iphone6' },
+    })
   .add('without icons', () => ({
     data() {
       return {
@@ -91,4 +97,7 @@ storiesOf('Molecules/Menu Accordion', module)
     methods: {
       action: action('menu_accordion-item')
     }
-  }), info)
+  }), {
+      info: {},
+      viewport: { defaultViewport: 'iphone6' },
+    })

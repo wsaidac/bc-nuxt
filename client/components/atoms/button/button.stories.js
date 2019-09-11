@@ -47,34 +47,70 @@ storiesOf('Atoms/Button', module)
       action: action('clicked')
     },
     template: `
-      <ui-button
-        :disable="disable"
-        :justify="justify"
-        :type="type"
-      >
-        {{ text }}
-      </ui-button>
+      <container class="py-8">
+        <row>
+          <column class="w-1/2 md:w-1/4">
+            <ui-button
+              :disable="disable"
+              :justify="justify"
+              :type="type"
+            >
+              {{ text }}
+            </ui-button>
+          </column>
+        </row>
+      </container>
+
     `,
   }), {
       info: {}
     })
-  .add(':type=primary', () => `<ui-button >Button</ui-button>`, {
-    info: {}
-  })
-  .add(':type=secondary', () => `<ui-button type='secondary'>Button</ui-button>`, {
-    info: {}
-  })
+  .add(':type=primary', () => `
+    <container class="p-8">
+        <row>
+          <column class="w-1/2 md:w-1/4">
+            <ui-button
+            >
+              Button
+            </ui-button>
+          </column>
+        </row>
+      </container>
+  `, {
+      info: {}
+    })
+  .add(':type=secondary', () => `
+      <container class="p-8">
+        <row>
+          <column class="w-1/2 md:w-1/4">
+            <ui-button
+              type="secondary"
+            >
+              Button
+            </ui-button>
+          </column>
+        </row>
+      </container>
+  `, {
+      info: {}
+    })
   .add(':disable', () => `
-    <div>
-      <h4 style="color: #777">Primary:</h4>
-      <ui-button disable my='3'>
-        disable Primary button
-      </ui-button>
-      <h4 style="color: #777">Secondary</h4>
-      <ui-button disable type='secondary' my='3'>
-        disable Primary button
-      </ui-button>
-    </div>
+    <container>
+      <row wrap>
+        <column class="w-full md:w-1/3">
+          <h4 style="color: #777">Primary:</h4>
+          <ui-button disable my='3'>
+            disable Primary button
+          </ui-button>
+        </column>
+        <column class="w-full md:w-1/3">
+          <h4 style="color: #777">Secondary</h4>
+          <ui-button disable type='secondary' my='3'>
+            disable secondary button
+          </ui-button>
+        </column>
+      </row>
+    </container>
 
   `, {
       info: {}
@@ -83,9 +119,22 @@ storiesOf('Atoms/Button', module)
     info: {}
   })
   .add(':justify', () => ({
-    template: `<ui-button @click='action' justify type='primary'>another test</ui-button>`,
+    template: `
+      <container class="p-8 border">
+        <row>
+          <column class="w-full md:w-1/2">
+            <ui-button
+              justify
+              @click="action"
+            >
+              Button
+            </ui-button>
+          </column>
+        </row>
+      </container>
+    `,
     methods: {
-      action: action('clicked')
+      action: action('button:clicked')
     },
   }), {
       info: {}

@@ -32,9 +32,16 @@ storiesOf('Molecules/Order Detail Card', module)
       OrderDetailCard,
     },
     template: `
-      <order-detail-card
-        description='${description}'
-      />
+      <container class="py-8">
+        <row>
+          <column class="w-full">
+            <order-detail-card
+              description='${description}'
+            />
+          </column>
+        </row>
+      </container>
+
     `,
 
   }), info);

@@ -144,7 +144,7 @@
     "stylelint-processor-html": "^1.0.0",
     "stylelint-scss": "^3.3.0",
     "stylelint-webpack-plugin": "^0.10.5",
-    "tailwindcss": "^1.1.0",
+    "tailwindcss": "^1.1.2",
     "vue-jest": "^3.0.0",
     "webfonts-loader": "^5.0.0"
   },

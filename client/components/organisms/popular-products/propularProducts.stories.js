@@ -17,6 +17,10 @@ storiesOf('Organisms/Popular Products', module)
         products: mock.popularProducts,
       }
     },
-    template: `<popular-products :products="products"/>`,
+    template: `
+      <container>
+        <popular-products :products="products" />
+      </container>
+    `,
     components: { ProductList },
   }), info)

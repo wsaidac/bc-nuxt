@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul class="bg-white">
     <item
       v-for="(item, i) in list"
       :key="i"

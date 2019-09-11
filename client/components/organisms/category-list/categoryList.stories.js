@@ -17,7 +17,10 @@ store.commit('menus/setMain', mainMock.data.menus.nodes[0])
 // stories
 storiesOf('Organisms/Category List', module)
   .add('default', () => ({
-    template: `<category-list />`,
+    template: `
+      <container class="py-6">
+        <category-list />
+      </container>`,
     components: { CategoryList },
     store,
   }), info)
