@@ -74,7 +74,7 @@
     "serverless-http": "^2.0.1",
     "serverless-offline": "^5.10.0",
     "serverless-plugin-aws-alerts": "^1.2.4",
-    "sitemap": "^4.0.0",
+    "sitemap": "~2.1.0",
     "storybook-external-links": "^0.1.0",
     "tailwindcss-transforms": "^2.2.0",
     "tailwindcss-transitions": "^2.0.1",
