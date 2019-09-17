@@ -24,12 +24,11 @@ const isUserOnRestrictedCountry = (pathCountry, userCountry, restrictedCountry) 
 const isDebugMode = (app, query = {}) => {
   const debugCookie = app.$cookies.get('debug_mode');
 
+  if (debugCookie) return true;
   if (query.marketeer) {
     app.$cookies.set('debug_mode', query.marketeer, { path: '/' });
     return true;
   }
-
-  if (debugCookie) return true;
 
   return false;
 };
