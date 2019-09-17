@@ -34,6 +34,7 @@ export default (context = {}) => {
   if (!process.server && localeDiDNotChange) return null;
 
   const DEBUG_MODE = app.$cookies.get(cookies.DEBUG_COOKIE);
+  console.log('THis is the debug mode value:', DEBUG_MODE);
 
   const RESTRICTED_LOCALE = app.i18n.locales.find((locale) => locale.restricted);
   const RESTRICTED_COUNTRY = get(RESTRICTED_LOCALE, 'name', ''); // format: DE;
