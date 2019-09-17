@@ -1,6 +1,6 @@
 import { cookies } from '~/constants';
 
-export default async ({
+export default ({
   app, query,
 }) => {
   // set debug_mode cookie
