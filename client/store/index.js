@@ -1,7 +1,5 @@
 import uuid from 'uuid/v4';
 
-import { cookies } from '~/constants';
-
 export default {
   state() {
     return {};

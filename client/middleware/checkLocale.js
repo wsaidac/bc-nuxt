@@ -1,5 +1,4 @@
 import { get } from 'lodash';
-import { cookies } from '~/constants';
 
 const setCountryCookie = (app, countryCode) => {
   app.$cookies.set('country', countryCode, {
@@ -22,11 +21,11 @@ const isUserCountrySupported = (app, userCountry) => {
 
 const isUserOnRestrictedCountry = (pathCountry, userCountry, restrictedCountry) => userCountry !== restrictedCountry && pathCountry === restrictedCountry;
 
-const isDebugMode = (app, query) => {
+const isDebugMode = (app, query = {}) => {
   const debugCookie = app.$cookies.get('debug_mode');
 
-  if (query && query.marketeer) {
-    app.$cookies.set('debug_mode', query.marketeer, { path: '/', maxAge: 31536000 });
+  if (query.marketeer) {
+    app.$cookies.set('debug_mode', query.marketeer, { path: '/' });
     return true;
   }
 
