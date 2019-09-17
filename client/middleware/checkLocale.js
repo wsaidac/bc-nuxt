@@ -45,7 +45,6 @@ export default (context = {}) => {
   const currentLocale = urlPaths[1];
   const PATH_COUNTRY = currentLocale.split('-')[1] ? currentLocale.split('-')[1].toUpperCase() : null;
 
-  debugger // eslint-disable-line
   if (!currentLocale && USER_COUNTRY !== RESTRICTED_COUNTRY && !isUserCountrySupported(app, USER_COUNTRY)) {
     if (DEBUG_MODE) {
       return redirect(301, `/${app.i18n.defaultLocale}/`);
