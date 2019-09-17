@@ -1,10 +1,11 @@
 import { cookies } from '~/constants';
 
 export default ({
-  app, query,
+  app, query, store,
 }) => {
   // set debug_mode cookie
-  if (process.server && query.marketeer) {
+  if (query.marketeer) {
+    store.commit('setDebugMode', query.marketeer);
     app.$cookies.set(cookies.DEBUG_COOKIE, query.marketeer, { path: '/', maxAge: 31536000 });
   }
 };

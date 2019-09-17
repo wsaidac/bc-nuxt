@@ -19,6 +19,7 @@ export default {
         'X-Locale-Context': rootState.i18n.locale,
       };
     },
+    debugMode: (state) => state.debug_mode,
   },
 
   actions: {

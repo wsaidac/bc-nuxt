@@ -28,13 +28,13 @@ export default (context = {}) => {
     redirect,
     route,
     req,
+    store,
   } = context;
 
   const localeDiDNotChange = route.path.substring(1).startsWith(app.i18n.locale);
   if (!process.server && localeDiDNotChange) return null;
 
-  const DEBUG_MODE = app.$cookies.get(cookies.DEBUG_COOKIE);
-  console.log('THis is the debug mode value:', DEBUG_MODE);
+  const DEBUG_MODE = app.$cookies.get(cookies.DEBUG_COOKIE) || store.getters.debugMode;
 
   const RESTRICTED_LOCALE = app.i18n.locales.find((locale) => locale.restricted);
   const RESTRICTED_COUNTRY = get(RESTRICTED_LOCALE, 'name', ''); // format: DE;
