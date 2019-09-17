@@ -1,10 +1,10 @@
 import uuid from 'uuid/v4';
 
+import { cookies } from '~/constants';
+
 export default {
   state() {
-    return {
-      debug_mode: false,
-    };
+    return {};
   },
   getters: {
     extendedGraphqlHeaders: (_state, _getters, rootState, rootGetters) => {
@@ -19,7 +19,6 @@ export default {
         'X-Locale-Context': rootState.i18n.locale,
       };
     },
-    debugMode: (state) => state.debug_mode,
   },
 
   actions: {
@@ -39,12 +38,6 @@ export default {
       commit('context/setDomain', req.headers.host);
 
       return dispatch('context/changeContext', { app, error });
-    },
-  },
-
-  mutations: {
-    setDebugMode(state, value) {
-      state.debug_mode = value;
     },
   },
 };
