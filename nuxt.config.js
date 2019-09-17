@@ -117,7 +117,7 @@ const conf = {
     },
   },
   router: {
-    middleware: ['checkLocale', 'strip-trailing-slash'],
+    middleware: ['handleDebugMode', 'checkLocale', 'strip-trailing-slash'],
   },
   modules: [
     ['@nuxtjs/style-resources'],
