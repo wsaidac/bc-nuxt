@@ -2,7 +2,9 @@ import uuid from 'uuid/v4';
 
 export default {
   state() {
-    return {};
+    return {
+      debug_mode: false,
+    };
   },
   getters: {
     extendedGraphqlHeaders: (_state, _getters, rootState, rootGetters) => {
@@ -36,6 +38,12 @@ export default {
       commit('context/setDomain', req.headers.host);
 
       return dispatch('context/changeContext', { app, error });
+    },
+  },
+
+  mutations: {
+    setDebugMode(state, value) {
+      state.debug_mode = value;
     },
   },
 };
