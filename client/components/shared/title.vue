@@ -1,7 +1,7 @@
 <template>
   <div class="shared-title container">
     <div class="flex">
-      <h1 v-html="title" />
+      <h2 v-html="title" />
       <shared-instant-tooltip />
     </div>
   </div>
@@ -36,7 +36,7 @@ export default {
 
     @include flex(null, center);
 
-    h1 {
+    h2 {
       font-size: 33.6px;
       margin-right: 20px;
     }
@@ -47,7 +47,7 @@ export default {
     height: 41px;
     padding-bottom: 0;
 
-    .flex h1 {
+    .flex h2 {
       font-size: $font-size-h5;
     }
   }

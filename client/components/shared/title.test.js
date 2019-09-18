@@ -20,6 +20,6 @@ describe('SharedTitle', () => {
   });
 
   it('should show the title', () => {
-    expect($mounted.find('.shared-title h1').text()).toContain('title text');
+    expect($mounted.find('.shared-title h2').text()).toContain('title text');
   });
 });
