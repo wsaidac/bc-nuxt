@@ -1,22 +1,58 @@
-version: '3.7'
+version: "3.7"
 
 services:
-  web:
+  rapido: &frontend
     build:
       context: .
       target: dev
     command: /sbin/tini -- yarn dev
-    environment:
+    ports:
+      - 4000:4000
+    environment: &environment
       HOST: 0.0.0.0
       PORT: 4000
       NODE_ENV: development
       API_BROWSER: https://api-hub.eu-west-1.acceptance.cgaws.cloud
       API_SERVER: https://api-hub.eu-west-1.acceptance.cgaws.cloud
-    ports:
-      - 4000:4000
+      LABEL: rapido
     volumes:
       - .:/usr/src/app
       - node_modules:/usr/src/app/node_modules
+  beltegoed:
+    <<: *frontend
+    ports:
+      - 4001:4000
+    environment:
+      <<: *environment
+      LABEL: beltegoed
+  guthaben:
+    <<: *frontend
+    environment:
+      <<: *environment
+      LABEL: guthaben
+    ports:
+      - 4002:4000
+  recharge:
+    <<: *frontend
+    environment:
+      <<: *environment
+      LABEL: recharge
+    ports:
+      - 4003:4000
+  herladen:
+    <<: *frontend
+    environment:
+      <<: *environment
+      LABEL: herladen
+    ports:
+      - 4004:4000
+  mobiletopup:
+    <<: *frontend
+    environment:
+      <<: *environment
+      LABEL: mobiletopup
+    ports:
+      - 4005:4000
 
 volumes:
   node_modules:

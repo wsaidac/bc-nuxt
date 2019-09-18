@@ -56,19 +56,23 @@ acceptance:
     US_EAST_1_CERTIFICATE_ARN: arn:aws:acm:us-east-1:245616468753:certificate/09c02616-8d90-4044-9da5-87593fdd17c8
     EU_WEST_1_CERTIFICATE_ARN: arn:aws:acm:eu-west-1:245616468753:certificate/17659dcc-6a28-4793-8a5e-2f6f174e962a
   before_script:
+    - declare -a labels=(rapido beltegoed)
+    - export LABEL=${labels[$((CI_NODE_INDEX-1))]}
+    - export DOMAIN=$LABEL-web.acceptance.cgaws.cloud
+    - export STAGE="${STAGE:-$(echo -n $CI_COMMIT_REF_SLUG | sha1sum | cut -c1-8)}"
     - sls_build
-    - stage=$(echo -n $CI_COMMIT_REF_SLUG | sha1sum | cut -c1-8)
   script:
     - sls_deploy creativegroup-acceptance eu-west-1 $stage
     - sls_deploy creativegroup-acceptance us-east-1 $stage
 
 deploy-acceptance:
   extends: .deploy
+  parallel: 2
   environment:
     name: acceptance
     url: https://rapido-web.acceptance.cgaws.cloud
   variables:
-    DOMAIN: rapido-web.acceptance.cgaws.cloud
+    STAGE: acc
   only:
     - release
   when: manual
