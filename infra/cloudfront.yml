@@ -4,14 +4,14 @@ eu-west-1:
       Type: AWS::CloudFront::Distribution
       Properties:
         DistributionConfig:
-          Comment: ${self:service} (${opt:region})
+          Comment: ${self:service}
           Origins:
             - Id: ApiGateway
               DomainName: ${self:custom.dns.regionalDomainName}
               CustomOriginConfig:
                 HTTPSPort: 443
                 OriginProtocolPolicy: https-only
-                OriginSSLProtocols: [ TLSv1.2 ]
+                OriginSSLProtocols: [TLSv1.2]
           Enabled: true
           HttpVersion: http2
           Aliases:
