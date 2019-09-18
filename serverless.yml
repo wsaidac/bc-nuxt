@@ -1,4 +1,4 @@
-service: ${env:LABEL, 'rapido'}-frontend
+service: ${env:LABEL, 'rapido'}-web
 
 plugins:
   - serverless-offline
@@ -17,13 +17,13 @@ provider:
     NODE_ENV: production
 
 functions:
-  frontend:
+  nuxt:
     handler: lambda.handler
     environment:
       LABEL: ${env:LABEL, 'rapido'}
     events:
       - http: ANY /
-      - http: 'ANY {proxy+}'
+      - http: "ANY {proxy+}"
 
 custom:
   alerts:
