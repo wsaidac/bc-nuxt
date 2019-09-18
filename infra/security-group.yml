@@ -1,0 +1,18 @@
+Resources:
+  NuxtLambdaFunctionSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow Lambda to connect to VPC
+      VpcId: ${ssm:/terraform/vpc_id}
+      Tags:
+        - Key: Name
+          Value: ${env:LABEL, ''}-web
+      SecurityGroupEgress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 0.0.0.0/0
