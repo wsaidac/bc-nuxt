@@ -66,4 +66,8 @@ active {
   & hr {
     @apply h-px w-full bg-gray m-0 border-0 my-4;
   }
+
+  & .p1 > b {
+    @apply mt-6 ;
+  }
 }

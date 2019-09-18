@@ -12,8 +12,6 @@ const uspsMock = get(mock, 'shared.usps', {});
 
 const productsMock = categoryMock.products;
 
-
-
 const fakeContent = '<ul><li>This content description is fake</li><li>Onbeperkt bellen en SMSen naar Lebara nummers</li> <li>500 MB data 4G</li></ul>';
 
 const getProductBanner = (post = {}) => {
@@ -61,6 +59,7 @@ storiesOf('Organisms/Product List', module)
         products: products,
       }
     },
+    store,
     template: `
       <container class="py-6">
         <product-list title="Spotify Gift Cards" :products="products" />
