@@ -17,7 +17,7 @@ async function start() {
     host = process.env.HOST || '127.0.0.1', port = process.env.PORT || 3000,
   } = nuxt.options.server;
 
-  if (process.env.MAINTENANCE_MODE) {
+  if (process.env.MAINTENANCE_MODE === 'enabled') {
     app.use(maintenance({ whitelist: (process.env.MAINTENANCE_WHITELIST || '').split(',') }));
   }
 

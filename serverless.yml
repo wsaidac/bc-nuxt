@@ -1,4 +1,4 @@
-service: rapido-web
+service: ${env:LABEL, 'rapido'}-web
 
 plugins:
   - serverless-offline
@@ -6,7 +6,7 @@ plugins:
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   cfnRole: ${opt:cfn-role}
   deploymentBucket:
     name: ${opt:deployment-bucket}
@@ -17,11 +17,13 @@ provider:
     NODE_ENV: production
 
 functions:
-  app:
+  nuxt:
     handler: lambda.handler
+    environment:
+      LABEL: ${env:LABEL, 'rapido'}
     events:
       - http: ANY /
-      - http: 'ANY {proxy+}'
+      - http: "ANY {proxy+}"
 
 custom:
   alerts:
