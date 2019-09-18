@@ -15,10 +15,10 @@ provider:
   environment:
     NODE_ENV: production
     API_BROWSER: ${env:API_BROWSER, ''}
-    API_CLIENT: ${env:API_CLIENT, ''}
+    API_SERVER: ${env:API_SERVER, ''}
     LABEL: ${env:LABEL, ''}
   vpc:
-    subnetIds: ${ssm://terraform/private_subnets~split}
+    subnetIds: ${ssm:/terraform/private_subnets~split}
     securityGroupIds:
       - Ref: NuxtLambdaFunctionSecurityGroup
 
