@@ -12,15 +12,15 @@ provider:
     name: ${opt:deployment-bucket}
   stage: ${opt:stage, 'dev'}
   region: ${opt:region, 'eu-west-1'}
-
   environment:
     NODE_ENV: production
+    API_BROWSER: ${env:API_BROWSER, ''}
+    API_CLIENT: ${env:API_CLIENT, ''}
+    LABEL: ${env:LABEL, ''}
 
 functions:
   nuxt:
     handler: lambda.handler
-    environment:
-      LABEL: ${env:LABEL, 'rapido'}
     events:
       - http: ANY /
       - http: "ANY {proxy+}"
