@@ -8,8 +8,8 @@ include:
 
 e2e-tests:
   variables:
-  # to cache both npm modules and Cypress binary we use environment variables
-  # to point at the folders we can list as paths in "cache" job settings
+    # to cache both npm modules and Cypress binary we use environment variables
+    # to point at the folders we can list as paths in "cache" job settings
     YARN_CACHE_FOLDER: "$CI_PROJECT_DIR/.yarn"
     CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/.cache/Cypress"
     NODE_ENV: development
@@ -59,7 +59,7 @@ acceptance:
     - declare -a labels=(rapido beltegoed)
     - export LABEL=${labels[$((CI_NODE_INDEX-1))]}
     - export DOMAIN=$LABEL-web.acceptance.cgaws.cloud
-    - export STAGE="${STAGE:-$(echo -n $CI_COMMIT_REF_SLUG | sha1sum | cut -c1-8)}"
+    - stage="${STAGE:-$(echo -n $CI_COMMIT_REF_SLUG | sha1sum | cut -c1-8)}"
     - sls_build
   script:
     - sls_deploy creativegroup-acceptance eu-west-1 $stage
