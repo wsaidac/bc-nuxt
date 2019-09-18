@@ -19,7 +19,8 @@ provider:
     LABEL: ${env:LABEL, ''}
   vpc:
     subnetIds: ${ssm:/terraform/private_subnets~split}
-    securityGroupIds: !Ref
+    securityGroupIds:
+      - Ref: NuxtLambdaFunctionSecurityGroup
 
 functions:
   nuxt:
