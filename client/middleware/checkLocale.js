@@ -21,16 +21,31 @@ const isUserCountrySupported = (app, userCountry) => {
 
 const isUserOnRestrictedCountry = (pathCountry, userCountry, restrictedCountry) => userCountry !== restrictedCountry && pathCountry === restrictedCountry;
 
+const isDebugMode = (app, query = {}) => {
+  const debugCookie = app.$cookies.get('debug_mode');
+
+  if (debugCookie) return true;
+  if (query.marketeer) {
+    app.$cookies.set('debug_mode', query.marketeer, { path: '/' });
+    return true;
+  }
+
+  return false;
+};
+
 export default (context = {}) => {
   const {
     app,
     redirect,
     route,
     req,
+    query,
   } = context;
 
   const localeDiDNotChange = route.path.substring(1).startsWith(app.i18n.locale);
   if (!process.server && localeDiDNotChange) return null;
+
+  const DEBUG_MODE = isDebugMode(app, query);
 
   const RESTRICTED_LOCALE = app.i18n.locales.find((locale) => locale.restricted);
   const RESTRICTED_COUNTRY = get(RESTRICTED_LOCALE, 'name', ''); // format: DE;
@@ -43,6 +58,9 @@ export default (context = {}) => {
   const PATH_COUNTRY = currentLocale.split('-')[1] ? currentLocale.split('-')[1].toUpperCase() : null;
 
   if (!currentLocale && USER_COUNTRY !== RESTRICTED_COUNTRY && !isUserCountrySupported(app, USER_COUNTRY)) {
+    if (DEBUG_MODE) {
+      return redirect(301, `/${app.i18n.defaultLocale}/`);
+    }
     return redirect(301, COUNTRY_RESTRICTED_PATH);
   }
 
@@ -57,7 +75,7 @@ export default (context = {}) => {
     return redirect(301, `/${supportedLocale}`);
   }
 
-  if (isUserOnRestrictedCountry(PATH_COUNTRY, USER_COUNTRY, RESTRICTED_COUNTRY)) {
+  if (!DEBUG_MODE && isUserOnRestrictedCountry(PATH_COUNTRY, USER_COUNTRY, RESTRICTED_COUNTRY)) {
     return redirect(301, COUNTRY_RESTRICTED_PATH);
   }
 

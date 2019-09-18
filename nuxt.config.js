@@ -36,7 +36,6 @@ const conf = {
       },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: process.env.NODE_ENV === 'production' ? marketingScripts : [],
-    refreshOnceOnNavigation: true,
   },
   css: ['~/assets/stylesheets/application.scss'],
   store: true,
