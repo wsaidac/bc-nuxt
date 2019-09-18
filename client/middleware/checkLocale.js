@@ -1,5 +1,4 @@
 import { get } from 'lodash';
-import { cookies } from '~/constants';
 
 const setCountryCookie = (app, countryCode) => {
   app.$cookies.set('country', countryCode, {
@@ -22,18 +21,31 @@ const isUserCountrySupported = (app, userCountry) => {
 
 const isUserOnRestrictedCountry = (pathCountry, userCountry, restrictedCountry) => userCountry !== restrictedCountry && pathCountry === restrictedCountry;
 
+const isDebugMode = (app, query = {}) => {
+  const debugCookie = app.$cookies.get('debug_mode');
+
+  if (debugCookie) return true;
+  if (query.marketeer) {
+    app.$cookies.set('debug_mode', query.marketeer, { path: '/' });
+    return true;
+  }
+
+  return false;
+};
+
 export default (context = {}) => {
   const {
     app,
     redirect,
     route,
     req,
+    query,
   } = context;
 
   const localeDiDNotChange = route.path.substring(1).startsWith(app.i18n.locale);
   if (!process.server && localeDiDNotChange) return null;
 
-  const DEBUG_MODE = app.$cookies.get(cookies.DEBUG_COOKIE);
+  const DEBUG_MODE = isDebugMode(app, query);
 
   const RESTRICTED_LOCALE = app.i18n.locales.find((locale) => locale.restricted);
   const RESTRICTED_COUNTRY = get(RESTRICTED_LOCALE, 'name', ''); // format: DE;
