@@ -60,7 +60,10 @@ acceptance:
     - export LABEL=${labels[$((CI_NODE_INDEX-1))]}
     - export DOMAIN=$LABEL-web.acceptance.cgaws.cloud
     - stage="${STAGE:-$(echo -n $CI_COMMIT_REF_SLUG | sha1sum | cut -c1-8)}"
-    - sls_build
+    - npm install --silent
+    - npm run build --silent
+    - rm -rf ./node_modules
+    - npm install --silent --production
   script:
     - sls_deploy creativegroup-acceptance eu-west-1 $stage
     - sls_deploy creativegroup-acceptance us-east-1 $stage
