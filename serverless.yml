@@ -17,6 +17,9 @@ provider:
     API_BROWSER: ${env:API_BROWSER, ''}
     API_CLIENT: ${env:API_CLIENT, ''}
     LABEL: ${env:LABEL, ''}
+  vpc:
+    subnetIds: ${ssm:/terraform/private_subnets~split}
+    securityGroupIds: !Ref
 
 functions:
   nuxt:
@@ -59,3 +62,4 @@ custom:
 resources:
   - ${file(infra/cloudfront.yml):${opt:region}}
   - ${file(infra/regional-domains.yml)}
+  - ${file(infra/security-group.yml)}
