@@ -55,6 +55,7 @@ acceptance:
     HOSTED_ZONE_ID: Z2NYMMNGXW7G5A
     US_EAST_1_CERTIFICATE_ARN: arn:aws:acm:us-east-1:245616468753:certificate/09c02616-8d90-4044-9da5-87593fdd17c8
     EU_WEST_1_CERTIFICATE_ARN: arn:aws:acm:eu-west-1:245616468753:certificate/17659dcc-6a28-4793-8a5e-2f6f174e962a
+    CLOUDFRONT_AUTHENTICATION_LAMBDA_ARN: arn:aws:lambda:us-east-1:245616468753:function:cloudfront-auth-dev-auth:11
   before_script:
     - declare -a labels=(rapido beltegoed)
     - export LABEL=${labels[$((CI_NODE_INDEX-1))]}
