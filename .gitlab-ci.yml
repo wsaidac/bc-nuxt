@@ -8,8 +8,8 @@ include:
 
 e2e-tests:
   variables:
-  # to cache both npm modules and Cypress binary we use environment variables
-  # to point at the folders we can list as paths in "cache" job settings
+    # to cache both npm modules and Cypress binary we use environment variables
+    # to point at the folders we can list as paths in "cache" job settings
     YARN_CACHE_FOLDER: "$CI_PROJECT_DIR/.yarn"
     CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/.cache/Cypress"
     NODE_ENV: development
@@ -48,27 +48,35 @@ acceptance:
   cache: {}
   variables:
     NODE_ENV: development
-    API_BROWSER: https://api-hub.eu-west-1.production.cgaws.cloud
-    API_SERVER: https://api-hub.eu-west-1.production.cgaws.cloud
+    API_BROWSER: https://api-hub.eu-west-1.acceptance.cgaws.cloud
+    API_SERVER: https://api-hub.eu-west-1.acceptance.cgaws.cloud
     CLOUDFRONT_ACM_CERTIFICATE_ARN: arn:aws:acm:us-east-1:245616468753:certificate/09c02616-8d90-4044-9da5-87593fdd17c8
     CLOUDFRONT_WEB_ACL_ID: 864bd4ea-3fb9-418b-9d7a-e13e60698acb
     HOSTED_ZONE_ID: Z2NYMMNGXW7G5A
     US_EAST_1_CERTIFICATE_ARN: arn:aws:acm:us-east-1:245616468753:certificate/09c02616-8d90-4044-9da5-87593fdd17c8
     EU_WEST_1_CERTIFICATE_ARN: arn:aws:acm:eu-west-1:245616468753:certificate/17659dcc-6a28-4793-8a5e-2f6f174e962a
+    CLOUDFRONT_AUTHENTICATION_LAMBDA_ARN: arn:aws:lambda:us-east-1:245616468753:function:cloudfront-auth-dev-auth:11
   before_script:
-    - sls_build
-    - stage=$(echo -n $CI_COMMIT_REF_SLUG | sha1sum | cut -c1-8)
+    - declare -a labels=(rapido beltegoed)
+    - export LABEL=${labels[$((CI_NODE_INDEX-1))]}
+    - export DOMAIN=$LABEL-web.acceptance.cgaws.cloud
+    - stage="${STAGE:-$(echo -n $CI_COMMIT_REF_SLUG | sha1sum | cut -c1-8)}"
+    - npm install --silent
+    - npm run build --silent
+    - rm -rf ./node_modules
+    - npm install --silent --production
   script:
     - sls_deploy creativegroup-acceptance eu-west-1 $stage
     - sls_deploy creativegroup-acceptance us-east-1 $stage
 
 deploy-acceptance:
   extends: .deploy
+  parallel: 2
   environment:
     name: acceptance
     url: https://rapido-web.acceptance.cgaws.cloud
   variables:
-    DOMAIN: rapido-web.acceptance.cgaws.cloud
+    STAGE: acc
   only:
     - release
   when: manual

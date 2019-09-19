@@ -1,17 +1,22 @@
 eu-west-1:
+  Conditions:
+    EnableCloudFrontAuthentication:
+      Fn::Equals:
+        - ${opt:stage}
+        - acc
   Resources:
     ApiDistribution:
       Type: AWS::CloudFront::Distribution
       Properties:
         DistributionConfig:
-          Comment: ${self:service} (${opt:region})
+          Comment: ${self:service}
           Origins:
             - Id: ApiGateway
               DomainName: ${self:custom.dns.regionalDomainName}
               CustomOriginConfig:
                 HTTPSPort: 443
                 OriginProtocolPolicy: https-only
-                OriginSSLProtocols: [ TLSv1.2 ]
+                OriginSSLProtocols: [TLSv1.2]
           Enabled: true
           HttpVersion: http2
           Aliases:
@@ -40,10 +45,15 @@ eu-west-1:
             MinTTL: 0
             DefaultTTL: 0
             ViewerProtocolPolicy: redirect-to-https
+            LambdaFunctionAssociations:
+              Fn::If:
+                - EnableCloudFrontAuthentication
+                - - EventType: viewer-request
+                    LambdaFunctionARN: ${env:CLOUDFRONT_AUTHENTICATION_LAMBDA_ARN, ''}
+                - Ref: "AWS::NoValue"
           ViewerCertificate:
             AcmCertificateArn: ${self:custom.cloudfront.acmCertificateArn}
             SslSupportMethod: sni-only
-          WebACLId: ${self:custom.cloudfront.webACLId}
     ApiGlobalEndpointRecord:
       DependsOn:
         - ApiDistribution
