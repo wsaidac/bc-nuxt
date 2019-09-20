@@ -1,4 +1,4 @@
-import auth from './index';
+import auth from '../auth';
 
 const app = {
   i18n: { locale: 'nl-nl' },

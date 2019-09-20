@@ -3,10 +3,9 @@ export default ({ redirect, route }) => {
 
   const url = route.path;
   const times = url.split('/').length;
-  console.log(times);
 
   if (times > 3 && /\/+$/.test(url)) {
-    const formattedUrl = url.replace(/\/*$/, '/');
+    const formattedUrl = url.replace(/\/+$/, '');
     redirect(301, formattedUrl);
   }
 };
