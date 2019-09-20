@@ -29,6 +29,9 @@ describe('store: context', () => {
     expect(getters.cmsContext(state, {}, { i18n: { locale: 'en-us' } })).toEqual('rapido-en-us');
   });
 
+  /**
+   * Actions
+   */
   it('actions: `changeContext` - should dispatch 3 actions', () => {
     const dispatch = jest.fn();
     actions.changeContext({ dispatch }, storeContext);

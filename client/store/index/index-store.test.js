@@ -7,13 +7,14 @@ uuid.mockReturnValueOnce(1);
 
 const { app, error } = storeContext;
 const query = { aid: 'aid' };
-
 const { getters, actions } = store;
-
 const commit = jest.fn();
 const dispatch = jest.fn();
 
 describe('store: index, actions', () => {
+  /**
+   * Actions
+   */
   beforeEach(() => {
     actions.nuxtServerInit({ commit, dispatch }, {
       ...storeContext,
@@ -21,10 +22,6 @@ describe('store: index, actions', () => {
       req: { headers: { host: null } },
     });
   });
-
-  /**
-   * Actions
-   */
   it('actions: `nuxtServerInit` - should commit `context/setDomain`', () => {
     expect(commit).toHaveBeenCalledWith('context/setDomain', null);
   });
@@ -45,7 +42,6 @@ describe('store: index, actions', () => {
     );
   });
 });
-
 
 describe('store: index, getters', () => {
   /**
