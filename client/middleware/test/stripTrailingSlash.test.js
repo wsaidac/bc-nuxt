@@ -13,6 +13,7 @@ describe('middleware: stripTrailingSlash', () => {
     expect(redirect).not.toHaveBeenCalled();
   });
 
+
   it('should not redirect on no trailing slashes', () => {
     const route = {
       path: '/nl-nl/',
