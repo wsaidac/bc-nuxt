@@ -33,10 +33,25 @@ storiesOf('Atoms/Input', module)
         value: '',
       };
     },
-    template: `<ui-input label="Username" v-model="value" />`,
+    template: `
+      <container class="py-8">
+        <row>
+          <column class="w-full md:w-1/2">
+            <ui-input label="Username" v-model="value" />
+          </column>
+        </row>
+      </container>
+    `,
   }), info)
   .add(':hasError', () => ({
-    template: `<ui-input hasError label="Username" v-model="value" />`,
+    template: `
+      <container class="py-8">
+        <row>
+          <column class="w-full md:w-1/2">
+            <ui-input has-error label="Username" v-model="value" />
+          </column>
+        </row>
+      </container>`,
     components: {
       Input,
     },
@@ -47,7 +62,15 @@ storiesOf('Atoms/Input', module)
     },
   }), info)
   .add('succeeded', () => ({
-    template: `<ui-input label="Username" v-model="value" />`,
+    template: `
+      <container class="py-8">
+        <row>
+          <column class="w-full md:w-1/2">
+            <ui-input label="Username" v-model="value" />
+          </column>
+        </row>
+      </container>
+    `,
     components: {
       Input,
     },

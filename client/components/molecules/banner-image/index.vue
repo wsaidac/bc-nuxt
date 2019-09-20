@@ -18,7 +18,7 @@
       </container>
     </div>
     <brand-image
-      v-if="brand"
+      v-if="withBrandImage"
       :src="brand"
       height="12"
       :width="full ? '48' : 'auto'"
@@ -28,6 +28,8 @@
 
 <script>
 import VueTypes from 'vue-types';
+import { isEmpty } from 'lodash';
+
 import { UiImage } from '~/components/atoms';
 import { Breadcrumbs } from '~/components/molecules';
 import { Container, Row, Column } from '~/components/grid';
@@ -45,7 +47,7 @@ export default {
   props: {
     src: VueTypes.oneOfType([String, Object]).def(''),
     alt: VueTypes.string.def(''),
-    brand: VueTypes.object.def({}),
+    brand: VueTypes.object,
     withBreadcrumbs: Boolean,
     type: VueTypes.oneOf(['header', 'card']).def('header'),
     height: VueTypes.string.def(''),
@@ -65,6 +67,9 @@ export default {
         this.heightClass,
       ];
     },
+    withBrandImage() {
+      return !isEmpty(this.brand)
+    }
   },
 };
 </script>

@@ -2,11 +2,13 @@ import Vue from 'vue';
 import { get } from 'lodash';
 /* eslint-disable */
 import { storiesOf } from '@storybook/vue';
-import BrandPage from './index.vue';
+import Product from './index.vue';
+import Layout from '~/components/layouts/default'
 import { info } from '~~/.storybook/utils'
 
 import mainMock from '~~/.storybook/mocks/main-menu.state.json'
 import mock from '~~/.storybook/mocks/homepage.state.json'
+import productMock from '~~/.storybook/mocks/product-post.prop.json';
 
 import store from '~~/.storybook/store';
 
@@ -14,8 +16,10 @@ const footerMock = get(mock, 'menus.footer', {})
 const uspsMock = get(mock, 'shared.usps', {})
 const csMock = get(mock, 'shared.customerService', {})
 
-import categoryMock from '~~/.storybook/mocks/category-post.prop.json';
+import homePostMock from '~~/.storybook/mocks/home-post.prop.json';
 // definition
+
+const header = homePostMock.header;
 
 
 
@@ -28,22 +32,20 @@ store.commit('menus/setFooter', footerMock)
 
 
 // definition
-Vue.component('brand-page', BrandPage)
-
-
-const post = categoryMock;
+Vue.component('layout', Layout)
+Vue.component('product-page', Product)
 
 
 
 // stories
-storiesOf('Templates/Brand', module)
+storiesOf('Pages/Product', module)
   .add('default', () => ({
     data() {
       return {
-        post,
+        post: productMock,
       }
     },
-    template: `<brand-page :post="post"/>`,
-    components: { BrandPage },
+    template: `<product-page :post="post"/>`,
+    components: { Product },
     store,
   }), info)

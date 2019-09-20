@@ -18,13 +18,12 @@
 <script>
 import VueTypes from 'vue-types';
 
-import Layout from './layout';
+import Layout from '~/components/layouts/default';
 import {
   HomeBanner, CategoryList, PopularProducts,
 } from '~/components/organisms';
 import { Row, Column } from '~/components/grid';
 
-// import { QuickbuyCard } from ;
 const QuickbuyCard = () => import('~/components/molecules/quickbuy-card');
 
 export default {

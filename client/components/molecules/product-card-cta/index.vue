@@ -12,7 +12,7 @@
       >
         {{ $n(value, 'currency') }}
       </ui-title>
-      <p class="text-gray-black text-right leading-none font-light text-xs lg:text-lg">
+      <p class="text-gray-black text-right leading-none font-light text-xs lg:text-base">
         {{ `+ ${$n(serviceFee, 'currency')}` }}
         <br>
         {{ $t('account.orders.service-costs') }}

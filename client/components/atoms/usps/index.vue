@@ -1,5 +1,5 @@
 <template>
-  <p class="text-xs font-light lg:pr-6 flex items-center">
+  <p class="text-xs leading-normal lg:pr-6 flex items-center truncate">
     <icon
       icon="check"
       color="success"

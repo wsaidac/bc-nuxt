@@ -11,7 +11,22 @@ Vue.component('card', Card)
 // stories
 storiesOf('Atoms/Card', module)
   .add('default', () => ({
-    template: `<card><div style="margin: 100px">content inside a card</div></card>`,
+    template: `
+    <container class="py-8">
+      <row>
+        <column class="w-full md:w-1/3">
+          <card><div style="margin: 100px">content inside a card</div></card>
+        </column>
+      </row>
+    </container>`,
     components: { Card },
   }), info)
-  .add(':highlighted', () => `<card highlighted><div style="margin: 100px">content inside a card</div></card>`, info)
+  .add(':highlighted', () => `
+    <container class="py-8">
+      <row>
+        <column class="w-full md:w-1/3">
+          <card highlighted><div style="margin: 100px">content inside a card</div></card>
+        </column>
+      </row>
+    </container>
+  `, info)

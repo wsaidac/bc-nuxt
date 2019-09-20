@@ -5,7 +5,7 @@
   >
     <ui-link
       class="w-full flex-1 flex items-center"
-      :aria-label="$t('brand_box.link_name', { brandName: brand.name })"
+      :aria-label="$t('components.brand_box.link_name', { brandName: brand.name })"
     >
       <ui-image
         :src="brand.logoSrc"
@@ -20,7 +20,7 @@
       class="m-4"
       data-test="brand-box-link"
     >
-      {{ $t('brand_box.link_name', { brandName: brand.name }) }}
+      {{ $t('components.brand_box.link_name', { brandName: brand.name }) }}
     </ui-link>
   </card>
 </template>

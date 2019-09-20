@@ -13,3 +13,4 @@ export { default as UspsBar } from './usps-bar';
 export { default as ReviewList } from './review-list';
 export { default as ActivationInfo } from './activation-info';
 export { default as CountrySelect } from './country-select';
+export { default as SeoBlock } from './seo-block';

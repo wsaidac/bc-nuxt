@@ -9,7 +9,7 @@
 <script>
 import { mapGetters } from 'vuex';
 import removeContextChangeLoader from '~/mixins/removeContextChangeLoader';
-import { uppercaseCountryInLocale, renderErrorPage } from '~/utils/';
+import { uppercaseCountryInLocale, renderErrorPage } from '~/utils';
 
 function slugFromPath(path, locale) {
   if (path === `/${locale}/`) return 'home';
@@ -28,11 +28,10 @@ export default {
 
   head() {
     if (this.layout === 'Error') return {};
-    const { locale } = this.$i18n;
 
     return {
       htmlAttrs: {
-        lang: uppercaseCountryInLocale(locale),
+        lang: uppercaseCountryInLocale(this.locale),
       },
       title:
         this.post.meta.title
@@ -52,7 +51,7 @@ export default {
         {
           rel: 'alternate',
           href: `https://${this.domain}${this.$route.path}`,
-          hreflang: uppercaseCountryInLocale(locale),
+          hreflang: uppercaseCountryInLocale(this.locale),
         },
       ],
     };
@@ -78,7 +77,7 @@ export default {
       }
 
       // return null;
-      return { layout: post.__typename, post };
+      return { layout: post.__typename, post, locale: app.i18n.locale };
     } catch (error) {
       // eslint-disable-next-line no-console
       return renderErrorPage(error, app);

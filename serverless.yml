@@ -1,4 +1,4 @@
-service: rapido-web
+service: ${env:LABEL, 'rapido'}-web
 
 plugins:
   - serverless-offline
@@ -6,22 +6,28 @@ plugins:
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   cfnRole: ${opt:cfn-role}
   deploymentBucket:
     name: ${opt:deployment-bucket}
   stage: ${opt:stage, 'dev'}
   region: ${opt:region, 'eu-west-1'}
-
   environment:
     NODE_ENV: production
+    API_BROWSER: ${env:API_BROWSER, ''}
+    API_SERVER: ${env:API_SERVER, ''}
+    LABEL: ${env:LABEL, ''}
+  vpc:
+    subnetIds: ${ssm:/terraform/private_subnets~split}
+    securityGroupIds:
+      - Ref: NuxtLambdaFunctionSecurityGroup
 
 functions:
-  app:
+  nuxt:
     handler: lambda.handler
     events:
       - http: ANY /
-      - http: 'ANY {proxy+}'
+      - http: "ANY {proxy+}"
 
 custom:
   alerts:
@@ -57,3 +63,4 @@ custom:
 resources:
   - ${file(infra/cloudfront.yml):${opt:region}}
   - ${file(infra/regional-domains.yml)}
+  - ${file(infra/security-group.yml)}

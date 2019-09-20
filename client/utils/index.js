@@ -1,4 +1,4 @@
-import { get } from 'lodash';
+import { get, isEmpty } from 'lodash';
 
 export function uppercaseCountryInLocale(lang) {
   return lang
@@ -21,7 +21,7 @@ export function renderErrorPage(error, app) {
     console.warn('[Sync error]:', error);
   }
 
-  if (prod && app.$sentry) {
+  if (prod && app.$sentry && !isEmpty(error)) {
     app.$sentry.captureException(error);
   }
 

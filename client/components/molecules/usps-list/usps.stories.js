@@ -11,7 +11,15 @@ const exampleText = 'Get your code <b>instantly</b> and <b>easy</b>';
 
 const story = () => ({
   components: { UspsList },
-  template: `<usps-list :list="['${exampleText}', '${exampleText}', '${exampleText}']" />`,
+  data() {
+    return {
+      list: new Array(3).fill({ text: exampleText }),
+    };
+  },
+  template: `
+    <container class="py-6">
+      <usps-list :list="list" />
+    </container> `,
 });
 
 // stories

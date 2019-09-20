@@ -48,13 +48,20 @@ const props = {
 }
 
 // template
+
 const getTemplate = (typeNumber = 'h5', extraProp = '') => `
-  <ui-title
-    type="h${typeNumber}"
-    ${extraProp}
-  >
-    Title ${typeNumber}
-  </ui-title>
+  <container class="py-8">
+    <row>
+      <column class="w-full md:w-1/2">
+        <ui-title
+          type="h${typeNumber}"
+          ${extraProp}
+        >
+          Title ${typeNumber}
+        </ui-title>
+      </column>
+    </row>
+  </container>
 `
 
 // stories

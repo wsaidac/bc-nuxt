@@ -1,7 +1,7 @@
 <template>
   <section class="w-full relative">
     <ui-title>Styleguide</ui-title>
-    <divider />
+    <divider class="my-6" />
     <article class="w-full">
       <ui-title
         type="h3"
@@ -39,7 +39,7 @@
           class="pb-6 mr-6"
         >
           <p class="text-primary capitalize my-4">{{ name }}</p>
-          <div :class="[`p-${name}`, 'bg-gray-light']">
+          <div :class="[`p-${name}`, 'bg-gray-dark']">
             <div class="w-16 h-16 bg-gray">{{ value }}</div>
           </div>
         </li>

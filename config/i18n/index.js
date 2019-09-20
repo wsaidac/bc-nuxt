@@ -28,5 +28,10 @@ module.exports = function (label) {
         [defaultLocale]: require(defaultLocaleFile), //eslint-disable-line
       },
     },
+    vuex: {
+      syncLocale: true,
+      syncMessages: true,
+      syncRouteParams: true,
+    },
   };
 };

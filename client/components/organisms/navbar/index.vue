@@ -52,10 +52,7 @@
       @menu__close:click="onHideMobileMenu"
     />
     <country-select v-if="isCountrySelectVisible" />
-    <portal-target
-      transition="fade"
-      :name="overlayName"
-    />
+    <portal-target :name="overlayName" />
   </header>
 </template>
 

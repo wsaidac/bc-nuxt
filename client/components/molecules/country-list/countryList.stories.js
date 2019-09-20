@@ -22,8 +22,8 @@ storiesOf('Molecules/Country List', module)
       localeSelected: 'en-us',
     }),
     template: `
-      <container>
-        <country-list :localeSelected="localeSelected" @country-list:click="changeLocale" />
+      <container class="py-6">
+        <country-list localeSelected="en-us" @country-list:click="changeLocale" />
       </container>
     `,
     methods: {

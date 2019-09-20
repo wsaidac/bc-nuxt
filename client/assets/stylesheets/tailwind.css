@@ -35,6 +35,16 @@ active {
   }
 }
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
 .blur {
   -webkit-filter: blur(5px);
   /* Safari 6.0 - 9.0 */
@@ -55,5 +65,9 @@ active {
 
   & hr {
     @apply h-px w-full bg-gray m-0 border-0 my-4;
+  }
+
+  & .p1 > b {
+    @apply mt-6 ;
   }
 }
