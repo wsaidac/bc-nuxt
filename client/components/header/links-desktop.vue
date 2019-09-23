@@ -78,6 +78,7 @@ export default {
     cursor: pointer;
     font-size: 1.125em;
     height: 100%;
+    line-height: 1;
     padding: 0 15px;
 
     &:first-child {
