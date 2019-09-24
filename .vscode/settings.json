@@ -6,9 +6,9 @@
   "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
   "explorer.confirmDragAndDrop": false,
-  "eslint.autoFixOnSave": true,
   "eslint.packageManager": "yarn",
-  "eslint.validate": [{
+  "eslint.validate": [
+    {
       "language": "vue",
       "autoFix": true
     },
@@ -22,7 +22,9 @@
     }
   ],
   "eslint.trace.server": "verbose",
-  "stylelint.additionalDocumentSelectors": ["vue"],
+  "stylelint.additionalDocumentSelectors": [
+    "vue"
+  ],
   "vetur.format.defaultFormatter.html": "js-beautify-html",
   "vetur.format.defaultFormatter.options": {
     "js-beautify-html": {
@@ -30,4 +32,6 @@
     }
   },
   "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "javascript.format.enable": false,
+  "eslint.autoFixOnSave": true,
 }
