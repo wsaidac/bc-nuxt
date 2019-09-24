@@ -13,6 +13,7 @@ import ClickOutside from 'vue-click-outside';
 import ScrollTo from 'vue-scrollto'
 import Fragment from 'vue-fragment'
 import TrustpilotPlugin from 'vue-trustpilot'
+import Vuelidate from 'vuelidate'
 
 
 // vue fallback plugins for storybook
@@ -105,6 +106,7 @@ Vue.use(VueMq, {
 // set vuex
 Vue.use(Vuex)
 Vue.use(TrustpilotPlugin, configLabel.trustpilot)
+Vue.use(Vuelidate)
 
 
 

@@ -26,14 +26,9 @@ export default {
 
 <style lang="scss">
 .shared-title {
-  height: 91px;
-  padding-bottom: 20px;
-
   @include flex(null, flex-end);
 
   .flex {
-    height: 20px;
-
     @include flex(null, center);
 
     h2 {
@@ -44,7 +39,6 @@ export default {
 
   @include media-breakpoint-only("xs") {
     background: $gray-100;
-    height: 41px;
     padding-bottom: 0;
 
     .flex h2 {
