@@ -7,8 +7,8 @@ export default {
   },
 
   getters: {
-    isLoaded: state => state.loaded, // eslint-disable-line
-    hasContextChanged: state => state.contextChanged, // eslint-disable-line
+    isLoaded: (state) => state.loaded,
+    hasContextChanged: (state) => state.contextChanged,
   },
 
   mutations: {

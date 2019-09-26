@@ -7,9 +7,7 @@ describe('middleware: stripTrailingSlash', () => {
     };
     const redirect = jest.fn();
     process.server = false;
-
     stripTrailingSlash({ redirect, route });
-
     expect(redirect).not.toHaveBeenCalled();
   });
 
@@ -29,7 +27,6 @@ describe('middleware: stripTrailingSlash', () => {
       path: '/nl-nl/',
     };
     const redirect = jest.fn();
-    process.server = true;
     stripTrailingSlash({ redirect, route });
     expect(redirect).not.toHaveBeenCalled();
   });
@@ -39,7 +36,6 @@ describe('middleware: stripTrailingSlash', () => {
       path: '/nl-nl////////',
     };
     const redirect = jest.fn();
-    process.server = true;
     stripTrailingSlash({ redirect, route });
     expect(redirect).toHaveBeenCalledWith(301, '/nl-nl/');
   });
@@ -50,10 +46,7 @@ describe('middleware: stripTrailingSlash', () => {
       path: '/nl-nl/giftcard',
     };
     const redirect = jest.fn();
-    process.server = true;
-
     stripTrailingSlash({ redirect, route });
-
     expect(redirect).not.toHaveBeenCalled();
   });
 
@@ -62,22 +55,16 @@ describe('middleware: stripTrailingSlash', () => {
       path: '/nl-nl/giftcard/',
     };
     const redirect = jest.fn();
-    process.server = true;
-
     stripTrailingSlash({ redirect, route });
-
     expect(redirect).toHaveBeenCalledWith(301, '/nl-nl/giftcard');
   });
 
-  it('"/nl-nl/giftcard/////" should not redirect', () => {
+  it('"/nl-nl/giftcard/////" should redirect', () => {
     const route = {
       path: '/nl-nl/giftcard/////',
     };
     const redirect = jest.fn();
-    process.server = true;
-
     stripTrailingSlash({ redirect, route });
-
     expect(redirect).toHaveBeenCalledWith(301, '/nl-nl/giftcard');
   });
 });

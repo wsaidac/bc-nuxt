@@ -1,6 +1,7 @@
 {
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 100000,
+  "eslint.autoFixOnSave": true,
   "atomKeymap.promptV3Features": true,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.formatOnPaste": false,
@@ -33,5 +34,4 @@
   },
   "vetur.format.defaultFormatter.js": "vscode-typescript",
   "javascript.format.enable": false,
-  "eslint.autoFixOnSave": true,
 }

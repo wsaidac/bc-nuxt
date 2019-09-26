@@ -7,13 +7,13 @@ export default ({ redirect, route }) => {
   const isValidLocale = /^\w\w-\w\w$/.test(urlBreadcrumbs[0]); // /en-us/ or /country-restricted ---> true
 
   // /nl-nl AND /nl-nl//// ---> /nl-nl/
-  const endsNotWithOneSlash = /.*?\w\/$/.test(url);
-  if (localeOnly && isValidLocale && !endsNotWithOneSlash) {
+  const endsWithOneSlash = /.*\w\/$/.test(url);
+  if (localeOnly && isValidLocale && !endsWithOneSlash) {
     redirect(301, `/${urlBreadcrumbs}/`);
   }
 
   // /nl-nl/xbox-giftcard/ AND /nl-nl/xbox-giftcard//// ---> /nl-nl/xbox-giftcard
-  const endsWithSlash = /.*?\/$/.test(url);
+  const endsWithSlash = /.*\/$/.test(url);
   if (!localeOnly && isValidLocale && endsWithSlash) {
     redirect(301, url.replace(/\/+$/, ''));
   }
