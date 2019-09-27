@@ -2,16 +2,11 @@ import i18nConfig from '~~/config/i18n';
 
 const i18n = i18nConfig('rapido');
 
-const cookies = {
-  debug_mode: true,
-};
+const cookies = {};
 
 module.exports = {
   app: {
-    i18n: {
-      ...i18n,
-      locale: 'fr-be',
-    },
+    i18n,
     $cookies: {
       get: (v) => cookies[v],
       set: jest.fn(),
@@ -19,12 +14,13 @@ module.exports = {
   },
   redirect: jest.fn(),
   route: {
-    path: '', // no path -> no currentlocale
+    path: '/en-us/', // no path -> no currentlocale
   },
   req: {
     headers: {
-      'cloudfront-viewer-country': 'XX', // not restricted AND not available
+      'cloudfront-viewer-country': 'DK', // restricted
     },
   },
-  // query: {},
+  query: {
+  },
 };
