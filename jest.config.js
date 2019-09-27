@@ -3,7 +3,6 @@ const path = require('path');
 module.exports = {
   collectCoverage: true,
   collectCoverageFrom: [
-    'test/**/*.test.js',
     'client/**/*.{js,vue}',
     '!**/node_modules/**',
     '!**/cypress/**',
@@ -32,7 +31,6 @@ module.exports = {
   ],
   testMatch: [
     '<rootDir>/client/**/*.test.(js|jsx|ts|tsx)',
-    '<rootDir>/test/**/*.test.js',
   ],
   snapshotSerializers: ['<rootDir>/node_modules/jest-serializer-vue'],
   transformIgnorePatterns: ['<rootDir>/node_modules/(?!@babel/runtime/helpers/esm)'],
