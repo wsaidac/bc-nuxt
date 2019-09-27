@@ -1,6 +1,7 @@
 import { get } from 'lodash';
 
 const setCountryCookie = (app, countryCode) => {
+  console.log(countryCode);
   app.$cookies.set('country', countryCode, {
     path: '/',
     maxAge: 60 * 60 * 24 * 7, // 7 days
@@ -15,6 +16,7 @@ const isLocaleSupported = (app, curentLocale) => {
 const isUserCountrySupported = (app, userCountry) => {
   const { locales } = app.i18n;
   return locales.find((locale) => locale.name.toLowerCase() === userCountry.toLowerCase());
+  // locale.name.toLowerCase: 'nl-be' -> 'be'
 };
 
 const isUserOnRestrictedCountry = (pathCountry, userCountry, restrictedCountry) => userCountry !== restrictedCountry && pathCountry === restrictedCountry;
@@ -40,7 +42,6 @@ export default (context = {}) => {
   } = context;
 
   const localeDidNotChange = route.path.substring(1).startsWith(app.i18n.locale);
-  // console.log(localeDidNotChange);
   if (!process.server && localeDidNotChange) return null;
 
   const DEBUG_MODE = isDebugMode(app, query);
@@ -52,11 +53,7 @@ export default (context = {}) => {
   const urlPaths = route.path.split('/');
   const currentLocale = urlPaths[1];
 
-  console.log('support');
-  // console.log(isUserCountrySupported(app, USER_COUNTRY));
-  // console.log(app.i18n.locales);
-  console.log(USER_COUNTRY);
-
+  console.log(currentLocale);
   if (!currentLocale && USER_COUNTRY !== RESTRICTED_COUNTRY && !isUserCountrySupported(app, USER_COUNTRY)) {
     console.log('detour 1');
     if (DEBUG_MODE) {
@@ -86,8 +83,10 @@ export default (context = {}) => {
     return redirect(301, `/${supportedLocale}`);
   }
 
+  console.log('detour 3.1');
   const PATH_COUNTRY = currentLocale.split('-')[1] ? currentLocale.split('-')[1].toUpperCase() : null;
   if (!DEBUG_MODE && isUserOnRestrictedCountry(PATH_COUNTRY, USER_COUNTRY, RESTRICTED_COUNTRY)) {
+    console.log('detour 3.2');
     return redirect(301, COUNTRY_RESTRICTED_PATH);
   }
 
