@@ -79,4 +79,27 @@ storiesOf('Atoms/Input', module)
         value: 'Jhon Doe',
       };
     },
+  }), info)
+  .add('loading', () => ({
+    template: `
+      <container class="py-8">
+        <row>
+          <column class="w-full md:w-1/2">
+            <ui-input
+              is-loading
+              label="Username"
+              v-model="value"
+            />
+          </column>
+        </row>
+      </container>
+    `,
+    components: {
+      Input,
+    },
+    data() {
+      return {
+        value: 'Jhon Doe',
+      };
+    },
   }), info);

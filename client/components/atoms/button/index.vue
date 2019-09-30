@@ -4,21 +4,31 @@
     v-bind="$attrs"
     v-on="$listeners"
   >
-    <slot />
+    <icon
+      v-if="loading"
+      icon="loader"
+      class="mx-auto"
+    />
+    <slot v-else />
   </button>
 </template>
 
 <script>
 
 import VueTypes from 'vue-types';
+import Icon from '~/components/atoms/icon';
 
 export default {
   name: 'UiButton',
+  components: {
+    Icon,
+  },
   props: {
     block: Boolean,
     justify: Boolean,
     type: VueTypes.oneOf(['primary', 'secondary']).def('primary'),
     disable: Boolean,
+    loading: Boolean,
     my: VueTypes.number.def(0),
   },
 
@@ -26,7 +36,7 @@ export default {
     classes() {
       const base = 'btn';
       const justify = 'w-full';
-      const disable = 'opacity-20 cursor-not-allowed';
+      const disable = 'opacity-50 cursor-not-allowed';
       const active = !this.disable ? 'cursor-pointer active:bounce active:border-solid' : '';
 
       const type = this.getTypeClasses();
@@ -40,7 +50,7 @@ export default {
           [justify]: this.justify,
         },
         {
-          [disable]: this.disable,
+          [disable]: this.disable || this.loading,
         },
         {
           [margin]: this.my,
@@ -70,6 +80,6 @@ export default {
 
 <style scoped>
 .btn {
-  @apply py-1 px-10 rounded-full font-semibold text-center  text-base leading-normal;
+  @apply py-2 px-10 rounded-full font-semibold text-center  text-base leading-normal min-w-button;
 }
 </style>

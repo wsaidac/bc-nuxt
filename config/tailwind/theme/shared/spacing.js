@@ -14,6 +14,7 @@ module.exports = {
     '12': '3rem',
     '16': '4rem',
     '18': '4.5rem',
+    '24': '6rem',
     '28': '7rem',
     '40': '10rem',
     '48': '12rem',
@@ -70,6 +71,7 @@ module.exports = {
   }),
   minWidth: {
     0: '0',
+    button: '15rem',
     full: '100%',
   },
   minHeight: {

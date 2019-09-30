@@ -4,7 +4,7 @@
     :class="[classes]"
     :rel="rel"
     :target="target"
-    v-on="$listeners"
+    @click.native="$emit('click')"
   >
     <slot />
   </nuxt-link>

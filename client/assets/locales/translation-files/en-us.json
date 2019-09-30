@@ -288,6 +288,17 @@
         "title": "1. Email address",
         "description": "Your codes will be delivered directly to your email address",
         "input_label": "Email adress"
+      },
+      "info_box": {
+        "code_input": {
+          "placeholder": "Enter discount code",
+          "use_button": "Use Code",
+          "remove": "Remove discount code",
+          "redeem_button": "Add Discount Code"
+        },
+        "title": "Your Order",
+        "subtotal_label": "Subtotal",
+        "total_label": "Total (inc. BTW)"
       }
     }
   },
