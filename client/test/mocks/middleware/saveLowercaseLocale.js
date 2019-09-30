@@ -1,4 +1,4 @@
-import i18nConfig from '~~/config/i18n';
+import i18nConfig from '~/../config/i18n';
 
 const i18n = i18nConfig('rapido');
 
@@ -14,7 +14,7 @@ module.exports = {
   },
   redirect: jest.fn(),
   route: {
-    path: '/de-at/', // lowercase
+    path: '/de-at/brand/product', // lowercase
   },
   req: {
     headers: {

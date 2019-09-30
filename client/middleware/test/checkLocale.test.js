@@ -1,15 +1,15 @@
-import checkLocale from '~/middleware/checkLocale';
+import checkLocale from '../checkLocale';
 import { cookieAge } from '~/constants';
 
-import clientNoLocaleChange from './fixtures/clientNoLocaleChange.js';
-import debugCookieTrue from './fixtures/debugCookieTrue.js';
-import marketeerLoggedIn from './fixtures/marketeerLoggedIn.js';
-import notSupportedCF from './fixtures/notSupportedCF.js';
-import cookieOverCF from './fixtures/cookieOverCF.js';
-import useCFNoCookie from './fixtures/useCFNoCookie.js';
-import userOnRestrictedCountry from './fixtures/userOnRestrictedCountry.js';
-import noUppercaseLocale from './fixtures/noUppercaseLocale.js';
-import saveLowercaseLocale from './fixtures/saveLowercaseLocale.js';
+import cookieOverCF from '~/test/mocks/middleware/cookieOverCF.js';
+import clientNoLocaleChange from '~/test/mocks/middleware/clientNoLocaleChange.js';
+import debugCookieTrue from '~/test/mocks/middleware/debugCookieTrue.js';
+import marketeerLoggedIn from '~/test/mocks/middleware/marketeerLoggedIn.js';
+import notSupportedCF from '~/test/mocks/middleware/notSupportedCF.js';
+import useCFNoCookie from '~/test/mocks/middleware/useCFNoCookie.js';
+import userOnRestrictedCountry from '~/test/mocks/middleware/userOnRestrictedCountry.js';
+import noUppercaseLocale from '~/test/mocks/middleware/noUppercaseLocale.js';
+import saveLowercaseLocale from '~/test/mocks/middleware/saveLowercaseLocale.js';
 
 describe('middleware: checkLocale', () => {
   describe('1: On - client AND no locale change', () => {
@@ -33,9 +33,9 @@ describe('middleware: checkLocale', () => {
     });
 
     describe('AND a marketeer is logged in / query.marketeer', () => {
-      it('a marketeer should be set in the debug_cookie cookie', () => {
+      it('a marketeer should be set in the debug_cookie', () => {
         checkLocale(marketeerLoggedIn);
-        expect(marketeerLoggedIn.app.$cookies.set).toHaveBeenCalled();
+        expect(marketeerLoggedIn.app.$cookies.set).toHaveBeenCalledWith('debug_mode', true, { "path": "/" });
       });
 
       it('and redirect', () => {
@@ -94,7 +94,7 @@ describe('middleware: checkLocale', () => {
 
       it('should redirect to this lowercase locale', () => {
         checkLocale(noUppercaseLocale);
-        expect(noUppercaseLocale.redirect).toHaveBeenCalledWith(301, 'de-at');
+        expect(noUppercaseLocale.redirect).toHaveBeenCalledWith(301, '/de-at/');
       });
     });
 

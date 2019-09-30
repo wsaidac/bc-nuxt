@@ -13,7 +13,7 @@ const isLocaleSupported = (app, curentLocale) => {
 const isUserCountrySupported = (app, userCountry) => {
   const { locales } = app.i18n;
   return locales.find((locale) => locale.name.toLowerCase() === userCountry.toLowerCase());
-  // locale.name.toLowerCase: 'nl-be' -> 'be'
+  // locale.name.toLowerCase: 'nl-BE' -> 'be'
 };
 
 const isUserOnRestrictedCountry = (pathCountry, userCountry, restrictedCountry) => userCountry !== restrictedCountry && pathCountry === restrictedCountry;
@@ -85,10 +85,10 @@ export default (context = {}) => {
     // ex /en-US/ will redirect to /en-us/ for SEO purposes
     if (currentLocale !== currentLocale.toLowerCase()) {
       urlPaths.splice(1, 1, currentLocale.toLowerCase());
-      const lowercaseLocale = urlPaths.join(''); // save 'de-at', same as below
-      setCountryCookie(app, lowercaseLocale);
+      setCountryCookie(app, urlPaths[1]); // save 'de-at'
 
-      return redirect(301, lowercaseLocale);
+      const lowercaseLocale = urlPaths.join('/');
+      return redirect(301, lowercaseLocale); // redirect with joined('/'), '/de-at/';
     }
 
     setCountryCookie(app, currentLocale); // save 'de-at'

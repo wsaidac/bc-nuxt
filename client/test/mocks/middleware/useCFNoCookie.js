@@ -1,4 +1,4 @@
-import i18nConfig from '~~/config/i18n';
+import i18nConfig from '~/../config/i18n';
 
 const i18n = i18nConfig('rapido');
 
@@ -14,11 +14,11 @@ module.exports = {
   },
   redirect: jest.fn(),
   route: {
-    path: '/de-AT/', // uppercase ===> lowercase
+    path: '', // no path -> no currentlocale
   },
   req: {
     headers: {
-      'cloudfront-viewer-country': 'DK',
+      'cloudfront-viewer-country': 'BE', // available
     },
   },
   query: {
