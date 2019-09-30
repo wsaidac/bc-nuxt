@@ -299,6 +299,10 @@
         "title": "Your Order",
         "subtotal_label": "Subtotal",
         "total_label": "Total (inc. BTW)"
+      },
+      "payment_methods": {
+        "title": "2. Payment method",
+        "description": "Almost there! Select your preferred payment method"
       }
     }
   },
