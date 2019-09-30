@@ -1,11 +1,8 @@
 import { get } from 'lodash';
+import { cookieAge } from '~/constants';
 
 const setCountryCookie = (app, countryCode) => {
-  console.log(countryCode);
-  app.$cookies.set('country', countryCode, {
-    path: '/',
-    maxAge: 60 * 60 * 24 * 7, // 7 days
-  });
+  app.$cookies.set('country', countryCode, cookieAge);
 };
 
 const isLocaleSupported = (app, curentLocale) => {
@@ -32,7 +29,6 @@ const isDebugMode = (app, query = {}) => {
 };
 
 export default (context = {}) => {
-  console.log('checkLocale called ===================================');
   const {
     app,
     redirect,
@@ -45,48 +41,42 @@ export default (context = {}) => {
   if (!process.server && localeDidNotChange) return null;
 
   const DEBUG_MODE = isDebugMode(app, query);
-  const RESTRICTED_LOCALE = app.i18n.locales.find((locale) => locale.restricted); // always returns { code: 'en-us', name: 'United States' }
-  const RESTRICTED_COUNTRY = get(RESTRICTED_LOCALE, 'name', ''); // format: DE;     always returns 'United States'
+  const RESTRICTED_LOCALE = app.i18n.locales.find((locale) => locale.restricted); // always returns { code: 'en-us', name: 'US', ... }
+  const RESTRICTED_COUNTRY = get(RESTRICTED_LOCALE, 'name', ''); // format: US; always returns 'US'
   const USER_COUNTRY = get(req, 'headers["cloudfront-viewer-country"]', ''); // format: US
   const COUNTRY_RESTRICTED = 'country-restricted';
   const COUNTRY_RESTRICTED_PATH = `/${COUNTRY_RESTRICTED}`;
   const urlPaths = route.path.split('/');
-  const currentLocale = urlPaths[1];
+  const currentLocale = urlPaths[1]; // www.rapido.com/es-es/ => 'es-es'
 
-  console.log(currentLocale);
   if (!currentLocale && USER_COUNTRY !== RESTRICTED_COUNTRY && !isUserCountrySupported(app, USER_COUNTRY)) {
-    console.log('detour 1');
     if (DEBUG_MODE) {
-      console.log('detour 1.1');
-      return redirect(301, `/${app.i18n.defaultLocale}/`); // DONE
+      return redirect(301, `/${app.i18n.defaultLocale}/`);
     }
-    // console.log('redirecting');
-    console.log('detour 1.2');
-    return redirect(301, COUNTRY_RESTRICTED_PATH); // DONE
+    return redirect(301, COUNTRY_RESTRICTED_PATH);
   }
 
   const LOCALE_COOKIE = app.$cookies.get('country');
-  console.log(LOCALE_COOKIE);
-
-  console.log('detour 2.1');
   if (!currentLocale && isUserCountrySupported(app, USER_COUNTRY)) {
-    console.log('detour 2.2');
     const supportedLocale = app.i18n.locales.find((locale) => locale.name === USER_COUNTRY).code;
 
     if (LOCALE_COOKIE) {
-      console.log('detour 2.3');
       return redirect(301, `/${LOCALE_COOKIE}`);
     }
 
-    console.log('detour 2.4'); // <=== no-route.path && CF-header
     setCountryCookie(app, supportedLocale);
     return redirect(301, `/${supportedLocale}`);
   }
 
-  console.log('detour 3.1');
-  const PATH_COUNTRY = currentLocale.split('-')[1] ? currentLocale.split('-')[1].toUpperCase() : null;
+  const PATH_COUNTRY = currentLocale.split('-')[1] ? currentLocale.split('-')[1].toUpperCase() : null; // 'nl-be' ? => 'BE' : null
+  // RESTRICTED_COUNTRY = 'US'
+  // userCountry !== restrictedCountry &&  ===> CF-header is NOT restricted
+  // pathCountry === restrictedCountry;    ===> the route is restricted
+  // user is in US, goes to /be-fr/        ===> no-redirect
+  // user is in FR, goes to /en-us/        ===> redirect
+  // result: only users from US can go to /en-us/
+
   if (!DEBUG_MODE && isUserOnRestrictedCountry(PATH_COUNTRY, USER_COUNTRY, RESTRICTED_COUNTRY)) {
-    console.log('detour 3.2');
     return redirect(301, COUNTRY_RESTRICTED_PATH);
   }
 
@@ -95,13 +85,13 @@ export default (context = {}) => {
     // ex /en-US/ will redirect to /en-us/ for SEO purposes
     if (currentLocale !== currentLocale.toLowerCase()) {
       urlPaths.splice(1, 1, currentLocale.toLowerCase());
-      const lowercaseLocale = urlPaths.join('/');
+      const lowercaseLocale = urlPaths.join(''); // save 'de-at', same as below
       setCountryCookie(app, lowercaseLocale);
 
       return redirect(301, lowercaseLocale);
     }
 
-    setCountryCookie(app, currentLocale);
+    setCountryCookie(app, currentLocale); // save 'de-at'
     return null;
   }
 

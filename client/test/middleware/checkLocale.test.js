@@ -89,13 +89,12 @@ describe('middleware: checkLocale', () => {
     describe('AND uppercase locale', () => {
       it('it should save the lowercase locale in a cookie', () => {
         checkLocale(noUppercaseLocale);
-        expect(noUppercaseLocale.app.$cookies.set).toHaveBeenCalledWith('country', '/de-at/', cookieAge);
-        // maybe this should be 'de-at'
+        expect(noUppercaseLocale.app.$cookies.set).toHaveBeenCalledWith('country', 'de-at', cookieAge);
       });
 
       it('should redirect to this lowercase locale', () => {
         checkLocale(noUppercaseLocale);
-        expect(noUppercaseLocale.redirect).toHaveBeenCalledWith(301, '/de-at/');
+        expect(noUppercaseLocale.redirect).toHaveBeenCalledWith(301, 'de-at');
       });
     });
 
