@@ -32,7 +32,7 @@ describe('store: context', () => {
   /**
    * Actions
    */
-  it('actions: `changeContext` - should dispatch 3 actions', () => {
+  it('actions: `changeContext` - calls fetch for headerMenu, footerMenu and sharedData', () => {
     const dispatch = jest.fn();
     actions.changeContext({ dispatch }, storeContext);
     expect(dispatch).toHaveBeenCalledTimes(3);

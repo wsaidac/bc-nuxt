@@ -6,7 +6,7 @@ export default {
     };
   },
   getters: {
-    context: (state) => state.context,
+    context: (state) => state.context, // todo: redundant?
     currentUser: (state) => state.currentUser,
     token: (state) => state.token,
   },
@@ -26,7 +26,7 @@ export default {
       state.token = token;
     },
 
-    setContext(state, context) {
+    setContext(state, context) { // todo: redundant?
       state.context = context;
     },
 

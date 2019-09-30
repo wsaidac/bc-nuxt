@@ -6,13 +6,13 @@ describe('store: async', () => {
   /**
    * Mutations
    */
-  it('mutations: `setLoaded`', () => {
+  it('mutations: `setLoaded`, toggles spinner at quickbuy and login', () => {
     const state = { loaded: true };
     mutations.setLoaded(state, false);
     expect(state.loaded).toEqual(false);
   });
 
-  it('mutations: `setContextChange`', () => {
+  it('mutations: `setContextChange`, toggles global/page-spinner', () => {
     const state = { setContextChange: true };
     mutations.setContextChange(state, false);
     expect(state.contextChanged).toEqual(false);
