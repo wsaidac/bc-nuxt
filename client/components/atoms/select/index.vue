@@ -22,7 +22,8 @@
         :select-classes="selectClasses"
         :text-classes="textClasses"
         @select="onItemSelected"
-        @toggle="toggle"
+        @toggle="onToggleOptions"
+        @select:hide-options="onClickHideOptions"
       />
     </div>
   </div>
@@ -46,6 +47,7 @@ export default {
     placeholder: VueTypes.string.def(''),
     options: VueTypes.array.def([]),
     initialValue: VueTypes.number.def(-1),
+    width: VueTypes.oneOfType([String, Number]),
   },
   data() {
     return {
@@ -61,22 +63,25 @@ export default {
       return this.$mq === 'sm';
     },
     initialSelected() {
-      return get(this, `this.options[${this.initialValue - 1}]`, {});
+      return get(this, `options[${this.initialValue - 1}]`, {});
     },
   },
   methods: {
-    onItemSelected(option) {
-      this.toggle();
+    onItemSelected(selected, options = {}) {
+      if (!options.fromMobile) this.toggle();
 
-      this.$emit('select', option);
+      this.$emit('select', selected);
     },
     toggle() {
-      this.toggleIcon();
+      this.onToggleOptions();
       this.resetError();
     },
-    toggleIcon() {
+    onToggleOptions() {
       const isEmptyOrNegative = this.iconClasses === '' || this.iconClasses === '-rotate-180';
       this.iconClasses = isEmptyOrNegative ? 'rotate-180' : '-rotate-180';
+    },
+    onClickHideOptions() {
+      this.iconClasses = '-rotate-180';
     },
     resetError() {
       this.error = false;
@@ -85,7 +90,7 @@ export default {
       this.textClasses = this.setTextClasses();
     },
     setSelectedClasses(hasInitialError) {
-      const base = 'input appearance-none cursor-pointer';
+      const base = 'select appearance-none cursor-pointer';
       const textDefault = 'text-primary placeholder:text-primary';
       const textError = 'text-error placeholder:text-error';
 
@@ -95,11 +100,12 @@ export default {
       return [base, text, bg];
     },
     setBoxClasses(hasInitialError) {
-      const base = 'input-box label-floating mb-0';
+      const base = 'select-box label-floating mb-0';
       const borderError = 'border-error';
+      const width = `w-${this.width ? this.width : 'full'}`;
       const borderDefault = 'border-gray focus-within:border-secondary hover:border-gray-dark';
       const border = this.error || hasInitialError ? borderError : borderDefault;
-      return [base, border];
+      return [base, border, width];
     },
     setTextClasses(hasInitialError) {
       return this.error || hasInitialError ? 'text-error' : 'text-gray-black';
@@ -107,3 +113,17 @@ export default {
   },
 };
 </script>
+
+<style>
+.select {
+  @apply w-full p-4 leading-none rounded text-lg overflow-hidden;
+
+  &-box {
+    @apply relative border max-w-xl rounded appearance-none;
+  }
+
+  &-label {
+    @apply absolute text-lg p-4 top-0 left-0 cursor-text;
+  }
+}
+</style>

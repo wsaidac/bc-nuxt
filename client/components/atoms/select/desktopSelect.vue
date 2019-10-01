@@ -1,7 +1,7 @@
 <template>
   <div
     v-click-outside="onClickOutside"
-    class="focus:outline-none bg-white"
+    class="focus:outline-none bg-white relative rounded"
     role="listbox"
     @click="onClick"
   >
@@ -16,19 +16,19 @@
     </div>
     <icon
       icon="down"
-      :class="['transition-all transition-200 absolute right-0 top-0 p-4', iconClasses]"
+      :class="['transition-all transition-200 absolute right-0 top-0 p-4 leading-normal', iconClasses]"
       :color="hasError ? 'error' : 'link'"
     />
     <transition name="fade">
       <ul
         v-if="showMenu"
         style="animation-duration: 0.2s"
-        class="w-full top-0 border border-b-0 border-gray max-w-xl -mt-px rounded-b "
+        class="w-full absolute z-20 border border-b-0 border-gray max-w-xl -mt-px rounded-b bg-white"
       >
         <li
           v-for="option in options"
           :key="option.id"
-          class="p-4 border-b border-gray hover:bg-gray-light cursor-pointer focus:outline-none"
+          class="p-4 border-b leading-none border-gray hover:bg-gray-light cursor-pointer focus:outline-none"
           role="option"
           aria-labelledby="dropdown-label"
           tabindex="0"
@@ -60,10 +60,10 @@ export default {
     textClasses: VueTypes.string.def(''),
     iconClasses: VueTypes.string.def(''),
     initialSelected: VueTypes.shape({
-      label: VueTypes.string.isRequired,
-      value: VueTypes.string.isRequired,
+      label: VueTypes.oneOfType([String, Number]).isRequired,
+      value: VueTypes.oneOfType([String, Number]).isRequired,
       id: VueTypes.oneOfType([Number, String]).isRequired,
-    }),
+    }).loose,
   },
   data() {
     return {
@@ -88,7 +88,7 @@ export default {
     },
     onClickOutside() {
       this.showMenu = false;
-      this.$emit('toggle');
+      this.$emit('select:hide-options');
     },
   },
 };

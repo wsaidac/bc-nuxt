@@ -30,7 +30,7 @@ export default {
   data() {
     return {
       email: '',
-      isFocused: true,
+      isFocused: false,
     };
   },
   methods: {

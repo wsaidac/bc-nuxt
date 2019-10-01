@@ -1,6 +1,11 @@
 <template>
-  <p class="text-xs leading-normal lg:pr-6 flex items-center truncate">
+  <p class="text-xs leading-normal lg:pr-6 flex items-center md:truncate">
+    <flag
+      v-if="country"
+      :country="country"
+    />
     <icon
+      v-else
       icon="check"
       color="success"
       size="base"
@@ -13,17 +18,19 @@
 </template>
 
 <script>
+import VueTypes from 'vue-types';
 import Icon from '~/components/atoms/icon';
+import Flag from '~/components/atoms/flag';
 
 export default {
   components: {
     Icon,
+    Flag,
   },
   props: {
-    text: {
-      type: String,
-      default: '',
-    },
+    text: VueTypes.string,
+    country: VueTypes.string,
+    truncate: VueTypes.bool.def(true),
   },
 };
 </script>

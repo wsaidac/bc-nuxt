@@ -21,3 +21,4 @@ export { default as InfoCard } from './card-info';
 export { default as Overlay } from './overlay';
 export { default as CountryList } from './country-list';
 export { default as BrandBox } from './brand-box';
+export { default as PaymentMethodsChecklist } from './payment-methods-checklist';

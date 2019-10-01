@@ -2,15 +2,8 @@
   <div>
     <select
       :class="selectClasses"
-      @change="onChange"
+      @change="onChange($event)"
     >
-      <option
-        disabled
-        selected
-        hidden
-      >
-        {{ placeholder }}
-      </option>
       <option
         v-for="option in options"
         :key="option.id"
@@ -42,11 +35,11 @@ export default {
     hideSufix: Boolean,
     placeholder: VueTypes.string.def(''),
     options: VueTypes.array.def([]),
-    selectClasses: VueTypes.string.def(''),
+    selectClasses: VueTypes.oneOfType([String, Array]).def(''),
     iconClasses: VueTypes.string.def(''),
     initialSelected: VueTypes.shape({
-      label: VueTypes.string.isRequired,
-      value: VueTypes.string.isRequired,
+      label: VueTypes.oneOfType([String, Number]).isRequired,
+      value: VueTypes.oneOfType([String, Number]).isRequired,
       id: VueTypes.oneOfType([Number, String]).isRequired,
     }),
   },
@@ -56,11 +49,11 @@ export default {
     };
   },
   methods: {
-    onChange(option) {
-      // event.stopPropagation();
-      this.selected = option;
+    onChange(event) {
+      const { value } = event.target;
+      const selectedOption = this.options.find((option) => option.value === Number(value));
 
-      this.$emit('select', option);
+      this.$emit('select', selectedOption, { fromMobile: true });
     },
   },
 };

@@ -8,6 +8,7 @@
       :v-on="$listeners"
       :class="inputClasses"
       :placeholder="label"
+      :disabled="isLoading"
       type="text"
       @focus="$emit('focus')"
       @blur="$emit('blur')"
@@ -23,7 +24,7 @@
     <icon
       v-if="showSufix"
       :icon="sufixIcon"
-      class="absolute right-0 top-0 p-4"
+      class="absolute right-0 top-0 p-4 leading-normal"
       :color="sufixColor"
       font-size="lg"
     />
@@ -42,6 +43,7 @@ export default {
   },
   inheritAttrs: false,
   props: {
+    isSucceeded: Boolean,
     hasError: Boolean,
     hideSufix: Boolean,
     isDirty: Boolean,
@@ -49,6 +51,7 @@ export default {
     isLoading: Boolean,
     label: VueTypes.string.def(''),
     value: VueTypes.oneOfType([String, Number]).def(''),
+    uppercase: Boolean,
   },
   data() {
     return {
@@ -67,8 +70,10 @@ export default {
     },
     boxClasses() {
       const base = 'input-box label-floating';
-      const border = this.showError
-        ? 'border-error' : 'border-gray focus-within:border-secondary hover:border-gray-dark';
+      let border = 'border-gray focus-within:border-secondary hover:border-gray-dark';
+
+      if (this.showError) border = 'border-error';
+      else if (this.isLoading) border = 'opacity-50 border-gray';
 
       return [base, border];
     },
@@ -77,11 +82,11 @@ export default {
       const text = this.showError ? 'text-error placeholder:text-error' : 'text-primary placeholder:text-primary';
       const bg = this.showError ? 'bg-error-light' : '';
 
-      return [base, text, bg];
+      return [base, text, bg, { uppercase: this.uppercase }];
     },
     showSufix() {
       if (this.hideSufix) return false;
-      if (this.showError) return true;
+      if (this.showError || this.isSucceeded || this.isLoading) return true;
 
       return this.isDirty && !this.hasError;
     },
@@ -89,9 +94,8 @@ export default {
       return this.showError ? 'error' : 'success';
     },
     sufixIcon() {
-      if (this.showError) {
-        return 'close';
-      }
+      if (this.isLoading) return 'loader';
+      if (this.showError) return 'close';
 
       return 'check';
     },
@@ -113,7 +117,7 @@ export default {
   }
 
   &-label {
-    @apply absolute text-lg p-4 top-0 left-0 leading-normal cursor-text;
+    @apply text-gray-black absolute text-lg p-4 top-0 left-0 leading-normal cursor-text;
   }
 }
 

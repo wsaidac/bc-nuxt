@@ -18,4 +18,5 @@ export const fontIconTypes = [
 
 export const svgTypes = [
   'hole',
+  'loader',
 ];

@@ -115,9 +115,16 @@ storiesOf('Atoms/Button', module)
   `, {
       info: {}
     })
-  .add(':loading', () => `<ui-button loading>Button loading</ui-button>`, {
-    info: {}
-  })
+  .add(':loading', () => `
+    <container class="my-8">
+      <row>
+        <column class="w-1/2">
+          <ui-button loading>Button loading</ui-button>
+        </column>
+      </row>
+    </container>`, {
+      info: {}
+    })
   .add(':justify', () => ({
     template: `
       <container class="p-8 border">
