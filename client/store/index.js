@@ -4,6 +4,7 @@ export default {
   state() {
     return {};
   },
+
   getters: {
     extendedGraphqlHeaders: (_state, _getters, rootState, rootGetters) => {
       const token = rootGetters['auth/token'];

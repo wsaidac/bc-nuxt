@@ -1,6 +1,5 @@
 import { noop } from 'lodash';
 
-
 const getMockResponse = (key = '') => {
   try {
     // eslint-disable-next-line
@@ -18,7 +17,12 @@ const getMockResponse = (key = '') => {
 const app = {
   $query: (key) => new Promise((resolve) => resolve(getMockResponse(key))),
   i18n: {
+    locale: 'en-us',
     t: noop,
+  },
+  $cookies: {
+    set: jest.fn(),
+    get: jest.fn(),
   },
 };
 

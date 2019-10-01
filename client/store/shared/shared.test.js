@@ -1,12 +1,9 @@
 import mock from '~/test/mocks/queries/shared.json';
-
 import storeContext from '~/test/utils/with-store-context';
 import store from './index';
 
 const { actions, getters } = store;
-
 const sharedMock = mock.post;
-
 
 describe('store: shared', () => {
   /**
