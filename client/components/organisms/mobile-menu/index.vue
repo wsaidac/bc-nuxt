@@ -4,7 +4,7 @@
     :class="[translateClass, `transition-${transitionDuration}`]"
     class="lg:hidden absolute z-50 top-0 left-0 flex transition-transform"
     tabindex="0"
-    :aria-label="$t('header.menu')"
+    :aria-label="$t('renasci.organisms.mobile_menu.menu')"
   >
     <categories-menu
       :category-links="categoryLinks"

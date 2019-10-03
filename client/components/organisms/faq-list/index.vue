@@ -3,7 +3,7 @@
     <row>
       <column class="w-full">
         <main-title type="secondary">
-          {{ $t('account.faq.faq-all') }}
+          {{ $t('renasci.organisms.faq_list.faq_all') }}
         </main-title>
       </column>
     </row>

@@ -5,7 +5,7 @@
     :title="category.title"
     role="button"
     tabindex="0"
-    :aria-label="$t('brand_box.link_name', { brandName: category.title })"
+    :aria-label="$t('renasci.molecules.brand_box.link_name', { brandName: category.title })"
     :data-test="`category-title-${category.slug}`"
   >
     <card class="hover:border-gray-dark">

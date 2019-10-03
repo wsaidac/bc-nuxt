@@ -1,6 +1,6 @@
 <template>
   <card>
-    <ui-title type="h4">{{ $t('pages.checkout.info_box.title') }}</ui-title>
+    <ui-title type="h4">{{ $t('renasci.organisms.info_box.title') }}</ui-title>
     <divider
       type="small"
       class="my-4"
@@ -31,11 +31,11 @@
       type="h4"
       class="mt-4 flex justify-between"
     >
-      <span class="font-normal">{{ $t('pages.checkout.info_box.subtotal_label') }}</span>
+      <span class="font-normal">{{ $t('renasci.organisms.info_box.subtotal_label') }}</span>
       <span>{{ subtotal }}</span>
     </ui-title>
     <div class="my-4 flex justify-between items-center">
-      <ui-title type="h4"> {{ $t('pages.checkout.info_box.total_label') }}</ui-title>
+      <ui-title type="h4"> {{ $t('renasci.organisms.info_box.total_label') }}</ui-title>
       <ui-title type="h2">{{ total }}</ui-title>
     </div>
   </card>

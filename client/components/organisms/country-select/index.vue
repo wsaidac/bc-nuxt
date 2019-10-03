@@ -1,13 +1,13 @@
 <template>
   <overlay
     :name="overlayName"
-    :title="$t('country_select.title')"
-    :desc="$t('country_select.description')"
+    :title="$t('renasci.organisms.country_select.title')"
+    :desc="$t('renasci.organisms.country_select.description')"
   >
     <main-title type="primary">
-      {{ $t('country_select.title') }}
+      {{ $t('renasci.organisms.country_select.title') }}
     </main-title>
-    <p class="mb-6">{{ $t('country_select.description') }}</p>
+    <p class="mb-6">{{ $t('renasci.organisms.country_select.description') }}</p>
     <country-list
       :locale-selected="localeSelected"
       @country-list:click="onChangeLocale"

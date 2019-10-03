@@ -21,6 +21,10 @@ storiesOf('Organisms/Faq List', module)
         questions,
       }
     },
-    template: `<faq-questions :questions="questions" />`,
+    template: `
+      <container class="my-8">
+        <faq-list :questions="questions" />
+      </container>
+    `,
     components: { FaqList },
   }), info)

@@ -10,7 +10,7 @@
     >
       <ui-link
         :to="link"
-        :title="`${$t('footer.safely-order-with')} ${method.name}`"
+        :title="$t('renasci.molecules.payment_methods.safely_order_with', { method: method.name })"
       >
         <ui-image
           :src="method.image"

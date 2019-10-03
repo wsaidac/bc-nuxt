@@ -5,7 +5,7 @@
         <button-icon
           icon="close"
           color="primary"
-          :aria-label="$t('general.close')"
+          :aria-label="$t('renasci.general.close')"
           @click.prevent="$emit('menu__close:click')"
         />
       </div>
@@ -13,7 +13,7 @@
         class="mx-6"
         type="secondary"
       >
-        {{ $t('header.menu') }}
+        {{ $t('renasci.organisms.mobile_menu.menu') }}
       </main-title>
       <menu-accordion
         :list="categoryLinks"

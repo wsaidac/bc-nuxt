@@ -9,6 +9,7 @@
     "dzannotti.vscode-babel-coloring",
     "formulahendry.auto-close-tag",
     "octref.vetur",
-    "bradlc.vscode-tailwindcss"
+    "bradlc.vscode-tailwindcss",
+    "richie5um2.vscode-sort-json"
   ]
 }

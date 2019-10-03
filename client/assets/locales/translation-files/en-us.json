@@ -63,7 +63,6 @@
     "i-prefer-not-to-say": "Other",
     "invalid": "Confirmation failed",
     "last-name": "Last name",
-    "login-history": "Account login history",
     "login": {
       "invalid_credentials": "The email address and/or password you entered is incorrect.",
       "locked": "Your account has been locked. {unlock-request-link}",
@@ -72,6 +71,7 @@
       "unconfirmed_email": "The email address is not confirmed",
       "unknown_user": "The email address does not have an account."
     },
+    "login-history": "Account login history",
     "loginError": {
       "title": "Log in failed"
     },
@@ -232,6 +232,7 @@
     "close": "Close",
     "critical_error": "Something went wrong. Reload the page to try again.",
     "domain": "Rapido.com",
+    "go-to": "Go to {label}",
     "help": "Help",
     "home-text": "Home",
     "label": "Rapido",
@@ -240,21 +241,20 @@
     "need-some-help": "Need some help?",
     "order-now": "Order now",
     "order-safely": "Order safely",
+    "select": "Select {label}",
     "show-less": "Show less",
     "show-more": "Show more",
-    "select": "Select {label}",
-    "go-to": "Go to {label}",
     "view_all": "View all"
   },
   "header": {
     "login": "Login",
     "main-nav": "Main Menu",
     "menu": "Menu",
-    "my-account": "My Account",
-    "profile": "profile",
     "mobile_menu": {
       "button_overview": "To overview"
-    }
+    },
+    "my-account": "My Account",
+    "profile": "profile"
   },
   "home": {
     "featured-products": "Featured products",
@@ -271,23 +271,84 @@
   },
   "pages": {
     "restricted_country": {
-      "title": "Rapido.com is not available in your country",
-      "description": "You are trying to visit our shop. Unfortunately this shop is only available in the coutries listed below.",
       "country_list": {
-        "title": "Select your country",
-        "desc": "Your country selection will ensure that we offer the correct products and payment methods. Please ensure that it corresponds to your country and the account(s) on which you are planning to redeem the product."
-      }
+        "desc": "Your country selection will ensure that we offer the correct products and payment methods. Please ensure that it corresponds to your country and the account(s) on which you are planning to redeem the product.",
+        "title": "Select your country"
+      },
+      "description": "You are trying to visit our shop. Unfortunately this shop is only available in the coutries listed below.",
+      "title": "Rapido.com is not available in your country"
+    }
+  },
+  "payment-methods": {
+    "checkout-options": "On Rapido.com, you can checkout with the following trusted payment options. Each payment option will be described below.",
+    "credit-or-debit-card": "Credit / Debit card",
+    "payment-options": "Payment options",
+    "paypal": "PayPal",
+    "paypal_text_1": "You can pay with PayPal on Rapido.com. After selecting this payment option, you log into your PayPal account and confirm the payment. Next, the transaction is processed.",
+    "paypal_text_2": "Upon receipt of payment, the top up voucher code is sent immediately.",
+    "shipping": "Shipping",
+    "visa_and_mastercard_text_1": "On Rapido.com, you can pay via VISA credit card, VISA debit card (Delta and Electron) and MasterCard. At the checkout, you select payment by credit card. Then you enter your credit card details, including the card holder, the card number, expiration date and CVV code. Then confirm payment.",
+    "visa_and_mastercard_text_2": "Upon receipt of payment, the top up code is sent immediately."
+  },
+  "renasci": {
+    "general": {
+      "close": "Close",
+      "critical_error": "Something went wrong. Reload the page to try again.",
+      "go-to[label]": "Go to {label}",
+      "help": "Help",
+      "home-text": "Home",
+      "loading": "Loading",
+      "look-at-faqs": "Take a look at the FAQ",
+      "need-some-help": "Need some help?",
+      "order-now": "Order now",
+      "order-safely": "Order safely",
+      "select[label]": "Select {label}",
+      "show-less": "Show less",
+      "show-more": "Show more",
+      "view_all": "View all"
     },
-    "product": {
-      "product_list": {
-        "title": "Other {brandName} bundles"
-      }
-    },
-    "checkout": {
-      "email_box": {
-        "title": "1. Email address",
+    "molecules": {
+      "brand_box": {
+        "link_name": "View all {brandName} products"
+      },
+      "brand_quick_links": {
+        "fast_to": "Fast to:"
+      },
+      "checkout_email_box": {
         "description": "Your codes will be delivered directly to your email address",
-        "input_label": "Email adress"
+        "input_label": "Email adress",
+        "title": "1. Email address"
+      },
+      "copyright": {
+        "part_of": "Part of"
+      },
+      "payment_methods": {
+        "safely_order_with": "Safely order with: {method}"
+      }
+    },
+    "organisms": {
+      "activation_info": {
+        "title": "Activation of your code"
+      },
+      "country_select": {
+        "button_name": "Confirm",
+        "country_names": {
+          "Austria": "Austria",
+          "Belgium": "Belgium",
+          "United States": "United States"
+        },
+        "description": "Your country selection will ensure that we offer the correct products and payment methods. Please ensure that it corresponds to your country and the account(s) on which you are planning to redeem the product.",
+        "title": "Select your country"
+      },
+      "faq_list": {
+        "faq_all": "All Frequently asked questions"
+      },
+      "footer": {
+        "categories": "Categories",
+        "customer-care": "Customer Care",
+        "order-with": "order with",
+        "privacy-statement": "Privacy statement",
+        "service_help": "Service and Help"
       },
       "info_box": {
         "code_input": {
@@ -303,19 +364,24 @@
       "payment_methods": {
         "title": "2. Payment method",
         "description": "Almost there! Select your preferred payment method"
+      },
+      "mobile_menu": {
+        "menu": "Menu",
+        "sub": {
+          "to_overview": "To overview"
+        }
+      },
+      "review_list": {
+        "title": "Reviews"
+      }
+    },
+    "pages": {
+      "product": {
+        "product_list": {
+          "title": "Other {brandName} bundles"
+        }
       }
     }
-  },
-  "payment-methods": {
-    "checkout-options": "On Rapido.com, you can checkout with the following trusted payment options. Each payment option will be described below.",
-    "credit-or-debit-card": "Credit / Debit card",
-    "payment-options": "Payment options",
-    "paypal": "PayPal",
-    "paypal_text_1": "You can pay with PayPal on Rapido.com. After selecting this payment option, you log into your PayPal account and confirm the payment. Next, the transaction is processed.",
-    "paypal_text_2": "Upon receipt of payment, the top up voucher code is sent immediately.",
-    "shipping": "Shipping",
-    "visa_and_mastercard_text_1": "On Rapido.com, you can pay via VISA credit card, VISA debit card (Delta and Electron) and MasterCard. At the checkout, you select payment by credit card. Then you enter your credit card details, including the card holder, the card number, expiration date and CVV code. Then confirm payment.",
-    "visa_and_mastercard_text_2": "Upon receipt of payment, the top up code is sent immediately."
   },
   "usps": {
     "title": "Benefits of {domain}"

@@ -41,7 +41,7 @@
               color="primary"
               target="_blank"
             >
-              {{ $t('general.help') }}
+              {{ $t('renasci.general.help') }}
             </ui-link>
           </column>
         </row>

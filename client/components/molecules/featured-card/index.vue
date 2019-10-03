@@ -7,7 +7,7 @@
       <ui-image
         :src="product.image"
         height="48"
-        class="lg:h-54"
+        class="min-h-full lg:h-54"
         aria-hidden="true"
       />
     </div>

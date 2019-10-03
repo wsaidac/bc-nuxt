@@ -12,7 +12,7 @@
           class="mb-6"
           :url="category.url"
         >
-          {{ $t('general.view_all') }}
+          {{ $t('renasci.general.view_all') }}
         </ui-link>
       </column>
     </row>
@@ -34,7 +34,7 @@
           class="mb-6"
           :url="category.url"
         >
-          {{ $t('general.view_all') }}
+          {{ $t('renasci.general.view_all') }}
         </ui-link>
       </column>
     </row>

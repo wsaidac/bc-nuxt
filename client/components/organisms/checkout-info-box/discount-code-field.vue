@@ -8,7 +8,7 @@
       :is-loading="isLoading"
       :is-succeeded="codeIsValid"
       :has-error="showError && showLink"
-      :label="$t('pages.checkout.info_box.code_input.placeholder')"
+      :label="$t('renasci.organisms.info_box.code_input.placeholder')"
       :disabled="showLink"
       autocomplete="off"
       uppercase
@@ -17,7 +17,7 @@
       v-if="showLink"
       @click="onResetCode"
     >
-      {{ $t('pages.checkout.info_box.code_input.remove') }}
+      {{ $t('renasci.organisms.info_box.code_input.remove') }}
     </ui-link>
     <ui-button
       v-else
@@ -25,7 +25,7 @@
       :loading="isLoading"
       @click="onHandleSubmit"
     >
-      {{ $t('pages.checkout.info_box.code_input.use_button') }}
+      {{ $t('renasci.organisms.info_box.code_input.use_button') }}
     </ui-button>
   </div>
   <ui-button
@@ -35,7 +35,7 @@
     type="secondary"
     @click="canInsertCode = true"
   >
-    {{ $t('pages.checkout.info_box.code_input.redeem_button') }}
+    {{ $t('renasci.organisms.info_box.code_input.redeem_button') }}
   </ui-button>
 </template>
 

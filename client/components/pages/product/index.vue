@@ -5,7 +5,7 @@
     </template>
     <template v-slot:content>
       <product-list
-        :title="$t('pages.product.product_list.title', { brandName: brandInfo.name })"
+        :title="$t('renasci.pages.product.product_list.title', { brandName: brandInfo.name })"
         :products="relatedProducts"
         :max-len="2"
         :brand-info="brandInfo"
@@ -26,7 +26,6 @@ import Layout from '~/components/layouts/default';
 import {
   ProductDetail, ProductList, UspsBar, ActivationInfo, FaqList, SeoBlock,
 } from '~/components/organisms';
-import { Row, Column } from '~/components/grid';
 import { getProductFromPost, getProductListFromPost } from './utils';
 
 

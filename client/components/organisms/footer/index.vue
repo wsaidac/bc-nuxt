@@ -7,13 +7,13 @@
       >
         <column class="w-full md:w-1/3">
           <footer-links
-            :title="$t('footer.service-help')"
+            :title="$t('renasci.organisms.footer.service_help')"
             :links="serviceLinks"
           />
         </column>
         <column class="w-full md:w-1/3">
           <footer-links
-            :title="$t('footer.categories')"
+            :title="$t('renasci.organisms.footer.categories')"
             :links="categoryLinks"
           />
         </column>

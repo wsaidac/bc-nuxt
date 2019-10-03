@@ -2,7 +2,9 @@
   <fragment>
     <row>
       <column class="w-full">
-        <main-title type="secondary">{{ $t("components.activation_info.title") }}</main-title>
+        <main-title type="secondary">
+          {{ $t('renasci.organisms.activation_info.title') }}
+        </main-title>
       </column>
     </row>
     <row>

@@ -5,7 +5,7 @@
         <button-icon
           color="primary"
           icon="close"
-          :aria-label="$t('general.close')"
+          :aria-label="$t('renasci.general.close')"
           @click.prevent="$emit('submenu__close:click')"
         />
       </div>
@@ -18,7 +18,7 @@
           class="rotate-180"
           icon="breadcrumb"
         />
-        <p class="ml-2">{{ $t('header.mobile_menu.button_overview') }}</p>
+        <p class="ml-2">{{ $t('renasci.organisms.mobile_menu.sub.to_overview') }}</p>
       </div>
     </div>
 

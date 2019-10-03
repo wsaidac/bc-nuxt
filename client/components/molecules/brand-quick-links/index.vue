@@ -4,7 +4,7 @@
       class="lg:inline-block pr-2"
       type="h4"
     >
-      {{ $t('brand_box.fast_to' ) }}
+      {{ $t('renasci.molecules.brand_quick_links.fast_to' ) }}
     </ui-title>
     <ui-link
       v-for="(link, index) in links"

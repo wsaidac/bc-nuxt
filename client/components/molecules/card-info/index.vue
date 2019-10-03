@@ -13,7 +13,7 @@
         data-test="card-info-link"
         @click.native="showAll = !showAll"
       >
-        {{ $t(`general.show-${showAll ? 'less' : 'more'}`) }}
+        {{ $t(`renasci.general.show-${showAll ? 'less' : 'more'}`) }}
       </ui-link>
     </div>
   </card>
