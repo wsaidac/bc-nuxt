@@ -16,7 +16,7 @@ describe('middleware: checkLocale', () => {
     it('it should return null', () => {
       process.server = false;
       const result = checkLocale(clientNoLocaleChange);
-      expect(result).toBeNull();
+      expect(result).toBeUndefined();
     });
   });
 
@@ -35,7 +35,7 @@ describe('middleware: checkLocale', () => {
     describe('AND a marketeer is logged in / query.marketeer', () => {
       it('a marketeer should be set in the debug_cookie', () => {
         checkLocale(marketeerLoggedIn);
-        expect(marketeerLoggedIn.app.$cookies.set).toHaveBeenCalledWith('debug_mode', true, { "path": "/" });
+        expect(marketeerLoggedIn.app.$cookies.set).toHaveBeenCalledWith('debug_mode', true, { path: '/' });
       });
 
       it('and redirect', () => {
@@ -58,19 +58,19 @@ describe('middleware: checkLocale', () => {
     describe('AND there is a locale_cookie, pick the cookie over the CF-header', () => {
       it('it should redirect to the saved cookie-locale', () => {
         checkLocale(cookieOverCF);
-        expect(cookieOverCF.redirect).toHaveBeenCalledWith(301, '/da-dk');
+        expect(cookieOverCF.redirect).toHaveBeenCalledWith(301, '/da-dk/');
       });
     });
 
     describe('AND there is no locale_cookie', () => {
       it('it should save the locale from CF-header in a cookie', () => {
         checkLocale(useCFNoCookie);
-        expect(useCFNoCookie.app.$cookies.set).toHaveBeenCalledWith('country', 'fr-be', cookieAge);
+        expect(useCFNoCookie.app.$cookies.set).toHaveBeenCalledWith('locale', 'fr-be', cookieAge);
       });
 
       it('and redirect to CF-locale', () => {
         checkLocale(useCFNoCookie);
-        expect(useCFNoCookie.redirect).toHaveBeenCalledWith(301, '/fr-be');
+        expect(useCFNoCookie.redirect).toHaveBeenCalledWith(301, '/fr-be/');
       });
     });
   });
@@ -89,7 +89,7 @@ describe('middleware: checkLocale', () => {
     describe('AND uppercase locale', () => {
       it('it should save the lowercase locale in a cookie', () => {
         checkLocale(noUppercaseLocale);
-        expect(noUppercaseLocale.app.$cookies.set).toHaveBeenCalledWith('country', 'de-at', cookieAge);
+        expect(noUppercaseLocale.app.$cookies.set).toHaveBeenCalledWith('locale', 'de-at', cookieAge);
       });
 
       it('should redirect to this lowercase locale', () => {
@@ -101,7 +101,7 @@ describe('middleware: checkLocale', () => {
     describe('AND a lowercase locale', () => {
       it('it should save the locale in a cookie', () => {
         checkLocale(saveLowercaseLocale);
-        expect(saveLowercaseLocale.app.$cookies.set).toHaveBeenCalledWith('country', 'de-at', cookieAge);
+        expect(saveLowercaseLocale.app.$cookies.set).toHaveBeenCalledWith('locale', 'de-at', cookieAge);
       });
     });
   });

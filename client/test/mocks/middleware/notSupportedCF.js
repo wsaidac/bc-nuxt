@@ -9,6 +9,7 @@ module.exports = {
     i18n,
     $cookies: {
       get: (v) => cookies[v],
+      set: jest.fn(),
     },
   },
   redirect: jest.fn(),
