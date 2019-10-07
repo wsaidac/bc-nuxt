@@ -63,11 +63,6 @@ const conf = {
           loader: 'graphql-tag/loader',
         },
       });
-
-      config.module.rules.push({
-        test: /\.html$/,
-        use: ['html-loader'],
-      });
     },
     postcss: {
       plugins: {
