@@ -36,7 +36,8 @@ const isNotAllowedToVisit = (locale, { userLocale, i18n }) => {
   return isRestrictedCountry && isNotACitizen;
 };
 
-const transformPath = (currentPath, helpers) => {
+const transformPath = (currentPath, helpersArg) => {
+  const helpers = { ...helpersArg };
   helpers.userLocale = getUserLocale(helpers) || '';
 
   const currentLocale = getLocaleFromPath(currentPath);
@@ -59,14 +60,12 @@ export default (context = {}) => {
 
   if (!process.server && localeDidNotChange(context)) return;
 
-  const helpers = {
+  const routeTo = transformPath(route.path.toLowerCase(), {
     debug: isDebugMode(context),
     i18n: app.i18n,
     cookies: app.$cookies,
     userCountry: get(req, 'headers["cloudfront-viewer-country"]', ''), // format: US
-  };
-
-  const routeTo = transformPath(route.path.toLowerCase(), helpers);
+  });
 
   setLocaleCookie(app.$cookies, routeTo);
 
