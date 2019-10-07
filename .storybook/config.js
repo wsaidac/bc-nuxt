@@ -109,7 +109,7 @@ Vue.use(TrustpilotPlugin, configLabel.trustpilot)
 Vue.use(Vuelidate)
 
 
-// basically load the stories within client/components folder
+// basically load the stories  within client/components folder
 function loadStories() {
   const req = require.context('../client/components', true, /\.stories\.js$/);
   req.keys().forEach(filename => req(filename));

@@ -14,7 +14,7 @@ module.exports = {
   },
   redirect: jest.fn(),
   route: {
-    path: '', // no path -> no currentlocale
+    path: '/', // no path -> no currentlocale
   },
   req: {
     headers: {
